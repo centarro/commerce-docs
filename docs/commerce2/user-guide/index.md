@@ -6,17 +6,17 @@ taxonomy:
 
 ## Multiple stores
 
-Whether international, multi-regional, or a marketplace, Drupal Commerce allows multiple stores that have a specific currency and supported billing and shipping countries.
+Whether international, multi-regional, or a marketplace, Drupal Commerce allows multiple [stores](./setting-up-store.md) that have a specific currency and supported billing and shipping countries.
 
 ## Currencies
 
-You can import [multiple currencies](../02.setting-up-store/01.importing-currencies). Coupled with Drupal's multilingual and internationalization tools, Drupal Commerce provides localized e-commerce.
+You can import [multiple currencies](./currencies.md). Coupled with Drupal's multilingual and internationalization tools, Drupal Commerce provides localized e-commerce.
 
 ## Products
 
 ## Order workflows
 
-Not all orders are handled the same way. [Orders](../04.orders) in Drupal Commerce meet your order management needs. Whether digital, physical, or mixed each order can go through its own experience and workflow.
+Not all orders are handled the same way. [Orders](./orders.md) in Drupal Commerce meet your order management needs. Whether digital, physical, or mixed each order can go through its own experience and workflow.
 
 ## Payments
 
