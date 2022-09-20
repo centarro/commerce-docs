@@ -19,7 +19,7 @@ us who work on this section by [creating an issue] and clearly explain what you 
 understand and why - we’re happy to hear from you, your contribution helps everyone!
 
 You can also contribute directly on our [documentation repository] by editing the files 
-through the [GitHub] interface directly in your browser. Alternatively, you can clone 
+through the [GitHub]{target=_blank} interface directly in your browser. Alternatively, you can clone 
 the repository and edit the book in your favorite text editor.
 
 ## Choosing an issue
@@ -31,7 +31,9 @@ don't have permission to assign, then simply inform by commenting.
 If you need help choosing an issue or working on one, join the Commerce 2.x office hours.
 They are held every wednesday at 5PM GMT+1 on the *#commerce* [Drupal Slack channel].
 
-## Formatting help
+## Formatting help 
+
+# !!!REWRITE
 
 The Drupal Commerce documentation site is built using [gravCMS]. Grav is an open source file based
 CMS. It's built with PHP and content written in Markdown. If you are familiar with Markdown, then you

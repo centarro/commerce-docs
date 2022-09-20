@@ -11,7 +11,7 @@ on other best-of-breed modules and libraries.
 
 ## Using Drupal Commerce
 
-To learn how to use Drupal Commerce, see the [User Guide](../03.user-guide)
+To learn how to use Drupal Commerce, see the [User Guide](./user-guide/index.md)
 
 ## Working with Drupal Commerce
 
@@ -19,34 +19,34 @@ Ready to start developing and working with Drupal Commerce?
 
 * [Using Composer](#using-composer): If you are new to Composer or new to managing Drupal with Composer. Drupal Commerce requires using Composer with Drupal.
 * [Getting Help](#best-practices): General guidelines for how and where to get help for Drupal Commerce.
-* [Installation guide](../02.developer-guide/02.install-update/02.installation): To get Drupal Commerce installed.
-* [Updating guide](../02.developer-guide/02.install-update/03.updating) guide: For keeping Drupal Commerce up to date.
+* [Installation guide](./installation.md#installation): To get Drupal Commerce installed.
+* [Updating guide](./updating.md) guide: For keeping Drupal Commerce up to date.
 
 ## Looking for a demo?
 
 There are several Drupal Commerce 2 demo sites available.
 
-* [PayPal demo](https://commerce.demo.centarro.io/), using PayPal Express Checkout for payment.
-* [Braintree demo](https://braintree.demo.centarro.io/), using Braintree Hosted Fields for payment.
-* [Square demo](https://square.demo.centarro.io), using Square Payment Form for payment.
-* [Authorize.net demo](https://authnet.demo.centarro.io), using Authorize.net for payment.
+* [PayPal demo](https://commerce.demo.centarro.io/){target=_blank}, using PayPal Express Checkout for payment.
+* [Braintree demo](https://braintree.demo.centarro.io/){target=_blank}, using Braintree Hosted Fields for payment.
+* [Square demo](https://square.demo.centarro.io){target=_blank}, using Square Payment Form for payment.
+* [Authorize.net demo](https://authnet.demo.centarro.io){target=_blank}, using Authorize.net for payment.
 
-Additionally, you can use the Drupal Commerce Demo button on the homepage of [Simplytest](https://simplytest.me) to build the full demo store in a temporary web environment. Log in as the administrative user using admin / admin to test all that Commerce Core has to offer out of the box.
+Additionally, you can use the Drupal Commerce Demo button on the homepage of [Simplytest](https://simplytest.me){target=_blank} to build the full demo store in a temporary web environment. Log in as the administrative user using admin / admin to test all that Commerce Core has to offer out of the box.
 
 ## Using Composer
 
-[Composer] is a tool for managing dependencies on the project level, a
+[Composer]{target=_blank} is a tool for managing dependencies on the project level, a
 project being your site or web application. It has become the de facto dependency
 management tool for PHP. Composer allows PHP developers to easily build standalone
 distributable libraries that can be shared and integrated by others. This is
-possible in part by the PHP Framework Interoperability Group (FIG) and [PSR-4]
+possible in part by the PHP Framework Interoperability Group (FIG) and [PSR-4]{target=_blank}
 for autoloading of class files.
 
 >  Dependency management is not a new concept and not unique to PHP. NPM for NodeJS,
 >  Bower for front end libraries, Bundler/Gems for Ruby, PIP for Python, Maven for
 >  Java and so forth.
 
-If you’ve ever used [Drush] Make to download Drupal modules and themes, then
+If you’ve ever used [Drush]{target=_blank} Make to download Drupal modules and themes, then
 all of this sounds familiar. You can think of Composer as the more advanced
 Drush Make that works for all PHP projects and packages. Compared to Drush Make,
 Composer has the benefit of being able to recursively resolve dependencies
@@ -74,15 +74,15 @@ This also means less work for you.
 ### How to install Composer
 
 Composer offers a convenient installer that you can execute directly from the commandline.
-Follow instructions on [how to install Composer here](https://www.getcomposer.org/doc/00-intro.md).
+Follow instructions on [how to install Composer here](https://www.getcomposer.org/doc/00-intro.md){target=_blank}.
 We recommend that you use the newest version of composer, as older versions may or may not work.
-Check that your version matches the version listed on [getcomposer.org](https://getcomposer.org/).
+Check that your version matches the version listed on [getcomposer.org](https://getcomposer.org/){target=_blank}.
 
 
 
 ### How to use it
 
-**[composer.json]**
+**[composer.json]{target=_blank}**
 
 The ``composer.json`` file defines required libraries, modules, themes, and
 Drupal core to download. It allows you to run commands when Composer finishes
@@ -112,9 +112,9 @@ satisfiable version 2 release, and the development version of the `commerceguys/
 >  release names (`2.0-beta3`.)
 >
 >  Check out the Packagist Semver Checker to explore how version constraints work.
->  This link is for `drupal/core: ^8.3` [https://semver.mwl.be/#?package=drupal%2Fdrupal&version=%5E8.3&minimum-stability=dev](https://semver.mwl.be/#?package=drupal%2Fdrupal&version=%5E8.3&minimum-stability=dev)
+>  This link is for `drupal/core: ^8.3` [https://semver.mwl.be/#?package=drupal%2Fdrupal&version=%5E8.3&minimum-stability=dev](https://semver.mwl.be/#?package=drupal%2Fdrupal&version=%5E8.3&minimum-stability=dev){target=_blank}
 
-**[composer.lock]**
+**[composer.lock]{target=_blank}**
 
 The `composer.lock` file is auto generated by Composer. It has information about
 all the dependencies in the project, including ones your modules or themes depend
@@ -129,19 +129,19 @@ The `composer install` command will download and install dependencies. The insta
 
 The command will regenerate the class autoloader.
 
-**[composer update]**
+**[composer update]{target=_blank}**
 
 The `composer update` command resolves dependencies and generates the `composer.lock` file. The update command will update dependencies to their latest versions.
 
 The command will regenerate the class autoloader.
 
-**[composer require]**
+**[composer require]{target=_blank}**
 
 The `composer require` command adds a new dependency to your project. This will update the `composer.json` and `composer.lock` files and regenerate the class autoloader.
 
 If the new dependency has any conflicts with other dependencies, such as incompatible shared dependencies, it will not install.
 
-**[composer remove]**
+**[composer remove]{target=_blank}**
 
 The `composer remove` command removes a dependency from your project. This will update the `composer.json` and `composer.lock` files and regenerate the class autoloader.
 
@@ -149,13 +149,13 @@ If the dependency is required by another package, it will not be removed.
 
 ### Links and resources
 
-* [Managing Your Drupal Project with Composer](https://glamanate.com/blog/managing-your-drupal-project-composer), or the [slides version](https://docs.google.com/presentation/d/1PK9q2dBkGHfyEO76bEVpqS61wTgA0LGbru2PECiwUnk/edit?usp=sharing)
-* [Drupal Commerce Composer project template](https://github.com/drupalcommerce/project-base)
-* [Drupal Composer project template](https://github.com/drupal-composer/drupal-project)
-* [Platform.sh Drupal 8 + Composer template example](https://github.com/platformsh/template-drupal8)
-* [Amazee Labs Composer recipes](https://www.amazeelabs.com/en/journal/drupal-composer-recipes)
-* [Using Drupal + Composer project templates with Pantheon sites](https://pantheon.io/blog/using-composer-relocated-document-root-pantheon)
-* [Using Composer - Drupal.org](https://www.drupal.org/docs/develop/using-composer)
+* [Managing Your Drupal Project with Composer](https://glamanate.com/blog/managing-your-drupal-project-composer){target=_blank}, or the [slides version](https://docs.google.com/presentation/d/1PK9q2dBkGHfyEO76bEVpqS61wTgA0LGbru2PECiwUnk/edit?usp=sharing){target=_blank}
+* [Drupal Commerce Composer project template](https://github.com/drupalcommerce/project-base){target=_blank}
+* [Drupal Composer project template](https://github.com/drupal-composer/drupal-project){target=_blank}
+* [Platform.sh Drupal 8 + Composer template example](https://github.com/platformsh/template-drupal8){target=_blank}
+* [Amazee Labs Composer recipes](https://www.amazeelabs.com/en/journal/drupal-composer-recipes){target=_blank}
+* [Using Drupal + Composer project templates with Pantheon sites](https://pantheon.io/blog/using-composer-relocated-document-root-pantheon){target=_blank}
+* [Using Composer - Drupal.org](https://www.drupal.org/docs/develop/using-composer){target=_blank}
 
 [Composer]: https://getcomposer.org/
 [PSR-4]: http://www.php-fig.org/psr/psr-4/
@@ -209,11 +209,11 @@ guide for information about applying patches.
 
 ### Chat with us on Slack
 Drupal Commerce benefits from an active community of developers who participate
-in the #commerce [Slack] channel. There is also a general Drupal #support channel
+in the #commerce [Slack]{target=_blank} channel. There is also a general Drupal #support channel
 and the Drupal #general channel for light support questions. To join, visit:
-[http://drupalslack.herokuapp.com/]
+[http://drupalslack.herokuapp.com/]{target=_blank}
 
-For more information about Drupal Slack groups, see: [https://www.drupal.org/slack]
+For more information about Drupal Slack groups, see: [https://www.drupal.org/slack]{target=_blank}
 
 
 [Slack]: https://slack.com/
