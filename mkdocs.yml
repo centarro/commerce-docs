@@ -1,5 +1,6 @@
 site_name: Drupal Commerce Documentation
-repo_url: https://github.com/rinasek/testdocs
+repo_url: https://git.drupalcode.org/project/commerce
+repo_name: 'GitLab'
 nav:
   - Introduction :
       - index.md
