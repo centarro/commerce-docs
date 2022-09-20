@@ -1,1 +1,36 @@
-site_name: My Docs
+site_name: Drupal Commerce Documentation
+repo_url: https://github.com/rinasek/testdocs
+nav:
+  - Introduction :
+      - index.md
+      - Contributing: 'contribute.md'
+  - Commerce 2.x :
+      - Getting Started: commerce2/getting-started.md
+      - Developer Guide:
+          - Contribute: commerce2/developer-guide/contribute.md
+          - Installation: commerce2/developer-guide/installation.md
+          - Updating: commerce2/developer-guide/updating.md
+      - User Guide: commerce2/user-guide
+theme:      
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.indexes
+    - toc.integrate
+    - content.tabs.link
+  font:
+    text: Roboto
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+  - include_dir_to_nav
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  

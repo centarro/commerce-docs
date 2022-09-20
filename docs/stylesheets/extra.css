@@ -1,0 +1,24 @@
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+  font-weight: 700;
+  margin-bottom: .5em;
+  color: var(--md-primary-fg-color);
+}
+
+:root > * {
+  --md-primary-fg-color:        #4b4e9f;
+  --md-primary-fg-color--light: #4b4e9f;
+  --md-primary-fg-color--dark:  #4b4e9f;
+  --custom-bg-color: rgba(64, 81, 181, .1);
+}
+
+.md-content a {
+  /* color: #ffa827; */
+  font-weight: bolder;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.md-typeset .tabbed-content {
+  background-color: var(--custom-bg-color);
+  padding: 10px;
+}
