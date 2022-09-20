@@ -1,6 +1,5 @@
 site_name: Drupal Commerce Documentation
 repo_url: https://git.drupalcode.org/project/commerce
-repo_name: 'GitLab'
 nav:
   - Introduction :
       - index.md
