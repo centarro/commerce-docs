@@ -8,9 +8,9 @@ nav:
       - commerce2/getting-started.md
       - Installation, Updating & Uninstalling: 'commerce2/installation.md'
       - Contribute: 'commerce2/contribute.md'
-      - Developer Guide: 
+      - Developer Guide:
         - commerce2/developer-guide/index.md
-      - User Guide: 
+      - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
         - Currencies: 'commerce2/user-guide/currencies.md'
@@ -21,7 +21,7 @@ nav:
         - Taxes: 'commerce2/user-guide/taxes.md'
         - Checkout: 'commerce2/user-guide/checkout.md'
         - Shipping: 'commerce2/user-guide/shipping.md'
-theme:      
+theme:
   name: material
   features:
     - navigation.instant
@@ -32,9 +32,21 @@ theme:
     - content.tabs.link
   font:
     text: Roboto
+    code: 'Roboto Mono'
 extra_css:
   - stylesheets/extra.css
-
+extra:
+  social:
+    - icon: fontawesome/brands/slack
+      link: https://drupal.slack.com/archives/C1TLCCF9B
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/centarrohq
+    - icon: fontawesome/brands/github
+      link: https://github.com/centarro
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/centarro/
+copyright:
+  Copyright &copy; 2022 <a href="centarro.io" target="_blank">Centarro</a>
 plugins:
   - search
   - include_dir_to_nav
@@ -44,5 +56,4 @@ markdown_extensions:
   - tables
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
-  
+      alternate_style: true
