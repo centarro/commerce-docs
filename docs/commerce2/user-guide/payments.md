@@ -17,7 +17,7 @@ Click 'Add payment gateway', choose your provider from the plugin list and compl
 
 Some gateways will support backend payment entry. Especially manual payments.
 
-### Voiding An Authorization
+### Voiding an authorization
 
 In order to cancel an authorization we 'Void' it. For example, on travel sites, normally when a customer adds a trip request, a payment authorization is added to the order. It is only when the trip is confirmed that the authorization becomes a charge. 
 
@@ -54,7 +54,7 @@ If the capture request was successful, a success message will be displayed on th
 
 s a store administrator there are times where you often find yourself having to manage orders and payments on behalf of customers. Some customers might call in to modify their saved credit cards, or you might need to refund or capture payments for orders. With Drupal Commerce, you get a nice interface that let's you manage order payments and authorizations with ease.
 
-### Capturing a Payment
+### Capturing a payment
 Let's assume a scenario where the customer calls in and requests to make a change to their order. Let's say they wanted to modify the quantity ordered for one of the products. Instead of 1 quantity, they now want 2 of this item. As an admin you can go ahead and edit the item and enter "2" for the quantity. However, you now have a changed order total. You need to request more payment from the customer.
 
 Capturing payments for an order is done from the Payments tab above.
@@ -73,7 +73,7 @@ Notice, the payments that have already been captured for our example order, is d
  
 ![image4](new_captured_payment.png)
 
-### Refunding a Payment
+### Refunding a payment
 
 Payments can be refunded when they've been authorized and captured. There maybe times when you've already taken payment but need to refund an order, either due to lack of stock, damaged product, cancelled order, or some other reason. Similar to voiding payments, refunding payments follow the same process. You locate the order, click the `Payments` tab, find the captured payment and hit the `Refund` link. You'll be taken to a confirmation page.
  
