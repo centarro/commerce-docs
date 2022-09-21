@@ -52,7 +52,7 @@ At the bottom of the form, check the **Default** checkout, and then press **Save
 
 ## Use Cases
 
-! This section should be moved to a subsection, possibly. Detailing how to use multiple stores, or setup a marketplace model.
+**! This section should be moved to a subsection, possibly. Detailing how to use multiple stores, or setup a marketplace model.**
 
 We optimize for the two use cases:
 

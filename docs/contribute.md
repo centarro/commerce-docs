@@ -35,8 +35,7 @@ They are held every wednesday at 5PM GMT+1 on the *#commerce* [Drupal Slack chan
 
 # !!!REWRITE
 
-The Drupal Commerce documentation site is built using [gravCMS]. Grav is an open source file based
-CMS. It's built with PHP and content written in Markdown. If you are familiar with Markdown, then you
+The Drupal Commerce documentation site is built using [MkDocs]. It's built with Phyton and content written in Markdown. If you are familiar with Markdown, then you
 can easily contribute to the documentation!
 
 `*emphasis*` renders as *emphasis*
@@ -139,13 +138,13 @@ git push -f fork 106-create-product-type
 
 That’s it! Happy contributing!
 
-[gravCMS]: https://getgrav.org/
-[the open issues]: https://github.com/drupalcommerce/commerce-docs/issues
+[MkDocs]: https://www.mkdocs.org/
+[the open issues]: https://github.com/centarro/commerce-docs/issues
 [Drupal Slack channel]: https://www.drupal.org/slack
 [create a pull request]: https://help.github.com/articles/using-pull-requests#initiating-the-pull-request
 [Drupal Commerce]: https://drupalcommerce.org
 [slack-invite]: http://drupalslack.herokuapp.com
 [Drupal Slack]: http://drupal.slack.com
-[documentation repository]: https://github.com/drupalcommerce/commerce-docs
-[creating an issue]: https://github.com/drupalcommerce/commerce-docs/issues
+[documentation repository]: https://github.com/centarro/commerce-docs
+[creating an issue]: https://github.com/centarro/commerce-docs/issues/new
 [GitHub]: https://github.com/

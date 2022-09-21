@@ -14,6 +14,7 @@ You can import [multiple currencies](./currencies.md). Coupled with Drupal's mul
 
 ## Products
 
+@todo
 ## Order workflows
 
 Not all orders are handled the same way. [Orders](./orders.md) in Drupal Commerce meet your order management needs. Whether digital, physical, or mixed each order can go through its own experience and workflow.
@@ -24,10 +25,15 @@ Whether you use [PayPal](https://www.paypal.com){target=_blank}, [Braintree](htt
 
 ## Promotions
 
+@@todo
 ## Taxes
 
 [Taxes? No problem](../07.taxes). Out of the box support for [EU VAT](../07.taxes/01.eu-vat), [Swiss VAT](../07.taxes/02.swiss-vat), [Canadian GST](../07.taxes/03.ca-gst), [US Sales Tax](../07.taxes/04.us-sales-tax) or other custom tax rules.
 
 ## Checkout 
 
+@todo
+
 ## Shipping
+
+@todo

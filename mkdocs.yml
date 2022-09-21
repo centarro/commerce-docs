@@ -1,5 +1,5 @@
 site_name: Drupal Commerce Documentation
-repo_url: https://git.drupalcode.org/project/commerce
+repo_url: https://github.com/centarro/commerce-docs
 nav:
   - Introduction :
       - index.md
