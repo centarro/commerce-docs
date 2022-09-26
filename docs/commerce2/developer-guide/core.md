@@ -62,7 +62,6 @@ Additional documentation on [Profiles](../../../customers/profiles) and how they
 
 ### Inline Entity Form
 
-
 See Also: [module on drupal.org]
 
 Provides a widget for inline management (creation, modification,
