@@ -10,6 +10,7 @@ nav:
       - Contribute: 'commerce2/contribute.md'
       - Developer Guide:
         - commerce2/developer-guide/index.md
+        - Core: 'commerce2/developer-guide/core.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
