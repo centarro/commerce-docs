@@ -103,4 +103,4 @@ When you first create a Drupal Commerce site, you will see a *Default* product t
 
 ![Add default type product](../images/overview-concept-1.png)
 
-If you would like to customize the forms used to enter products, see the [Editing products page](../../03.product-management/02.product-data-entry) in the [Product Management documentation](../../03.product-management).
+If you would like to customize the forms used to enter products, see the [Editing products page](../../03.product-management/02.product-data-entry) in the [Product Management documentation](##product-management.md).

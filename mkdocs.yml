@@ -15,6 +15,9 @@ nav:
           - Getting started: commerce2/developer-guide/products/getting-started.md
           - Product Information Structure: 'commerce2/developer-guide/products/product-information-structure.md'
           - Product Architecture: 'commerce2/developer-guide/products/product-architecture.md'
+          - Product Management: 'commerce2/developer-guide/products/product-management.md'
+          - Displaying Products: 'commerce2/developer-guide/products/displaying-products.md'
+          - Marketing Products: 'commerce2/developer-guide/products/marketing-products.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
