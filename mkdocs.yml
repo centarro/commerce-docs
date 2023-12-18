@@ -41,9 +41,11 @@ theme:
   font:
     text: Roboto
     code: 'Roboto Mono'
+  logo: assets/logo.svg
 extra_css:
   - stylesheets/extra.css
 extra:
+  homepage: https://centarro.io
   social:
     - icon: fontawesome/brands/slack
       link: https://drupal.slack.com/archives/C1TLCCF9B
@@ -54,7 +56,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/centarro/
 copyright:
-  Copyright &copy; 2022 <a href="centarro.io" target="_blank">Centarro</a>
+  Copyright &copy; 2022 <a href="https://centarro.io" target="_blank">Centarro</a>
 plugins:
   - search
   - include_dir_to_nav
