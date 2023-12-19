@@ -19,7 +19,7 @@ Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}.
 
 !!! question "Need help customizing your store?"
 
-    Our vision is **merchant success** and we offer a suite of [Drupal Commerce Development services] to make it happen.
+    Our vision is **merchant success** and we offer a suite of [Drupal Commerce Development services]{target=_blank} to make it happen.
 
 [Platform.sh]: https://platform.sh
 [Drupal.org]: https://www.drupal.org
