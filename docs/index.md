@@ -17,6 +17,11 @@ If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation o
 
 Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}.
 
+!!! question "Need help customizing your store?"
+
+    Our vision is **merchant success** and we offer a suite of [Drupal Commerce Development services] to make it happen.
+
 [Platform.sh]: https://platform.sh
 [Drupal.org]: https://www.drupal.org
 [Understanding Drupal]: https://www.drupal.org/docs/8/understanding-drupal-8
+[Drupal Commerce Development services]: https://centarro.io
