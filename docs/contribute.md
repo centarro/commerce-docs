@@ -9,6 +9,10 @@ taxonomy:
 We love contributors! Please help us improve or fix the documentation by
 editing a document and making a pull request in Github.
 
+The Drupal Commerce documentation site is built using [MkDocs]. It's built 
+with Phyton and content written in Markdown. If you are familiar with Markdown, then you
+can easily contribute to the documentation!
+
 The beauty of an open source project is that anyone can contribute. To contribute 
 to an open source project you need not to be a programmer, there are other ways to 
 contribute to an open source project than through code. The easiest way for non-programmers 
@@ -35,8 +39,6 @@ They are held every wednesday at 5PM GMT+1 on the *#commerce* [Drupal Slack chan
 
 # !!!REWRITE
 
-The Drupal Commerce documentation site is built using [MkDocs]. It's built with Phyton and content written in Markdown. If you are familiar with Markdown, then you
-can easily contribute to the documentation!
 
 `*emphasis*` renders as *emphasis*
 
