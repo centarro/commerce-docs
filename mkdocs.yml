@@ -18,6 +18,9 @@ nav:
           - Product Management: 'commerce2/developer-guide/products/product-management.md'
           - Displaying Products: 'commerce2/developer-guide/products/displaying-products.md'
           - Marketing Products: 'commerce2/developer-guide/products/marketing-products.md'
+        - Stores:
+          - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
+          - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
