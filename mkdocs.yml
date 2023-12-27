@@ -12,12 +12,24 @@ nav:
         - commerce2/developer-guide/index.md
         - Core: 'commerce2/developer-guide/core.md'
         - Products:
-          - Getting started: commerce2/developer-guide/products/getting-started.md
+          - Getting started: 'commerce2/developer-guide/products/getting-started.md'
           - Product Information Structure: 'commerce2/developer-guide/products/product-information-structure.md'
           - Product Architecture: 'commerce2/developer-guide/products/product-architecture.md'
           - Product Management: 'commerce2/developer-guide/products/product-management.md'
           - Displaying Products: 'commerce2/developer-guide/products/displaying-products.md'
           - Marketing Products: 'commerce2/developer-guide/products/marketing-products.md'
+        - Cart:
+          - Cart events: 'commerce2/developer-guide/cart/cart-events.md'
+          - Customize cart: 'commerce2/developer-guide/cart/customize-cart.md'
+        - Stores:
+          - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
+          - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
+        - Customers:
+          - Getting started: 'commerce2/developer-guide/customers/getting-started.md'
+          - Addresses: 'commerce2/developer-guide/customers/addresses.md'
+          - Profiles: 'commerce2/developer-guide/customers/profiles.md'
+          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'
+        - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
@@ -38,6 +50,8 @@ theme:
     - navigation.indexes
     - toc.integrate
     - content.tabs.link
+    - content.code.copy
+    - navigation.footer
   font:
     text: Roboto
     code: 'Roboto Mono'
@@ -64,6 +78,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - tables
+  - md_in_html
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
