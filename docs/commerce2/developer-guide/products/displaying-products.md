@@ -6,6 +6,47 @@ taxonomy:
 
 Learn techniques for displaying products on your site.
 
+---
+title: Displaying products
+taxonomy:
+    category: docs
+---
+
+Learn techniques for displaying products on your site.
+
+**[Product display pages](#product-display-pages)**
+
+- Customize the product pages that are displayed on your site.
+- Learn about the concept of *product variation field injection*.
+
+**[Add to cart form](#add-to-cart-form)**
+
+- Include the *Add to cart form* on product pages and/or other pages on your site to allow customers to add products to their shopping cart.
+- Learn about options for customizing the Add to cart form, including adding fields for customizable products.
+
+**[Product attributes](#product-attributes)**
+
+- Customize the product attribute elements that appear on the Add to cart form.
+- Learn about the Rendered attribute element type.
+
+**[Theming products](#theming-product)**
+
+- Use Twig to create a layout for products, variations, or product attribute values.
+
+**[Multi-product displays](#multiple-products)**
+
+- Use Views to display a page with multiple products.
+
+**[Product images](#product-images)**
+
+- Learn how to use the Drupal Core Image module to create a custom image style for products.
+- Use the Image delta formatter module to create a custom view mode for product variations.
+
+**[Code recipes](#code-recipes)**
+
+- Various techniques and code snippets for customizing product displays and the add to cart form.
+
+
 ## Product display pages
 
 This section describes how to customize the product pages that are displayed on your site. We will look at how to manage configuration for products and variations using the *Manage display* form for product types.
@@ -265,14 +306,215 @@ Also, there is a custom css library for rendered product attributes, located wit
 - `product--rendered-attribute`
 - `product--rendered-attribute__selected`
 
-!!! note "In the next section, we'll look at how you can create a page that displays multiple products with multiple *add to cart forms*."
+## Multiple products
+
+This section describes how you can create a page that displays multiple products, with [Add to cart forms](../02.add-to-cart-form), using the [Drupal Views module]. In the [Product categories documentation](../../02.product-architecture/03.product-categories), we added a *Brand* field to our product types. In this example, we'll create a page that displays all products for a user-specified brand.
+
+![Brand view page](../../images/multi-product-display.jpg)
+
+!!! example "Create the Product Brand View"
+
+    1. Navigate to the Views administration page at `/admin/structure/views`.
+    2. Click the *Add view* button.
+    3. Under *View basic information*, enter "Product brand" for the *View name*.
+    4. Under *View settings*, select *Product* of type *All*.
+    5. Under *Page settings*, check the *Create a page* checkbox.
+    - Select *Grid* for the *Display format*.
+    - Enter "12" for the number of *Items to display*.
+    1. Click *Save and edit* to create the new view.
+
+    ![Create Unsplash view](../../images/multi-product-display-1.jpg)
+
+    <h5>Configure the Product Brand View fields</h5>
+
+    **Product title field**
+
+    The *Product: Title* field has already been added for us. Click on the *Product: Title* link to configure the field:
+    2. Select *Link to the Product*.
+    3. Click on *Style Settings* and select *Customize field HTML* and *H3* for the *HTML element*.
+    4. Click the *Apply* button.
+
+    ![Product title field configuration](../../images/multi-product-display-6.jpg)
+
+    **Variations image field**
+
+    Our products don't have images, but their variations do have one or more images. We'll display the first image of the first variation for each product. To do this, we'll use the *Single image* view mode that we created in the [Product images documentation](../06.product-images).
+
+    **Add the Variations field**
+
+    5. Click the *Add* button in the *Fields* section.
+    6. Select the *Variations* item.
+    7. Click the *Add and configure fields* button.
+
+    **Configure the Variations field.**
+
+    8. Select *Rendered entity* for the Formatter.
+    9. Select *Single image* for the View mode.
+    10. Click on *Multiple Field Settings* and enter "1" to *Display 1 value(s)*.
+    11. Click on *Administrative Title* and enter *Product: Variations (image)* for the Administrative title.
+    12. Click the *Apply* button.
+
+    ![Variations image field configuration](../../images/multi-product-display-7.jpg)
+
+    **Add to Cart variations field**
+
+    If you're not familiar with the Add to Cart form, see the [Add to cart form documentation page](../02.add-to-cart-form). We'll add the Product Variations field a second time and configure it as an Add to cart form.
+
+    **Add the Variations field**
+
+    13. Click the *Add* button in the *Fields* section.
+    14. Select the *Variations* item.
+    15. Click the *Add and configure fields* button.
+
+    **Configure the Variations field**
+
+    16. Select *Add to cart form* for the Formatter.
+    17. Click on *Administrative Title* and enter "Product: Variations (cart)" for the Administrative title.
+    3. Click the *Apply* button.
+
+    ![Variations image field configuration](../../images/multi-product-display-8.jpg)
+
+    **Add a filter for the product brand**
+
+    At this point, our view is set up to show *all* products that are published/active. We need to add a filter to allow users to filter by product brand. To do that, use the *Filter criteria* section of the View administration page.
+
+    **Add the Brand filter**
+
+    4. Click the *Add* button next to *Filter criteria*.
+    5. Select *Brand (field_brand)* on the *Add filter criteria* form.
+    6. Click *Add and configure criteria*.
+    7. On the next form, select the *Brands* vocabulary and the *Dropdown* selection type.
+    8. Click *Apply and continue*.
+
+    **Configure the Brand filter**
+
+    9. Select *Expose this filter to visitors, to allow them to change it*.
+    10. Enter "Brand" for the Label.
+    11. Click the *Apply* button.
+
+    ![Configure brand filter](../../images/multi-product-display-3.jpg)
+
+    **Customize the page display**
+
+    The View configuration form can be used to customize your page display in a variety of ways, such as:
+
+    * Change the Grid settings to display 3 columns instead of 4.
+    * Add sort criteria.
+    * Using Page Settings, change the path or create a menu for the page.
+    * Instead of using an exposed filter, add a contextual filter to create a separate page for each brand.
+
+## Product images
+
+### Drupal Core Image module
+The [Image module] defines the image field type and provides image manipulation tools. It is installed by default in a standard Drupal 8 site. To help maintain consistency for the display of your product images, you can set up a custom image style. This image style will appear as one of the options for *Image* field formatters.
+![Create Image view mode](../../images/display-product-images-2.jpg)
+
+!!! example "Example: Create a Product image style"
+    1. Navigate to the Image styles administration page at `/admin/config/media/image-styles`.
+    2. Click the *Add image style* button.
+    3. Enter "Product (570×570)" for the Image style name.
+    4. Click the *Edit* button next to the automatically created Machine name to change the machine name to "product".
+    5. Select the *Scale* Effect.
+    ![Create Image view mode](../../images/display-product-images-3.jpg)
+
+    6. Click the *Add* button to add the Scale effect.
+    7. Enter "570" for both the Width and the Height values.
+    8. Click the *Add effect* button.
+
+    The *Product (570x570)* image style will now appear as an option for Image field formatters.
+
+#### Image Delta Formatter module
+The [Image delta formatter module] provides a custom formatter for image fields that are configured for multiple images. It allows the user to specify which images (deltas) should be displayed. It can be useful in cases in which a product or product variation has multiple images, but in a certain context, you only want to display a single image. For example, if you want to display multiple products in a uniform grid layout, showing just a single image per product looks best.
+
+!!! example "Example: Create a custom *Single image* view mode for product variations"
+    See the [Multi-product displays documentation](#multiple-products) for an example of how this custom view mode can be used.
+    1. Start by installing the Image delta formatter module [in the usual way](../../installation.md#extending).
+    2. Navigate to the View modes administration page at `/admin/structure/display-modes/view`.
+    3. Scroll down to the *Product variation* entity type and click the *Add new Product variation view mode* link.
+    4. Enter "Single image" for the Name and click the *Save* button.
+
+        ![Create Image view mode](../../images/display-product-images-1.jpg)
+
+    5. Navigate to the Manage display administration page for your product variation type at `/admin/commerce/config/product-variation-types/simple/edit/display` (for the [*Simple* product variation type](../../02.product-architecture/01.simple-product)).
+    6. Click on *Custom Display Settings* to enable the *Single image* view mode.
+
+        ![Enable Single image view mode](../../images/display-product-images-4.jpg)
+
+    7. Click the *Save* button.
+    8. Click on the *Single image* link that now appears at the top of the Manage display administration page.
+
+        ![Configure Single image view mode](../../images/display-product-images-5.jpg)
+
+    9. Drag the *Price* field to the *Disabled* section.
+    10. Set the *Images* field Label to *Hidden*.
+    11. Set the *Images* field Format to *Image delta*.
+    12. Click the gear icon in the rightmost column to set the image delta formatter's *Image style* to the *Product (570x570)* image style (or another preferred image style).
+
+        ![Configure Image delta formatter](../../images/display-product-images-6.jpg)
+
+    13. Click the *Update* button to close the formatter configuration form.
+    14. Click the *Save* button to save the settings for the Single image product variation display.
+
+    The *Single image* view mode will now be an option for displaying product variations.
+
+#### Single media
+The [Single media](https://www.drupal.org/project/single_media) is very similar to previous one, but provides field formatter for **media** fields that are configured for multiple images.
+
+## Code recipes
+
+!!! example "Hiding add to cart form for anonymous users"
+    Use hook_form_alter and
+    `'#access' => !is_anonymous` under add to cart submit
+
+
+!!! example "Creating a custom add to cart form"
+
+    If the default add to cart form lacks some necessary functionality, you can either use a form alter hook or consider this cleaner approach:
+
+    1. Extend commerce_cart\Form\AddToCartForm.php
+    2. verride any methods to alter the form functionality.
+
+    3. Implement hook_entity_type_build() to swap out the default form with your custom one.
+
+        ```php
+        /**
+         * Implements hook_entity_type_build().
+         */
+        function mymodule_entity_type_build(array &$entity_types) {
+            $entity_types['commerce_order_item']->setFormClass('add_to_cart', '\Drupal\mymodule\Form\AddToCartForm');
+        }
+        ```
+
+    4. If your custom module name does not come after *commerce_cart* alphabetically, then you will need to manually adjust its weight. To do this, you can use `hook_module_implements_alter()`. Or you can use the `module_set_weight` API function (implemented in core\includes\module.inc).
+
+
+!!! example "Altering commerce product twig template variables"
+    You can use hook_preprocess_commerce_product as in:
+
+    ```php
+    function mymodule_preprocess_commerce_product(&$variables) {
+        $product = $variables['elements']['#commerce_product'];
+        ...
+    }
+    ```
+
 
 ## Links and resources
 
 * [Changing Content Display (Drupal user guide)](https://www.drupal.org/docs/user_guide/en/structure-content-display.html)
-*  [Add to cart form documentation](#add-to-cart-form)
+* [Add to cart form documentation](#add-to-cart-form)
 * [Product attributes](../../03.products/01.product-attributes)
+* Drupal 8 User Guide documentation on [Concept: Image Styles]
+* [Custom field formatter for displaying entity images with thumbnails and 1 large image], posted by Ivan Jaros in [Drupal Answers] on StackExchange.
+
 
 [Drupal 8: Hooks, Events, and Event Subscribers]: https://www.daggerhart.com/drupal-8-hooks-events-event-subscribers/
 [Drupal 8 Event Subscribers - the successor to alter hooks]: https://www.computerminds.co.uk/drupal-code/drupal-8-event-subscribers-successor-alter-hooks
 [Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
+[Drupal Views module]: https://www.drupal.org/docs/8/core/modules/views
+[Image module]: https://www.drupal.org/docs/8/core/modules/image
+[Image delta formatter module]: https://www.drupal.org/project/image_delta_formatter
+[Concept: Image Styles]: https://www.drupal.org/docs/user_guide/en/structure-image-styles.html
+[Custom field formatter for displaying entity images with thumbnails and 1 large image]: https://drupal.stackexchange.com/questions/192471/display-entity-images-with-thumbnails-and-1-large-image
+[Drupal Answers]: https://drupal.stackexchange.com/
+

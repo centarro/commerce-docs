@@ -34,7 +34,7 @@ This documentation section describes how you can organize customer-related infor
 - Create a customer group taxonomy to organize customer accounts.
 - 
 
-#### Overview
+## Overview
 If you're looking at Drupal Commerce for the first time, you may be wondering, "where are the customers?" Under the *Commerce* administrative menu, you can see Orders, Products, and Promotions, but there is no item for *Customers*.
 
 ![Commerce administrative menu](../images/overview-1.png)
@@ -58,7 +58,7 @@ This "Create a new order" form is available only for administrative users with a
 
 For additional information about how to customize and manage *customer accounts* in Drupal Commerce, see the [Customer accounts documentation page](../04.customer-accounts).
 
-#### Profile module
+### Profile module
  Each customer account has one or more *profiles*, which are provided by the *Profile* module.
 
 ![Data model for Customer accounts and Profiles](../images/overview-4.png)
@@ -69,7 +69,7 @@ Customers can have multiple billing and shipping profiles. Each *customer profil
 
 For additional information about how to customize and manage *customer profiles* in Drupal Commerce, see the [Profiles documentation section](../03.profiles).
 
-#### Address module
+### Address module
 The [Address module] is another popular, well-maintained Drupal 8 contributed module that is required by Drupal Commerce. It provides functionality for storing, validating, and displaying international postal addresses. Within Drupal Commerce, customer addresses are all encapsulated into *customer profiles*. They do not exist independently, and every customer profile should have exactly one address.
 
 For additional information about how to customize address data entry forms and the display of addresses in Drupal Commerce, see the [Addresses documentation section](../02.addresses).
