@@ -29,6 +29,7 @@ nav:
           - Addresses: 'commerce2/developer-guide/customers/addresses.md'
           - Profiles: 'commerce2/developer-guide/customers/profiles.md'
           - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'
+        - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
