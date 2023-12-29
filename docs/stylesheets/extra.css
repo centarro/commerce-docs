@@ -137,6 +137,7 @@
 
 .md-typeset h5 {
   font-size: 0.875rem;
+  text-transform: none;
 }
 
 .md-typeset img {
