@@ -21,6 +21,12 @@ nav:
         - Cart:
           - Cart events: 'commerce2/developer-guide/cart/cart-events.md'
           - Customize cart: 'commerce2/developer-guide/cart/customize-cart.md'
+        - Payments:
+          - Getting started: 'commerce2/developer-guide/payments/getting-started.md'
+          - Gateways: 'commerce2/developer-guide/payments/gateways.md'
+          - Creating Payment Gateway: 'commerce2/developer-guide/payments/creating-payment-gateway.md'
+          - Payments: 'commerce2/developer-guide/payments/payments.md'
+          - Code Recipes: 'commerce2/developer-guide/payments/code-recipes.md'
         - Stores:
           - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
           - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
@@ -69,7 +75,12 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - tables
   - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
