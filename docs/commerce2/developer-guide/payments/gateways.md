@@ -6,7 +6,7 @@ category: docs
 
 ## Available payment gateways
 
-Drupal Commerce can be integrated with payment providers from all over the world. This page provides a list of the **139 contributed payment gateway modules** that currently exist. See the documentation on [Extending Drupal Commerce](../../../installation/#extending) for information on adding one or more of these modules to your Drupal Commerce project and the [Install and Configure a Payment Gateway](#installing-and-configure-a-payment-gateway) documentation for information on configuration.
+Drupal Commerce can be integrated with payment providers from all over the world. This page provides a list of the **142 contributed payment gateway modules** that currently exist. See the documentation on [Extending Drupal Commerce](../../../installation/#extending) for information on adding one or more of these modules to your Drupal Commerce project and the [Install and Configure a Payment Gateway](#installing-and-configure-a-payment-gateway) documentation for information on configuration.
 
 If you don't see a payment provider you want for your project, Drupal Commerce provides a framework for implementing your own online payment gateways. See the [Creating payment gateways](../creating-payment-gateway) documentation for more information. 
 
