@@ -21,6 +21,11 @@ nav:
         - Cart:
           - Cart events: 'commerce2/developer-guide/cart/cart-events.md'
           - Customize cart: 'commerce2/developer-guide/cart/customize-cart.md'
+        - Customers:
+          - Getting started: 'commerce2/developer-guide/customers/getting-started.md'
+          - Addresses: 'commerce2/developer-guide/customers/addresses.md'
+          - Profiles: 'commerce2/developer-guide/customers/profiles.md'
+          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'  
         - Payments:
           - Getting started: 'commerce2/developer-guide/payments/getting-started.md'
           - Gateways: 'commerce2/developer-guide/payments/gateways.md'
@@ -30,11 +35,10 @@ nav:
         - Stores:
           - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
           - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
-        - Customers:
-          - Getting started: 'commerce2/developer-guide/customers/getting-started.md'
-          - Addresses: 'commerce2/developer-guide/customers/addresses.md'
-          - Profiles: 'commerce2/developer-guide/customers/profiles.md'
-          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'
+        - Orders:
+          - Getting started: 'commerce2/developer-guide/orders/getting-started.md' 
+          - Workflows: 'commerce2/developer-guide/orders/workflows.md'
+          - Code Recipes: 'commerce2/developer-guide/orders/code-recipes.md'
         - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
       - User Guide:
         - commerce2/user-guide/index.md
