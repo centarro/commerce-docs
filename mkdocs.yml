@@ -40,6 +40,9 @@ nav:
           - Workflows: 'commerce2/developer-guide/orders/workflows.md'
           - Code Recipes: 'commerce2/developer-guide/orders/code-recipes.md'
         - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
+        - Promotions:
+          - Getting started: 'commerce2/developer-guide/promotions/getting-started.md' 
+          - Offers: 'commerce2/developer-guide/promotions/offers.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
