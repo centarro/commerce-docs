@@ -90,11 +90,12 @@ If you have a high number of different customer groups, creating a user role for
 
       ![University taxonomy term field](../images/customer-groups-4.png)
 
-      This *University* field will now appear on user account edit forms, and customers will be able to enter their own universities. If you do not want customers to have access to this field, you can use the [Field permissions] contrib module to provide that functionality. Also, you might want to consider using [Profiles](../03.profiles) to store the information instead of customer accounts, depending on what other information you might need to capture. The [Profile management](../03.profiles/03.profile-management) documentation page describes how the Field permissions module can be used to limit access to certain fields.
+      This *University* field will now appear on user account edit forms, and customers will be able to enter their own universities. If you do not want customers to have access to this field, you can use the [Field permissions] contrib module to provide that functionality. Also, you might want to consider using [Profiles](../profiles) to store the information instead of customer accounts, depending on what other information you might need to capture. The [Profile management](../profiles/#profile-management) documentation page describes how the Field permissions module can be used to limit access to certain fields.
 
       Once you've created your *University* field, it can be added to Order views and sales reports. If you need to create discounts based on a customer group taxonomy like our *Universities* example, you'll probably need to look for a contrib module or create custom code. A condition for customer groups based on taxonomies does not exist in Drupal Commerce core. If you decide to write custom code, take a look at the *Product category* condition that's provided by the *Product* module. Specifically, you can use the code in the `OrderProductCategory` plugin and the `ProductCategoryTrait` trait as a starting point.
 
 ## Links and resources
+
 * Drupal 8 User Guide documentation on [Creating a Role]
 * Drupal 8 User Guide documentation on [Concept: Taxonomy]
 * [Field permissions] module

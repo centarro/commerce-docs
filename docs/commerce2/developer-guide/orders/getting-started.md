@@ -40,7 +40,7 @@ can have the more simplistic *Default* workflow.
 
 Each order type can control its refresh settings to control how often
 order drafts are processed. This controls the [order refresh
-process.](../03.order-processing)
+process.](#order-refresh-and-processing)
 
 ![Order type cart settings](../images/order-types-cart.png)
 
@@ -93,9 +93,9 @@ Once you've made the appropriate selections, you are taken to the order creation
 
 ![](../images/order_details.png)
 
-As you move further down, you'll see that there is an "Adjustments" section. This where you can add promotions, add a shipping amount, add tax, as well as, any custom amount to the order total. ([See steps on creating a promotion](../../../user-guide/promotions/create-promotion))
+As you move further down, you'll see that there is an "Adjustments" section. This where you can add promotions, add a shipping amount, add tax, as well as, any custom amount to the order total. ([See steps on creating a promotion](../../../user-guide/promotions))
 
- And finally, you can apply coupons to the order. ([See steps on creating a coupon](../../../06.product-merchandising/02.create-coupon))
+ And finally, you can apply coupons to the order. ([See steps on creating a coupon](../../../user-guide/promotions/#coupons))
 
 ![](../images/applying_coupons_to_order.png)
 
@@ -253,6 +253,6 @@ function my_module_theme($existing, $type, $theme, $path) {
 }
 ```
 
-You must also make sure your Drupal site is sending emails in HTML properly. Out of the box, Drupal does not do this. See [Sending HTML emails](../../03.core/02.html-emails) on how to ensure emails are being formatted properly, and that your theme's template is being used to render the emails.
+You must also make sure your Drupal site is sending emails in HTML properly. Out of the box, Drupal does not do this. See [Sending HTML emails](../../core/html_emails) on how to ensure emails are being formatted properly, and that your theme's template is being used to render the emails.
 
 !!! warning "If your Drupal site is not using your theme to render emails, it may not pick up your overridden template."

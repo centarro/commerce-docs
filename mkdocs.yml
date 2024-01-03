@@ -10,7 +10,11 @@ nav:
       - Contribute: 'commerce2/contribute.md'
       - Developer Guide:
         - commerce2/developer-guide/index.md
-        - Core: 'commerce2/developer-guide/core.md'
+        - Core:
+          - commerce2/developer-guide/core/core.md
+          - Conditions: 'commerce2/developer-guide/core/conditions.md'
+          - Sending HTML emails: 'commerce2/developer-guide/core/html_emails.md'
+          - Understanding resolvers: 'commerce2/developer-guide/core/understanding_resolvers.md'
         - Products:
           - Getting started: 'commerce2/developer-guide/products/getting-started.md'
           - Product Information Structure: 'commerce2/developer-guide/products/product-information-structure.md'
@@ -50,6 +54,7 @@ nav:
         - Recurring:
           - Getting started: 'commerce2/developer-guide/recurring/getting-started.md' 
           - Subscriptions: 'commerce2/developer-guide/recurring/subscriptions.md'
+        - Adapting from 1.x: 'commerce2/developer-guide/adapting-from-1x.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'

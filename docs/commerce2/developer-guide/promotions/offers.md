@@ -19,7 +19,8 @@ $offer->apply($order_item, $this);
   
 ## Default offer types
 
- Commerce core includes 4 default offers types. They are:
+Commerce core includes 4 default offers types. They are:
+
 * Fixed amount off each matching product
 * Fixed amount off the order subtotal
 * Percentage off each matching product
@@ -34,6 +35,7 @@ For both the “Fixed amount off” options, an “Amount” data entry field wi
 ![Promotion edit form offers percentage](../images/Promotion_offers_percentage.png)
 
 ## Offer type interface and base class
+
 The `PromotionOfferInterface`, as defined in `web/modules/contrib/commerce/modules/promotion/src/Plugin/Commerce/PromotionOffer/PromotionOfferInterface.php`, extends a few standard core plugin interfaces and defines two new methods. The first is:
 
 ```
@@ -75,7 +77,7 @@ web/modules/contrib/commerce/modules/promotion/src/Plugin/Commerce/PromotionOffe
     ```
 
     As in other plugin definitions, `id` needs to be a unique machine name. The `label` will appear on the Promotion edit form in the list of Offer choices. And since this will be an order item offer, the entity_type is set to “commerce_order_item.” (The alternative is "commerce_order". Once we enable our custom module (or rebuild the plugins cache if the module is already enabled), you should see the new Offer option, like this:
-    ![Promotion offer simple example](Promotion_example_simple.png)
+    ![Promotion offer simple example](../images/Promotion_example_simple.png)
 
     Since `FixedAmountOffBase` takes care of all the configuration code, we just need to implement the `apply()` method. Here we do some basic error checking, create the adjustment amount, create the adjustment, and add the adjustment to the order item.
 
@@ -133,7 +135,7 @@ web/modules/contrib/commerce/modules/promotion/src/Plugin/Commerce/PromotionOffe
     }
     ```
     To see the configuration form build/validate/submit methods, you can view the [full source code](https://gist.github.com/lisastreeter/d7bfeff9ef948c4cd3e7a1daad1c9b63). Here's what our configuration form looks like on the Promotion edit page:
-    ![Promotion offer advanced example](Promotion_example_advanced.png)
+    ![Promotion offer advanced example](../images/Promotion_example_advanced.png)
 
     The code in our configuration methods is very similar to the code provided in `FixedAmountOffBase`. We just needed to handle the quantity value in addition to the amount. Similarly, our `apply()` method closely resembles the `apply()` method of our Simple Example above and the `OrderItemFixedAmountOff` offer type. After some error checking, we calculate the adjustment amount like this:
     ```

@@ -8,7 +8,7 @@ The fulfillment process of an order depends on the type of store a site is runni
 
 Commerce 2 allows developers the flexibility to customise the steps that an order goes through, from creation to completion. By default, it makes available four different workflows: Default, Default with validation, Fulfillment, and Fulfillment with validation. Custom workflows can be defined by developers. An order type can be associated with a specific workflow, and that forces the order to follow that workflow's rules.
 
-This functionality is provided by the [State machine module], a core dependency for Drupal Commerce. See the [State machine documentation](../../core/#state-machine) to learn more about this module and its uses beyond Order workflows.
+This functionality is provided by the [State machine module], a core dependency for Drupal Commerce. See the [State machine documentation](../../core/core/#state-machine) to learn more about this module and its uses beyond Order workflows.
 
 This documentation section covers the following topics:
 
@@ -207,7 +207,7 @@ You can also cancel the order at any step, as defined in the workflow's transiti
 
 In many cases we may want to do more when a transition occurs than simply moving the order to the next state. Let's say that we want to send an email to the customer when an order has been processed and is awaiting for fulfillment. That should happen when a store manager clicks on the "Process order" button for an Order.
 
-The [State machine](../../../core/#state-machine) module that provides the foundation for the workflows emits two events when a transition occurs. The events are named ``commerce_order.TRANSITION_ID.TRANSITION_PHASE``, where ``TRANSITION_ID`` is the key of the transition's definition in the YAML file, and ``TRANSITION_PHASE`` is "pre_transition" for the first event that is emitted just before the transition has occurred, and "post_transition" for the second event that is emitted just after it.
+The [State machine](../../../core/core/#state-machine) module that provides the foundation for the workflows emits two events when a transition occurs. The events are named ``commerce_order.TRANSITION_ID.TRANSITION_PHASE``, where ``TRANSITION_ID`` is the key of the transition's definition in the YAML file, and ``TRANSITION_PHASE`` is "pre_transition" for the first event that is emitted just before the transition has occurred, and "post_transition" for the second event that is emitted just after it.
 
 In our case we want to send the email after the transition to the Fulfillment state has occurred. We therefore need to create an event subscriber that listens to the ``commerce_order.fulfill.post_transition`` event.
 

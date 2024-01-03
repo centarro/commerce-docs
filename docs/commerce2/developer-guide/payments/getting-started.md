@@ -100,7 +100,7 @@ The *Display name* will be displayed to customers on the *Payment information* c
 
 #### Conditions
 
-The Conditions section of the configuration page allows you to specify the rules used to determine whether the payment gateway should be an available option for the customer. For more information about conditions, including documentation on how to customize existing conditions or create new ones, see the [Conditions](../../core/#01.conditions) documentation.
+The Conditions section of the configuration page allows you to specify the rules used to determine whether the payment gateway should be an available option for the customer. For more information about conditions, including documentation on how to customize existing conditions or create new ones, see the [Conditions](../../core/conditions) documentation.
 
 Finally, you can also specify whether a payment gateway is enabled. Disabled payment gateways are not available to any customers, regardless of conditions, during checkout. Here is a full example of configuration for a *Manual* payment gateway:
 

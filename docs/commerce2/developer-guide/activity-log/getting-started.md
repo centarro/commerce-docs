@@ -21,7 +21,7 @@ When the Commerce Log module is installed, logs will be automatically generated 
 
 This example order has had 3 logs created. The first (bottom-most) entry was created when the customer added an item to his cart. Logs are also created when items are removed from a cart. 
 
-The next two logs were created when the order was placed. All of the default Order state transition events are logged: *Placed*, *Validated*, *Fulfilled*, and *Canceled*. For more information on state transition events, see the [State machine documentation](../../core/#state-machine).
+The next two logs were created when the order was placed. All of the default Order state transition events are logged: *Placed*, *Validated*, *Fulfilled*, and *Canceled*. For more information on state transition events, see the [State machine documentation](../../core/core/#state-machine).
 
 The "Order activity" listing is a Views block that can be modified through the Admin UI like any other [View].
 
@@ -76,7 +76,7 @@ Let's look at the components of the `generate()` method in more detail.
 
 We pass the `cart` entity into the generate function, which uses it to set the `source_entity_id` and `source_entity_type` field values for the Log entity. The Source entity Id will be the unique order Id of the cart, and the Source entity type will be set to `commerce_order`. We are able to get the Cart entity from the event, `Drupal\commerce_cart\Event\CartEntityAddEvent` in this case. That event provides the `getCart()` and `getOrderItem()` methods (as well as `getEntity()` and `getQuantity()`).
 
-The Cart module provides a reference for all available Cart events in `Drupal\commerce_cart\Event\CartEvents`. Similar event definitions are also available in the Commerce Order, Payment, Price, Product, Promotion, Store, and Tax modules. Also, the [State machine module](../../core/#state-machine) provides workflow transition events.
+The Cart module provides a reference for all available Cart events in `Drupal\commerce_cart\Event\CartEvents`. Similar event definitions are also available in the Commerce Order, Payment, Price, Product, Promotion, Store, and Tax modules. Also, the [State machine module](../../core/core/#state-machine) provides workflow transition events.
 
 Logs are internal entities, always managed and viewed in the context of their source entity. The source entity access is used when possible. A log can be updated or deleted if the source entity can be updated. There are currently no limitations imposed on log creation.
 

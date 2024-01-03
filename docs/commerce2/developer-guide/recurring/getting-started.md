@@ -28,7 +28,7 @@ The Commerce Recurring module provides a variety of options for creating subscri
 
 Billing periods are contiguous and represent [half-open ranges](http://wrschneider.github.io/2014/01/07/time-intervals-and-other-ranges-should.html) (i.e., the end date is not included in the duration).
 
-**How is a customer charged "repeatedly"?** The Commerce Recurring module relies on the Drupal's [Cron service](https://api.drupal.org/api/drupal/core%21core.api.php/function/hook_cron/8.5.x) and the [AdvancedQueue module](https://www.drupal.org/project/advancedqueue) to run recurring tasks in the background. Specifically, at the end of each billing period, one AdvancedQueue job is created for charging the customer for the current billing period, and a second AdvancedQueue job is created for renewing the subscription. See [Close and renew subscriptions](../subscriptions/#close-and-renew-subscriptions) for additional details.
+**How is a customer charged "repeatedly"?** The Commerce Recurring module relies on the Drupal's [Cron service](https://api.drupal.org/api/drupal/core%21core.api.php/function/hook_cron/8.5.x) and the [AdvancedQueue module](https://www.drupal.org/project/advancedqueue) to run recurring tasks in the background. Specifically, at the end of each billing period, one AdvancedQueue job is created for charging the customer for the current billing period, and a second AdvancedQueue job is created for renewing the subscription. See [Close and renew subscriptions](./subscriptions/#close-and-renew-subscriptions) for additional details.
 
 
 ## Subscription types
@@ -38,7 +38,7 @@ Out of the box, the Commerce Recurring module provides two types of subscription
 See also:
 
  * Product variation subscriptions: [Setting up subscriptions](#setting-up-subscriptions-first-steps)
- * Standalone subscriptions: [Create standalone subscriptions](../subscriptions/#create-standalone-subscriptions) 
+ * Standalone subscriptions: [Create standalone subscriptions](./subscriptions/#create-standalone-subscriptions) 
  * Subscription Type plugin and charges
 
 ## Billing Schedules
@@ -95,15 +95,15 @@ As long as a subscription is active, the customer is automatically charged at re
 
 <h3>Step 1 - Create/enable a payment method</h3>
 
-Each subscription has a Payment method, so you'll need to set up at least one enabled payment gateway that can be used by a customer to create a payment method for subscriptions. Note that the payment gateway must support stored payment methods, e.g. card on file, continuous authorizations, etc. Please refer to [the list of known payment gateways that are being supported by their maintainers](../../payments/gateways) to identify "onsite" gateways that can be used.
+Each subscription has a Payment method, so you'll need to set up at least one enabled payment gateway that can be used by a customer to create a payment method for subscriptions. Note that the payment gateway must support stored payment methods, e.g. card on file, continuous authorizations, etc. Please refer to [the list of known payment gateways that are being supported by their maintainers](../payments/gateways) to identify "onsite" gateways that can be used.
 
 <h3>Step 2 - Create a billing schedule.</h3>
 
-Billing schedules are configuration entities that can be created through the admin UI: `Commerce >> Configuration >> Payment`. See [Subscriptions overview](../getting-started/#overview) for additional information on billing schedules.
+Billing schedules are configuration entities that can be created through the admin UI: `Commerce >> Configuration >> Payment`. See [Subscriptions overview](./getting-started/#overview) for additional information on billing schedules.
 
 <h3>Step 3 - Enable subscriptions for a product variation type</h3>
 
-While it is possible to [create standalone subscriptions](../subscriptions/#create-standalone-subscriptions), the more typical case is to create a product variation that will trigger the subscription. The Commerce Recurring module defines a `PurchasableEntitySubscriptionTrait` for product variations. This trait can be enabled by checking the "Allow subscriptions" checkbox on the Product variation type edit form. 
+While it is possible to [create standalone subscriptions](./subscriptions/#create-standalone-subscriptions), the more typical case is to create a product variation that will trigger the subscription. The Commerce Recurring module defines a `PurchasableEntitySubscriptionTrait` for product variations. This trait can be enabled by checking the "Allow subscriptions" checkbox on the Product variation type edit form. 
 
 When the trait is enabled for a product variation type, two new fields are added to product variations of this type. One is a reference to the Billing schedule configuration entity. The second additional field is a reference to a Subscription Type plugin. Unless a custom subscription type plugin has been created, the only option you'll see for the variation's subscription type is, "Product variation."
 

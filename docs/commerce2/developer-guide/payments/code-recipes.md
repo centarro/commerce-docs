@@ -214,7 +214,7 @@ $payemnt->save();
 ```
 
 ### Filter payment gateways available for an order
-The payment module includes a `FilterPaymentGatewaysEvent` event that can be used whenever filtering available gateways using [Conditions](../../03.core/01.conditions) is not sufficient. In this example, we use the `data` field on `Order` entities to store a list of explicitly excluded payment gateways.
+The payment module includes a `FilterPaymentGatewaysEvent` event that can be used whenever filtering available gateways using [Conditions](../../core/conditions) is not sufficient. In this example, we use the `data` field on `Order` entities to store a list of explicitly excluded payment gateways.
 
 First, use the `data` field to store a payment gateway to be excluded.
 ```php
