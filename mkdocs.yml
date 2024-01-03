@@ -47,6 +47,9 @@ nav:
           - Getting started: 'commerce2/developer-guide/activity-log/getting-started.md' 
           - Code Recipes: 'commerce2/developer-guide/activity-log/code-recipes.md'
         - Shipping: 'commerce2/developer-guide/shipping/getting-started.md'
+        - Recurring:
+          - Getting started: 'commerce2/developer-guide/recurring/getting-started.md' 
+          - Subscriptions: 'commerce2/developer-guide/recurring/subscriptions.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
