@@ -44,6 +44,11 @@ nav:
           - Workflows: 'commerce2/developer-guide/orders/workflows.md'
           - Code Recipes: 'commerce2/developer-guide/orders/code-recipes.md'
         - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
+        - Pricing:
+          - Getting started: 'commerce2/developer-guide/pricing/getting-started.md' 
+          - Prices: 'commerce2/developer-guide/pricing/prices.md'
+          - Adjustments: 'commerce2/developer-guide/pricing/adjustments.md'
+          - Currencies: 'commerce2/developer-guide/pricing/currencies.md'
         - Promotions:
           - Getting started: 'commerce2/developer-guide/promotions/getting-started.md' 
           - Offers: 'commerce2/developer-guide/promotions/offers.md'
