@@ -4,7 +4,9 @@ taxonomy:
     category: docs
 ---
 
-! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+
+This guide is designed to help you configure and customize the checkout process for your Drupal Commerce website. Whether you're a site administrator, developer, or store owner, this documentation provides step-by-step instructions and best practices for creating a seamless and secure checkout experience.
 
 ## Configure checkout
 

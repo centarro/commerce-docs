@@ -13,7 +13,7 @@ Click 'Add payment gateway', choose your provider from the plugin list and compl
 ## Authorization
 ### Create an authorization
 
-**todo We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute.""
 
 Some gateways will support backend payment entry. Especially manual payments.
 
@@ -32,6 +32,7 @@ Similary, in our case, let's say we had added a payment authorization for an ord
  Once you confirm, the payment page should look like this, with a "(Voided)" added next to the payment that you just voided.
  
 ![image7](../user-guide/images/payment_voided.png)
+
 ### Capture an authorization
 
 Payments can be authorized during the checkout flow and captured separately by store administrators at a later time (e.g., when a shipment is sent to fulfillment, when a shipment is shipped, or when a shipment is delivered). Note: not all payment gateways support this feature. Store administrators will only have the ability to capture a prior payment authorization if the payment gateway was configured for this type of transaction at the time the order was placed.

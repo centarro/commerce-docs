@@ -1,4 +1,4 @@
-@todo ! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ## Create an order
 
@@ -24,9 +24,8 @@ Next, order items can be created. The order items are the products the customer 
 
 Once satisfied, click **Save**
 
-**@todo Need to add documentation for adjustments and coupons.**
 
-**@todo We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute. Need to add documentation for adjustments and coupons."
 
 ## View carts
 
@@ -35,13 +34,13 @@ Once satisfied, click **Save**
 ## Manage and order
 
 
-**@todo We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ### Order workflows
 
 High level explanation of "draft" orders, workflows.
 
-**@todo We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 Explain what a workflow is (states and transitions) at a high level. 
 
@@ -51,7 +50,7 @@ How to change an order's workflow.
 
 ### Processing an order
 
-**@todo We need help filling out this section! Feel free to follow the *edit this page* link and contribute.** @todo
+!!! note We need help filling out this section! Feel free to follow the *edit this page* link and contribute.""
 
 How someone would process an order in a workflow.
 
