@@ -56,9 +56,10 @@ This "Create a new order" form is available only for administrative users with a
 ![Create order admin page](../images/overview-3.png)
 
 
-For additional information about how to customize and manage *customer accounts* in Drupal Commerce, see the [Customer accounts documentation page](../04.customer-accounts).
+For additional information about how to customize and manage *customer accounts* in Drupal Commerce, see the [Customer accounts documentation page](../customer-accounts-groups/#customer-accounts).
 
 ### Profile module
+
  Each customer account has one or more *profiles*, which are provided by the *Profile* module.
 
 ![Data model for Customer accounts and Profiles](../images/overview-4.png)
@@ -67,12 +68,12 @@ The [Profile module] is a popular, well-maintained Drupal 8 contributed module t
 
 Customers can have multiple billing and shipping profiles. Each *customer profile* has a single *address* field, which is provided by the *Address* module. The collection of all profiles belonging to a customer account is called the customer's *address book*. When an order is placed, *copies* of customer profiles are saved to the order so that the integrity of the data at the time of the order is maintained even if the customer's profile data is subsequently updated.
 
-For additional information about how to customize and manage *customer profiles* in Drupal Commerce, see the [Profiles documentation section](../03.profiles).
+For additional information about how to customize and manage *customer profiles* in Drupal Commerce, see the [Profiles documentation section](../profiles).
 
 ### Address module
 The [Address module] is another popular, well-maintained Drupal 8 contributed module that is required by Drupal Commerce. It provides functionality for storing, validating, and displaying international postal addresses. Within Drupal Commerce, customer addresses are all encapsulated into *customer profiles*. They do not exist independently, and every customer profile should have exactly one address.
 
-For additional information about how to customize address data entry forms and the display of addresses in Drupal Commerce, see the [Addresses documentation section](../02.addresses).
+For additional information about how to customize address data entry forms and the display of addresses in Drupal Commerce, see the [Addresses documentation section](../addresses).
 
 [User module]: https://www.drupal.org/docs/8/core/modules/user
 [Profile module]: https://www.drupal.org/project/profile

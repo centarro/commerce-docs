@@ -235,3 +235,33 @@
 .md-typeset .success > summary:before {
   background-color: var(--admonition-success-color);
 }
+
+/* - simple-cared  */
+.md-typeset .admonition.simple-card,
+.md-typeset details.simple-card {
+  border-color: transparent;
+}
+.md-typeset .simple-card > .admonition-title,
+.md-typeset .simple-card > summary {
+  padding: 1rem 0.5rem 0.5rem;
+  background-color: transparent;
+  border-bottom: 0.05rem solid var(--md-typeset-table-color);
+  margin: 0;
+  font-size: 1rem;
+}
+.md-typeset .simple-card > .admonition-title::before,
+.md-typeset .simple-card > summary::before {
+  background-color: transparent;
+  content: none;
+}
+.md-typeset .simple-card img {
+  border: none;
+  vertical-align: middle;
+  max-width: 200px;
+}
+.md-typeset .admonition.simple-card table:not([class]) {
+  display: table;
+}
+.md-typeset .admonition.simple-card .md-typeset__table {
+  min-width: 100%;
+}

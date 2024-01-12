@@ -10,7 +10,11 @@ nav:
       - Contribute: 'commerce2/contribute.md'
       - Developer Guide:
         - commerce2/developer-guide/index.md
-        - Core: 'commerce2/developer-guide/core.md'
+        - Core:
+          - commerce2/developer-guide/core/core.md
+          - Conditions: 'commerce2/developer-guide/core/conditions.md'
+          - Sending HTML emails: 'commerce2/developer-guide/core/html_emails.md'
+          - Understanding resolvers: 'commerce2/developer-guide/core/understanding_resolvers.md'
         - Products:
           - Getting started: 'commerce2/developer-guide/products/getting-started.md'
           - Product Information Structure: 'commerce2/developer-guide/products/product-information-structure.md'
@@ -21,15 +25,41 @@ nav:
         - Cart:
           - Cart events: 'commerce2/developer-guide/cart/cart-events.md'
           - Customize cart: 'commerce2/developer-guide/cart/customize-cart.md'
-        - Stores:
-          - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
-          - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
         - Customers:
           - Getting started: 'commerce2/developer-guide/customers/getting-started.md'
           - Addresses: 'commerce2/developer-guide/customers/addresses.md'
           - Profiles: 'commerce2/developer-guide/customers/profiles.md'
-          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'
+          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'  
+        - Payments:
+          - Getting started: 'commerce2/developer-guide/payments/getting-started.md'
+          - Gateways: 'commerce2/developer-guide/payments/gateways.md'
+          - Creating Payment Gateway: 'commerce2/developer-guide/payments/creating-payment-gateway.md'
+          - Payments: 'commerce2/developer-guide/payments/payments.md'
+          - Code Recipes: 'commerce2/developer-guide/payments/code-recipes.md'
+        - Stores:
+          - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
+          - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
+        - Orders:
+          - Getting started: 'commerce2/developer-guide/orders/getting-started.md' 
+          - Workflows: 'commerce2/developer-guide/orders/workflows.md'
+          - Code Recipes: 'commerce2/developer-guide/orders/code-recipes.md'
         - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
+        - Pricing:
+          - Getting started: 'commerce2/developer-guide/pricing/getting-started.md' 
+          - Prices: 'commerce2/developer-guide/pricing/prices.md'
+          - Adjustments: 'commerce2/developer-guide/pricing/adjustments.md'
+          - Currencies: 'commerce2/developer-guide/pricing/currencies.md'
+        - Promotions:
+          - Getting started: 'commerce2/developer-guide/promotions/getting-started.md' 
+          - Offers: 'commerce2/developer-guide/promotions/offers.md'
+        - Activity log:
+          - Getting started: 'commerce2/developer-guide/activity-log/getting-started.md' 
+          - Code Recipes: 'commerce2/developer-guide/activity-log/code-recipes.md'
+        - Shipping: 'commerce2/developer-guide/shipping/getting-started.md'
+        - Recurring:
+          - Getting started: 'commerce2/developer-guide/recurring/getting-started.md' 
+          - Subscriptions: 'commerce2/developer-guide/recurring/subscriptions.md'
+        - Adapting from 1.x: 'commerce2/developer-guide/adapting-from-1x.md'
       - User Guide:
         - commerce2/user-guide/index.md
         - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
@@ -74,11 +104,17 @@ copyright:
 plugins:
   - search
   - include_dir_to_nav
+  - open-in-new-tab
 markdown_extensions:
   - admonition
   - attr_list
+  - md_in_html
   - tables
   - md_in_html
   - pymdownx.superfences
+  - pymdownx.details
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

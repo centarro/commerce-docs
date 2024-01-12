@@ -4,27 +4,18 @@ taxonomy:
     category: docs
 ---
 
-**@todo! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 Shipping is enabled in Drupal Commerce 2.x with an external module
 [Commerce Shipping](https://drupal.org/project/commerce_shipping). This
 module only provides an API and plugins for flat rate (both per order and per
 item) shipping functionality. As with Drupal Commerce 1.x, you will need a plugin or plugins 
 provided by other module(s) for calculating actual shipping costs with shipping
-services. Currently available plugins with status as of 6 November 2018:
-
-* Flat Rate/Flate per Item - Beta, included in Commerce Shipping.
-* [Fedex](https://www.drupal.org/project/commerce_fedex) - Alpha.
-* [Commerce Australia Post](https://www.drupal.org/project/commerce_auspost) - Beta
-* [Commerce NZPost](https://www.drupal.org/project/commerce_nzpost) - V8.x-3.3
-* [USPS](https://www.drupal.org/project/commerce_usps) - In progress, not yet functional.
-* [Canada Post](https://www.drupal.org/project/commerce_canadapost) - Alpha
-* [UPS](https://www.drupal.org/project/commerce_ups) - Alpha
-* Other modules/plugins such as Kiala have yet to be ported or created for Drupal Commerce 2.x.
+services. See the full list of [currently available plugins](../developer-guide/shipping/getting-started/#available-shipping-methods).
 
 ## Before you begin
 
-**@todo! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 If you only need flat rates for shipments, you will be able to install only
 Commerce Shipping. The recommended way to install Commerce shipping is with Composer.
@@ -51,12 +42,12 @@ composer require drupal/commerce_fedex
 drupal module:install commerce_fedex
 ```
 
-**@todo Explain core concepts (packaging, boxes, shipments.)**
+!!! task "Explain core concepts (packaging, boxes, shipments.)"
 
 
 ## Enable shipping for products
 
-! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 Whatever shipping method you are using, you will need to set any shippable
 product variation types as shippable. Go to `/admin/commerce/config/product-variation-types/`
@@ -73,16 +64,16 @@ Edit your order type:
 
 ## Configure shipping methods
 
-**@todo! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ### Using FedEx, USPS, UPS
 
-**@todo Explain these are modules which can be enabled, follow their instructions.**
+!!! note "Explain these are modules which can be enabled, follow their instructions."
 
 ### Adding custom shipping rates
 
 ## Managing shipments
 
-**@todo We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 Workflow for handling shipments

@@ -41,7 +41,7 @@ How is this data represented in Drupal Commerce?
 
 !!! info "In the next section, we'll go through the Drupal Commerce product structure concepts and terminology in greater detail."
 
-This section describes Drupal Commerce products at a conceptual level. For step-by-step instructions for setting up products for your site, see the [Product Architecture documentation](../../02.product-architecture). For more specific, technical explanations of the product-related data structures and relationships, see the [Product Information Structure documentation](../03.product-information-structure).
+This section describes Drupal Commerce products at a conceptual level. For step-by-step instructions for setting up products for your site, see the [Product Architecture documentation](../product-architecture). For more specific, technical explanations of the product-related data structures and relationships, see the [Product Information Structure documentation](../product-information-structure).
 
 #### Terminology
 
@@ -87,7 +87,7 @@ What about customizable products? Suppose you sell a Writing Journal that comes 
 
 Do you also need a product attribute for *Name*? Well, it depends... are you going to carry stock for writing journals pre-printed with some of the most common names? John's Journal, Mary's Journal, Luke's Journal, Anna's Journal... If so, then yes, you'd create a SKU for every color/name combination you offer. And you'd create a product attribute for *Name* with a list of specific names as its values.
 
-What about names for which you're not going to carry stock? For those, you can create an additional *Name* product attribute value, called "Other" (or "Custom") and then provide a way for customers to enter a name when they purchase a product. *(See the [Add to cart form documentation](../../04.displaying-products/02.add-to-cart-form) for more information on how to set this up.)* You'll create a SKU and a product variation for the "Other" *Name* attribute value in each of the available colors.
+What about names for which you're not going to carry stock? For those, you can create an additional *Name* product attribute value, called "Other" (or "Custom") and then provide a way for customers to enter a name when they purchase a product. *(See the [Add to cart form documentation](../displaying-products/#add-to-cart-form) for more information on how to set this up.)* You'll create a SKU and a product variation for the "Other" *Name* attribute value in each of the available colors.
 
 Alternatively, suppose you're only going to carry stock for writing journals in each available color, with no pre-printed titles. In that case, you'll only need a single product attribute for *Color*. The name to be used for the titles will not be a product attribute; instead, it will be an extra order item field, stored with the order data.
 
@@ -97,10 +97,10 @@ Suppose our store sells both traditional books (in a variety of formats) and Cus
 - When customers buy a traditional book, they will specify its *Format*. The *Traditional book* ***product variation type*** will have *Format* as its only ***product attribute***. And the *Traditional book* ***product type*** will have product variations of type *Traditional book*.
 - When customers buy a journal, they will specify its Color and a Name for the title. The *Writing journal* ***product variation type*** will have *Color* and *Name* as its ***product attributes***. And the *Writing journal* product type will have product variations of type *Writing journal*.
 
-Just as you can define any product attributes you need to match your specific products, you can define your own product and product variation types. In Drupal Commerce, there isn't a set of predefined "product types". You are free to create as many product types as you need to precisely define your products. The [Product Architecture documentation](../../02.product-architecture) describes a variety of approaches to product architecture.
+Just as you can define any product attributes you need to match your specific products, you can define your own product and product variation types. In Drupal Commerce, there isn't a set of predefined "product types". You are free to create as many product types as you need to precisely define your products. The [Product Architecture documentation](../product-architecture) describes a variety of approaches to product architecture.
 
 When you first create a Drupal Commerce site, you will see a *Default* product type and a *Default* product variation type. You can use these types as is, customize them, or delete them from your site completely. If you have a homogenous list of products, you may not need to create any custom product/variation types; the default types may be sufficient. If you do not customize the Default product type, as provided by Drupal Commerce, in any way, then your administrative users will add and edit products using a form that looks like this:
 
 ![Add default type product](../images/overview-concept-1.png)
 
-If you would like to customize the forms used to enter products, see the [Editing products page](../../03.product-management/02.product-data-entry) in the [Product Management documentation](##product-management.md).
+If you would like to customize the forms used to enter products, see the [Editing products page](../product-management/#editing-products) in the [Product Management documentation](../product-management).

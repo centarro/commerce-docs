@@ -61,7 +61,7 @@ includes other classes when they are first needed. When Composer runs, it
 regenerates the autoloader, giving it the locations of the newly downloaded
 dependencies.
 
-Commerce utilizes various [libraries and dependencies](../../02.developer-guide/03.core/00.libraries-and-dependencies). Without Composer and the
+Commerce utilizes various [libraries and dependencies](../developer-guide/core/core/#php-libraries). Without Composer and the
 generated class autoloader you cannot use Commerce. The libraries we depend on
 will not be available, even if manually installed.
 
@@ -201,7 +201,7 @@ If you are new to Drupal, you will want to learn more about [Drupal issue queues
 Drupal Commerce is an actively maintained project, and oftentimes you'll be
 able to search its [Issue Queue] to find an answer to a question or a solution to
 a problem/bug. Solutions are usually presented in the form of a patch. See the
-[Patching section](../../02.developer-guide/02.install-update/07.patching) of this documentation
+[Patching section](../installation/#patching) of this documentation
 guide for information about applying patches.
 
 ### Search Drupal Answers on StackExchange

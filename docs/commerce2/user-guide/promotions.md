@@ -20,7 +20,7 @@ Imagine that your store is planning to run a special New Year campaign where you
 
 * You can create a new promotion by going to ``/admin/commerce/promotions`` and clicking the "Add promotion" button.
 
-![Admin ui for creating a promotion](./images/creating_a_promotion.png)
+![Admin ui for creating a promotion](../user-guide/images/creating_a_promotion.png)
 
 * Give your promotion a descriptive name, for example, "10% off on $50 or more orders".
 
@@ -28,36 +28,36 @@ Imagine that your store is planning to run a special New Year campaign where you
 
 * Optionally, you can also enter a description for the promotion. This description can only be viewed by administrative users, not customers.
 
-![Admin ui for defining a new promotion](./images/creating_a_promotion_naming.png)
+![Admin ui for defining a new promotion](../user-guide/images/creating_a_promotion_naming.png)
 
 ### Setting the Offer
 
 * Let's now decide on the type of offer you'd like to give users. As our goal is to give customers a 10% discount on orders worth $50 or more, let's select the "Percentage off the order subtotal" option under ``Offer type``. Notice that whenever you change the offer type, the form changes below the list of options to provide additional inputs.
 * Now enter the percentage you'd like to give the customer as the "Percentage off". For this example, we enter "10".
 
-![Admin ui for setting promotion offer](./images/promotion_offer.png)
+![Admin ui for setting promotion offer](../user-guide/images/promotion_offer.png)
 
 !!! note
-    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Offer types provided by Drupal Commerce core. Note that additional offer types can be created in custom code by a developer. See the [Create an offer type](../../../developer-guide/promotions/create-an-offer-type) page in the Developer guide for documentation and example code.
+    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Offer types provided by Drupal Commerce core. Note that additional offer types can be created in custom code by a developer. See the [Create an offer type](../developer-guide/promotions/offers) page in the Developer guide for documentation and example code.
 
 ### Adding Conditions
 
 The conditions section allows you to further manage the promotions so that you can tell the system to apply the promotion only if the order meets certain criteria. There are three categories of Conditions: Customer, Order, and Products. Click on each to see condition options in that category. You can specify multiple conditions. For this example, we want to add a condition so that our promotion will only apply to orders worth $50 or more. This is the "Current order total" condition, an "Order" condtion. Similar to the "Offer type" options, whenever we select a Condition type, a new form will appear under that condition. We'll select the "Greater than or equal to" Operator and enter "50" as the Amount:
 
-![Admin UI for setting promotion conditions](./images/promotion_conditions.png)
+![Admin UI for setting promotion conditions](../user-guide/images/promotion_conditions.png)
 
 At the end of the Conditions section of the page, you can specify whether "all conditions must pass" or "only one condition must pass". Since our example promotion has only one Condition, it doesn't matter which option we select. We'll leave it set to the default, "all conditions must pass":
 
-![Admin UI for setting promotion conditions](./images/promotion_all_or_one_condition.png)
+![Admin UI for setting promotion conditions](../user-guide/images/promotion_all_or_one_condition.png)
 
 !!! note
-    See the [Edit a promotion](../edit-promotion) documentation page for a description of all Condition types provided by Drupal Commerce core. Note that additional condition types can be created in custom code by a developer. See the [Create a condition](../../../developer-guide/promotions/create-a-condition) page in the Developer guide for documentation and example code.
+    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Condition types provided by Drupal Commerce core. Note that additional condition types can be created in custom code by a developer. See the [Create a condition](../developer-guide/promotions/offers) page in the Developer guide for documentation and example code.
 
 ### Additional Configuration
 
 On the right-hand side of the page, you'll see options for setting additional limitations on the promotion. For this example, we stated that we wanted to limit our promotion to a specific date range. So we'll enter a Start date of "12/31/2021" at "10:00 PM" and an End date of "1/7/2020" at "11:59 PM", right before midnight. To do so, we need to enable the "Provide an end date" option by clicking the checkbox.
 
-![Admin UI for setting promotion conditions](./images/promotion_start_end_date.png)
+![Admin UI for setting promotion conditions](../user-guide/images/promotion_start_end_date.png)
 
 Note that the date and time constraints are applied based on the Timezone of the *Store*, not that of the customer.
 
@@ -65,7 +65,7 @@ Note that the date and time constraints are applied based on the Timezone of the
 
 Now, that you've entered the necessary conditions let's "Save" the promotion. You can test this out by adding a product or a number of products to the cart. Once the order total reaches $50 or more, note, a discount is automatically applied to the order total.
 
-![](./images/promotion_discount_applied.png)
+![](../user-guide/images/promotion_discount_applied.png)
 
 !!! tip
      If you want to test a promotion before it goes live, use the "Customer role" Condition to temporarily require an administrative role. Then you can safely enable and test a promotion without exposing it to customers. In this example, you would also need to adjust the starting date to allow orders during the testing period. Just remember to restore the correct starting date and remove the Customer role condition after testing and before it needs to go live!
@@ -89,17 +89,17 @@ Commerce Core includes five different offer types. The Commerce Shipping module,
 
 The two simplest offer types are, "Fixed amount off the order subtotal" and "Percentage off the subtotal". For the "Fixed amount" offer, enter the exact amount that should be deducted from the order subtotal. If your site has multiple currencies installed, you will need to specify the currency in addition to the amount.
 
-![Fixed amount off subtotal offer UI](./images/editing_promotion_fixed_amount_currency.png)
+![Fixed amount off subtotal offer UI](../user-guide/images/editing_promotion_fixed_amount_currency.png)
 
 For the "Percentage" offer, enter the percentage that should be applied to the order subtotal to calculate the discount amount. Decimal amounts can be entered. For example, enter, "1.5" for a 1.5% discount amount. If the subtotal amount is $1,000.00, the discount will be $15.00.
 
-![Percentage off subtotal offer UI](./images/editing_promotion_percentage.png)
+![Percentage off subtotal offer UI](../user-guide/images/editing_promotion_percentage.png)
 
 #### Fixed amount or Percentage off each matching product
 
 These offer types are similar to the Fixed amount and Percentage off the order subtotal offer types but offer additional options for how the discounts are displayed and applied to individual order items.
 
-![Matching product offer types UI](./images/editing_promtion_matching_product_offers.png)
+![Matching product offer types UI](../user-guide/images/editing_promtion_matching_product_offers.png)
 
 ##### Display options
 
@@ -118,7 +118,7 @@ Use the Application options to limit the application of the discount to only ord
 
 The Buy X Get Y offer type provides discounts for 1 or more items in the customer's cart based on the existence of other items in the cart. The first part of the configuration form is the, "Customer buys" section. Use this section to specify *what must exist in the cart* in order for the discount to apply:
 
-![Bux X Get Y offer type customer buys UI](./images/editing_promotion_buy_x_get_y_buys.png)
+![Bux X Get Y offer type customer buys UI](../user-guide/images/editing_promotion_buy_x_get_y_buys.png)
 
 The "Quantity" value can be any non-negative integer or decimal amount. The "Matching" criteria are the same as the [Application options](#application-options) described in the previous section.
 
@@ -130,7 +130,7 @@ Again, there is a "Quantity" value and "Matching" criteria for these items.
 
 Finally, the third section of the form, labeled, "At a discounted value", specifies whether the items that are discounted should be discounted based on a Percentage or Fixed amount. See the explanation above for [Fixed amount or Percentage off the order subtotal](#fixed-amount-or-percentage-off-the-order-subtotal) offer types for more information.
 
-![Bux X Get Y offer type customer gets UI](./images/editing_promotion_buy_x_get_y_gets.png)
+![Bux X Get Y offer type customer gets UI](../user-guide/images/editing_promotion_buy_x_get_y_gets.png)
 
 !!! example "Example: Buy 3 get 1 free for Product X"
     Suppose you create a promotion with a "Buy X Get Y" offer type configured as follows:
@@ -159,7 +159,7 @@ Add conditions to a promotion to create limitations for its discount offer. Cond
 
 For example, here we've selected two Customer conditions. The Customer role has been set to "Authenticated user", so the customer must be logged in for the discount to apply. And the Billing address has been limited to the country of Sweden, so the discount will only apply to orders with Swedish billing addresses. "Customer email" is another Customer condition, but it has not been enabled for this example promotion.
 
-![Example customer conditions](./images/editing_promotion_customer_conditions.png)
+![Example customer conditions](../user-guide/images/editing_promotion_customer_conditions.png)
 
 Order conditions allow you to limit the promotion by the total price of the order, currency, or selected payment gateway.
 
@@ -185,7 +185,7 @@ Date and time constraints are applied based on the timezone of the Store, not th
 
 A promotion can also be limited based on total usage or on a per user basis. For example, here we've limited a promotion so that it's available to only the "first 1000 customers", and each customer can only use the discount once. 
 
-![Example customer conditions](./images/editing_promotion_usage_limits.png)
+![Example customer conditions](../user-guide/images/editing_promotion_usage_limits.png)
 
 Customer usage is tracked based on email address. If the customer is shopping as a guest and his email address is not yet known, customer usage will not be factored into the logic for determining whether the promotion applies. Once a guest customer enters an email address or logs in, a previously applied discount will be removed if its application would violate the customer usage limit.
 
@@ -194,7 +194,7 @@ Customer usage is tracked based on email address. If the customer is shopping as
 
 Compatibility options allow you to specify whether the promotion can be combined with other promotions.
 
-![Promotions compatibilty options](./images/managing_promotions_compatibility.png)
+![Promotions compatibilty options](../user-guide/images/managing_promotions_compatibility.png)
 
 * Once a promotion that is *not* compatible with other promotions is added to an order, no other promotions will be added.
 * If a promotion that is compatible with any promotion is added to an order, then any subsequent promotions with limited compatibility will *not* be added to the order.
@@ -205,7 +205,7 @@ See the [Promotions table](#ordering-promotions) documentation for information o
 
 If your promotion requires coupons, you can create and manage its coupons by clicking the "Coupons" link at the top of the promotion's Edit page:
 
-![Navigate to promotion's coupons page](./images/editing_promotion_coupons.png)
+![Navigate to promotion's coupons page](../user-guide/images/editing_promotion_coupons.png)
 
 See [Using coupons](#using-coupons) for coupon-specific documentation.
 
@@ -213,12 +213,12 @@ See [Using coupons](#using-coupons) for coupon-specific documentation.
 
 Promotions can be deleted from the [Promotions table](#managing-promotions) or using the Promotion edit form.
 
-![Deleting a promotion](./images/deleting_a_promotion.png)
+![Deleting a promotion](../user-guide/images/deleting_a_promotion.png)
 
 
 Whenever you elect to delete a promotion through the administrative UI, you will need to confirm the deletion. Deleting a promotion is an irreversible operation.
 
-![Deleting a promotion](./images/deleting_a_promotion_confirmation.png)
+![Deleting a promotion](../user-guide/images/deleting_a_promotion_confirmation.png)
 
 Whenever a promotion is deleted, all of its coupons and associated customer usage records will also be deleted. However, deleting promotions does *not* affect discounts that have already been applied to placed orders. Also, orders continue to store references to promotions, even after they are deleted.
 
@@ -235,24 +235,24 @@ Click on the Coupon tab at the top of the page. Click on "Add Coupon", and add t
 * Set the number of times this coupon can be used as the "Total available" amount.
 * To limit the number of times this coupon can be used by a single customer, set the "Total per customer" amount.
   
-![Coupon creation UI](./images/creating_a_coupon.png)
+![Coupon creation UI](../user-guide/images/creating_a_coupon.png)
 
 Finally, "Save" the coupon.
 
 Let's test this out by adding a products to a cart so that the order totals over $50. Notice that the discount is not automatically applied. It will only be applied if the coupon code is entered. During Checkout, you can see a "Coupon code" textfield in the "Order summary". Enter the coupon code for the promotion, and click the "Apply coupon" button.
 
-![Coupon application UI](./images/applying_a_coupon.png)
+![Coupon application UI](../user-guide/images/applying_a_coupon.png)
 
 You can now see that the 10% discount has been applied to the entire order.
 
-![Applied coupon](../images/applied_coupon.png)
+![Applied coupon](../user-guide/images/applied_coupon.png)
 
 
 ### Bulk coupon generation
 
 Now let's suppose that you want to create a large number of unique coupons for a promotion. You can use the Bulk coupon generator by clicking "Generate coupons" instead of "Add coupon" on a promotion's Coupons page:
 
-![Generating coupons](./images/generating_coupons.png)
+![Generating coupons](../user-guide/images/generating_coupons.png)
 
 For each batch of coupons you'd like to generate, you need to specify three things:
 
@@ -278,15 +278,15 @@ Coupon code patterns are based on four attributes: format, prefix, suffix, and l
 
 In this example, we will generate coupon codes that look like "SAVE-10-HPAsu-2020", with "SAVE-10" as the prefix, "-2020" as the suffix, and a unique 5 character alphabetic code.
 
-![Coupon code pattern](./images/coupon_code_pattern.png)
+![Coupon code pattern](../user-guide/images/coupon_code_pattern.png)
 
 Let's generate 100 coupons for this pattern. Coupons are generated in batches, with progress displayed:
 
-![Generating coupons progress](./images/generating_coupons_progress.png)
+![Generating coupons progress](../user-guide/images/generating_coupons_progress.png)
 
 We now have 100 unique coupons for our promotion:
 
-![Generated coupons](./images/coupons_generated.png)
+![Generated coupons](../user-guide/images/coupons_generated.png)
 
 ## Managing promotions
 
@@ -298,13 +298,13 @@ Standard operations links for editing/deleting/etc. promotions are provided in t
 
 If your site has more than 50 promotions, they will be grouped into pages with up to 50 promotions per page.
 
-![Promotions table](./images/managing_promotions_table.png)
+![Promotions table](../user-guide/images/managing_promotions_table.png)
 
 ### Ordering promotions
 
 If any of your promotions have limited compatibility, then the order in which promotions are listed in the Promotions table can affect whether any particular promotion is applied to an order. [Compatibility options](#compatibility-options) can be set when editing a promotion:
 
-![Promotions compatibilty options](./images/managing_promotions_compatibility.png)
+![Promotions compatibilty options](../user-guide/images/managing_promotions_compatibility.png)
 
 Whenever a cart or draft order is updated, all "available" promotions are checked, in order, for applicability to the order. A promotion is considered **available** if all of the following are true:
 
@@ -319,8 +319,8 @@ The available promotions are sorted first by *weight*, from lowest to highest, a
 
 To view the **weight** of promotions, click the "Show row weights" link at the top of the Promotions table, on the right:
 
-![Show promotion weights](./images/managing_promotions_show_weights.png)
+![Show promotion weights](../user-guide/images/managing_promotions_show_weights.png)
 
 When weights are displayed, a new "Weight" column appears with editable weight values. When weights are hidden, the grab-and-drop tool in the leftmost column can be used to reorder promotions and adjust their weights. Once the weights have been updated, click the "Save" button at the bottom of the page to save the new weight values.
 
-![Manage promotion weights](./images/managing_promotions_update_weights.png)
+![Manage promotion weights](../user-guide/images/managing_promotions_update_weights.png)

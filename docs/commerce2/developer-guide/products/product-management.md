@@ -22,7 +22,7 @@ This section describes how you can customize the forms used to enter product dat
 
 ### Single vs. multi-variation product types
 
-In the [Product architecture documentation](../../02.product-architecture), we created a [Simple product type](../../02.product-architecture/01.simple-product#configure-a-product-variation-type) that had only a single variation per product and a [Clothing product type](../../02.product-architecture//02.product-attributes) with multiple variations per product. Let's start by comparing the forms for these two product types. On the left, we have the form for the *Simple* product type, with a *Product Information* section that includes data entry fields for the single product variation. On the right, we have the form for the *Clothing* product type, with a *Variations* tab that links to a *separate* page for managing the product's variations. The rest of the forms is identical.
+In the [Product architecture documentation](./product-architecture), we created a [Simple product type](./product-architecture/#configure-a-product-variation-type) that had only a single variation per product and a [Clothing product type](./product-architecture/#product-type-with-attributes) with multiple variations per product. Let's start by comparing the forms for these two product types. On the left, we have the form for the *Simple* product type, with a *Product Information* section that includes data entry fields for the single product variation. On the right, we have the form for the *Clothing* product type, with a *Variations* tab that links to a *separate* page for managing the product's variations. The rest of the forms is identical.
 
 ![Product data entry form](../images/product-data-entry-1.png)
 
@@ -148,7 +148,7 @@ The *Bulk update* field provides the checkbox in the first column of the listing
 - Publish product
 - Unpublish product
 
-Administrative users with the [necessary permissions](../01.access-control) can execute these operations on selected products. You can remove any of these options by clicking on the *Product: Bulk update* item in the FIELDS section. You can also add options by creating [Action plugins] with custom code. Looking at the code for the Publish and Unpublish product Action plugins is a good place to start: `Drupal\commerce_product\Plugin\Action\PublishProduct`. The, [Create an action for custom mass updates with Drupal 8](https://www.flocondetoile.fr/blog/create-action-custom-mass-updates-drupal-8), article is a good introduction to the topic.
+Administrative users with the [necessary permissions](#access-control) can execute these operations on selected products. You can remove any of these options by clicking on the *Product: Bulk update* item in the FIELDS section. You can also add options by creating [Action plugins] with custom code. Looking at the code for the Publish and Unpublish product Action plugins is a good place to start: `Drupal\commerce_product\Plugin\Action\PublishProduct`. The, [Create an action for custom mass updates with Drupal 8](https://www.flocondetoile.fr/blog/create-action-custom-mass-updates-drupal-8), article is a good introduction to the topic.
 
 ### Operations links
 
@@ -157,11 +157,8 @@ The Operations menu that appears in the rightmost column of the Products overvie
 !!! info "In the next section, we'll look at how you can futher customize the Products View to provide Product Export options."
 
 ## Importing and exporting
-taxonomy:
-    category: docs
----
 
-Functionality for importing and exporting products is not built into Drupal Commerce core. This section describes how various Drupal contrib modules can be used to extend Drupal Commerce for importing and / or exporting products. See [Extending Drupal Commerce documentation](../../../02.install-update/06.extending) for information on how Drupal Commerce can be extended with additional modules.
+Functionality for importing and exporting products is not built into Drupal Commerce core. This section describes how various Drupal contrib modules can be used to extend Drupal Commerce for importing and / or exporting products. See [Extending Drupal Commerce documentation](../../installation/#extending) for information on how Drupal Commerce can be extended with additional modules.
 
 
 ### Importing products
@@ -421,7 +418,7 @@ After saving all your changes, you should be able to navigate to your new Produc
 !!! example "<a name="altering-the-title-field-label"></a>Altering the title field label"
     The following example will change the label for the product name from *Title* to *Product name*.
 
-    ![Change product name label](../../images/managing-products-code-recipes-1.jpg)
+    ![Change product name label](../images/managing-products-code-recipes-1.jpg)
 
     ```php
 

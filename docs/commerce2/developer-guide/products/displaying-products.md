@@ -6,14 +6,6 @@ taxonomy:
 
 Learn techniques for displaying products on your site.
 
----
-title: Displaying products
-taxonomy:
-    category: docs
----
-
-Learn techniques for displaying products on your site.
-
 **[Product display pages](#product-display-pages)**
 
 - Customize the product pages that are displayed on your site.
@@ -53,7 +45,7 @@ This section describes how to customize the product pages that are displayed on 
 
 ![Product manage display ui](../images/product-display-ui-1.jpg)
 
-!!! note "Prerequisite is creating the [Simple product type](../../02.product-architecture/01.simple-product)"
+!!! note "Prerequisite is creating the [Simple product type](../product-architecture/#simple-product-type)"
 
 ### Product variation field injection
 
@@ -63,7 +55,7 @@ When a product type is created, the, *Inject product variation fields into the r
 
 In the following image, we have the *Manage display* configuration form for the Simple product type on the left. To the right, we have a Simple product as it's displayed on the site. You can see that the order of the fields matches up, and labels are displayed as expected.
 
-> The *Add to cart form* formatter is used by default for the *Variations* field, to display an *Add to cart* button instead of variations data (like title, price, and attributes). Configuration for the *Add to cart form* formatter is explained in [the next section](../02.add-to-cart-form).
+> The *Add to cart form* formatter is used by default for the *Variations* field, to display an *Add to cart* button instead of variations data (like title, price, and attributes). Configuration for the *Add to cart form* formatter is explained in [the next section](#add-to-cart-form).
 
 ![Display without field injection](../images/product-display-ui-3.jpg)
 
@@ -123,6 +115,7 @@ Once you've identified the correct Order item type for your Product type, naviga
 By default, *Purchased entity* is the only field enabled for the form. That field provides a mechanism for customers to select a product variation to be add to their cart.
 
 If you would like to allow customers to enter additional information when adding items to the cart, enable the relevant fields here. For example, if the *Quantity* field is Disabled, then whenever a customer clicks the *Add to cart* button, 1 unit of the selected item will be automatically added. To allow customers to specify quantities other than 1 when they select an item:
+
 1. Drag the *Quantity* field up and out of the *Disabled* section.
 2. Select a Widget type for the *Quantity* field.
 3. Click the *Save* button.
@@ -143,17 +136,17 @@ There are two widget options for the Purchased entity field:
 - Product variation attributes
 - Product variation title
 
-**Product variation attributes** is the default widget, and it's the one that's been used for all the example images on this page. It renders the Add to cart form with an element for each attribute individually. (For example, Color and Size.) The details of how this works and configuration options will be covered in [the next section](../03.product-attributes).
+**Product variation attributes** is the default widget, and it's the one that's been used for all the example images on this page. It renders the Add to cart form with an element for each attribute individually. (For example, Color and Size.) The details of how this works and configuration options will be covered in [the next section](../displaying-products/#product-attributes).
 
 **Product variation title** is a simpler widget option. It displays all available product variation options in a select element. The only configuration option is the label for the select element. The default label is *Please select* and can be hidden. Here is how the same Add to cart form pictured above looks when the widget is changed to Product variation title. (The *Add to cart* button is beneath the select element.)
 
 ![Add to cart form mode](../images/add-to-cart-ui-5.jpg)
 
-Both widgets allow custom modules to apply their own filtering to the list of available product variations by subscribing to the `ProductEvents::FILTER_VARIATIONS` event. For more information on writing event subscribers in Drupal 8, [Drupal 8 Event Subscribers - the successor to alter hooks] and [Drupal 8: Hooks, Events, and Event Subscribers] are good introductory articles. The [Code Recipes](../10.code-recipes) section of the Products documentation also contains an example.
+Both widgets allow custom modules to apply their own filtering to the list of available product variations by subscribing to the `ProductEvents::FILTER_VARIATIONS` event. For more information on writing event subscribers in Drupal 8, [Drupal 8 Event Subscribers - the successor to alter hooks] and [Drupal 8: Hooks, Events, and Event Subscribers] are good introductory articles. The [Code Recipes](../displaying-products/#code-recipes) section of the Products documentation also contains an example.
 
 ### Add the Add to cart form to a custom content type page
 
-You can add the Add to cart form to a custom content type by adding an *Entity reference* field that references entity type *Product* and then configuring the display using any of the techniques described in [Product display pages](../01.product-display) and on this Add to cart documentation page. Here is an example for adding the Add to cart form to the *Article* content type.
+You can add the Add to cart form to a custom content type by adding an *Entity reference* field that references entity type *Product* and then configuring the display using any of the techniques described in [Product display pages](#product-display-pages) and on this Add to cart documentation page. Here is an example for adding the Add to cart form to the *Article* content type.
 
 1. Navigate to the *Manage fields* form for the Article content type and click the *Add field* button: `/admin/structure/types/manage/article/fields`
 
@@ -181,7 +174,7 @@ This section describes how you can modify the product attributes that appear on 
 
 ![Add to cart form](../images/add-to-cart-ui.jpg)
 
->In the [Add to cart form documentation](../02.add-to-cart-form), we looked at the difference between the *Product variation attributes* widget and the *Product variation title* widget. To customize the display of individual product attributes, like Color or Size, the *Product variation attributes* widget must be selected on the Add to cart form display for the product's order item type.
+>In the [Add to cart form documentation](#add-to-cart-form), we looked at the difference between the *Product variation attributes* widget and the *Product variation title* widget. To customize the display of individual product attributes, like Color or Size, the *Product variation attributes* widget must be selected on the Add to cart form display for the product's order item type.
 
 ### Product attribute element types
 
@@ -308,7 +301,7 @@ Also, there is a custom css library for rendered product attributes, located wit
 
 ## Multiple products
 
-This section describes how you can create a page that displays multiple products, with [Add to cart forms](../02.add-to-cart-form), using the [Drupal Views module]. In the [Product categories documentation](../../02.product-architecture/03.product-categories), we added a *Brand* field to our product types. In this example, we'll create a page that displays all products for a user-specified brand.
+This section describes how you can create a page that displays multiple products, with [Add to cart forms](#add-to-cart-form), using the [Drupal Views module]. In the [Product categories documentation](../product-architecture/#product-categories), we added a *Brand* field to our product types. In this example, we'll create a page that displays all products for a user-specified brand.
 
 ![Brand view page](../../images/multi-product-display.jpg)
 
@@ -338,7 +331,7 @@ This section describes how you can create a page that displays multiple products
 
     **Variations image field**
 
-    Our products don't have images, but their variations do have one or more images. We'll display the first image of the first variation for each product. To do this, we'll use the *Single image* view mode that we created in the [Product images documentation](../06.product-images).
+    Our products don't have images, but their variations do have one or more images. We'll display the first image of the first variation for each product. To do this, we'll use the *Single image* view mode that we created in the [Product images documentation](#product-images).
 
     **Add the Variations field**
 
@@ -358,7 +351,7 @@ This section describes how you can create a page that displays multiple products
 
     **Add to Cart variations field**
 
-    If you're not familiar with the Add to Cart form, see the [Add to cart form documentation page](../02.add-to-cart-form). We'll add the Product Variations field a second time and configure it as an Add to cart form.
+    If you're not familiar with the Add to Cart form, see the [Add to cart form documentation page](#add-to-cart-form). We'll add the Product Variations field a second time and configure it as an Add to cart form.
 
     **Add the Variations field**
 
@@ -428,14 +421,13 @@ The [Image delta formatter module] provides a custom formatter for image fields 
 
 !!! example "Example: Create a custom *Single image* view mode for product variations"
     See the [Multi-product displays documentation](#multiple-products) for an example of how this custom view mode can be used.
+
     1. Start by installing the Image delta formatter module [in the usual way](../../installation.md#extending).
     2. Navigate to the View modes administration page at `/admin/structure/display-modes/view`.
     3. Scroll down to the *Product variation* entity type and click the *Add new Product variation view mode* link.
     4. Enter "Single image" for the Name and click the *Save* button.
-
-        ![Create Image view mode](../../images/display-product-images-1.jpg)
-
-    5. Navigate to the Manage display administration page for your product variation type at `/admin/commerce/config/product-variation-types/simple/edit/display` (for the [*Simple* product variation type](../../02.product-architecture/01.simple-product)).
+    ![Create Image view mode](../../images/display-product-images-1.jpg)
+    5. Navigate to the Manage display administration page for your product variation type at `/admin/commerce/config/product-variation-types/simple/edit/display` (for the [*Simple* product variation type](../product-architecture/#simple-product-type)).
     6. Click on *Custom Display Settings* to enable the *Single image* view mode.
 
         ![Enable Single image view mode](../../images/display-product-images-4.jpg)
@@ -503,7 +495,7 @@ The [Single media](https://www.drupal.org/project/single_media) is very similar 
 
 * [Changing Content Display (Drupal user guide)](https://www.drupal.org/docs/user_guide/en/structure-content-display.html)
 * [Add to cart form documentation](#add-to-cart-form)
-* [Product attributes](../../03.products/01.product-attributes)
+* [Product attributes](../product-information-structure/#attributes-and-attribute-values)
 * Drupal 8 User Guide documentation on [Concept: Image Styles]
 * [Custom field formatter for displaying entity images with thumbnails and 1 large image], posted by Ivan Jaros in [Drupal Answers] on StackExchange.
 

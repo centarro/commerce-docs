@@ -496,7 +496,7 @@ The Default formatter uses a repository of address format data (provided by the 
 
 ![Default address formatter display](../../images/address-display-1.png)
 
-If you want to customize how addresses are displayed by the *default* address formatter, you can create a custom event subscriber to alter the address formats provided by the `AddressFormatRepository`. The [Address formats documentation](../01.address-formats) provides an explanation of address formats and example event subscriber code.
+If you want to customize how addresses are displayed by the *default* address formatter, you can create a custom event subscriber to alter the address formats provided by the `AddressFormatRepository`. The [Address formats documentation](#address-formats) provides an explanation of address formats and example event subscriber code.
 
 #### How do I hide the *Country* for domestic addresses?
 The *Default* address formatter will display the country for all addresses, regardless of whether the address is international or domestic. One way to alter this behavior is to create a custom address field formatter plugin that *extends* the Default address formatter. In this example, we'll create a custom formatter that will display the *Country* for addresses in all countries *except* the United States.

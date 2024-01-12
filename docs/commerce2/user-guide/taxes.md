@@ -18,23 +18,23 @@ There are some additional modules to manage taxes:
 
 ## European VAT 
 
-**@todo ! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ## Swiss VAT
 
-**@tood ! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ## Canadian GST
 
-**@tood ! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ## US Sales tax
 
-**@tood ! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ## Custom tax rules
 
-**@todo ! We need help filling out this section! Feel free to follow the *edit this page* link and contribute.**
+!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ## Commerce Product Tax
 
@@ -77,6 +77,7 @@ If you have products with different tax rates, they will be displayed on separat
     If you have multiple stores, you can add multiple tax rate fields to a product variation. For example, a product could have a UK tax rate of 20% and a ROI tax rate of 23%
 
 !!! example "Example"
+
     We have a UK based Store that sells both physical and digital products.
     Most products have the standard 20% VAT tax rate. 
     Digital products are exempt and have a zero rate.
