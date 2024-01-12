@@ -104,6 +104,7 @@ copyright:
 plugins:
   - search
   - include_dir_to_nav
+  - open-in-new-tab
 markdown_extensions:
   - admonition
   - attr_list
