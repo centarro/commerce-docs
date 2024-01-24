@@ -81,13 +81,11 @@ taxonomy:
 <p><strong>Step 1</strong>: Go to admin/structure/oauthconnector/list and create a new provider by using one of the presets the list, or by creating your own. You will need an App Key, a secret key, and a callback URL for each provider (see list below).</p>
 <p>URLs to apply for App Keys (as of Mar. 2012):</p>
 
-<ul>
-<li>Facebook: https://graph.facebook.com/</li>
-<li>Twitter: https://api.twitter.com/</li>
-<li>Google: https://code.google.com/apis/console</li>
-<li>LinkedIn: https://www.linkedin.com/secure/developer</li>
-<li>Flickr: http://www.flickr.com/services</li>
-</ul>
+* Facebook: <https://graph.facebook.com/>
+* Twitter: <https://api.twitter.com/>
+* Google: <https://code.google.com/apis/console>
+* LinkedIn: <https://www.linkedin.com/secure/developer>
+* Flickr: <http://www.flickr.com/services>
 
 <p>Signing up for App Keys is a very different process for each service. The trick usually is that you have to declare that you want to create an "app" or a service or something that needs an API access.</p>
 <p><strong>Step 2</strong>: Make sure you provide the correct "Callback URL"</p>

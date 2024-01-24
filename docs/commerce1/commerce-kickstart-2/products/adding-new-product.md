@@ -7,7 +7,7 @@ taxonomy:
 <p>There are two topics at play here. </p>
 <ol>
   <li>First, we have the simple "How do I add another product to my site?" question that is easy to answer (see below). <a href="#howaddproducts">Read More</a>.</li>
-  <li>Second, we have the much more common "How do I add a new type of product variation?" This is typically asked at the beginning of creating a site. And we have worked hard in Commerce Kickstart 2 to make the interface for creating your first Product Variation Type very simple. <a href="#">Read More</a>.</li>
+  <li>Second, we have the much more common "How do I add a new type of product variation?" This is typically asked at the beginning of creating a site. And we have worked hard in Commerce Kickstart 2 to make the interface for creating your first Product Variation Type very simple.</li>
 </ol>
 
 <h3 id="howaddproducts">How do I add another product to my site?</h3>
@@ -190,7 +190,7 @@ update.</p>
     <li class="last">Configure Field</li>
 </ul>
 
-![Let's modify the three products with a unique image and color option.](../../images/Prod-Attr-Step5.png">
+![Let's modify the three products with a unique image and color option.](../../images/Prod-Attr-Step5.png)
 
 **Modify Products**
 

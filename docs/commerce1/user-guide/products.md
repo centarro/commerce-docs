@@ -68,7 +68,7 @@ This illustration explains the differences between product pages (nodes) and pro
 <li><a href="#product-attributes-variations">Product Attributes and Variations</a></li>  
 <li><a href="#product-displays">Product Displays</a></li>  
 <li><a href="#administering-products">Administering Products</a></li>  
-<li><a href="#setting-up-product-catalog">Setting up a Product Catalog</a></li>  
+<li><a href="#setting-up-a-product-catalog">Setting up a Product Catalog</a></li>  
 <li><a href="#importing-products-using-feeds">Importing Products using Feeds</a></li>  
 </ul>
 
@@ -854,7 +854,7 @@ The final catalog looks exactly the same as the "Simple" view except that this c
 
 ## Importing Products using Feeds
 
-<p>The wonderful <a href="http://drupal.org/project/commerce_feeds">Commerce Feeds</a> module, with its parent <a href="http://drupal.org/project/feeds">Feeds</a> allow you to import various kinds of feeds as products and/or as product reference nodes. Edit: You may be also be interested in <a href="http://drupal.org/project/commerce_migrate">Commerce Migrate</a> and <a href="http://www.commerceguys.com/resources/articles/215">this screencast on how to use it to import Ubercart stores</a>.]</p>
+<p>The wonderful <a href="http://drupal.org/project/commerce_feeds">Commerce Feeds</a> module, with its parent <a href="http://drupal.org/project/feeds">Feeds</a> allow you to import various kinds of feeds as products and/or as product reference nodes. Edit: You may be also be interested in <a href="http://drupal.org/project/commerce_migrate">Commerce Migrate</a> and <a href="http://www.commerceguys.com/resources/articles/215">this screencast on how to use it to import Ubercart stores</a>.</p>
 
 <iframe src="https://player.vimeo.com/video/22731881?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="http://vimeo.com/22731881">Importing Products with Commerce Feeds</a> from <a href="http://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 

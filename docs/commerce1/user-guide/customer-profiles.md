@@ -18,7 +18,7 @@ As indicated above, it is important for customer profiles to be preserved in the
 
 <ul>
   <li><a href="#configuring-creating-customer-profiles">Configuring / Creating Customer Profiles</a></li>
-  <li><a href="#extending-default-customer-profile">Extending the Default Customer Profile</a></li>
+  <li><a href="#extending-the-default-customer-profile">Extending the Default Customer Profile</a></li>
 </ul>
 
 ## Configuring / Creating Customer Profiles

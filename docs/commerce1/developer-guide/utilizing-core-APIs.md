@@ -1,6 +1,6 @@
 ## Instantiating core forms in contributed modules
 
-One of the primary development standards of Drupal Commerce is a strict <a href="http://www.drupalcommerce.org/development/standards#ui">separation of core APIs from the default user interfaces</a>.  This means when you install the Product module you actually don't have any place to add, edit, or view products without enabling the Product UI module.  This allows site builders and module developers to provide completely customized user interfaces for Drupal Commerce sites without having to undo or work around an existing user interface.  To achieve this behavior, we had to make some special considerations with entity and bundle forms.
+One of the primary development standards of Drupal Commerce is a strict separation of core APIs from the default user interfaces.  This means when you install the Product module you actually don't have any place to add, edit, or view products without enabling the Product UI module.  This allows site builders and module developers to provide completely customized user interfaces for Drupal Commerce sites without having to undo or work around an existing user interface.  To achieve this behavior, we had to make some special considerations with entity and bundle forms.
 
 The gist of it is forms necessary to add, edit, and delete core entities / bundles are included in the API module but are only "instantiated" by the UI module.  If you enable the Product module, even though the forms are included in that module's includes/commerce_product.forms.inc file, there are no URLs you can browse to to actually submit those forms.  Instead you have to enable the Product UI module which provides menu items for each of these forms.
 
@@ -111,15 +111,13 @@ It is quite likely that additional actions may be available to be performed on p
 
 The responsibilities of a payment method module include the following main points:
 
-<ol>
-<li>Defining the payment method via hook_commerce_payment_method_info(). This hook is <a href="https://docs.drupalcommerce.org/commerce1/developer-guide/core-architecture/info-hooks/payment-info-hooks">documented in the specification</a> and allows you to define the titles and display name for the payment method along with various callback functions used to integrate with the payment system.</li>
-<li>Defining your callback functions to add a settings form to the payment method's rules, collect the necessary information on the checkout and administrative payment forms, and accommodate the redirection process for off-site payment methods (see below).</li>
-<li>Integrating with the payment service to actually process payments, validate payment notifications, and otherwise interact with the available APIs.</li>
-<li>Defining menu items for additional payment transaction operations and providing the forms and API integration necessary to perform the operations.</li>
-<li>Regular maintenance to ensure the module remains up to date with changes in the payment service's API, changes in Drupal Commerce, and security reports. Payment method modules should be managed through drupal.org's project hosting infrastructure where they benefit from version control, issue tracking, and community feedback and security oversight.</li>
-</ol>
+1. Defining the payment method via hook_commerce_payment_method_info(). This hook is [documented in the specification](../core-architecture/#payment-info-hooks) and allows you to define the titles and display name for the payment method along with various callback functions used to integrate with the payment system.
+2. Defining your callback functions to add a settings form to the payment method's rules, collect the necessary information on the checkout and administrative payment forms, and accommodate the redirection process for off-site payment methods (see below).
+3. Integrating with the payment service to actually process payments, validate payment notifications, and otherwise interact with the available APIs.
+4. Defining menu items for additional payment transaction operations and providing the forms and API integration necessary to perform the operations.
+5. Regular maintenance to ensure the module remains up to date with changes in the payment service's API, changes in Drupal Commerce, and security reports. Payment method modules should be managed through drupal.org's project hosting infrastructure where they benefit from version control, issue tracking, and community feedback and security oversight.
 
-For more information and examples of these, refer to the <a href="https://docs.drupalcommerce.org/commerce1/developer-guide/core-architecture/info-hooks/payment-info-hooks">Payment info hook documentation</a> and the proof-of-concept modules <a href="http://drupal.org/project/commerce_authnet">Commerce Authorize.Net</a> and <a href="http://drupal.org/project/commerce_paypal">Commerce PayPal</a>.  Refer to the <a href="https://web.archive.org/web/20150618020813/https://drupalcommerce.org/faq/payment-methods">payment method FAQ (wayback machine link)</a> for other modules that are developed or in development supporting different types of payment services and representing different countries.
+For more information and examples of these, refer to the [Payment info hook documentation](../core-architecture/#payment-info-hooks) and the proof-of-concept modules <a href="http://drupal.org/project/commerce_authnet">Commerce Authorize.Net</a> and <a href="http://drupal.org/project/commerce_paypal">Commerce PayPal</a>.  Refer to the <a href="https://web.archive.org/web/20150618020813/https://drupalcommerce.org/faq/payment-methods">payment method FAQ (wayback machine link)</a> for other modules that are developed or in development supporting different types of payment services and representing different countries.
 
 <h3>Special notes for off-site payment methods</h3>
 

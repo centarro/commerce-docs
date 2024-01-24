@@ -26,7 +26,7 @@ This section of the specification will provide an overview of the various system
 
 ### Customer profile system
 
-!!! note "This section is an outdated description of a system that was about to be written. The new home for this documentation is [here](../user-guide/customer-profiles)"
+!!! note "This section is an outdated description of a system that was about to be written. The new home for this documentation is [here](../../user-guide/customer-profiles)"
 
 Customer profiles contain collections of data required to process orders, whether it be billing information, shipping information, or other types of details.  These customer profiles are not unique to a user, meaning a single user may have multiple instances of each type of profile.  This allows us to use the data collected to provide address book functionality where a user has a default profile of each type but may create a unique profile for a given order or choose from other previously generated profiles.
 
@@ -64,7 +64,7 @@ This page will be used as a container to describe all the entities defined by th
 
 <ul>
   <li><a href="#product-entity">Product entity</a></li>	
-  <li><a href="#customer-product-entity">Customer profile entity</a></li>
+  <li><a href="#customer-profile-entity">Customer profile entity</a></li>
   <li><a href="#line-item-entity">Line item entity</a></li>
   <li><a href="#order-entity">Order entity</a></li>
   <li><a href="#payment-transaction-entity">Payment transaction entity</a></li>
@@ -121,7 +121,7 @@ This page will serve as a container describing the various fields and widgets de
 <ul>
   <li><a href="#price-field">Price field</a></li>
   <li><a href="#product-reference-field">Product reference field</a></li>
-  <li><a href="#address-field">Address field (contrib)</a></li>
+  <li><a href="#address-field-contrib">Address field (contrib)</a></li>
   <li><a href="#line-item-reference-field">Line item reference field</a></li>
   <li><a href="#customer-profile-reference">Customer profile reference</a></li>
 </ul>

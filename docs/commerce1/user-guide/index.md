@@ -5,7 +5,7 @@ taxonomy:
 ---
 
 
-!!! note "This user guide assumes that you are working with [Commerce Kickstart 1.x] or that you are familiar with Drupal. It's very important to get the right set of modules turned on and a number of configurations need to be setup for content types and custom entities. See [Installing Drupal Commerce](../installation) for more details."
+!!! note "This user guide assumes that you are working with [Commerce Kickstart 1.x] or that you are familiar with Drupal. It's very important to get the right set of modules turned on and a number of configurations need to be setup for content types and custom entities. See [Installing Drupal Commerce](../user-guide/installation) for more details."
 
 Building a Drupal Commerce site is easiest when you have at least some familiarity with administering Drupal itself.  With the release of Drupal 7, navigating the backend is easier than ever, but there's still quite a lot to learn.  Familiarizing new users with Drupal is out of scope for this documentation, so we recommend using other freely available resources to get up and running on Drupal 7 before installing and configuring the Commerce modules.
 

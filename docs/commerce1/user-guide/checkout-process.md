@@ -174,7 +174,7 @@ This checkout pane displays a simple checkout completion message that links to t
     <li class="last">Configure Action</li>
 </ul>
 
-![Final Rule](../images/Checkout-Rules-Exercise-6.png
+![Final Rule](../images/Checkout-Rules-Exercise-6.png)
 
 **Final Rule**
 

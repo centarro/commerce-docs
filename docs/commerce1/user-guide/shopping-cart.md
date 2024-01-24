@@ -942,7 +942,7 @@ field empty, don't actually type "NULL" :-)"</p>
 <h3>Related Assets</h3>
 
 <p>Are you looking for how to modify the cart block? Checkout our entire article
-on <a href="/commerce1/user-guide/shopping-cart/modifying-the-shopping-cart-using-views">modifying the Shopping Cart block using views</a>.</p>
+on <a href="#modifying-the-shopping-cart-using-views">modifying the Shopping Cart block using views</a>.</p>
 
 ## Working with Cart Rules events
 

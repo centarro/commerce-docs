@@ -5,7 +5,7 @@ taxonomy:
 ---
 
 <p>Downloading and installing the Commerce Kickstart project is now easier than ever. If you have ever downloaded and installed a distribution for Drupal, then this should seem very familiar to you.</p>
-<p>If you are having trouble installing, please check out our "<a href="/commerce-kickstart-2/troubleshooting-kickstart-2-installation">Troubleshooting the Installation Guide</a>."</p>
+<p>If you are having trouble installing, please check out our "<a href="#troubleshooting-the-kickstart-2-installation">Troubleshooting the Installation Guide</a>."</p>
 
 ## Upgrading
 
@@ -149,7 +149,7 @@ $ drush updatedb -y
 <h3>Odd Settings</h3>
 <p>There are a few settings that default to good values, but can interfere with installation should you have changed defaults:</p>
 <ul>
-  <li>xdebug setup: If you are using xdebug, you'll want to make sure you have the nesting levels configured accurately. (http://drupal.org/node/1663314)</li>
+  <li>xdebug setup: If you are using xdebug, you'll want to make sure you have the nesting levels configured accurately. (<a href="https://drupal.org/node/1663314">https://drupal.org/node/1663314</a>)</li>
   <li>apache setup: max_allowed_packet needs to be 16M minimum</li>
   <li>required php libraries: Commerce Kickstart 2 requires the Curl PHP Library to be installed.</li>
 </ul>
@@ -164,8 +164,8 @@ Most hosts capable of running Drupal should be able to run Commerce Kickstart. A
 
 These hosts have proven experience with running Commerce Kickstart:
 
-<strong>Commerce Guys</strong>: The software vendor that created and maintains Drupal Commerce and Commerce Kickstart - offers Platform.sh, a Platform-as-a-Service for running Commerce sites: https://platform.sh
-<a href="https://platform.sh"><img src="/sites/default/files/docs/platform-try.png" alt="Commerce on Platform.sh"></a>
+<strong>Commerce Guys</strong>: The software vendor that created and maintains Drupal Commerce and Commerce Kickstart - offers Platform.sh, a Platform-as-a-Service for running Commerce sites:
+<a href="https://platform.sh">https://platform.sh</a>
 
 <strong>Pantheon</strong>: Cloud hosting for Drupal, features a <a href="https://dashboard.getpantheon.com/products/kickstart/spinup">1-click installer for Commerce Kickstart 2.x</a>.
 <!--<a href="https://dashboard.getpantheon.com/products/kickstart/spinup"><img src="https://drupal.org/files/pantheon-button.png" alt="Commerce Kickstart on Pantheon" /></a>-->

@@ -14,7 +14,7 @@ This is the guide that walks you through the Commerce Kickstart 2 Drupal distrib
 	<li><a href="../commerce-kickstart-2/orders-overview">Orders Overview</a></li>
 	<li><a href="../commerce-kickstart-2/checkout-overview">Checkout Overview</a></li>
 	<li><a href="../commerce-kickstart-2/currency-overview">Currency Overview</a></li>
-	<li><a href="../commerce-kickstart-2/prices-payments-and-taxes">Prices, Payments and Taxes</a></li>
+	<li><a href="../commerce-kickstart-2/taxes-overview">Prices, Payments and Taxes</a></li>
 	<li><a href="../commerce-kickstart-2/shipping">Shipping</a></li>
-	<li><a href="../commerce-kickstart-2/translating-a-commerce-stor">Translating a Commerce Store</a></li>
+	<li><a href="../commerce-kickstart-2/translating-store">Translating a Commerce Store</a></li>
 </ul>

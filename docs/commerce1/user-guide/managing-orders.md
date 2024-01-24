@@ -5,8 +5,8 @@ taxonomy:
 ---
 
 <ul>
-  <li><a href="#orders-settings">Order Settings</a></li>
-  <li><a href="#implementing-automated-order-workflow">Implementing an automated order workflow</a></li>
+  <li><a href="#order-settings">Order Settings</a></li>
+  <li><a href="#implementing-an-automated-order-workflow">Implementing an automated order workflow</a></li>
   <li><a href="#displaying-all-orders">Displaying All Orders</a></li>
 </ul>
 

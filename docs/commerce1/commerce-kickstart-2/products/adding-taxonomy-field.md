@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-<p>There is a great explanation of <a hreg="/user-guide/product-attributes-variations">Product Attributes</a> in the general User Guide. </p>
+<p>There is a great explanation of <a href="../../../user-guide/products/#product-attributes-variations">Product Attributes</a> in the general User Guide. </p>
 
 <p>The following will help you understand how to use taxonomy on Product Variations to get a simple drop down to show up on your Add to Cart pages.</p>
 
@@ -14,7 +14,7 @@ taxonomy:
 
 **Create a Variation Type**
 
-<p>There is already a guide describing <a href="/commerce-kickstart-2/adding-new-product">how to add a New Product variation in Commerce Kickstart 2</a>. The recommended route to take is to add a variation type and click "Save and add fields."</p>
+<p>There is already a guide describing <a href="../adding-new-product">how to add a New Product variation in Commerce Kickstart 2</a>. The recommended route to take is to add a variation type and click "Save and add fields."</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>

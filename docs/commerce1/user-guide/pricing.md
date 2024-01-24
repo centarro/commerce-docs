@@ -135,11 +135,9 @@ taxonomy:
 <p>Let's face it, the internet doesn't just sell to our neighbors down the street, it can literally connect you to the whole world. Last we checked, there are hundreds of currencies and thousands of countries. It's hard to address them all. We've provided the framework for simplified currency conversion in Drupal Commerce core. But we've also built a framework that has already enabled lots of solutions to popup on drupal.org as free currency conversion solutions.</p>
 <p>In the next section we outline how one might convert currencies using only Drupal Commerce, but we admit plainly that this has a very limited use-case. The exercise is intended to teach you how to deal with the pricing rules that every major ecommerce shop is going to use. Directly below, we've listed a few other options you have available to meet your currency conversion requirements:</p>
 
-<ul>
-    <li><a href="http://drupal.org/project/commerce_multicurrency">Commerce Multicurrency</a> - Define and deal with currency exchange rates.</li>
-    <li><a href="http://commerceguys.com/blog/commerce-module-tuesday-commerce-multicurrency">Multicurrency</a> - Watch pcambra's excellent Multicurrency Video</li>
-    <li><a href="https://docs.drupalcommerce.org/commerce1/developer-guide/core-architecture/info-hooks">Currency Info Hooks</a> - Read about the API for pulling currency information</li>
-</ul>
+* [Commerce Multicurrency](http://drupal.org/project/commerce_multicurrency)
+* [Multicurrency](http://commerceguys.com/blog/commerce-module-tuesday-commerce-multicurrency)
+* [Currency Info Hooks](../../developer-guide/core-architecture/#info-hooks)
 
 <h3>Enable Multiple Currencies</h3>
 
@@ -317,8 +315,8 @@ If you had 1 US dollar, how much would that equal in your other currency? It cha
 ![Create a new action using the convert to new currency rule.](../images/Cart-MultiCurrency-Step9.png)
 
 **Convert Currency Symbol**
-Click Add Action.
 
+Click Add Action.
 Select "Convert the unit price to a different currency" so that we can actually convert the currency from US dollars to a new currency. This exchange is only going to change the currency symbol, it will not
 actually tweak the numbers.
 
@@ -774,10 +772,8 @@ When you are setting the actual math part of the discount, we chose to simply mu
 
 <p>There are a number of topics we handle in the Drupal Commerce documentation that include some or all of the Rule interface to show off a certain aspect. Below we've listed a small accounting of the articles that are written to take advantage and teach you more about the Rules interface.</p>
 
-<ul>
-<li><a href="https://docs.drupalcommerce.org/commerce1/user-guide/shopping-cart">Administrator's Special (50% Discount)</a></li>
-<li><a href="/user-guide/shopping-cart-and-multicurrency">Flat Rate Currency Conversion</a></li>
-</ul>
+* [Administrator's Special (50% Discount)](../shopping-cart)
+* [Flat Rate Currency Conversion](../shopping-cart/#shopping-cart-and-multi-currency)
 
 <p>There are also a lot of videos regarding Rules and Drupal Commerce that the Commerce Guys have put out there.</p>
 
@@ -932,7 +928,7 @@ Next, we've already clicked on Add Action and are now selecting the multiply uni
 
 **Configure Action**
 
-<p>When you are setting the actual math part of the discount, we chose to simply multiply by 0.5 for a 50% discount. You could also divide by 2. Note also that we have changed the value of the price component type. The price component type will show up when you show the price with components. Note that if you want to add your own price component type it will likely need to be done in code.
+<p>When you are setting the actual math part of the discount, we chose to simply multiply by 0.5 for a 50% discount. You could also divide by 2. Note also that we have changed the value of the price component type. The price component type will show up when you show the price with components. Note that if you want to add your own price component type it will likely need to be done in code.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -989,6 +985,7 @@ Set the price field to show formatted with components.
 ![Administrators see the discount](../images/Price-Calc-step10.png)
 
 **Final Discount**
+
 Simply changing the price to show with components, it displays all that is necessary for the discount to be obvious. Also in the screenshot is the same site, not logged in. This is an important step to make sure that your condition is actually working.
 
 <ul class="screenshot_breadcrumbs">

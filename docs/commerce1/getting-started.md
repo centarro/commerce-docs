@@ -17,10 +17,8 @@ taxonomy:
 -  [Commerce Cookbook] - A cookbook of common site builder tasks that
    covers things like shipping, inventory, reporting, merchandising,
    etc.
--  [API Documentation] - The doxygen output of all the code
-   documentation that ships with all Commerce installations.
 
-[User Guide]: /commerce1/user-guide/getting-started
+[User Guide]: /commerce1/user-guide
 [Developer Guide]: /commerce1/developer-guide/getting-started
 [Commerce Kickstart 2]: /commerce-kickstart-2
 [Commerce Cookbook]: https://drupalcommerce.org/site-builders-guide

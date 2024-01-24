@@ -10,11 +10,9 @@ An easier way to install Drupal Commerce would be to use an installation profile
 
 Refer to the section below for your preferred method of installation.
 
-<ul>
-<li><a href="https://docs.drupalcommerce.org/commerce1/user-guide/installation/installing-from-scratch">Installing from scratch</a></li>
-<li><a href="https://docs.drupalcommerce.org/commerce1/user-guide/installation/installing-with-commerce-kickstart-1.x">Installing with Commerce Kickstart 1.x</a></li>
-<li><a href="https://docs.drupalcommerce.org/commerce1/user-guide/installation/migrating-ubercart-stores">Migrating from Ubercart Stores</a></li>
-</ul>
+* [Installing from scratch](../installation/#installing-from-scratch)
+* [Installing with Commerce Kickstart 1.x](../installation/#installing-with-commerce-kickstart-1x)
+* [Migrating from Ubercart Stores](../installation/#migrating-ubercart-stores)
 
 ## Installing from scratch
 
@@ -38,7 +36,7 @@ Once the modules have been enabled, you're ready to start configuring the Commer
 
 ## Installing with Commerce Kickstart 1.x
 
-!!! note "This installation instruction page deals with Commerce Kickstart version 1.x. The first version of Kickstart is a developers "blank slate" that includes just the bare minimum to get a store up and running. The second version of Kickstart includes a developers "template" that includes 80+ contributed modules setup as a fully functioning store. <a href="/commerce-kickstart-2/install">Installing Commerce Kickstart 2</a>."
+!!! note "This installation instruction page deals with Commerce Kickstart version 1.x. The first version of Kickstart is a developers "blank slate" that includes just the bare minimum to get a store up and running. The second version of Kickstart includes a developers "template" that includes 80+ contributed modules setup as a fully functioning store. <a href="../../commerce-kickstart-2/installing-and-upgrading">Installing Commerce Kickstart 2</a>."
 
 Commerce Kickstart is an installation profile designed to get you up and running quickly with Drupal Commerce. It duplicates a standard Drupal installation and provides additional configuration for Commerce modules and components.  It is freely available through the <a href="http://drupal.org/project/commerce_kickstart">Commerce Kickstart project page</a>.
 
