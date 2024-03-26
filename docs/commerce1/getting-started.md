@@ -20,6 +20,6 @@ taxonomy:
 
 [User Guide]: /commerce1/user-guide
 [Developer Guide]: /commerce1/developer-guide/getting-started
-[Commerce Kickstart 2]: /commerce-kickstart-2
+[Commerce Kickstart 2]: /commerce1/commerce-kickstart-2
 [Commerce Cookbook]: https://drupalcommerce.org/site-builders-guide
 [API Documentation]: http://api.drupalcommerce.org/

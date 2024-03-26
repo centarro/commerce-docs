@@ -898,10 +898,7 @@ customer has multiple open shopping carts.
 
 <p>Each change to a shopping cart order is saved as a revision. A user can also
 have more than one cart, though the default is to present the most recent
-shopping cart to the user. <a
-href="http://api.drupalcommerce.org/api/Drupal%20Commerce/sites%21all%21modules%21commerce%21modules%21cart%21commerce_cart.api.php/function/hook_commerce_cart_order_id/DC">hook_commerce_cart_order_id()</a>
-can be used to
-introduce alternate logic to the cart load process if necessary.</p>
+shopping cart to the user. hook_commerce_cart_order_id() can be used to introduce alternate logic to the cart load process if necessary.</p>
 <p><strong>Note:</strong> As long as the order is still in the shopping cart state, its line
 items will be re-validated on load against the latest product prices /
 availability, etc.</p>

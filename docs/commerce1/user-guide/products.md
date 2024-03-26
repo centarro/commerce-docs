@@ -529,7 +529,7 @@ process.</p>
 ## Setting up a Product Catalog
 
 <p>Catalogs or product display listings are critical to the success of your new eCommerce website. Fortunately for your site, it's running Drupal 7 and Views 3. This means just about anything is possible when it comes to displaying your Products. </p>
-<p>Before moving forward, you're going to need to know the difference between product displays and product entities. Additionally, it would help if you had more than a passing understanding of what <a href="http://dev.nodeone.se/en/taming-the-beast-learn-views-with-nodeone">Views</a> does. Particularly in the <a href="http://dev.nodeone.se/en/learn-views-with-nodeone-part-11-relationships">Views Relationship area</a>. </p>
+<p>Before moving forward, you're going to need to know the difference between product displays and product entities. Additionally, it would help if you had more than a passing understanding of what <a href="https://www.drupal.org/node/1578360">Views</a> does. Particularly in the <a href="https://www.drupal.org/node/1578586">Views Relationship area</a>. </p>
 <h2>Drupal eCommerce Catalog Recipes</h2>
 <p>We have boiled down most catalogs into four approaches. Are there more? Probably. If you can master two or more of these, you are well on your way to making all kinds of eCommerce possibilities.</p>
 

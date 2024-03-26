@@ -25,7 +25,7 @@ taxonomy:
 <p>See these great articles on the Phase2 blog about using Features Override:</p>
 
 <ul>
-<li><a href="http://www.phase2technology.com/blog/a-new-paradigm-for-overriding-drupal-features/">A new paradigm for overriding Drupal Features</a></li>
+<li><a href="https://www.phase2technology.com/blog/new-paradigm-overriding-drupal-features">A new paradigm for overriding Drupal Features</a></li>
 <li><a href="http://www.phase2technology.com/blog/features-and-overrides-part-deux/">Features and Overrides – Part Deux</a></li>
 <li><a href="http://www.phase2technology.com/blog/features-and-overrides-part-iii/">Features and Overrides – Part III</a></li>
 </ul>
@@ -167,7 +167,7 @@ These hosts have proven experience with running Commerce Kickstart:
 <strong>Commerce Guys</strong>: The software vendor that created and maintains Drupal Commerce and Commerce Kickstart - offers Platform.sh, a Platform-as-a-Service for running Commerce sites:
 <a href="https://platform.sh">https://platform.sh</a>
 
-<strong>Pantheon</strong>: Cloud hosting for Drupal, features a <a href="https://dashboard.getpantheon.com/products/kickstart/spinup">1-click installer for Commerce Kickstart 2.x</a>.
+<strong>Pantheon</strong>: Cloud hosting for Drupal, features a <a href="https://docs.pantheon.io/start-state">1-click installer for Commerce Kickstart 2.x</a>.
 <!--<a href="https://dashboard.getpantheon.com/products/kickstart/spinup"><img src="https://drupal.org/files/pantheon-button.png" alt="Commerce Kickstart on Pantheon" /></a>-->
 
 

@@ -74,7 +74,7 @@ This also means less work for you.
 ### How to install Composer
 
 Composer offers a convenient installer that you can execute directly from the commandline.
-Follow instructions on [how to install Composer here](https://www.getcomposer.org/doc/00-intro.md){target=_blank}.
+Follow instructions on [how to install Composer here](https://getcomposer.org/doc/00-intro.md){target=_blank}.
 We recommend that you use the newest version of composer, as older versions may or may not work.
 Check that your version matches the version listed on [getcomposer.org](https://getcomposer.org/){target=_blank}.
 
@@ -210,8 +210,7 @@ guide for information about applying patches.
 ### Chat with us on Slack
 Drupal Commerce benefits from an active community of developers who participate
 in the #commerce [Slack]{target=_blank} channel. There is also a general Drupal #support channel
-and the Drupal #general channel for light support questions. To join, visit:
-[http://drupalslack.herokuapp.com/]{target=_blank}
+and the Drupal #general channel for light support questions.
 
 For more information about Drupal Slack groups, see: [https://www.drupal.org/slack]{target=_blank}
 

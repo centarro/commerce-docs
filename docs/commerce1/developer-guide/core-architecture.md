@@ -474,7 +474,7 @@ The pane_id of a checkout pane is referred to as $pane_id.
 
 The Customer module uses this hook to gather information on the types of customer information profiles defined by enabled modules.  Each type is represented as a new bundle of the customer information profile entity and will have a corresponding checkout pane defined for it that may be used in the checkout form to collect information from the customer like name, address, tax information, etc.  Every bundle comes with a locked address field and additional fields may be added as necessary.
 
-The Customer module defines a single customer information profile type in its own implementation of this hook, [commerce_customer_commerce_commerce_customer_profile_type_info()](http://api.drupalcommerce.org/api/Drupal%20Commerce/ommerce--modules--customer--commerce_customer.module/function/commerce_customer_commerce_customer_profile_type_info/DC):
+The Customer module defines a single customer information profile type in its own implementation of this hook, commerce_customer_commerce_commerce_customer_profile_type_info():
 
 <ul>
 <li>Billing information - used to collect a billing name and address from the customer for use in processing payments.</li>

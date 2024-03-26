@@ -226,7 +226,7 @@ The first step is to click on Store and then "Configuration" and, finally, Produ
 ![Click on Add a Pricing Rule and Add event](../images/Cart-MultiCurrency-Step3.png)
 **Pricing Rule**
 
-We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="http://dev.nodeone.se/node/984">additional tutorials</a>.
+We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>

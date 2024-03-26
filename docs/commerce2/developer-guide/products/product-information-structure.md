@@ -162,9 +162,4 @@ The following diagram illustrates the relationships amoung product attributes, p
 
 This service is also used to provide the list of available attributes on the product variation type administrative form.
 
-
-### Links and Resources
-* [SKU Best Practices for Online Shopping Sites], by Andrew Brett Watson
-
-[SKU Best Practices for Online Shopping Sites]: http://andrewbrettwatson.com/index.php/help/187-sku-best-practices-for-online-shopping-sites
 [Commerce Shipping]: https://www.drupal.org/project/commerce_shipping
