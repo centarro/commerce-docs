@@ -11,9 +11,9 @@ powering over 50,000 online stores of all sizes.
 
 If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation on [Understanding Drupal]
 
-[If you develop in Drupal 7, access documentation here for Commerce 1.x](./commerce1)
+[If you develop in Drupal 7, access documentation here for Commerce 1.x](./commerce1/getting-started.md)
 
-[If you develop in Drupal 8, access documentation here for Commerce 2.x](./commerce2)
+[If you develop in Drupal 8, access documentation here for Commerce 2.x](./commerce2/getting-started.md)
 
 Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}.
 

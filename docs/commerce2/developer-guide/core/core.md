@@ -185,11 +185,11 @@ Our custom state field will be added to Order item entities, and we'll use it to
 
 A custom "State" field can be created through the admin UI like any other custom field. Navigate to the "Manage fields" page for the "Default" order type at `admin/commerce/config/order-item-types/default/edit/fields` and click the "Add field" button to add a new "State" field. We'll name our new field "Fulfillment state" with machine ID: `field_fulfillment_state`. The number of allowed values for a State field should always be set to 1.
 
-![Custom state field config](./images/custom-state-fields-1.png)
+![Custom state field config](../images/custom-state-fields-1.png)
 
 All that is fairly straightforward, but we have a problem. We cannot set a "Workflow" for the field since none are available for this entity type. If we were adding the custom field to a Payment type or Order type, we could use the workflows defined for those entities. But since we are creating a State field on an Order item type, we need to create a new custom workflow.
 
-![Configure state field workgroup](./images/custom-state-fields-2.png)
+![Configure state field workgroup](../images/custom-state-fields-2.png)
 
 It is not possible to create a workflow through the admin UI, so we need to add its definition using a custom module. See the Drupal.org [Creating custom modules] documentation if you need help getting started. In this example, we'll assume we've created and installed a custom module named `mymodule`.
 
@@ -238,32 +238,32 @@ For each state, we simply define a label for each of the state IDs. The state ID
 
 Defining the transitions can be trickier, if your workflow has any complex logic. Sketching out the states and transitions on paper with boxes and arrows can be helpful. For example, here is a diagram for our order item fulfillment workflow:
 
-![Order item fulfillment workflow diagram](./images/custom-state-fields-5.png)
+![Order item fulfillment workflow diagram](../images/custom-state-fields-5.png)
 
 Notice that there are two separate arrows for the "Un-fill" and "Fill" transtions between the "Not filled" and "Filled" states. State transitions are always one-way, so we need a separate transition for each direction. Also, for any transition, there can only be exactly one "to" state. Since any transition can have multiple "from" states, those state IDs are defined with square brackets.
 
 After creating the workflow group and workflow YAML files, we just need to clear caches so that the configuration can be discovered. Now we can set the workgroup value for our custom Order item state field through the admin UI:
 
-![Set state field workgroup](./images/custom-state-fields-3.png)
+![Set state field workgroup](../images/custom-state-fields-3.png)
 
 To see the new State field in action, create a new order and then edit it through the admin UI. We now have a Fulfillment state field on the order item with State options matching the ones defined for its workflow. If you update its state to "Filled" and then save, you will see that the options change the next time you edit the order item. Only "Un-fill" will be available as an option.
 
-![Update order item state admin UI](./images/custom-state-fields-4.png)
+![Update order item state admin UI](../images/custom-state-fields-4.png)
 
 
 #### State transition Guards
 
 The workflow set for a State field defines all the states and transitions that are available for that field. For example, the Commerce Order "Fulfillment" workflow has states: "Draft", "Fulfillment", "Completed", and "Canceled", with transitions: "Place", "Fulfill", and "Cancel". This diagram illustrates the states and transitions of the Order fulfillment workflow:
 
-![Order fulfillment workflow](./images/state-transition-guards-1.png)
+![Order fulfillment workflow](../images/state-transition-guards-1.png)
 
 When an order is placed, either at checkout or through the admin UI, its State changes from "Draft" to "Fulfillment". After that, administrative users can manually transition the order's state to "Completed" or "Canceled". 
 
-![Custom state field config](./images/state-transition-guards-2.png)
+![Custom state field config](../images/state-transition-guards-2.png)
 
 But what if we wanted to add constraints to prevent administrative users from moving an Order from the Fulfillment state to Completed or Canceled under certain conditions? In the [Custom state fields documentation](../custom-state-fields), we created a custom State field for Order items, to track fulfillment on a per-item basis. We might want to prevent users from cancelling an order if any of its order items have already been "filled". And we might want to prevent users from transitioning an order to Completed if any of its items are still "un-filled". The State Machine module's state transition "Guards" provide the ability to incorporate this sort of business logic. State transition Guards limit the transitions available for a State field based on contextual information. Transitions can be restricted based on the current user's permissions, a parent entity field, etc.
 
-![Order fulfillment workflow with guards](./images/state-transition-guards-3.png)
+![Order fulfillment workflow with guards](../images/state-transition-guards-3.png)
 
 Using Guards requires writing custom code. Specifically, you will need to write a tagged service that implements `Drupal\state_machine\Guard\GuardInterface`. This interface defines a single method that returns a boolean TRUE/FALSE value:
 
@@ -550,7 +550,7 @@ Here is an example for changing the label for a Payment State, using `hook_workf
      *   Workflow definitions, keyed by plugin ID.
      */
     function mymodule_workflows_alter(array &$workflows) {
-    $workflows['payment_default']['states']['completed']['label'] = 'Captured';
+      $workflows['payment_default']['states']['completed']['label'] = 'Captured';
     }
     ```
 

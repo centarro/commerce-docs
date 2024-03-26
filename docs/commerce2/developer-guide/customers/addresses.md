@@ -75,24 +75,24 @@ All this needs to be taken into account when generating and validating an addres
 The Commerce Guys *Addressing* library provides an address format repository with formats for over 200 countries. The formats are generated from [Google's Address Data Service]. For example, here are the instantiated address formats for *Armenia* (country code *AM*) and the *United States* (country code *US*).
 
 ```php
-            'AM' => [
-                'format' => "%givenName %familyName\n%organization\n%addressLine1\n%addressLine2\n%postalCode\n%locality\n%administrativeArea",
-                'postal_code_pattern' => '(?:37)?\d{4}',
-                'subdivision_depth' => 1,
-            ],
-            'US' => [
-                'format' => "%givenName %familyName\n%organization\n%addressLine1\n%addressLine2\n%locality, %administrativeArea %postalCode",
-                'required_fields' => [
-                    'addressLine1', 'locality', 'administrativeArea', 'postalCode',
-                ],
-                'uppercase_fields' => [
-                    'locality', 'administrativeArea',
-                ],
-                'administrative_area_type' => 'state',
-                'postal_code_type' => 'zip',
-                'postal_code_pattern' => '(\d{5})(?:[ \-](\d{4}))?',
-                'subdivision_depth' => 1,
-            ],
+'AM' => [
+    'format' => "%givenName %familyName\n%organization\n%addressLine1\n%addressLine2\n%postalCode\n%locality\n%administrativeArea",
+    'postal_code_pattern' => '(?:37)?\d{4}',
+    'subdivision_depth' => 1,
+],
+'US' => [
+    'format' => "%givenName %familyName\n%organization\n%addressLine1\n%addressLine2\n%locality, %administrativeArea %postalCode",
+    'required_fields' => [
+        'addressLine1', 'locality', 'administrativeArea', 'postalCode',
+    ],
+    'uppercase_fields' => [
+        'locality', 'administrativeArea',
+    ],
+    'administrative_area_type' => 'state',
+    'postal_code_type' => 'zip',
+    'postal_code_pattern' => '(\d{5})(?:[ \-](\d{4}))?',
+    'subdivision_depth' => 1,
+],
 ```
 
 You can see how the `format` string matches up with the forms displayed in the above image. The postal code, locality, and administrative area (province) fields appear on separate lines for Armenia. For the United States, locality, administrative area (state), and postal code appear inline on a single line.
@@ -328,12 +328,12 @@ The default address widget uses the custom *address* form element. As a result, 
 !!! Example
     ```php
     function mymodule_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-    if (($form_id == 'profile_customer_edit_form') || ($form_id == 'profile_customer_add_form')) {
+      if (($form_id == 'profile_customer_edit_form') || ($form_id == 'profile_customer_add_form')) {
         $form['address']['widget'][0]['address']['#pre_render'][] = 'mymodule_prerender';
     }
 
     function mymodule_prerender($element) {
-    if ($element['country_code']['#default_value'] == 'US') {
+      if ($element['country_code']['#default_value'] == 'US') {
         $include_states = ['', 'NY', 'NJ', 'PA', 'DE', 'MD', 'DC', 'VA', 'WV'];
         $options = array_intersect_key($element['administrative_area']['#options'], array_flip($include_states));
         $element['administrative_area']['#options'] = $options;
@@ -422,8 +422,8 @@ The default address widget uses the custom *address* form element. As a result, 
     In this example, we'll change the default "Street address" label with separate labels for each of the two street address field properties. We can use the same `mymodule_form_alter()` from the first example with a new `mymodule_customize_address()`:"
 
     ```php
-      function mymodule_customize_address($element, $form_state) {
-        dpm($element['#field_overrides']);
+    function mymodule_customize_address($element, $form_state) {
+      dpm($element['#field_overrides']);
       $element['address_line1']['#title'] = t('Address line 1');
       $element['address_line2']['#title'] = t('Address line 2');
       $element['address_line2']['#title_display'] = 'before';
@@ -504,8 +504,6 @@ The *Default* address formatter will display the country for all addresses, rega
 This example assumes that we have already created a custom module, named mymodule. Well create a custom formatter plugin named `AddressHideUSFormatter` like this:
 
 ```php
-<?php
-
 namespace Drupal\mymodule\Plugin\Field\FieldFormatter;
 
 use Drupal\address\Plugin\Field\FieldFormatter\AddressDefaultFormatter;
@@ -533,52 +531,52 @@ We give the field formatter plugin a unique id: *address_us_default* and descrip
 At this point, our custom formatter works exactly the same as the *Default* formatter. To customize its behavior, we'll override the `postRender()` method, since that is the method in which the *country* field gets added to the address format string. This is the relevant code:
 
 ```php
-    if (Locale::matchCandidates($address_format->getLocale(), $locale)) {
-      $format_string = '%country' . "\n" . $address_format->getLocalFormat();
-    }
-    else {
-      $format_string = $address_format->getFormat() . "\n" . '%country';
-    }
+if (Locale::matchCandidates($address_format->getLocale(), $locale)) {
+  $format_string = '%country' . "\n" . $address_format->getLocalFormat();
+}
+else {
+  $format_string = $address_format->getFormat() . "\n" . '%country';
+}
 ```
 
 All we'll do is add an extra condition, to modify the functionality for *US* addresses:
 ```php
-    if ($address_format->getCountryCode() == 'US') {
-      $format_string = $address_format->getFormat();
-    }
+if ($address_format->getCountryCode() == 'US') {
+  $format_string = $address_format->getFormat();
+}
 ```
 
 To make this work for domestic addresses in other countries, just change the *country code* in the added condition. Our full `postRender()` method now looks like this:
 
 ```php
-  public static function postRender($content, array $element) {
-    /** @var \CommerceGuys\Addressing\AddressFormat\AddressFormat $address_format */
-    $address_format = $element['#address_format'];
-    $locale = $element['#locale'];
-    // Add the country to the bottom or the top of the format string,
-    // depending on whether the format is minor-to-major or major-to-minor.
-    if ($address_format->getCountryCode() == 'US') {
-      $format_string = $address_format->getFormat();
-    }
-    elseif (Locale::matchCandidates($address_format->getLocale(), $locale)) {
-      $format_string = '%country' . "\n" . $address_format->getLocalFormat();
-    }
-    else {
-      $format_string = $address_format->getFormat() . "\n" . '%country';
-    }
-
-    $replacements = [];
-    foreach (Element::getVisibleChildren($element) as $key) {
-      $child = $element[$key];
-      if (isset($child['#placeholder'])) {
-        $replacements[$child['#placeholder']] = $child['#value'] ? $child['#markup'] : '';
-      }
-    }
-    $content = self::replacePlaceholders($format_string, $replacements);
-    $content = nl2br($content, FALSE);
-
-    return $content;
+public static function postRender($content, array $element) {
+  /** @var \CommerceGuys\Addressing\AddressFormat\AddressFormat $address_format */
+  $address_format = $element['#address_format'];
+  $locale = $element['#locale'];
+  // Add the country to the bottom or the top of the format string,
+  // depending on whether the format is minor-to-major or major-to-minor.
+  if ($address_format->getCountryCode() == 'US') {
+    $format_string = $address_format->getFormat();
   }
+  elseif (Locale::matchCandidates($address_format->getLocale(), $locale)) {
+    $format_string = '%country' . "\n" . $address_format->getLocalFormat();
+  }
+  else {
+    $format_string = $address_format->getFormat() . "\n" . '%country';
+  }
+
+  $replacements = [];
+  foreach (Element::getVisibleChildren($element) as $key) {
+    $child = $element[$key];
+    if (isset($child['#placeholder'])) {
+      $replacements[$child['#placeholder']] = $child['#value'] ? $child['#markup'] : '';
+    }
+  }
+  $content = self::replacePlaceholders($format_string, $replacements);
+  $content = nl2br($content, FALSE);
+
+  return $content;
+}
 ```
 
 Lastly, we need to add two additional *use* statements for the `postRender()` method:

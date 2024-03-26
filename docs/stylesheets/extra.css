@@ -125,6 +125,7 @@
 }
 
 .md-typeset img {
+  width: 100%;
   max-width: 640px;
   border: 4px solid var(--md-primary-fg-color--light);
 }

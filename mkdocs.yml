@@ -71,6 +71,42 @@ nav:
         - Taxes: 'commerce2/user-guide/taxes.md'
         - Checkout: 'commerce2/user-guide/checkout.md'
         - Shipping: 'commerce2/user-guide/shipping.md'
+  - Commerce 1.x :
+      - commerce1/getting-started.md
+      - Developer Guide:
+        - Getting started: commerce1/developer-guide/getting-started.md
+        - Core Architecture: commerce1/developer-guide/core-architecture.md
+        - Utilizing core APIs: commerce1/developer-guide/utilizing-core-APIs.md
+        - Code Recipes: commerce1/developer-guide/code-recipes.md
+      - User Guide:
+        - commerce1/user-guide/index.md
+        - Installation: commerce1/user-guide/installation.md
+        - Products: commerce1/user-guide/products.md
+        - Pricing: commerce1/user-guide/pricing.md
+        - Shopping cart: commerce1/user-guide/shopping-cart.md
+        - Checkout process: commerce1/user-guide/checkout-process.md
+        - Payments: commerce1/user-guide/payments.md
+        - Managing orders: commerce1/user-guide/managing-orders.md
+        - Customer profiles: commerce1/user-guide/customer-profiles.md
+        - Shipping: commerce1/user-guide/shipping.md
+        - Tax Configuration: commerce1/user-guide/tax-configuration.md
+      - Commerce Kickstart 2:
+        - commerce1/commerce-kickstart-2/index.md
+        - Installing and upgrading: commerce1/commerce-kickstart-2/installing-and-upgrading.md
+        - Demo store features: commerce1/commerce-kickstart-2/demo-store-features.md
+        - Products:
+          - commerce1/commerce-kickstart-2/products/index.md
+          - Adding a new product: commerce1/commerce-kickstart-2/products/adding-new-product.md
+          - Adding a taxonomy field to a Product for Attributes: commerce1/commerce-kickstart-2/products/adding-taxonomy-field.md
+          - Adding images to variations and dealing with image styles: commerce1/commerce-kickstart-2/products/adding-images.md
+          - Choosing between Page or Variation: commerce1/commerce-kickstart-2/products/choosing-between-page-variation.md
+          - Product Management Overview: commerce1/commerce-kickstart-2/products/product-management-overview.md
+        - Orders overview: commerce1/commerce-kickstart-2/orders-overview.md
+        - Checkout overview: commerce1/commerce-kickstart-2/checkout-overview.md
+        - Currency overview: commerce1/commerce-kickstart-2/currency-overview.md
+        - Taxes overview: commerce1/commerce-kickstart-2/taxes-overview.md
+        - Shipping: commerce1/commerce-kickstart-2/shipping.md
+        - Translating a Commerce Store: commerce1/commerce-kickstart-2/translating-store.md
 theme:
   name: material
   features:
@@ -113,6 +149,12 @@ markdown_extensions:
   - md_in_html
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
