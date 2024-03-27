@@ -18,7 +18,6 @@ The Drupal Commerce project is striving for strict adherence to the following de
 
 If a patch needs work based on any of the project's development standards, please indicate the number below so the patch author can adapt his or her code style.
 
-Suggestions for improving and/or expanding these standards should be posted in the <a href="/forum/3">Brainstormings</a> forum for consideration. Don't be shy... we want these to be as helpful as possible.
 
 <ol>
 <li><a href="#syntax">Code Syntax and Documentation</a></li>
@@ -102,7 +101,7 @@ Only form builder functions should end in _form.
 
 We will be using Drupal 7's core <a href="http://drupal.org/simpletest">SimpleTest</a> testing framework to facilitate code development and maintainability.  While not embracing true test-driven development, we will still only be committing code that comes with appropriate function tests.
 
-The Commerce module provides a base class used for creating Drupal Commerce tests.  The process is documented in the Specification handbook, <a href="http://www.drupalcommerce.org/specification/apis/simpletest">Writing SimpleTests for Commerce modules</a>.
+The Commerce module provides a base class used for creating Drupal Commerce tests.  The process is documented in the Specification handbook, <a href="https://drupalcommerce.org/developer-guide/utilizing-core-apis/writing-simpletests-commerce-modules">Writing SimpleTests for Commerce modules</a>.
 
 Unit testing is under consideration for the core APIs, but a realistic target for now is to mimic Drupal's core test coverage guidelines.
 
@@ -173,7 +172,6 @@ When a developer is ready to get to work, he or she should chime in on the appro
 
 Bugs should always be reported via the issue tracker on d.o, but feature requests can start here in the forums so they can be worked into the specification.  The specification here should always be an up to date representation of what we have in code.
 
-For historical context regarding the git migration, see <a href="http://www.bywombats.com/blog/03-01-2011/drupal-commerce-gitdo-world">this blog post</a>.
 
 ## Using Git
 

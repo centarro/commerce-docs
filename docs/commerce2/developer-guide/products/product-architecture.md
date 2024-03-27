@@ -112,7 +112,7 @@ On the *Field settings* configuration page:
 6. Change the *Allowed number of values* from *Limited* to *Unlimited*. Product variations of type *Simple* can have 1 or more images.
 7. Click *Save field settings* to continue.
 
->You can use the default values for the rest of the Image field settings. If you are interested in learning more about the Image field settings options, see the Drupal 8 documentation for [Working with images], which is currently out of date. Until it has been updated, you may find this [Image Media Type Manage Fields Tab] documentation more helpful.
+>You can use the default values for the rest of the Image field settings. If you are interested in learning more about the Image field settings options, see the Drupal 8 documentation for [Working with images].
 
 ![Image field settings](../../images/simple-product-type-5.jpg)
 
@@ -358,7 +358,7 @@ For downloadable products / files, we recommend the [Commerce File module]. The 
 
 ### Subscriptions
 
-For subscription products, we recommend the [Commerce Recurring Framework module], which provides recurring billing for Drupal Commerce. See the [Subscriptions documentation](../../../recurring) for additional information.
+For subscription products, we recommend the [Commerce Recurring Framework module], which provides recurring billing for Drupal Commerce. See the [Subscriptions documentation](../../recurring/getting-started) for additional information.
 
 ### Product bundles
 

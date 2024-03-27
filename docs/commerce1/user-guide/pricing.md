@@ -226,7 +226,7 @@ The first step is to click on Store and then "Configuration" and, finally, Produ
 ![Click on Add a Pricing Rule and Add event](../images/Cart-MultiCurrency-Step3.png)
 **Pricing Rule**
 
-We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="http://dev.nodeone.se/node/984">additional tutorials</a>.
+We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -736,7 +736,7 @@ Simply changing the price to show with components, it displays all that is neces
 
 <h3>Enable Price Components via Rules</h3>
 
-<p>In order to show you what price components using rules look like, we've picked up the Sell Price Calculations example in the very middle. To see the whole exercise, <a href="/sell-price-calculation">check it out</a>.</p>
+<p>In order to show you what price components using rules look like, we've picked up the Sell Price Calculations example in the very middle. To see the whole exercise, <a href="#sell-price-calculation">check it out</a>.</p>
 
 ![Set .5 for 50% off, and select Discount for the price component type.](../images/Price-Calc-step6.png)
 
@@ -792,8 +792,6 @@ When you are setting the actual math part of the discount, we chose to simply mu
 
 <ul>
   <li><a href="http://drupalize.me/series/coding-rules">Drupalize.me "Coding for Rules"</a></li>
-  <li><a href="http://nodeone.se/node/986">Introduction to Rules</a> - NodeOne Learning Library video tutorials.</li>
-  <li><a href="http://nodeone.se/blogg/learn-rules-with-nodeone-part-1-overview">Learn Rules with NodeOne</a> - Drupal 6 video tutorials.</li>
   <li><a href="http://drupal.org/files/tiny-book-of-rules.pdf">The Tiny Book of Rules</a> - a condensed introduction to Rules.</li>
   <li><a href="http://drupal.org/node/1580776">Chapter 12</a> - the online version of <strong>Drupal 7 – The Essentials</strong></li>
 </ul>
@@ -821,7 +819,7 @@ When you are setting the actual math part of the discount, we chose to simply mu
 </ul>
 
 <p>For the novice, or perhaps a web developer who is only occasionally asked to create an e-commerce website, it might come as a surprise that the sale or sell price goes through a fair amount of tweaking before being represented on the site. Each step that our sell price goes through is designed to make discounts, taxes, currency conversion and many other possibilities have an impact.</p>
-<p>Product sell prices are determined via a Rules based calculation process. If you are not up on your Rules module implementation tasks, you should check out the <a href="http://dev.nodeone.se/node/984">NodeOne Rules Videos</a> to get up to speed.</p>
+<p>Product sell prices are determined via a Rules based calculation process. If you are not up on your Rules module implementation tasks, you should check out the <a href="https://www.drupal.org/node/1580776">Rules tutorial</a> to get up to speed.</p>
 
 <p><strong>The life of a Price Calculation</strong></p>
 

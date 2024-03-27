@@ -62,7 +62,7 @@ taxonomy:
 <h3>Search API</h3>
 <p>The catalog pages depend heavily on Search API. To learn a bit more about search API and what it is capable of, take a look at the following Commerce Module Tuesday video:</p>
 
-<iframe src="http://player.vimeo.com/video/53404289?portrait=0&amp;badge=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/53404289?portrait=0&amp;badge=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 ## Social Logins using Connector
 
@@ -81,8 +81,8 @@ taxonomy:
 <p><strong>Step 1</strong>: Go to admin/structure/oauthconnector/list and create a new provider by using one of the presets the list, or by creating your own. You will need an App Key, a secret key, and a callback URL for each provider (see list below).</p>
 <p>URLs to apply for App Keys (as of Mar. 2012):</p>
 
-* Facebook: <https://graph.facebook.com/>
-* Twitter: <https://api.twitter.com/>
+* Facebook: <https://developers.facebook.com/docs/facebook-login/guides/access-tokens>
+* Twitter: <https://developer.twitter.com/en/docs/authentication/guides/log-in-with-twitter>
 * Google: <https://code.google.com/apis/console>
 * LinkedIn: <https://www.linkedin.com/secure/developer>
 * Flickr: <http://www.flickr.com/services>

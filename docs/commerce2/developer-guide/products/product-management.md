@@ -22,7 +22,7 @@ This section describes how you can customize the forms used to enter product dat
 
 ### Single vs. multi-variation product types
 
-In the [Product architecture documentation](./product-architecture), we created a [Simple product type](./product-architecture/#configure-a-product-variation-type) that had only a single variation per product and a [Clothing product type](./product-architecture/#product-type-with-attributes) with multiple variations per product. Let's start by comparing the forms for these two product types. On the left, we have the form for the *Simple* product type, with a *Product Information* section that includes data entry fields for the single product variation. On the right, we have the form for the *Clothing* product type, with a *Variations* tab that links to a *separate* page for managing the product's variations. The rest of the forms is identical.
+In the [Product architecture documentation](../product-architecture), we created a [Simple product type](../product-architecture/#configure-a-product-variation-type) that had only a single variation per product and a [Clothing product type](../product-architecture/#product-type-with-attributes) with multiple variations per product. Let's start by comparing the forms for these two product types. On the left, we have the form for the *Simple* product type, with a *Product Information* section that includes data entry fields for the single product variation. On the right, we have the form for the *Clothing* product type, with a *Variations* tab that links to a *separate* page for managing the product's variations. The rest of the forms is identical.
 
 ![Product data entry form](../images/product-data-entry-1.png)
 
@@ -158,7 +158,7 @@ The Operations menu that appears in the rightmost column of the Products overvie
 
 ## Importing and exporting
 
-Functionality for importing and exporting products is not built into Drupal Commerce core. This section describes how various Drupal contrib modules can be used to extend Drupal Commerce for importing and / or exporting products. See [Extending Drupal Commerce documentation](../../installation/#extending) for information on how Drupal Commerce can be extended with additional modules.
+Functionality for importing and exporting products is not built into Drupal Commerce core. This section describes how various Drupal contrib modules can be used to extend Drupal Commerce for importing and / or exporting products. See [Extending Drupal Commerce documentation](../../../installation/#extending) for information on how Drupal Commerce can be extended with additional modules.
 
 
 ### Importing products

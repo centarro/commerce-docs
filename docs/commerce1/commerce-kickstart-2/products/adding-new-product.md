@@ -328,8 +328,6 @@ endless.</p>
 
 **Product Types**
         
-<p>The product types are documented in great detail in the <a href="Prod-Entity.html">Products as an Entity</a>.</p>
-
 <ul class="screenshot_breadcrumbs">
     <li class="first">Drupal Commerce</li>
     <li>Administration</li>
@@ -342,7 +340,7 @@ endless.</p>
 
 **Manage Fields**
 
-<p>If you click on "Manage Fields" from the standard Product Type this is what you will see. You will note that it is very similar to editing a content type, using the same interface to add fields to product types.See <a href="/user-guide/product-attributes-variations">Product Attributes &amp; Variations</a> for more information.</p>
+<p>If you click on "Manage Fields" from the standard Product Type this is what you will see. You will note that it is very similar to editing a content type, using the same interface to add fields to product types.See <a href="#product-attributes-variations">Product Attributes &amp; Variations</a> for more information.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Drupal Commerce</li>
@@ -376,7 +374,7 @@ endless.</p>
 Product Entity form in all of it's glory. Pretty simple, we've got the
 Product SKU and Product Title that are required. Additionally, Commerce
 Kickstart has added the Image field. <a
-href="../cart/Cart-MultiCurrency.html">The Price can be changed to allow
+href="../../../user-guide/shopping-cart/#shopping-cart-and-multi-currency">The Price can be changed to allow
 for multiple currencies</a>.</p>
     
 <ul class="screenshot_breadcrumbs">

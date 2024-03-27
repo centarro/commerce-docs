@@ -301,7 +301,7 @@ That’s it! Happy contributing!
 [Drupal VM]: http://www.drupalvm.com/
 [Acquia Dev Desktop]: https://www.acquia.com/products-services/dev-desktop
 [Git]: https://git-scm.com/
-[Composer]: https://getcomposer.org/doc/00-intro.rst#installation-linux-unix-osx
+[Composer]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos
 [Drupal Console]: https://drupalconsole.com
 [PHPUnit]: https://phpunit.de/
 [project-base README]: https://github.com/drupalcommerce/project-base/blob/8.x/README.md

@@ -489,7 +489,7 @@ composer update drupal/commerce
  [Applying patches documentation]: https://www.drupal.org/patch/apply
  [Concept: Data Backups documentation]: https://www.drupal.org/docs/user_guide/en/prevent-backups.html
  [Drupal 8’s requirements]: https://www.drupal.org/requirements
- [DDEV]: https://www.drud.com/what-is-ddev/
+ [DDEV]: https://ddev.readthedocs.io/
  [Drupal VM]: http://www.drupalvm.com/
  [Composer]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
  [Drupal's configuration management system]: https://www.drupal.org/docs/8/configuration-management/managing-your-sites-configuration

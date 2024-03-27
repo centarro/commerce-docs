@@ -16,7 +16,7 @@ If you've set up [products](../../products/getting-started) for your Drupal Comm
 
 But what if your products need to have different prices in different situations? Perhaps you have one set of prices for wholesale customers, another for regular customers, and yet another for some sort of "preferred" customers. Or maybe you have multiple stores, each with their own set of prices. If you have complex pricing needs like these, then you will need to create a custom *Price resolver*.
 
-See the [Price resolvers](../../pricing/price-resolvers) documentation for additional information and example code.
+See the [Price resolvers](../../pricing/prices/#price-resolvers) documentation for additional information and example code.
 
 #### Store resolvers
 

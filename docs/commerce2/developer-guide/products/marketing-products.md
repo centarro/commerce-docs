@@ -151,7 +151,7 @@ Next, we'll set up a basic search page for our indexed data using Views and the 
 
 ## Product Catalog Facets
 
-In this section, we'll transform the [Basic product search](#product-search) page we already created into a Product catalog page with faceted search functionality. We'll use the Brands and Product categories taxonomies we created in the [Product categories documentation](../products/product-architecture/#product-categories). We'll also incorporate the [Add to cart form](../products/displaying-products/#add-to-cart-form) into our product catalog listing to encourage browsing users to become buying customers.
+In this section, we'll transform the [Basic product search](#product-search) page we already created into a Product catalog page with faceted search functionality. We'll use the Brands and Product categories taxonomies we created in the [Product categories documentation](../product-architecture/#product-categories). We'll also incorporate the [Add to cart form](../displaying-products/#add-to-cart-form) into our product catalog listing to encourage browsing users to become buying customers.
 
 ![Product catalog page](../../images/product-catalog.jpg)
 

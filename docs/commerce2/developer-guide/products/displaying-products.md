@@ -500,7 +500,7 @@ The [Single media](https://www.drupal.org/project/single_media) is very similar 
 * [Custom field formatter for displaying entity images with thumbnails and 1 large image], posted by Ivan Jaros in [Drupal Answers] on StackExchange.
 
 
-[Drupal 8: Hooks, Events, and Event Subscribers]: https://www.daggerhart.com/drupal-8-hooks-events-event-subscribers/
+[Drupal 8: Hooks, Events, and Event Subscribers]: https://www.daggerhartlab.com/drupal-8-hooks-events-event-subscribers/
 [Drupal 8 Event Subscribers - the successor to alter hooks]: https://www.computerminds.co.uk/drupal-code/drupal-8-event-subscribers-successor-alter-hooks
 [Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
 [Drupal Views module]: https://www.drupal.org/docs/8/core/modules/views

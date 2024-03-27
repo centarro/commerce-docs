@@ -18,21 +18,20 @@ This documentation section describes how you can organize customer-related infor
 - Learn about address formats, countries, and subdivisions.
 - Customize address forms and displays.
 
-**[Profiles](03.profiles)**
+**[Profiles](../profiles)**
 
 - Customize profiles for capturing customer information.
 - Control access to profiles and manage profiles administratively.
 - 
-**[Customer Accounts](04.customer-accounts)**
+**[Customer Accounts](../customer-accounts-groups)**
 
 - Customize user accounts for use by customers.
 - Learn about options for managing customer accounts.
 
-**[Customer Groups](05.customer-groups)**
+**[Customer Groups](../customer-accounts-groups/#customer-groups)**
 
 - Create a discount based on customer groups, using Drupal user roles.
 - Create a customer group taxonomy to organize customer accounts.
-- 
 
 ## Overview
 If you're looking at Drupal Commerce for the first time, you may be wondering, "where are the customers?" Under the *Commerce* administrative menu, you can see Orders, Products, and Promotions, but there is no item for *Customers*.

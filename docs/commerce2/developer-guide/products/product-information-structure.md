@@ -126,7 +126,7 @@ A **product attribute** is a configuration entity that has the following propert
 | ----------- | ----------- |
 | id          | Unique string id. |
 | label       | Label to be used for the attribute and typically displayed to customer. For example: *Color* or *Size*. |
-| elementType | Element to be used for displaying the attribute value options to the customer. One of: <ul><li>**radios**: radio buttons</li><li>**select**: select list</li><li>**commerce_product_rendered_attribute**: Rendered attribute.<br />See [Product attributes](./displaying-products/#product-attributes) in the Displaying products documentation for more information.</li></ul> |
+| elementType | Element to be used for displaying the attribute value options to the customer. One of: <ul><li>**radios**: radio buttons</li><li>**select**: select list</li><li>**commerce_product_rendered_attribute**: Rendered attribute.<br />See [Product attributes](../displaying-products/#product-attributes) in the Displaying products documentation for more information.</li></ul> |
 
 The product attribute entity also has two useful *getter* methods:
 
@@ -162,9 +162,4 @@ The following diagram illustrates the relationships amoung product attributes, p
 
 This service is also used to provide the list of available attributes on the product variation type administrative form.
 
-
-### Links and Resources
-* [SKU Best Practices for Online Shopping Sites], by Andrew Brett Watson
-
-[SKU Best Practices for Online Shopping Sites]: http://andrewbrettwatson.com/index.php/help/187-sku-best-practices-for-online-shopping-sites
 [Commerce Shipping]: https://www.drupal.org/project/commerce_shipping

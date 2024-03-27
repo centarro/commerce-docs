@@ -9,7 +9,7 @@ The Drupal Commerce Log module provides activity logs for Commerce entities. Adm
 For information on creating custom activity logs, see these documentation pages:
 
 * [Commerce Log module architecture](#architecture)
-* [Commerce Log module code recipes](code-recipes)
+* [Commerce Log module code recipes](../code-recipes)
 * [Customize the order's activity log with Drupal Commerce 2] - tutorial provided by Flocon de toile
 
 

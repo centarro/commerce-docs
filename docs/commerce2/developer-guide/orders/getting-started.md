@@ -60,7 +60,7 @@ An order item represents a purchasable entity inside of an order. It
 contains a reference to the purchasable entity, a quantity, a unit price
 and a total price.
 
-Order items are fieldable and may also store other data relevant to the order, such as product customizations/configurations that are unique to the order. For example, suppose you offer products that are available in a variety of lengths. If there are just a few, limited options, like "10 cm, 20 cm, or 50cm", then the best approach will typically be to create a "length" [product attribute](../../products/product-architecture/product-attributes) for your product variation type with these values. On the other hand, if a customer can enter any value from 10 cm up through 100 m, you may not want to create a unique attribute value (and SKU) for every possible value.
+Order items are fieldable and may also store other data relevant to the order, such as product customizations/configurations that are unique to the order. For example, suppose you offer products that are available in a variety of lengths. If there are just a few, limited options, like "10 cm, 20 cm, or 50cm", then the best approach will typically be to create a "length" [product attribute](../../products/product-architecture/#product-type-with-attributes) for your product variation type with these values. On the other hand, if a customer can enter any value from 10 cm up through 100 m, you may not want to create a unique attribute value (and SKU) for every possible value.
 
 Creating an excess of product variations makes management hard. An alternative to using product attributes is to create a "length" field for your order item type, configured so that customers can enter the length value when adding the product to their carts.
 

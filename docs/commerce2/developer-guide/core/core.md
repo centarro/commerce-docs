@@ -11,24 +11,24 @@ your Drupal Commerce store.
 **[Libraries and dependencies](#php-libraries)**
 
 
-**[Conditions](01.conditions)**
+**[Conditions](../conditions)**
 
 - Learn how the Core Conditions component allows us to create configuration entities with conditions.
 - Learn how to build your own Condition plugin or alter an existing one.
 - Learn how to filter the list of Conditions provided for specific configuration entities.
 
-**[Sending HTML emails](02.html-emails)**
+**[Sending HTML emails](../html_emails)**
 
 - Learn how to use the Swift Mailer module to send HTML emails.
 - More TBD
 
-**[Understanding resolvers](03.understanding-resolvers)**
+**[Understanding resolvers](../understanding_resolvers)**
 
 - Learn about the concept of Resolvers.
 - Learn about types of Resolvers and how they're used in Drupal Commerce.
 - Learn about the structure of Resolvers and Chain resolvers.
 
-**[Relationship diagrams](05.relationships)**
+**[Relationship diagrams](../relationships)**
 
 - Learn about the major Drupal Commerce entities and their relationships.
 
@@ -58,7 +58,7 @@ community-based sites organize users around specific information.
 
 See Also: [Profile module on Drupal.org]
 
-Additional documentation on [Profiles](../../../customers/profiles) and how they are used within Drupal Commerce is provided within the [Customers](../../../customers) section of this guide.
+Additional documentation on [Profiles](../../customers/profiles) and how they are used within Drupal Commerce is provided within the [Customers](../../../customers) section of this guide.
 
 ### Inline Entity Form
 
@@ -177,7 +177,7 @@ the post_transition events are dispatched after the save.
 
 #### Working with state fields
 
-Drupal Commerce uses State fields for two of its entities: Orders and Payments. You can learn more about [Order workflows](../../../../orders/workflows) in the Orders documentation section. The [Payments information structure](../../../../payments/payments-information-structure) documentation describes the states of *Default* and *Manual* Payment workflows. There are also examples of altering Payment workflows in the [Payments code recipes](../../../../payments/code-recipes) and the [State machine code recipes](../code-recipes).
+Drupal Commerce uses State fields for two of its entities: Orders and Payments. You can learn more about [Order workflows](../../orders/workflows) in the Orders documentation section. The [Payments information structure](../../payments/payments) documentation describes the states of *Default* and *Manual* Payment workflows. There are also examples of altering Payment workflows in the [Payments code recipes](../../payments/code-recipes) and the [State machine code recipes](#code-recipes).
 
 In this documentation section, we will go through an example of creating a custom State field, workflow, and workflow group and continue to build out the example in the next two sections on Guards and Transition event subscribers.
 
@@ -261,7 +261,7 @@ When an order is placed, either at checkout or through the admin UI, its State c
 
 ![Custom state field config](../images/state-transition-guards-2.png)
 
-But what if we wanted to add constraints to prevent administrative users from moving an Order from the Fulfillment state to Completed or Canceled under certain conditions? In the [Custom state fields documentation](../custom-state-fields), we created a custom State field for Order items, to track fulfillment on a per-item basis. We might want to prevent users from cancelling an order if any of its order items have already been "filled". And we might want to prevent users from transitioning an order to Completed if any of its items are still "un-filled". The State Machine module's state transition "Guards" provide the ability to incorporate this sort of business logic. State transition Guards limit the transitions available for a State field based on contextual information. Transitions can be restricted based on the current user's permissions, a parent entity field, etc.
+But what if we wanted to add constraints to prevent administrative users from moving an Order from the Fulfillment state to Completed or Canceled under certain conditions? In the [Custom state fields documentation](#working-with-state-fields), we created a custom State field for Order items, to track fulfillment on a per-item basis. We might want to prevent users from cancelling an order if any of its order items have already been "filled". And we might want to prevent users from transitioning an order to Completed if any of its items are still "un-filled". The State Machine module's state transition "Guards" provide the ability to incorporate this sort of business logic. State transition Guards limit the transitions available for a State field based on contextual information. Transitions can be restricted based on the current user's permissions, a parent entity field, etc.
 
 ![Order fulfillment workflow with guards](../images/state-transition-guards-3.png)
 
@@ -327,7 +327,7 @@ services:
       - { name: state_machine.guard, group: commerce_order }
 ```
 
-If we wanted to implement a Guard for the custom Order item "Fulfillment state" field we implemented in the [Custom state fields documentation](../custom-state-fields), the `group` value would change to match that custom workflow group:
+If we wanted to implement a Guard for the custom Order item "Fulfillment state" field we implemented in the [Custom state fields documentation](#working-with-state-fields), the `group` value would change to match that custom workflow group:
 
 ```yaml
   mymodule.fulfillment_order_item_guard:
@@ -389,7 +389,7 @@ $to_state_id = $to_state->getId();
 ```
 
 !!! example "Example: subscriber to log all Order item fulfillment events"
-    In [Working with state fields](../state-fields), we created the `mymodule_order_item` custom workflow group for an Order item fulfillment state field. We can implement an event subscriber to log all transitions (for any workflow assigned to the group) by subscribing to the `mymodule_order_item.post_transition`, like this:
+    In [Working with state fields](#working-with-state-fields), we created the `mymodule_order_item` custom workflow group for an Order item fulfillment state field. We can implement an event subscriber to log all transitions (for any workflow assigned to the group) by subscribing to the `mymodule_order_item.post_transition`, like this:
 
     ```php
     namespace Drupal\mymodule\EventSubscriber;
@@ -417,7 +417,7 @@ $to_state_id = $to_state->getId();
     }
     ```
 
-Example code for logging an order item transition can be found in the [Code recipes](../../../../activity-logs/code-recipes) section of the [Activity logs documentation](../../../../activity-logs).
+Example code for logging an order item transition can be found in the [Code recipes](../../activity-log/code-recipes) section of the [Activity logs documentation](../../activity-log/getting-started).
 
 ##### Transition-specific state transition events
 The pattern for workflow group-specific events is "{$workflow_group_id}.{$transition_id}.{$phase}". These transition-specific state transition events can be extremely useful for powering business logic in Drupal Commerce applications. 
@@ -536,7 +536,7 @@ Additionally, other event subscribers for the `commerce_order.place.pre_transiti
 #### Code recipes
 
 ##### Alter existing workflows
-If your State field can be configured through the admin UI, then you can usually just create your own custom workflow for use with the State field. See the examples in the [State fields](../state-fields) documentation.
+If your State field can be configured through the admin UI, then you can usually just create your own custom workflow for use with the State field. See the examples in the [State fields](#working-with-state-fields) documentation.
 
 The workflows for Payment states are not as easily altered, since they are managed entirely by code. Payment gateways define their Payment types in the gateway plugin annotation, and Payment types define the workflow for the Payment State field in their annotations. So there is no admin UI that allows you to change the workflow for Payments. Instead, you can use a hook provided by the State machine module.
 

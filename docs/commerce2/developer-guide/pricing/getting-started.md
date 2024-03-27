@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-Pricing is an important aspect of any eCommerce application. Drupal Commerce supports complex business requirements for prices that vary based on context through its use of [Price resolvers](price-resolvers) and [Adjustments](adjustments). Additionally, Drupal Commerce uses the internationally-recognized standard of [CLDR] data to support every language and every denomination of currency.
+Pricing is an important aspect of any eCommerce application. Drupal Commerce supports complex business requirements for prices that vary based on context through its use of [Price resolvers](#price-resolvers) and [Adjustments](#adjustments). Additionally, Drupal Commerce uses the internationally-recognized standard of [CLDR] data to support every language and every denomination of currency.
 
 ## [Prices](../prices)
 

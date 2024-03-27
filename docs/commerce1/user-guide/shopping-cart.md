@@ -65,7 +65,7 @@ to access, alter, and create Add-to-Cart buttons.</p>
 
 **Product Reference Screenshot**
 
-When you add a <a href="../products/Prod-Disp-Node.html">product reference field to an entity</a>, you have the option of injecting fields from the referenced products into the display of the referencing entity.
+When you add a <a href="../products/#product-attributes-variations">product reference field to an entity</a>, you have the option of injecting fields from the referenced products into the display of the referencing entity.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -156,9 +156,7 @@ fields will be updated to represent the newly selected product.</p>
 
 <p>Occasionally you may want to customize an attribute of the product for each
 order. For example, if you wanted someone to add their own name to your t-shirts
-or add an engraving for an additional charge. We cover this thoroughly in the <a
-href="../lineitems/LineItem-Customize.html">Customizable Line Items</a>
-topic.</p>
+or add an engraving for an additional charge.</p>
 <p>There is also a video that goes through this idea of customizing the
 product.</p>
 
@@ -898,10 +896,7 @@ customer has multiple open shopping carts.
 
 <p>Each change to a shopping cart order is saved as a revision. A user can also
 have more than one cart, though the default is to present the most recent
-shopping cart to the user. <a
-href="http://api.drupalcommerce.org/api/Drupal%20Commerce/sites%21all%21modules%21commerce%21modules%21cart%21commerce_cart.api.php/function/hook_commerce_cart_order_id/DC">hook_commerce_cart_order_id()</a>
-can be used to
-introduce alternate logic to the cart load process if necessary.</p>
+shopping cart to the user. hook_commerce_cart_order_id() can be used to introduce alternate logic to the cart load process if necessary.</p>
 <p><strong>Note:</strong> As long as the order is still in the shopping cart state, its line
 items will be re-validated on load against the latest product prices /
 availability, etc.</p>

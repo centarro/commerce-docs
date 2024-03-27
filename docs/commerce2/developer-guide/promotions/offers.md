@@ -6,7 +6,7 @@ taxonomy:
 
 ## Overview
 
-Each Promotion has a single offer type. Offer types are implemented as plugins. To better understand how offer plugins are used to create the discounts that appear on orders, you first need to understand the [order refresh and processing](../orders/getting-started/#order-refresh-and-processing) process. Then, take a look at the `apply()` method in the Promotion Entity code: `web/modules/contrib/commerce/modules/promotion/src/Entity/Promotion.php`
+Each Promotion has a single offer type. Offer types are implemented as plugins. To better understand how offer plugins are used to create the discounts that appear on orders, you first need to understand the [order refresh and processing](../../orders/getting-started/#order-refresh-and-processing) process. Then, take a look at the `apply()` method in the Promotion Entity code: `web/modules/contrib/commerce/modules/promotion/src/Entity/Promotion.php`
 
 In the Promotion `apply()` method, the `apply()` method of the promotion's offer plugin is called. If the entity type of the Offer is commerce_order, then this statement applies:
 ```

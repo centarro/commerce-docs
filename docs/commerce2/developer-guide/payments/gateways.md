@@ -29,8 +29,8 @@ If you create your own payment gateway module or find one that's not in this lis
     | ----------- | ------------------------------- |
     | **Description** | Authorize.Net integration for Drupal Commerce payment and checkout system. Currently supports credit card payments on the checkout form via Accept.js |
     | **Type** | On Site |
-    | **Currencies** |  USD more info: [https://www.authorize.net/international/](https://www.authorize.net/international/) |
-    | **Countries** | USA more info: [https://www.authorize.net/international/](https://www.authorize.net/international/) |
+    | **Currencies** |  [USD more info](https://support.authorize.net/knowledgebase/Knowledgearticle/?code=000001210) |
+    | **Countries** | [USA more info](https://support.authorize.net/knowledgebase/Knowledgearticle/?code=000001210) |
 
 !!! simple-card "![Braintree](../images/braintree-logo.png)"
 

@@ -38,7 +38,7 @@ Imagine that your store is planning to run a special New Year campaign where you
 ![Admin ui for setting promotion offer](../user-guide/images/promotion_offer.png)
 
 !!! note
-    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Offer types provided by Drupal Commerce core. Note that additional offer types can be created in custom code by a developer. See the [Create an offer type](../developer-guide/promotions/offers) page in the Developer guide for documentation and example code.
+    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Offer types provided by Drupal Commerce core. Note that additional offer types can be created in custom code by a developer. See the [Create an offer type](../../developer-guide/promotions/offers) page in the Developer guide for documentation and example code.
 
 ### Adding Conditions
 
@@ -51,7 +51,7 @@ At the end of the Conditions section of the page, you can specify whether "all c
 ![Admin UI for setting promotion conditions](../user-guide/images/promotion_all_or_one_condition.png)
 
 !!! note
-    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Condition types provided by Drupal Commerce core. Note that additional condition types can be created in custom code by a developer. See the [Create a condition](../developer-guide/promotions/offers) page in the Developer guide for documentation and example code.
+    See the [Edit a promotion](#edit-a-promotion) documentation page for a description of all Condition types provided by Drupal Commerce core. Note that additional condition types can be created in custom code by a developer. See the [Create a condition](../../developer-guide/promotions/offers) page in the Developer guide for documentation and example code.
 
 ### Additional Configuration
 
