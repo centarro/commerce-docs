@@ -202,4 +202,4 @@ ChainStoreResolver is a `service_collector`, and defines the `commerce_store.sto
 
 Note that CookieStoreResolver has a higher priority (100) than DefaultStoreResolver (-100), which allows it to override. Look at `commerce_store.services.yml` to see how this is defined. Having a higher priority means that the CookieStoreResolver has the first opportunity to determine the current store.
 
-For more information about resolvers, see [Understanding resolvers](../core/understanding_resolvers)
+For more information about resolvers, see [Understanding resolvers](../../core/understanding_resolvers)

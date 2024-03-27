@@ -14,7 +14,7 @@ In addition to configuring *Account settings*, you may also want to add custom f
 ![Custom account fields](../images/customer-accounts-2.png)
 
 #### Including profiles in user registration
-As described in the [Profile management](../profiles/profile-management) documentation, profile types have an "include in user registration form" setting. If enabled, a form for a profile of that type will be included in the user registration form. This option is useful if you want to collect information about customers right when they register. 
+As described in the [Profile management](../profiles/#profile-management) documentation, profile types have an "include in user registration form" setting. If enabled, a form for a profile of that type will be included in the user registration form. This option is useful if you want to collect information about customers right when they register. 
 
 For example, an "Account information" profile type has been created with "contact phone" and "purchasing agent" fields. It is configured for inclusion on the user registration form:
 

@@ -5,7 +5,7 @@ taxonomy:
     category: docs
 ---
 
-In these code examples, we create logging functionality for a custom Order item State field. See the [State machine documentation](../../core/libraries-and-dependencies/state-machine) for an introduction to *State* fields and *State transition event subscribers*. 
+In these code examples, we create logging functionality for a custom Order item State field. See the [State machine documentation](../../core/core/#state-machine) for an introduction to *State* fields and *State transition event subscribers*. 
 
 - [Create a custom log category](#creating-a-custom-log-category)
 - [Create custom log templates](#creating-custom-log-templates)

@@ -266,8 +266,6 @@ The Product Listing is pretty bare-bones to start with. Below we've made a simpl
 
 **Product Types**
 
-The product types are documented in great detail in the <a href="#prod-entity">Products as an Entity</a>
-
 <ul class="screenshot_breadcrumbs">
   <li class="first">Drupal Commerce</li>
   <li>Administration</li>
@@ -312,7 +310,7 @@ This is where you manage how product fields will display in a variety of context
 
 **Product Edit Screen**
 
-We've included the product edit screen for your benefit to see the Product Entity form in all of it's glory. Pretty simple, we've got the Product SKU and Product Title that are required. Additionally, Commerce Kickstart has added the Image field. <a href="../cart/#cart-multicurrency.html">The Price can be changed to allow for multiple currencies</a>.
+We've included the product edit screen for your benefit to see the Product Entity form in all of it's glory. Pretty simple, we've got the Product SKU and Product Title that are required. Additionally, Commerce Kickstart has added the Image field. <a href="../shopping-cart/#shopping-cart-and-multi-currency">The Price can be changed to allow for multiple currencies</a>.
     
 
 <ul class="screenshot_breadcrumbs">

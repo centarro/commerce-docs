@@ -358,7 +358,7 @@ For downloadable products / files, we recommend the [Commerce File module]. The 
 
 ### Subscriptions
 
-For subscription products, we recommend the [Commerce Recurring Framework module], which provides recurring billing for Drupal Commerce. See the [Subscriptions documentation](../../../recurring) for additional information.
+For subscription products, we recommend the [Commerce Recurring Framework module], which provides recurring billing for Drupal Commerce. See the [Subscriptions documentation](../../recurring/getting-started) for additional information.
 
 ### Product bundles
 

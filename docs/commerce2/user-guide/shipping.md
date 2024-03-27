@@ -11,7 +11,7 @@ Shipping is enabled in Drupal Commerce 2.x with an external module
 module only provides an API and plugins for flat rate (both per order and per
 item) shipping functionality. As with Drupal Commerce 1.x, you will need a plugin or plugins 
 provided by other module(s) for calculating actual shipping costs with shipping
-services. See the full list of [currently available plugins](../developer-guide/shipping/getting-started/#available-shipping-methods).
+services. See the full list of [currently available plugins](../../developer-guide/shipping/getting-started/#available-shipping-methods).
 
 ## Before you begin
 

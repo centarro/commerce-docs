@@ -446,7 +446,7 @@ We've assigned a priority of 200 to our custom price resolver so that it will ex
 
 ### Links and resources
 
-* [Understanding resolvers documentation](../../core/understanding-resolvers) describes several types of resolvers used within Drupal Commerce and provides an overview of how their code is structured.
+* [Understanding resolvers documentation](../../core/understanding_resolvers) describes several types of resolvers used within Drupal Commerce and provides an overview of how their code is structured.
 * [Commerce Pricelist] is a contributed module that supports creating price lists for different dates, stores, individual roles or users.
 * [Modifying product prices in Drupal Commerce 2 for Drupal 8](https://www.rapiddg.com/blog/modifying-product-prices-drupal-commerce-2-drupal-8) has several examples of custom price resolvers.
 * [Drupal Commerce 2.x and sale price](https://dev.studiopresent.com/blog/back-end/drupal-commerce-2-and-sale-price) provides example code for creating a "sale price" price resolver.

@@ -15,6 +15,7 @@ nav:
           - Conditions: 'commerce2/developer-guide/core/conditions.md'
           - Sending HTML emails: 'commerce2/developer-guide/core/html_emails.md'
           - Understanding resolvers: 'commerce2/developer-guide/core/understanding_resolvers.md'
+          - Relationship diagrams: 'commerce2/developer-guide/core/relationships.md'
         - Products:
           - Getting started: 'commerce2/developer-guide/products/getting-started.md'
           - Product Information Structure: 'commerce2/developer-guide/products/product-information-structure.md'
