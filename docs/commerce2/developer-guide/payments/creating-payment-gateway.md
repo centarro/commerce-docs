@@ -1421,7 +1421,7 @@ The validation procedure used by the `onNotify()` method is slightly different i
 
 #### Ingenico payment gateway (an example of SHA signature/passphrase validation)
 
-Ingenico uses a "SHA-IN" to validate incoming requests POSTed to their offsite. And then a "SHA-OUT" to validate the final redirect. In the [Redirection with database update] section of the Ingenico Integration Guide, they describe the security requirements for verifying the contents of requests:
+Ingenico uses a "SHA-IN" to validate incoming requests POSTed to their offsite. And then a "SHA-OUT" to validate the final redirect. In the Redirection with database update section of the Ingenico Integration Guide, they describe the security requirements for verifying the contents of requests:
 
 >The redirection is done via the customer’s browser, which makes it visible. Therefore, you must use an SHA-OUT signature to verify the contents of the request and prevent customers tampering with the data in the URL field, which could result in fraudulent database updates.
 
@@ -1489,7 +1489,6 @@ If the *request* received by the `onReturn()` method is successfully decrypted, 
 [Request]: https://api.drupal.org/api/drupal/vendor%21symfony%21http-foundation%21Request.php/class/Request/8.7.x
 [GetExpressCheckoutDetails]: (https://developer.paypal.com/docs/classic/api/merchant/SetExpressCheckout_API_Operation_NVP/)
 [Commerce PayPal module]: https://www.drupal.org/project/commerce_paypal
-[Redirection with database update]: https://www2.payment-services.ingenico.com/int/en/ogone/support/guides/integration%20guides/e-commerce/transaction-feedback#redirectionwithdatabaseupdate
 [Wikipedia description of CSRF]: https://en.wikipedia.org/wiki/Cross-site_request_forgery
 [implement a Route Subscriber]: https://www.drupal.org/docs/8/api/routing-system/altering-existing-routes-and-adding-new-routes-based-on-dynamic-ones
 [Symfony Response]: https://api.drupal.org/api/drupal/vendor%21symfony%21http-foundation%21Response.php/class/Response/8.2.x

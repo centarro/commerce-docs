@@ -24,8 +24,8 @@ Below are some topics related to the add to cart form.
 
 <p>Almost everything in Drupal Commerce is put together using a common Drupal
 pattern: Content (<a href="http://drupal.org/node/1261744">entity and fields
-system</a>), <a href="http://dev.nodeone.se/en/taming-the-beast-learn-views-with-nodeone">Views</a>
-(listing things), and <a href="http://dev.nodeone.se/node/984">Rules</a> (taking
+system</a>), <a href="https://www.drupal.org/node/1578360">Views</a>
+(listing things), and <a href="https://www.drupal.org/node/1580776">Rules</a> (taking
 actions on events). The Add-to-Cart button and form are no different. We use the
 fields and entities to format product references into what is known as the "Add
 to Cart Form." There are really two topics we are discussing here.</p>
@@ -419,9 +419,7 @@ completely worked with that amazing content lister. We each have our focus and
 leave the "annoying" stuff to the other guy. The end result is everything we can
 do is pluggable and has more use cases than we can possibly imagine.</p>
 <p><strong>That world exists.</strong> The content lister is called <a
-href="http://dev.nodeone.se/en/taming-the-beast-learn-views-with-nodeone">Views</a>
-and here we document how you can use Views to do just about anything with your
-shopping cart or shopping basket.</p>
+href="https://www.drupal.org/node/1578360">Views</a> and here we document how you can use Views to do just about anything with your shopping cart or shopping basket.</p>
 
 <h3>Shopping Cart Block and Page</h3>
 
@@ -694,7 +692,7 @@ The first step is to click on Store and then "Configuration" and, finally, Produ
 
 **Pricing Rule**
 
-We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="http://dev.nodeone.se/node/984">additional tutorials</a>.
+We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
