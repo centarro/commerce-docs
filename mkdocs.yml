@@ -140,6 +140,9 @@ copyright:
   Copyright &copy; 2022 <a href="https://centarro.io" target="_blank">Centarro</a>
 plugins:
   - search
+  - exclude-search:
+      exclude:
+        - commerce1/*
   - include_dir_to_nav
   - open-in-new-tab
 markdown_extensions:

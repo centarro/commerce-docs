@@ -58,7 +58,7 @@ community-based sites organize users around specific information.
 
 See Also: [Profile module on Drupal.org]
 
-Additional documentation on [Profiles](../../customers/profiles) and how they are used within Drupal Commerce is provided within the [Customers](../../../customers) section of this guide.
+Additional documentation on [Profiles](../../customers/profiles) and how they are used within Drupal Commerce is provided within the [Customers](../../customers/getting-started) section of this guide.
 
 ### Inline Entity Form
 
@@ -431,7 +431,7 @@ For example, the event subscriber that sets order numbers when an order is *plac
 Additionally, other event subscribers for the `commerce_order.place.pre_transition` event perform cart finalization operations and register coupon/promotion usage, and an event subscriber for the `commerce_order.place.post_transition` event does some address book management.
 
 !!! example "Example: event subscriber to manage Order item fulfillment"
-    In [Working with state fields](../state-fields), we created a custom workflow for an Order item state field with `fill` and `unfill` transitions. In a custom inventory management system, we could implement event subscribers for the `mymodule_order_item.fill.pre_transition` and `mymodule_order_item.unfill.pre_transition` events to make the actual updates to inventory data, like this:
+    In [Working with state fields](#working-with-state-fields), we created a custom workflow for an Order item state field with `fill` and `unfill` transitions. In a custom inventory management system, we could implement event subscribers for the `mymodule_order_item.fill.pre_transition` and `mymodule_order_item.unfill.pre_transition` events to make the actual updates to inventory data, like this:
 
     ```php
     <?php

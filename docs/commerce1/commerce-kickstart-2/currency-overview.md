@@ -14,7 +14,7 @@ taxonomy:
 </ul>
 <h3>Price Calculation</h3>
 <p>For the novice, or perhaps a web developer who is only occasionally asked to create an e-commerce website, it might come as a surprise that the sale or sell price goes through a fair amount of tweaking before being represented on the site. Each step that our sell price goes through is designed to make discounts, taxes, currency conversion and many other possibilities have an impact.</p>
-<p>Product sell prices are determined via a Rules based calculation process. If you are not up on your Rules module implementation tasks, you should check out the <a href="http://dev.nodeone.se/node/984">NodeOne Rules Videos</a> to get up to speed.</p>
+<p>Product sell prices are determined via a Rules based calculation process. If you are not up on your Rules module implementation tasks, you should check out the <a href="https://www.drupal.org/node/1580776">NodeOne Rules Videos</a> to get up to speed.</p>
 <p><strong>The life of a Price Calculation</strong></p>
 <ol>
     <li>A new line item is created representing the product as if it were in the user's current shopping cart order.</li>
