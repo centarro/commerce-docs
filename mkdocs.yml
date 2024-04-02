@@ -137,7 +137,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/centarro/
 copyright:
-  Copyright &copy; 2022 <a href="https://centarro.io" target="_blank">Centarro</a>
+  Copyright &copy; 2024 <a href="https://centarro.io" target="_blank">Centarro</a>
 plugins:
   - search
   - exclude-search:
