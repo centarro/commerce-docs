@@ -200,7 +200,7 @@ In subsequent sections it is assumed that you are using Composer to manage your 
 
 ## Updating
 
-** Important: You must use Composer to update Drupal Core, Drupal Commerce, and all contributed modules. Otherwise, your site will break. Also, you should always back up your site before starting an update procedure. See [Concept: Data Backups documentation] in the Drupal 8 User Guide for more information. **
+!!! warning "Important: You must use Composer to update Drupal Core, Drupal Commerce, and all contributed modules. Otherwise, your site will break. Also, you should always back up your site before starting an update procedure. See [Concept: Data Backups documentation] in the Drupal 8 User Guide for more information."
 
 It is **critically important** that you keep up-to-date with [Drupal security advisories].
 You can subscribe to the "Security announcements" newsletter in your [Drupal.org]{target=_blank} user
