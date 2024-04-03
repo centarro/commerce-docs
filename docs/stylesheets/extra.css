@@ -286,3 +286,16 @@
 .md-typeset .admonition.simple-card .md-typeset__table {
   min-width: 100%;
 }
+
+/* Custom grid */
+.grid.three-grid {
+  grid-template-columns: repeat(auto-fit,minmax(min(100%,10rem),1fr));
+}
+
+.grid.icon-grid .twemoji {
+  margin-right: 8px;
+}
+
+.md-typeset .cards +  hr {
+  margin-top: 46px;
+}
