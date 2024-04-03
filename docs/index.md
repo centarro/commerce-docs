@@ -13,7 +13,7 @@ taxonomy:
 
     ---
 
-    [:octicons-arrow-right-24: Install, update and uninstall](#)
+    [:fontawesome-solid-circle-arrow-right: Install, update and uninstall](#)
 
 </div>
 
