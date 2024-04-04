@@ -23,17 +23,17 @@ taxonomy:
 
 <div class="grid cards icon-grid" markdown>
 
-- [:fontawesome-solid-shop:{ .lg .middle }  __Setup your store__](./commerce2/user-guide/setting-up-store/)
+- [:centarro-store:{ .lg .middle }  __Setup your store__](./commerce2/user-guide/setting-up-store/)
 
-- [:fontawesome-solid-box-open:{ .lg .middle }  __Manage your products__](./commerce2/user-guide/products/)
+- [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](./commerce2/user-guide/products/)
 
-- [:fontawesome-solid-clipboard-check:{ .lg .middle }  __Manage your orders__](./commerce2/user-guide/orders/)
+- [:centarro-clipboard-check-fill:{ .lg .middle }  __Manage your orders__](./commerce2/user-guide/orders/)
 
-- [:fontawesome-solid-truck:{ .lg .middle } __Setup your shipping__](./commerce2/user-guide/shipping/)
+- [:centarro-truck-front-fill:{ .lg .middle } __Setup your shipping__](./commerce2/user-guide/shipping/)
 
 - [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./commerce2/user-guide/payments/)
 
-- [:fontawesome-solid-bookmark:{ .lg .middle } __Setup your promotions__](./commerce2/user-guide/promotions/)
+- [:centarro-bookmark-star-fill:{ .lg .middle } __Setup your promotions__](./commerce2/user-guide/promotions/)
 
 </div>
 
