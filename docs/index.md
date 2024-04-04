@@ -9,11 +9,11 @@ taxonomy:
 
 <div class="grid cards" markdown>
 
--   :material-flash:{ .lg .middle } __Getting started__
+-   [:material-flash:{ .lg .middle } __Getting started__](./commerce2/getting-started)
 
     ---
 
-    [:fontawesome-solid-circle-arrow-right: Install, update and uninstall](#)
+    [__Install__](./commerce2/installation#installation), [__update__](./commerce2/installation#updating) and [__uninstall__](./commerce2/installation#uninstalling)
 
 </div>
 
@@ -23,17 +23,17 @@ taxonomy:
 
 <div class="grid cards icon-grid" markdown>
 
-- [:fontawesome-solid-shop:{ .lg .middle }  __Setup your store__](#)
+- [:fontawesome-solid-shop:{ .lg .middle }  __Setup your store__](./commerce2/user-guide/setting-up-store/)
 
-- [:fontawesome-solid-box-open:{ .lg .middle }  __Manage your products__](#)
+- [:fontawesome-solid-box-open:{ .lg .middle }  __Manage your products__](./commerce2/user-guide/products/)
 
-- [:fontawesome-solid-clipboard-check:{ .lg .middle }  __Manage your orders__](#)
+- [:fontawesome-solid-clipboard-check:{ .lg .middle }  __Manage your orders__](./commerce2/user-guide/orders/)
 
-- [:fontawesome-solid-truck:{ .lg .middle } __Setup your shipping__](#)
+- [:fontawesome-solid-truck:{ .lg .middle } __Setup your shipping__](./commerce2/user-guide/shipping/)
 
-- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](#)
+- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./commerce2/user-guide/payments/)
 
-- [:fontawesome-solid-bookmark:{ .lg .middle } __Setup your promotions__](#)
+- [:fontawesome-solid-bookmark:{ .lg .middle } __Setup your promotions__](./commerce2/user-guide/promotions/)
 
 </div>
 
@@ -46,31 +46,31 @@ taxonomy:
 
 <div class="grid cards three-grid" markdown>
 
-  - [__Core__](#)
+  - [__Core__](./commerce2/developer-guide/core/core)
 
-  - [__Products__](#)
+  - [__Products__](./commerce2/developer-guide/products/getting-started)
 
-  - [__Cart__](#)
+  - [__Cart__](./commerce2/developer-guide/cart/cart-events.md)
 
-  - [__Customers__](#)
+  - [__Customers__](./commerce2/developer-guide/customers/getting-started.md)
 
-  - [__Payments__](#)
+  - [__Payments__](./commerce2/developer-guide/payments/getting-started.md)
 
-  - [__Stores__](#)
+  - [__Stores__](./commerce2/developer-guide/stores/getting-started.md)
 
-  - [__Orders__](#)
+  - [__Orders__](./commerce2/developer-guide/orders/getting-started.md)
 
-  - [__Checkout__](#)
+  - [__Checkout__](./commerce2/developer-guide/checkout/checkout.md)
 
-  - [__Pricing__](#)
+  - [__Pricing__](./commerce2/developer-guide/pricing/getting-started.md)
 
-  - [__Promotions__](#)
+  - [__Promotions__](./commerce2/developer-guide/promotions/getting-started.md)
 
-  - [__Activity log__](#)
+  - [__Activity log__](./commerce2/developer-guide/activity-log/getting-started.md)
 
-  - [__Shipping__](#)
+  - [__Shipping__](./commerce2/developer-guide/shipping/getting-started.md)
 
-  - [__Recurring__](#)
+  - [__Recurring__](./commerce2/developer-guide/recurring/getting-started.md)
 
 </div>
 
