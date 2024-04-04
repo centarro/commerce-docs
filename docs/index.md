@@ -4,9 +4,79 @@ taxonomy:
     category: docs
 ---
 
-# Introduction
+# Commerce Docs
 
-Drupal Commerce is the leading flexible eCommerce solution for Drupal,
+
+<div class="grid cards" markdown>
+
+-   :material-flash:{ .lg .middle } __Getting started__
+
+    ---
+
+    [:fontawesome-solid-circle-arrow-right: Install, update and uninstall](#)
+
+</div>
+
+<hr>
+
+## User Guide
+
+<div class="grid cards icon-grid" markdown>
+
+- [:fontawesome-solid-shop:{ .lg .middle }  __Setup your store__](#)
+
+- [:fontawesome-solid-box-open:{ .lg .middle }  __Manage your products__](#)
+
+- [:fontawesome-solid-clipboard-check:{ .lg .middle }  __Manage your orders__](#)
+
+- [:fontawesome-solid-truck:{ .lg .middle } __Setup your shipping__](#)
+
+- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](#)
+
+- [:fontawesome-solid-bookmark:{ .lg .middle } __Setup your promotions__](#)
+
+</div>
+
+<hr>
+
+## Developer Guide
+
+#### Get started with development
+
+
+<div class="grid cards three-grid" markdown>
+
+  - [__Core__](#)
+
+  - [__Products__](#)
+
+  - [__Cart__](#)
+
+  - [__Customers__](#)
+
+  - [__Payments__](#)
+
+  - [__Stores__](#)
+
+  - [__Orders__](#)
+
+  - [__Checkout__](#)
+
+  - [__Pricing__](#)
+
+  - [__Promotions__](#)
+
+  - [__Activity log__](#)
+
+  - [__Shipping__](#)
+
+  - [__Recurring__](#)
+
+</div>
+
+<hr>
+
+<!-- Drupal Commerce is the leading flexible eCommerce solution for Drupal,
 powering over 50,000 online stores of all sizes.
 
 If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation on [Understanding Drupal]
@@ -15,7 +85,7 @@ If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation o
 
 [If you develop in Drupal 8, access documentation here for Commerce 2.x](./commerce2/getting-started.md)
 
-Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}.
+Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}. -->
 
 !!! question "Need help customizing your store?"
 
