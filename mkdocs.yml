@@ -30,7 +30,7 @@ nav:
           - Getting started: 'commerce2/developer-guide/customers/getting-started.md'
           - Addresses: 'commerce2/developer-guide/customers/addresses.md'
           - Profiles: 'commerce2/developer-guide/customers/profiles.md'
-          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'  
+          - Customer Accounts & Groups: 'commerce2/developer-guide/customers/customer-accounts-groups.md'
         - Payments:
           - Getting started: 'commerce2/developer-guide/payments/getting-started.md'
           - Gateways: 'commerce2/developer-guide/payments/gateways.md'
@@ -41,24 +41,24 @@ nav:
           - Getting started: 'commerce2/developer-guide/stores/getting-started.md'
           - Code Recipes: 'commerce2/developer-guide/stores/code-recipes.md'
         - Orders:
-          - Getting started: 'commerce2/developer-guide/orders/getting-started.md' 
+          - Getting started: 'commerce2/developer-guide/orders/getting-started.md'
           - Workflows: 'commerce2/developer-guide/orders/workflows.md'
           - Code Recipes: 'commerce2/developer-guide/orders/code-recipes.md'
         - Checkout: 'commerce2/developer-guide/checkout/checkout.md'
         - Pricing:
-          - Getting started: 'commerce2/developer-guide/pricing/getting-started.md' 
+          - Getting started: 'commerce2/developer-guide/pricing/getting-started.md'
           - Prices: 'commerce2/developer-guide/pricing/prices.md'
           - Adjustments: 'commerce2/developer-guide/pricing/adjustments.md'
           - Currencies: 'commerce2/developer-guide/pricing/currencies.md'
         - Promotions:
-          - Getting started: 'commerce2/developer-guide/promotions/getting-started.md' 
+          - Getting started: 'commerce2/developer-guide/promotions/getting-started.md'
           - Offers: 'commerce2/developer-guide/promotions/offers.md'
         - Activity log:
-          - Getting started: 'commerce2/developer-guide/activity-log/getting-started.md' 
+          - Getting started: 'commerce2/developer-guide/activity-log/getting-started.md'
           - Code Recipes: 'commerce2/developer-guide/activity-log/code-recipes.md'
         - Shipping: 'commerce2/developer-guide/shipping/getting-started.md'
         - Recurring:
-          - Getting started: 'commerce2/developer-guide/recurring/getting-started.md' 
+          - Getting started: 'commerce2/developer-guide/recurring/getting-started.md'
           - Subscriptions: 'commerce2/developer-guide/recurring/subscriptions.md'
         - Adapting from 1.x: 'commerce2/developer-guide/adapting-from-1x.md'
       - User Guide:
@@ -123,6 +123,7 @@ theme:
     text: Roboto
     code: 'Roboto Mono'
   logo: assets/logo.svg
+  favicon: assets/favicon.png
 extra_css:
   - stylesheets/extra.css
 extra:
@@ -410,6 +411,7 @@ plugins:
         'commerce1/commerce-kickstart-2/shipping/shipping-methods.md': 'commerce1/commerce-kickstart-2/shipping.md#shipping-methods'
         'commerce1/commerce-kickstart-2/shipping/shipping-calculation-rules.md': 'commerce1/commerce-kickstart-2/shipping.md#shipping-calculation-rules'
         'commerce1/commerce-kickstart-2/translating-a-commerce-stor.md': 'commerce1/commerce-kickstart-2/translating-store.md'
+        'v2.md': 'commerce2/getting-started.md'
   - include_dir_to_nav
   - open-in-new-tab
 markdown_extensions:
@@ -431,3 +433,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - docs/.icons
