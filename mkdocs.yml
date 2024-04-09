@@ -411,6 +411,7 @@ plugins:
         'commerce1/commerce-kickstart-2/shipping/shipping-methods.md': 'commerce1/commerce-kickstart-2/shipping.md#shipping-methods'
         'commerce1/commerce-kickstart-2/shipping/shipping-calculation-rules.md': 'commerce1/commerce-kickstart-2/shipping.md#shipping-calculation-rules'
         'commerce1/commerce-kickstart-2/translating-a-commerce-stor.md': 'commerce1/commerce-kickstart-2/translating-store.md'
+        'v2.md': 'commerce2/getting-started.md'
   - include_dir_to_nav
   - open-in-new-tab
 markdown_extensions:
