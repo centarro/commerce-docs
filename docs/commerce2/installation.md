@@ -34,6 +34,11 @@ If you want to avoid using Composer for site management, the [Ludwig module](htt
     - php7.1-bcmath
     ```
     - If you are having issues related to the bcmath extension, the [Drupal VM documentation] provides useful information.
+
+## Links and resources
+* [Best Practice Drupal Development](https://drupalize.me/tutorial/best-practice-drupal-development)
+* [Why must we use Composer?](https://glamanate.com/blog/managing-your-drupal-project-composer)
+
 ## Installation
 
 **Installing Commerce to contribute back?** Check out our [Getting ready for development](./getting-started.md#preparing-the-local-environment) guide.
@@ -313,7 +318,7 @@ Many Drupal developers use [GitHub]{target=_blank} for their initial module deve
 
 If you are developing custom modules locally yourself, see [Managing dependencies for a custom product]{target=_blank} for an explanation of using Composer to manage your dependencies.
 
-## Uninstalling 
+## Uninstalling
 
 In order to completely remove Commerce from your Drupal site, you will first
 need to delete all existing data. You can do this through the Admin UI using
@@ -478,11 +483,6 @@ Once you've made the changes to `composer.json`, you can apply the patch by runn
 ```bash
 composer update drupal/commerce
 ```
-
-
-## Links and resources
-* [Best Practice Drupal Development](https://drupalize.me/tutorial/best-practice-drupal-development)
-* [Why must we use Composer?](https://glamanate.com/blog/managing-your-drupal-project-composer)
 
  [Patches]: https://www.drupal.org/patch
  [Issue #2901939: Move variations form to its own tab]: https://www.drupal.org/project/commerce/issues/2901939
