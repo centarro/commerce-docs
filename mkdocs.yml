@@ -3,7 +3,7 @@ repo_url: https://github.com/centarro/commerce-docs
 nav:
   - Commerce 2.x :
       - index.md
-      - commerce2/getting-started.md
+      - Getting started: 'commerce2/getting-started.md'
       - Installation, Updating & Uninstalling: 'commerce2/installation.md'
       - User Guide:
         - commerce2/user-guide/index.md
