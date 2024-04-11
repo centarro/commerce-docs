@@ -1,6 +1,7 @@
 site_name: Drupal Commerce Documentation
 repo_url: https://github.com/centarro/commerce-docs
 nav:
+  - index.md
   - Commerce 2.x :
       - commerce2/index.md
       - Getting Started: 'commerce2/getting-started.md'
