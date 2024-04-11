@@ -6,6 +6,17 @@ nav:
       - commerce2/index.md
       - Getting Started: 'commerce2/getting-started.md'
       - Installation, Updating & Uninstalling: 'commerce2/installation.md'
+      - User Guide:
+        - commerce2/user-guide/index.md
+        - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
+        - Currencies: 'commerce2/user-guide/currencies.md'
+        - Products: 'commerce2/user-guide/products.md'
+        - Orders: 'commerce2/user-guide/orders.md'
+        - Payments: 'commerce2/user-guide/payments.md'
+        - Promotions: 'commerce2/user-guide/promotions.md'
+        - Taxes: 'commerce2/user-guide/taxes.md'
+        - Checkout: 'commerce2/user-guide/checkout.md'
+        - Shipping: 'commerce2/user-guide/shipping.md'
       - Developer Guide:
         - commerce2/developer-guide/index.md
         - Core:
@@ -59,17 +70,6 @@ nav:
           - Getting started: 'commerce2/developer-guide/recurring/getting-started.md'
           - Subscriptions: 'commerce2/developer-guide/recurring/subscriptions.md'
         - Adapting from 1.x: 'commerce2/developer-guide/adapting-from-1x.md'
-      - User Guide:
-        - commerce2/user-guide/index.md
-        - Setting up your store: 'commerce2/user-guide/setting-up-store.md'
-        - Currencies: 'commerce2/user-guide/currencies.md'
-        - Products: 'commerce2/user-guide/products.md'
-        - Orders: 'commerce2/user-guide/orders.md'
-        - Payments: 'commerce2/user-guide/payments.md'
-        - Promotions: 'commerce2/user-guide/promotions.md'
-        - Taxes: 'commerce2/user-guide/taxes.md'
-        - Checkout: 'commerce2/user-guide/checkout.md'
-        - Shipping: 'commerce2/user-guide/shipping.md'
       - Contribute Code: 'commerce2/contribute-code.md'
       - Contribute Docs: 'commerce2/contribute-docs.md'
   - Commerce 1.x :
