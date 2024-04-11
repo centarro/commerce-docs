@@ -14,7 +14,7 @@ You can import [multiple currencies](./currencies). Coupled with Drupal's multil
 
 ## Products
 
-Wether you are selling physical or digital products or any type of license or membership access Drupal Commerce provides support for all. For more detailed information on how to set up products see [Products documantation](./products).
+Wether you are selling physical or digital products or any type of license or membership access Drupal Commerce provides support for all. For more detailed information on how to set up products see [Products documentation](./products).
 
 ## Order workflows
 
@@ -26,7 +26,7 @@ Whether you use [PayPal](https://www.paypal.com){target=_blank}, [Braintree](htt
 
 ## Promotions
 
-Wether you need promotions that are applied automatically or that require entering the coupon code on checkout Drupal Commerce provides support for both. With granular options for picking and choosing when and to what promotions will apply. To see more deitails see the [Promotions documentation](./promotions.md).
+Wether you need promotions that are applied automatically or that require entering the coupon code on checkout Drupal Commerce provides support for both. With granular options for picking and choosing when and to what promotions will apply. To see more details see the [Promotions documentation](./promotions.md).
 
 ## Taxes
 
@@ -38,4 +38,4 @@ Drupal Commerce provides fully costumizable checkout process, with option to set
 
 ## Shipping
 
-Shipping functionality is enabled in Drupal Commerce 2.x with an external module [Commerce Shipping](https://www.drupal.org/project/commerce_shipping). This module provides an API and plugins for flat rate (both per order and per item) shipping functionality. There are many integrations to external [shipping providers](../developer-guide/shipping/getting-started/#available-shipping-methods) that are supported, please see more information on [Shipping documantation page](./shipping.md).
+Shipping functionality is enabled in Drupal Commerce 2.x with an external module [Commerce Shipping](https://www.drupal.org/project/commerce_shipping). This module provides an API and plugins for flat rate (both per order and per item) shipping functionality. There are many integrations to external [shipping providers](../developer-guide/shipping/getting-started/#available-shipping-methods) that are supported, please see more information on [Shipping documentation page](./shipping.md).
