@@ -1,9 +1,3 @@
----
-title: Contribute
-taxonomy:
-    category: docs
----
-
 # Contribute to documentation
 
 We love contributors! Please help us improve or fix the documentation by
@@ -47,12 +41,12 @@ They are held every wednesday at 5PM GMT+1 on the *#commerce* [Drupal Slack chan
 `[Drupal Commerce](https://drupalcommerce.org)` renders as [Drupal Commerce](https://drupalcommerce.org)
 
 ```markdown
-![Alternative text](example.jpg)
+![Alternative text](docs/example.jpg)
 ```
 
 Will render as -
 
-![Alternative text](example.jpg)
+![Alternative text](docs/example.jpg)
 
 ```markdown
 | Name           | Status        |
@@ -95,11 +89,11 @@ You can now go to your fork’s GitHub page and [create a pull request].
 
 Once you create a pull request on GitHub, it runs checks on your pull request. If your changes pass checks then it can be reviewed by repository maintainers. You can get details about checks by clicking on **Show all checks** link as shown in below image.
 
-![Show all checks image](pull-request-1.png)
+![Show all checks image](docs/pull-request-1.png)
 
 To get the details about platform-based build for your pull request, click on the **details** link.
 
-![Show platform-based build](pull-request-2.png)
+![Show platform-based build](docs/pull-request-2.png)
 
 **Note:** Only first 10 open PRs gets the full build.
 
