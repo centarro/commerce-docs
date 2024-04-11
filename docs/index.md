@@ -4,8 +4,15 @@ taxonomy:
     category: docs
 ---
 
-# Commerce Docs
+# Drupal Commerce documentation
 
+Drupal Commerce is an open-source eCommerce platform that lets you sell any type of product to anyone in the world. It powers _billions_ in sales across thousands of online stores.
+
+Building on the platform requires general knowledge about how to install and manage Drupal on a web server. Once you have Drupal installed, adding the Commerce Core project to it gives you a foundation of eCommerce data objects, user interfaces, and subsystems. You’ll add configuration and custom code to meet your requirements, then build and deploy as you go.
+
+!!! info "Latest version"
+
+    - Read the release notes: [Commerce Core 2.38](https://www.drupal.org/project/commerce/releases/8.x-2.38){target=_blank}, packaged on December 31, 2023
 
 <div class="grid cards" markdown>
 
@@ -87,11 +94,11 @@ If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation o
 
 Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}. -->
 
-!!! question "Need help customizing your store?"
+!!! question "Need help customizing your store? Hire Centarro."
 
     Our vision is **merchant success** and we offer a suite of [Drupal Commerce Development services]{target=_blank} to make it happen.
 
 [Platform.sh]: https://platform.sh
 [Drupal.org]: https://www.drupal.org
 [Understanding Drupal]: https://www.drupal.org/docs/8/understanding-drupal-8
-[Drupal Commerce Development services]: https://centarro.io
+[Drupal Commerce Development services]: https://www.centarro.io
