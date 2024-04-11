@@ -1,10 +1,9 @@
 site_name: Drupal Commerce Documentation
 repo_url: https://github.com/centarro/commerce-docs
 nav:
-  - index.md
   - Commerce 2.x :
-      - commerce2/index.md
-      - Getting Started: 'commerce2/getting-started.md'
+      - index.md
+      - commerce2/getting-started.md
       - Installation, Updating & Uninstalling: 'commerce2/installation.md'
       - User Guide:
         - commerce2/user-guide/index.md
@@ -127,7 +126,6 @@ theme:
 extra_css:
   - stylesheets/extra.css
 extra:
-  homepage: https://centarro.io
   social:
     - icon: fontawesome/brands/slack
       link: https://drupal.slack.com/archives/C1TLCCF9B
