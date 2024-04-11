@@ -1,13 +1,10 @@
 site_name: Drupal Commerce Documentation
 repo_url: https://github.com/centarro/commerce-docs
 nav:
-  - Introduction :
-      - index.md
-      - Contributing: 'contribute.md'
   - Commerce 2.x :
-      - commerce2/getting-started.md
+      - commerce2/index.md
+      - Getting Started: 'commerce2/getting-started.md'
       - Installation, Updating & Uninstalling: 'commerce2/installation.md'
-      - Contribute: 'commerce2/contribute.md'
       - Developer Guide:
         - commerce2/developer-guide/index.md
         - Core:
@@ -72,6 +69,8 @@ nav:
         - Taxes: 'commerce2/user-guide/taxes.md'
         - Checkout: 'commerce2/user-guide/checkout.md'
         - Shipping: 'commerce2/user-guide/shipping.md'
+      - Contribute Code: 'commerce2/contribute-code.md'
+      - Contribute Docs: 'commerce2/contribute-docs.md'
   - Commerce 1.x :
       - commerce1/getting-started.md
       - Developer Guide:
