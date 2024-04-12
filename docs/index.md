@@ -16,11 +16,11 @@ Building on the platform requires general knowledge about how to install and man
 
 <div class="grid cards" markdown>
 
--   [:material-flash:{ .lg .middle } __Getting started__](./commerce2/getting-started)
+-   [:material-flash:{ .lg .middle } __Getting started__](./v2/getting-started)
 
     ---
 
-    [__Install__](./commerce2/installation#installation), [__update__](./commerce2/installation#updating) and [__uninstall__](./commerce2/installation#uninstalling)
+    [__Install__](./v2/installation#installation), [__update__](./v2/installation#updating) and [__uninstall__](./v2/installation#uninstalling)
 
 </div>
 
@@ -30,17 +30,17 @@ Building on the platform requires general knowledge about how to install and man
 
 <div class="grid cards icon-grid" markdown>
 
-- [:centarro-store:{ .lg .middle }  __Setup your store__](./commerce2/user-guide/setting-up-store/)
+- [:centarro-store:{ .lg .middle }  __Setup your store__](./v2/user-guide/setting-up-store/)
 
-- [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](./commerce2/user-guide/products/)
+- [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](./v2/user-guide/products/)
 
-- [:centarro-clipboard-check-fill:{ .lg .middle }  __Manage your orders__](./commerce2/user-guide/orders/)
+- [:centarro-clipboard-check-fill:{ .lg .middle }  __Manage your orders__](./v2/user-guide/orders/)
 
-- [:centarro-truck-front-fill:{ .lg .middle } __Setup your shipping__](./commerce2/user-guide/shipping/)
+- [:centarro-truck-front-fill:{ .lg .middle } __Setup your shipping__](./v2/user-guide/shipping/)
 
-- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./commerce2/user-guide/payments/)
+- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payments/)
 
-- [:centarro-bookmark-star-fill:{ .lg .middle } __Setup your promotions__](./commerce2/user-guide/promotions/)
+- [:centarro-bookmark-star-fill:{ .lg .middle } __Setup your promotions__](./v2/user-guide/promotions/)
 
 </div>
 
@@ -53,31 +53,31 @@ Building on the platform requires general knowledge about how to install and man
 
 <div class="grid cards three-grid" markdown>
 
-  - [__Core__](./commerce2/developer-guide/core/core)
+  - [__Core__](./v2/developer-guide/core/core)
 
-  - [__Products__](./commerce2/developer-guide/products/getting-started)
+  - [__Products__](./v2/developer-guide/products/getting-started)
 
-  - [__Cart__](./commerce2/developer-guide/cart/cart-events.md)
+  - [__Cart__](./v2/developer-guide/cart/cart-events.md)
 
-  - [__Customers__](./commerce2/developer-guide/customers/getting-started.md)
+  - [__Customers__](./v2/developer-guide/customers/getting-started.md)
 
-  - [__Payments__](./commerce2/developer-guide/payments/getting-started.md)
+  - [__Payments__](./v2/developer-guide/payments/getting-started.md)
 
-  - [__Stores__](./commerce2/developer-guide/stores/getting-started.md)
+  - [__Stores__](./v2/developer-guide/stores/getting-started.md)
 
-  - [__Orders__](./commerce2/developer-guide/orders/getting-started.md)
+  - [__Orders__](./v2/developer-guide/orders/getting-started.md)
 
-  - [__Checkout__](./commerce2/developer-guide/checkout/checkout.md)
+  - [__Checkout__](./v2/developer-guide/checkout/checkout.md)
 
-  - [__Pricing__](./commerce2/developer-guide/pricing/getting-started.md)
+  - [__Pricing__](./v2/developer-guide/pricing/getting-started.md)
 
-  - [__Promotions__](./commerce2/developer-guide/promotions/getting-started.md)
+  - [__Promotions__](./v2/developer-guide/promotions/getting-started.md)
 
-  - [__Activity log__](./commerce2/developer-guide/activity-log/getting-started.md)
+  - [__Activity log__](./v2/developer-guide/activity-log/getting-started.md)
 
-  - [__Shipping__](./commerce2/developer-guide/shipping/getting-started.md)
+  - [__Shipping__](./v2/developer-guide/shipping/getting-started.md)
 
-  - [__Recurring__](./commerce2/developer-guide/recurring/getting-started.md)
+  - [__Recurring__](./v2/developer-guide/recurring/getting-started.md)
 
 </div>
 
@@ -88,9 +88,9 @@ powering over 50,000 online stores of all sizes.
 
 If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation on [Understanding Drupal]
 
-[If you develop in Drupal 7, access documentation here for Commerce 1.x](./commerce1/getting-started.md)
+[If you develop in Drupal 7, access documentation here for Commerce 1.x](./v1/getting-started.md)
 
-[If you develop in Drupal 8, access documentation here for Commerce 2.x](./commerce2/getting-started.md)
+[If you develop in Drupal 8, access documentation here for Commerce 2.x](./v2/getting-started.md)
 
 Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}. -->
 
