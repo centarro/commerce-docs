@@ -1,4 +1,4 @@
-site_name: Drupal Commerce Documentation
+site_name: Drupal Commerce docs
 repo_url: https://github.com/centarro/commerce-docs
 nav:
   - Getting started:
@@ -6,7 +6,7 @@ nav:
       - Introduction: 'v2/getting-started.md'
       - Installation, Updating & Uninstalling: 'v2/installation.md'
       - Contribute Code: 'v2/contribute-code.md'
-  - User Guide:
+  - User guide:
       - v2/user-guide/index.md
       - Setting up your store: 'v2/user-guide/setting-up-store.md'
       - Currencies: 'v2/user-guide/currencies.md'
@@ -17,7 +17,7 @@ nav:
       - Taxes: 'v2/user-guide/taxes.md'
       - Checkout: 'v2/user-guide/checkout.md'
       - Shipping: 'v2/user-guide/shipping.md'
-  - Developer Guide:
+  - Developer guide:
       - v2/developer-guide/index.md
       - Core:
         - v2/developer-guide/core/core.md
@@ -135,7 +135,7 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/centarro/
 copyright:
-  Copyright &copy; 2024 <a href="https://centarro.io" target="_blank">Centarro</a>
+  Copyright &copy; 2024 <a href="https://www.centarro.io" target="_blank">Centarro</a>
 plugins:
   - search
   - exclude-search:
