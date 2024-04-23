@@ -31,7 +31,7 @@ Once satisfied, click **Save**
 
 ## View orders, find specific ones.
 
-## Manage and order
+## Manage an order
 
 
 !!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
@@ -85,3 +85,7 @@ Locate the **Emails** section
 Use the template file located in `/commerce/modules/order/templates/commerce-order-receipt.html.twig`.
 
 You can copy this file to your theme and then edit the text as desired. You can also use the file as a translation reference when searching for strings to translate in the user interface translation UI.
+
+## Purging abandoned carts
+
+Periodically purging abandoned carts will minimize junk carts in the database and alleviate performance issues caused by hundreds of thousands of stale carts hanging around indefinitely. You can set the system to automatically purge abandoned carts after a certain amount of time by enabling the ``Delete abandoned carts`` option on the order configuration screen. The setting needs to be enabled for each order type, and the time period should be configured. The default when enabling this option is 30 days. Carts that have not been updated within the configured time frame will be deleted when the cron job runs. Note that the configured time frame is a rolling interval, meaning the counter is reset whenever the cart is modified.
