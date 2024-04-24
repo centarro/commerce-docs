@@ -50,7 +50,7 @@ Will render as -
 
 ```markdown
 | Name           | Status        |
-|--------------------------------|
+|----------------|---------------|
 | Test 1         | pass          |
 | Test 2         | pass          |
 | Test 3         | fail          |
@@ -60,7 +60,7 @@ Will render as -
 Will render as -
 
 | Name           | Status        |
-|--------------------------------|
+|----------------|---------------|
 | Test 1         | pass          |
 | Test 2         | pass          |
 | Test 3         | fail          |
