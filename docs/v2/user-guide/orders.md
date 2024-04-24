@@ -28,13 +28,31 @@ Once satisfied, click **Save**
 !!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute. Need to add documentation for adjustments and coupons."
 
 ## View carts
+Carts are created whenever a customer adds a product to their cart or when an admin begins an order via the "create order" action on the orders page and selects the "cart" checkbox before saving the order. Carts have a cart id but no order number as they are not yet placed orders. When a customer completes checkout the "cart" becomes an order, maintaing the same id and gaining a generated order number that follows the number pattern setup for the order type. Note that Carts are in a unique order status called "draft" that allows the contents to be periodically refreshed, automatically updating the pricing and availability of the products in the cart. Once a Cart is "placed" and moves out of the draft status the items on the order will no longer be periodically refreshed. You can view carts by navigating to the commerce menu, selecting orders, and then clicking the "Carts" tab.
+
+Once on the carts tab you can view, edit, reasign, add payment information, or delete the cart from the dropdown action menu as long as your user account has the appropriate permissions. 
+
+### Purging abandoned carts
+
+Periodically purging abandoned carts will minimize junk carts in the database and alleviate performance issues caused by hundreds of thousands of stale carts hanging around indefinitely. You can set the system to automatically purge abandoned carts after a certain amount of time by enabling the ``Delete abandoned carts`` option on the order configuration screen. The setting needs to be enabled for each order type, and the time period should be configured. The default when enabling this option is 30 days. Carts that have not been updated within the configured time frame will be deleted when the cron job runs. Note that the configured time frame is a rolling interval, meaning the counter is reset whenever the cart is modified.
+
+You can also manually purge carts en masse via the bulk operation available to you on the Cart page in the admin interface.
 
 ## View orders, find specific ones.
 
-## Manage and order
+## Manage an order
 
 
 !!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+
+### Setting the order number pattern
+In Drupal Commerce, you have the flexibility to tailor order numbers to your business’s unique needs. Number patterns are configurable per order type and can be shared or set to be unique for each store.
+
+To begin, navigate to Commerce / Configuration / Orders / Number patterns to create a number pattern. On this page, you can establish new patterns, each requiring a unique name. The number patterns form offers several configuration options, including regeneration settings, what number to start from, and whether or not numbers are shared between stores.
+
+The strength of number patterns lies in the versatility provided as to how the numbers are generated. You can incorporate a blend of custom strings and tokens, allowing for prefixed or suffixed numbers based on fixed strings or structured data from your site. This gives you the ability to brand your order numbers and segment your orders based on business needs without writing custom code.
+
+After configuring your number pattern, it’s time to make use of it on one or more order types. Proceed to Commerce / Configuration / Orders / Order types. Here, edit the order type that requires the new number pattern. Within the order type’s edit page, select your previously created number pattern from the dropdown menu then save the form. New orders will now make use of your custom number pattern.
 
 ### Order workflows
 
@@ -85,3 +103,5 @@ Locate the **Emails** section
 Use the template file located in `/commerce/modules/order/templates/commerce-order-receipt.html.twig`.
 
 You can copy this file to your theme and then edit the text as desired. You can also use the file as a translation reference when searching for strings to translate in the user interface translation UI.
+
+
