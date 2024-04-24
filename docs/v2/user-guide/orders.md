@@ -50,9 +50,9 @@ In Drupal Commerce, you have the flexibility to tailor order numbers to your bus
 
 To begin, navigate to Commerce / Configuration / Orders / Number patterns to create a number pattern. On this page, you can establish new patterns, each requiring a unique name. The number patterns form offers several configuration options, including regeneration settings, what number to start from, and whether or not numbers are shared between stores.
 
-The strength of number patterns lies in their versatility. You can incorporate a blend of custom strings and tokens, allowing for prefixed or suffixed numbers, giving you the ability to brand your orders numbers and segment your orders based on business needs.
+The strength of number patterns lies in the versatility provided as to how the numbers are generated. You can incorporate a blend of custom strings and tokens, allowing for prefixed or suffixed numbers based on fixed strings or structured data from your site. This gives you the ability to brand your order numbers and segment your orders based on business needs without writing custom code.
 
-After configuring your number pattern, it’s time to make use of it on one or more order types. Proceed to Commerce / Configuration / Orders / Order types. Here, edit the order type that requires the new number pattern. Within the order type’s edit page, select your previously create number pattern from the dropdown menu then save the form. New orders will now make use of your custom number pattern.
+After configuring your number pattern, it’s time to make use of it on one or more order types. Proceed to Commerce / Configuration / Orders / Order types. Here, edit the order type that requires the new number pattern. Within the order type’s edit page, select your previously created number pattern from the dropdown menu then save the form. New orders will now make use of your custom number pattern.
 
 ### Order workflows
 
