@@ -269,19 +269,21 @@ complete the process. The product variation will no longer be available to purch
 
 ### Deep linking to a product variation
 
-Enhance your customers’ shopping experience by utilizing deep linking to direct them to specific product variations.
-By appending a GET parameter to the product URL, you ensure that the desired variation is selected upon arrival on the product page.
+Enhance your customer experience by utilizing deep links to a specific product variation on a PDP. By
+appending a `v=###` query parameter to a product page's URL, you ensure the desired variation is
+selected upon arrival to the page.
 
 For example, observe the differences between these two URLs in the Drupal Commerce demo store:
 
 Standard Product Page: https://commerce.demo.centarro.io/products/tale-two-cities-charles-dickens
 Deep Linked Variation: https://commerce.demo.centarro.io/products/tale-two-cities-charles-dickens?v=35
 
-The variation ID can be conveniently located when editing the variation or by configuring the product on the front end. 
-When a product is fully configured, the GET parameter and the variation ID will automatically be appended to the URL.
+You can either extract the variation ID from its edit form URL or select a desired variation on the front end.
+The query parameter will automatically be appended to the URL as you select values on the Add to Cart form.
 
-By deeplinking to specific product variations you can satisfy the requirements for submitting products to Google Merchant Center
-and allow customers to share specific products on social media channels, in email, or on their own websites.
+By deep linking to specific product variations, you can satisfy the requirements for submitting products to
+Google Merchant Center and direct customers to share variations products on social media channels, in email,
+or on their own websites.
 
 ### Deleting a product variation
 
