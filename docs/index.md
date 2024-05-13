@@ -12,7 +12,7 @@ Building on the platform requires general knowledge about how to install and man
 
 !!! info "Latest version"
 
-    - Read the release notes: [Commerce Core 2.38](https://www.drupal.org/project/commerce/releases/8.x-2.38){target=_blank}, packaged on February 05, 2024
+    - Read the release notes: [Commerce Core 2.39](https://www.drupal.org/project/commerce/releases/8.x-2.39){target=_blank}, packaged on May 13, 2024
 
 <div class="grid cards" markdown>
 
