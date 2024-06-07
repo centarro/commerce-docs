@@ -82,12 +82,12 @@ Lets create a module that will do this.
         'payment' => [
             'label' => $this->t('Payment'),
             'next_label' => $this->t('Pay and complete purchase'),
-            'has_order_summary' => FALSE,
+            'has_sidebar' => FALSE,
         ],
         'complete' => [
             'label' => $this->t('Complete'),
             'next_label' => $this->t('Pay and complete purchase'),
-            'has_order_summary' => FALSE,
+            'has_sidebar' => FALSE,
         ],
         ];
     ```
@@ -157,11 +157,11 @@ Lets create a module that will do this.
             'login' => [
                 'label' => $this->t('Login'),
                 'previous_label' => $this->t('Return to login'),
-                'has_order_summary' => FALSE,
+                'has_sidebar' => FALSE,
             ],
             'review' => [
                 'label' => $this->t('Review'),
-                'has_order_summary' => TRUE,
+                'has_sidebar' => TRUE,
             ],
             ] + parent::getSteps();
         }
