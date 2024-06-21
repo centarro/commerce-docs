@@ -280,6 +280,15 @@ If you create your own payment gateway module or find one that's not in this lis
     | **Currencies** | BGN |
     | **Countries** | Bulgaria |
 
+
+??? simple-card "[EasyTransac]"
+
+    | **Description** | Provides integration between Drupal Commerce and EasyTransac payments solutions. |
+    | --- | --- |
+    | **Type** | Off site |
+    | **Currencies** | GBP, EUR, USD, SEK, AUD, NZD, DKK and CAD |
+    | **Countries** | All countries except : Iran, North Korea, Myanmar, Afghanistan, Angola, Guyana, Iraq, Laos, Papua New Guinea, Vanuatu, Syria, Yemen, Bosnia, Uganda, Botswana, Brunei, Gibraltar, Guatemala, Guernsey, Marshall Islands, British Virgin Islands, Jersey, Liechtenstein, Montserrat, Nauru, Nive and Panama |
+
 ??? simple-card "[ECPay]"
     | --- | --- |
     | **Description** | Provides integration between Drupal Commerce and ECPay’s payment, shipping, and e-invoice solutions. |
@@ -1207,3 +1216,4 @@ Once a payment gateway is added it will be made available as a payment method to
 [Valitor]: https://www.drupal.org/project/commerce_valitor
 [Verifone]: https://www.drupal.org/project/commerce_verifone
 [let us know about it]: https://github.com/drupalcommerce/commerce-docs/issues
+[EasyTransac]: https://www.drupal.org/project/commerce_easytransac
