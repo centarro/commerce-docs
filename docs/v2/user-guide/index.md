@@ -1,41 +1,23 @@
 ---
-title: Key Features
+title: User guide
 taxonomy:
     category: docs
 ---
 
-## Multiple stores
+## Who is this guide for?
 
-Whether international, multi-regional, or a marketplace, Drupal Commerce allows multiple [stores](./setting-up-store) that have a specific currency and supported billing and shipping countries.
+This guide is primarily aimed at people _building_ Drupal Commerce sites. It assumes a level of familiarity with Drupal that will not be fully explained in the guide itself, including the knowledge to install and configure modules and to properly manage configuration in code. Elsewhere in the Drupal community and public documentation, these users are referred to as "site builders." For those who are new to Drupal code and configuration management, the guide offers a high level overview with links to resources for further reading.
 
-## Currencies
+Secondarily, this guide aims to support the business users of Drupal Commerce sites - those engaged in managing products, managing orders, running promotions, providing customer service, etc. Bear in mind that Drupal Commerce is _meant_ to be customized, so the documentation and screenshots this guide provides are sure to vary at places with any given site's interface. As such, it's not uncommon for site builders to provide supplemental documentation for the sites they build to identify those variances.
 
-You can import [multiple currencies](./currencies). Coupled with Drupal's multilingual and internationalization tools, Drupal Commerce provides localized e-commerce.
+## What can you do with Drupal Commerce?
 
-## Products
+Drupal Commerce has been powering online stores since 2010 with use cases ranging from the very typical retail of physical products to highly complex sales of digital goods, licensed assets, or subscription services. Its feature set satisfies both B2C and B2B use cases, and its unique architecture supports targeting different _types_ of customer even within a single site via complex pricing logic, product availability rules, multiple checkout flows, etc. Furthermore, the feature set of Drupal Commerce has been extended in hundreds of different ways through [community developed extensions](https://www.drupal.org/project/commerce/ecosystem), all of which are freely available for download from Drupal's extensions directory.
 
-Wether you are selling physical or digital products or any type of license or membership access Drupal Commerce provides support for all. For more detailed information on how to set up products see [Products documentation](./products).
+To learn more, please refer to the [Drupal Commerce Features Overview](https://www.centarro.io/drupal-commerce/features).
 
-## Order workflows
+!!! question "Need help customizing your store? Hire Centarro."
 
-Not all orders are handled the same way. [Orders](./orders) in Drupal Commerce meet your order management needs. Whether digital, physical, or mixed each order can go through its own experience and workflow.
+    Our vision is **merchant success** and we offer a suite of [Drupal Commerce Development services]{target=_blank} to make it happen.
 
-## Payments
-
-Whether you use [PayPal](https://www.paypal.com){target=_blank}, [Braintree](https://www.braintreepayments.com/){target=_blank}, [Stripe](https://stripe.com/){target=_blank}, [Authorize.net](https://www.authorize.net/){target=_blank} or any of the [other many payment gateways](../developer-guide/payments/gateways), Drupal Commerce provides many integrations.
-
-## Promotions
-
-Wether you need promotions that are applied automatically or that require entering the coupon code on checkout Drupal Commerce provides support for both. With granular options for picking and choosing when and to what promotions will apply. To see more details see the [Promotions documentation](./promotions.md).
-
-## Taxes
-
-[Taxes? No problem](./taxes). Out of the box support for [EU VAT](./taxes/#european-vat), [Swiss VAT](./taxes/#swiss-vat), [Canadian GST](./taxes/#canadian-gst), [US Sales Tax](./taxes/#us-sales-tax) or other custom tax rules.
-
-## Checkout 
-
-Drupal Commerce provides fully costumizable checkout process, with option to set up multiple different checkout flows that will best suite your needs. For more information check out the [Checkout documentation page](./checkout.md). 
-
-## Shipping
-
-Shipping functionality is enabled in Drupal Commerce 2.x with an external module [Commerce Shipping](https://www.drupal.org/project/commerce_shipping). This module provides an API and plugins for flat rate (both per order and per item) shipping functionality. There are many integrations to external [shipping providers](../developer-guide/shipping/getting-started/#available-shipping-methods) that are supported, please see more information on [Shipping documentation page](./shipping.md).
+[Drupal Commerce Development services]: https://www.centarro.io
