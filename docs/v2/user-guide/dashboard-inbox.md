@@ -10,7 +10,7 @@ Drupal Commerce's store dashboard was [added in the 2.37 release](https://www.ce
 
 ## Sales metrics and reports
 
-Out of the box, the dashboard highlights a basic set of sales metrics. These include new carts, placed orders, gross sales, and average order value within a given timeframe. You can toggle the period or compare to the prior period, and sites that are multi-store will have the ability to filter everything by store. (Those that are multi-currency will see gross sales and average order value in each supported currency.)
+Out of the box, the dashboard highlights a basic set of sales metrics. These include new carts, placed orders, gross sales, and average order value within a given timeframe. You can toggle the period or compare to the prior period, and sites that are multi-store will have the ability to filter everything by store. (Multi-currency sites will see gross sales and average order value in each supported currency.)
 
 Some key metrics tracking store performance will require an external web analytics integration. (For example, you can't calculate a conversion rate without knowing how many visitors you had.) The summary reports highlight the most popular products and promotions driving sales in the store. While the feature set may expand over time, it started with these meaningful metrics that can be derived solely from order details in the site's database.
 
@@ -48,10 +48,12 @@ $settings['commerce_dashboard_show_toolbar_link'] = FALSE;
 
 ### Configuring partner banners
 
-Finally, Drupal Commerce also includes contextually relevant promotions of Technology Partner integrations throughout the user interface. These take the place of blocks shown on user interfaces from Commerce Core (on the tax types page) or contributed modules like Commerce Shipping (on the shipping methods page). All such instances _should_ respect a single core setting to govern their visibility:
+Finally, Drupal Commerce also includes contextually relevant promotions of Technology Partner integrations throughout the user interface. These take the place of blocks shown on user interfaces from Commerce Core (on the tax types page) or contributed modules like Commerce Shipping (on the shipping methods page).
+
+All such instances _should_ respect a single core setting to govern their visibility:
 
 ```
 $settings['commerce_show_partner_banners'] = FALSE;
 ```
 
-(If you encounter a module interface that does not respect that setting, it would be appropriate to open a task issue in the relevant issue tracker to request it be updated. In your issue, feel free to link to this documentation page for support!)
+If you encounter a module interface that does not respect that setting, it would be appropriate to open a task issue in the relevant issue tracker to request it be updated. In your issue, feel free to link to this documentation page for support! 🙂
