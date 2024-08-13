@@ -34,7 +34,7 @@ In order to respond to these events configuration in PayPal is necessary.
 2. Copy the Webhook Url from there. It is: https://[domain-name]/payment/notify/[payment-gateway-machine-name], but the gateway edit form will take care of displaying this for you.
 3. Take note of the 5 events that are supported.
 4. Go to your PayPal developer dashboard, and edit your site's application.
-![image](/images/paypal-application-configuration.png)
+![image](images/paypal-application-configuration.png)
 5. Choose to add a new Webhook.
 6. Specify the URL you got from the Payment Gateway, and enable the 5 events specified.
 7. Copy the resulting Webhook Id.
