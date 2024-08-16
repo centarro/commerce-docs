@@ -8,9 +8,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Commerce events
 
-### Event Namespace
-
-`Drupal\commerce\Event`
+**Event Namespace**: `Drupal\commerce\Event`
 
 | Event Constant                     | Event Name                       | Description                                                                                   | Event Class                                      |
 |------------------------------------|----------------------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------|
@@ -20,9 +18,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Cart events
 
-### Event Namespace
-
-`Drupal\commerce_cart\Event`
+**Event Namespace**: `Drupal\commerce_cart\Event`
 
 | Event Constant                        | Event Name                                         | Description                                       | Event Class                                  |
 |---------------------------------------|----------------------------------------------------|---------------------------------------------------|----------------------------------------------|
@@ -34,9 +30,8 @@ This documentation lists the events dispatched by various components within Drup
 | `CartEvents::ORDER_ITEM_COMPARISON_FIELDS` | `commerce_cart.order_item.comparison_fields` | Fired when altering the list of comparison fields used to determine if an order item can be combined into an existing one. | `\Drupal\commerce_cart\Event\OrderItemComparisonFieldsEvent` |
 
 ## Checkout Events
-### Event Namespace
 
-`Drupal\commerce_checkout\Event`
+**Event Namespace**: `Drupal\commerce_checkout\Event`
 
 | Event Constant                    | Event Name                            | Description                                     | Event Class                                 |
 |-----------------------------------|---------------------------------------|-------------------------------------------------|---------------------------------------------|
@@ -46,9 +41,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Payment events
 
-### Event Namespace
-
-`Drupal\commerce_payment\Event`
+**Event Namespace**: `Drupal\commerce_payment\Event`
 
 | Event Constant                   | Event Name                               | Description                                    | Event Class                                 |
 |----------------------------------|------------------------------------------|------------------------------------------------|---------------------------------------------|
@@ -65,9 +58,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Order events
 
-### Event Namespace
-
-`Drupal\commerce_order\Event`
+**Event Namespace**: `Drupal\commerce_order\Event`
 
 | Event Constant                        | Event Name                                   | Description                                                   | Event Class                                 |
 |---------------------------------------|----------------------------------------------|---------------------------------------------------------------|---------------------------------------------|
@@ -92,9 +83,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Price events
 
-### Event Namespace
-
-`Drupal\commerce_price\Event`
+**Event Namespace**: `Drupal\commerce_price\Event`
 
 | Event Constant                | Event Name                        | Description                                         | Event Class                                      |
 |-------------------------------|-----------------------------------|-----------------------------------------------------|--------------------------------------------------|
@@ -102,9 +91,8 @@ This documentation lists the events dispatched by various components within Drup
 | `PriceEvents::NUMBER_FORMAT`      | `commerce_price.number_format`      | Fired when altering a number format.               | `\Drupal\commerce_price\Event\NumberFormatDefinitionEvent` |
 
 ## Product events
-### Event Namespace
 
-`Drupal\commerce_product\Event`
+**Event Namespace**: `Drupal\commerce_product\Event`
 
 | Event Constant                             | Event Name                                          | Description                                       | Event Class                                  |
 |--------------------------------------------|-----------------------------------------------------|---------------------------------------------------|----------------------------------------------|
@@ -132,9 +120,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Promotion events
 
-### Event Namespace
-
-`Drupal\commerce_promotion\Event`
+**Event Namespace**: `Drupal\commerce_promotion\Event`
 
 | Event Constant                      | Event Name                           | Description                                                                                   | Event Class                                      |
 |-------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------|
@@ -157,9 +143,8 @@ This documentation lists the events dispatched by various components within Drup
 | `PromotionEvents::COUPON_DELETE`     | `commerce_promotion.commerce_promotion_coupon.delete` | Fired after deleting a coupon.                                                                 | `\Drupal\commerce_promotion\Event\CouponEvent` |
 
 ## Store events
-### Event Namespace
 
-`Drupal\commerce_store\Event`
+**Event Namespace**: `Drupal\commerce_store\Event`
 
 | Event Constant                       | Event Name                                          | Description                                      | Event Class                                |
 |--------------------------------------|-----------------------------------------------------|--------------------------------------------------|--------------------------------------------|
@@ -175,9 +160,7 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Tax events
 
-### Event Namespace
-
-`Drupal\commerce_tax\Event`
+**Event Namespace**: `Drupal\commerce_tax\Event`
 
 | Event Constant           | Event Name                   | Description                                                                                             | Event Class                                |
 |--------------------------|------------------------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------|
