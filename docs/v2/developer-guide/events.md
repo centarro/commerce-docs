@@ -68,9 +68,11 @@ This documentation lists the events dispatched by various components within Drup
 ### Workflow: Default
 
 **States:**
+
 - **Draft**: The initial state where the order is created but not yet placed.
 - **Completed**: The state when the order has been successfully placed.
 - **Canceled**: The state when the order has been canceled.
+
 
 | From States | To        | Events                                                                                   |
 |-------------|-----------|------------------------------------------------------------------------------------------|
@@ -82,6 +84,7 @@ This documentation lists the events dispatched by various components within Drup
 ### Workflow: Default, with Validation
 
 **States:**
+
 - **Draft**: The initial state where the order is created but not yet placed.
 - **Validation**: The state where the order is in the process of being validated.
 - **Completed**: The state when the order has been successfully validated and placed.
@@ -98,6 +101,7 @@ This documentation lists the events dispatched by various components within Drup
 ### Workflow: Fulfillment
 
 **States:**
+
 - **Draft**: The initial state where the order is created but not yet placed.
 - **Fulfillment**: The state where the order is being fulfilled.
 - **Completed**: The state when the order has been successfully fulfilled and placed.
@@ -114,6 +118,7 @@ This documentation lists the events dispatched by various components within Drup
 ### Workflow: Fulfillment, with Validation
 
 **States:**
+
 - **Draft**: The initial state where the order is created but not yet placed.
 - **Validation**: The state where the order is in the process of being validated.
 - **Fulfillment**: The state where the order is being fulfilled.
@@ -150,6 +155,7 @@ Here’s the documentation for the states and transitions in table format:
 ### Workflow: Default
 
 **States:**
+
 - **New**: The initial state for a new payment.
 - **Authorization**: The state where the payment is authorized.
 - **Authorization (Voided)**: The state where the authorization has been voided.
@@ -175,6 +181,7 @@ Here’s the documentation for the states and transitions in table format:
 ### Workflow: Manual
 
 **States:**
+
 - **New**: The initial state for a new payment.
 - **Pending**: The state where the payment is pending.
 - **Completed**: The state when the payment is completed.
