@@ -20,6 +20,7 @@ nav:
       - Shipping: 'v2/user-guide/shipping.md'
   - Developer guide:
       - v2/developer-guide/index.md
+      - Events: 'v2/developer-guide/events.md'
       - Core:
         - v2/developer-guide/core/core.md
         - Conditions: 'v2/developer-guide/core/conditions.md'
