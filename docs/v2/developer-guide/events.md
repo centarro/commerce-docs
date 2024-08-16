@@ -39,23 +39,6 @@ This documentation lists the events dispatched by various components within Drup
 | `CheckoutEvents::COMPLETION_REGISTER` | `commerce_checkout.completion_register` | Fired when the customer registers at the end of checkout. | `\Drupal\commerce_checkout\Event\CheckoutCompletionRegisterEvent` |
 | `CheckoutEvents::CHECKOUT_REGISTER` | `commerce_checkout.checkout_register`  | Fired when the customer registers during checkout. | `\Drupal\commerce_checkout\Event\RegisterDuringCheckoutEvent` |
 
-## Payment events
-
-**Event Namespace**: `Drupal\commerce_payment\Event`
-
-| Event Constant                   | Event Name                               | Description                                    | Event Class                                 |
-|----------------------------------|------------------------------------------|------------------------------------------------|---------------------------------------------|
-| `PaymentEvents::FILTER_PAYMENT_GATEWAYS` | `commerce_payment.filter_payment_gateways` | Fired when payment gateways are loaded for an order. | `\Drupal\commerce_payment\Event\FilterPaymentGatewaysEvent` |
-| `PaymentEvents::PAYMENT_LOAD`    | `commerce_payment.commerce_payment.load` | Fired after loading a payment.                | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_CREATE`  | `commerce_payment.commerce_payment.create` | Fired after creating a new payment, before saving. | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_PRESAVE` | `commerce_payment.commerce_payment.presave` | Fired before saving a payment.                | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_INSERT`  | `commerce_payment.commerce_payment.insert` | Fired after saving a new payment.             | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_UPDATE`  | `commerce_payment.commerce_payment.update` | Fired after saving an existing payment.       | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_PREDELETE` | `commerce_payment.commerce_payment.predelete` | Fired before deleting a payment.              | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_DELETE`  | `commerce_payment.commerce_payment.delete` | Fired after deleting a payment.               | `\Drupal\commerce_payment\Event\PaymentEvent` |
-| `PaymentEvents::PAYMENT_FAILURE` | `commerce_payment.commerce_payment.failure` | Fired when payment fails.                     | `\Drupal\commerce_payment\Event\FailedPaymentEvent` |
-
-
 ## Order events
 
 **Event Namespace**: `Drupal\commerce_order\Event`
@@ -144,9 +127,71 @@ This documentation lists the events dispatched by various components within Drup
 | Fulfillment     | Completed | commerce_order.fulfill.pre_transition<br>commerce_order.fulfill.post_transition               |
 | Draft, Validation, Fulfillment | Canceled  | commerce_order.cancel.pre_transition<br>commerce_order.cancel.post_transition                  |
 
+## Payment events
+
+**Event Namespace**: `Drupal\commerce_payment\Event`
+
+| Event Constant                   | Event Name                               | Description                                    | Event Class                                 |
+|----------------------------------|------------------------------------------|------------------------------------------------|---------------------------------------------|
+| `PaymentEvents::FILTER_PAYMENT_GATEWAYS` | `commerce_payment.filter_payment_gateways` | Fired when payment gateways are loaded for an order. | `\Drupal\commerce_payment\Event\FilterPaymentGatewaysEvent` |
+| `PaymentEvents::PAYMENT_LOAD`    | `commerce_payment.commerce_payment.load` | Fired after loading a payment.                | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_CREATE`  | `commerce_payment.commerce_payment.create` | Fired after creating a new payment, before saving. | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_PRESAVE` | `commerce_payment.commerce_payment.presave` | Fired before saving a payment.                | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_INSERT`  | `commerce_payment.commerce_payment.insert` | Fired after saving a new payment.             | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_UPDATE`  | `commerce_payment.commerce_payment.update` | Fired after saving an existing payment.       | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_PREDELETE` | `commerce_payment.commerce_payment.predelete` | Fired before deleting a payment.              | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_DELETE`  | `commerce_payment.commerce_payment.delete` | Fired after deleting a payment.               | `\Drupal\commerce_payment\Event\PaymentEvent` |
+| `PaymentEvents::PAYMENT_FAILURE` | `commerce_payment.commerce_payment.failure` | Fired when payment fails.                     | `\Drupal\commerce_payment\Event\FailedPaymentEvent` |
+
+Here’s the documentation for the states and transitions in table format:
+
 ---
 
-Let me know if this works or if you need any adjustments!
+### Workflow: Default
+
+**States:**
+- **New**: The initial state for a new payment.
+- **Authorization**: The state where the payment is authorized.
+- **Authorization (Voided)**: The state where the authorization has been voided.
+- **Authorization (Expired)**: The state where the authorization has expired.
+- **Completed**: The state when the payment is completed.
+- **Partially Refunded**: The state where the payment has been partially refunded.
+- **Refunded**: The state where the payment has been fully refunded.
+
+**Transitions:**
+
+| From States | To                  | Events                                                                                       |
+|-------------|---------------------|----------------------------------------------------------------------------------------------|
+| New         | Authorization       | commerce_payment.authorize.pre_transition<br>commerce_payment.authorize.post_transition     |
+| Authorization | Authorization (Voided) | commerce_payment.void.pre_transition<br>commerce_payment.void.post_transition               |
+| Authorization | Authorization (Expired) | commerce_payment.expire.pre_transition<br>commerce_payment.expire.post_transition           |
+| New         | Completed           | commerce_payment.authorize_capture.pre_transition<br>commerce_payment.authorize_capture.post_transition |
+| Authorization | Completed           | commerce_payment.capture.pre_transition<br>commerce_payment.capture.post_transition         |
+| Completed   | Partially Refunded  | commerce_payment.partially_refund.pre_transition<br>commerce_payment.partially_refund.post_transition |
+| Completed, Partially Refunded | Refunded             | commerce_payment.refund.pre_transition<br>commerce_payment.refund.post_transition             |
+
+---
+
+### Workflow: Manual
+
+**States:**
+- **New**: The initial state for a new payment.
+- **Pending**: The state where the payment is pending.
+- **Completed**: The state when the payment is completed.
+- **Partially Refunded**: The state where the payment has been partially refunded.
+- **Refunded**: The state where the payment has been fully refunded.
+- **Voided**: The state where the payment has been voided.
+
+**Transitions:**
+
+| From States | To                  | Events                                                                                       |
+|-------------|---------------------|----------------------------------------------------------------------------------------------|
+| New         | Pending             | commerce_payment.create.pre_transition<br>commerce_payment.create.post_transition           |
+| Pending     | Completed           | commerce_payment.receive.pre_transition<br>commerce_payment.receive.post_transition         |
+| Completed   | Partially Refunded  | commerce_payment.partially_refund.pre_transition<br>commerce_payment.partially_refund.post_transition |
+| Completed, Partially Refunded | Refunded             | commerce_payment.refund.pre_transition<br>commerce_payment.refund.post_transition             |
+| Pending     | Voided              | commerce_payment.void.pre_transition<br>commerce_payment.void.post_transition               |
+
 
 ## Price events
 
