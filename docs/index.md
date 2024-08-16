@@ -53,6 +53,8 @@ Building on the platform requires general knowledge about how to install and man
 
 <div class="grid cards three-grid" markdown>
 
+  - [__Events__](./v2/developer-guide/events.md)
+
   - [__Core__](./v2/developer-guide/core/core)
 
   - [__Products__](./v2/developer-guide/products/getting-started)
