@@ -81,6 +81,73 @@ This documentation lists the events dispatched by various components within Drup
 | `OrderEvents::ORDER_ITEM_PREDELETE`   | `commerce_order.commerce_order_item.predelete` | Fired before deleting an order item.                        | `\Drupal\commerce_order\Event\OrderItemEvent` |
 | `OrderEvents::ORDER_ITEM_DELETE`      | `commerce_order.commerce_order_item.delete`  | Fired after deleting an order item.                          | `\Drupal\commerce_order\Event\OrderItemEvent` |
 
+
+### Workflow: Default
+
+**States:**
+- **Draft**: The initial state where the order is created but not yet placed.
+- **Completed**: The state when the order has been successfully placed.
+- **Canceled**: The state when the order has been canceled.
+
+| From States | To        | Events                                                                                   |
+|-------------|-----------|------------------------------------------------------------------------------------------|
+| Draft       | Completed | commerce_order.place.pre_transition<br>commerce_order.place.post_transition             |
+| Draft       | Canceled  | commerce_order.cancel.pre_transition<br>commerce_order.cancel.post_transition            |
+
+---
+
+### Workflow: Default, with Validation
+
+**States:**
+- **Draft**: The initial state where the order is created but not yet placed.
+- **Validation**: The state where the order is in the process of being validated.
+- **Completed**: The state when the order has been successfully validated and placed.
+- **Canceled**: The state when the order has been canceled.
+
+| From States     | To        | Events                                                                                           |
+|-----------------|-----------|--------------------------------------------------------------------------------------------------|
+| Draft           | Validation | commerce_order.place.pre_transition<br>commerce_order.place.post_transition                    |
+| Validation      | Completed | commerce_order.validate.pre_transition<br>commerce_order.validate.post_transition               |
+| Draft, Validation | Canceled  | commerce_order.cancel.pre_transition<br>commerce_order.cancel.post_transition                  |
+
+---
+
+### Workflow: Fulfillment
+
+**States:**
+- **Draft**: The initial state where the order is created but not yet placed.
+- **Fulfillment**: The state where the order is being fulfilled.
+- **Completed**: The state when the order has been successfully fulfilled and placed.
+- **Canceled**: The state when the order has been canceled.
+
+| From States | To        | Events                                                                                   |
+|-------------|-----------|------------------------------------------------------------------------------------------|
+| Draft       | Fulfillment | commerce_order.place.pre_transition<br>commerce_order.place.post_transition              |
+| Fulfillment  | Completed | commerce_order.fulfill.pre_transition<br>commerce_order.fulfill.post_transition            |
+| Draft, Fulfillment | Canceled  | commerce_order.cancel.pre_transition<br>commerce_order.cancel.post_transition             |
+
+---
+
+### Workflow: Fulfillment, with Validation
+
+**States:**
+- **Draft**: The initial state where the order is created but not yet placed.
+- **Validation**: The state where the order is in the process of being validated.
+- **Fulfillment**: The state where the order is being fulfilled.
+- **Completed**: The state when the order has been successfully validated, fulfilled, and placed.
+- **Canceled**: The state when the order has been canceled.
+
+| From States     | To        | Events                                                                                           |
+|-----------------|-----------|--------------------------------------------------------------------------------------------------|
+| Draft           | Validation | commerce_order.place.pre_transition<br>commerce_order.place.post_transition                    |
+| Validation      | Fulfillment | commerce_order.validate.pre_transition<br>commerce_order.validate.post_transition              |
+| Fulfillment     | Completed | commerce_order.fulfill.pre_transition<br>commerce_order.fulfill.post_transition               |
+| Draft, Validation, Fulfillment | Canceled  | commerce_order.cancel.pre_transition<br>commerce_order.cancel.post_transition                  |
+
+---
+
+Let me know if this works or if you need any adjustments!
+
 ## Price events
 
 **Event Namespace**: `Drupal\commerce_price\Event`
