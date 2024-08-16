@@ -1,5 +1,9 @@
+---
+title: Documentation of Events Dispatched by Drupal Commerce
+taxonomy:
+    category: docs
+---
 
-# Documentation of Events Dispatched by Drupal Commerce
 This documentation lists the events dispatched by various components within Drupal Commerce core. Each event is associated with a specific class and represents a point where custom code can hook into the operation of Drupal Commerce.
 
 ## Commerce events
