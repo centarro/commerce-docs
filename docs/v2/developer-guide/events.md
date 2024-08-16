@@ -8,8 +8,6 @@ This documentation lists the events dispatched by various components within Drup
 
 ## Commerce events
 
-Here's a table documenting the events from the `CommerceEvents` class in Drupal Commerce:
-
 ### Event Namespace
 
 `Drupal\commerce\Event`
@@ -21,7 +19,6 @@ Here's a table documenting the events from the `CommerceEvents` class in Drupal 
 | `CommerceEvents::POST_MAIL_SEND`   | `commerce.post_mail_send`         | Fired after sending an email via the mail handler.                                           | `\Drupal\commerce\Event\PostMailSendEvent`       |
 
 ## Cart events
-Here's the updated table documenting the events from the `CartEvents` class in Drupal Commerce:
 
 ### Event Namespace
 
@@ -48,7 +45,6 @@ Here's the updated table documenting the events from the `CartEvents` class in D
 | `CheckoutEvents::CHECKOUT_REGISTER` | `commerce_checkout.checkout_register`  | Fired when the customer registers during checkout. | `\Drupal\commerce_checkout\Event\RegisterDuringCheckoutEvent` |
 
 ## Payment events
-Here's the table documenting the events from the `PaymentEvents` class in Drupal Commerce:
 
 ### Event Namespace
 
@@ -68,8 +64,6 @@ Here's the table documenting the events from the `PaymentEvents` class in Drupal
 
 
 ## Order events
-
-Here's the table documenting the events from the `OrderEvents` class in Drupal Commerce:
 
 ### Event Namespace
 
@@ -97,7 +91,6 @@ Here's the table documenting the events from the `OrderEvents` class in Drupal C
 | `OrderEvents::ORDER_ITEM_DELETE`      | `commerce_order.commerce_order_item.delete`  | Fired after deleting an order item.                          | `\Drupal\commerce_order\Event\OrderItemEvent` |
 
 ## Price events
-Here's the table documenting the events from the `PriceEvents` class in Drupal Commerce:
 
 ### Event Namespace
 
@@ -138,8 +131,6 @@ Here's the table documenting the events from the `PriceEvents` class in Drupal C
 | `ProductEvents::FILTER_VARIATIONS`         | `commerce_product.filter_variations`               | Fired when filtering variations.                 | `\Drupal\commerce_product\Event\FilterVariationsEvent` |
 
 ## Promotion events
-
-Here's the table documenting the events from the `PromotionEvents` class in Drupal Commerce:
 
 ### Event Namespace
 
@@ -183,8 +174,6 @@ Here's the table documenting the events from the `PromotionEvents` class in Drup
 | `StoreEvents::STORE_TRANSLATION_DELETE` | `commerce_store.commerce_store.translation_delete` | Fired after deleting a store translation.       | `\Drupal\commerce_store\Event\StoreEvent` |
 
 ## Tax events
-
-Here's the table documenting the events from the `TaxEvents` class in Drupal Commerce:
 
 ### Event Namespace
 
