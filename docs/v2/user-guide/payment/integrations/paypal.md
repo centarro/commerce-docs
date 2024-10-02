@@ -39,15 +39,15 @@ In order to respond to these events configuration in PayPal is necessary.
 2. Copy the Webhook Url from there. It is: https://[domain-name]/payment/notify/[payment-gateway-machine-name], but the gateway edit form will take care of displaying this for you.
 3. Take note of the 5 events that are supported.
 4. Go to your PayPal developer dashboard, and edit your site's application.
-![image](/v2/user-guide/payment/integrations/paypal/images/paypal-application-configuration.png)
+![image](/v2/user-guide/payment/integrations/images/paypal-application-configuration.png)
 5. Choose to add a new Webhook.
 6. Specify the URL you got from the Payment Gateway
-![image2](/v2/user-guide/payment/integrations/paypal/images/paypal-webhook-url.png)
+![image2](/v2/user-guide/payment/integrations/images/paypal-webhook-url.png)
 7. Enable the 5 events specified.
-![image3](/v2/user-guide/payment/integrations/paypal/images/paypal-webhook-events.png)
+![image3](/v2/user-guide/payment/integrations/images/paypal-webhook-events.png)
 8. Copy the resulting Webhook ID.
-![image4](/v2/user-guide/payment/integrations/paypal/images/paypal-webhook-id.png)
+![image4](/v2/user-guide/payment/integrations/images/paypal-webhook-id.png)
 9. Add the Webhook ID to your PayPal Payment Gateway, and save.
-![image5](/v2/user-guide/payment/integrations/paypal/images/paypal-drupal-configuration-webhook-id.png)
+![image5](/v2/user-guide/payment/integrations/images/paypal-drupal-configuration-webhook-id.png)
 
 Note that Webhooks will need to be created for both live and sandbox environments.
