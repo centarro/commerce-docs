@@ -13,7 +13,11 @@ nav:
       - Dashboard and inbox: 'v2/user-guide/dashboard-inbox.md'
       - Products: 'v2/user-guide/products.md'
       - Orders: 'v2/user-guide/orders.md'
-      - Payments: 'v2/user-guide/payments.md'
+      - Payment:
+        - Payment configuration: 'v2/user-guide/payment/payment-configuration.md'
+        - Integrations:
+          - PayPal: 'v2/user-guide/payment/integrations/paypal.md'
+        - Payment administration: 'v2/user-guide/payment/payment-administration.md'
       - Promotions: 'v2/user-guide/promotions.md'
       - Taxes: 'v2/user-guide/taxes.md'
       - Checkout: 'v2/user-guide/checkout.md'
