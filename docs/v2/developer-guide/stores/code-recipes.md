@@ -61,8 +61,9 @@ taxonomy:
         $store->save();
 
         // If needed, this sets the store as the default store.
-        $store_storage = \Drupal::service('entity_type.manager')->getStorage('commerce_store');
-        $store_storage->markAsDefault($store);
+        $store->setDefault(TRUE);
+        $store->save();
+
     
     ```
 
