@@ -12,9 +12,9 @@ Building on the platform requires general knowledge about how to install and man
 
 ## Tour the demo store
 
-If you want a quick look at the customer experience, the (demo store)(https://commerce.demo.centarro.io) provides a great example of the platform's out-of-the-box functionality. It uses Drupal's core Layout Builder for landing pages and product display pages, taxonomy and Search API systems for faceted search, and the default shopping cart and checkout forms (with guest checkout enabled).
+If you want a quick look at the customer experience, the [demo store](https://commerce.demo.centarro.io) provides a great example of the platform's out-of-the-box functionality. It uses Drupal's core Layout Builder for landing pages and product display pages, taxonomy and Search API systems for faceted search, and the default shopping cart and checkout forms (with guest checkout enabled).
 
-You can run the demo store locally via (Commerce Kickstart)[https://www.drupal.org/project/commerce_kickstart), the fastest way to start building on Drupal Commerce.
+You can run the demo store locally via [Commerce Kickstart](https://www.drupal.org/project/commerce_kickstart), the fastest way to start building on Drupal Commerce.
 
 !!! info "Latest version"
 
