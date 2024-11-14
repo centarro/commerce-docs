@@ -1,11 +1,11 @@
 site_name: Drupal Commerce docs
 repo_url: https://github.com/centarro/commerce-docs
 nav:
-  - Getting started:
+  - Introduction:
       - index.md
-      - Introduction: 'v2/getting-started.md'
-      - Installation, Updating & Uninstalling: 'v2/installation.md'
-      - Contribute Code: 'v2/contribute-code.md'
+      - Getting started: 'v2/getting-started.md'
+      - Installing and updating: 'v2/installation.md'
+      - Contributing: 'v2/contribute-code.md'
   - User guide:
       - v2/user-guide/index.md
       - Setting up your store: 'v2/user-guide/setting-up-store.md'
