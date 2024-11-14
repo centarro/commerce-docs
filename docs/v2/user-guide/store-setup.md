@@ -10,15 +10,29 @@ There are several use cases for using multiple stores, such as marketplaces or s
 
 Stores are also used for invoicing, [tax types](./taxes.md), and any other settings necessary for understanding orders. This has many applications, and it's important to understand what use cases are supported out of the box and how that impacts checkout and other [order workflows](./orders.md).
 
-## Stores require a currency
+## Add your currency
 
-Before you can create a store, you must have at least one currency imported. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported. See [Adding a currency](./currencies.md#adding-a-new-currency) to import additional currencies if needed.
+Drupal Commerce uses the internationally recognized [CLDR](http://cldr.unicode.org/) dataset to define currencies and format them based on the locale. This is facilitated by the multilingual and localization capabilities of Drupal itself.
+
+Before you can create a store, you must add at least one currency. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
+
+To import an additional currency, navigate to *Commerce > Configuration > Store > Currencies*.
+
+![Configuration overview](./images/commerce-configuration.png)
+
+Click the *Add currency* local action link, and the next form will provide you with a list of available currencies to import. Select your currency and click *Add*.
+
+![Add currency](./images/add-currency.png)
+
+While not common, sometimes you may wish to modify a currency you imported. Click the *Edit* operation button to modify the currency as needed.
+
+![Editing a currency](./images/currency-edit.png)
 
 ## Create a store
 
 ![Store page](./images/store-landing-page2.png)
 
-To create a store, navigate to the *Commerce > Configuration > Store > Stores* interface and click the <em>Add store</em> local action link. This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
+To create a store, navigate to *Commerce > Configuration > Store > Stores* and click the *Add store* local action link. This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
 
 ![Store create](./images/store-add.png)
 
