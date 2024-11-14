@@ -10,11 +10,11 @@ There are several use cases for using multiple stores, such as marketplaces or s
 
 Stores are also used for invoicing, [tax types](./taxes.md), and any other settings necessary for understanding orders. This has many applications, and it's important to understand what use cases are supported out of the box and how that impacts checkout and other [order workflows](./orders.md).
 
-## Add your currency
+## Adding a currency
 
-Drupal Commerce uses the internationally recognized [CLDR](http://cldr.unicode.org/) dataset to define currencies and format them based on the locale. This is facilitated by the multilingual and localization capabilities of Drupal itself.
+Drupal Commerce uses the [CLDR](http://cldr.unicode.org/) dataset to define currencies and format them based on the locale. This is facilitated by the multilingual and localization capabilities of Drupal itself.
 
-Before you can create a store, you must add at least one currency. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
+Before you can create a store, you must add at least one currency. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if the default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
 
 To import an additional currency, navigate to *Commerce > Configuration > Store > Currencies*.
 
@@ -28,7 +28,7 @@ While not common, sometimes you may wish to modify a currency you imported. Clic
 
 ![Editing a currency](./images/currency-edit.png)
 
-## Create a store
+## Creating a store
 
 ![Store page](./images/store-landing-page2.png)
 

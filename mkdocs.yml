@@ -287,7 +287,7 @@ plugins:
         'commerce2/developer-guide/recurring/cancel-subscriptions.md': 'v2/developer-guide/recurring/subscriptions.md#cancel-subscriptions'
         'commerce2/user-guide/key-features.md': 'v2/user-guide/index.md'
         'commerce2/user-guide/setting-up-store/create-edit-store.md': 'v2/user-guide/store-setup.md'
-        'commerce2/user-guide/setting-up-store/importing-currencies.md': 'v2/user-guide/store-setup.md#add-your-currency'
+        'commerce2/user-guide/setting-up-store/importing-currencies.md': 'v2/user-guide/store-setup.md#adding-a-currency'
         'commerce2/user-guide/setting-up-store/change-default-store.md': 'v2/user-guide/store-setup.md#changing-the-default-store'
         'commerce2/user-guide/products/introduction.md': 'v2/user-guide/products.md'
         'commerce2/user-guide/products/configure-product-attributes.md': 'v2/user-guide/products.md#configure-product-attributes'
