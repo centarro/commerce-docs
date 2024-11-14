@@ -18,7 +18,7 @@ Before you can create a store, you must have at least one currency imported. Whe
 
 ![Store page](./images/store-landing-page2.png)
 
-To create a store, navigate to Commerce > Configuration > Store > Stores interface and click <em>Add store</em>. This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
+To create a store, navigate to the *Commerce > Configuration > Store > Stores* interface and click the <em>Add store</em> local action link. This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
 
 ![Store create](./images/store-add.png)
 
