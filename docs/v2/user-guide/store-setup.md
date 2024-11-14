@@ -14,7 +14,7 @@ Stores are also used for invoicing, [tax types](./taxes.md), and any other setti
 
 Drupal Commerce uses the [CLDR](http://cldr.unicode.org/) dataset to define currencies and format them based on the locale. This is facilitated by the multilingual and localization capabilities of Drupal itself.
 
-Before you can create a store, you must add at least one currency. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if the default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
+Before creating a store, you must add at least one currency. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if the default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
 
 To import an additional currency, navigate to *Commerce > Configuration > Store > Currencies*.
 
@@ -30,9 +30,11 @@ While not common, sometimes you may wish to modify a currency you imported. Clic
 
 ## Creating a store
 
+Navigate to *Commerce > Configuration > Store > Stores* and click the *Add store* local action link.
+
 ![Store page](./images/store-landing-page2.png)
 
-To create a store, navigate to *Commerce > Configuration > Store > Stores* and click the *Add store* local action link. This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
+This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
 
 ![Store create](./images/store-add.png)
 
@@ -40,40 +42,28 @@ Once you’ve got all the details filled out, click save and you can begin creat
 
 ## Changing the default store
 
-The default store can be thought of as your primary store. When Drupal Commerce determines the current store for a product or order, this will be used if it cannot be determined.
+When you have more than one store, the default store is selected as the context for a customer's interactions with your site unless a module instructs Commerce to use a different one. For example, a multi-brand site using a subdomain per brand may use the [Commerce Store Domain](https://www.drupal.org/project/commerce_store_domain) module to change the store context based on the domain used to access the site.
 
-Go to the Stores management page from the Configuration page
+To change the default store, first navigate to the *Stores* list:
 
 ![Commerce Configuration](./images/configuration-store.png)
 
-Click on **Edit** for the store you would like to make default.
+Click the *Edit* operation button for the store you would like to make the default:
 
 ![Edit store](./images/stores-edit-a-store.png)
 
-At the bottom of the form, check the **Default** checkout, and then press **Save** to update the store and make it default.
+At the bottom of the form, check the box labeled *Make this the default store.* Submit the form, and the default store will be updated:
 
 ![Make default](./images/edit-store-check-default.png)
 
-## Use Cases
+Note that this means the previously selected default store will be saved at the same time to remove its default status.
 
-**! This section should be moved to a subsection, possibly. Detailing how to use multiple stores, or setup a marketplace model.**
+## Multi-store scenarios
 
-We optimize for the two use cases:
+Supporting multiple stores in Commerce Core allows us to address several use cases:
 
-1. One business that has one or more locations **or** 2. The marketplace model (where you have sellers)
+1. A site with multiple retail locations may use stores for tracking product availability and inventory levels by location.
+2. A company with multiple brands may use stores to identify a store based on a brand-specific domain used for each store.
+3. A marketplace might permit merchants to create stores on the site to represent their own inventories within the marketplace.
 
-For these use cases and possibly others, it is up to the developer to
-fill in the gaps that are present in the order workflow. This is
-different from Commerce 1.x in that we will support stores by default,
-allowing for community contributions to extend the functionality instead
-of trying to build store functionality from scratch.
-
-#### One or more locations
-
-This is the most common eCommerce situation where we have a single
-person, company, or organization that is taking payments online.
-
-#### Marketplace model
-
-The marketplace model is where you have many sellers who are taking
-payment for unique products.
+In most cases, the multi-store architecture supports certain requirements but leaves others unfulfilled. You will need to find contributed modules or pay for custom module development to close the gaps. For example, a marketplace may want to give merchants permissions that don't exist with respect to managing their own store listings, inventory, or payments. You would need to engage an agency to help you identify those gaps and address them.
