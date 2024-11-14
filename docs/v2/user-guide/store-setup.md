@@ -44,11 +44,7 @@ Once you’ve got all the details filled out, click save and you can begin creat
 
 When you have more than one store, the default store is selected as the context for a customer's interactions with your site unless a module instructs Commerce to use a different one. For example, a multi-brand site using a subdomain per brand may use the [Commerce Store Domain](https://www.drupal.org/project/commerce_store_domain) module to change the store context based on the domain used to access the site.
 
-To change the default store, first navigate to the *Stores* list:
-
-![Commerce Configuration](./images/configuration-store.png)
-
-Click the *Edit* operation button for the store you would like to make the default:
+To change the default store, from the *Stores* list click the *Edit* operation button for the store you would like to make the default:
 
 ![Edit store](./images/stores-edit-a-store.png)
 
