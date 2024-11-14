@@ -4,27 +4,25 @@ taxonomy:
     category: docs
 ---
 
-Drupal Commerce sites all have one or more store to which products are published and orders belong. The store object also contains configuration like the name and email address used for customer communication, the default currency and timezone, the available billing and shipping countries, and more.
+Drupal Commerce sites all have one or more store to which products are published and shopping carts / orders belong. Store objects also contain configuration like the name and email address used in customer communications, the default currency and timezone, the available billing and shipping countries, and more.
 
-There are several use cases for using multiple stores, such as marketplaces or single sites supporting multiple brands or retail locations. Regardless of how many stores your site has, there will always be a [default store](#changing-the-default-store) that provides context for site navigation or cart interaction unless the current store is determined through some other means.
+There are several use cases for using multiple stores, such as marketplaces or sites supporting multiple brands or retail locations. Regardless of how many stores your site has, there will always be one [default store](#changing-the-default-store) that provides context for site navigation or cart interaction unless the current store is resolved through some other means.
 
 Stores are also used for invoicing, [tax types](./taxes.md), and any other settings necessary for understanding orders. This has many applications, and it's important to understand what use cases are supported out of the box and how that impacts checkout and other [order workflows](./orders.md).
 
-## Before we begin
+## Stores require a currency
 
-To create a store you must have at least one currency imported. When Drupal Commerce is first installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
-
-See [Adding a currency](./currencies.md#adding-a-new-currency) to import additional currencies as needed.
+Before you can create a store, you must have at least one currency imported. When Drupal Commerce is first installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported. See [Adding a currency](./currencies.md#adding-a-new-currency) to import additional currencies if needed.
 
 ## Create a store
 
 ![Store page](./images/store-landing-page2.png)
 
-Next, we need to create a store. Every product requires one store. Additional details will be shared about the power of having stores baked into the core of Commerce, but for now, all you need to do is define your store’s name, address, and select a few things about taxes and billing.
+To create a store, navigate to Commerce > Configuration > Store > Stores interface and click <em>Add store</em>. This will take you to a form where you aill be prompted to supply all of the details mentioned above. Be sure to review both the main form and the items in the sidebar.
 
 ![Store create](./images/store-add.png)
 
-Once you’ve got all those details filled out, click save and move on to creating products! Woohoo!
+Once you’ve got all the details filled out, click save and you can begin creating products.
 
 ## Changing the default store
 
