@@ -10,6 +10,8 @@ Drupal Commerce is an open-source eCommerce platform that lets you sell any type
 
 Building on the platform requires general knowledge about how to install and manage Drupal on a web server. Once you have Drupal installed, adding the [Commerce Core](https://www.drupal.org/project/commerce) project to it gives you a foundation of eCommerce data objects, user interfaces, and subsystems. You’ll add configuration and custom code to meet your requirements, then build and deploy as you go.
 
+Check out the [Drupal Commerce Features Overview](https://www.centarro.io/drupal-commerce/features) to see all the platform can do.
+
 ## Try it out!
 
 If you want a quick look at the customer experience, the [demo store](https://commerce.demo.centarro.io) provides a great example of the platform's out-of-the-box functionality. It uses Drupal's core Layout Builder for landing pages and product display pages, taxonomy and Search API systems for faceted search, and the default shopping cart and checkout forms (with guest checkout enabled).
