@@ -12,7 +12,7 @@ Stores are also used for invoicing, [tax types](./taxes.md), and any other setti
 
 ## Stores require a currency
 
-Before you can create a store, you must have at least one currency imported. When Drupal Commerce is first installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported. See [Adding a currency](./currencies.md#adding-a-new-currency) to import additional currencies if needed.
+Before you can create a store, you must have at least one currency imported. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if your site's default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported. See [Adding a currency](./currencies.md#adding-a-new-currency) to import additional currencies if needed.
 
 ## Create a store
 
