@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-# Drupal Commerce docs
+# What is Drupal Commerce?
 
 Drupal Commerce is an open-source eCommerce platform that lets you sell any type of product to anyone in the world. It powers _billions_ in sales across thousands of online stores.
 
