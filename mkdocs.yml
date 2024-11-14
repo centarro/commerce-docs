@@ -8,7 +8,7 @@ nav:
       - Contributing: 'v2/contribute-code.md'
   - User guide:
       - v2/user-guide/index.md
-      - Setting up your store: 'v2/user-guide/setting-up-store.md'
+      - Store setup: 'v2/user-guide/setting-up-store.md'
       - Currencies: 'v2/user-guide/currencies.md'
       - Dashboard and inbox: 'v2/user-guide/dashboard-inbox.md'
       - Products: 'v2/user-guide/products.md'
