@@ -4,10 +4,17 @@ taxonomy:
     category: docs
 ---
 
-# Commerce 2.x
+# Getting started with Drupal Commerce
 
-At its core, Commerce is a set of Drupal 8 modules, which in turn depend
-on other best-of-breed modules and libraries.
+Drupal Commerce is a native extension of Drupal, the open source content management system (CMS). If you have no prior experience building Drupal sites, please note that it requires intermediate to advanced skills such as:
+
+* Using command line tools to download code
+* Tracking changes via a version control system
+* Configuring a web host to use the same tools
+* Managing configuration via YAML code files
+* Running a web server on your own computer for development and testing prior to deployment
+
+There are resources for learning all of the above, but the purpose of this user guide is *not* to explain in detail how to begin working with Drupal with no prior experience. If you *are* completely new, you might benefit from working through [Drupal's "Getting started" guide](https://www.drupal.org/docs/getting-started) first.
 
 ## Using Drupal Commerce
 
