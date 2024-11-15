@@ -38,7 +38,7 @@ Run the demo on your computer with [Commerce Kickstart](https://www.drupal.org/p
 
 <div class="grid cards icon-grid" markdown>
 
-- [:centarro-store:{ .lg .middle }  __Setup your store__](./v2/user-guide/setting-up-store/)
+- [:centarro-store:{ .lg .middle }  __Setup your store__](./v2/user-guide/store-setup/)
 
 - [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](./v2/user-guide/products/)
 

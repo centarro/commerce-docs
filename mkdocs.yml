@@ -417,6 +417,7 @@ plugins:
         'v2/user-guide/payments.md': 'v2/user-guide/payment/payment-administration.md'
   - include_dir_to_nav
   - open-in-new-tab
+  - glightbox
 markdown_extensions:
   - admonition
   - attr_list
