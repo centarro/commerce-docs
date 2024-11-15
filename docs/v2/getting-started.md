@@ -6,7 +6,7 @@ taxonomy:
 
 # Getting started with Drupal Commerce
 
-Drupal Commerce natively extends Drupal, the open source content management system (CMS). If you have no prior experience building Drupal sites, please note that it requires intermediate to advanced skills such as:
+Drupal Commerce natively extends Drupal, the open source content management system (CMS). If you have no experience building Drupal sites, please note that it requires intermediate to advanced web development skills such as:
 
 * Using command line tools to download code
 * Tracking changes via a version control system
@@ -15,10 +15,6 @@ Drupal Commerce natively extends Drupal, the open source content management syst
 * Running a web server on your own computer for development and testing prior to deployment
 
 There are resources for learning all of the above, but the purpose of this user guide is *not* to explain in detail how to begin working with Drupal with no prior experience. If you *are* completely new, you might benefit from working through [Drupal's "Getting started" guide](https://www.drupal.org/docs/getting-started) first.
-
-## Using Drupal Commerce
-
-To learn how to use Drupal Commerce, see the [User Guide](./user-guide/index.md)
 
 ## Working with Drupal Commerce
 
@@ -174,33 +170,16 @@ If the dependency is required by another package, it will not be removed.
 [composer require]: https://getcomposer.org/doc/03-cli.md#require
 [composer remove]: https://getcomposer.org/doc/03-cli.md#remove
 
-## Getting help
+## Community support
 
-### Best Practices
-It's important to keep in mind that this is open source software. While some
-contributors are paid for their time (usually for specific projects/tasks), a
-great many more are donating their time to the community. When asking for help,
-you'll find that people can be very friendly and giving but only if they are
-treated respectfully. Also, ultimately, it's up to you to solve your own
-problems: nobody in the community "works for you". That being said, here are
-some general tips on how to get help in a way that's both respectful and
-constructive:
+Open source projects are typically supported by a community of contributors donating their own time. When asking for help, please respect their time by searching existing resources first and communicating clearly, concisely, and politely when asking for help. A typical support journey looks like:
 
- - Start with a search in the project's [issue queue](#drupal-commerce-issue-queue). Try to avoid posting
-   duplicate issues!
- - If you can't find anything that's applicable to your problem, searching
-   [Drupal Answers on StackExchange](#search-drupal-answers-on-stackexchange) is a good next step. Post a question if none of the existing questions apply to your issue.
- - For more immediate responses, you can try the [Commerce Slack channel](#chat-with-us-on-slack). Post a general message about the problem you're having, to start. You can get
-   into the details in a separate thread. If your problem is a "known issue",
-   you'll probably be directed to its Issue page.
- - Chatting with people in the Slack channel may lead to a suggestion to post
-   a new Issue.
- - If you're posting an issue for the first time, review [How to create a good issue].
- - Whenever you get responses to your Issue (either in the form of requests for
-   additional information or patches), it's helpful if you can respond quickly.
- - Become an active, "giving" member of the Drupal Commerce community yourself.
-   Review patches, provide feedback, and help others in the Slack channel
-   whenever you can.
+1. Search the project's [issue queue](#drupal-commerce-issue-queue) for existing issues about the bug you're encountering or feature you're looking for.
+2. If you cannot find an answer there, search [Drupal Answers](#search-drupal-answers-on-stackexchange) next, as the project maintainers monitor the `commerce` tag.
+3. For questions that require some dialogue or extended discussion, consider joining the [#commerce channel](#chat-with-us-on-slack) in the Drupal Slack community. Please try to keep all discussion to replies in a thread. If your problem is a known issue, you may be directed to its issue page to try to keep all discussion about a subject in one place.
+4. Ultimately, you may need to open an issue in the issue queue, in which case you can read more on [How to create a good issue].
+
+As you find help and grow in your experience and ability, it would be awesome for you to give back by supporting other members of the Drupal Commerce community yourself. Don't be shy about reviewing patches, providing feedback, and helping others in the Slack channel when you can!
 
 ### Drupal Commerce Issue Queue
 If you are new to Drupal, you will want to learn more about [Drupal issue queues].
