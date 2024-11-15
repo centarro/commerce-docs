@@ -94,6 +94,7 @@ Next, `ensureOrder()` finishes up by saving the recurring order item and the rec
 <h3>Summary</h3>
 
 Here's an overview of "who did what" when the OrderSubscriber's `onPlace()` method was triggered by the `commerce_order.place.pre_transition` event:
+
 1. SubscriptionStorage:
     * create subscription
     * trigger `onSubscriptionCreate()` (SubscriptionType plugin method)
