@@ -6,7 +6,7 @@ taxonomy:
 
 # Getting started with Drupal Commerce
 
-Drupal Commerce is a native extension of Drupal, the open source content management system (CMS). If you have no prior experience building Drupal sites, please note that it requires intermediate to advanced skills such as:
+Drupal Commerce natively extends Drupal, the open source content management system (CMS). If you have no prior experience building Drupal sites, please note that it requires intermediate to advanced skills such as:
 
 * Using command line tools to download code
 * Tracking changes via a version control system
