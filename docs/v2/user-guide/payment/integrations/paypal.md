@@ -6,7 +6,7 @@ taxonomy:
 
 # PayPal configuration
 
-The [https://www.drupal.org/project/commerce_paypal](commerce_paypal) module provides several different integration methods with PayPal which gives you a variety of options to choose from when looking to use PayPal in your checkout flow. The preferred method is to use PayPal checkout to inject the appropriate payment methods into the checkout flow automatically. Depending on the cart contents, user device, browser, and location PayPal will determine what payment methods are available to the customer and smartly display the appropriate payment buttons. This user guide is focused on the PayPal checkout integration as this is the integration that will be continueally developed and supported going forward.
+The [Commerce PayPal](https://www.drupal.org/project/commerce_paypal) module provides multiple payment gateway plugins for integrating different PayPal products. Their preferred method is PayPal Checkout, which injects the appropriate payment methods into the checkout flow automatically. Depending on the cart contents, user device, browser, and location PayPal will determine what payment methods are available to the customer and smartly display the appropriate payment buttons. This user guide is focused on the PayPal checkout integration as this is the integration that will be continueally developed and supported going forward.
 
 ## General configuration
 Most of the configuration options are standard gateway setup options but there are a few configuration settings which are unique to PayPal that you need to configure.
