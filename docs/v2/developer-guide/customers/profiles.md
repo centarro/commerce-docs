@@ -186,7 +186,7 @@ If you need to limit access to certain *fields* for the *customer* profile or an
 
 #### Customization example: *sales representative* field
 1. Add and install the *Field permissions* module. (See the [Extending documentation](../../../installation/#extending) for instructions.)
-2. Add a *Sales representative* field to your *customer* profile type using the same approach we used above for the [*contact phone* field](#add-the-contact-phone-field).
+2. Add a *Sales representative* field to your *customer* profile type using the same approach we used above for the [*contact phone* field](#customer-profile-fields).
 3. Select `Reference > User` for the field type. We could create a new [Taxonomy] for our *sales representative* information, but for this example, let's just assume that we'll create a [User account] for each of our sales representatives.
 
 ![Sales representative field creation](../../images/profile-management-1.png)

@@ -10,11 +10,11 @@ Products in Drupal Commerce are designed to meet your needs. Whether you are sel
 
 The following is an introduction to terminology used in Drupal Commerce before you begin. 
 
-| Term      | What does it mean?                          |
-| ----------- | ------------------------------------ |
-| Attribute       | Something about the product which creates a unique choice. For clothing this would be the color and size. A subscription may have monthly or annual billing options.  |
-| Variation       | A product variation represents an option of specific attributes for a product. For example, the Large Blue sweatshirt versus the Medium Red sweatshirt |
-| Product    | The actual product, a sweatshirt, which contains all of its variations |
+| Term      | What does it mean?                                                                                                                                                   |
+|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Attribute | Something about the product which creates a unique choice. For clothing this would be the color and size. A subscription may have monthly or annual billing options. |
+| Variation | A product variation represents an option of specific attributes for a product. For example, the Large Blue sweatshirt versus the Medium Red sweatshirt               |
+| Product   | The actual product, a sweatshirt, which contains all of its variations                                                                                               |
 
 ### Product example
 
@@ -31,22 +31,20 @@ How does that translate into Drupal Commerce?
 
 The following table is an example of variations that could be for a Drupal Commerce Cart graphic t-shirt.
 
-
-| Product      | Size                         | Color |
-| ----------- | ------------------------------------ |-------|
-| Cart graphic | Small  | Grey  |
-| Cart graphic | Small | White |
-| Cart graphic | Small | Black |
-| Cart graphic | Medium | Grey  |
-| Cart graphic | Medium | White |
-| Cart graphic | Medium | Black |
-| Cart graphic | Large | Grey  |
-| Cart graphic | Large | White |
-| Cart graphic | Large | Black |
+| Product      | Size        | Color |
+|--------------|-------------|-------|
+| Cart graphic | Small       | Grey  |
+| Cart graphic | Small       | White |
+| Cart graphic | Small       | Black |
+| Cart graphic | Medium      | Grey  |
+| Cart graphic | Medium      | White |
+| Cart graphic | Medium      | Black |
+| Cart graphic | Large       | Grey  |
+| Cart graphic | Large       | White |
+| Cart graphic | Large       | Black |
 | Cart graphic | Extra Large | Grey  |
 | Cart graphic | Extra Large | White |
 | Cart graphic | Extra Large | Black |
-
 
 We have now defined the product attributes which need to be created. [Read here to learn about how to create, edit, and making some attributes optional](#configure-product-attributes)
 

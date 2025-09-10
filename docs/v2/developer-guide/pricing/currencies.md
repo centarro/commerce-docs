@@ -28,13 +28,13 @@ NumberFormatter and provide currency, country, language data.
 
 The Drupal Commerce Price module provides a configuration entity for storing currency definitions. A *Currency* entity has the following properties:
 
-| Property | Description | Example |
-|----------|-------------|---------|
-| `currencyCode` | A unique alphanumeric currency code, consisting of three uppercase letters, as defined by the [ISO 4217 standard]. | GBP |
-| `name` | The currency name, a string. | British Pound |
-| `numericCode` | A unique 3-digit numeric currency code, a string. | 826 |
-| `symbol` | The currency symbol, a string. | £ |
-| `fractionDigits` | The number of fractions digits, an integer between zero and six. | 2 |
+| Property         | Description                                                                                                        | Example       |
+|------------------|--------------------------------------------------------------------------------------------------------------------|---------------|
+| `currencyCode`   | A unique alphanumeric currency code, consisting of three uppercase letters, as defined by the [ISO 4217 standard]. | GBP           |
+| `name`           | The currency name, a string.                                                                                       | British Pound |
+| `numericCode`    | A unique 3-digit numeric currency code, a string.                                                                  | 826           |
+| `symbol`         | The currency symbol, a string.                                                                                     | £             |
+| `fractionDigits` | The number of fractions digits, an integer between zero and six.                                                   | 2             |
 
 #### Importing currencies
 

@@ -6,17 +6,17 @@ This section provides specific, technical explanations of the product-related da
 
 A **product** is a content entity that has a product type as its bundle entity type. Products are translatable. Like standard Drupal nodes, products are designed to be displayed as standalone pages on your site. In fact, most of a product's base fields are very similar to those of node entities:
 
-| Base field | Description |
-| ---------- | ----------- |
-| product_id | Unique numeric id for the product |
-| title      | The product title, or name; required |
+| Base field | Description                                              |
+|------------|----------------------------------------------------------|
+| product_id | Unique numeric id for the product                        |
+| title      | The product title, or name; required                     |
 | body       | A text with summary field, displayed on the product page |
-| status     | Published status; boolean |
-| type       | Id of the product type bundle |
-| path       | Optional URL alias for the product display page |
-| uid        | The product author |
-| created    | Time when the product was created |
-| changed    | Time when the product was last edited |
+| status     | Published status; boolean                                |
+| type       | Id of the product type bundle                            |
+| path       | Optional URL alias for the product display page          |
+| uid        | The product author                                       |
+| created    | Time when the product was created                        |
+| changed    | Time when the product was last edited                    |
 
 Additionally, product entities have two required, unlimited cardinality entity reference fields: ***stores*** and ***variations***.
 - Each product can belong to multiple stores, but each individual order belongs to a single store. Thus, customers will be unable to purchase products from multiple stores in a single order.
@@ -28,20 +28,20 @@ Additionally, product entities have two required, unlimited cardinality entity r
 #### Product variations
 A **product variation** is a content entity that has a product variation type as its bundle entity type. Product variations are translatable. Each product variation has a parent [product entity](#products), sku, title, price, and status (active/inactive). The sku must be unique across all product variation types. See the [Product Concepts documentation](../getting-started#concepts) for more information on product skus. The author of the variation as well as its created and changed timestamps are also stored.
 
-| Base field   | Description |
-| ------------ | ----------- |
-| variation_id | Unique numeric id for the product variation |
-| product_id   | Id of the parent product entity |
-| sku          | Unique product variation sku, required |
-| title        | The product variation title, required |
-| price        | The variation price, required |
-| list_price    | The variation list price |
-| status       | Whether the variation is active, boolean |
-| type         | Id of the product variation type bundle |
+| Base field   | Description                                     |
+|--------------|-------------------------------------------------|
+| variation_id | Unique numeric id for the product variation     |
+| product_id   | Id of the parent product entity                 |
+| sku          | Unique product variation sku, required          |
+| title        | The product variation title, required           |
+| price        | The variation price, required                   |
+| list_price   | The variation list price                        |
+| status       | Whether the variation is active, boolean        |
+| type         | Id of the product variation type bundle         |
 | path         | Optional URL alias for the product display page |
-| uid          | The product variation author |
-| created      | Time when the product was created |
-| changed      | Time when the product was last edited |
+| uid          | The product variation author                    |
+| created      | Time when the product was created               |
+| changed      | Time when the product was last edited           |
 
 Since product variations belong to specific products and since products are specifically assigned to one or more stores, product variations are also assigned to stores. The `ProductVariation` class provides a `getStores()` method that returns an array of stores in which the product variation is available.
 
@@ -122,10 +122,10 @@ Structurally, product attributes and product attribute values are similar to tax
 
 A **product attribute** is a configuration entity that has the following properties:
 
-| Property    | Description |
-| ----------- | ----------- |
-| id          | Unique string id. |
-| label       | Label to be used for the attribute and typically displayed to customer. For example: *Color* or *Size*. |
+| Property    | Description                                                                                                                                                                                                                                                                                                                                                                      |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id          | Unique string id.                                                                                                                                                                                                                                                                                                                                                                |
+| label       | Label to be used for the attribute and typically displayed to customer. For example: *Color* or *Size*.                                                                                                                                                                                                                                                                          |
 | elementType | Element to be used for displaying the attribute value options to the customer. One of: <ul><li>**radios**: radio buttons</li><li>**select**: select list</li><li>**commerce_product_rendered_attribute**: Rendered attribute.<br />See [Product attributes](../displaying-products/#product-attributes) in the Displaying products documentation for more information.</li></ul> |
 
 The product attribute entity also has two useful *getter* methods:
@@ -139,13 +139,13 @@ The product attribute entity also has two useful *getter* methods:
 
 A **product attribute value** is a content entity that has a product attribute as its bundle entity type. Its base fields are:
 
-| <nobr>Base field</nobr> | Description |
-| ---------- | ----------- |
-| attribute  | The ID of the product attribute value's ***product attribute*** bundle. |
-| name       | Typically displayed to customers as a selectable product option, like *Blue*, *Green*, or *Red*. |
-| weight     | Used for ordering attribute values in relation to other attribute values. The default ordering is alphabetical. |
-| created    | Time when the attribute value was created. |
-| changed    | Time when the attribute value was last edited. |
+| <nobr>Base field</nobr> | Description                                                                                                     |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------|
+| attribute               | The ID of the product attribute value's ***product attribute*** bundle.                                         |
+| name                    | Typically displayed to customers as a selectable product option, like *Blue*, *Green*, or *Red*.                |
+| weight                  | Used for ordering attribute values in relation to other attribute values. The default ordering is alphabetical. |
+| created                 | Time when the attribute value was created.                                                                      |
+| changed                 | Time when the attribute value was last edited.                                                                  |
 
 Custom fields can be added to product attribute value entities through the administrative UI.
 

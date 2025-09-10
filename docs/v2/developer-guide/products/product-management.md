@@ -238,7 +238,7 @@ After saving all your changes, you should be able to navigate to your new Produc
  - [Assign attribute values to a variation](#assigning-attribute-values-to-a-variation)
 - [**Alter the product title field label**](#altering-the-title-field-label)
 
-!!! example "<a name="creating-products"></a>Creating products"
+!!! example "<a id="creating-products"></a>Creating products"
     - Since product variations are the purchasable parts of products, products need at least one variation.
     - Since every product belongs to one or more stores, products need at least one store.
 
@@ -284,7 +284,7 @@ After saving all your changes, you should be able to navigate to your new Produc
         $variation->getProduct();
     ```
 
-!!! example "<a note="creating-variations"></a>Creating variations"
+!!! example "<a id="creating-variations"></a>Creating variations"
         ```php
 
 
@@ -317,7 +317,7 @@ After saving all your changes, you should be able to navigate to your new Produc
 
         ```
 
-!!! example "<a name="creating-values-for-an-attribute"></a>Creating values for an attribute"
+!!! example "<a id="creating-values-for-an-attribute"></a>Creating values for an attribute"
         ```php
 
             /**
@@ -352,7 +352,7 @@ After saving all your changes, you should be able to navigate to your new Produc
             $large->save();
         ```
 
-!!! example "<a name="loading-a-product"></a>Loading a product"
+!!! example "<a id="loading-a-product"></a>Loading a product"
         ```php
 
             // Loading is based off of the primary key [Integer]
@@ -360,7 +360,7 @@ After saving all your changes, you should be able to navigate to your new Produc
             $product = \Drupal\commerce_product\Entity\Product::load(1);
         ```
 
-!!! example "<a name="loading-a-variation"></a>Loading a variation"
+!!! example "<a id="loading-a-variation"></a>Loading a variation"
         ```php
 
             // Loading is based off of the primary key [Integer]
@@ -368,7 +368,7 @@ After saving all your changes, you should be able to navigate to your new Produc
             $variation = \Drupal\commerce_product\Entity\ProductVariation::load(1);
         ```
 
-!!! example "<a name="loading-an-attribute-value"></a> nameLoading an attribute value"
+!!! example "<a id="loading-an-attribute-value"></a> nameLoading an attribute value"
         ```php
 
             // Loading is based off of the primary key [Integer]
@@ -376,7 +376,7 @@ After saving all your changes, you should be able to navigate to your new Produc
             $red = \Drupal\commerce_product\Entity\ProductAttributeValue::load(1);
         ```
 
-!!! example "<a name="checking-if-an-attribute-value-exists-within-a-particular-attribute-type"></a>Checking if an attribute value exists within a particular attribute type"
+!!! example "<a id="checking-if-an-attribute-value-exists-within-a-particular-attribute-type"></a>Checking if an attribute value exists within a particular attribute type"
         ```php
             // Look up while filtering by Attribute
             $productAttributeId = \Drupal::entityTypeManager()
@@ -387,7 +387,7 @@ After saving all your changes, you should be able to navigate to your new Produc
                 ->execute();
         ```
 
-!!! example "<a name="assigning-attribute-values-to-a-variation"></a>Assigning attribute values to a variation"
+!!! example "<a id="assigning-attribute-values-to-a-variation"></a>Assigning attribute values to a variation"
     Let's say we want our hypothetical product to have two variations. One will be the color red and size medium, and the other will be the color blue and size large.
     - If a Product Variation Type has fields for attributes, then variations of that type **MUST** have those attributes.
 
@@ -415,7 +415,7 @@ After saving all your changes, you should be able to navigate to your new Produc
         $variation_blue_large->save();
     ```
 
-!!! example "<a name="altering-the-title-field-label"></a>Altering the title field label"
+!!! example "<a id="altering-the-title-field-label"></a>Altering the title field label"
     The following example will change the label for the product name from *Title* to *Product name*.
 
     ![Change product name label](../images/managing-products-code-recipes-1.jpg)

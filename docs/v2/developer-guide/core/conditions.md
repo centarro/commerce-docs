@@ -51,15 +51,15 @@ If neither a single Condition nor a combination of Conditions covers your busine
 
 A Commerce Condition plugin is defined by the `CommerceCondition` annotation, which has the following properties:
 
-| Property | Required | Description |
-| -------- | -------- | ----------- |
-| `id` | Yes | Unique string id for the plugin. |
-| `label` | Yes | Translatable label for the plugin. |
-| `display_label` | No | Translatable label that is displayed in the *Conditions* UI. Defaults to the plugin label. |
-| `category` | No | Translatable label for the category. Defaults to *Other*. *Customer*, *Order*, and *Product* are all categories defined for Commerce Conditions. |
-| `entity_type` | Yes | The entity type ID of the entity passed to the plugin for evaluation. For example, use `commerce_order` for a Condition that applies to orders. |
-| `parent_entity_type` | No | The entity type ID of the parent entity for the Condition. When specified, the condition is only available on that entity type. For example, the *Total discounted product quantity* has `commerce_promotion` for its `parent_entity_type` and is only available for Promotions. It does not appear as an option for Payment gateways. |
-| `weight` | No | An integer value used for sorting Conditions within the UI. Defaults to 0. Conditions are sorted by *weight* and then *display label*. |
+| Property             | Required | Description                                                                                                                                                                                                                                                                                                                            |
+|----------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                 | Yes      | Unique string id for the plugin.                                                                                                                                                                                                                                                                                                       |
+| `label`              | Yes      | Translatable label for the plugin.                                                                                                                                                                                                                                                                                                     |
+| `display_label`      | No       | Translatable label that is displayed in the *Conditions* UI. Defaults to the plugin label.                                                                                                                                                                                                                                             |
+| `category`           | No       | Translatable label for the category. Defaults to *Other*. *Customer*, *Order*, and *Product* are all categories defined for Commerce Conditions.                                                                                                                                                                                       |
+| `entity_type`        | Yes      | The entity type ID of the entity passed to the plugin for evaluation. For example, use `commerce_order` for a Condition that applies to orders.                                                                                                                                                                                        |
+| `parent_entity_type` | No       | The entity type ID of the parent entity for the Condition. When specified, the condition is only available on that entity type. For example, the *Total discounted product quantity* has `commerce_promotion` for its `parent_entity_type` and is only available for Promotions. It does not appear as an option for Payment gateways. |
+| `weight`             | No       | An integer value used for sorting Conditions within the UI. Defaults to 0. Conditions are sorted by *weight* and then *display label*.                                                                                                                                                                                                 |
 
 #### How to alter an existing Condition plugin
 

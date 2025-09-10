@@ -136,19 +136,19 @@ The currency repository provides formats in the form of `CommerceGuys\Intl\Curre
 
 The number format repository service constructs a `CommerceGuys\Intl\NumberFormat\NumberFormat` value object for a given locale. These value objects have the following properties:
 
-| Property | ID | Description | Example value |
-|----------|----|-------------|---------------|
-| Locale   | locale | The locale. | `'en_US'` |
-| Decimal pattern | decimal_pattern | The number pattern used to format decimal numbers. | `'#,##0.###'` |
-| Percent pattern | percent_pattern | The number pattern used to format percentages. | `'#,##0%'` |
-| Currency pattern | currency_pattern | The number pattern used to format currency amounts. | `'¤#,##0.00'` |
-| Accounting currency pattern | accounting_currency_pattern | The number pattern used to format accounting currency amounts. | `'¤#,##0.00;(¤#,##0.00)'` |
-| Numbering system | numbering_system |  The numbering system, one of Arabic-Indic, Extended Arabic-Indic, Bengali, Devanagari, or Latin. Default is Latin. | `'latn'` |
-| Decimal separator | decimal_separator | The decimal separator. The default is `'.'`. | `','` |
-| Grouping separator | grouping_separator | The grouping separator. The default is `','`. | `' '` |
-| Plus sign | plus_sign | The plus sign. The default is `'+'`. | `'‎+‎'` |
-| Minus sign | minus_sign | The minus sign. The default is `'+'`. | `'‎-‎'` |
-| Percent sign | percent_sign | The percent sign. The default is `'%'`. | `'٪؜'` |
+| Property                    | ID                          | Description                                                                                                        | Example value             |
+|-----------------------------|-----------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------------|
+| Locale                      | locale                      | The locale.                                                                                                        | `'en_US'`                 |
+| Decimal pattern             | decimal_pattern             | The number pattern used to format decimal numbers.                                                                 | `'#,##0.###'`             |
+| Percent pattern             | percent_pattern             | The number pattern used to format percentages.                                                                     | `'#,##0%'`                |
+| Currency pattern            | currency_pattern            | The number pattern used to format currency amounts.                                                                | `'¤#,##0.00'`             |
+| Accounting currency pattern | accounting_currency_pattern | The number pattern used to format accounting currency amounts.                                                     | `'¤#,##0.00;(¤#,##0.00)'` |
+| Numbering system            | numbering_system            | The numbering system, one of Arabic-Indic, Extended Arabic-Indic, Bengali, Devanagari, or Latin. Default is Latin. | `'latn'`                  |
+| Decimal separator           | decimal_separator           | The decimal separator. The default is `'.'`.                                                                       | `','`                     |
+| Grouping separator          | grouping_separator          | The grouping separator. The default is `','`.                                                                      | `' '`                     |
+| Plus sign                   | plus_sign                   | The plus sign. The default is `'+'`.                                                                               | `'‎+‎'`                   |
+| Minus sign                  | minus_sign                  | The minus sign. The default is `'+'`.                                                                              | `'‎-‎'`                   |
+| Percent sign                | percent_sign                | The percent sign. The default is `'%'`.                                                                            | `'٪؜'`                    |
 
 The number format definitions are specified directly in the `CommerceGuys\Intl\NumberFormat\NumberFormatRepository::getDefinitions()` method. 
 
@@ -373,12 +373,12 @@ In our example code, we check whether the purchasable entity is an instance of `
 
 To get the store ID for our price lookup, we'll use the `$context` value. `Context` is a value object used by price resolvers and availability checkers. It contains known global information:
 
-| Property | Description |
-| ---------|------------ |
-| customer | The customer assigned to the cart/order *or* the current user if resolving a price outside the context of an order. |
-| store | The store assigned to the cart/order *or* the current store if resolving a price outside the context of an order. |
-| time | Can be set to a unix timestamp but defaults to the current time. |
-| data | An array of data. For price resolvers, use `$context->getData('field_name', 'price')` to get the name of the field for which the price is being resolved (e.g "list_price", "price"). |
+| Property | Description                                                                                                                                                                           |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| customer | The customer assigned to the cart/order *or* the current user if resolving a price outside the context of an order.                                                                   |
+| store    | The store assigned to the cart/order *or* the current store if resolving a price outside the context of an order.                                                                     |
+| time     | Can be set to a unix timestamp but defaults to the current time.                                                                                                                      |
+| data     | An array of data. For price resolvers, use `$context->getData('field_name', 'price')` to get the name of the field for which the price is being resolved (e.g "list_price", "price"). |
 
 To look up a value in our custom `custom_store_prices` table, we'll inject the database connection service into our price resolver, like this:
 

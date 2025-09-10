@@ -301,8 +301,8 @@ This section provides a general overview of some of the most commonly used types
 
 - [Virtual products](#virtual-vs-physical-products)
 - [Physical products](#physical-product-configuration)
-- [Configurable / customizable products](#configurable-customizable-products)
-- [Downloadable products / files](#downloadable-products-files)
+- [Configurable / customizable products](#configurable--customizable-products)
+- [Downloadable products / files](#downloadable-products--files)
 - [Subscriptions](#subscriptions)
 - [Product bundles](#product-bundles)
 - [Unique / none-of-the-above architectures](#purchasable-entities)
@@ -370,13 +370,12 @@ When it comes to product architectures, there is no one true answer. That is why
 
 The key to Drupal's product architecture flexibility is the concept of a ***purchasable entity***. Product variations are one example of purchasable entities. Every product variation (and every purchasable entity) in Drupal Commerce has 4 key properties:
 
-| Property      | What does it mean?                          |
-| ----------- | ------------------------------------ |
-| Stores       | The stores through which the item can be purchased.  |
-| Title       | The name or label of the item being purchased. |
-| Price    | The base price of the item being purchased. |
-| Order item type    | The type of order item (line item) to use when a product is purchased (added to order/cart). |
-
+| Property        | What does it mean?                                                                           |
+|-----------------|----------------------------------------------------------------------------------------------|
+| Stores          | The stores through which the item can be purchased.                                          |
+| Title           | The name or label of the item being purchased.                                               |
+| Price           | The base price of the item being purchased.                                                  |
+| Order item type | The type of order item (line item) to use when a product is purchased (added to order/cart). |
 
  Order line items can be configured to reference *any* ***purchasable entity***. On the Order item type configuration page, you can specify the *Purchasable entity type* for your line items. *Product variation* is just the default option.
 
@@ -457,7 +456,7 @@ If you want to write custom code to programatically create or manage your produc
 
  - [PurchasableEntityInterface](#purchasableentityinterface)
 
-!!! example "<a name="create-product-type"></a> Creating a product type"
+!!! example "<a id="create-product-type"></a> Creating a product type"
     In the [Simple product type](#simple-product-type) documentation, we looked at creating a product type through the administration UI. A *Simple* product variation type was created automatically for us. If you are creating a product type programatically, you will need to create its product variation type *before* you create the product type.
 
     ```php
@@ -498,7 +497,7 @@ If you want to write custom code to programatically create or manage your produc
         commerce_product_add_body_field($product_type);
     ```
 
-!!! example "<a name="creating-a-variation-type"></a>Creating a variation type"
+!!! example "<a id="creating-a-variation-type"></a>Creating a variation type"
     ```php
 
         /**
@@ -527,7 +526,7 @@ If you want to write custom code to programatically create or manage your produc
         ]);
         $variation_type->save();
     ```
-!!! example "<a name="creating-product-attributes"></a>Creating product attributes"
+!!! example "<a id="creating-product-attributes"></a>Creating product attributes"
     ```php
         /**
          * id [String]
@@ -555,26 +554,26 @@ If you want to write custom code to programatically create or manage your produc
         $attribute_field_manager->createField($size_attribute, 'my_custom_variation_type');
     ```
 
-!!! example "<a name="loading-a-product-type"></a>Loading a product type"
+!!! example "<a id="loading-a-product-type"></a>Loading a product type"
     ```php
         // Loading is based off of the primary key [String] that was defined when creating it.
         $product_type = \Drupal\commerce_product\Entity\ProductType::load('my_custom_product_type');
     ```
 
-!!! example "<a name="loading-a-variation-type"></a>Loading a variation type"
+!!! example "<a id="loading-a-variation-type"></a>Loading a variation type"
     ```php
 
         // Loading is based off of the primary key [String] that was defined when creating it.
         $variation_type = \Drupal\commerce_product\Entity\ProductVariationType::load('my_custom_variation_type');
     ```
 
-!!! example "<a name="loading-a-product-attribute"><a>Loading a product attribute"
+!!! example "<a id="loading-a-product-attribute"><a>Loading a product attribute"
     ```php
         // Loading is based off of the primary key [String] that was defined when creating it.
         $size_attribute = \Drupal\commerce_product\Entity\ProductAttribute::load('size');
     ```
 
-!!! example "<a name="purchasableentityinterface"></a>PurchasableEntityInterface"
+!!! example "<a id="purchasableentityinterface"></a>PurchasableEntityInterface"
     The ProductVariation entity class implements the PurchasableEntityInterface. Any content entity type that implements this interface can be purchased. Line items (***order items***) have a purchased_entity reference field. If you develop a content entity type that implements this PurchasableEntityInterface, you can set up an order item type to allow customers to purchase your custom entity type instead of standard product variations.
 
     ```php
