@@ -34,12 +34,12 @@ If a patch needs work based on any of the project's development standards, pleas
 <li><a href="#data">Data Storage</a></li>
 </ol>
 
-<a name="syntax"> </a>
+<a id="syntax"> </a>
 <h3>1. Code Syntax and Documentation</h3>
 
 We'll follow Drupal's <a href="https://drupal.org/coding-standards">coding standards</a> for code syntax and documentation. All functions should be well-documented with both doxygen comment blocks and inline comments. Patches should pass the code review provided by the <a href="https://drupal.org/project/coder">Coder</a> module.
 
-<a name="structure"> </a>
+<a id="structure"> </a>
 <h3>2. Module File and Directory Structures</h3>
 
 Modules should pattern their files and directories after CCK:
@@ -65,7 +65,7 @@ The help directory contains files compatible with the <a href="https://drupal.or
 
 The tests directory contains <a href="https://drupal.org/simpletest">SimpleTest</a> include files.
 
-<a name="packages"> </a>
+<a id="packages"> </a>
 <h3>3. Module Packages</h3>
 
 Module .info files should use a strict set of package names:
@@ -80,7 +80,7 @@ As an example exception, Commerce PayPal uses the Commerce (PayPal) package name
 
 Contributed modules that don't conform to this standard should not be included in Features / distributions until they do. Issues should be posted on drupal.org to projects that do not conform.
 
-<a name="naming"> </a>
+<a id="naming"> </a>
 <h3>4. Function and Hook Naming</h3>
 
 Use the [module]_(object)_verb pattern for all function names:
@@ -96,7 +96,7 @@ Hooks should include a soft namespace by using the commerce_ prefix to avoid con
 
 Only form builder functions should end in _form.
 
-<a name="simpletest"> </a>
+<a id="simpletest"> </a>
 <h3>5. Automated Testing</h3>
 
 We will be using Drupal 7's core <a href="https://drupal.org/simpletest">SimpleTest</a> testing framework to facilitate code development and maintainability.  While not embracing true test-driven development, we will still only be committing code that comes with appropriate function tests.
@@ -105,7 +105,7 @@ The Commerce module provides a base class used for creating Drupal Commerce test
 
 Unit testing is under consideration for the core APIs, but a realistic target for now is to mimic Drupal's core test coverage guidelines.
 
-<a name="apis"> </a>
+<a id="apis"> </a>
 <h3>6. Using Core and Contributed Module APIs</h3>
 
 Drupal Commerce modules should follow Drupal coding best practices when implementing core APIs, including (but by no means limited to):
@@ -120,14 +120,14 @@ Drupal Commerce modules should follow Drupal coding best practices when implemen
 
 Our general rule is to integrate with major, well-maintained third party modules where possible. For example, Drupal Commerce modules should depend on Views instead of creating their own table listings. Ctools and Panels integration are under consideration, pending availability on Drupal 7.
 
-<a name="permissions"> </a>
+<a id="permissions"> </a>
 <h3>7. Drupal Permissions and Access Control</h3>
 
 Our problem in the past has been too few permissions, not too many. In general, we're adopting an approach that favors finer-grained permissions over having too few. Every permission should have a description.
 
 This same goal holds true for access control as it pertains to products, orders, customer profiles, etc.  While the core modules don't need to anticipate every possible implementation of the Commerce modules, these access systems and others like them should be extensible to allow for finer-grained access.  The goal here is to eliminate the need for core patches to allow use cases like peer-to-peer sales.
 
-<a name="l10n"> </a>
+<a id="l10n"> </a>
 <h3>8. Localization and Variable Strings</h3>
 
 In Ubercart we provided numerous configuration options to override interface strings, like the text used on the Add to Cart button.  This presented a problem for multilingual sites, as Drupal's localization system can translate string literals but not variables. (For more information, see documentation on the <a href="https://api.drupal.org/api/function/t/7">t()</a> function.)
@@ -136,28 +136,28 @@ To correct this problem, the ability to override strings via custom settings for
 
 Furthermore, modules should provide help 'context' to functions used in localization to facilitate accurate translation.
 
-<a name="theme"> </a>
+<a id="theme"> </a>
 <h3>9. Template Files and Theme Functions</h3>
 
 Module files and includes should not contain style tags or attributes in any HTML output. Instead, use appropriate IDs and classes with coordinating CSS in the module's .css file(s).
 
 Template files with preprocess functions should be used for nearly all HTML output. In cases where logic cannot be easily abstracted into variables in preprocess functions or when the amount of HTML is very minor, a theme function can be used instead. Use Drupal's core theme functions whenever possible.
 
-<a name="ui"> </a>
+<a id="ui"> </a>
 <h3>10. Separating API from UI</h3>
 
 As much as possible, we want to enforce at the core level a strict separation of API components from UI components. At one level, this looks like including both a dc_product and dc_product_ui module, like the core Drupal field and field_ui modules. Since a major goal of the project is to develop a solid core and leave the door open for installation profiles and <a href="https://drupal.org/project/features">Feature</a> modules to take care of packaging components, we don't want to make it difficult for developers and site builders to replace default UI components.
 
 To be honest, we could probably use a separate set of user interface guidelines to ensure we have a consistent feel across all the Drupal Commerce modules.
 
-<a name="performance"> </a>
+<a id="performance"> </a>
 <h3>11. Performance Considerations</h3>
 
 Code should take advantage of static caching and *_load_multiple() API functions to reduce the amount of queries per page request. The Code module can also be used to audit queries for execution speed. Code should also take advantage of Drupal's file handling abilities in various systems (like the #file property on menu items) and class autoloading capability to minimize the amount of code loaded on any given pageload.
 
 A topic for discussion would be a custom variable storage table or system to reduce the amount of variables stored at the global level.  At the very least, modules should consider storing data in custom tables <em>before</em> storing complex module settings in Drupal's variables system.
 
-<a name="data"> </a>
+<a id="data"> </a>
 <h3>12. Data Storage</h3>
 
 If there's anything we've learned from our past, it's that we want to leave serialized arrays of data in the database behind. We're striving for better data models, and this section should be fleshed out as the project matures.
