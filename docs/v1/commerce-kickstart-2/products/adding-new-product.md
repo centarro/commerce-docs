@@ -111,27 +111,25 @@ taxonomy:
 
 ## Product Attributes & Variations
 
-<p>Product attributes are the descriptors we use to define kinds of products. For example, we could describe a tshirt by the color and size. These attributes mean that in the real physical world your store may only carry one red shirt, but you have three sizes or three "variations." Commerce software must deal with product variations in a flexible way. Here's how Drupal Commerce abstracts it:</p>
+<p>Product attributes are the descriptors we use to define kinds of products. For example, we could describe a t-shirt by the color and size. These attributes mean that in the real physical world your store may only carry one red shirt, but you have three sizes or three "variations." Commerce software must deal with product variations in a flexible way. Here's how Drupal Commerce abstracts it:</p>
 <ol>
     <li><strong>Product Types.</strong> A product type is a specific bundle based on a custom product entity. Each bundle can have fields attached to it, including pictures and other kinds of information.</li>
-    <li><strong>Product "Informational" Fields.</strong> Any field on a product can be a simple "informational" field. Typical informational fields include an image of that specific configuration of a product. For example, if you sell a tshirt with a cool print in multiple colors, each product with a different color could have an image field that, when displayed on the product display node, will change when you select different attributes (like color).</li>
-    <li><strong>Product "Attribute" Fields.</strong> Any field on a product type with a defined list of options (list of text options, list of taxonomy terms, list of colors). The attribute fields are special because of the way they turn into selection widgets on a product display. Often you will pair an attribute field (like a color dropdown) with an information field (like an image field) to let the user "select" the blue tshirt and the Drupal Commerce system will quickly load the picture associated with the blue product.</li>
-    <li><strong>Product Displays.</strong> If needed at all, these are groupings of products. You can reference any type and number of products on a product display. In order to make use of product displays, we recommend only showing one type of product per product display. The product display is where you typically see the product with drop downs to "configure" or "order" the right kind of product.</li>
+    <li><strong>Product "Informational" Fields.</strong> Any field on a product can be a simple "informational" field. Typical informational fields include an image of that specific configuration of a product. For example, if you sell a t-shirt with a cool print in multiple colors, each product with a different color could have an image field that, when displayed on the product display node, will change when you select different attributes (like color).</li>
+    <li><strong>Product "Attribute" Fields.</strong> Any field on a product type with a defined list of options (list of text options, list of taxonomy terms, list of colors). The attribute fields are special because of the way they turn into selection widgets on a product display. Often you will pair an attribute field (like a color dropdown) with an information field (like an image field) to let the user "select" the blue t-shirt and the Drupal Commerce system will quickly load the picture associated with the blue product.</li>
+    <li><strong>Product Displays.</strong> If needed at all, these are groupings of products. You can reference any type and number of products on a product display. In order to make use of product displays, we recommend only showing one type of product per product display. The product display is where you typically see the product with drop-downs to "configure" or "order" the right kind of product.</li>
 </ol>
 
 <h3>Example attribute configuration</h3>
 
-<p>Lets walk through setting up an attribute field on a product type and see how it interacts with the product fields injected on the product display. For this example, we are using Commerce Kickstart 1.x</p>
+<p>Let's walk through setting up an attribute field on a product type and see how it interacts with the product fields injected on the product display. For this example, we are using Commerce Kickstart 1.x</p>
 
 ![Manage your Product Fields](../../images/Prod-Attr-Step1.png)
 
 **Product Types**
 
-<p>Navigate to your Store page and click on "Products" and then "Product
-Types" and then "Manage Fields." This is the standard way to find,
-create, and edit different types of product. You can add as many types
-of products as you want, but make sure you understand the difference
-between product types and product displays.</p>
+<p>Navigate to your Store page and click on "Products" and then "Product Types" and then "Manage Fields". This is the
+standard way to find, create, and edit different types of product. You can add as many types of products as you want,
+but make sure you understand the difference between product types and product displays.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -212,7 +210,7 @@ color.</p>
 **Add Product Display**
 
 <p>Navigate to the Content List screen and click "Add Content." This
-will then list all of the content types on your site. Our Product
+will then list all the content types on your site. Our Product
 Display content type is the third one after a Commerce Kickstart
 install. Select it to create a new Product Display to attach our three
 products on.</p>
@@ -232,7 +230,7 @@ Kickstart's Product Display Content Type. Any content type that has this
 kind of field is able to connect products and display an "Add to Cart"
 button. </p>
 <p>This field will take the three products that we have updated with our
-new information and create an interactive drop down list of our color
+new information and create an interactive drop-down list of our color
 field options.</p>
 
 <ul class="screenshot_breadcrumbs">
@@ -252,7 +250,7 @@ field options.</p>
 ## Product Displays
 
 <p>Think of nodes as a way of grouping like products together. The most obvious grouping is one product that has variations in size, color, etc. In Drupal Commerce every variation is a product and to group them properly, we use Product Displays.</p>
-<p>"Product Display" is the default content type that Commerce Kickstart 1.x creates and it has a product reference field. Technically, any entity that has a product reference field could be considered a product display. Nodes are the obvious product display entity type, and they're privileged because they're the default and standard entity type to use for the front-end display of content. But you could use taxonomy vocabularies, or even users as product displays.</p>
+<p>"Product Display" is the default content type that Commerce Kickstart 1.x creates, and it has a product reference field. Technically, any entity that has a product reference field could be considered a product display. Nodes are the obvious product display entity type, and they're privileged because they're the default and standard entity type to use for the front-end display of content. But you could use taxonomy vocabularies, or even users as product displays.</p>
 
 ![Drupal Commerce Entity Graph](../../images/CK-Entity-or-Node.jpg)
 
@@ -371,7 +369,7 @@ endless.</p>
 **Product Edit Screen**
 
 <p>We've included the product edit screen for your benefit to see the
-Product Entity form in all of it's glory. Pretty simple, we've got the
+Product Entity form in all of its glory. Pretty simple, we've got the
 Product SKU and Product Title that are required. Additionally, Commerce
 Kickstart has added the Image field. <a href="../../../user-guide/shopping-cart/#shopping-cart-and-multi-currency">The Price can be changed to allow
 for multiple currencies</a>.</p>
@@ -479,7 +477,7 @@ Remove Product Type</em> up above.</p>
 
 <p>Exposed filters are one of the coolest features of Views. They create
 a simple form at the top of the administrative interface and let you
-setup simple keyword searches and drop downs that are
+setup simple keyword searches and drop-downs that are
 automatically generated.</p>
     
 <ul class="screenshot_breadcrumbs">
@@ -524,7 +522,7 @@ automatically generated.</p>
 
 **Configure Type Filter**
 
-<p>The Product Type Exposed Filter automatically knows it can be a drop down of all available product types.</p>
+<p>The Product Type Exposed Filter automatically knows it can be a drop-down of all available product types.</p>
     
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -538,7 +536,7 @@ automatically generated.</p>
 
 **Submit Button Change**
 
-<p>Lets change the exposed filter submit button from "Apply" to "Search."</p>
+<p>Let's change the exposed filter submit button from "Apply" to "Search."</p>
     
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -588,7 +586,7 @@ experience:</p>
     <li>Admin VBO Views - https://drupal.org/project/admin_vbo_views</li>
 </ul>
 
-<p>On the drupalcommerce.org community site, there is a community-fueled list of
+<p>On the <a href="https://www.drupalcommerce.org/">Drupal Commerce</a> community site, there is a community-fueled list of
 all available <a href="https://www.drupalcommerce.org/contrib/admin">Drupal
 Commerce Administrative Modules</a>.</p>
 

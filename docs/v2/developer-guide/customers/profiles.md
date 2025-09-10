@@ -106,7 +106,7 @@ You can add custom fields to a profile using its *Manage fields* administrative 
 #### Adding fields to the customer profile vs. creating new profile types
 The *customer* profile should contain all the billing information needed to process an order. If you have physical products and use the *Commerce shipping* module, then *customer* profiles can also be used for the shipping information associated with orders. For simpler commerce sites, especially those that are B2C, the *address* field may be all you need for the *customer* profile. For additional information, you could create a separate profile type to manage information about your customer like name and phone number. With this architecture, your customers would only enter need to enter their contact information once, for that separate profile type. In contrast, if you added the contact name and phone number fields to the *customer* profile, your customers would need to repeatedly enter that information for every billing and shipping address added.
 
-For other commerce sites, your customers may actually be purchasing agents who order on behalf of a number of end users. In that case, you might need a set of additional fields associated with *each* billing and shipping address, such as contact email, contact name, contact phone, a note field, reference to a customer organization, reference to an assigned sales representative, etc. So, you would add each of these fields to your *customer* profile type. Your customers would have the flexiblity to enter completely different sets of data for each of their *customer* profiles. Ultimately, you'll need to decide what information needs to be captured on a per-order basis vs. what customer information you need apart from that billing- and shipping-specific data.
+For other commerce sites, your customers may actually be purchasing agents who order on behalf of a number of end users. In that case, you might need a set of additional fields associated with *each* billing and shipping address, such as contact email, contact name, contact phone, a note field, reference to a customer organization, reference to an assigned sales representative, etc. So, you would add each of these fields to your *customer* profile type. Your customers would have the flexibility to enter completely different sets of data for each of their *customer* profiles. Ultimately, you'll need to decide what information needs to be captured on a per-order basis vs. what customer information you need apart from that billing- and shipping-specific data.
 
 ### Create a profile type
 To create a new profile type:
@@ -151,7 +151,7 @@ In this section, we'll look at profile management topics, including permissions 
 In the [Contact phone example in the Profile configuration documentation](../profiles/#customer-profile-fields), we specified that our custom *contact phone* field should be a *private field*. If a profile field is set as private, then only the owner of the profile and administrative users with the *Administer profile entities* (`administer profile`) permission will be able to access the field.
 
 #### Profile permissions
-The profile module provides some general administraive permissions as well as a set of permissions specific to each profile type. On the *Permissions* administrative page, at `/admin/people/permissions`, you'll find profile-related permissions in the *Field UI* and *Profile* sections.
+The profile module provides some general administrative permissions as well as a set of permissions specific to each profile type. On the *Permissions* administrative page, at `/admin/people/permissions`, you'll find profile-related permissions in the *Field UI* and *Profile* sections.
 
 ***Field UI* permissions**
 
@@ -248,7 +248,7 @@ You can use the [Views data export module] to provide product export functionali
 
 ## Code recipes
 
-If you want to write custom code to programatically create or manage profiles, you can use these code recipes as a starting point.
+If you want to write custom code to programmatically create or manage profiles, you can use these code recipes as a starting point.
 
 **Create:**
 
@@ -263,7 +263,7 @@ If you want to write custom code to programatically create or manage profiles, y
      *
      * status [Bool] - [OPTIONAL, DEFAULTS TO TRUE]
      *   [AVAILABLE = FALSE, TRUE]
-     *   Whether or not it's enabled or disabled. 1 for enabled.
+     *   Whether it's enabled or disabled. 1 for enabled.
      *
      * description [String]
      *   The label for this profile type.
@@ -284,7 +284,7 @@ If you want to write custom code to programatically create or manage profiles, y
      *
      * use_revisions [Bool] - [OPTIONAL, DEFAULTS TO FALSE]
      *   [AVAILABLE = FALSE, TRUE]
-     *   Whether or not profiles of this type always generate revisions. 1 for enabled.
+     *   Whether profiles of this type always generate revisions. 1 for enabled.
      */
     $profile_type = \Drupal\profile\Entity\ProfileType::create([
     'id' => 'my_custom_profile_type',

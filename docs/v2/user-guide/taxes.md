@@ -42,7 +42,7 @@ There are some additional modules to manage taxes:
 
 Commerce Product Tax provides a user interface for selecting applicable tax rates on the product variation.
 
-This module provides a `commerce_tax_rate` field type, which allows selecting a standard, reduced or no tax rate, in cases of tax free products.
+This module provides a `commerce_tax_rate` field type, which allows selecting a standard, reduced or no tax rate, in cases of tax-free products.
 
 ### Adding a new Tax Type
 
@@ -50,15 +50,15 @@ You will need to add a new tax type to your Store.
 
 ![Tax types](./images/tax-types.png)
 
-Select a tax type from the available plugin options and you will see a list of the tax rates. 
-Give the tax type an appropiate name and click **save**.
+Select a tax type from the available plugin options. Then, you will see a list of the tax rates. 
+Give the tax type an appropriate name and click **save**.
 
 ![Add tax type](./images/add-tax-type.png)
 
 ### Update Product Variation types
 
 Next you will need to create a new field for your product variation(s).
-Select `Tax rate` from the dropdown and give the field an appropiate label.
+Select `Tax rate` from the dropdown and give the field an appropriate label.
 
 ![Add tax rate field](./images/add-tax-rate-field.png)
 

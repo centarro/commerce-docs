@@ -75,7 +75,7 @@ The Commerce Price module defines a *Price* field type which is used within Drup
 
 #### Product prices
 
-Product prices are associated with individual product variations, not with the parent product entities. See [Product informatation structure](../../products/product-information-structure) for an explanation of the differences between products and product variations. Product variations have two price fields:
+Product prices are associated with individual product variations, not with the parent product entities. See [Product information structure](../../products/product-information-structure) for an explanation of the differences between products and product variations. Product variations have two price fields:
 
 * `Price` is a required field; it is the default price value that is transferred to the order when the product variation is added to the cart.
 * `List price` is an optional field that is hidden by default. It is meant for display only and is usually crossed out in some way.
@@ -96,7 +96,7 @@ An **Order item** also has two Price fields: `Total price` and `Unit price`.
 
 The total price value is the product of the order item unit price and the order item quantity, rounded to the correct number of decimal places (based on the currency of the unit price). It is recalculated automatically whenever the unit price or quantity is updated or the order item is saved. This value does not take into account any adjustments on the order item. The `getTotalPrice()` method returns this value. You can use the `getAdjustedTotalPrice()` method to get the adjusted total price, which is also rounded based on currency.
 
-The value for the Unit price, `getUnitPrice()`, for an order item can be set in a variety of ways throughout the shopping and order management processes. If you want to have complete control over its value, you can set the `Overridden unit price` boolean field value for an order item to `TRUE`. This can be done by administrative users through the order admin UI or programatically using the `setUnitPrice()` method with the optional `override` parameter set to `TRUE`. 
+The value for the Unit price, `getUnitPrice()`, for an order item can be set in a variety of ways throughout the shopping and order management processes. If you want to have complete control over its value, you can set the `Overridden unit price` boolean field value for an order item to `TRUE`. This can be done by administrative users through the order admin UI or programmatically using the `setUnitPrice()` method with the optional `override` parameter set to `TRUE`. 
 
 !!!example "For example"
 
@@ -109,7 +109,7 @@ Initially, the Unit price is set using the resolved price for the purchased enti
 
 #### Payment prices
 
-Payments have two Price fields: `Amount` and `Refunded amount`. The `getBalance()` method calculates the difference beween the Amount and the Refunded amount. These values are managed by payment gateway methods. For an overview, see the [Payments](../../payments/getting-started) documentation.
+Payments have two Price fields: `Amount` and `Refunded amount`. The `getBalance()` method calculates the difference between the Amount and the Refunded amount. These values are managed by payment gateway methods. For an overview, see the [Payments](../../payments/getting-started) documentation.
 
 
 ## Formatting prices
@@ -152,7 +152,7 @@ The number format repository service constructs a `CommerceGuys\Intl\NumberForma
 
 The number format definitions are specified directly in the `CommerceGuys\Intl\NumberFormat\NumberFormatRepository::getDefinitions()` method. 
 
-!!! example "For example, here is the definition for for the default 'en' locale"
+!!! example "For example, here is the definition for the default 'en' locale"
 
     ```php
     'en' => [
@@ -166,7 +166,7 @@ The number format definitions are specified directly in the `CommerceGuys\Intl\N
 
 #### How can I alter the number format definition for a locale?
 
-The `NumberFormatDefinitionEvent` event can be used to customize the number format definition for any locale. The event is dispatched by the Commerce Price `NumberFormatterRepository` service after the number format definition is proccessed by the `CommerceGuys\Intl\NumberFormat\NumberFormatterRepository` service.
+The `NumberFormatDefinitionEvent` event can be used to customize the number format definition for any locale. The event is dispatched by the Commerce Price `NumberFormatterRepository` service after the number format definition is processed by the `CommerceGuys\Intl\NumberFormat\NumberFormatterRepository` service.
 
 For example, the format definition for the German (`'de'`) locale specifies that `','` should be used for the decimal separator, and `'.'` should be used for the grouping separator. Suppose you'd like to switch those for your site. Here's an example event subscriber that does that.
 
@@ -270,7 +270,7 @@ This formatter uses the `ChainPriceResolver` service to resolve the value of the
 
 ##### Calculated price formatter - Order module version
 
-The Order module version Price formatter provides all the functionality of the Price module version plus configuration options for applying adjustments. The field formatter can be configured to include any of the adjustment types defined for the site. If no adjustments are selected, the Order module version of the Calcualated price formatter behaves identically to Price module version.
+The Order module version Price formatter provides all the functionality of the Price module version plus configuration options for applying adjustments. The field formatter can be configured to include any of the adjustment types defined for the site. If no adjustments are selected, the Order module version of the Calculated price formatter behaves identically to Price module version.
 
 ![Calculated price formatter configuration](../images/displaying-prices-2.png)
 
@@ -338,7 +338,7 @@ Whenever a price is displayed on a product page or set for an item added to a sh
 
 If your pricing requirements are more complex, then you will likely need a custom price resolver. You may be able to use a contrib module that provides a price resolver. For example, the [Commerce Pricelist] module includes a `PriceListPriceResolver` price resolver that looks up the price for a purchasable entity from a list of separately stored prices. Or you may need to write your own in a custom module. For an overview of the resolver concept as well as a variety of code examples, see the [Links and resources](#links-and-resources) section at the end of this document. Here, we'll step through an example of creating a price resolver that provides per-store pricing for a multi-store site.
 
-To start, let's suppose we have a table in our database named `custom_store_prices` that stores a price value for every store/sku combination available on our site. (See the Drupal [Schema API] documentation for an overview on creating custom database tables.) We'll creating a custom price resolver by implementing the `PriceResolverInterface`. Here is the basic structure:
+To start, let's suppose we have a table in our database named `custom_store_prices` that stores a price value for every store/sku combination available on our site. (See the Drupal [Schema API] documentation for an overview on creating custom database tables.) We'll create a custom price resolver by implementing the `PriceResolverInterface`. Here is the basic structure:
 
 ```php
 <?php

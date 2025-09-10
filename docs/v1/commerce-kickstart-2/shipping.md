@@ -11,8 +11,8 @@ taxonomy:
 
 ![Shipping services listing in Drupal Commerce Kickstart 2](../images/CK-Shipping-01_0.png)
 
-<p>You are first presented with a listing of shipping services that are available in your store. This is a granular listing showing all of the services that every available shipping method provides. In the Demo Store Shipping Services list above you can see the three services defined using the Flat Rate module.</p>
-<p>In Commerce Kickstart, by default, there is a "Flat Rate" shipping method that has many flat rate services (like Free Shipping, Express Shipping, etc). You can also install other shipping methods like UPS or FedEx and they will come with their own ability to handle new services (based on weight or location). The calculation rules handle when and how shipping methods show up and how they get applied.</p>
+<p>You are first presented with a listing of shipping services that are available in your store. This is a granular listing showing all the services that every available shipping method provides. In the Demo Store Shipping Services list above you can see the three services defined using the Flat Rate module.</p>
+<p>In Commerce Kickstart, by default, there is a "Flat Rate" shipping method that has many flat rate services (like Free Shipping, Express Shipping, etc...). You can also install other shipping methods like UPS or FedEx and they will come with their own ability to handle new services (based on weight or location). The calculation rules handle when and how shipping methods show up and how they get applied.</p>
 
 ## Upgrading Shipping from 1.x to 2.x
 

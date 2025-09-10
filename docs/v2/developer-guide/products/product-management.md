@@ -10,7 +10,7 @@ Administrative users with product management responsibilities will need the `Use
 
 In the above image, six permissions prefixed with *Default:* have been highlighted. Drupal Commerce provides bundle-level granularity for its Product permissions. In other words, each product type has its own set of create / delete / update / view permissions. So it's possible to have different product managers for different product types.
 
-All users with product management responsibilties will also need the `Access the product overview page` permission so that they can access the Products page at `/admin/commerce/products`.
+All users with product management responsibilities will also need the `Access the product overview page` permission so that they can access the Products page at `/admin/commerce/products`.
 
 Additionally, since every product must be assigned to one or more stores, users will not be able to *create* products unless they have the `View stores` permission. Granting this permission will not give users access to the store admin pages.
 
@@ -154,7 +154,7 @@ Administrative users with the [necessary permissions](#access-control) can execu
 
 The Operations menu that appears in the rightmost column of the Products overview page can be modified with custom code, using [hook_entity_operation_alter]. If you are unfamiliar with hooks, see [Understanding Hooks] in the documentation provided by drupal.org.
 
-!!! info "In the next section, we'll look at how you can futher customize the Products View to provide Product Export options."
+!!! info "In the next section, we'll look at how you can further customize the Products View to provide Product Export options."
 
 ## Importing and exporting
 
@@ -208,7 +208,7 @@ Here is an example of using Views data export for exporting products:
 
  * Under the FORMAT section of the view settings, click on the *Settings* link for the *Format*. Specify the format and optional settings for the data export.
 
- * Set the PAGER Items to display to *Display all items*.
+ * Set the PAGER Items display to *Display all items*.
 
 After saving all your changes, you should be able to navigate to your new Product export view page and see a *CSV* (or other format) button in the lower left-hand corner of the page. Users with access to this page will be able to click on that button to export product data.
 
@@ -218,7 +218,7 @@ After saving all your changes, you should be able to navigate to your new Produc
 
 ## Code recipes
 
-  If you want to write custom code to programatically create or manage products, you can use these code recipes as a starting point.
+  If you want to write custom code to programmatically create or manage products, you can use these code recipes as a starting point.
 
 **Create:**
   

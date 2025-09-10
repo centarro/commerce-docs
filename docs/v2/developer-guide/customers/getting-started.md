@@ -46,7 +46,7 @@ Drupal Commerce is dependent upon three separate modules for its customer data:
 - The contributed [Address module](#address-module)
 
 #### User module
-The [User module] is provided by Drupal Core and is required for all Drupal sites. In Drupal, anyone who visits your website is a *user*. When a user registers on your site, a *user account* is created to store information including email address, username, and password. Guests and registered users not currrently logged in to your site are *Anonymous* users. If you are unfamiliar with the concepts of users and user accounts in Drupal, you will want to read about [Managing User Accounts] in the Drupal 8 User guide.
+The [User module] is provided by Drupal Core and is required for all Drupal sites. In Drupal, anyone who visits your website is a *user*. When a user registers on your site, a *user account* is created to store information including email address, username, and password. Guests and registered users not currently logged in to your site are *Anonymous* users. If you are unfamiliar with the concepts of users and user accounts in Drupal, you will want to read about [Managing User Accounts] in the Drupal 8 User guide.
 
 In Drupal Commerce, a *customer* is any *user* who places an order. Thus, the *user accounts* that belong to registered customers serve as *customer accounts* within Drupal Commerce. Whenever an order is created, the current user is assigned to that order. If the current user is not logged in, and if your checkout is configured to allow *Guest checkout*, then the *Anonymous user* is assigned to the order. Administrative users can also create orders on behalf of customers by explicitly assigning them to orders.
 

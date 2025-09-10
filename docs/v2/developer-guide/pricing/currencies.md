@@ -38,7 +38,7 @@ The Drupal Commerce Price module provides a configuration entity for storing cur
 
 #### Importing currencies
 
-While it is possible to create a custom currency, typically you will want to *import* the definition for an existing currency into your site using the `CurrencyImporter` service. This is the service that is used when an adminstrative user adds a currency to the site:
+While it is possible to create a custom currency, typically you will want to *import* the definition for an existing currency into your site using the `CurrencyImporter` service. This is the service that is used when an administrative user adds a currency to the site:
 
 ![Add currency UI](../images/currencies-1.png)
 

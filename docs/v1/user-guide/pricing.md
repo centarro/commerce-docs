@@ -33,7 +33,7 @@ taxonomy:
 <li>Click "Add a pricing rule"</li>
 <li>Give your rule a name</li>
 <li>Under "Actions" click "Add Action"</li>
-<li>Under "Commmerce Line Item" choose "Multiply the Unit Price by Some Amount"</li>
+<li>Under "Commerce Line Item" choose "Multiply the Unit Price by Some Amount"</li>
 <li>The data selector should be "line_item"</li>
 <li>The amount should be .9 (in other words, multiply the price by .9).</li>
 <li>Now all products have 10% taken off of them.</li>
@@ -226,7 +226,7 @@ The first step is to click on Store and then "Configuration" and, finally, Produ
 ![Click on Add a Pricing Rule and Add event](../images/Cart-MultiCurrency-Step3.png)
 **Pricing Rule**
 
-We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
+We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are set up. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -358,11 +358,11 @@ The final screen for the rule. If your screen doesn't look like this, go through
 
 **Example Cart**
 
-We have not modified any of the products prices, but we have successfully converted all of the currency to Euros and exchanged the prices. For example, Product Three is listed as $32 US dollars in the database, but is listed here as 7,60 Euros.
+We have not modified any of the products prices, but we have successfully converted all the currency to Euros and exchanged the prices. For example, Product Three is listed as $32 US dollars in the database, but is listed here as 7,60 Euros.
 
 ## Discounts and Coupons
 
-<p>The core product pricing system is great for flat / percentage discounts of products on the site and for alternate price lists. Special offers, such as "Buy one get one free," are not supported in Drupal Commerce core. They depend on the creation and management of alternate line items (e.g. one line item for the paid product and another for the free product).</p>
+<p>The core product pricing system is great for flat / percentage discounts of products on the site and for alternate price lists. Special offers, such as "Buy one, get one free," are not supported in Drupal Commerce core. They depend on the creation and management of alternate line items (e.g. one line item for the paid product and another for the free product).</p>
 <p>Drupal Commerce's sell price pre-calculation mechanism limits what types of data you can access in the conditions and actions of product pricing rules. Very few sites actually make use of this functionality, but the gist of it is your conditions cannot use data specific to the product (i.e. product type or SKU) and your actions can only use data specific to the product (i.e. not the day of the week or user roles).</p>
 <p>Even with those limitations, it is still possible to create quite complex pricing scenarios. One Drupal Commerce site currently uses approximately 1500+ Rules!</p>
 <p><strong>Note about Coupons.</strong> Using Drupal Commerce Core, it is very possible to allow users to add coupons via line item (when someone clicks an add to cart link) or via Checkout. To do the checkout method, you can follow the same principles as outlined in our "Simple Coupon" exercise, however you will need to add the field to your Order type via code and expose it on the checkout pane using <a href="https://drupal.org/project/commerce_fieldgroup_panes">Commerce Fieldgroup Panes</a>.</p>
@@ -584,7 +584,7 @@ For our final condition, click "Add condition" and select "Data comparison."
     <li>Configuration</li>
     <li>Product Pricing Rules</li>
     <li>Edit Rule</li>
-    <li class="last">Add Data Compairson</li>
+    <li class="last">Add Data Comparison</li>
 </ul>
 
 ![Find our new field.](../images/Price-Coupon-17.png)
@@ -606,7 +606,7 @@ Find our new field, called something like "commerce-line-item:field-**."
 
 **Configure Condition**
 
-This is part of the magic. I'm setting my coupon code to be an arbitrary four digit number, but you could set it to just about anything that a person could type into their field. You could even potentially be a bit more creative here. This could be a role that a user has or perhaps a previously visited page.
+This is part of the magic. I'm setting my coupon code to be an arbitrary four-digit number, but you could set it to just about anything that a person could type into their field. You could even potentially be a bit more creative here. This could be a role that a user has or perhaps a previously visited page.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -754,7 +754,7 @@ When you are setting the actual math part of the discount, we chose to simply mu
 
 ## Rules Overview
 
-<p>What is it about the amazing flexibility of Drupal that is so addictive? It's like being a Chef and having all the best ingredients at your finger tips. Or perhaps it's like being a lego-nerd and having an unlimited supply of any brick or any set that was ever made. For free.</p>
+<p>What is it about the amazing flexibility of Drupal that is so addictive? It's like being a Chef and having all the best ingredients at your fingertips. Or perhaps it's like being a lego-nerd and having an unlimited supply of any brick or any set that was ever made. For free.</p>
 <p>Drupal has Views for listing content, Rules for reacting, Flags for collecting, ctools for abstracting, and just about anything else you can imagine built on top of those. But what we want to focus on is Rules and how they affect Pricing in Drupal Commerce.</p>
 
 ![Product Price Calculations happen under store configuration product pricing rules](../images/Price-Calc-Overview.png)
@@ -846,8 +846,8 @@ When you are setting the actual math part of the discount, we chose to simply mu
     <li>Subtract an amount from the unit price</li>
 </ul>
 
-<p>When configuring each action, you can specify the type of price component to use. If you need additional component types for the site (more than addition/subtract, divide/multiply, etc), you currently have to write them into a module. Not sure how to create your own price component? Look into <a href="https://drupalize.me/series/coding-rules">Drupalize.me's Coding for Rules videos</a>; they are a free and well-produced series of videos!</p>
-<h2 id="adminspecial">Administrator's Special</h2>
+<p>When configuring each action, you can specify the type of price component to use. If you need additional component types for the site (more than addition/subtract, divide/multiply, etc...), you currently have to write them into a module. Not sure how to create your own price component? Look into <a href="https://drupalize.me/series/coding-rules">Drupalize.me's Coding for Rules videos</a>; they are a free and well-produced series of videos!</p>
+<h2 id="admin-special">Administrator's Special</h2>
 <p>We are going to learn the sell price calculation process by setting up a conditional discount for our administrators. We will use a condition to apply a 50% discount for any user with the role "Administrator" and show the price with components.</p>
 <p>Our base price: $30</p>
 <p>What the sell price should be on checkout with 50% discount if I'm an administrator: $15</p>

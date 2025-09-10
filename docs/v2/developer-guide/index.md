@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-This section is for anyone implementing Drupal Commerce. It explains dependencies and how they are used and shows differents integration options.
+This section is for anyone implementing Drupal Commerce. It explains dependencies and how they are used and shows different integration options.
 
 The Developer guide is primarily for audiences who may have a WooCommerce background, for example. It is assumed for anyone who is using Drupal Commerce for the first time.
 

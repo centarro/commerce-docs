@@ -16,7 +16,7 @@ Subscriptions and recurring billing in Commerce 2.x are created and managed via 
 
 ## Overview
 
-The Commerce Recurring module provides a variety of options for creating subscriptions. You probably have a general idea of what subscriptions are. You might have a monthly magazine subscription or a subscription for a streaming video service, or you might be enrolled in a cheese-of-the-month club. But exactly how are subscriptions different than regular products in Drupal Commerce? Normally, when an order is placed, the customer is charged for the product, just once, at check-out. With the Commerce Recurring module, you can instead charge a customer repeatedly, at regular intervals, starting at the time the order is placed.
+The Commerce Recurring module provides a variety of options for creating subscriptions. You probably have a general idea of what subscriptions are. You might have a monthly magazine subscription or a subscription for a streaming video service, or you might be enrolled in a cheese-of-the-month club. But exactly how are subscriptions different from regular products in Drupal Commerce? Normally, when an order is placed, the customer is charged for the product, just once, at check-out. With the Commerce Recurring module, you can instead charge a customer repeatedly, at regular intervals, starting at the time the order is placed.
 
 <a id="billing-periods"></a>Those regular intervals are defined as **billing periods** within the Commerce Recurring module. Some examples of billing periods are:
 
@@ -43,10 +43,10 @@ See also:
 
 ## Billing Schedules
 
-Regardless of its subscription type, every subscription also has a Billing schedule. A billing schedule defines when and how to bill a customer for the subscription. Should a customer be billed on an annual, monthly, or daily basis? Or should some other billing period be used? Should the customer be charged right when the order is placed or not until the end of the billing period? Does the billing period always start on the first day of the month or if, for example, the customer initially places an order on the 10th of the month, should the subscription be billed and automatically renewed on the 10th of every month? And what about proration? If a customer places an order in June for an annualy renewable subscription, should he be billed for a full year or should the charges be *prorated* so that the customer is only charged for half the standard price? All of this and more is defined by the billing schedule. So let's look a little more closely at billing schedules.
+Regardless of its subscription type, every subscription also has a Billing schedule. A billing schedule defines when and how to bill a customer for the subscription. Should a customer be billed on an annual, monthly, or daily basis? Or should some other billing period be used? Should the customer be charged right when the order is placed or not until the end of the billing period? Does the billing period always start on the first day of the month or if, for example, the customer initially places an order on the 10th of the month, should the subscription be billed and automatically renewed on the 10th of every month? And what about proration? If a customer places an order in June for an annually renewable subscription, should he be billed for a full year or should the charges be *prorated* so that the customer is only charged for half the standard price? All of this and more is defined by the billing schedule. So let's look a little more closely at billing schedules.
 
 
-A billing schedule is a configuration entity that stores settings on how/when a product variation will be billed. Billing schedules are created through the admin UI: `Commerce >> Configuration >> Payment`. The primary components that define the funtionality of a billing schedule are:
+A billing schedule is a configuration entity that stores settings on how/when a product variation will be billed. Billing schedules are created through the admin UI: `Commerce >> Configuration >> Payment`. The primary components that define the functionality of a billing schedule are:
 
 * [Billing type](#billing-types)
 * [Billing schedule plugin](#billing-schedule-plugin)
@@ -65,7 +65,7 @@ Each billing schedule has a billing type, which is either prepaid or postpaid (c
 
 A billing schedule is powered by a billing schedule plugin, which is responsible for generating the billing period. Out of the box, the Commerce Recurring module supports rolling and fixed billing periods. Rolling periods start at the moment of subscription and last until the configured interval passes. Fixed periods start at the beginning of the configured interval (some number of hours, days, weeks, months, or years). 
 
-Fixed billing schedules with monthly intervals are defined with a Start day (1 - 31). Fixed billing schedules with yearly intervals are defined with both a Start day and a Start month (Jaunuary - December). The billing schedule plugin is configured through the admin UI for the billing schedule configuration entity. 
+Fixed billing schedules with monthly intervals are defined with a Start day (1 - 31). Fixed billing schedules with yearly intervals are defined with both a Start day and a Start month (January - December). The billing schedule plugin is configured through the admin UI for the billing schedule configuration entity. 
 
 Suppose a new annual subscription is purchased on October 12th. If the first billing period should be October 12 - October 12, then you should set up a "Rolling" billing schedule. All subsequent billing periods for this subscription will also begin and end on October 12th. Suppose, on the other hand, that you want the annual subscription to start on January 1st every year. Then you should set up a "Fixed" billing schedule; the first billing period will run from October 12 to January 1st, and subsequent billing periods will start and end on January 1st. Here is the configuration for this example "Fixed" annual subscription: 
 

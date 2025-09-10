@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process.  It supports single and multi-page checkout depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
+Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process.  It supports single and multipage checkout depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
 
 Below are many of the topics related to Drupal Commerce Checkout.
 
@@ -20,11 +20,11 @@ Below are many of the topics related to Drupal Commerce Checkout.
 ## Checkout Form builder
 
 Here's the real definition of Checkout from Ryan Szrama:
->Checkout is a multi-step order edit form that involves the creation of additional entities (via customer profile checkout panes) and usually results in the creation of a payment transaction.
+>Checkout is a multistep order edit form that involves the creation of additional entities (via customer profile checkout panes) and usually results in the creation of a payment transaction.
 
 What does that mean to you? It means checkout and the form builder are just a large edit form for orders that create things like customer profiles and use things like payment gateways to move the order status around.
 
-Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process. It supports [single and multi-page checkout](#Checkout-Single-vs-Multiple-Page) depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
+Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process. It supports [single and multipage checkout](#Checkout-Single-vs-Multiple-Page) depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
 
 In the checkout system, a checkout page is a distinct step in the checkout process that contains one or more checkout panes that are represented as fieldsets or divs as part of the form representing the checkout page they're on. You do not have to use every checkout pane defined on your site, and some contributed modules will define new ones that you can use if needed.
 
@@ -75,7 +75,7 @@ This checkout pane presents all payment methods available to the customer in a r
 
 <h4  id="offsite-payment-redirect">Off-site payment redirect</h4>
 
-This checkout pane will only appear if the customer selected an off-site payment method, such as PayPal WPS. It appears as a message indicating the user will be redirected to the payment service, and a JavaScript auto-redirect will go ahead and submit the redirection form if JavaScript is enabled. Otherwise the customer will have to submit the form manually.
+This checkout pane will only appear if the customer selected an off-site payment method, such as PayPal WPS. It appears as a message indicating the user will be redirected to the payment service, and a JavaScript auto-redirect will go ahead and submit the redirection form if JavaScript is enabled. Otherwise, the customer will have to submit the form manually.
 
 If payment was dealt with completely on-site, the user will automatically be advanced to the next checkout page.
 
@@ -94,13 +94,13 @@ This checkout pane displays a simple checkout completion message that links to t
     <li>Send an order notification e-mail to the customer.</li>
 </ul>
 
-<p>You are free to customize these defaults rules, disable them entirely, and add your own rules to address your business logic pertaining to what must happen on checkout completion. Note that payment may not have been completed at this time; it may still be pending or it may have been submitted as an authorization awaiting a later capture.</p>
+<p>You are free to customize these defaults rules, disable them entirely, and add your own rules to address your business logic pertaining to what must happen on checkout completion. Note that payment may not have been completed at this time; it may still be pending, or it may have been submitted as an authorization awaiting a later capture.</p>
 
 !!! warning "Important Note: Beware giving away products for free"
 
 <p>If you have business logic that depends on payment being completed, you should add rules to the <em>When an order is first paid in full</em> event instead. It is a common Drupal Commerce configuration mistake to fulfill the order at the point of checkout completion which can lead to giving the product away for free. Malicious users may figure out how to trigger order completion without paying. Instead, assign rules that deliver the product to the event <em>When an order is first paid in full</em>.</p>
 
-<h3>Excercise: Fulfillment Email</h3>
+<h3>Exercise: Fulfillment Email</h3>
 
 <p>To demonstrate the Checkout Rules, we've created an exercise that will send an email to our fulfillment shop once the payment is complete. This is a particularly interesting case because we will not use the event that Commerce picks for us by default. All is explained in the captions.</p>
 
@@ -113,7 +113,7 @@ This checkout pane displays a simple checkout completion message that links to t
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
     <li>Store</li>
-    <li>Store Configuraiton</li>
+    <li>Store Configuration</li>
     <li>Checkout</li>
     <li class="last">Checkout Rules: Add Rule</li>
 </ul>
@@ -136,7 +136,7 @@ This checkout pane displays a simple checkout completion message that links to t
 
 **Choose this event.**
 
-<p>This event will only fire after payment is paid in full. "Completing the Checkout" is not "Paid in Full" and this distinction can be a common mistake. That might allow your customer to fraudulently use a payment that doesn't complete and you find out after you have given them access or sent them the physical product.</p>
+<p>This event will only fire after payment is paid in full. "Completing the Checkout" is not "Paid in Full" and this distinction can be a common mistake. That might allow your customer to fraudulently use a payment that doesn't complete, and you find out after you have given them access or sent them the physical product.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -197,7 +197,7 @@ This checkout pane displays a simple checkout completion message that links to t
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
     <li>Store</li>
-    <li>Store Configuraiton</li>
+    <li>Store Configuration</li>
     <li>Orders</li>
     <li class="last">Edit Order</li>
 </ul>
@@ -216,7 +216,7 @@ This checkout pane displays a simple checkout completion message that links to t
     <li class="last">Add Order</li>
 </ul>
 
-<p>As customers progress through checkout, their cart orders are continually being updated. This makes the checkout form act as a multi-step order edit form with the end result being a fully formed order that is ready for fulfillment or completion.</p>
+<p>As customers progress through checkout, their cart orders are continually being updated. This makes the checkout form act as a multistep order edit form with the end result being a fully formed order that is ready for fulfillment or completion.</p>
 
 <p>In addition to customer data being saved to the order, the order status is also updated to reflect its current place in the checkout process. The checkout router uses the order status to determine a customer's access to visit a requested checkout page for a particular order.</p>
 <p>Upon checkout completion, the <em>Completing the checkout process</em> event/hook is invoked, allowing you to affect what happens to orders and what sort of communication needs to occur on checkout completion.</p>
@@ -243,7 +243,7 @@ This checkout pane displays a simple checkout completion message that links to t
     <li class="last">Checkout Rules</li>
 </ul>
 
-<p>By default Drupal Commerce executes the following checkout completion rules:</p>
+<p>By default, Drupal Commerce executes the following checkout completion rules:</p>
 
 <ol>
     <li>Update the order status on checkout completion.</li>
@@ -271,17 +271,17 @@ This checkout pane displays a simple checkout completion message that links to t
 
 ## Checkout: Anonymous vs. Authenticated
 
-<p>Customers to your store are not required to be logged in (authenticated) or anonymous. To setup your site to always be anonymous, you would only have to delete the two rules mentioned here:</p>
+<p>Customers to your store are not required to be logged in (authenticated) or anonymous. To set up your site to always be anonymous, you would only have to delete the two rules mentioned here:</p>
 
 ![Anonymous Rules](../images/Checkout-Anon-Auth-1.png)
 
 **Account Creation Rules**
 
-<p>Disabling these rules would mean the users can't login to see their Orders, but would have absolutely no side affect to being able to purchase items, etc.</p>
+<p>Disabling these rules would mean the users can't log in to see their Orders, but would have absolutely no side effect to being able to purchase items, etc.</p>
 
 <p>What is the difference between an authenticated and anonymous checkout?</p>
 <p>There is not much. Both authenticated and anonymous users will still have to fill out any information required by customer profiles. Customer profiles are not user profiles (multiple data fields per user), they are uniquely assigned to each order (multiple data fields per order). This allows the same customer to have multiple addresses for each order and other types of situations. But this does cause a bit of confusion as the user expects their address to appear if they are logged in.</p>
-<p>If you are curious as to what happens with anonymous users, you can checkout the following screens and read through each rule.</p>
+<p>If you are curious as to what happens with anonymous users, you can check out the following screens and read through each rule.</p>
 
 ![Anonymous Rules](../images/Checkout-Anon-Auth-1.png)
 
@@ -303,7 +303,7 @@ This checkout pane displays a simple checkout completion message that links to t
 
 <h3>How does checking out work with address information?</h3>
 
-<p>Customer information collected for orders on separate entities called customer profiles that are associated with the order through customer profile reference fields. By default the Billing information customer profile type just includes an address field, but it can be edited through the field interface to include any additional fields you require. These fields will automatically be visible on the related checkout pane for the customer profile.</p>
+<p>Customer information collected for orders on separate entities called customer profiles that are associated with the order through customer profile reference fields. By default, the Billing information customer profile type just includes an address field, but it can be edited through the field interface to include any additional fields you require. These fields will automatically be visible on the related checkout pane for the customer profile.</p>
 <p>Some modules define additional customer profile types, such as the Shipping information customer profile type defined in the <a href="https://drupal.org/project/commerce_shipping">Commerce Shipping</a> module.</p>
 <p>During a default checkout process, customers cannot reuse previously created customer profiles. A new customer profile will be saved each time, though modules like <a href="https://drupal.org/project/commerce_addressbook">Commerce Addressbook</a> bring simple and elegant solutions to help save your customers time.</p>
 

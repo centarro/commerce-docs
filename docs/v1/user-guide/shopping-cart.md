@@ -10,7 +10,7 @@ Below are some topics related to the add to cart form.
 
 <ul>
     <li><a href="#add-to-cart-form">Add to Cart Form</a></li>	
-    <li><a href="#anonymous-carts-and-logged-in-users">Anonymous Carts and Logged In Users</a></li>
+    <li><a href="#anonymous-carts-and-logged-in-users">Anonymous Carts and Logged-In Users</a></li>
     <li><a href="#cart-refresh">Cart Refresh</a></li>
     <li><a href="#modifying-the-shopping-cart-using-views">Modifying the Shopping Cart using Views</a></li>
     <li><a href="#shopping-cart-and-multi-currency">Shopping Cart and Multi-Currency</a></li>
@@ -139,7 +139,7 @@ rendered into the node display that groups these products together.</p>
 
 **Manage Display Form**
 
-How does it know that I want my sizes to show up in the drop down? The Product Display node is setup to aggregate the various attribute fields into one "Add to Cart form" as pictured here.
+How does it know that I want my sizes to show up in the drop-down? The Product Display node is set up to aggregate the various attribute fields into one "Add to Cart form" as pictured here.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -163,7 +163,7 @@ product.</p>
 <iframe src="https://player.vimeo.com/video/31459435?byline=0&amp;portrait=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="https://vimeo.com/31459435">Introduction to Line Items in Drupal Commerce</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 
-## Anonymous Carts and Logged In Users
+## Anonymous Carts and Logged-In Users
 
 <p>There are many topics covered in this Drupal Commerce Anonymous Carts
 article. The experience you want to give your customers can greatly depend on
@@ -174,7 +174,7 @@ this is automated, but there can be a few hang ups.</p>
 Cart?" An order is created for that customer's anonymous session. Like most
 customers, they realize that logging in with their account can give them a
 certain advantage during the checkout process. Perhaps they don't have to fill
-out their customer profile information or perhaps they are a part of a "Free
+out their customer profile information, or perhaps they are a part of a "Free
 Shipping" user role. What happens to their cart?</p>
 <p>When anonymous users login to the site, if they have a shopping cart, that
 order is moved to be a part of the authenticated session. Anonymous cart
@@ -379,7 +379,7 @@ module that can expire carts for you:
 
 **Price Rules Screen**
 
-Pictured here is the page that lists all of the price rules that calculate the sell price per user. This is where you can add discounts, taxes, and many other types of payment calculations.
+Pictured here is the page that lists all the price rules that calculate the sell price per user. This is where you can add discounts, taxes, and many other types of payment calculations.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -623,7 +623,7 @@ recommend using only core for this if you want the conversion rate to be input
 as a static variable. For example, you simply want to say that 1 US dollar is
 equal to .76 Euros, that would be a fine and relatively easy thing to produce
 using rules.</p>
-<p>Additionally with being able to handle simple conversions, Drupal Commerce
+<p>Additionally, with being able to handle simple conversions, Drupal Commerce
 core will properly handle mixed currency orders by converting line items to the
 site's default currency if present on the order or using the currency of the
 first line item on the order if the default currency isn't represented.</p>
@@ -689,7 +689,7 @@ The first step is to click on Store and then "Configuration" and, finally, Produ
 
 **Pricing Rule**
 
-We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are setup. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
+We need to click on add a pricing rule. If this is your first time on this screen, maybe navigate around and look at how some of these other rules are set up. If this is your first time dealing with Rules, we highly recommend <a href="https://www.drupal.org/node/1580776">additional tutorials</a>.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -748,7 +748,7 @@ Note that we are creating a filter that will only allow US dollars into our acti
 **Convert Numbers**
 
 Click "Add Action"
-In order to actually create a currency conversion we need to do alittle math. This next step is where you add the currency exchange rate.
+In order to actually create a currency conversion we need to do a little math. This next step is where you add the currency exchange rate.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -820,7 +820,7 @@ The final screen for the rule. If yours doesn't look like this, go through the s
 
 **Example Cart**
 
-We have not modified any of the products prices, but we have successfully converted all of the currency to Euros and exchanged the prices. For example, Product Three is listed as $32.00 US dollars.
+We have not modified any of the products prices, but we have successfully converted all the currency to Euros and exchanged the prices. For example, Product Three is listed as $32.00 US dollars.
 
 ## Shopping Carts, Orders, and Line Items
 
@@ -833,7 +833,7 @@ We have not modified any of the products prices, but we have successfully conver
 </ul>
 
 <p>Quick! What's the difference between a shopping cart, an order, and a line
-item? The answer? Not much. A shopping cart is just a kind of an order and an
+item? The answer? Not much. A shopping cart is just a type of order. An
 order is just a revisioned group of line items. How about we try that again with
 less Commerce-jargon?</p>
 
@@ -879,7 +879,7 @@ cart.</p>
 
 **Administrative View**
 
-When you view all of the open shopping carts, it is possible that one
+When you view all the open shopping carts, it is possible that one
 customer has multiple open shopping carts.
 
 <ul class="screenshot_breadcrumbs">
@@ -912,7 +912,7 @@ To remove an item from the cart using rules, you must unset the price of the lin
     <li class="first">Administration</li>
     <li>Store</li>
     <li>Configuration</li>
-    <li>Produt Pricing Rules</li>
+    <li>Product Pricing Rules</li>
     <li class="last">Click "Clone"</li>
 </ul>
 

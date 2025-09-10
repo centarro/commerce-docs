@@ -40,7 +40,7 @@ Explain
 
 * Shipping has flat rate in it, now.
 * 2.x shipping combines many contrib efforts
-* Packaging logic, boxing, fullfillment.
+* Packaging logic, boxing, fulfillment.
 
 ## Discounts and coupons
 
@@ -50,9 +50,9 @@ Now in core for discount + coupon as promotions.
 
 ## Price calculation
 
-The base price of a product variation is the price without adjustments (i.e. without promotions, taxes etc). Price
+The base price of a product variation is the price without adjustments (i.e. without promotions, taxes, etc...). Price
 resolving is the process of finding the base price of the variation. Price resolvers are services. The default price
-resolver simply returns the price in the variations's price field.
+resolver simply returns the price in the variation's price field.
 
 To actually resolve a price, commerce uses the `commerce_price.chain_price_resolver` service which finds all price
 resolver services and calls their `resolve()` method until one of them returns a price. For example, to support multiple

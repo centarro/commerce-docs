@@ -39,7 +39,7 @@ Any module maintainer can create messages to highlight new features or other poi
 
 ### Configuring inbox elements
 
-The message feed has basic contextual awareness to ensure store managers aren't bothered by irrelevant messages. This includes those that are time sensitive or only relevant to certain modules. As with other dashboard elements, settings can disable fetching messages from the project feed or showing the toolbar indicator, though the inbox remains present for rendering messages created during module installations and updates:
+The message feed has basic contextual awareness to ensure store managers aren't bothered by irrelevant messages. This includes those that are time-sensitive or only relevant to certain modules. As with other dashboard elements, settings can disable fetching messages from the project feed or showing the toolbar indicator, though the inbox remains present for rendering messages created during module installations and updates:
 
 ```
 $settings['commerce_dashboard_fetch_inbox_messages'] = FALSE;

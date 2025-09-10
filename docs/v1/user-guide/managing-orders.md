@@ -73,8 +73,8 @@ taxonomy:
 
 <h4>Refresh frequency</h4>
 
-<p>To further enhance the performance impact, we set a reasonable lifespan for calculated prices. If your pricing depends on up-to-the-second changes, then this setting can be set to zero so that it will always be calculated. Its likely the majority of use cases could have a large number of seconds here. Shopping carts will only be refreshed if more than the specified number of seconds have passed since they were last refreshed.</p>
-<p>Note that, by default, we always recalculate on /cart and /checkout but you can turn off that setting here as well.</p>
+<p>To further enhance the performance impact, we set a reasonable lifespan for calculated prices. If your pricing depends on up-to-the-second changes, then this setting can be set to zero so that it will always be calculated. It's likely the majority of use cases could have a large number of seconds here. Shopping carts will only be refreshed if more than the specified number of seconds have passed since they were last refreshed.</p>
+<p>Note that, by default, we always recalculate on /cart and /checkout, but you can turn off that setting here as well.</p>
 
 ## Displaying All Orders
 

@@ -114,5 +114,5 @@ Go ahead and refresh the ``/products`` page.
 
 ![Product catalog page with quantity field](../images/product_catalog_page_quantity.png)
 
-And voila!! You can now choose quantity while adding products to cart.
+And voilà!! You can now choose quantity while adding products to cart.
 

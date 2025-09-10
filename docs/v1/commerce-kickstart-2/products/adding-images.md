@@ -4,9 +4,9 @@ taxonomy:
     category: docs
 ---
 
-<p>Adding images to your products sounds like an easy scenario. In fact. you might be surprised to see this in a documentation user guide. But there are a lot of questions you will need to answer before you can even begin to understand how you might want your website to handle images. For example, do you want each "size" of tshirt to have multiple photos? What about each size and each gender? What about just changing the photos on gender, regardless of size? Or perhaps you want a single gallery for all the variations per page. We don't answer everyone of the possibilities below, but perhaps you can learn how we're doing this and come up with your own ways to treat images on products.</p>
+<p>Adding images to your products sounds like an easy scenario. In fact. you might be surprised to see this in a documentation user guide. But there are a lot of questions you will need to answer before you can even begin to understand how you might want your website to handle images. For example, do you want each "size" of t-shirt to have multiple photos? What about each size and each gender? What about just changing the photos on gender, regardless of size? Or perhaps you want a single gallery for all the variations per page. We don't answer every one of the possibilities below, but perhaps you can learn how we're doing this and come up with your own ways to treat images on products.</p>
 <h3>Per Variation (Demo Store Setup)</h3>
-<p>The Kickstart 2 Demo Store chooses a relatively complicated setup to show you how that complexitity works through the entire site: Each variation has it's own set of images. Below are the two steps you'll need to take to add an image using the Kickstart 2 Demo Store</p>
+<p>The Kickstart 2 Demo Store chooses a relatively complicated setup to show you how that complexity works through the entire site: Each variation has its own set of images. Below are the two steps you'll need to take to add an image using the Kickstart 2 Demo Store</p>
 
 ![Product Images - Add a Product](../../images/CK-Product-Images-01.png)
 
@@ -73,7 +73,7 @@ taxonomy:
 
 **Step 5**
 
-<p>Let's go ahead and add an existing field. It's already got a database table and everything defaults to the one that comes with Kickstart 2 No Demo store. This is potentially more efficient and clean than creating a brand new field.</p>
+<p>Let's go ahead and add an existing field. It's already got a database table and everything defaults to the one that comes with Kickstart 2 No Demo store. This is potentially more efficient and clean than creating a brand-new field.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Products</li>
@@ -108,7 +108,7 @@ taxonomy:
 
 <h3>Per Product Display</h3>
 
-<p>You can follow the same procedure above to add an image gallery to your product displays. The advantage or difference is that you are adding the image field to the Content Type or the "group" of products. So, if you were selling tshirts and just had one image, this is how you would set that up.</p>
+<p>You can follow the same procedure above to add an image gallery to your product displays. The advantage or difference is that you are adding the image field to the Content Type or the "group" of products. So, if you were selling t-shirts and just had one image, this is how you would set that up.</p>
 
 ![Product Images - Edit Content Type](../../images/CK-Product-Images-10.png)
 
@@ -150,4 +150,4 @@ taxonomy:
 
 **Example Form**
 
-<p>This is the example form we have for adding images to the product display vs. product variations. As you can see, the image field is independent from the Product variations.</p>
+<p>This is the example form we have for adding images to the product display vs. product variations. As you can see, the image field is independent of the Product variations.</p>

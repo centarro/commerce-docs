@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-There are two ways to install Drupal Commerce. You can do it from scratch by installing Drupal 7 and then enabling the Commerce modules and their dependencies. This process requires additional configuration of products and product displays before you can start selling through your site.  However, it does afford you a greater measure of control over how exactly items are setup from the beginning.
+There are two ways to install Drupal Commerce. You can do it from scratch by installing Drupal 7 and then enabling the Commerce modules and their dependencies. This process requires additional configuration of products and product displays before you can start selling through your site.  However, it does afford you a greater measure of control over how exactly items are set up from the beginning.
 
 An easier way to install Drupal Commerce would be to use an installation profile that enables and configures the Commerce modules and components for you.  The primary starter installation profile is <a href="https://drupal.org/project/commerce_kickstart">Commerce Kickstart</a>, but a major goal for the project is to see additional installation profiles tailor the initial configuration toward specific markets and business models.
 
@@ -42,7 +42,7 @@ Commerce Kickstart is an installation profile designed to get you up and running
 
 
 <h3>Simple Installation</h3>
-Installing <a href="https://drupal.org/project/commerce_kickstart">Commerce Kickstart</a> is as easy as <a href="https://drupal.org/documentation/install">installing Drupal itself</a>, and in most cases is exactly the same procedure. Commerce Kickstart is just a copy of Drupal which includes the required modules and an install profile which does some sane initial setup for you.
+Installing <a href="https://drupal.org/project/commerce_kickstart">Commerce Kickstart</a> is as easy as <a href="https://drupal.org/documentation/install">installing Drupal itself</a>, and in most cases is exactly the same procedure. Commerce Kickstart is just a copy of Drupal which includes the required modules and an "install" profile which does some sane initial setup for you.
 
 <ol>
 <li>Download the installation package from the <a href="https://drupal.org/project/commerce_kickstart">project page</a> (For example, the tar.gz or zip file).</li>

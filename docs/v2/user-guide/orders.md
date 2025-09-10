@@ -14,7 +14,7 @@ Instead of re-using a customer, a new one can be created.
 
 ![create](images/create-order-new-customer.png)
 
-Click **Create**. You will then be able to provide information about the order. The first items will allow you to provide billing information for the order. You can also specify if the order is a cart or not. By marking the order as a cart, the customer will able to review the cart and go through the checkout with it.
+Click **Create**. You will then be able to provide information about the order. The first items will allow you to provide billing information for the order. You can also specify if the order is a cart or not. By marking the order as a cart, the customer will be able to review the cart and go through the checkout with it.
 
 ![top](images/order-create-top.png)
 
@@ -28,7 +28,7 @@ Once satisfied, click **Save**
 !!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute. Need to add documentation for adjustments and coupons."
 
 ## Viewing carts
-Carts are created whenever a customer submits an Add to Cart form or when an admin begins an order via the _Create order_ link on the _Orders_ page and checks the _Cart_ checkbox before saving the order. Carts have an order ID but no order number, as those are not generated until the order is placed. You can view the current carts in your store by navigating to the Commerce > Orders page and clicking the _Carts_ tab. From the _Carts_ tab you can view, edit, reasign, add payment information to, or delete a cart using the dropdown operations menu based on your account's permissions. 
+Carts are created whenever a customer submits an Add to Cart form or when an admin begins an order via the _Create order_ link on the _Orders_ page and checks the _Cart_ checkbox before saving the order. Carts have an order ID but no order number, as those are not generated until the order is placed. You can view the current carts in your store by navigating to the Commerce > Orders page and clicking the _Carts_ tab. From the _Carts_ tab you can view, edit, reassign, add payment information to, or delete a cart using the dropdown operations menu based on your account's permissions. 
 
 When a customer completes checkout or an admin places the order, the cart option is toggled off and the order ID remains the same but an order number is generated that follows the number pattern setup for the order type. Until checkout completion or order placement, carts are in a unique order status called _Draft_ that allows the order items to be periodically refreshed, updating the pricing and availability of the products in the cart. Once a cart is placed and moves out of the draft status, the order will no longer be periodically refreshed. 
 
@@ -48,7 +48,7 @@ You can also manually purge carts en masse via the bulk operation available to y
 
 In Drupal Commerce, you have the flexibility to tailor order numbers to your business’s requirements. Number patterns are configurable per order type and can be shared or set to be unique for each store.
 
-To begin, navigate to Commerce > Configuration > Orders > Number patterns to create a number pattern. On this page, you can establish new patterns, each requiring a unique name. The number patterns form offers several configuration options, including regeneration settings, what number to start from, and whether or not numbers are shared between stores.
+To begin, navigate to Commerce > Configuration > Orders > Number patterns to create a number pattern. On this page, you can establish new patterns, each requiring a unique name. The number patterns form offers several configuration options, including regeneration settings, what number to start from, and whether numbers are shared between stores.
 
 The strength of number patterns lies in the versatility provided as to how the numbers are generated. You can incorporate a blend of custom strings and tokens, allowing for prefixed or suffixed numbers based on fixed strings or structured data from your site. This gives you the ability to brand your order numbers and segment your orders based on business needs without writing custom code.
 

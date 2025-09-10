@@ -102,7 +102,7 @@ No, not without great difficulty. But you can *repurpose* an unused property for
 
 For any countries that include *Company* (Organization) in their address format, we want *Building name* to be included on the subsequent line.
 
-![Buidling name field](../../images/address-format-2.png)
+![Building name field](../../images/address-format-2.png)
 
 First, we'll implement an *EventSubscriber* for the `AddressEvents::ADDRESS_FORMAT` event, to customize the address formats for all countries. This example assumes that we have already created a custom module, named *mymodule*. Here is our event subscriber class, in which we insert the *additionalName* field after *organization* in our address format:
 
@@ -174,7 +174,7 @@ function mymodule_customize_address($element, $form_state) {
 }
 ```
 
-## Contries and subdivisons
+## Countries and subdivisions
 
 The Address module provides a custom *Country* field type along with a custom form element, default formatter, and default widget. Country data is stored internally using standard 2-letter codes. Country codes are limited to the list of available countries.
 
@@ -215,9 +215,9 @@ Don't forget to include this event subscriber in your custom module's `services.
 ![Admin ui for default country](../../images/address-countries-1.png)
 
 ### Country subdivisions
-A country can have several levels of subdivisions that are used for addressing. In the United States that would be the state. In Brazil it would be the state and the municipality. In China it would be the province, the prefecture-level city, and the county. The *Address* module provides user-friendly address forms that provide dropdowns for these subdivisions, thus speeding up the data entry process and reducing mistakes.
+A country can have several levels of subdivisions that are used for addressing. In the United States that would be the state. In Brazil, it would be the state and the municipality. In China, it would be the province, the prefecture-level city, and the county. The *Address* module provides user-friendly address forms that provide dropdowns for these subdivisions, thus speeding up the data entry process and reducing mistakes.
 
-Subdivision data is provided by the Commerce Guys addressing library. Subdivisions are hierarchcial, with up to 3 levels: Administrative area -> Locality -> Dependent locality. For each level, there is a set list of options that is used to populate form select lists (dropdown menus). For example, both Australia and the United States have a single level of subdivisions, called *States*. If *United States* is selected as the country, then its 50 states and additional territories appear as *State* options. If *Australia* is selected, then its 8 state/territory options are displayed:
+Subdivision data is provided by the Commerce Guys addressing library. Subdivisions are hierarchical, with up to 3 levels: Administrative area -> Locality -> Dependent locality. For each level, there is a set list of options that is used to populate form select lists (dropdown menus). For example, both Australia and the United States have a single level of subdivisions, called *States*. If *United States* is selected as the country, then its 50 states and additional territories appear as *State* options. If *Australia* is selected, then its 8 state/territory options are displayed:
 
 ![Australian subdivisions](../../images/address-countries-2.png)
 
@@ -432,7 +432,7 @@ The default address widget uses the custom *address* form element. As a result, 
 ![Customized street address](../../images/address-entry-2.png)
 
 ### Setting initial values for address field properties
-**Note: onInitialValues is deprectated and no longer fires since version 1.5** 
+**Note: onInitialValues is deprecated and no longer fires since version 1.5** 
 @see the [AddressEvents](https://git.drupalcode.org/project/address/blob/8.x-1.x/src/Event/AddressEvents.php) documentation. 
 
 The *Address* module provides an event that can be used to set initial values for address field properties. In this example, we'll create an event subscriber to set the default country to *Australia*, the suburb to *New South Wales*, and the city to *Sydney*.
@@ -489,10 +489,10 @@ This documentation page describes how to customize how addresses are displayed. 
 * Use the [*Default* address formatter](#the-default-address-formatter) to display addresses in country-specific formats.
 * Use the [*Plain* address formatter](#the-plain-address-formatter) to provide custom theming for addresses.
 * Use the [Postal Label Formatter Service](#postal-label-formatter-service) to use standards required for automated mail sorting.
-* [Multilingual Considerations](#multilingual-considerations) decribes how to override the language used to format addresses.
+* [Multilingual Considerations](#multilingual-considerations) describes how to override the language used to format addresses.
 
 ### The *Default* address formatter
-The Default formatter uses a repository of address format data (provided by the Commerce Guys Addressing Library) to format the display of an address. Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address) is the data source for these address formats. The displayed format will closely match the ordering used on forms for entering the addresses. (*The Country field always appears first on forms, even if it is displayed last in the correctly formatted adddress.*)
+The Default formatter uses a repository of address format data (provided by the Commerce Guys Addressing Library) to format the display of an address. Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address) is the data source for these address formats. The displayed format will closely match the ordering used on forms for entering the addresses. (*The Country field always appears first on forms, even if it is displayed last in the correctly formatted address.*)
 
 ![Default address formatter display](../../images/address-display-1.png)
 

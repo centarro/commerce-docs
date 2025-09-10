@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-If you want to write custom code to programatically manage payments, you can use these code recipes as a starting point.
+If you want to write custom code to programmatically manage payments, you can use these code recipes as a starting point.
 
 - **Create:**
  - [Payment gateway](#creating-a-payment-gateway)
@@ -170,7 +170,7 @@ $payment_gateways = \Drupal::entityTypeManager()
 $payment_method = \Drupal\commerce_payment\Entity\PaymentMethod::load(1);
 ```
 
-#### Load a user's resusable payment methods for the given payment gateway
+#### Load a user's reusable payment methods for the given payment gateway
 
 Only reusable payment methods that have not yet expired are returned. Filtering by country is optional. In this example, only payment methods with billing profiles from the United States or France will be returned.
 ```php
@@ -274,7 +274,7 @@ class FilterPaymentGatewaysSubscriber implements EventSubscriberInterface {
 ```
 
 ### Altering a payment type definition
-In this example, we swap out the existing manual workflow for a custom one. The custom workflow should be defined in the `mymodule.workflows.yml`, where *mymodule* is the name of your custom module.  See `commerce_payment.workflows.yml` in the *Commerce payment* module as an example. This approach could be use to, for example, change the labels that are displayed for the payment states.
+In this example, we swap out the existing manual workflow for a custom one. The custom workflow should be defined in the `mymodule.workflows.yml`, where *mymodule* is the name of your custom module.  See `commerce_payment.workflows.yml` in the *Commerce payment* module as an example. This approach could be used to, for example, change the labels that are displayed for the payment states.
 
 ```php
 /**
@@ -288,7 +288,7 @@ function mymodule_commerce_payment_type_info_alter(array &$info) {
 ```
 
 ### Altering a payment method type definition
-In this example, we swap out the existing class for the *Credit card* payment method type with a custom one. This approach could be used to customize the implementations of any of the `PaymentMethodTypeInterface` methods or the `buildFieldDefinitions` method.
+In this example, we swap out the existing class for the *Credit card* payment method type with a custom one. This approach could be used to customize the implementations of the `PaymentMethodTypeInterface` methods or the `buildFieldDefinitions` method.
 
 ```php
 /**

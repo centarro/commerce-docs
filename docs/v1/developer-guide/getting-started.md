@@ -130,7 +130,7 @@ This same goal holds true for access control as it pertains to products, orders,
 <a id="l10n"> </a>
 <h3>8. Localization and Variable Strings</h3>
 
-In Ubercart we provided numerous configuration options to override interface strings, like the text used on the Add to Cart button.  This presented a problem for multilingual sites, as Drupal's localization system can translate string literals but not variables. (For more information, see documentation on the <a href="https://api.drupal.org/api/function/t/7">t()</a> function.)
+In Ubercart, we provided numerous configuration options to override interface strings, like the text used on the Add to Cart button.  This presented a problem for multilingual sites, as Drupal's localization system can translate string literals but not variables. (For more information, see documentation on the <a href="https://api.drupal.org/api/function/t/7">t()</a> function.)
 
 To correct this problem, the ability to override strings via custom settings forms will not be provided by the core modules. Instead, we will instruct administrators to use the <a href="https://drupal.org/project/stringoverrides">String Overrides</a> module (or whatever comparable systems exist).
 
@@ -170,7 +170,7 @@ Drupal Commerce code begins at the level of discussion.  Before digging in to do
 
 When a developer is ready to get to work, he or she should chime in on the appropriate issue on d.o and get up to speed with current development. 
 
-Bugs should always be reported via the issue tracker on d.o, but feature requests can start here in the forums so they can be worked into the specification.  The specification here should always be an up to date representation of what we have in code.
+Bugs should always be reported via the issue tracker on d.o, but feature requests can start here in the forums so they can be worked into the specification.  The specification here should always be an up-to-date representation of what we have in code.
 
 
 ## Using Git

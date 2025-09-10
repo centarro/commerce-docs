@@ -42,7 +42,7 @@ Imagine that your store is planning to run a special New Year campaign where you
 
 ### Adding Conditions
 
-The conditions section allows you to further manage the promotions so that you can tell the system to apply the promotion only if the order meets certain criteria. There are three categories of Conditions: Customer, Order, and Products. Click on each to see condition options in that category. You can specify multiple conditions. For this example, we want to add a condition so that our promotion will only apply to orders worth $50 or more. This is the "Current order total" condition, an "Order" condtion. Similar to the "Offer type" options, whenever we select a Condition type, a new form will appear under that condition. We'll select the "Greater than or equal to" Operator and enter "50" as the Amount:
+The conditions section allows you to further manage the promotions so that you can tell the system to apply the promotion only if the order meets certain criteria. There are three categories of Conditions: Customer, Order, and Products. Click on each to see condition options in that category. You can specify multiple conditions. For this example, we want to add a condition so that our promotion will only apply to orders worth $50 or more. This is the "Current order total" condition, an "Order" condition. Similar to the "Offer type" options, whenever we select a Condition type, a new form will appear under that condition. We'll select the "Greater than or equal to" Operator and enter "50" as the Amount:
 
 ![Admin UI for setting promotion conditions](../user-guide/images/promotion_conditions.png)
 
@@ -132,7 +132,7 @@ Finally, the third section of the form, labeled, "At a discounted value", specif
 
 ![Bux X Get Y offer type customer gets UI](../user-guide/images/editing_promotion_buy_x_get_y_gets.png)
 
-!!! example "Example: Buy 3 get 1 free for Product X"
+!!! example "Example: Buy 3, get 1 free for Product X"
     Suppose you create a promotion with a "Buy X Get Y" offer type configured as follows:
 
       * Customer buys quantity: **3**
@@ -149,7 +149,7 @@ Finally, the third section of the form, labeled, "At a discounted value", specif
 
 #### Fixed amount or Percentage off the shipment amount
 
-The Commerce Shipping module, if insalled, provides these two offer types which work just like the [Fixed amount or Percentage off the order subtotal](#fixed-amount-or-percentage-off-the-order-subtotal) offer types. However, instead of applying the discount to the subtotal, the discount is applied to the Shipping amount. By entering "100" as the percentage amount, a "Free shipping" discount can be created.
+The Commerce Shipping module, if installed, provides these two offer types which work just like the [Fixed amount or Percentage off the order subtotal](#fixed-amount-or-percentage-off-the-order-subtotal) offer types. However, instead of applying the discount to the subtotal, the discount is applied to the Shipping amount. By entering "100" as the percentage amount, a "Free shipping" discount can be created.
 
 Other custom or contributed modules can also define additional offer types or selection criteria.
 
@@ -183,7 +183,7 @@ Date and time constraints are applied based on the timezone of the Store, not th
 
 ### Usage limitations
 
-A promotion can also be limited based on total usage or on a per user basis. For example, here we've limited a promotion so that it's available to only the "first 1000 customers", and each customer can only use the discount once. 
+A promotion can also be limited based on total usage or on a per-user basis. For example, here we've limited a promotion so that it's available to only the "first 1000 customers", and each customer can only use the discount once. 
 
 ![Example customer conditions](../user-guide/images/editing_promotion_usage_limits.png)
 
@@ -194,7 +194,7 @@ Customer usage is tracked based on email address. If the customer is shopping as
 
 Compatibility options allow you to specify whether the promotion can be combined with other promotions.
 
-![Promotions compatibilty options](../user-guide/images/managing_promotions_compatibility.png)
+![Promotions compatibility options](../user-guide/images/managing_promotions_compatibility.png)
 
 * Once a promotion that is *not* compatible with other promotions is added to an order, no other promotions will be added.
 * If a promotion that is compatible with any promotion is added to an order, then any subsequent promotions with limited compatibility will *not* be added to the order.
@@ -226,7 +226,7 @@ Whenever a promotion is deleted, all of its coupons and associated customer usag
 
 Let's now imagine that you're running a new email campaign that sends customers a coupon that they can use to get 10% off each order over $50. 
 
-Setting up a coupon-based promotion is the same as creating a new promotion but with a extra step. You set up the promotion the [same way as before](#adding-a-new-promotion), but this time let's add a Coupon to the promotion.
+Setting up a coupon-based promotion is the same as creating a new promotion but with an extra step. You set up the promotion the [same way as before](#adding-a-new-promotion), but this time let's add a Coupon to the promotion.
 
 Click on the Coupon tab at the top of the page. Click on "Add Coupon", and add the following:
 
@@ -304,9 +304,9 @@ If your site has more than 50 promotions, they will be grouped into pages with u
 
 If any of your promotions have limited compatibility, then the order in which promotions are listed in the Promotions table can affect whether any particular promotion is applied to an order. [Compatibility options](#compatibility-options) can be set when editing a promotion:
 
-![Promotions compatibilty options](../user-guide/images/managing_promotions_compatibility.png)
+![Promotions compatibility options](../user-guide/images/managing_promotions_compatibility.png)
 
-Whenever a cart or draft order is updated, all "available" promotions are checked, in order, for applicability to the order. A promotion is considered **available** if all of the following are true:
+Whenever a cart or draft order is updated, all "available" promotions are checked, in order, for applicability to the order. A promotion is considered **available** if all the following are true:
 
 * The promotion is enabled.
 * The promotion does not have coupons. (Coupons are handled separately.)

@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-<p>The Demo Store is an option in the installation process. This is a great way to get an idea of what is possible with Drupal Commerce and a few contributed modules. The demo store makes quite a few assumptions. For one, it assumes you are selling physical products. Thus, it has the shipping module all setup and ready to be used. Many of the store features are worth emulating or using as a basis for other sites. The following articles attempt to outline how to setup various features that can be found in the Commerce Kickstart 2 distribution.</p>
+<p>The Demo Store is an option in the installation process. This is a great way to get an idea of what is possible with Drupal Commerce and a few contributed modules. The demo store makes quite a few assumptions. For one, it assumes you are selling physical products. Thus, it has the shipping module all setup and ready to be used. Many of the store features are worth emulating or using as a basis for other sites. The following articles attempt to outline how to set up various features that can be found in the Commerce Kickstart 2 distribution.</p>
 
 ![Demo Store Installed](../images/demo-store2.png)
 
@@ -21,7 +21,7 @@ taxonomy:
 
 **Trigger Rules**
 
-<p>The rules listed here are responsible for creating "Messages of a certain type" that will get sent. You can go here to disable a certain message type, or add an additional event or even setup a new message type.</p>
+<p>The rules listed here are responsible for creating "Messages of a certain type" that will get sent. You can go here to disable a certain message type, or add an additional event or even set up a new message type.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Site Settings</li>
@@ -30,7 +30,7 @@ taxonomy:
     <li class="last">Rules</li>
 </ul>
 
-<p><a href="https://drupal.org/project/message_notify">Message Notify</a> allows messages to be sent as emails using <a href="https://drupal.org/project/rules">Rules</a>, which Commerce Kickstart happily enables by default. Admittedly, this functionality is a bit hidden from the average user and it's in the long term goals to expose more of this functionality to the user interface in a more understandable way. Until then, please feel free to share your favorite templates and rules for sending out receipts, invoices, etc.</p>
+<p><a href="https://drupal.org/project/message_notify">Message Notify</a> allows messages to be sent as emails using <a href="https://drupal.org/project/rules">Rules</a>, which Commerce Kickstart happily enables by default. Admittedly, this functionality is a bit hidden from the average user, and it's in the long term goals to expose more of this functionality to the user interface in a more understandable way. Until then, please feel free to share your favorite templates and rules for sending out receipts, invoices, etc.</p>
 
 ![Example Rule that sends Message](../images/CK-Email-Notifications-03.png)
 
@@ -90,7 +90,7 @@ taxonomy:
 <p>Signing up for App Keys is a very different process for each service. The trick usually is that you have to declare that you want to create an "app" or a service or something that needs an API access.</p>
 <p><strong>Step 2</strong>: Make sure you provide the correct "Callback URL"</p>
 <p>The other trick is to make sure that you are using the right callback URL. To get the right callback URL, I'd recommend you go ahead and fill out the "App Secret" and "App ID" with a bogus number. The page on admin/structure/oauthconnector/list will then give you the callback URL that you can use to give to the service to get the API credentials.</p>
-<p><strong>Step 3</strong>: Make sure permissions are setup correctly.</p>
+<p><strong>Step 3</strong>: Make sure permissions are set up correctly.</p>
 <p>To allow anonymous users the ability to login using a facebook account, you must give anonymous users the permission to "Connect with [Provider]." So, for example, the permission that you'll want to change for Facebook is "Connect with Facebook."</p>
 <h3>Facebook Graph API</h3>
 <p>In order to access Facebook's Graph API for access to the OAuth Consumer Key and OAuth Consumer Secret we will go to the following URL:</p>

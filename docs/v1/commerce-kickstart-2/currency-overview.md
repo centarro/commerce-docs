@@ -4,10 +4,10 @@ taxonomy:
     category: docs
 ---
 
-<p>There are a lot of topics that you might want to cover for "currency" for Commerce Kickstart 2. For example, when you install, you can pick the default currency, but Drupal Commerce supports <a href="../../user-guide/pricing/#currency-conversion">multiple currencies</a>. But, really, nearly everything that is wired to look pretty in the Demo Store for Kickstart 2 is the same as what Drupal Commerce ships with out of the box:</p>
+<p>There are a lot of topics that you might want to cover for "currency" for Commerce Kickstart 2. For example, when you install, you can pick the default currency, but Drupal Commerce supports <a href="../../user-guide/pricing/#currency-conversion">multiple currencies</a>. But, really, nearly everything that is wired to look pretty in the Demo Store for Kickstart 2 is the same as what Drupal Commerce ships with, out of the box:</p>
 <ul>
 <li><a href="../../user-guide/pricing/#currency-conversion">Currency Conversion</a> - Not only does Commerce support multiple currencies, we support all kinds of currency conversions.</li>
-<li><a href="../../user-guide/pricing/#discounts-and-coupons">Discounts and Coupons</a> - While we still work out the bugs on the Discount module that comes with Kickstart, checkout this resource for creating "Discounts" and "Coupons" the old fashioned way: using Price Calculation Rules.</li>
+<li><a href="../../user-guide/pricing/#discounts-and-coupons">Discounts and Coupons</a> - While we still work out the bugs on the Discount module that comes with Kickstart, checkout this resource for creating "Discounts" and "Coupons" the old-fashioned way: using Price Calculation Rules.</li>
 <li><a href="../../user-guide/pricing/#price-components">Price Components</a> - An important topic to learn is how Drupal Commerce handles the pieces of the puzzle that is "price." Was there a VAT tax applied? Are their discounts? How do we should these different pieces of the final price?</li>
 <li><a href="../../user-guide/pricing/#rules-overview">Rules Overview</a> - The answer to all your Drupal Commerce problems: Rules. For currency, we're definitely going to get into how to use Rules to affect the price of a certain product.</li>
 <li><a href="../../user-guide/pricing/#sell-price-calculation">Sell Price Calculation</a> - Last but certainly not least, we go over Price Calculation at length in this article.</li>

@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-Drupal Commerce has many models and relationships. This page provides explainations as to how these different models related, including entity relationship diagrams.
+Drupal Commerce has many models and relationships. This page provides explanations as to how these different models related, including entity relationship diagrams.
 
 [Full ERD: https://www.dx-experts.nl/blog/2017/commerce-2-entity-relations-including-shipping/](https://www.dx-experts.nl/blog/2017/commerce-2-entity-relations-including-shipping/)
 
@@ -25,7 +25,7 @@ stores and allows one or more stores to be selected.
 
 **Stores** are fieldable content entities (not configuration entities)
 that contain a lot of information about the physical location of the
-merchant. By default stores collect the following:
+merchant. By default, stores collect the following:
 
 -  Name
 -  Email Address

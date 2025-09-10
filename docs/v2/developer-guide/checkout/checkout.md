@@ -12,9 +12,9 @@ taxonomy:
 
 We will learn how to create a custom checkout flow.
 
-Lets create a custom flow and we are going to use it for new orders.
+Let's create a custom flow, and we are going to use it for new orders.
 
-Lets create a module that will do this.
+Let's create a module that will do this.
 
 !!! example
     If you are using [Drupal Console](https://drupalconsole.com/), then you can
@@ -514,7 +514,7 @@ function my_checkout_pane_commerce_checkout_pane_info_alter(&$definitions) {
 }
 ```
 
-Add that code to your custom modules's `.module` file, rebuild caches, and reload your checkout page. It now looks like this:
+Add that code to your custom module's `.module` file, rebuild caches, and reload your checkout page. It now looks like this:
 
 ![Replacing checkout pane 2](../images/replacing_checkout_pane_2.png)
 

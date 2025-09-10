@@ -6,7 +6,7 @@ taxonomy:
 
 Drupal Commerce is constantly evolving, but we're working hard to keep this specification current so it expresses in plain text how the various pieces of Commerce have been structured and how they work together.  This handbook is good for getting a big picture understanding of how we have developed Drupal Commerce and should be a handy reference for writing your own modules to integrate with the core Commerce modules.
 
-Currently the Info hooks and API utilization guides contain the only complete content.  The specification is not a tutorial or guide for new users, nor is it a complete set of API documentation.  We'll post links here to more appropriate resources for those things as they develop.
+Currently, the Info hooks and API utilization guides contain the only complete content.  The specification is not a tutorial or guide for new users, nor is it a complete set of API documentation.  We'll post links here to more appropriate resources for those things as they develop.
 
 <ul>
   <li><a href="#systems">Systems</a></li>
@@ -141,7 +141,7 @@ See commerce_product_reference.module for now.
 
 The product display field (aka 'Add to Cart field') is a fieldAPI field which is used to display a product/products to the end-user, typically as an Add-to-cart form which is displayed on a node.
 
-Typically this field will be used on a node type. For example, a site may have a product node type which includes images, description, and a product display field. The end user will view this node and be able to add a product to the cart.
+Typically, this field will be used on a node type. For example, a site may have a product node type which includes images, description, and a product display field. The end user will view this node and be able to add a product to the cart.
 
 ### Address field (contrib)
 
@@ -257,18 +257,18 @@ The payment method data structure is as follows:
 <li>display_title - the title to display on forms where the payment method is selected and may include HTML for methods that require images and special descriptions; defaults to the title</li>
 <li>short_title - an abbreviated title that may simply include the payment provider’s name as it makes sense to the customer (i.e. you would display PayPal, not PayPal WPS to a customer); also defaults to the title</li>
 <li>description - a translatable description of the payment method, including the nature of the payment and the payment gateway that actually captures the payment</li>
-<li>active - TRUE of FALSE indicating whether or not the default payment method rule configuration for this payment method should be enabled by default</li>
-<li>terminal - TRUE or FALSE indicating whether or not payments can be processed via this payment method through the administrative payment terminal on an order’s Payment tab</li>
-<li>offsite - TRUE or FALSE indicating whether or not the customer must be redirected offsite to put in their payment information; used specifically by the Off-site payment redirect checkout pane</li>
-<li>offsite_autoredirect - TRUE or FALSE indicating whether or not the customer should be automatically redirected to an offsite payment site on the payment step of checkout</li>
+<li>active - TRUE of FALSE indicating whether the default payment method rule configuration for this payment method should be enabled by default</li>
+<li>terminal - TRUE or FALSE indicating whether payments can be processed via this payment method through the administrative payment terminal on an order’s Payment tab</li>
+<li>offsite - TRUE or FALSE indicating whether the customer must be redirected offsite to put in their payment information; used specifically by the Off-site payment redirect checkout pane</li>
+<li>offsite_autoredirect - TRUE or FALSE indicating whether the customer should be automatically redirected to an offsite payment site on the payment step of checkout</li>
 <li>callbacks - an array of callback function names for the various types of callback required for all the payment method operations, arguments per callback in parentheses:
 <ul>
 <li>settings_form - ($settings = NULL) - returns form elements for the payment method’s settings form included as part of the payment method’s enabling action in Rules</li>
 <li>submit_form - ($payment_method, $pane_values, $checkout_pane, $order) - returns form elements to collect details from the customer required to process the payment</li>
-<li>submit_form_validate - ($payment_method, $pane_form, $pane_values, $order, $form_parents = array()) - validates data inputted via the payment details form elements and returns TRUE or FALSE indicating whether or not all the data passed validation</li>
+<li>submit_form_validate - ($payment_method, $pane_form, $pane_values, $order, $form_parents = array()) - validates data inputted via the payment details form elements and returns TRUE or FALSE indicating whether all the data passed validation</li>
 <li>submit_form_submit - ($payment_method, $pane_form, $pane_values, $order, $charge) - processes payment as necessary using data inputted via the payment details form elements on the form, resulting in the creation of a payment transaction</li>
 <li>redirect_form - ($form, &$form_state, $order, $payment_method) - returns form elements that should be submitted to the redirected payment service; because of the array merge that happens upon return, the service’s URL that should receive the POST variables should be set in the #action property of the returned form array</li>
-<li>redirect_form_validate - ($order, $payment_method) - upon return from a redirected payment service, this callback provides the payment method an opportunity to validate any returned data before proceeding to checkout completion; should return TRUE or FALSE indicating whether or not the customer should proceed to checkout completion or go back a step in the checkout process from the payment page</li>
+<li>redirect_form_validate - ($order, $payment_method) - upon return from a redirected payment service, this callback provides the payment method an opportunity to validate any returned data before proceeding to checkout completion; should return TRUE or FALSE indicating whether the customer should proceed to checkout completion or go back a step in the checkout process from the payment page</li>
 <li>redirect_form_submit - ($order, $payment_method) - upon return from a redirected payment service, this callback provides the payment method an opportunity to perform any submission functions necessary before the customer is redirected to checkout completion</li>
 </ul></li>
 <li>file - the filepath of an include file relative to the method's module containing the callback functions for this method, allowing modules to store payment method code in include files that only get loaded when necessary (like the menu item file property)</li>
@@ -301,7 +301,7 @@ The method_id of a payment method is referred to as $method_id.
 
 The Payment module uses this hook to gather information on payment transaction statuses defined by enabled modules.  A payment transaction represents any attempted payment via a payment method and includes a variety of properties used for tracking the amount, outcome, and parameters of the transaction.  One of these is the transaction’s local status, not to be confused with its remote_status that stores the exact status of the transaction at the payment provider.
 
-Transaction statuses are used to visually represent in the order’s Payment tab whether or not the payment should be considered a success (meaning money was actually collected) and are accordingly considered when calculating the remaining balance of an order.  Because payment statuses are critical functionality components, the default statuses listed below are actually defined in the function used to load all payment transaction statuses:
+Transaction statuses are used to visually represent in the order’s Payment tab whether the payment should be considered a success (meaning money was actually collected) and are accordingly considered when calculating the remaining balance of an order.  Because payment statuses are critical functionality components, the default statuses listed below are actually defined in the function used to load all payment transaction statuses:
 
 <ul>
 <li>Pending - further action is required to determine if the attempted payment was a success or failure; used for payment methods like e-checks that may require time to clear or credit card authorizations that haven’t been captured yet</li>
@@ -317,7 +317,7 @@ The payment transaction status data structure is as follows:
 <li><em>status</em> - string identifying the transaction status, lowercase using alphanumerics, -, and _</li>
 <li>title - the translatable title of the transaction status, used in administrative interfaces</li>
 <li>icon - the path to the status’s icon relative to the Drupal root directory</li>
-<li>total - TRUE or FALSE indicating whether or not transactions in this status should be totaled to determine the balance of an order</li>
+<li>total - TRUE or FALSE indicating whether transactions in this status should be totaled to determine the balance of an order</li>
 </ul>
 
 !!! example "Example payment transaction status definition"
@@ -349,7 +349,7 @@ The status of a payment transaction status is referred to as $status.
 <a id="checkout-page"> </a>
 <h3>hook_commerce_checkout_page_info()</h3>
 
-The Checkout module uses this hook to collect information on all the available pages in the checkout process.  The checkout form is not a true multi-step form in the Drupal sense, but it does use a series of connected menu items and the same form builder function to present the contents of each checkout page.  Furthermore, as the customer progresses through checkout, their order’s status will be updated to reflect their current step in checkout.
+The Checkout module uses this hook to collect information on all the available pages in the checkout process.  The checkout form is not a true multistep form in the Drupal sense, but it does use a series of connected menu items and the same form builder function to present the contents of each checkout page.  Furthermore, as the customer progresses through checkout, their order’s status will be updated to reflect their current step in checkout.
 
 The Checkout module defines several checkout pages in its own implementation of this hook, commerce_checkout_commerce_checkout_page_info():
 
@@ -374,8 +374,8 @@ The full list of properties is as follows:
 <li>name - the translatable name of the page, used in administrative displays and the page’s corresponding order status; if not specified, defaults to the title</li>
 <li>help - the translatable help text displayed in a .checkout-help div at the top of the checkout page (defined as part of the form array, not displayed via hook_help())</li>
 <li>weight - integer weight of the page used for determining the page order; populated automatically if not specified</li>
-<li>status_cart - TRUE or FALSE indicating whether or not this page’s corresponding order status should be considered a shopping cart order status (this is necessary because the shopping cart module relies on order status to identify the user’s current shopping cart); defaults to TRUE</li>
-<li>buttons - TRUE or FALSE indicating whether or not the checkout page should have buttons for continuing and going back in the checkout process; defaults to TRUE</li>
+<li>status_cart - TRUE or FALSE indicating whether this page’s corresponding order status should be considered a shopping cart order status (this is necessary because the shopping cart module relies on order status to identify the user’s current shopping cart); defaults to TRUE</li>
+<li>buttons - TRUE or FALSE indicating whether the checkout page should have buttons for continuing and going back in the checkout process; defaults to TRUE</li>
 <li>back_value - the translatable value of the submit button used for going back in the checkout process; defaults to ‘Back’</li>
 <li>submit_value - the translatable value of the submit button used for going forward in the checkout process; defaults to ‘Continue’</li>
 <li>prev_page - the page_id of the previous page in the checkout process; should not be set by the hook but will be populated automatically when the page is loaded</li>
@@ -430,11 +430,11 @@ The checkout pane array contains properties that directly affect the pane’s fi
 <li>title - the translatable title used for this checkout pane as the fieldset title in checkout</li>
 <li>name - the translatable name of the pane, used in administrative displays; if not specified, defaults to the title</li>
 <li>page - the page_id of the checkout page the pane should appear on by default; defaults to ‘checkout’</li>
-<li>collapsible - TRUE or FALSE indicating whether or not the checkout pane’s fieldset should be collapsible; defaults to FALSE</li>
-<li>collapsed - TRUE or FALSE indicating whether or not the checkout pane’s fieldset should be collapsed by default; defaults to FALSE</li>
+<li>collapsible - TRUE or FALSE indicating whether the checkout pane’s fieldset should be collapsible; defaults to FALSE</li>
+<li>collapsed - TRUE or FALSE indicating whether the checkout pane’s fieldset should be collapsed by default; defaults to FALSE</li>
 <li>weight - integer weight of the page used for determining the page order; defaults to 0</li>
-<li>enabled - TRUE or FALSE indicating whether or not the pane is enabled by default; defaults to TRUE</li>
-<li>review - TRUE or FALSE indicating whether or not the pane should be included in the review checkout pane; defaults to TRUE</li>
+<li>enabled - TRUE or FALSE indicating whether the pane is enabled by default; defaults to TRUE</li>
+<li>review - TRUE or FALSE indicating whether the pane should be included in the review checkout pane; defaults to TRUE</li>
 <li>module - the name of the module that defined the pane; should not be set by the hook but will be populated automatically when the pane is loaded</li>
 <li>file - the filepath of an include file relative to the pane’s module containing the callback functions for this pane, allowing modules to store checkout pane code in include files that only get loaded when necessary (like the menu item file property)</li>
 <li>base - string used as the base for the magically constructed callback names, each of which will be defaulted to [base]_[callback] unless explicitly set; defaults to the pane_id</li>
@@ -442,7 +442,7 @@ The checkout pane array contains properties that directly affect the pane’s fi
 <ul>
 <li>settings_form - ($checkout_pane) - returns form elements for the pane’s settings form</li>
 <li>checkout_form - ($form, &$form_state, $checkout_pane, $order) - returns form elements for the pane’s checkout form fieldset</li>
-<li>checkout_form_validate - ($form, &$form_state, $checkout_pane, $order) - validates data inputted via the pane’s elements on the checkout form and returns TRUE or FALSE indicating whether or not all the data passed validation</li>
+<li>checkout_form_validate - ($form, &$form_state, $checkout_pane, $order) - validates data inputted via the pane’s elements on the checkout form and returns TRUE or FALSE indicating whether all the data passed validation</li>
 <li>checkout_form_submit - ($form, &$form_state, $checkout_pane, $order) - processes data inputted via the pane’s elements on the checkout form, often updating parts of the order object based on the data</li>
 <li>review - ($form, $form_state, $checkout_pane, $order) - returns data used in the construction of the Review checkout pane</li>
 </ul></li>
@@ -487,7 +487,7 @@ The full list of properties for a profile type is as follows:
 <li>name - the translatable name of the profile type, used as the title of the corresponding checkout pane</li>
 <li>description - a translatable description of the intended use of data contained in this type of customer information profile</li>
 <li>help - a translatable help message to be displayed at the top of the administrative add / edit form for profiles of this type</li>
-<li>addressfield - boolean indicating whether or not the profile type should have a default address field; defaults to TRUE</li>
+<li>addressfield - boolean indicating whether the profile type should have a default address field; defaults to TRUE</li>
 <li>module - the name of the module that defined the profile type; should not be set by the hook but will be populated automatically when the pane is loaded</li>
 </ul>
 
@@ -529,7 +529,7 @@ The full list of properties for a line item type is as follows (callback propert
 <li><em>type</em> - string identifying the line item type, lowercase using alphanumerics, -, and _</li>
 <li>name - the translatable name of the line item type, used in administrative interfaces including the “Add line item” form on the order edit page</li>
 <li>description - a translatable description of the intended use of line items of this type</li>
-<li>product - boolean indicating whether or not this line item type can be used as a product line item type in interfaces like the Add to Cart form</li>
+<li>product - boolean indicating whether this line item type can be used as a product line item type in interfaces like the Add to Cart form</li>
 <li>add_form_submit_value - the translatable value of the submit button used for adding the line item</li>
 <li>base - string used as the base for the magically constructed callback names, each of which will be defaulted to [base]_[callback] unless explicitly set; defaults to the type</li>
 <li>callbacks - an array of callback function names for the various types of callback required for all the line item type operations, arguments per callback in parentheses:
@@ -649,7 +649,7 @@ The order status data structure is as follows:
 <li><em>name</em> - string identifying the order status, lowercase using alphanumerics, -, and _</li>
 <li>title - the translatable title of the order status, used in administrative interfaces</li>
 <li>state - the name of the order state the order status belongs to</li>
-<li>cart - TRUE or FALSE indicating whether or not orders with this status should be considered shopping cart orders</li>
+<li>cart - TRUE or FALSE indicating whether orders with this status should be considered shopping cart orders</li>
 <li>weight - integer weight of the state used for determining the status order; defaults to 0</li>
 <li>status - TRUE or FALSE indicating the enabled status of this order status, with disabled statuses not being available for use; defaults to TRUE</li>
 </ul>
