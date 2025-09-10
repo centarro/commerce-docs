@@ -10,7 +10,7 @@ taxonomy:
 
 ## Rich Email Notifications
 
-<p>The Commerce Kickstart team decided early on that the current implementation rich HTML email notifications was a clear necessity and the existing solutions didn't match some of the biggest concerns. To handle the email notifications, Commerce Kickstart has integrated the <a href="http://drupal.org/project/message">Messages</a> module and the <a href="http://drupal.org/project/mimemail">Mime</a> mail module.</p>
+<p>The Commerce Kickstart team decided early on that the current implementation rich HTML email notifications was a clear necessity and the existing solutions didn't match some of the biggest concerns. To handle the email notifications, Commerce Kickstart has integrated the <a href="https://drupal.org/project/message">Messages</a> module and the <a href="https://drupal.org/project/mimemail">Mime</a> mail module.</p>
 <p>To edit the various templates that come standard with Kickstart, you simply need to go to <strong>Site Settings &gt; Advanced Settings &gt; Structure &gt; Message Types</strong></p>
 
 ![Message Types Overview](../images/CK-Email-Notifications-01.png)
@@ -30,13 +30,13 @@ taxonomy:
     <li class="last">Rules</li>
 </ul>
 
-<p><a href="http://drupal.org/project/message_notify">Message Notify</a> allows messages to be sent as emails using <a href="http://drupal.org/project/rules">Rules</a>, which Commerce Kickstart happily enables by default. Admittedly, this functionality is a bit hidden from the average user and it's in the long term goals to expose more of this functionality to the user interface in a more understandable way. Until then, please feel free to share your favorite templates and rules for sending out receipts, invoices, etc.</p>
+<p><a href="https://drupal.org/project/message_notify">Message Notify</a> allows messages to be sent as emails using <a href="https://drupal.org/project/rules">Rules</a>, which Commerce Kickstart happily enables by default. Admittedly, this functionality is a bit hidden from the average user and it's in the long term goals to expose more of this functionality to the user interface in a more understandable way. Until then, please feel free to share your favorite templates and rules for sending out receipts, invoices, etc.</p>
 
 ![Example Rule that sends Message](../images/CK-Email-Notifications-03.png)
 
 **Example Rule**
 
-<p>Here is an example rule that demonstrates a message of a certain type being created and then sent via <a href="http://drupal.org/project/message_notify">Message Notify</a>.</p>
+<p>Here is an example rule that demonstrates a message of a certain type being created and then sent via <a href="https://drupal.org/project/message_notify">Message Notify</a>.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Site Settings</li>
@@ -54,7 +54,7 @@ taxonomy:
 
 <ul>
 <li><strong>Taxonomy Organization</strong>: The menu, the view, and the nodes all use taxonomy as the underlying technology to create "catalog pages." If you think about a paper catalog, this categorization is a very common and easy to understand decision.</li>
-<li><strong>Taxonomy Menu</strong>: The Menu at the top of the page for both the demo and non-demo installation is a generated menu using <a href="http://drupal.org/project/taxonomy_menu">Taxonomy Menu</a> and a custom module that comes with Kickstart, called "Commerce Kickstart Taxonomy" that modifies some of the way the menu is generated and comes with the default view.</li>
+<li><strong>Taxonomy Menu</strong>: The Menu at the top of the page for both the demo and non-demo installation is a generated menu using <a href="https://drupal.org/project/taxonomy_menu">Taxonomy Menu</a> and a custom module that comes with Kickstart, called "Commerce Kickstart Taxonomy" that modifies some of the way the menu is generated and comes with the default view.</li>
 <li><strong>Search API</strong>: We use Search API to power the Views that show the catalog pages and the "All Products" view that shows you how to use the setup and working faceted search.</li>
 <li><strong>Views</strong>: There are a number of views that are running the catalog system. The primary view that handles the category pages grabs the taxonomy term from the URL and uses that to narrow down the list of available products. We are using item-level grouping, not aggregation.</li>
 <li><strong>Rendered Nodes, not Product Entities</strong>: For each product listed on the pages, we are rendering the product display, not the product variation. This is an architectural decision that has significant ramifications on how your site is built. Doing it this way is likely (maybe 80% of the time) the best way for your site, but there are other ways of showing products and there images / add to cart forms.</li>
@@ -68,7 +68,7 @@ taxonomy:
 
 ![Social Login Example](../images/social-login-screenshot.png)
 
-<p>This documentation page was recently featured on the Commerce Kickstart Tip series. To see the blog post that featured this process, <a href="http://www.drupalcommerce.org/blog/4571/kickstart-tip-extend-your-site-social-logins">click here</a>.</p>
+<p>This documentation page was recently featured on the Commerce Kickstart Tip series. To see the blog post that featured this process, <a href="https://www.drupalcommerce.org/blog/4571/kickstart-tip-extend-your-site-social-logins">click here</a>.</p>
 
 <h3>Overview of Setup</h3>
 
@@ -85,7 +85,7 @@ taxonomy:
 * Twitter: <https://developer.twitter.com/en/docs/authentication/guides/log-in-with-twitter>
 * Google: <https://code.google.com/apis/console>
 * LinkedIn: <https://www.linkedin.com/secure/developer>
-* Flickr: <http://www.flickr.com/services>
+* Flickr: <https://www.flickr.com/services>
 
 <p>Signing up for App Keys is a very different process for each service. The trick usually is that you have to declare that you want to create an "app" or a service or something that needs an API access.</p>
 <p><strong>Step 2</strong>: Make sure you provide the correct "Callback URL"</p>

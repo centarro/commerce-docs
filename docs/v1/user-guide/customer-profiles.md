@@ -68,7 +68,7 @@ the newly created customer profile and save it to view the resulting message.</p
 
 **Add a Field**
 
-<p>Just like any other Drupal interface, you can add any fields you would like to your customer profiles. For this example, we're just going to use the built-in text field, but you could add the <a href="http://drupal.org/project/phone">phone field module</a> and have access to phone number validation.</p>
+<p>Just like any other Drupal interface, you can add any fields you would like to your customer profiles. For this example, we're just going to use the built-in text field, but you could add the <a href="https://drupal.org/project/phone">phone field module</a> and have access to phone number validation.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>

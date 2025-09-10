@@ -22,4 +22,4 @@ taxonomy:
 [Developer Guide]: /v1/developer-guide/getting-started
 [Commerce Kickstart 2]: /v1/commerce-kickstart-2
 [Commerce Cookbook]: https://drupalcommerce.org/site-builders-guide
-[API Documentation]: http://api.drupalcommerce.org/
+[API Documentation]: https://api.drupalcommerce.org/

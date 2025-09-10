@@ -6,7 +6,7 @@ taxonomy:
 
 ## Before you begin
 
-If you are not familiar with using [Composer to manage Drupal dependencies](https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal){target=_blank}, read [Using Composer with Drupal](./getting-started.md#using-composer) before continuing. Since you are already using the command line, we recommend you use [Drush](http://www.drush.org/){target=_blank} or [Drupal console](https://drupalconsole.com/){target=_blank} for various site management operations.
+If you are not familiar with using [Composer to manage Drupal dependencies](https://www.drupal.org/docs/develop/using-composer/using-composer-with-drupal){target=_blank}, read [Using Composer with Drupal](./getting-started.md#using-composer) before continuing. Since you are already using the command line, we recommend you use [Drush](https://www.drush.org/){target=_blank} or [Drupal console](https://drupalconsole.com/){target=_blank} for various site management operations.
 
 If you want to avoid using Composer for site management, the [Ludwig module](https://www.drupal.org/project/ludwig){target=_blank} offers a manual alternative to Composer. In the [Installing section](#installation), we document Ludwig installation; however, most of the documentation assumes that you will be using Composer to manage your site. If you do decide to use Ludwig instead of Composer, please be aware that updating and maintaining your site will be more difficult. Site administrators using Ludwig need to be careful when combining modules that depend on external libraries, since there are no safeguards against incompatible library versions or overlapping requirements.
 
@@ -25,7 +25,7 @@ If you want to avoid using Composer for site management, the [Ludwig module](htt
 
 !!! info "PHP requirements"
 
-    - Drupal Commerce requires that you have the [bcmath](http://php.net/manual/en/intro.bc.php){target=_blank} extension installed.
+    - Drupal Commerce requires that you have the [bcmath](https://php.net/manual/en/intro.bc.php){target=_blank} extension installed.
 
     - If you are using Drupal VM, add the following to your configuration (change PHP version number if needed).
 
@@ -174,7 +174,7 @@ In subsequent sections it is assumed that you are using Composer to manage your 
  ```
 
  When the project successfully starts, you will be given the address for your
- new site. For example: `http://mystore.ddev.local:8080`. Copy and paste your
+ new site. For example: `https://mystore.ddev.local:8080`. Copy and paste your
  site address into a browser.
 
 #### Install Drupal 8
@@ -490,14 +490,14 @@ composer update drupal/commerce
  [Concept: Data Backups documentation]: https://www.drupal.org/docs/user_guide/en/prevent-backups.html
  [Drupal 8’s requirements]: https://www.drupal.org/requirements
  [DDEV]: https://ddev.readthedocs.io/
- [Drupal VM]: http://www.drupalvm.com/
+ [Drupal VM]: https://www.drupalvm.com/
  [Composer]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
  [Drupal's configuration management system]: https://www.drupal.org/docs/8/configuration-management/managing-your-sites-configuration
  [Drupal VM documentation]: https://github.com/geerlingguy/drupal-vm/search?q=bcmath&type=Issues
  [Drupal Console]: https://drupalconsole.com
  [project-base README]: https://github.com/drupalcommerce/project-base/blob/8.x/README.md
  [PHPUnit]: https://www.drupal.org/docs/8/phpunit/running-phpunit-tests
- [Behat]: http://docs.behat.org/en/latest/
+ [Behat]: https://docs.behat.org/en/latest/
  [these instructions]: https://github.com/drupal-composer/drupal-project/issues/64#issuecomment-206455356
  [Composer template for Drupal projects README]: https://github.com/drupal-composer/drupal-project/blob/8.x/README.md
  [Ludwig module]: https://www.drupal.org/project/ludwig

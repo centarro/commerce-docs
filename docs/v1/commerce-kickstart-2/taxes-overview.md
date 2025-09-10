@@ -34,6 +34,6 @@ taxonomy:
 
 Here are two screencasts, the first on basic taxes and the second on conditional taxes.
 
-<iframe src="http://player.vimeo.com/video/22096163" width="640" height="480" frameborder="0"></iframe><p><a href="http://vimeo.com/22096163">Drupal Commerce Tax Introduction: Sales Tax and VAT</a> from <a href="http://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/22096163" width="640" height="480" frameborder="0"></iframe><p><a href="https://vimeo.com/22096163">Drupal Commerce Tax Introduction: Sales Tax and VAT</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-<iframe src="http://player.vimeo.com/video/22323135" width="640" height="480" frameborder="0"></iframe><p><a href="http://vimeo.com/22323135">Drupal Commerce Conditional Sales Tax</a> from <a href="http://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/22323135" width="640" height="480" frameborder="0"></iframe><p><a href="https://vimeo.com/22323135">Drupal Commerce Conditional Sales Tax</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>

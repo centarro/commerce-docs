@@ -164,7 +164,7 @@ This checkout pane displays a simple checkout completion message that links to t
 
 **Configure Action**
 
-<p>This is the straightforward email action page. This replaces the .tpl for ubercart, which means only plain text emails are possible. If you want HTML emails, we recommend <a href="http://drupal.org/project/mimemail">Mime Mail</a> for Drupal (it's designed to work within Rules very well).</p>
+<p>This is the straightforward email action page. This replaces the .tpl for ubercart, which means only plain text emails are possible. If you want HTML emails, we recommend <a href="https://drupal.org/project/mimemail">Mime Mail</a> for Drupal (it's designed to work within Rules very well).</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -304,14 +304,14 @@ This checkout pane displays a simple checkout completion message that links to t
 <h3>How does checking out work with address information?</h3>
 
 <p>Customer information collected for orders on separate entities called customer profiles that are associated with the order through customer profile reference fields. By default the Billing information customer profile type just includes an address field, but it can be edited through the field interface to include any additional fields you require. These fields will automatically be visible on the related checkout pane for the customer profile.</p>
-<p>Some modules define additional customer profile types, such as the Shipping information customer profile type defined in the <a href="http://drupal.org/project/commerce_shipping">Commerce Shipping</a> module.</p>
-<p>During a default checkout process, customers cannot reuse previously created customer profiles. A new customer profile will be saved each time, though modules like <a href="http://drupal.org/project/commerce_addressbook">Commerce Addressbook</a> bring simple and elegant solutions to help save your customers time.</p>
+<p>Some modules define additional customer profile types, such as the Shipping information customer profile type defined in the <a href="https://drupal.org/project/commerce_shipping">Commerce Shipping</a> module.</p>
+<p>During a default checkout process, customers cannot reuse previously created customer profiles. A new customer profile will be saved each time, though modules like <a href="https://drupal.org/project/commerce_addressbook">Commerce Addressbook</a> bring simple and elegant solutions to help save your customers time.</p>
 
 ## Drupal Commerce Extra Panes
 
 The module for extra panes can be found here:
 
-<ul><li><a href="http://drupal.org/project/commerce_extra_panes">http://drupal.org/project/commerce_extra_panes</a></li></ul>
+<ul><li><a href="https://drupal.org/project/commerce_extra_panes">https://drupal.org/project/commerce_extra_panes</a></li></ul>
 
 Then you can configure an extra pane for the checkout process at:
 admin/commerce/config/checkout/extra

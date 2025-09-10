@@ -59,12 +59,12 @@ taxonomy:
 <p><code>sudo date 04231237</code></p>
 <p>Don't forget to change the time back. Changing it like this makes a big mess of things.<br><code>sudo ntpdate pool.ntp.org</code></p>
 
-<iframe src="https://player.vimeo.com/video/22619046?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="http://vimeo.com/22619046">Drupal Commerce Date-Based Discounts</a> from <a href="http://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/22619046?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="https://vimeo.com/22619046">Drupal Commerce Date-Based Discounts</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 <h3>Adding a Taxonomy Term To Drive Discounts</h3>
 
 <p>Now we're going to go much farther. We'll add a taxonomy term to our product entity to determine which sale events it should be subject to, and <em>also</em> add a date range.</p>
-<p>There is a rather major complexity in this one. Rules does not have the ability currently to follow references (like product references and term references) very well, so we have to jump through some hoops to get access to them. It is do-able, but a bit mind-bending. We hope to see <a href="http://drupal.org/node/1053850">the rules issue relating to this</a> land soon, but for now we have to use the tools we have.</p>
+<p>There is a rather major complexity in this one. Rules does not have the ability currently to follow references (like product references and term references) very well, so we have to jump through some hoops to get access to them. It is do-able, but a bit mind-bending. We hope to see <a href="https://drupal.org/node/1053850">the rules issue relating to this</a> land soon, but for now we have to use the tools we have.</p>
 
 <ol>
   <li>Add a taxonomy vocabulary called "Sales Events"</li>
@@ -127,7 +127,7 @@ taxonomy:
   </li>
 </ol>
 
-<iframe src="https://player.vimeo.com/video/22625018?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="http://vimeo.com/22625018">Drupal Commerce Complex Pricing Rules</a> from <a href="http://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/22625018?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="https://vimeo.com/22625018">Drupal Commerce Complex Pricing Rules</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 
 ## Currency Conversion
@@ -135,8 +135,8 @@ taxonomy:
 <p>Let's face it, the internet doesn't just sell to our neighbors down the street, it can literally connect you to the whole world. Last we checked, there are hundreds of currencies and thousands of countries. It's hard to address them all. We've provided the framework for simplified currency conversion in Drupal Commerce core. But we've also built a framework that has already enabled lots of solutions to popup on drupal.org as free currency conversion solutions.</p>
 <p>In the next section we outline how one might convert currencies using only Drupal Commerce, but we admit plainly that this has a very limited use-case. The exercise is intended to teach you how to deal with the pricing rules that every major ecommerce shop is going to use. Directly below, we've listed a few other options you have available to meet your currency conversion requirements:</p>
 
-* [Commerce Multicurrency](http://drupal.org/project/commerce_multicurrency)
-* [Multicurrency](http://commerceguys.com/blog/commerce-module-tuesday-commerce-multicurrency)
+* [Commerce Multicurrency](https://drupal.org/project/commerce_multicurrency)
+* [Multicurrency](https://commerceguys.com/blog/commerce-module-tuesday-commerce-multicurrency)
 * [Currency Info Hooks](../../developer-guide/core-architecture/#info-hooks)
 
 <h3>Enable Multiple Currencies</h3>
@@ -301,7 +301,7 @@ rate.
  
 **Doing the Exchange**
 
-If you had 1 US dollar, how much would that equal in your other currency? It changes, but for our exercise we're going to assume a static number works for us. (Dynamic currency conversion is possible with <a href="http://drupal.org/project/commerce_multicurrency">Commerce Multicurrency</a>).
+If you had 1 US dollar, how much would that equal in your other currency? It changes, but for our exercise we're going to assume a static number works for us. (Dynamic currency conversion is possible with <a href="https://drupal.org/project/commerce_multicurrency">Commerce Multicurrency</a>).
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -365,7 +365,7 @@ We have not modified any of the products prices, but we have successfully conver
 <p>The core product pricing system is great for flat / percentage discounts of products on the site and for alternate price lists. Special offers, such as "Buy one get one free," are not supported in Drupal Commerce core. They depend on the creation and management of alternate line items (e.g. one line item for the paid product and another for the free product).</p>
 <p>Drupal Commerce's sell price pre-calculation mechanism limits what types of data you can access in the conditions and actions of product pricing rules. Very few sites actually make use of this functionality, but the gist of it is your conditions cannot use data specific to the product (i.e. product type or SKU) and your actions can only use data specific to the product (i.e. not the day of the week or user roles).</p>
 <p>Even with those limitations, it is still possible to create quite complex pricing scenarios. One Drupal Commerce site currently uses approximately 1500+ Rules!</p>
-<p><strong>Note about Coupons.</strong> Using Drupal Commerce Core, it is very possible to allow users to add coupons via line item (when someone clicks an add to cart link) or via Checkout. To do the checkout method, you can follow the same principles as outlined in our "Simple Coupon" exercise, however you will need to add the field to your Order type via code and expose it on the checkout pane using <a href="http://drupal.org/project/commerce_fieldgroup_panes">Commerce Fieldgroup Panes</a>.</p>
+<p><strong>Note about Coupons.</strong> Using Drupal Commerce Core, it is very possible to allow users to add coupons via line item (when someone clicks an add to cart link) or via Checkout. To do the checkout method, you can follow the same principles as outlined in our "Simple Coupon" exercise, however you will need to add the field to your Order type via code and expose it on the checkout pane using <a href="https://drupal.org/project/commerce_fieldgroup_panes">Commerce Fieldgroup Panes</a>.</p>
 
 <h3>Administrator's Special</h3>
 
@@ -416,7 +416,7 @@ Add field to Line Item
 
 **Add Field**
 
-We're adding a text field in the manage fields screen for our custom line type. If you want to be able to create unique line item types, there is a great contributed module for that called: <a href="http://drupal.org/project/commerce_custom_product">Commerce Customizable Products</a>.
+We're adding a text field in the manage fields screen for our custom line type. If you want to be able to create unique line item types, there is a great contributed module for that called: <a href="https://drupal.org/project/commerce_custom_product">Commerce Customizable Products</a>.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -778,12 +778,12 @@ When you are setting the actual math part of the discount, we chose to simply mu
 <p>There are also a lot of videos regarding Rules and Drupal Commerce that the Commerce Guys have put out there.</p>
 
 <ul>
-<li><a href="http://vimeo.com/22625018">Drupal Commerce Complex Pricing Rules</a></li>
-<li><a href="http://vimeo.com/35719774">Removing Items From the Cart Using Rules</a></li>
-<li><a href="http://vimeo.com/32816741">Shipping Discount for Item in Cart using Calculation Rules</a></li>
-<li><a href="http://vimeo.com/26884701">The Power of Rules with Views Bulk Operations (and Commerce)</a></li>
-<li><a href="http://vimeo.com/26881784">Commerce, Rules, and Stock: Demonstrating the Power of Rules</a></li>
-<li><a href="http://vimeo.com/22625018">Drupal Commerce Complex Pricing Rules</a></li>
+<li><a href="https://vimeo.com/22625018">Drupal Commerce Complex Pricing Rules</a></li>
+<li><a href="https://vimeo.com/35719774">Removing Items From the Cart Using Rules</a></li>
+<li><a href="https://vimeo.com/32816741">Shipping Discount for Item in Cart using Calculation Rules</a></li>
+<li><a href="https://vimeo.com/26884701">The Power of Rules with Views Bulk Operations (and Commerce)</a></li>
+<li><a href="https://vimeo.com/26881784">Commerce, Rules, and Stock: Demonstrating the Power of Rules</a></li>
+<li><a href="https://vimeo.com/22625018">Drupal Commerce Complex Pricing Rules</a></li>
 </ul>
 
 <h3>Third-Party Tutorials about Rules</h3>
@@ -791,9 +791,9 @@ When you are setting the actual math part of the discount, we chose to simply mu
 <p>You know something can be pretty complicated (but totally worth the effort) when the whole community comes together to help spread the word on how to work with it. We have below a number of resources that should help you learn Rules better (the core of Drupal Commerce Pricing).</p>
 
 <ul>
-  <li><a href="http://drupalize.me/series/coding-rules">Drupalize.me "Coding for Rules"</a></li>
-  <li><a href="http://drupal.org/files/tiny-book-of-rules.pdf">The Tiny Book of Rules</a> - a condensed introduction to Rules.</li>
-  <li><a href="http://drupal.org/node/1580776">Chapter 12</a> - the online version of <strong>Drupal 7 – The Essentials</strong></li>
+  <li><a href="https://drupalize.me/series/coding-rules">Drupalize.me "Coding for Rules"</a></li>
+  <li><a href="https://drupal.org/files/tiny-book-of-rules.pdf">The Tiny Book of Rules</a> - a condensed introduction to Rules.</li>
+  <li><a href="https://drupal.org/node/1580776">Chapter 12</a> - the online version of <strong>Drupal 7 – The Essentials</strong></li>
 </ul>
 
 <h3>Commerce Rules Contributions</h3>
@@ -801,10 +801,10 @@ When you are setting the actual math part of the discount, we chose to simply mu
 <p>Rules is a very extensible platform. There are a number of user contributed modules that can add additional functionality if needed.</p>
 
 <ul>
-<li><a href="http://drupal.org/project/commerce_conditions">Commerce Extra Rules Conditions</a> - lots of extra conditions in this one.</li>
-<li><a href="http://drupal.org/project/commerce_cart_expiration">Commerce Cart Expiration</a> - manipulate your cart using rules</li>
-<li><a href="http://drupal.org/project/commerce_dispatch">Commerce Dispatch</a> - shipping actions</li>
-<li><a href="http://drupal.org/project/commerce_price_components">Commerce Price Components</a> - use price components in conditions</li>
+<li><a href="https://drupal.org/project/commerce_conditions">Commerce Extra Rules Conditions</a> - lots of extra conditions in this one.</li>
+<li><a href="https://drupal.org/project/commerce_cart_expiration">Commerce Cart Expiration</a> - manipulate your cart using rules</li>
+<li><a href="https://drupal.org/project/commerce_dispatch">Commerce Dispatch</a> - shipping actions</li>
+<li><a href="https://drupal.org/project/commerce_price_components">Commerce Price Components</a> - use price components in conditions</li>
 </ul>
 
 
@@ -830,8 +830,8 @@ When you are setting the actual math part of the discount, we chose to simply mu
     <li>The final unit price of the line item becomes the sell price of the product displayed on product pages and Views.</li>
 </ol>
 
-<p>See a <a href="http://bit.ly/cgprezi-price-calculation">Prezi slideshow visualizing the process</a>.</p>
-<p><a title="Sell Price Calculation" href="http://prezi.com/e7mfg8u5qldv/sell-price-calculation/">Sell Price Calculation</a> on <a href="http://prezi.com">Prezi</a></p>
+<p>See a <a href="https://bit.ly/cgprezi-price-calculation">Prezi slideshow visualizing the process</a>.</p>
+<p><a title="Sell Price Calculation" href="https://prezi.com/e7mfg8u5qldv/sell-price-calculation/">Sell Price Calculation</a> on <a href="https://prezi.com">Prezi</a></p>
 
 <p>Sell price calculations can include discounts, taxes, currency conversion, and more. Each manipulation of the price is tracked as a price component in the price field’s data array, so you can see exactly what happened to result in a particular sell price at the end of the process. You can even set the Display of any price field to show all components. This is handy for showing a user that you are giving them a discount.</p>
 <p>The actions for manipulating unit prices include:</p>
@@ -846,7 +846,7 @@ When you are setting the actual math part of the discount, we chose to simply mu
     <li>Subtract an amount from the unit price</li>
 </ul>
 
-<p>When configuring each action, you can specify the type of price component to use. If you need additional component types for the site (more than addition/subtract, divide/multiply, etc), you currently have to write them into a module. Not sure how to create your own price component? Look into <a href="http://drupalize.me/series/coding-rules">Drupalize.me's Coding for Rules videos</a>; they are a free and well-produced series of videos!</p>
+<p>When configuring each action, you can specify the type of price component to use. If you need additional component types for the site (more than addition/subtract, divide/multiply, etc), you currently have to write them into a module. Not sure how to create your own price component? Look into <a href="https://drupalize.me/series/coding-rules">Drupalize.me's Coding for Rules videos</a>; they are a free and well-produced series of videos!</p>
 <h2 id="adminspecial">Administrator's Special</h2>
 <p>We are going to learn the sell price calculation process by setting up a conditional discount for our administrators. We will use a condition to apply a 50% discount for any user with the role "Administrator" and show the price with components.</p>
 <p>Our base price: $30</p>

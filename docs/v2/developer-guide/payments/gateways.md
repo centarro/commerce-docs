@@ -63,7 +63,7 @@ If you create your own payment gateway module or find one that's not in this lis
 
     | Project page | <h4>[Affirm] :fontawesome-solid-share-from-square:</h4>|
     | ----------- | ------------------------------- |
-    | **Description** | Provides Integration with the Affirm Payment Gateway and Drupal Commerce (http://www.affirm.com). |
+    | **Description** | Provides Integration with the Affirm Payment Gateway and Drupal Commerce (https://www.affirm.com). |
     | **Type** | Off site |
     | **Currencies** | 100+ currencies  |
 
@@ -305,7 +305,7 @@ If you create your own payment gateway module or find one that's not in this lis
 
 ??? simple-card "[Epaybg]"
 
-    | **Description** | Bulgarian payments gateway http://epay.bg for Commerce module. |
+    | **Description** | Bulgarian payments gateway https://epay.bg for Commerce module. |
     | --- | --- |
     | **Type** | Off site |
 

@@ -26,7 +26,7 @@ The Commerce Recurring module provides a variety of options for creating subscri
  * from September 13th 03:00:00 to September 14th 03:00:00 (daily)
  * from June 10th 02:30:00 to June 10th 14:30:00 (every 12 hours)
 
-Billing periods are contiguous and represent [half-open ranges](http://wrschneider.github.io/2014/01/07/time-intervals-and-other-ranges-should.html) (i.e., the end date is not included in the duration).
+Billing periods are contiguous and represent [half-open ranges](https://wrschneider.github.io/2014/01/07/time-intervals-and-other-ranges-should.html) (i.e., the end date is not included in the duration).
 
 **How is a customer charged "repeatedly"?** The Commerce Recurring module relies on the Drupal's [Cron service](https://api.drupal.org/api/drupal/core%21core.api.php/function/hook_cron/8.5.x) and the [AdvancedQueue module](https://www.drupal.org/project/advancedqueue) to run recurring tasks in the background. Specifically, at the end of each billing period, one AdvancedQueue job is created for charging the customer for the current billing period, and a second AdvancedQueue job is created for renewing the subscription. See [Close and renew subscriptions](../subscriptions/#close-and-renew-subscriptions) for additional details.
 

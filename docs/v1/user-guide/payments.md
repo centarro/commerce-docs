@@ -193,13 +193,13 @@ There are various kinds of direct payment methods in an ever-expanding universe 
 
 ## PayPal Standard
 
-This guide walk you through setting up PayPal Website Payments Standard (WPS) for use with your Drupal Commerce site. It has been adapted from instructions at http://drupal.org/node/1126786. This guide is almost complete, but if you need to do this, please test it and leave feedback on whether it needs changing (or better, just change it yourself).
+This guide walk you through setting up PayPal Website Payments Standard (WPS) for use with your Drupal Commerce site. It has been adapted from instructions at https://drupal.org/node/1126786. This guide is almost complete, but if you need to do this, please test it and leave feedback on whether it needs changing (or better, just change it yourself).
 
 <h3>Developer account creation</h3>
 
 <ul>
-<li>Head to http://developer.paypal.com and create a developer account to use with the sandbox.</li>
-<li><strong>Important:</strong> this is your <em>master</em> sandbox account. <em>Within</em> this account you are going to create further accounts. Think of it like the movie <a href="http://www.imdb.com/title/tt1375666/">Inception</a>, only the PayPal version: horribly badly laid out, and barely functional.
+<li>Head to https://developer.paypal.com and create a developer account to use with the sandbox.</li>
+<li><strong>Important:</strong> this is your <em>master</em> sandbox account. <em>Within</em> this account you are going to create further accounts. Think of it like the movie <a href="https://www.imdb.com/title/tt1375666/">Inception</a>, only the PayPal version: horribly badly laid out, and barely functional.
 <li>Check your email for the confirmation link and click it to verify your developer account.</li>
 <li>Log into the sandbox using the credentials you have created.</li>
 </ul>
@@ -238,9 +238,9 @@ This guide walk you through setting up PayPal Website Payments Standard (WPS) fo
 
 <ul>
 <li>This assumes you have already set up Drupal Commerce with a shop and everything else you need it for, and just need to link it to a payment processor, which is why you're reading this, so it won't walk you through Drupal Commerce setup itself.</li>
-<li>Make sure you have the <a href="http://drupal.org/project/commerce_paypal">commerce_paypal</a> module downloaded and placed inside one of the appropriate module directories.</li>
+<li>Make sure you have the <a href="https://drupal.org/project/commerce_paypal">commerce_paypal</a> module downloaded and placed inside one of the appropriate module directories.</li>
 <li>Enable the PayPal and PayPal WPS modules.</li>
-<li>On your site, visit <em>admin/commerce/config/payment-methods</em> and you should see the "PayPal WPS" method. (if you don't try clearing your cache: http://drupal.org/node/1365728 )</li>
+<li>On your site, visit <em>admin/commerce/config/payment-methods</em> and you should see the "PayPal WPS" method. (if you don't try clearing your cache: https://drupal.org/node/1365728 )</li>
 <li>Click "enable" on the right side.</li>
 <li>Click "edit" on the right side.</li>
 <li>You are now editing a rule. There are 2 parts to the rule: an event, which is "Select available payment methods for an order", and is filled for you, and an action, "Enable payment method: PayPal WPS". There are no conditions to this rule.</li>
@@ -285,7 +285,7 @@ This page builds on the previous page that enabled WPS. While WPS is not a requi
 <li>Install and enable cURL with php support, if you don't already have it. For example (assumes PHP5 and FPM): 
 <code>sudo apt-get install php5-curl
 service php5-fpm restart</code>
-Using shared hosting? Many hosts already enable cURL. Check whether cURL is installed properly by viewing your phpinfo page. (<a href="http://www.phpinfofile.com/">Make a phpinfo page</a>.) If not, you'll have to convince your host to install it.</li>
+Using shared hosting? Many hosts already enable cURL. Check whether cURL is installed properly by viewing your phpinfo page. (<a href="https://www.phpinfofile.com/">Make a phpinfo page</a>.) If not, you'll have to convince your host to install it.</li>
 
 <li>Log into your Paypal developer account and make a new sandbox test account. Choose the preconfigured "Website Payments Pro" account type. It's not, as you might expect, the same as your previous seller accounts. To add to the confusion, after you create it, it'll be listed on the sandbox accounts page as another "business" account, same as your "standard" seller. To help distinguish, you might want to set either the country or initial balance to something different. That way, at least you'll be able to expand the "View Details" section to get a hint of which account to select. Make a note of your password or set your own.</li>
 

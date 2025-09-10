@@ -584,13 +584,13 @@ of the modules listed below to tweak your Drupal Commerce Product Administration
 experience:</p>
 
 <ul>
-    <li>Editable Fields - http://drupal.org/project/editablefields</li>
-    <li>Commerce VBO Views - http://drupal.org/project/commerce_vbo_views</li>
-    <li>Admin VBO Views - http://drupal.org/project/admin_vbo_views</li>
+    <li>Editable Fields - https://drupal.org/project/editablefields</li>
+    <li>Commerce VBO Views - https://drupal.org/project/commerce_vbo_views</li>
+    <li>Admin VBO Views - https://drupal.org/project/admin_vbo_views</li>
 </ul>
 
 <p>On the drupalcommerce.org community site, there is a community-fueled list of
-all available <a href=""http://www.drupalcommerce.org/contrib/admin>Drupal
+all available <a href=""https://www.drupalcommerce.org/contrib/admin>Drupal
 Commerce Administrative Modules</a>.</p>
 
 <h3>Bulk Product Management with VBO</h3>

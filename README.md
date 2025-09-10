@@ -139,8 +139,8 @@ That’s it! Happy contributing!
 [Drupal Slack channel]: https://www.drupal.org/slack
 [create a pull request]: https://help.github.com/articles/using-pull-requests#initiating-the-pull-request
 [Drupal Commerce]: https://drupalcommerce.org
-[slack-invite]: http://drupalslack.herokuapp.com
-[Drupal Slack]: http://drupal.slack.com
+[slack-invite]: https://drupalslack.herokuapp.com
+[Drupal Slack]: https://drupal.slack.com
 [documentation repository]: https://github.com/centarro/commerce-docs
 [creating an issue]: https://github.com/centarro/commerce-docs/issues/new
 [GitHub]: https://github.com/

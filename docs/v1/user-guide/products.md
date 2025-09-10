@@ -28,9 +28,9 @@ This illustration explains the differences between product pages (nodes) and pro
 <p>Let's say you have a t-shirt shop. One of your products is a very cool blue Drupal-or-Nothing shirt. This shirt comes in a variety of catchy colors and sizes. The way Drupal Commerce works is that it makes no assumption about how you want to organize your products. Very much like a retail outlet, each specific variation ("blue" and "xl") have their own SKU and potentially their own price. But for this t-shirt shop you want to have a product page called "Drupal-or-Nothing" that displays all the sizes in a nice, configurable shopping experience that we've all seen around the web.</p>
 <p>That's where the node comes in. In Drupal Commerce, you need to add products separately from product pages. So, to make our Drupal-or-Nothing page, we simply create a product display node and reference all of our Drupal-or-Nothing shirts using the product reference field.</p>
 
-<iframe src="http://player.vimeo.com/video/40933753?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/40933753?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-<iframe src="http://player.vimeo.com/video/34385004?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/34385004?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 <h2>Product Types</h2>
 
@@ -502,13 +502,13 @@ of the modules listed below to tweak your Drupal Commerce Product Administration
 experience:</p>
 
 <ul>
-    <li>Editable Fields - http://drupal.org/project/editablefields</li>
-    <li>Commerce VBO Views - http://drupal.org/project/commerce_vbo_views</li>
-    <li>Admin VBO Views - http://drupal.org/project/admin_vbo_views</li>
+    <li>Editable Fields - https://drupal.org/project/editablefields</li>
+    <li>Commerce VBO Views - https://drupal.org/project/commerce_vbo_views</li>
+    <li>Admin VBO Views - https://drupal.org/project/admin_vbo_views</li>
 </ul>
 
 <p>On the drupalcommerce.org community site, there is a community-fueled list of
-all available <a href=""http://www.drupalcommerce.org/contrib/admin>Drupal
+all available <a href=""https://www.drupalcommerce.org/contrib/admin>Drupal
 Commerce Administrative Modules</a>.</p>
 
 <h3>Bulk Product Management with VBO</h3>
@@ -847,14 +847,14 @@ The final catalog looks exactly the same as the "Simple" view except that this c
 
 <p>Alternatively, you can use the built-in Drupal Taxonomy pages to list products of a certain category. Ryan Szrama has an excellent video showing off this process:</p>
 
-<iframe src="http://player.vimeo.com/video/22748684?portrait=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/22748684?portrait=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 
 ## Importing Products using Feeds
 
-<p>The wonderful <a href="http://drupal.org/project/commerce_feeds">Commerce Feeds</a> module, with its parent <a href="http://drupal.org/project/feeds">Feeds</a> allow you to import various kinds of feeds as products and/or as product reference nodes. Edit: You may be also be interested in <a href="http://drupal.org/project/commerce_migrate">Commerce Migrate</a> and <a href="http://www.commerceguys.com/resources/articles/215">this screencast on how to use it to import Ubercart stores</a>.</p>
+<p>The wonderful <a href="https://drupal.org/project/commerce_feeds">Commerce Feeds</a> module, with its parent <a href="https://drupal.org/project/feeds">Feeds</a> allow you to import various kinds of feeds as products and/or as product reference nodes. Edit: You may be also be interested in <a href="https://drupal.org/project/commerce_migrate">Commerce Migrate</a> and <a href="https://www.commerceguys.com/resources/articles/215">this screencast on how to use it to import Ubercart stores</a>.</p>
 
-<iframe src="https://player.vimeo.com/video/22731881?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="http://vimeo.com/22731881">Importing Products with Commerce Feeds</a> from <a href="http://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/22731881?title=0&amp;byline=0&amp;portrait=0" width="640" height="480" frameborder="0"></iframe><p><a href="https://vimeo.com/22731881">Importing Products with Commerce Feeds</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 <p>In this example we'll be bringing in a CSV feed and turning it into both products and product reference nodes in two separate operations.</p>
 
@@ -862,10 +862,10 @@ Our CSV has just a few fields and the first couple of lines look like this:
 
 ```csv
 "SKU","Title","Price","Image","Description"
-"0023548568","Computer Graphics Using Open GL (2nd Edition)","11000","http://ecx.images-amazon.com/images/I/51JQbhO0MmL.jpg","Great book blah blah..."
+"0023548568","Computer Graphics Using Open GL (2nd Edition)","11000","https://ecx.images-amazon.com/images/I/51JQbhO0MmL.jpg","Great book blah blah..."
 ```
 <p>The SKU is the unique identifier for the product, and of course the other items are self-descriptive. The Image is a URL to an image.</p>
-<p><s>You can view and explore the feed at <a href="http://d7.randyfay.com/books/feed">http://d7.randyfay.com/books/feed</a>. Note that this is just an example feed - it could be something other than CSV, the fields could be named differently, etc. We do need a unique identifier (the SKU), which we'll also use to map the product reference nodes to products.</s></p>
+<p><s>You can view and explore the feed at <a href="https://d7.randyfay.com/books/feed">https://d7.randyfay.com/books/feed</a>. Note that this is just an example feed - it could be something other than CSV, the fields could be named differently, etc. We do need a unique identifier (the SKU), which we'll also use to map the product reference nodes to products.</s></p>
 
 <h3>An Outline</h3>
 
@@ -886,7 +886,7 @@ Our CSV has just a few fields and the first couple of lines look like this:
   </li>
   <li>Visit /import, use the Product Importer.
     <ul>
-      <li><s>Use <a href="http://d7.randyfay.com/books/feed">http://d7.randyfay.com/books/feed</a> for the URL</s></li>
+      <li><s>Use <a href="https://d7.randyfay.com/books/feed">https://d7.randyfay.com/books/feed</a> for the URL</s></li>
       <li><s>Import your products</s></li>
     </ul>
   </li>
@@ -909,7 +909,7 @@ Our CSV has just a few fields and the first couple of lines look like this:
   <li><s>Visit /import</s>
     <ul>
       <li><s>Use the Product Reference Importer</s></li>
-      <li><s>Use the same feed URL: <a href="http://d7.randyfay.com/books/feed">http://d7.randyfay.com/books/feed</a></s></li>
+      <li><s>Use the same feed URL: <a href="https://d7.randyfay.com/books/feed">https://d7.randyfay.com/books/feed</a></s></li>
       <li><s>Now you have 100 shiny new product reference nodes, pointing to products.</s></li>
     </ul>
   </li>
@@ -933,6 +933,6 @@ Our CSV has just a few fields and the first couple of lines look like this:
 
 <s>If you need to import prices that are not in minor units (they're $1.50 instead of 150) then this screencast explains how to use Feeds Tamper to transform them on import:</s>
 
-<iframe src="https://player.vimeo.com/video/25722743?title=0&amp;byline=0&amp;portrait=0" width="640" height="420" frameborder="0"></iframe><p><a href="https://vimeo.com/25722743">Drupal Commerce: Using Feeds Tamper to change Dollars/Cents to Minor Units</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/25722743?title=0&amp;byline=0&amp;portrait=0" width="640" height="420" frameborder="0"></iframe><p><a href="https://vimeo.com/25722743">Drupal Commerce: Using Feeds Tamper to change Dollars/Cents to Minor Units</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 !!! warning "NOTE: the above tutorial references an example product feed that is no longer available. We suggest you create your own example file with the required fields to complete the import"

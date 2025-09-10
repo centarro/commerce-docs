@@ -41,4 +41,4 @@ Pricing is an important aspect of any eCommerce application. Drupal Commerce sup
 - Currency configuration entity
 - Importing currencies
 
-[CLDR]: http://cldr.unicode.org/
+[CLDR]: https://cldr.unicode.org/

@@ -4,9 +4,9 @@ taxonomy:
     category: docs
 ---
 
-<p>Product management screens in Commerce Kickstart 2 are powered by <a href="http://drupal.org/project/commerce_backoffice">Commerce Backoffice Product</a>. This module was initially developed to handle Kickstart functionality, but was then retooled as a standalone experience so everyone could enjoy the power and finesse of the product management experience.</p>
+<p>Product management screens in Commerce Kickstart 2 are powered by <a href="https://drupal.org/project/commerce_backoffice">Commerce Backoffice Product</a>. This module was initially developed to handle Kickstart functionality, but was then retooled as a standalone experience so everyone could enjoy the power and finesse of the product management experience.</p>
 
-<p>The Commerce Backoffice module has a dependency on  <a href="http://drupal.org/project/inline_entity_form">Inline Entity Form</a>, <a href="http://drupal.org/project/views_megarow">Views Megarow</a>, and <a href="http://drupal.org/project/views_bulk_operations">Views Bulk Operations</a>.</p>
+<p>The Commerce Backoffice module has a dependency on  <a href="https://drupal.org/project/inline_entity_form">Inline Entity Form</a>, <a href="https://drupal.org/project/views_megarow">Views Megarow</a>, and <a href="https://drupal.org/project/views_bulk_operations">Views Bulk Operations</a>.</p>
 
 <h3>Overview of Features</h3>
 

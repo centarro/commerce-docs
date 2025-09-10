@@ -26,8 +26,8 @@ taxonomy:
 
 <ul>
 <li><a href="https://www.phase2technology.com/blog/new-paradigm-overriding-drupal-features">A new paradigm for overriding Drupal Features</a></li>
-<li><a href="http://www.phase2technology.com/blog/features-and-overrides-part-deux/">Features and Overrides – Part Deux</a></li>
-<li><a href="http://www.phase2technology.com/blog/features-and-overrides-part-iii/">Features and Overrides – Part III</a></li>
+<li><a href="https://www.phase2technology.com/blog/features-and-overrides-part-deux/">Features and Overrides – Part Deux</a></li>
+<li><a href="https://www.phase2technology.com/blog/features-and-overrides-part-iii/">Features and Overrides – Part III</a></li>
 </ul>
 
 <p><small style="font-size: smaller;">Features Override upgrade documentation borrowed from <a href="https://www.drupal.org/node/2272177">Updating Panopoly</a> documentation</small></p>
@@ -46,8 +46,8 @@ $ drush updatedb -y
 
 <ol>
 <li>Log in to your site as admin (user 1)</li>
-<li>Create a complete backup of your files and database. (This can be accomplished with <a href="http://drupal.org/project/backup_migrate">Backup & Migrate</a> or <a href="http://drupal.org/project/drush">Drush</a>)</li>
-<li>Download the <a href="http://drupal.org/project/commerce_kickstart">latest release of Kickstart 2</a> by scrolling down to the bottom of the page and choosing between a tar.gz and a .zip file.<br /><span style="color: #FFF; background: red;">&nbsp;NOTE&nbsp;</span> &nbsp; You absolutely want to download the full package with core, as Kickstart 2 does ship with core patches</li>
+<li>Create a complete backup of your files and database. (This can be accomplished with <a href="https://drupal.org/project/backup_migrate">Backup & Migrate</a> or <a href="https://drupal.org/project/drush">Drush</a>)</li>
+<li>Download the <a href="https://drupal.org/project/commerce_kickstart">latest release of Kickstart 2</a> by scrolling down to the bottom of the page and choosing between a tar.gz and a .zip file.<br /><span style="color: #FFF; background: red;">&nbsp;NOTE&nbsp;</span> &nbsp; You absolutely want to download the full package with core, as Kickstart 2 does ship with core patches</li>
 <li>Extract to an empty folder</li>
 <li>Delete all files and folders on your site except the sites folder (remember you should have a backup before doing this)</li>
 <li>Copy or Move all files and folders except the sites/ folder from the new release to your current site.</li>
@@ -61,14 +61,14 @@ $ drush updatedb -y
 <p><span style="color: #FFF; background: red;">&nbsp;NOTE&nbsp;</span> &nbsp; A bug in Windows extractor causes filename path issues, to avoid please use 7zip or similar third-party extractor program.</p>
 
 <ul>
-  <li><strong>New Site or Existing?</strong> This is a distribution and will not work with existing sites. A lot of the new modules developed can be installed separately (inline entity form, for example), but you will break your site if you try to install this distribution on your current site. See http://drupal.org/node/1680332 and http://drupal.org/node/1705356</li>
+  <li><strong>New Site or Existing?</strong> This is a distribution and will not work with existing sites. A lot of the new modules developed can be installed separately (inline entity form, for example), but you will break your site if you try to install this distribution on your current site. See https://drupal.org/node/1680332 and https://drupal.org/node/1705356</li>
   <li><strong>Server or local?</strong> You need to decide if you are going to install the Commerce Kickstart locally or on a server somewhere. Local setup is typically free and pretty easy. Server installation can be pretty simple too, but requires that you know the command line or are willing to wait for FTP to get it on your server so you can do something.<ul>
-    <li><a href="http://drupal.org/documentation/install/">Drupal Installation Guide</a></li>
-    <li>For information about setting up a web server on a local computer, see the <a href="http://drupal.org/node/157602">Local Server Setup</a> section of the <a href="http://drupal.org/documentation/develop">Developing for Drupal guide</a>.</li>
-    <li>For information about setting up a Drupal site on Windows, see the <a href="http://drupal.org/documentation/install/windows">Installing Drupal on Windows</a> Drupal.org article.</li>
+    <li><a href="https://drupal.org/documentation/install/">Drupal Installation Guide</a></li>
+    <li>For information about setting up a web server on a local computer, see the <a href="https://drupal.org/node/157602">Local Server Setup</a> section of the <a href="https://drupal.org/documentation/develop">Developing for Drupal guide</a>.</li>
+    <li>For information about setting up a Drupal site on Windows, see the <a href="https://drupal.org/documentation/install/windows">Installing Drupal on Windows</a> Drupal.org article.</li>
   </ul></li>
-  <li><strong>Database?</strong> You will need an empty database for your new kickstart installation to use. If you are using a host, you will likely find a control panel that lets you create a database. <a href="http://drupal.org/documentation/install/create-database">Creating a database</a> can be complicated if you’ve never done it before.</li>
-  <li><strong>RAM and load time?</strong> Unfortunately, most server installations keep a very minimal default setting for your website to use per instance. This includes the local installations as well. For more information on how to increase your RAM on apache, see the <a href="http://drupal.org/node/207036">Increase PHP memory limit</a> Drupal.org article. </li>
+  <li><strong>Database?</strong> You will need an empty database for your new kickstart installation to use. If you are using a host, you will likely find a control panel that lets you create a database. <a href="https://drupal.org/documentation/install/create-database">Creating a database</a> can be complicated if you’ve never done it before.</li>
+  <li><strong>RAM and load time?</strong> Unfortunately, most server installations keep a very minimal default setting for your website to use per instance. This includes the local installations as well. For more information on how to increase your RAM on apache, see the <a href="https://drupal.org/node/207036">Increase PHP memory limit</a> Drupal.org article. </li>
 </ul>
 
 ## Installing Drupal Commerce Kickstart 2
@@ -141,11 +141,11 @@ $ drush updatedb -y
 <p><span style="color: #FFF; background: red;">&nbsp;NOTE&nbsp;</span> &nbsp; A bug in MAMP causes seg faults in the php interpreter.</p>
 <ul>
   <li>Disk Space: 45 MB</li>
-  <li>RAM: minimum 128M, more is recommended because your server can fail with this memory if it is at all strained (<a href="http://drupal.org/node/207036">learn how to configure</a>).</li>
+  <li>RAM: minimum 128M, more is recommended because your server can fail with this memory if it is at all strained (<a href="https://drupal.org/node/207036">learn how to configure</a>).</li>
   <li>Web Server: Apache 1.3, Apache 2.x, or Microsoft IIS</li>
   <li>Database: MySQL 5.0.15 or higher with PDO, PostgreSQL 8.3 or higher with PDO, SQLite 3.3.7 or higher</li>
 </ul>
-<p>Details are offered on the <a href="http://drupal.org/requirements/">Drupal Requirements Page</a>.</p>
+<p>Details are offered on the <a href="https://drupal.org/requirements/">Drupal Requirements Page</a>.</p>
 <h3>Odd Settings</h3>
 <p>There are a few settings that default to good values, but can interfere with installation should you have changed defaults:</p>
 <ul>
@@ -171,4 +171,4 @@ These hosts have proven experience with running Commerce Kickstart:
 <!--<a href="https://dashboard.getpantheon.com/products/kickstart/spinup"><img src="https://drupal.org/files/pantheon-button.png" alt="Commerce Kickstart on Pantheon" /></a>-->
 
 
-<strong>Acquia</strong>: <a href="http://www.acquia.com/products-services/acquia-cloud">Enterprise-grade cloud hosting for Drupal</a>.
+<strong>Acquia</strong>: <a href="https://www.acquia.com/products-services/acquia-cloud">Enterprise-grade cloud hosting for Drupal</a>.

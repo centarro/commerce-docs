@@ -82,7 +82,7 @@ cd /path/to/mystore/web
 #### Example **phpunit.xml** environment settings.
 
 This `phpunit.xml` assumes you will be using SQLite (requires PHP SQLite extension) and
-the Drupal site accessible at `http://localhost:8080`.
+the Drupal site accessible at `https://localhost:8080`.
 
 ```xml
 <!-- Snippet of environment settings. -->
@@ -91,8 +91,8 @@ the Drupal site accessible at `http://localhost:8080`.
     <ini name="error_reporting" value="32767"/>
     <!-- Do not limit the amount of memory tests take to run. -->
     <ini name="memory_limit" value="-1"/>
-    <!-- Example SIMPLETEST_BASE_URL value: http://localhost -->
-    <env name="SIMPLETEST_BASE_URL" value="http://localhost:8080"/>
+    <!-- Example SIMPLETEST_BASE_URL value: https://localhost -->
+    <env name="SIMPLETEST_BASE_URL" value="https://localhost:8080"/>
     <!-- Example SIMPLETEST_DB value: mysql://username:password@localhost/databasename#table_prefix -->
     <env name="SIMPLETEST_DB" value="sqlite://localhost/sites/default/files/.ht.sqlite"/>
     <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /path/to/webroot/sites/simpletest/browser_output -->
@@ -297,8 +297,8 @@ That’s it! Happy contributing!
 [kanban board]: https://contribkanban.com/board/commerce2x
 [Version control page]: https://www.drupal.org/project/commerce/git-instructions
 [Creating an interdiff]: https://www.drupal.org/documentation/git/interdiff
-[patchutils]: http://freshmeat.sourceforge.net/projects/patchutils
-[Drupal VM]: http://www.drupalvm.com/
+[patchutils]: https://freshmeat.sourceforge.net/projects/patchutils
+[Drupal VM]: https://www.drupalvm.com/
 [Acquia Dev Desktop]: https://www.acquia.com/products-services/dev-desktop
 [Git]: https://git-scm.com/
 [Composer]: https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos

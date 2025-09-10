@@ -15,5 +15,5 @@ This user guide is for Drupal Commerce 1.x and is subject to change. Please feel
 
 Another source of information is the [screencast series on Commerce] provided by Commerce Guys. You can subscribe there to get notifications of new screencasts...
 
-[Commerce Kickstart 1.x]: http://drupal.org/project/commerce_kickstart
-[screencast series on Commerce]: http://vimeo.com/channels/commerceguys
+[Commerce Kickstart 1.x]: https://drupal.org/project/commerce_kickstart
+[screencast series on Commerce]: https://vimeo.com/channels/commerceguys

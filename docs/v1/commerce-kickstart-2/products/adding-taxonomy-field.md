@@ -10,7 +10,7 @@ taxonomy:
 
 <p>Prior to continuing with this example, it assumed you have already created a vocabulary of taxonomy terms to be used for your products. For our example below, we will be using a taxonomy term list for size of tshirt.</p>
 
-![If you haven't already done so, look at Adding a New Product over here: http://www.drupalcommerce.org/commerce-kickstart-2/adding-new-product](../../images/CK-Product-Variations-01.png)
+![If you haven't already done so, look at Adding a New Product over here: https://www.drupalcommerce.org/commerce-kickstart-2/adding-new-product](../../images/CK-Product-Variations-01.png)
 
 **Create a Variation Type**
 

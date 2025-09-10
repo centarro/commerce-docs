@@ -62,13 +62,13 @@ If your payment gateway depends on a vendor-supplied library, you will also need
         "name": "drupal/commerce_worldpay",
         "type": "drupal-module",
         "description": "Provides Commerce integration for Worldpay.com",
-        "homepage": "http://drupal.org/project/commerce_worldpay",
+        "homepage": "https://drupal.org/project/commerce_worldpay",
         "license": "GPL-2.0+",
         "keywords": ["Drupal"],
         "minimum-stability": "dev",
         "support": {
             "issues": "https://www.drupal.org/project/issues/commerce_worldpay",
-            "source": "http://cgit.drupalcode.org/commerce_worldpay"
+            "source": "https://cgit.drupalcode.org/commerce_worldpay"
         },
         "require": {
             "drupal/commerce": "~2.0",

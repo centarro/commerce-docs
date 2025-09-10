@@ -28,7 +28,7 @@ taxonomy:
 
 !!! example "Customize Checkout Look and Feel"
 
-    There was a <a href="http://drupal.org/node/1098028">recent commit that made the checkout process table-less in the Commerce Issue Que</a>. It was reverted in favor of making such a large change to the codebase on a 2.x release. That code still exists and it's all possible using theme_ functions in your template.php...
+    There was a <a href="https://drupal.org/node/1098028">recent commit that made the checkout process table-less in the Commerce Issue Que</a>. It was reverted in favor of making such a large change to the codebase on a 2.x release. That code still exists and it's all possible using theme_ functions in your template.php...
 
     <ol>
     <li><strong>Step 1</strong> - Go here <code>/modules/checkout/includes/commerce_checkout.pages.inc</code> and look for functions that start with theme_</li>
