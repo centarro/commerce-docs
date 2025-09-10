@@ -21,7 +21,7 @@ There are resources for learning all of the above, but the purpose of this user 
 Ready to start developing and working with Drupal Commerce?
 
 * [Using Composer](#using-composer): If you are new to Composer or new to managing Drupal with Composer. Drupal Commerce requires using Composer with Drupal.
-* [Getting Help](#best-practices): General guidelines for how and where to get help for Drupal Commerce.
+* [Getting Help](#community-support): General guidelines for how and where to get help for Drupal Commerce.
 * [Installation guide](./installation.md#installation): To get Drupal Commerce installed.
 * [Updating guide](./installation.md#updating) guide: For keeping Drupal Commerce up to date.
 

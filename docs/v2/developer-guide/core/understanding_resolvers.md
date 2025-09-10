@@ -78,15 +78,15 @@ Every *Price* resolver needs to include that tag in its service definition. Here
 
 Here is the complete list of service tags for all Resolvers provided by Drupal Commerce.
 
-| Resolver     | Service tag |
-| ------------ | ----------- |
+| Resolver     | Service tag                              |
+|--------------|------------------------------------------|
 | CheckoutFlow | commerce_checkout.checkout_flow_resolver |
-| Country      | commerce.country_resolver |
-| Locale       | commerce.locale_resolver |
-| OrderType    | commerce_order.order_type_resolver |
-| Price        | commerce_price.price_resolver |
-| Store        | commerce_store.store_resolver |
-| TaxRate      | commerce_tax.tax_rate_resolver |
+| Country      | commerce.country_resolver                |
+| Locale       | commerce.locale_resolver                 |
+| OrderType    | commerce_order.order_type_resolver       |
+| Price        | commerce_price.price_resolver            |
+| Store        | commerce_store.store_resolver            |
+| TaxRate      | commerce_tax.tax_rate_resolver           |
 
 #### Resolver interfaces
 

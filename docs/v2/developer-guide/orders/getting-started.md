@@ -69,7 +69,7 @@ Creating an excess of product variations makes management hard. An alternative t
 The order total is based off the unit price of order items multiplied by
 their quantity and the sum of all order item totals.
 
-Order items have their unit price calculated during the [order refresh process](#order-refresh-and-process). 
+Order items have their unit price calculated during the [order refresh process](#order-refresh-and-processing). 
 This synchronizes the price with the current purchasable entity’s price while the order is still in a draft state, as well as applying any promotions and discounts as well as any custom functionality that may adjust the price - or custom fields on the order item.
 
 The add to cart form is actually the create form for an order item

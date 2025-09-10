@@ -268,11 +268,11 @@ Coupon code patterns are based on four attributes: format, prefix, suffix, and l
 
 **Length** is a positive integer that defines the number of characters that form the unique portion of the coupon code. Here are some examples of format/length values and the types of unique codes they produce:
 
-| Format | Length | Example code |
-| ------ | ------ | ------------ |
-| Alphanumeric | 8 | Xj7kcWn2 |
-| Alphabetic | 5 | HPAsu |
-| Numeric | 10 | 8974406511 |
+| Format       | Length | Example code |
+|--------------|--------|--------------|
+| Alphanumeric | 8      | Xj7kcWn2     |
+| Alphabetic   | 5      | HPAsu        |
+| Numeric      | 10     | 8974406511   |
 
 **Prefix** and **Suffix** are optional strings that can be added before and after the unique portion of the coupon code.
 

@@ -44,16 +44,15 @@ Logs are content entities that are generated programatically. Each is associated
 
 See `Drupal\commerce_log\Entity\LogInterface` for the getter/setter methods that can be used for each of its base fields:
 
-| Base field         | Description |
-| ------------------ | ----------- |
+| Base field         | Description                                                                          |
+|--------------------|--------------------------------------------------------------------------------------|
 | uid                | The user for the log, set automatically to the current user when the log is created. |
-| template_id        | Log template ID. (string) |
-| category_id        | Log category ID. (string) |
-| source_entity_id   | Source entity ID. (integer) |
-| source_entity_type | Source entity type. (string) |
-| params             | A serialized array of parameters for the log template. |
-| created            | Time when the log was created. (timestamp) |
-
+| template_id        | Log template ID. (string)                                                            |
+| category_id        | Log category ID. (string)                                                            |
+| source_entity_id   | Source entity ID. (integer)                                                          |
+| source_entity_type | Source entity type. (string)                                                         |
+| params             | A serialized array of parameters for the log template.                               |
+| created            | Time when the log was created. (timestamp)                                           |
 
 ### Generating Logs
 
@@ -102,22 +101,22 @@ order_placed:
 
 All Log templates must be defined in a `commerce_log_templates` yaml file. You can create new templates in a custom module, by creating a `my_custom_module.commerce_log_templates.yml` file in the root of your custom module. For more information, see [An Introduction to YAML] or [Introduction to YAML in Drupal 8]. Commerce log templates have the following properties:
 
-| Property     | Description |
-| ------------ | ----------- |
-| id           | A unique id for the template. |
-| category     | Id of a template category. |
-| label        | Administrative label for the template. |
-| template     | Template used for rendering/displaying the log entry. |
+| Property | Description                                           |
+|----------|-------------------------------------------------------|
+| id       | A unique id for the template.                         |
+| category | Id of a template category.                            |
+| label    | Administrative label for the template.                |
+| template | Template used for rendering/displaying the log entry. |
 
 ##### Log categories
 
 Log categories define the *entity* type associated with a particular log template. The Commerce Log module provides "Cart" and "Order" categories for order entities. When creating new log templates, you can use these existing categories or creat custom ones. Log categories are defined in `*.commerce_log_categories.yml` files. See `commerce_log.commerce_log_categories.yml` as an example. Log categories have the following properties:
 
-| Property     | Description | Example |
-| ------------ | ----------- | ------- |
-| id           | A unique id for the category. | `commerce_cart` |
-| label        | Administrative label for the category | `Cart`  |
-| entity_type  | Id of the entity type. | `commerce_order` |
+| Property    | Description                           | Example          |
+|-------------|---------------------------------------|------------------|
+| id          | A unique id for the category.         | `commerce_cart`  |
+| label       | Administrative label for the category | `Cart`           |
+| entity_type | Id of the entity type.                | `commerce_order` |
 
 ##### Templates
 

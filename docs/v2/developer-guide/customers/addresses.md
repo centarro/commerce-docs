@@ -355,10 +355,10 @@ For each address field property (First name, middle name, last name, etc.), you 
 
 The options are:
 
-| Setting  | Behavior |
-| ---------| -------- |
-| Hidden   | Field property will not be used. |
-| Optional | A field property that is normally required will be optional. |
+| Setting  | Behavior                                                                                                 |
+|----------|----------------------------------------------------------------------------------------------------------|
+| Hidden   | Field property will not be used.                                                                         |
+| Optional | A field property that is normally required will be optional.                                             |
 | Required | The field property will be required. This will only apply if the address format uses the field property. |
 
 ![Field overrides for locked fields](../../images/address-entry-3.png)

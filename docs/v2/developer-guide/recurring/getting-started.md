@@ -6,19 +6,19 @@ taxonomy:
 
 Subscriptions and recurring billing in Commerce 2.x are created and managed via the [Commerce Recurring module](https://www.drupal.org/project/commerce_recurring). It supports a wide variety of types of subscriptions, payment plans, proration, etc. Out-of-the-box, the Commerce Recurring module provides rolling and fixed billing schedules that are either prepaid or postpaid. However, the module can be easily extended with custom plugins. Some sample use cases include...
 
-| Use Case | Billing schedule | Proration? |
-| -------- | ---------------- |----------- |
-| A software subscription is charged monthly starting on the date the customer purchases. | Prepaid / Rolling | No |
-| An ecommerce retailer offers "membership" benefits such as free shipping in exchange for an annually recurring fee. | Prepaid / Rolling | No |
-| A maintenance company offers a monthly service plan on equipment, payable on the first of the month. | Prepaid / Fixed | Yes |
-| A cosmetics subscription gift box service sends customers product samples each month, charging them a fee on the last day of each month. | Postpaid / Fixed | No |
-| A magazine subscription service sends the first issue immediately and then charges customers on the 5th of each month.| Postpaid / Fixed | No |
+| Use Case                                                                                                                                 | Billing schedule  | Proration? |
+|------------------------------------------------------------------------------------------------------------------------------------------|-------------------|------------|
+| A software subscription is charged monthly starting on the date the customer purchases.                                                  | Prepaid / Rolling | No         |
+| An ecommerce retailer offers "membership" benefits such as free shipping in exchange for an annually recurring fee.                      | Prepaid / Rolling | No         |
+| A maintenance company offers a monthly service plan on equipment, payable on the first of the month.                                     | Prepaid / Fixed   | Yes        |
+| A cosmetics subscription gift box service sends customers product samples each month, charging them a fee on the last day of each month. | Postpaid / Fixed  | No         |
+| A magazine subscription service sends the first issue immediately and then charges customers on the 5th of each month.                   | Postpaid / Fixed  | No         |
 
 ## Overview
 
 The Commerce Recurring module provides a variety of options for creating subscriptions. You probably have a general idea of what subscriptions are. You might have a monthly magazine subscription or a subscription for a streaming video service, or you might be enrolled in a cheese-of-the-month club. But exactly how are subscriptions different than regular products in Drupal Commerce? Normally, when an order is placed, the customer is charged for the product, just once, at check-out. With the Commerce Recurring module, you can instead charge a customer repeatedly, at regular intervals, starting at the time the order is placed.
 
-<a name="billing-periods"></a>Those regular intervals are defined as **billing periods** within the Commerce Recurring module. Some examples of billing periods are:
+<a id="billing-periods"></a>Those regular intervals are defined as **billing periods** within the Commerce Recurring module. Some examples of billing periods are:
 
  * from January 1st 00:00:00 to January 1st 00:00:00 (yearly)
  * from Oct 14th 14:56:20 to Nov 14th 14:56:20 (monthly)

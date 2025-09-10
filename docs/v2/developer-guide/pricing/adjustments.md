@@ -13,14 +13,14 @@ Within the Drupal Commerce module, only Order and Order item entities use Adjust
 
 The Commerce Order module defines *Custom*, *Fee*, *Promotion*, and *Tax* Adjustment types. Additionally, the [Commerce Shipping] contrib module defines *Shipping* and *Shipping promotion* types. An Adjustment type is a plugin that defines the following properties:
 
-| Property       | ID | Description | Example value |
-|----------------|----|-------------|---------------|
-| ID             | id | Unique id string | `'shipping'` |
-| Label          | label | Description of the adjustment type | `'Shipping'` |
-| Singular label | singular_label | Label to use for a single adjustment of this type | `'shipping cost'` |
-| Plural label   | plural_label | Label to use for multiple adjustments of type type | `'shipping costs'` |
-| Weight         | weight | Used to sort adjustments, grouped by type, from lowest to height weight when displayed (e.g., in the Order Summary display) | `-20` |
-| Has UI         | has_ui | Whether adjustments of this type can be created through the admin UI | `true` |
+| Property       | ID             | Description                                                                                                                 | Example value      |
+|----------------|----------------|-----------------------------------------------------------------------------------------------------------------------------|--------------------|
+| ID             | id             | Unique id string                                                                                                            | `'shipping'`       |
+| Label          | label          | Description of the adjustment type                                                                                          | `'Shipping'`       |
+| Singular label | singular_label | Label to use for a single adjustment of this type                                                                           | `'shipping cost'`  |
+| Plural label   | plural_label   | Label to use for multiple adjustments of type type                                                                          | `'shipping costs'` |
+| Weight         | weight         | Used to sort adjustments, grouped by type, from lowest to height weight when displayed (e.g., in the Order Summary display) | `-20`              |
+| Has UI         | has_ui         | Whether adjustments of this type can be created through the admin UI                                                        | `true`             |
 
 The *Has UI* setting controls the list of *Adjustment type* options that appear on the Order admin form:
 ![Adjustments on order admin form](../images/adjustments-1.png)
@@ -80,15 +80,15 @@ Like [Prices](../prices), Adjustments are not standalone entities; rather, they 
 
 ### Adjustment properties
 
-| Property ID | Definition | Example |
-|-------------|------------|---------|
-| type        | The string ID of an adjustment type, as defined in a `commerce_addjustment_types.yml` configuration file. | `'custom'` |
-| label       | The adjustment label. | `'20% off'` |
-| amount      | The adjustment value, a `Price` object with number and currency. When adjustments are applied to orders or order items, this amount is added to (if positive) or subtracted from (if negative) the order total price. | `new Price('-12.00', 'USD')` |
-| percentage  | If the adjustment was calculated from a percentage, it is the percentage as a decimal, stored as a string. Otherwise, it is null. Note that the percentage value is purely informational. It has no effect on any pricing calculations. See [Displaying adjustments](#displaying-adjustments) for a usage example. | `'0.2'` |
-| sourceId    | A string ID value that references the source object, if known. For example, the ID of a promotion entity is set for a discount adjustment. See [Combining adjustments](#combining-adjustments) for additional information on how Adjustments are combined based on source ID value. When Adjustments are added through the admin UI, the default value for sourceId is `'custom'`. | `'23'` |
-| included    | Whether the adjustment is included in the base price. The default value is FALSE. | `TRUE` |
-| locked      | Whether the adjustment is locked. The default value is FALSE. Locked adjustments are not automatically removed during the [Order refresh process](../../orders/getting-started/#order-refresh-and-processing). Unlocked adjustments are removed so that they can be recalculated by order processors. When an Adjustment is added through the admin UI, it is automatically locked. | `FALSE` |
+| Property ID | Definition                                                                                                                                                                                                                                                                                                                                                                          | Example                      |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
+| type        | The string ID of an adjustment type, as defined in a `commerce_addjustment_types.yml` configuration file.                                                                                                                                                                                                                                                                           | `'custom'`                   |
+| label       | The adjustment label.                                                                                                                                                                                                                                                                                                                                                               | `'20% off'`                  |
+| amount      | The adjustment value, a `Price` object with number and currency. When adjustments are applied to orders or order items, this amount is added to (if positive) or subtracted from (if negative) the order total price.                                                                                                                                                               | `new Price('-12.00', 'USD')` |
+| percentage  | If the adjustment was calculated from a percentage, it is the percentage as a decimal, stored as a string. Otherwise, it is null. Note that the percentage value is purely informational. It has no effect on any pricing calculations. See [Displaying adjustments](#displaying-adjustments) for a usage example.                                                                  | `'0.2'`                      |
+| sourceId    | A string ID value that references the source object, if known. For example, the ID of a promotion entity is set for a discount adjustment. See [Combining adjustments](#combining-adjustments) for additional information on how Adjustments are combined based on source ID value. When Adjustments are added through the admin UI, the default value for sourceId is `'custom'`.  | `'23'`                       |
+| included    | Whether the adjustment is included in the base price. The default value is FALSE.                                                                                                                                                                                                                                                                                                   | `TRUE`                       |
+| locked      | Whether the adjustment is locked. The default value is FALSE. Locked adjustments are not automatically removed during the [Order refresh process](../../orders/getting-started/#order-refresh-and-processing). Unlocked adjustments are removed so that they can be recalculated by order processors. When an Adjustment is added through the admin UI, it is automatically locked. | `FALSE`                      |
 
 !!! example "Example: adding a new *Adjustment* to an Order item"
 
@@ -140,14 +140,14 @@ The *Splitter* service starts by calculating per-order-item amounts using the pe
 
 ### Useful Mathematical Adjustment methods
 
-| Method | Definition |
-|--------|------------|
-| `isPositive()` | Gets whether the adjustment amount is positive. Returns `TRUE|FALSE`. |
-| `isNegative()` | Gets whether the adjustment amount is negative. Returns `TRUE|FALSE`. |
-| `add(Adjustment $adjustment)` | Adds the amount of the given adjustment to the current adjustment amount. Returns the resulting Adjustment. |
-| `subtract(Adjustment $adjustment)` | Subtracts the amount of the given adjustment from the current adjustment amount. Returns the resulting Adjustment. |
-| `multiply($number)` | Multiplies the adjustment amount by the given number (numeric value represented as a string). Returns the resulting Adjustment. |
-| `divide($number)` | Divides the adjustment amount by the given number (numeric value represented as a string). Returns the resulting Adjustment. |
+| Method                             | Definition                                                                                                                      |
+|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| `isPositive()`                     | Gets whether the adjustment amount is positive. Returns `TRUE                                                                   |FALSE`. |
+| `isNegative()`                     | Gets whether the adjustment amount is negative. Returns `TRUE                                                                   |FALSE`. |
+| `add(Adjustment $adjustment)`      | Adds the amount of the given adjustment to the current adjustment amount. Returns the resulting Adjustment.                     |
+| `subtract(Adjustment $adjustment)` | Subtracts the amount of the given adjustment from the current adjustment amount. Returns the resulting Adjustment.              |
+| `multiply($number)`                | Multiplies the adjustment amount by the given number (numeric value represented as a string). Returns the resulting Adjustment. |
+| `divide($number)`                  | Divides the adjustment amount by the given number (numeric value represented as a string). Returns the resulting Adjustment.    |
 
 ## Adjustment Transformer service
 
@@ -254,10 +254,10 @@ The Commerce Order module provides an Order Total Summary (`commerce_order_total
 
 Note that "included" adjustments are not displayed to the customer. The one exception is taxes, which need to be shown for legal reasons. This field formatter uses the `commerce-order-total-summary.html.twig` template, which can be overridden to customize the display of adjustments. All properties of adjustments are available for display. By default, only the adjustment "label" and "amount" (formatted as a price) are displayed. If you have adjustments with "perentage" values, you can add them to the template like this:
 
-| Twig | Output example (for 9.75% adjustment) |
-| ---- | ------ |
-|`{{ adjustment.percentage }}` | 0.0975 |
-|`{{ adjustment.percentage * 100 }}%` | 9.75% |
+| Twig                                 | Output example (for 9.75% adjustment) |
+|--------------------------------------|---------------------------------------|
+| `{{ adjustment.percentage }}`        | 0.0975                                |
+| `{{ adjustment.percentage * 100 }}%` | 9.75%                                 |
 
 Customized order summary display example output:
 

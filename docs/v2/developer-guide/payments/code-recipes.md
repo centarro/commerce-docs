@@ -129,15 +129,19 @@ $payment->save();
 ```
 
 ### Loading a payment gateway
+
 #### Load a payment gateway by its id
+
 ```php
 // Loading is based off of the primary key [String] that was defined when creating it.
 $payment_gateway = \Drupal\commerce_payment\Entity\PaymentGateway::load('manual');
 ```
 
 #### Load the default payment gateway for a user
+
 This method is used primarily when adding payment methods from the user pages.
 Thus, only payment gateways which support storing payment methods are considered.
+
 ```php
 /** @var \Drupal\commerce_payment\Entity\PaymentGatewayInterface $payment_gateway */
 /** @var \Drupal\user\UserInterface $user */
@@ -147,6 +151,7 @@ $payment_gateway = \Drupal::entityTypeManager()
 ```
 
 #### Load all eligible payment gateways for an order
+
 ```php
 /** @var \Drupal\commerce_payment\Entity\PaymentGatewayInterface $payment_gateway */
 /** @var \Drupal\commerce_order\Entity\OrderInterface $order */
@@ -155,8 +160,10 @@ $payment_gateways = \Drupal::entityTypeManager()
   ->loadMultipleForOrder($order);
 ```
 
-###Loading a payment method
+### Loading a payment method
+
 #### Load a payment method by its id
+
 ```php
 // Loading is based off of the primary key [Integer]
 //   1 would be the first one saved, 2 the next, etc.
@@ -164,6 +171,7 @@ $payment_method = \Drupal\commerce_payment\Entity\PaymentMethod::load(1);
 ```
 
 #### Load a user's resusable payment methods for the given payment gateway
+
 Only reusable payment methods that have not yet expired are returned. Filtering by country is optional. In this example, only payment methods with billing profiles from the United States or France will be returned.
 ```php
 /** @var \Drupal\commerce_payment\Entity\PaymentGatewayInterface $payment_gateway */
@@ -173,7 +181,7 @@ $payment_methods = \Drupal::entityTypeManager()
   ->loadReusable($user, $payment_gateway, ['US', 'FR']);
 ```
 
-###Loading a payment
+### Loading a payment
 #### Load a payment by its id
 ```php
 // Loading is based off of the primary key [Integer]
@@ -313,14 +321,15 @@ function mymodule_commerce_payment_gateway_info_alter(array &$info) {
 The Commerce Payment module defines a `CreditCardType` object and a `CreditCard` class that provides logic for listing card types and validating card details.
 
 #### Credit card type properties and getter methods
-| Property        | Description |
-| --------------- | ----------- |
-| id              | Credit card type id, a string |
-| label           | Name of the credit card type |
-| numberPrefixes  | An array of credit card type number prefixes |
-| numberLengths   | An array of credit card type number lengths, default is `[16]` |
-| securityCodeLength | The credit card type security code length, an integer |
-| usesLuhn        | Whether the credit cart type uses Luhn validation |
+
+| Property           | Description                                                    |
+|--------------------|----------------------------------------------------------------|
+| id                 | Credit card type id, a string                                  |
+| label              | Name of the credit card type                                   |
+| numberPrefixes     | An array of credit card type number prefixes                   |
+| numberLengths      | An array of credit card type number lengths, default is `[16]` |
+| securityCodeLength | The credit card type security code length, an integer          |
+| usesLuhn           | Whether the credit cart type uses Luhn validation              |
 
 - `public function getId();`
 - `public function getLabel();`

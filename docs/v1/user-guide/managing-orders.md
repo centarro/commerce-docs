@@ -1,7 +1,7 @@
 ---
 title: Managing Orders
 taxonomy:
-    category: docs
+  category: docs
 ---
 
 <ul>
@@ -14,11 +14,12 @@ taxonomy:
 
 <p>In March 2014, Commerce 1.9 was released that included a number of feature enhancements involving order workflow on the administrative side. Below is a rundown of the various settings and how they affect the new features.</p>
 
-* [Apply pricing rules](#apply-pricing-rules) - A new local action for orders that, when clicked, will run the pricing rules for that particular order.
-* [Simulate checkout completion](#simulate-checkout-completion) - A new local action for orders that, when clicked, will invoke the checkout completion events in rules.
-* [Shopping cart refresh](#shopping-cart-refresh) - These settings let you control how often the shopping cart orders are refreshed, a task that can impact speed at the cost of flexibility.
-
-
+* [Apply pricing rules](#apply-pricing-rules) - A new local action for orders that, when clicked, will run the pricing
+  rules for that particular order.
+* [Simulate checkout completion](#simulate-checkout-completion) - A new local action for orders that, when clicked, will
+  invoke the checkout completion events in rules.
+* [Shopping cart refresh](#shopping-cart-refresh) - These settings let you control how often the shopping cart orders
+  are refreshed, a task that can impact speed at the cost of flexibility.
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -77,18 +78,35 @@ taxonomy:
 
 ## Displaying All Orders
 
-Views is the easy way to display all orders, including orders that are cart orders, etc. You can just edit the existing administrative view of orders and expose the filter, etc.
+Views is the easy way to display all orders, including orders that are cart orders, etc. You can just edit the existing
+administrative view of orders and expose the filter, etc.
 
-There is even a default view to change your Admin Orders view into a Views Bulk Operations view with all this functionality in [Commerce VBO Views](https://drupal.org/project/commerce_vbo_views)
+There is even a default view to change your Admin Orders view into a Views Bulk Operations view with all this
+functionality in [Commerce VBO Views](https://drupal.org/project/commerce_vbo_views)
 
 ## Implementing an automated order workflow
 
-The Drupal Commerce shopping cart and checkout systems handle advancing an order from the <em>Shopping cart</em> status through the various <em>Checkout: ####</em> statuses and finally to the <em>Pending</em> order status. While the Order module defines additional order statuses for <em>Canceled</em>, <em>Processing</em>, and <em>Completed</em> orders, it does not implement any rules specifically to place orders into these statuses. The only way orders will get to these statuses out of the box is if an administrator were to move the order to that status from its edit form.
+The Drupal Commerce shopping cart and checkout systems handle advancing an order from the <em>Shopping cart</em> status
+through the various <em>Checkout: ####</em> statuses and finally to the <em>Pending</em> order status. While the Order
+module defines additional order statuses for <em>Canceled</em>, <em>Processing</em>, and <em>Completed</em> orders, it
+does not implement any rules specifically to place orders into these statuses. The only way orders will get to these
+statuses out of the box is if an administrator were to move the order to that status from its edit form.
 
-When you build your store, it is up to you to implement your automated order workflow beyond what the shopping cart and checkout systems provide. You can do this via direct module integration or Rules configurations that interact with various events, such as moving an order that has been paid in full to the <em>Processing</em> status for fulfillment or directly to <em>Completed</em> if fulfillment is automated (e.g. in the case of a digital commerce site).
+When you build your store, it is up to you to implement your automated order workflow beyond what the shopping cart and
+checkout systems provide. You can do this via direct module integration or Rules configurations that interact with
+various events, such as moving an order that has been paid in full to the <em>Processing</em> status for fulfillment or
+directly to <em>Completed</em> if fulfillment is automated (e.g. in the case of a digital commerce site).
 
-The primary thing to keep in mind is that an order may complete the checkout process without having been paid in full. This means any automated workflow steps that result in the fulfillment of the order should use the <em>When an order is first paid in full</em> event or <code>hook_commerce_payment_order_paid_in_full()</code> instead of the checkout completion event / hook. This is primarily the case when a site integrates a payment gateway that supports delayed payment (e.g. PayPal eCheck payments) or performs authorization only transactions during checkout that are meant to be captured later.
+The primary thing to keep in mind is that an order may complete the checkout process without having been paid in full.
+This means any automated workflow steps that result in the fulfillment of the order should use the <em>When an order is
+first paid in full</em> event or <code>hook_commerce_payment_order_paid_in_full()</code> instead of the checkout
+completion event / hook. This is primarily the case when a site integrates a payment gateway that supports delayed
+payment (e.g. PayPal eCheck payments) or performs authorization only transactions during checkout that are meant to be
+captured later.
 
-You do not have to use all the order statuses provided by default, and you can create your own either through code or a contributed module like <a href="https://www.drupalcommerce.org/extensions/module/project/commerce-custom-order-status">Commerce Customer Order Statues</a>.
+You do not have to use all the order statuses provided by default, and you can create your own either through code or a
+contributed module like <a href="https://www.drupalcommerce.org/extensions/module/project/commerce-custom-order-status">
+Commerce Customer Order Statues</a>.
 
-For more information, refer to the <a href="https://www.drupalcommerce.org/user-guide/checkout-order-status-updates">related checkout documentation</a>.
+For more information, refer to the <a href="https://www.drupalcommerce.org/user-guide/checkout-order-status-updates">
+related checkout documentation</a>.
