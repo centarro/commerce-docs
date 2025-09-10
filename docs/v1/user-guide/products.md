@@ -61,7 +61,7 @@ This illustration explains the differences between product pages (nodes) and pro
       <li>T-shirt size (custom line item type)</li>
     </ul>
   </li>
-</ul></p>
+</ul>
 <p>We're sure you can come up with your own set of really interesting cross-selling kinds of products that push our Product entities to their limits! Let us know here if you have a site that you would like featured in the Showcase.</p>
 
 <ul>
@@ -508,7 +508,7 @@ experience:</p>
 </ul>
 
 <p>On the drupalcommerce.org community site, there is a community-fueled list of
-all available <a href=""https://www.drupalcommerce.org/contrib/admin>Drupal
+all available <a href="https://www.drupalcommerce.org/contrib/admin">Drupal
 Commerce Administrative Modules</a>.</p>
 
 <h3>Bulk Product Management with VBO</h3>

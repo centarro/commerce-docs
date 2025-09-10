@@ -148,7 +148,7 @@ Have a look at the original definition of the Fulfillment workflow in the ``comm
 The group key in the definition should always have "commerce_order" as its value.
 
 ```yaml
-    // my_module.workflows.yml
+    # my_module.workflows.yml
 
     my_module_fulfillment_processing:
       id: my_module_fulfillment_processing

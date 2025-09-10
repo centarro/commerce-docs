@@ -15,4 +15,3 @@ taxonomy:
 <li><strong><a href="https://drupal.org/project/commerce_shipping">Shipping Options</a></strong> - Since Kickstart 2 comes with shipping built in it makes sense that the checkout process would include a shipping step. To learn more about shipping, see our <a href="../shipping">entire section of shipping documentation</a>.</li>
 <li><strong><a href="https://drupal.org/project/commerce_checkout_login">Checkout Login</a></strong> - Another tweak to the checkout process is that we require your users to register. This requirement can be disabled.</li>
 </ul>
-</div>

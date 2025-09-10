@@ -25,4 +25,3 @@ taxonomy:
 <p>2. Product Variations - These are the specific product listings that include price and "variation categories" like size, color, weight, etc.</p>
 <p>In the graphic above we have created a visual of the difference between product pages and product variations. Typically, Product variations include the photo, but if a product's photo won't change based on size or color, then it makes more sense to add that directly to a page.</p>
 <p>The whole point of deciding between a product page and product variation is that every field on a product variation will be loaded in javascript every time a user selects a small variation. So product variations that have photos will be replaced if the user changes the size or the color. </p>
-</div>

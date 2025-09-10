@@ -184,7 +184,7 @@ The hooks are categorized by module with information on all the properties accep
   <li><a href="#currency-info-alter">hook_commerce_currency_info_alter(&$currencies)</a></li>
 </ol>
 
-<a name="currency-info"> </a>
+<a id="currency-info"> </a>
 <h3>hook_commerce_currency_info()</h3>
 
 Commerce module endeavors to define all legal currencies, so please <a href="https://drupal.org/project/issues/commerce">open an issue</a> if yours is missing.  However, modules can use this hook to add custom / site-specific currencies, such as user points or credits.
@@ -223,7 +223,7 @@ The currency data structure is as follows:
     ?>
     ```
 
-<a name="currency-info-alter"> </a>
+<a id="currency-info-alter"> </a>
 <h3>hook_commerce_currency_info_alter(&$currencies)</h3>
 
 Modules can use this hook to alter properties of any defined currencies. This hook should be used with extreme caution, as the currency code and decimals values of each currency are intimately tied into price field values.  Changing codes and decimals values may cause wide disruption of store price values, so such alterations should be made prior to setting prices and collecting orders and not after moving to production.
@@ -241,7 +241,7 @@ The code of a currency is referred to as $currency_code.
 <li><a href="#payment-transaction-status">hook_commerce_payment_transaction_status_info()</a></li>
 </ol>
 
-<a name="payment-method"> </a>
+<a id="payment-method"> </a>
 <h3>hook_commerce_payment_method_info()</h3>
 
 The Payment module uses this hook to gather information on payment methods defined by enabled modules.  Drupal Commerce doesn’t maintain Ubercart’s separation of payment methods from payment gateways but rather defines payment methods as any single way of collecting payment from a customer per payment provider.  This means there will not be a single Credit Card payment method with plugin modules for CyberSource, Authorize.Net, etc. but a separate CC payment method for each payment provider with a common base set of code for building credit card forms and handling the data securely.
@@ -296,7 +296,7 @@ A single payment method object is referred to as $payment_method.
 An array of payment method objects keyed by method_id is referred to as $payment_methods.
 The method_id of a payment method is referred to as $method_id.
 
-<a name="payment-transaction-status"> </a>
+<a id="payment-transaction-status"> </a>
 <h3>hook_commerce_payment_transaction_status_info()</h3>
 
 The Payment module uses this hook to gather information on payment transaction statuses defined by enabled modules.  A payment transaction represents any attempted payment via a payment method and includes a variety of properties used for tracking the amount, outcome, and parameters of the transaction.  One of these is the transaction’s local status, not to be confused with its remote_status that stores the exact status of the transaction at the payment provider.
@@ -346,7 +346,7 @@ The status of a payment transaction status is referred to as $status.
 <li><a href="#checkout-pane">hook_commerce_checkout_pane_info()</a></li>
 </ol>
 
-<a name="checkout-page"> </a>
+<a id="checkout-page"> </a>
 <h3>hook_commerce_checkout_page_info()</h3>
 
 The Checkout module uses this hook to collect information on all the available pages in the checkout process.  The checkout form is not a true multi-step form in the Drupal sense, but it does use a series of connected menu items and the same form builder function to present the contents of each checkout page.  Furthermore, as the customer progresses through checkout, their order’s status will be updated to reflect their current step in checkout.
@@ -402,7 +402,7 @@ A single checkout page array is referred to as $checkout_page.
 An array of checkout page array keyed by page_id is referred to as $checkout_pages.
 The page_id of a checkout page is referred to as $page_id.
 
-<a name="checkout-pane"> </a>
+<a id="checkout-pane"> </a>
 <h3>hook_commerce_checkout_pane_info()</h3>
 
 The Checkout module uses this hook to collect information on all the available checkout panes that may be assigned to checkout pages to build the checkout form.  Any number of panes may be assigned to a page and reordered using the checkout form builder.  Each pane may also have its own settings form accessible from the builder.  On the checkout page, a pane is represented as a fieldset.  Panes possess a variety of callbacks used to define settings and checkout form elements and validate / process submitted data.
@@ -571,7 +571,7 @@ The type of a line item type is referred to as $type.
 <li><a href="#order-status">hook_commerce_order_status_info()</a></li>
 </ol>
 
-<a name="order-state"> </a>
+<a id="order-state"> </a>
 <h3>hook_commerce_order_state_info()</h3>
 
 The Order module uses this hook to gather information on order states defined by enabled modules.  An order state is a particular phase in the life-cycle of an order that is comprised of one or more order statuses.  In that regard, an order state is little more than a container for order statuses with a default status per state.  This is useful for categorizing orders and advancing orders from one state to the next without needing to know the particular status an order will end up in.
@@ -623,7 +623,7 @@ A single order state array is referred to as $order_state.
 An array of order state arrays keyed by name is referred to as $order_states.
 The name of an order state is referred to as $name.
 
-<a name="order-status"> </a>
+<a id="order-status"> </a>
 <h3>hook_commerce_order_status_info()</h3>
 
 The Order module uses this hook to gather information on order statuses defined by enabled modules.  An order status is a single step in the life-cycle of an order that administrators can use to know at a glance what has occurred to the order already and/or what the next step in processing the order will be.

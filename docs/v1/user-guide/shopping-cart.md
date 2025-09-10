@@ -186,8 +186,7 @@ should just work. </p>
 <p>The methods described in this section show you how to hide the shopping carts
 in various ways, but we do not describe how to keep users from purchasing
 content if they are anonymous. That is a much more involved topic and possibly a
-feature request for the <a
-href="https://drupal.org/project/commerce_checkout_login">commerce_checkout_login
+feature request for the <a href="https://drupal.org/project/commerce_checkout_login">commerce_checkout_login
 module</a>.</p>
 
 <h4>Hide Shopping Cart Block from Anonymous</h4>
@@ -411,15 +410,13 @@ user.</p>
 
 ## Modifying the Shopping Cart using Views
 
-
 <p>Drupal's strength is that the modules work together. Imagine a world where
 you can build the most amazing content lister. It could give you as much or even
 more control than raw SQL. Now, imagine a world where an ecommerce platform
 completely worked with that amazing content lister. We each have our focus and
 leave the "annoying" stuff to the other guy. The end result is everything we can
 do is pluggable and has more use cases than we can possibly imagine.</p>
-<p><strong>That world exists.</strong> The content lister is called <a
-href="https://www.drupal.org/node/1578360">Views</a> and here we document how you can use Views to do just about anything with your shopping cart or shopping basket.</p>
+<p><strong>That world exists.</strong> The content lister is called <a href="https://www.drupal.org/node/1578360">Views</a> and here we document how you can use Views to do just about anything with your shopping cart or shopping basket.</p>
 
 <h3>Shopping Cart Block and Page</h3>
 

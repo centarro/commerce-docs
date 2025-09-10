@@ -373,8 +373,7 @@ endless.</p>
 <p>We've included the product edit screen for your benefit to see the
 Product Entity form in all of it's glory. Pretty simple, we've got the
 Product SKU and Product Title that are required. Additionally, Commerce
-Kickstart has added the Image field. <a
-href="../../../user-guide/shopping-cart/#shopping-cart-and-multi-currency">The Price can be changed to allow
+Kickstart has added the Image field. <a href="../../../user-guide/shopping-cart/#shopping-cart-and-multi-currency">The Price can be changed to allow
 for multiple currencies</a>.</p>
     
 <ul class="screenshot_breadcrumbs">
@@ -590,7 +589,7 @@ experience:</p>
 </ul>
 
 <p>On the drupalcommerce.org community site, there is a community-fueled list of
-all available <a href=""https://www.drupalcommerce.org/contrib/admin>Drupal
+all available <a href="https://www.drupalcommerce.org/contrib/admin">Drupal
 Commerce Administrative Modules</a>.</p>
 
 <h3>Bulk Product Management with VBO</h3>
