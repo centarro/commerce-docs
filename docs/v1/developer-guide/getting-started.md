@@ -8,7 +8,7 @@ taxonomy:
 
 Development on Drupal Commerce is a community effort, and all are invited to join in where possible.  We're bringing together people from around the world with a wide range of expertise to make this a giant leap forward in Drupal based e-commerce.
 
-In order to dive in, you should know where the code currently stands and how to contribute to it.  To that end, we'll be adding a project roadmap in the near future that ties into both a specification and issues in our <a href="http://drupal.org/project/issues/commerce">issue tracker</a> to visualize what we have completed and what remains to be done.
+In order to dive in, you should know where the code currently stands and how to contribute to it.  To that end, we'll be adding a project roadmap in the near future that ties into both a specification and issues in our <a href="https://drupal.org/project/issues/commerce">issue tracker</a> to visualize what we have completed and what remains to be done.
 
 When you're ready to dive in, you should review the [development standards](#development-standards) and make sure you understand the Drupal Commerce [code workflow](#code-workflow). Then go pick an issue, find other people working on the same system, and get to work!
 
@@ -37,7 +37,7 @@ If a patch needs work based on any of the project's development standards, pleas
 <a name="syntax"> </a>
 <h3>1. Code Syntax and Documentation</h3>
 
-We'll follow Drupal's <a href="http://drupal.org/coding-standards">coding standards</a> for code syntax and documentation. All functions should be well-documented with both doxygen comment blocks and inline comments. Patches should pass the code review provided by the <a href="http://drupal.org/project/coder">Coder</a> module.
+We'll follow Drupal's <a href="https://drupal.org/coding-standards">coding standards</a> for code syntax and documentation. All functions should be well-documented with both doxygen comment blocks and inline comments. Patches should pass the code review provided by the <a href="https://drupal.org/project/coder">Coder</a> module.
 
 <a name="structure"> </a>
 <h3>2. Module File and Directory Structures</h3>
@@ -61,9 +61,9 @@ README.txt
 /theme/example-foo.tpl.php
 </code>
 
-The help directory contains files compatible with the <a href="http://drupal.org/project/advanced_help">Advanced Help</a> module. The includes directory contains files referenced in menu items and other necessary module includes. The theme directory contains a theme.inc file for theme functions and preprocess functions in addition to any CSS or module based .tpl.php files.  Theme / preprocess functions referenced by functions in *.admin.inc and *.pages.inc files can reside in the files themselves.
+The help directory contains files compatible with the <a href="https://drupal.org/project/advanced_help">Advanced Help</a> module. The includes directory contains files referenced in menu items and other necessary module includes. The theme directory contains a theme.inc file for theme functions and preprocess functions in addition to any CSS or module based .tpl.php files.  Theme / preprocess functions referenced by functions in *.admin.inc and *.pages.inc files can reside in the files themselves.
 
-The tests directory contains <a href="http://drupal.org/simpletest">SimpleTest</a> include files.
+The tests directory contains <a href="https://drupal.org/simpletest">SimpleTest</a> include files.
 
 <a name="packages"> </a>
 <h3>3. Module Packages</h3>
@@ -99,7 +99,7 @@ Only form builder functions should end in _form.
 <a name="simpletest"> </a>
 <h3>5. Automated Testing</h3>
 
-We will be using Drupal 7's core <a href="http://drupal.org/simpletest">SimpleTest</a> testing framework to facilitate code development and maintainability.  While not embracing true test-driven development, we will still only be committing code that comes with appropriate function tests.
+We will be using Drupal 7's core <a href="https://drupal.org/simpletest">SimpleTest</a> testing framework to facilitate code development and maintainability.  While not embracing true test-driven development, we will still only be committing code that comes with appropriate function tests.
 
 The Commerce module provides a base class used for creating Drupal Commerce tests.  The process is documented in the Specification handbook, <a href="https://drupalcommerce.org/developer-guide/utilizing-core-apis/writing-simpletests-commerce-modules">Writing SimpleTests for Commerce modules</a>.
 
@@ -113,7 +113,7 @@ Drupal Commerce modules should follow Drupal coding best practices when implemen
 <ul>
 <li>Using the Form API appropriately</li>
 <li>Taking advantage of Drupal's alter hooks</li>
-<li>Exposing their own objects for alteration via <a href="http://api.drupal.org/api/function/drupal_alter/7">drupal_alter()</a></li>
+<li>Exposing their own objects for alteration via <a href="https://api.drupal.org/api/function/drupal_alter/7">drupal_alter()</a></li>
 <li>Maintaining a strict separation between API functions and the user interface (i.e. not altering data directly in form submit handlers)</li>
 <li>Integrating with the core Entity and Field systems</li>
 </ul>
@@ -130,9 +130,9 @@ This same goal holds true for access control as it pertains to products, orders,
 <a name="l10n"> </a>
 <h3>8. Localization and Variable Strings</h3>
 
-In Ubercart we provided numerous configuration options to override interface strings, like the text used on the Add to Cart button.  This presented a problem for multilingual sites, as Drupal's localization system can translate string literals but not variables. (For more information, see documentation on the <a href="http://api.drupal.org/api/function/t/7">t()</a> function.)
+In Ubercart we provided numerous configuration options to override interface strings, like the text used on the Add to Cart button.  This presented a problem for multilingual sites, as Drupal's localization system can translate string literals but not variables. (For more information, see documentation on the <a href="https://api.drupal.org/api/function/t/7">t()</a> function.)
 
-To correct this problem, the ability to override strings via custom settings forms will not be provided by the core modules. Instead, we will instruct administrators to use the <a href="http://drupal.org/project/stringoverrides">String Overrides</a> module (or whatever comparable systems exist).
+To correct this problem, the ability to override strings via custom settings forms will not be provided by the core modules. Instead, we will instruct administrators to use the <a href="https://drupal.org/project/stringoverrides">String Overrides</a> module (or whatever comparable systems exist).
 
 Furthermore, modules should provide help 'context' to functions used in localization to facilitate accurate translation.
 
@@ -146,7 +146,7 @@ Template files with preprocess functions should be used for nearly all HTML outp
 <a name="ui"> </a>
 <h3>10. Separating API from UI</h3>
 
-As much as possible, we want to enforce at the core level a strict separation of API components from UI components. At one level, this looks like including both a dc_product and dc_product_ui module, like the core Drupal field and field_ui modules. Since a major goal of the project is to develop a solid core and leave the door open for installation profiles and <a href="http://drupal.org/project/features">Feature</a> modules to take care of packaging components, we don't want to make it difficult for developers and site builders to replace default UI components.
+As much as possible, we want to enforce at the core level a strict separation of API components from UI components. At one level, this looks like including both a dc_product and dc_product_ui module, like the core Drupal field and field_ui modules. Since a major goal of the project is to develop a solid core and leave the door open for installation profiles and <a href="https://drupal.org/project/features">Feature</a> modules to take care of packaging components, we don't want to make it difficult for developers and site builders to replace default UI components.
 
 To be honest, we could probably use a separate set of user interface guidelines to ensure we have a consistent feel across all the Drupal Commerce modules.
 
@@ -166,7 +166,7 @@ This heading could be further expanded to address all of our underlying data mod
 
 ## Code Workflow
 
-Drupal Commerce code begins at the level of discussion.  Before digging in to do serious module development, ideas are kicked around in the *#commerce* [Drupal Slack channel] for due consideration.  When the objectives are reasonably clear, a functional specification is produced to guide development, along with any necessary notes on how to implement the features or craft the APIs.  These specs are themselves turned into issues in the <a href="http://drupal.org/project/issues/commerce">issue tracker</a> where development can be monitored.
+Drupal Commerce code begins at the level of discussion.  Before digging in to do serious module development, ideas are kicked around in the *#commerce* [Drupal Slack channel] for due consideration.  When the objectives are reasonably clear, a functional specification is produced to guide development, along with any necessary notes on how to implement the features or craft the APIs.  These specs are themselves turned into issues in the <a href="https://drupal.org/project/issues/commerce">issue tracker</a> where development can be monitored.
 
 When a developer is ready to get to work, he or she should chime in on the appropriate issue on d.o and get up to speed with current development. 
 
@@ -181,8 +181,8 @@ For starters, here's the prototype documentation on drupal.org for using Git to 
 
 
 <ul>
-<li><a href="http://drupal.org/node/711070">http://drupal.org/node/711070</a></li>
-<li><a href="http://progit.org/book/">http://progit.org/book/</a></li>
+<li><a href="https://drupal.org/node/711070">https://drupal.org/node/711070</a></li>
+<li><a href="https://progit.org/book/">https://progit.org/book/</a></li>
 </ul>
 
 ## Installation profiles
@@ -194,8 +194,8 @@ This section of the handbook will be devoted to resources to assist you in creat
 For now, the following list of resources must suffice:
 
 <ul>
-<li><a href="http://drupal.org/project/commerce_kickstart">Commerce Kickstart</a> - an installation profile that performs default installation and configuration of the Commerce modules so a site builder can get right to work.</li>
-<li><a href="http://github.com/rszrama/commercedev">Commerce Dev</a> - a developer oriented installation profile that enables modules and prepares some dummy products and displays for quick testing</li>
+<li><a href="https://drupal.org/project/commerce_kickstart">Commerce Kickstart</a> - an installation profile that performs default installation and configuration of the Commerce modules so a site builder can get right to work.</li>
+<li><a href="https://github.com/rszrama/commercedev">Commerce Dev</a> - a developer oriented installation profile that enables modules and prepares some dummy products and displays for quick testing</li>
 </ul>
 
 [Drupal Slack channel]: https://www.drupal.org/slack

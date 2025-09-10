@@ -79,7 +79,7 @@ taxonomy:
 
 Views is the easy way to display all orders, including orders that are cart orders, etc. You can just edit the existing administrative view of orders and expose the filter, etc.
 
-There is even a default view to change your Admin Orders view into a Views Bulk Operations view with all this functionality in [Commerce VBO Views](http://drupal.org/project/commerce_vbo_views)
+There is even a default view to change your Admin Orders view into a Views Bulk Operations view with all this functionality in [Commerce VBO Views](https://drupal.org/project/commerce_vbo_views)
 
 ## Implementing an automated order workflow
 
@@ -89,6 +89,6 @@ When you build your store, it is up to you to implement your automated order wor
 
 The primary thing to keep in mind is that an order may complete the checkout process without having been paid in full. This means any automated workflow steps that result in the fulfillment of the order should use the <em>When an order is first paid in full</em> event or <code>hook_commerce_payment_order_paid_in_full()</code> instead of the checkout completion event / hook. This is primarily the case when a site integrates a payment gateway that supports delayed payment (e.g. PayPal eCheck payments) or performs authorization only transactions during checkout that are meant to be captured later.
 
-You do not have to use all the order statuses provided by default, and you can create your own either through code or a contributed module like <a href="http://www.drupalcommerce.org/extensions/module/project/commerce-custom-order-status">Commerce Customer Order Statues</a>.
+You do not have to use all the order statuses provided by default, and you can create your own either through code or a contributed module like <a href="https://www.drupalcommerce.org/extensions/module/project/commerce-custom-order-status">Commerce Customer Order Statues</a>.
 
-For more information, refer to the <a href="http://www.drupalcommerce.org/user-guide/checkout-order-status-updates">related checkout documentation</a>.
+For more information, refer to the <a href="https://www.drupalcommerce.org/user-guide/checkout-order-status-updates">related checkout documentation</a>.

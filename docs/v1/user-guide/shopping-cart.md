@@ -23,7 +23,7 @@ Below are some topics related to the add to cart form.
 ![Where do you configure the Add-to-Cart button in Drupal Commerce?](../images/Add-to-Cart-Drupal-Commerce-1.png)
 
 <p>Almost everything in Drupal Commerce is put together using a common Drupal
-pattern: Content (<a href="http://drupal.org/node/1261744">entity and fields
+pattern: Content (<a href="https://drupal.org/node/1261744">entity and fields
 system</a>), <a href="https://www.drupal.org/node/1578360">Views</a>
 (listing things), and <a href="https://www.drupal.org/node/1580776">Rules</a> (taking
 actions on events). The Add-to-Cart button and form are no different. We use the
@@ -34,7 +34,7 @@ to Cart Form." There are really two topics we are discussing here.</p>
     <li><strong>Add-to-Cart Button</strong> - The button that literally creates
     an order with a status of "Shopping Cart." (Sidenote&mdash;Commerce
     Guys has a blog post on <a
-    href="http://commerceguys.com/blog/creating-orders-drupal-commerce-api">creating
+    href="https://commerceguys.com/blog/creating-orders-drupal-commerce-api">creating
     an order using PHP and the API</a>)</li>
     <li><strong>Add-to-Cart Form</strong> - The form that is displayed along
     with the Add-to-Cart button. This is the area that gets ajaxified when you
@@ -160,7 +160,7 @@ or add an engraving for an additional charge.</p>
 <p>There is also a video that goes through this idea of customizing the
 product.</p>
 
-<iframe src="https://player.vimeo.com/video/31459435?byline=0&amp;portrait=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/31459435">Introduction to Line Items in Drupal Commerce</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="https://player.vimeo.com/video/31459435?byline=0&amp;portrait=0" width="640" height="480" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="https://vimeo.com/31459435">Introduction to Line Items in Drupal Commerce</a> from <a href="https://vimeo.com/user5912539">Randy Fay</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 
 ## Anonymous Carts and Logged In Users
@@ -187,7 +187,7 @@ should just work. </p>
 in various ways, but we do not describe how to keep users from purchasing
 content if they are anonymous. That is a much more involved topic and possibly a
 feature request for the <a
-href="http://drupal.org/project/commerce_checkout_login">commerce_checkout_login
+href="https://drupal.org/project/commerce_checkout_login">commerce_checkout_login
 module</a>.</p>
 
 <h4>Hide Shopping Cart Block from Anonymous</h4>
@@ -202,7 +202,7 @@ to that section below.</p>
 
 **Shopping Cart Block**
 
-Like all blocks in Drupal 7 with the core "<a href="http://drupal.org/documentation/modules/contextual">Contextual Links</a>" module turned on, you can simply hover over the shopping cart block and click "Configure block."
+Like all blocks in Drupal 7 with the core "<a href="https://drupal.org/documentation/modules/contextual">Contextual Links</a>" module turned on, you can simply hover over the shopping cart block and click "Configure block."
  
 <ul class="screenshot_breadcrumbs">
     <li class="first">Commerce Kickstart</li>
@@ -284,7 +284,7 @@ the sidebar for Commerce Kickstart. There is a not-so-straightforward way to do 
 
 **Shopping Cart Block**
 
-Like all blocks in Drupal 7 with the core "<a href="http://drupal.org/documentation/modules/contextual">Contextual Links</a>" module turned on, you can simply hover over the shopping cart block and click "Configure block."
+Like all blocks in Drupal 7 with the core "<a href="https://drupal.org/documentation/modules/contextual">Contextual Links</a>" module turned on, you can simply hover over the shopping cart block and click "Configure block."
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Commerce Kickstart</li>
@@ -366,11 +366,11 @@ marketing research or contact information for follow-up sales contacts.</p>
 <p>In this case, you may find some nicely handled features in a contributed
 module that can expire carts for you:
 
-<a href="http://drupal.org/project/commerce_cart_expiration">commerce_cart_expiration</a>.</p>
+<a href="https://drupal.org/project/commerce_cart_expiration">commerce_cart_expiration</a>.</p>
 
 <p>And a screencast on how to implement:</p>
 
-<iframe src="http://player.vimeo.com/video/40541403?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://player.vimeo.com/video/40541403?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 ## Cart Refresh
 
@@ -634,7 +634,7 @@ first line item on the order if the default currency isn't represented.</p>
 Commerce Multi-currency that we have highlighted in a recent Commerce Module
 Tuesday Video (seen below).</p>
 
-<iframe src="http://player.vimeo.com/video/38010721?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen
+<iframe src="https://player.vimeo.com/video/38010721?portrait=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen
 allowFullScreen></iframe>
 
 <h3>Multi-Currency Support in Core</h3>
@@ -765,7 +765,7 @@ In order to actually create a currency conversion we need to do alittle math. Th
 
 **Doing the Exchange**
 
-If you had 1 US dollar, how much would that equal in your other currency? It changes, but for our exercise we're going to assume a static number works for us. (Dynamic currency conversion is possible with <a href="http://drupal.org/project/commerce_multicurrency">Commerce Multicurrency</a>).
+If you had 1 US dollar, how much would that equal in your other currency? It changes, but for our exercise we're going to assume a static number works for us. (Dynamic currency conversion is possible with <a href="https://drupal.org/project/commerce_multicurrency">Commerce Multicurrency</a>).
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>

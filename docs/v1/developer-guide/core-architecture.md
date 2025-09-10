@@ -50,7 +50,7 @@ Shopping carts in Drupal Commerce are nothing more than orders in statuses that 
 
 When a user adds an item to his shopping cart, the action will create a new shopping cart order for the customer with the product in it. If the user is logged in, the order will contain his uid so it may be loaded on subsequent pageloads.  If the user is not logged in, the order ID is stored in the user's session until he logs in and the order is updated to point to the account uid.
 
-As long as an order is still considered to be a shopping cart, its line items will be re-validated on load against the latest product prices / availability, etc. (This still needs to be <a href="http://drupal.org/node/736488">implemented</a>.)
+As long as an order is still considered to be a shopping cart, its line items will be re-validated on load against the latest product prices / availability, etc. (This still needs to be <a href="https://drupal.org/node/736488">implemented</a>.)
 
 For Drupal Commerce 1.0, we are not planning on supporting shopping carts with products in multiple currencies.  While it is technically possible for line items to have differing currencies, it is impossible to provide a general total / payment solution.
 
@@ -164,7 +164,7 @@ See commerce_customer.module for now.
 ## Info Hooks
 
 Info hooks of the format hook_commerce_*_info() are used to define a variety of non-entity / field data structures and even some default entity bundles in Drupal Commerce.  In most cases, the structures defined in these hooks are alterable by other modules.  
-Currently every info hook is expected to return an associative array keyed by a unique ID after all the info hooks have been modified by this issue: <a href="http://drupal.org/node/875034">an issue</a>.
+Currently every info hook is expected to return an associative array keyed by a unique ID after all the info hooks have been modified by this issue: <a href="https://drupal.org/node/875034">an issue</a>.
 
 The hooks are categorized by module with information on all the properties acceptable to a data structure (including the unique key used as the array key in the hook’s return value) and notes regarding alteration and “magic” properties (i.e. properties that receive default values based on other properties in the structure).  In lists of properties, the unique key will be placed first and italicized.  This key serves as the key in the array returned by the info hooks and is also present as a property on the object itself.
 
@@ -187,12 +187,12 @@ The hooks are categorized by module with information on all the properties accep
 <a name="currency-info"> </a>
 <h3>hook_commerce_currency_info()</h3>
 
-Commerce module endeavors to define all legal currencies, so please <a href="http://drupal.org/project/issues/commerce">open an issue</a> if yours is missing.  However, modules can use this hook to add custom / site-specific currencies, such as user points or credits.
+Commerce module endeavors to define all legal currencies, so please <a href="https://drupal.org/project/issues/commerce">open an issue</a> if yours is missing.  However, modules can use this hook to add custom / site-specific currencies, such as user points or credits.
 
 The currency data structure is as follows:
 
 <ul>
-<li><em>code</em> - the three letter currency code as defined by <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a></li>
+<li><em>code</em> - the three letter currency code as defined by <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a></li>
 <li>numeric_code - the three digit numeric code in string format with leading zeros</li>
 <li>name - translatable full name of the currency in plural format</li>
 <li>symbol - the symbol used to denote the currency if one exists</li>
@@ -513,7 +513,7 @@ The type of a customer profile type is referred to as $type.
 
 <h3>hook_commerce_line_item_type_info()</h3>
 
-Note: [Commerce Examples](http://drupal.org/project/commerce_examples) has a line item example demonstrating this, and [Commerce Custom Line Items](http://drupal.org/project/commerce_custom_line_items) actually will create custom line items for you. And here are two screencasts on custom line items: [Introduction to Custom Line Items](http://www.commerceguys.com/resources/articles/237) and [Using Custom Line Items to Provide a Donation Feature](http://www.commerceguys.com/resources/articles/238).
+Note: [Commerce Examples](https://drupal.org/project/commerce_examples) has a line item example demonstrating this, and [Commerce Custom Line Items](https://drupal.org/project/commerce_custom_line_items) actually will create custom line items for you. And here are two screencasts on custom line items: [Introduction to Custom Line Items](https://www.commerceguys.com/resources/articles/237) and [Using Custom Line Items to Provide a Donation Feature](https://www.commerceguys.com/resources/articles/238).
 
 The Line Item module uses this hook to gather information on the types of line items defined by enabled modules.  Each type is represented as a new bundle of the line item entity.  Every bundle comes with a locked price field and additional fields may be added by the defining modules as necessary.  For example, the product line item type gets a product reference field attached to it that relates the line item to the product it represents.
 

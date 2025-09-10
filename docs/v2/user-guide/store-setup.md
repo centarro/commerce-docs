@@ -12,7 +12,7 @@ Stores are also used for invoicing, [tax types](./taxes.md), and any other setti
 
 ## Adding a currency
 
-Drupal Commerce uses the [CLDR](http://cldr.unicode.org/) dataset to define currencies and format them based on the locale. This is facilitated by the multilingual and localization capabilities of Drupal itself.
+Drupal Commerce uses the [CLDR](https://cldr.unicode.org/) dataset to define currencies and format them based on the locale. This is facilitated by the multilingual and localization capabilities of Drupal itself.
 
 Before creating a store, you must add at least one currency. When Commerce is installed, the Drupal site's default country's currency is imported. For example, if the default country was set to United States, USD would be imported. If the default country was set to Germany, EUR would be imported.
 

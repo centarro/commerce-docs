@@ -98,7 +98,7 @@ Here is an example from the `commerce_authnet` module.
   "name": "drupal/commerce_authnet",
   "type": "drupal-module",
   "description": "Provides Commerce integration for Authorize.net.",
-  "homepage": "http://drupal.org/project/commerce_authnet",
+  "homepage": "https://drupal.org/project/commerce_authnet",
   "license": "GPL-2.0+",
   "require": {
     "drupal/commerce": "^2",
@@ -161,8 +161,8 @@ If the dependency is required by another package, it will not be removed.
 * [Using Composer - Drupal.org](https://www.drupal.org/docs/develop/using-composer){target=_blank}
 
 [Composer]: https://getcomposer.org/
-[PSR-4]: http://www.php-fig.org/psr/psr-4/
-[Drush]: http://www.drush.org
+[PSR-4]: https://www.php-fig.org/psr/psr-4/
+[Drush]: https://www.drush.org
 [composer.json]: https://getcomposer.org/doc/04-schema.md
 [composer.lock]: https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
 [composer install]: https://getcomposer.org/doc/03-cli.md#install
@@ -202,7 +202,7 @@ For more information about Drupal Slack groups, see: [https://www.drupal.org/sla
 
 
 [Slack]: https://slack.com/
-[http://drupalslack.herokuapp.com/]: http://drupalslack.herokuapp.com/
+[https://drupalslack.herokuapp.com/]: https://drupalslack.herokuapp.com/
 [https://www.drupal.org/slack]: https://www.drupal.org/slack
 [Drupal issue queues]: https://www.drupal.org/issue-queue
 [Issue Queue]: https://www.drupal.org/project/issues/commerce

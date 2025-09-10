@@ -654,6 +654,6 @@ It is possible to override the used language via field settings, in case the lan
 
 [Google's Address Data Service]: https://chromium-i18n.appspot.com/ssl-address
 [Address module]: https://www.drupal.org/project/address
-[CLDR "Territory Subdivisions" listing]: http://cldr.unicode.org/index/downloads
+[CLDR "Territory Subdivisions" listing]: https://cldr.unicode.org/index/downloads
 [Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
 [Geolocation Address Link module]: https://www.drupal.org/project/geolocation_address_link

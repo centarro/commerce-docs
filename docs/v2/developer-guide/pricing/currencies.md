@@ -54,7 +54,7 @@ The `CommerceGuys\Intl\Currency\CurrencyRepository` class provides the data valu
 * [Internationalization Library]
 
 [Commerce 2.x Stories - Internationalization]: https://drupalcommerce.org/blog/15916/commerce-2x-stories-internationalization
-[CLDR]: http://cldr.unicode.org/
+[CLDR]: https://cldr.unicode.org/
 [Internationalization Commerce Story]: https://drupalcommerce.org/blog/15916/commerce-2x-stories-internationalization
 [Internationalization Library]: https://github.com/commerceguys/intl
 [commerceguys/intl]: https://github.com/commerceguys/intl

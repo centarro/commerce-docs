@@ -4,7 +4,7 @@ One of the primary development standards of Drupal Commerce is a strict separati
 
 The gist of it is forms necessary to add, edit, and delete core entities / bundles are included in the API module but are only "instantiated" by the UI module.  If you enable the Product module, even though the forms are included in that module's includes/commerce_product.forms.inc file, there are no URLs you can browse to to actually submit those forms.  Instead you have to enable the Product UI module which provides menu items for each of these forms.
 
-It does this by using Drupal's <a href="http://api.drupal.org/api/function/hook_form/7">hook_forms()</a> to create unique form IDs for each form it wants to create a menu item for.  The menu items call wrapper functions which include the commerce_product.forms.inc file and then use <a href="http://api.drupal.org/api/function/drupal_get_form/7">drupal_get_form()</a> on the UI module's unique form ID.  This allows the UI module to use <a href="http://api.drupal.org/api/function/hook_form_FORM_ID_alter/7">hook_form_FORM_ID_alter()</a> to specifically add form elements and submit handlers to the forms to make them fit in the menu items.  This includes things like cancel links going to proper URLs and redirect paths being set on form submission.
+It does this by using Drupal's <a href="https://api.drupal.org/api/function/hook_form/7">hook_forms()</a> to create unique form IDs for each form it wants to create a menu item for.  The menu items call wrapper functions which include the commerce_product.forms.inc file and then use <a href="https://api.drupal.org/api/function/drupal_get_form/7">drupal_get_form()</a> on the UI module's unique form ID.  This allows the UI module to use <a href="https://api.drupal.org/api/function/hook_form_FORM_ID_alter/7">hook_form_FORM_ID_alter()</a> to specifically add form elements and submit handlers to the forms to make them fit in the menu items.  This includes things like cancel links going to proper URLs and redirect paths being set on form submission.
 
 If you have a need to instantiate an entity / bundle form at a different URL, you should follow the same method.  This will allow you to assume one form ID exists for each path at which the form is displayed.  It is much easier to make assumptions about alterations and redirection using a form ID than parsing a URL or some other method.  Even if you're using the default Product UI module, you should still use this method to add additional instances of the form to your site's IA if necessary.
 
@@ -24,13 +24,13 @@ Drupal Commerce has an automated testing suite based on the SimpleTest module in
 SimpleTest resources:
 
 <ul>
-<li><a href="http://drupal.org/node/890654">SimpleTest tutorial</a></li>
-<li><a href="http://drupal.org/node/265828">SimpleTest Assertions</a></li>
-<li><a href="http://drupal.org/node/265762">SimpleTest API Functions</a></li>
-<li><a href="http://drupal.org/project/test_notifier">Test Notifier</a> user script. Notifies you when a test has been completed so you don't have to sit and stare at your browser for 2 minutes while the test runs.</li>
+<li><a href="https://drupal.org/node/890654">SimpleTest tutorial</a></li>
+<li><a href="https://drupal.org/node/265828">SimpleTest Assertions</a></li>
+<li><a href="https://drupal.org/node/265762">SimpleTest API Functions</a></li>
+<li><a href="https://drupal.org/project/test_notifier">Test Notifier</a> user script. Notifies you when a test has been completed so you don't have to sit and stare at your browser for 2 minutes while the test runs.</li>
 </ul>
 
-All tests should extend the class <code>CommerceBaseTestCase</code> which adds helper functions to <a href="http://api.drupal.org/api/drupal/modules--simpletest--drupal_web_test_case.php/7/source"><code>DrupalWebTestCase</code></a>. The Commerce base test class lets you quickly create products and set up different store environments for other tests.
+All tests should extend the class <code>CommerceBaseTestCase</code> which adds helper functions to <a href="https://api.drupal.org/api/drupal/modules--simpletest--drupal_web_test_case.php/7/source"><code>DrupalWebTestCase</code></a>. The Commerce base test class lets you quickly create products and set up different store environments for other tests.
 
 Take a look at the <code>CommerceBaseTestCase</code> to see which functions are available when writing other Commerce tests. <em>(Need a link once the code is committed. Could also use it's own API page eventually).</em>
 
@@ -39,8 +39,8 @@ Take a look at the <code>CommerceBaseTestCase</code> to see which functions are 
 Here are some best practices that came about while the base class was being developed.
 
 <ul>
-<li>Follow the <a href="http://www.drupalcommerce.org/developer-guide">Drupal Commerce Developer Guide</a></li>
-<li>Ease your test development with: http://drupal.org/project/test_notifier</li>
+<li>Follow the <a href="https://www.drupalcommerce.org/developer-guide">Drupal Commerce Developer Guide</a></li>
+<li>Ease your test development with: https://drupal.org/project/test_notifier</li>
 <li>Save user creation for the test unless it is used more than once (user creation leads to many page loads!)</li>
 <li>Capitalize module names in the comments</li>
 <li>Test the default state of Drupal Commerce before considering edge cases
@@ -66,7 +66,7 @@ Here are some best practices that came about while the base class was being deve
 
 Ryan posted an article on this topic on the Commerce Guys blog:
 
-<ul> <li><a href="http://www.commerceguys.com/resources/articles/245">http://www.commerceguys.com/resources/articles/245</a></li></ul>
+<ul> <li><a href="https://www.commerceguys.com/resources/articles/245">https://www.commerceguys.com/resources/articles/245</a></li></ul>
 
 ## Working with entity metadata wrappers
 
@@ -101,9 +101,9 @@ Many of our core API functions and hooks work with and expect you to understand 
 
 There are two broad categories of payment methods enabled by the payment system out of the box: on-site payment and off-site payment.  On-site payment is either processed via a third party web service using data collected through a checkout or administration form or simply entails presenting payment information to the customer for them to remit payment offline upon checkout completion.  Off-site payment is enabled through a redirect from the Payment checkout page to the payment service, with customers ideally being returned back to the Payment page upon success or failure so they can be moved forward or backward in the checkout process as the case may require.  Because off-site payment often requires direct customer input (such as a username and password), it is not normally possible to enact this type of payment through the administration form.
 
-Payment gateways tend to offer multiple types of payment services, often providing on-site and off-site options.  Each service should be represented by a different payment method in Drupal Commerce.  Using PayPal as an example, this means the <a href="http://drupal.org/project/commerce_paypal">Commerce PayPal</a> project will include modules defining their services a separate payment methods, including PayPal WPS (off-site service), WPP (on-site service), and EC (a mixture between off-site and on-site).  When a payment method module is enabled, a default payment method rule will be defined that you can use to configure settings for your payment methods.  During the checkout process, all the active payment method rules will be evaluated and given a chance to enable their respective payment methods for use on the checkout form.  You can actually use more than one rule to enable any given payment method using a different set of API credentials or transaction settings based on conditions of the order being paid for.  The important thing to ensure is that no payment method is enabled by more than one rule.
+Payment gateways tend to offer multiple types of payment services, often providing on-site and off-site options.  Each service should be represented by a different payment method in Drupal Commerce.  Using PayPal as an example, this means the <a href="https://drupal.org/project/commerce_paypal">Commerce PayPal</a> project will include modules defining their services a separate payment methods, including PayPal WPS (off-site service), WPP (on-site service), and EC (a mixture between off-site and on-site).  When a payment method module is enabled, a default payment method rule will be defined that you can use to configure settings for your payment methods.  During the checkout process, all the active payment method rules will be evaluated and given a chance to enable their respective payment methods for use on the checkout form.  You can actually use more than one rule to enable any given payment method using a different set of API credentials or transaction settings based on conditions of the order being paid for.  The important thing to ensure is that no payment method is enabled by more than one rule.
 
-The Payment module includes functions designed to support common types of payment services, the most common being credit card payments.  The file commerce_payment.credit_card.inc includes helper functions for building and validating credit card forms and data.  Payment method modules integrating with credit card processing services should use these functions and can use the <a href="http://drupal.org/project/commerce_authnet">Commerce Authorize.Net project</a> as an example for the integration.
+The Payment module includes functions designed to support common types of payment services, the most common being credit card payments.  The file commerce_payment.credit_card.inc includes helper functions for building and validating credit card forms and data.  Payment method modules integrating with credit card processing services should use these functions and can use the <a href="https://drupal.org/project/commerce_authnet">Commerce Authorize.Net project</a> as an example for the integration.
 
 Whenever a payment is attempted, a payment transaction should be created that references the order for which payment was attempted.  This includes transaction attempts that failed, that require further action, or were processed successfully as reflected in the transaction's status: Failure, Pending, Success.  The transaction functions as a log indicating while a payment failed or a basic receipt for successful payments.  The initial amount of the transaction should be the requested payment or authorization amount, but if this changes prior to completion (such as performing a prior authorization capture for a different amount than was originally authorized), the transaction should be updated to reflect the final amount of money collected.  The sum of all successful payment transactions is used to track the outstanding balance on an order.
 
@@ -117,7 +117,7 @@ The responsibilities of a payment method module include the following main point
 4. Defining menu items for additional payment transaction operations and providing the forms and API integration necessary to perform the operations.
 5. Regular maintenance to ensure the module remains up to date with changes in the payment service's API, changes in Drupal Commerce, and security reports. Payment method modules should be managed through drupal.org's project hosting infrastructure where they benefit from version control, issue tracking, and community feedback and security oversight.
 
-For more information and examples of these, refer to the [Payment info hook documentation](../core-architecture/#payment-info-hooks) and the proof-of-concept modules <a href="http://drupal.org/project/commerce_authnet">Commerce Authorize.Net</a> and <a href="http://drupal.org/project/commerce_paypal">Commerce PayPal</a>.  Refer to the <a href="https://web.archive.org/web/20150618020813/https://drupalcommerce.org/faq/payment-methods">payment method FAQ (wayback machine link)</a> for other modules that are developed or in development supporting different types of payment services and representing different countries.
+For more information and examples of these, refer to the [Payment info hook documentation](../core-architecture/#payment-info-hooks) and the proof-of-concept modules <a href="https://drupal.org/project/commerce_authnet">Commerce Authorize.Net</a> and <a href="https://drupal.org/project/commerce_paypal">Commerce PayPal</a>.  Refer to the <a href="https://web.archive.org/web/20150618020813/https://drupalcommerce.org/faq/payment-methods">payment method FAQ (wayback machine link)</a> for other modules that are developed or in development supporting different types of payment services and representing different countries.
 
 <h3>Special notes for off-site payment methods</h3>
 
@@ -136,4 +136,4 @@ The two API functions are:
 <li><strong>commerce_payment_redirect_pane_previous_page($order)</strong> - call this function if the payment notification represents failed or canceled payment; the order will be moved to the previous checkout page so the customer can update try again or choose a different payment method.</li>
 </ul>
 
-To see an example of these functions implemented by an off-site payment method module, refer to the function <strong>commerce_paypal_wps_paypal_ipn_process()</strong> in the commerce_wps.module of the <a href="http://drupal.org/project/commerce_paypal">Commerce PayPal</a> module.
+To see an example of these functions implemented by an off-site payment method module, refer to the function <strong>commerce_paypal_wps_paypal_ipn_process()</strong> in the commerce_wps.module of the <a href="https://drupal.org/project/commerce_paypal">Commerce PayPal</a> module.
