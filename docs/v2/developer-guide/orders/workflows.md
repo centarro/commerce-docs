@@ -36,7 +36,7 @@ This documentation section covers the following topics:
 
 Users of Commerce 1 might be wondering what are the differences in the architecture of Commerce 2. Commerce 1 defined order statuses grouped together in states.
 
-For example, an order going through the checkout process would move through the Checkout:Checkout, Checkout:Review, Checkout:Payment, Checkout:Complete statuses, all part of the Checkout state group. That setup was a source of confusion and it was causing some technical issues as well because it was forcing workflows that were only loosely related (order workflow, checkout workflow, payment workflow, fulfillment workflow) to form one single workflow. That made defining clear paths between states unnecessarily complicated.
+For example, an order going through the checkout process would move through the Checkout:Checkout, Checkout:Review, Checkout:Payment, Checkout:Complete statuses, all part of the Checkout state group. That setup was a source of confusion, and it was causing some technical issues as well because it was forcing workflows that were only loosely related (order workflow, checkout workflow, payment workflow, fulfillment workflow) to form one single workflow. That made defining clear paths between states unnecessarily complicated.
 
 Commerce 2 decouples workflows making transitions between states straightforward.
 
@@ -70,7 +70,7 @@ It starts with the order being in the shopping cart, which is the Draft/Cart sta
 
 ## Order workflow states
 
-Workflow States are the different states that an Order can exist at. For example, in the default Fulfillment workflow, the order is in the Draft state when a customer is adding products to the shopping cart, after it has been submitted it is in the Fulfillment state (awaiting for the store to fulfill the order), and after the products have been shipped the order is in the Completed State.
+Workflow States are the different states that an Order can exist at. For example, in the default Fulfillment workflow, the order is in the Draft state when a customer is adding products to the shopping cart, after it has been submitted it is in the Fulfillment state (waiting for the store to fulfill the order), and after the products have been shipped the order is in the Completed State.
 
 The default states for the default workflows are:
 
@@ -194,7 +194,7 @@ On a production site you may want to export the Order Type as configuration and 
 
 ### Testing the Result
 
-Once the workflow is registered and it is associated with an order type, store managers should be able to move the order through the define states via the defined transitions. Place a test order and go to its View admin page. The order should be automatically put in the Processing state and you should be able to move it to the Fulfillment state by clicking the "Process order" button (indicating that the order has been processed), and then to the Completed state by clicking the "Fulfill order" button.
+Once the workflow is registered, and it is associated with an order type, store managers should be able to move the order through the define states via the defined transitions. Place a test order and go to its View admin page. The order should be automatically put in the Processing state, and you should be able to move it to the Fulfillment state by clicking the "Process order" button (indicating that the order has been processed), and then to the Completed state by clicking the "Fulfill order" button.
 
 You can also cancel the order at any step, as defined in the workflow's transitions.
 
@@ -205,7 +205,7 @@ You can also cancel the order at any step, as defined in the workflow's transiti
 
 ## Subscribing to Transition Events
 
-In many cases we may want to do more when a transition occurs than simply moving the order to the next state. Let's say that we want to send an email to the customer when an order has been processed and is awaiting for fulfillment. That should happen when a store manager clicks on the "Process order" button for an Order.
+In many cases we may want to do more when a transition occurs than simply moving the order to the next state. Let's say that we want to email the customer when an order has been processed and is waiting for fulfillment. That should happen when a store manager clicks on the "Process order" button for an Order.
 
 The [State machine](../../core/core/#state-machine) module that provides the foundation for the workflows emits two events when a transition occurs. The events are named ``commerce_order.TRANSITION_ID.TRANSITION_PHASE``, where ``TRANSITION_ID`` is the key of the transition's definition in the YAML file, and ``TRANSITION_PHASE`` is "pre_transition" for the first event that is emitted just before the transition has occurred, and "post_transition" for the second event that is emitted just after it.
 

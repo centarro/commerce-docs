@@ -1,14 +1,14 @@
 # Contribute to documentation
 
 We love contributors! Please help us improve or fix the documentation by
-editing a document and making a pull request in Github.
+editing a document and making a pull request in GitHub.
 
 The Drupal Commerce documentation site is built using [MkDocs]. It's built 
 with Phyton and content written in Markdown. If you are familiar with Markdown, then you
 can easily contribute to the documentation!
 
 The beauty of an open source project is that anyone can contribute. To contribute 
-to an open source project you need not to be a programmer, there are other ways to 
+to an open source project you need not be a programmer, there are other ways to 
 contribute to an open source project than through code. The easiest way for non-programmers 
 is to contribute through documentation.
 
@@ -71,7 +71,7 @@ Will render as -
 Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add follow-up commits before the changes are merged into the repository.
 
 Start by creating a branch for your work.
-The branch name should contain a brief summary of its ID and the issue, e.g **106-create-product-type**:
+The branch name should contain a brief summary of its ID and the issue, e.g. **106-create-product-type**:
 
 ```bash
 cd commerce-docs/v2
@@ -99,7 +99,7 @@ To get the details about platform-based build for your pull request, click on th
 
 **Getting feedback**
 
-To get the feedback on your pull request you need to ask somebody to review it, and [Drupal Slack] members are ready to review the pull requests for you. But first you will need an invite, you can get invite by submitting your email id here.
+To get the feedback on your pull request you need to ask somebody to review it, and [Drupal Slack] members are ready to review the pull requests for you. But first you will need an invite. You can get invited by submitting your email id here.
 
 In the above image, a pull request was reviewed by reviewer and some changes are suggested. So we will make the suggested changes and push the changes.
 

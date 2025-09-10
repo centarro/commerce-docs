@@ -14,7 +14,7 @@ Translating the UI
 Drupal uses the t() function to translate any strings hardcoded in the source code.
 This doesn't work for any strings that are provided by the user, such as the checkout completion message.
 
-Additionally, Drupal is not able to translate the field labels (such as Shipping Information, Order Total, the add to cart fields, etc) without external help.
+Additionally, Drupal is not able to translate the field labels (such as Shipping Information, Order Total, the add to cart fields, etc...) without external help.
 
 That external help is the Internationalization module (i18n). You need two modules, i18n_string and i18n_field. admin/config/regional/translate/i18n_string will show a "Drupal Commerce" string group that can be refreshed, and after it is refreshed the admin/config/regional/translate/translate page will show the order completion message and the order creation help text in the "Drupal Commerce" group, while the "Fields" group will show all the field labels, field descriptions, etc.
 
@@ -36,7 +36,7 @@ There are different solutions based on the field type that's used for the add to
 - taxonomy_term_reference pointing to a vocabulary: Requires the title patch from <a href="https://drupal.org/node/2013985">https://drupal.org/node/2013985</a>
 
 Search API
-Search API facets are translated automatically by i18n. Fulltext search isn't multilingual by default and it will only search the default language. This is fixed by the sandbox at <a href="https://drupal.org/sandbox/maciej.zgadzaj/2056241">https://drupal.org/sandbox/maciej.zgadzaj/2056241</a>, it has been approved and reviewed by the Search API maintainer and should become a full project or be merged into Search API after DrupalConPrague
+Search API facets are translated automatically by i18n. Fulltext search isn't multilingual by default, and it will only search the default language. This is fixed by the sandbox at <a href="https://drupal.org/sandbox/maciej.zgadzaj/2056241">https://drupal.org/sandbox/maciej.zgadzaj/2056241</a>, it has been approved and reviewed by the Search API maintainer and should become a full project or be merged into Search API after DrupalConPrague
 
 Discounts
 Discounts in the VAT situation are supposed to be applied post-tax. So a fixed-rate discount is supposed to include a VAT component. This is currently not supported in Commerce. There is a Commerce patch at <a href="https://drupal.org/node/1825886">https://drupal.org/node/1825886</a> to make this possible (or for now just use percentage discounts).

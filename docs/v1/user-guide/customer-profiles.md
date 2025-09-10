@@ -24,7 +24,7 @@ As indicated above, it is important for customer profiles to be preserved in the
 ## Configuring / Creating Customer Profiles
 
 <p>Customer information is collected for orders on separate entities called customer profiles that
-are associated with the order through customer profile reference fields. By default the Billing
+are associated with the order through customer profile reference fields. By default, the Billing
 information customer profile type just includes an address field, but it can be edited through
 the field interface to include any additional fields you require. These fields will automatically be
 visible on the related checkout pane for the customer profile.</p>
@@ -55,7 +55,7 @@ the newly created customer profile and save it to view the resulting message.</p
 
 **Click Manage Fields**
 
-<p>The first tab you will find yourself on is the "List" tab. That will show you all of the available customer profiles. If you click "Profile Types" in the upper right, you will see all of your profile types (similar to content types for nodes). If you have installed Shipping, that includes a new profile type. Click Manage Fields to add a phone number.</p>
+<p>The first tab you will find yourself on is the "List" tab. That will show you all the available customer profiles. If you click "Profile Types" in the upper right, you will see all of your profile types (similar to content types for nodes). If you have installed Shipping, that includes a new profile type. Click Manage Fields to add a phone number.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -81,7 +81,7 @@ the newly created customer profile and save it to view the resulting message.</p
 
 **Checkout Example**
 
-<p>Here on checkout you can see our address field which is a part of the default Commerce Kistart. Additionally, below that you now see the Phone number field we've added. Let's go ahead and checkout to get to the next step.</p>
+<p>Here on checkout you can see our address field which is a part of the default Commerce Kickstart. Additionally, below that you now see the Phone number field we've added. Let's go ahead and checkout to get to the next step.</p>
 
 ![Read the disclaimer on the customer profile edit screen.](../images/Profile-Admin-5.png)
 

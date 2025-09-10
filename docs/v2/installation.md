@@ -196,7 +196,7 @@ In subsequent sections it is assumed that you are using Composer to manage your 
 
 #### Getting started
  The very first thing you'll want to do to get started with Drupal
- Commerce is create a store. Under the Commerce menu in the toolbar,
+ Commerce is to create a store. Under the Commerce menu in the toolbar,
  navigate to Configuration > Store > Stores and click the `Add store` button.
  Once you've created a store, you'll be able to create products and start
  developing the rest of your site.
@@ -251,7 +251,7 @@ Please note the `--with-dependencies` option. Without this option
 specified, any needed, contributed projects and libraries will not
 update. Only the Drupal Commerce module will be updated.
 
-Run your Drupal updates once all of the dependencies are updated. We
+Run your Drupal updates once all the dependencies are updated. We
 recommend running them on the command line rather than the
 `update.php` script. See the example below.
 

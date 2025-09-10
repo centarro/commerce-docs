@@ -227,7 +227,7 @@ taxonomy:
 
 ```
 
-#### Saving and retreiving misc data on and order
+#### Saving and retrieving misc data on and order
 
 There may be some scenarios that it would be beneficial to store some data on an order. You could make a field on the order, but perhaps that is overkill or not appropriate for your use case. 
 

@@ -8,7 +8,7 @@ taxonomy:
 
 <p>The following will help you understand how to use taxonomy on Product Variations to get a simple drop down to show up on your Add to Cart pages.</p>
 
-<p>Prior to continuing with this example, it assumed you have already created a vocabulary of taxonomy terms to be used for your products. For our example below, we will be using a taxonomy term list for size of tshirt.</p>
+<p>Prior to continuing with this example, it assumed you have already created a vocabulary of taxonomy terms to be used for your products. For our example below, we will be using a taxonomy term list for size of t-shirt.</p>
 
 ![If you haven't already done so, look at Adding a New Product over here: https://www.drupalcommerce.org/commerce-kickstart-2/adding-new-product](../../images/CK-Product-Variations-01.png)
 
@@ -28,8 +28,8 @@ taxonomy:
 
 **Add Taxonomy Field**
 
-<p>If you are following along with this tutorial, you should be at the "Manage Fields" for your product variation type. If not, you can get there by click on "Variation Types" in the Products menu and selecting "Manage Fields" next to the Variation type you want to have a drop down.</p>
-<p>Next you'll want to add a "Term reference" field. Our example term reference field only has a few options, so a select list here makes sense. This does not affect how the drop down will be listed on the product page.</p>
+<p>If you are following along with this tutorial, you should be at the "Manage Fields" for your product variation type. If not, you can get there by click on "Variation Types" in the Products menu and selecting "Manage Fields" next to the Variation type you want to have a drop-down.</p>
+<p>Next you'll want to add a "Term reference" field. Our example term reference field only has a few options, so a select list here makes sense. This does not affect how the drop-down will be listed on the product page.</p>
 
 
 <ul class="screenshot_breadcrumbs">
@@ -59,7 +59,7 @@ taxonomy:
 
 **Taxonomy Field Demo**
 
-<p>When adding a new "tshirt" that we created in step 1, we now have a "tshirt size" taxonomy field that we can choose <strong>PER VARIATION</strong>. That is an important differentiation from the Product display, which includes the "Title" and the vertical tabs area.</p>
+<p>When adding a new "t-shirt" that we created in step 1, we now have a "t-shirt size" taxonomy field that we can choose <strong>PER VARIATION</strong>. That is an important differentiation from the Product display, which includes the "Title" and the vertical tabs area.</p>
 
 <ul class="screenshot_breadcrumbs">
     <li class="first">Administration</li>
@@ -71,4 +71,4 @@ taxonomy:
 
 **Final Product Demo**
 
-<p>The final page shows us a drop down that affects the price.</p>
+<p>The final page shows us a drop-down that affects the price.</p>

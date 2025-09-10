@@ -8,7 +8,7 @@ This page provides specific, technical explanations of the payment-related data 
 
 ## Payment gateways
 
-A **payment gateway** is a configuration entity that manages a single instance of a payment gateway plugin. Payment gateways are created and managed through the adminstrative UI (or programatically). Customers interact with payment gateways only indirectly, when they select a payment option during checkout. See the [Payment options builder section](#payment-options-builder) for additional information. Payment gateway plugins provide the functionality that allows customers to enter their payment information, interact with the payment providers that capture the actual payments, and update order information locally to correctly track whether orders have been paid. See the [Creating payment gateways documentation](../creating-payment-gateway) for information about payment gateway plugins.
+A **payment gateway** is a configuration entity that manages a single instance of a payment gateway plugin. Payment gateways are created and managed through the administrative UI (or programmatically). Customers interact with payment gateways only indirectly, when they select a payment option during checkout. See the [Payment options builder section](#payment-options-builder) for additional information. Payment gateway plugins provide the functionality that allows customers to enter their payment information, interact with the payment providers that capture the actual payments, and update order information locally to correctly track whether orders have been paid. See the [Creating payment gateways documentation](../creating-payment-gateway) for information about payment gateway plugins.
 
 Payment, payment method, and order entities all have a payment gateway entity reference field.
 
@@ -29,7 +29,7 @@ Payment, payment method, and order entities all have a payment gateway entity re
 
 ### Payments and payment types
 
-A **payment** is a content entity that stores local information about payment transactions that are executed remotely. These payment transactions may be submitted to a payment provider via its API or they may be payments that are received "in the real world" (cash, check, etc.) Every payment belongs to a single Drupal Commerce *order* and a single *payment gateway*. *Payments* are created by *payment gateway plugins*; each *payment gateway plugin* defines the **payment type** for the *payments* it creates.
+A **payment** is a content entity that stores local information about payment transactions that are executed remotely. These payment transactions may be submitted to a payment provider via its API, or they may be payments that are received "in the real world" (cash, check, etc.) Every payment belongs to a single Drupal Commerce *order* and a single *payment gateway*. *Payments* are created by *payment gateway plugins*; each *payment gateway plugin* defines the **payment type** for the *payments* it creates.
 
 Out of the box, the Commerce Payment module provides two **payment types**: `payment_default` and `payment_manual`. The *manual* payment type is used for *manual* payment gateways; *default* is used, by default, by all other payment gateways. Each payment type has its own *workflow*, which defines the states and transitions for a payment's status. 
 
@@ -87,11 +87,11 @@ Out of the box, the Commerce Payment module provides two **payment types**: `pay
 
 #### Creating payments
 
-Payments are created during checkout when a customer confirms his order and can be created manually through the administrative UI. See the [Code recipes documentation](../code-recipes) for an example of creating a payment programatically. For *Manual* and *On-site* payment gateway plugins, payments are created by the `createPayment()` method. For *Off-site* payment gateway plugins, payments are typically created in the `onReturn()` method or in the `onNotify()` method, if the gateway supports asynchronous notifications (IPNs).
+Payments are created during checkout when a customer confirms his order and can be created manually through the administrative UI. See the [Code recipes documentation](../code-recipes) for an example of creating a payment programmatically. For *Manual* and *On-site* payment gateway plugins, payments are created by the `createPayment()` method. For *Off-site* payment gateway plugins, payments are typically created in the `onReturn()` method or in the `onNotify()` method, if the gateway supports asynchronous notifications (IPNs).
 
 #### Saving payments
 
-- When a payment is saved, the payment gateway mode is automatically set, based on the current mode for its payment gateways's plugin.
+- When a payment is saved, the payment gateway mode is automatically set, based on the current mode for its payment gateway's plugin.
 - Authorized and completed timestamps are updated automatically.
 - When a payment is saved, the total paid amount for the payment's order is updated.
 
@@ -101,7 +101,7 @@ Payments are created during checkout when a customer confirms his order and can 
 
 ### Payment methods and payment method types
 
-A **payment method** is a content entity that stores local information for a payment method created and stored remotely by a payment provider. *Credit card* and *Paypal* are two types of payment methods, both of which are provided by the core *Commerce Payment* module. *Payments* can be created from payment methods. Currently, payment methods are only available for *On site* payment gateways that support stored payment methods. Payment methods belong to customers and can generally be re-used for multiple orders.
+A **payment method** is a content entity that stores local information for a payment method created and stored remotely by a payment provider. *Credit card* and *PayPal* are two types of payment methods, both of which are provided by the core *Commerce Payment* module. *Payments* can be created from payment methods. Currently, payment methods are only available for *On site* payment gateways that support stored payment methods. Payment methods belong to customers and can generally be re-used for multiple orders.
 
 Payment gateways define the *types* of payment methods they support. For example, the [Commerce Braintree payment gateway] supports `credit_card`, `paypal`,  and `paypal_credit` payment method types. A **payment method type** defines the information to be collected and stored locally whenever a *payment method* is created. For example, for `credit_card` payment methods, *Card type* and *Card number* (last few digits only) are required fields; *Card expiration month* and *Card expiration year* are additional fields that can be optionally used for credit card payments.
 
@@ -136,11 +136,11 @@ One standard field that's not listed as a payment method field is, "label". That
 
 #### Creating payment methods
 
-*Payment methods* are created by *payment gateway plugins* that implement `SupportsStoredPaymentMethodsInterface`. During checkout, when a customer selects a payment option provided by an *On site* gateway, he is prompted to enter payment details which are transmitted to the payment provider. If the request is successful, a *payment method* entity is created locally by the payment gateway's `createPaymentMethod()` method, and that *payment method* is attached to the customer and the order. See also the [Code recipes documentation](../code-recipes) for an example of creating a payment method programatically.
+*Payment methods* are created by *payment gateway plugins* that implement `SupportsStoredPaymentMethodsInterface`. During checkout, when a customer selects a payment option provided by an *On site* gateway, he is prompted to enter payment details which are transmitted to the payment provider. If the request is successful, a *payment method* entity is created locally by the payment gateway's `createPaymentMethod()` method, and that *payment method* is attached to the customer and the order. See also the [Code recipes documentation](../code-recipes) for an example of creating a payment method programmatically.
 
 #### Saving payment methods
 
-- When a payment method is saved, the payment gateway mode is automatically set, based on the current mode for its payment gateways's plugin.
+- When a payment method is saved, the payment gateway mode is automatically set, based on the current mode for its payment gateway's plugin.
 
 #### Payment options builder
 
@@ -152,7 +152,7 @@ The `PaymentOptionsBuilder` service ties together all the internally stored paym
 
 3. Options to create new payment methods for applicable payment gateways. For example, if the "Credit card", "PayPal", and "PayPal Credit" payment method options are all enabled for the [Commerce Braintree payment gateway], then they will also appear as options. The payment method type's `create_label` is used for the labels.
 
-4. Options for applicable payment gateways that do not provide payment methods (off-site, manual, etc). The payment gateway plugin's `display_label` is used for the labels.
+4. Options for applicable payment gateways that do not provide payment methods (off-site, manual, etc...). The payment gateway plugin's `display_label` is used for the labels.
 
 These options appear on the "Payment information" checkout pane that is typically part of the "Order Information" step.
 
@@ -202,7 +202,7 @@ With the information that we have obtained, it is straightforward to override th
 
 Once you've set them, these will be the settings that will be used when a customer chooses to pay using this payment gateway. Note that due to how configuration management works in Drupal 8, the admin pages such as the payment gateway's Edit page or the configuration export page used above will still display the values of the settings defined in the code as exported configuration or in the database.
 
-NB, if you are checking with `drush cget` be sure to use the `--include-overridden` flag to show variables that are overriden. in the example above this would be 
+NB, if you are checking with `drush cget` be sure to use the `--include-overridden` flag to show variables that are overridden. in the example above this would be 
 ```drush cget --include-overridden commerce_payment.commerce_payment_gateway.paypal_express_checkout``` 
 
 ### How to Test if It Works

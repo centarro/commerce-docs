@@ -34,7 +34,7 @@ This method also triggers the onSubscriptionCreate() method for the `Subscriptio
 
 ![Create subscription](../images/02.create-subscription.png)
 
-There's one last step in the `onPlace()` method, but it's a *BIG* one: a call to the `ensureOrder` method provided by the `RecurringOrderManager` service. The RecurringOrderManager holds almost all of the module logic, so we'll see it used throughout the Commerce Recurring module. For now, we'll limit ourselves to just the `ensureOrder()` method (and the methods it calls.)
+There's one last step in the `onPlace()` method, but it's a *BIG* one: a call to the `ensureOrder` method provided by the `RecurringOrderManager` service. The RecurringOrderManager holds almost all the module logic, so we'll see it used throughout the Commerce Recurring module. For now, we'll limit ourselves to just the `ensureOrder()` method (and the methods it calls.)
 
 <h3>RecurringOrderManager ensureOrder() method</h3>
 
@@ -60,7 +60,7 @@ Our newly created *recurring* order does not yet have any order items. The `appl
 
 Here is a short synopsis of what the method does; for full details, take a look at the full source code for `SubscriptionTypeBase::collectCharges()`.
 
-`collectCharges()` uses the subscription's start date (the date the initial order was placed) and the first billing period that was calculated for the recurring order. It determines a "base billing period" using the billing schedule plugin's `generateNextBillingPeriod()` method, if needed. Depending on whether the billing schedule is Prepaid or Postpaid as well as the whether the billing schedule's plugin is fixed or rolling, the base billing period could be the same as the first billing period or some other combination of start and end dates.
+`collectCharges()` uses the subscription's start date (the date the initial order was placed) and the first billing period that was calculated for the recurring order. It determines a "base billing period" using the billing schedule plugin's `generateNextBillingPeriod()` method, if needed. Depending on whether the billing schedule is Prepaid or Postpaid, as well as whether the billing schedule's plugin is fixed or rolling, the base billing period could be the same as the first billing period or some other combination of start and end dates.
 
 In the case of a Prepaid billing schedule, the base billing period will be the *next* billing period after the first billing period. Its start date will be either the subscription start date plus a single interval or, if the billing schedule is fixed, the adjusted subscription start date plus a single interval; its end date will be the start date plus an interval.
 
@@ -79,7 +79,7 @@ The subscription type plugin returned an array containing just a single `Charge`
 
 At this point, we have a problem with our recurring order item: the unit price might not be valid for the base billing period that was calculated. So here's where the prorater plugin gets called into action. Recall that the billing schedule configuration entity has a [prorater plugin](../getting-started/#prorater). In the prorater plugin's `prorateOrderItem` method, a prorated unit price is returned, and the recurring order item's unit price is updated. Note that the unit price is set here as 'overridden' so that it will not be subsequently changed by any price resolvers.
 
-Finally, the `applyCharges()` method finishes by adding the recurring order item to the recurring order. The recurring order's total is automatically recalcuated so that it matches the unit price of the recurring order item.
+Finally, the `applyCharges()` method finishes by adding the recurring order item to the recurring order. The recurring order's total is automatically recalculated so that it matches the unit price of the recurring order item.
 
 ![Create recurring order](../images/05.create-recurring-order-item.png)
 
@@ -131,7 +131,7 @@ Once all the required field values have been entered and the form has been saved
 
 The `SubscriptionActivate` JobType plugin is used to activate a subscription. If the subscription is not found or is not active, the plugin's `process()` method returns with a "failure" result. Otherwise, the `activate` transition is applied to the subscription and the RecurringOrderManager's `ensureOrder()` method is called to create the recurring order for the subscription. This is the same method that was used to [create a recurring order for a product variation type subscription](#create-subscriptions). At the end, we will have an "active" subscription with a single recurring order (in the "draft" state.) 
 
-The only difference between a subscription created from an order item and a standalone subscription is that neither the standalone subscription nor its recurring order item will have a purchased entity. [The recurring order close-and-renewal process](#close-and-renew-subscriptions) reamins the same. One possible use-case for a standalone subscription is a recurring donation system. The admin UI currently provides only basic functionality and would probably require improvements before it could be used in production. For example, the standalone subscription still requires a stored payment method; the Payment method field should be required and validated.
+The only difference between a subscription created from an order item and a standalone subscription is that neither the standalone subscription nor its recurring order item will have a purchased entity. [The recurring order close-and-renewal process](#close-and-renew-subscriptions) remains the same. One possible use-case for a standalone subscription is a recurring donation system. The admin UI currently provides only basic functionality and would probably require improvements before it could be used in production. For example, the standalone subscription still requires a stored payment method; the Payment method field should be required and validated.
 
 ## Close and renew subscriptions
 
@@ -177,6 +177,6 @@ Next, the new recurring order and its items are saved, the order is added to the
 
 In the [Create subscriptions section](#create-subscriptions), we looked at how the `OrderSubscriber` class uses its `onPlace()` method to handle the "place" transition that's triggered when checkout completes. In this part, we look at what happens when an order with a subscription is canceled. 
 
-The `OrderSubscriber` class handles the order cancel event with its `onCancel()` method. Just as in `onPlace()`, this method only operates on *non-recurring* order types. Unlike the `onPlace()` method, `onCancel()` is fairly simple and straighforward.
+The `OrderSubscriber` class handles the order cancel event with its `onCancel()` method. Just as in `onPlace()`, this method only operates on *non-recurring* order types. Unlike the `onPlace()` method, `onCancel()` is fairly simple and straightforward.
 
 In `onCancel()`, we iterate through the order's items. If an order item's purchasable entity has both a "subscription type" and "billing schedule", then we find any subscriptions for which this order is the subscription's "initial order" *and* the subscription state is "active". For each subscription, the state is set to Canceled and the subscription is saved.

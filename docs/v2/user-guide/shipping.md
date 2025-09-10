@@ -31,11 +31,11 @@ drupal module:install commerce_shipping
 ```
 
 However, you will likely also want a specific plugin for calculating shipping rates
-for your shipper(s) of choice. For example, Fedex, at this time, there are limited
-plugins created and you may need to create your own. See the list [above](./shipping.md).
+for your shipper(s) of choice. For example, FedEx, at this time, there are limited
+plugins created, and you may need to create your own. See the list [above](./shipping.md).
 In general, installing those plugins is as simple as installing the Drupal module
 that includes them, although they may have specific installation instructions, in
-which case, please follow them. For example, to install the Fedex plugin, you would:
+which case, please follow them. For example, to install the FedEx plugin, you would:
 
 ```bash
 composer require drupal/commerce_fedex

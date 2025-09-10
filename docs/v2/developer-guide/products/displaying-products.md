@@ -49,7 +49,7 @@ This section describes how to customize the product pages that are displayed on 
 
 ### Product variation field injection
 
-When a product type is created, the, *Inject product variation fields into the rendered product* configuration setting is enabled by default. To see what that setting does, let's start by *disabling* product variation field injection for the Simple product type, using its *Edit* form.
+When a product type is created, the *Inject product variation fields into the rendered product* configuration setting is enabled by default. To see what that setting does, let's start by *disabling* product variation field injection for the Simple product type, using its *Edit* form.
 
 ![Disable variation field injection](../images/product-display-ui-2.jpg)
 
@@ -112,7 +112,7 @@ Once you've identified the correct Order item type for your Product type, naviga
 
 ![Add to cart form mode](../images/add-to-cart-ui-1.jpg)
 
-By default, *Purchased entity* is the only field enabled for the form. That field provides a mechanism for customers to select a product variation to be add to their cart.
+By default, *Purchased entity* is the only field enabled for the form. That field provides a mechanism for customers to select a product variation to be added to their cart.
 
 If you would like to allow customers to enter additional information when adding items to the cart, enable the relevant fields here. For example, if the *Quantity* field is Disabled, then whenever a customer clicks the *Add to cart* button, 1 unit of the selected item will be automatically added. To allow customers to specify quantities other than 1 when they select an item:
 

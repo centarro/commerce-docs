@@ -42,7 +42,7 @@ The following PHP libraries are used:
 
 **[commerceguys/addressing]**: An addressing library, powered by Google’s dataset. Stores and manipulates postal addresses.
 
-## Dependancies
+## Dependencies
 
 ### Profile
 
@@ -106,7 +106,7 @@ used to group workflows used for the same purpose (e.g. payment workflows).
 
 - Alter existing workflows.
 - Get State field values.
-- Apply State transitions programatically.
+- Apply State transitions programmatically.
 
 #### Architecture
 
@@ -181,7 +181,7 @@ Drupal Commerce uses State fields for two of its entities: Orders and Payments. 
 
 In this documentation section, we will go through an example of creating a custom State field, workflow, and workflow group and continue to build out the example in the next two sections on Guards and Transition event subscribers.
 
-Our custom state field will be added to Order item entities, and we'll use it to track order fulfillment on a per-item basis. We are assuming that order items will be "filled" from inventory manually by administrative users. We'll also add in an option to "backorder" an item, if inventory is not currently available for that item. An order will not be complete until each of its items has either been filled or backordered.
+Our custom state field will be added to Order item entities, and we'll use it to track order fulfillment on a per-item basis. We are assuming that order items will be "filled" from inventory manually by administrative users. We'll also add in an option to "backorder" an item, if inventory is not currently available for that item. An order will not be complete until each of its items has either been filled or back-ordered.
 
 A custom "State" field can be created through the admin UI like any other custom field. Navigate to the "Manage fields" page for the "Default" order type at `admin/commerce/config/order-item-types/default/edit/fields` and click the "Add field" button to add a new "State" field. We'll name our new field "Fulfillment state" with machine ID: `field_fulfillment_state`. The number of allowed values for a State field should always be set to 1.
 
@@ -234,13 +234,13 @@ mymodule_order_item_fulfillment:
 
 Following `id`, `group`, and `label`, we have two sections which define our workflow: `states` and `transitions`. 
 
-For each state, we simply define a label for each of the state IDs. The state IDs (`unfilled`, `filled`, `backordered`) will be used whenever we want to work with the workflow programatically. The state labels ("Not filled", "Filled", "Backordered") will be used when displaying state values through the admin UI.
+For each state, we simply define a label for each of the state IDs. The state IDs (`unfilled`, `filled`, `backordered`) will be used whenever we want to work with the workflow programmatically. The state labels ("Not filled", "Filled", "Backordered") will be used when displaying state values through the admin UI.
 
 Defining the transitions can be trickier, if your workflow has any complex logic. Sketching out the states and transitions on paper with boxes and arrows can be helpful. For example, here is a diagram for our order item fulfillment workflow:
 
 ![Order item fulfillment workflow diagram](../images/custom-state-fields-5.png)
 
-Notice that there are two separate arrows for the "Un-fill" and "Fill" transtions between the "Not filled" and "Filled" states. State transitions are always one-way, so we need a separate transition for each direction. Also, for any transition, there can only be exactly one "to" state. Since any transition can have multiple "from" states, those state IDs are defined with square brackets.
+Notice that there are two separate arrows for the "Un-fill" and "Fill" transitions between the "Not filled" and "Filled" states. State transitions are always one-way, so we need a separate transition for each direction. Also, for any transition, there can only be exactly one "to" state. Since any transition can have multiple "from" states, those state IDs are defined with square brackets.
 
 After creating the workflow group and workflow YAML files, we just need to clear caches so that the configuration can be discovered. Now we can set the workgroup value for our custom Order item state field through the admin UI:
 
@@ -261,7 +261,7 @@ When an order is placed, either at checkout or through the admin UI, its State c
 
 ![Custom state field config](../images/state-transition-guards-2.png)
 
-But what if we wanted to add constraints to prevent administrative users from moving an Order from the Fulfillment state to Completed or Canceled under certain conditions? In the [Custom state fields documentation](#working-with-state-fields), we created a custom State field for Order items, to track fulfillment on a per-item basis. We might want to prevent users from cancelling an order if any of its order items have already been "filled". And we might want to prevent users from transitioning an order to Completed if any of its items are still "un-filled". The State Machine module's state transition "Guards" provide the ability to incorporate this sort of business logic. State transition Guards limit the transitions available for a State field based on contextual information. Transitions can be restricted based on the current user's permissions, a parent entity field, etc.
+But what if we wanted to add constraints to prevent administrative users from moving an Order from the Fulfillment state to Completed or Canceled under certain conditions? In the [Custom state fields documentation](#working-with-state-fields), we created a custom State field for Order items, to track fulfillment on a per-item basis. We might want to prevent users from cancelling an order if any of its order items have already been "filled". And we might want to prevent users from transitioning an order to "Completed" if any of its items are still "un-filled". The State Machine module's state transition "Guards" provide the ability to incorporate this sort of business logic. State transition Guards limit the transitions available for a State field based on contextual information. Transitions can be restricted based on the current user's permissions, a parent entity field, etc.
 
 ![Order fulfillment workflow with guards](../images/state-transition-guards-3.png)
 

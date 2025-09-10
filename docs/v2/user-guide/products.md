@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-Products in Drupal Commerce are designed to meet your needs. Whether you are selling clothing which has different sizes or colors, bed sheets with various thread counts, or products with various billing terms, Drupal Commerce can support your product model.
+Products in Drupal Commerce are designed to meet your needs. Whether you are selling clothing which has different sizes or colors, bedsheets with various thread counts, or products with various billing terms, Drupal Commerce can support your product model.
 
 ## Before you begin
 
@@ -61,7 +61,7 @@ Finally, you can create products! [Follow the directions in this section on the 
 
 Imagine you need to sell a DrupalCon t-shirt. This t-shirt comes in
 different sizes and colors. Each combination of size and color has its
-own SKU, so you know which color and size the customer has purchased and you can track exactly how many of each combination you have in stock.
+own SKU, so you know which color and size the customer has purchased, and you can track exactly how many of each combination you have in stock.
 
 Color and size are product attributes. Blue and small are product
 attribute values, belonging to the mentioned attributes. The combination of attribute values (with a SKU and a price) is called a product variation. These variations are grouped inside a product.
@@ -149,7 +149,7 @@ variation type and make the ``color`` attribute optional by following
 these steps:
 
 1. Go to ``/admin/commerce/config/product-variation-types``
-2. Click the drop down next to the variation type you want and click
+2. Click the drop-down next to the variation type you want and click
    "manage fields" 
    
    ![](./images/product_variation_manage_fields.gif)
@@ -227,7 +227,7 @@ Next we create our variations for the product. The variations are the options av
 
 ![Variation](./images/add-product-variation.png)
 
-Click **Add new variation** to add a new variation. Follow the previous process and repeat until satisified that all purchasable options are displayed.
+Click **Add new variation** to add a new variation. Follow the previous process and repeat until satisfied that all purchasable options are displayed.
 
 ![Variation edit](./images/add-product-new-variaition.png)
 

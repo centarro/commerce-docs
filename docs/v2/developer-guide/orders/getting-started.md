@@ -24,7 +24,7 @@ recalculates order item prices and availability.
 ## Order types
 
 Order types allow you to control how an order interacts with the other
-components of Drupal Commerce, and the how the order moves through the
+components of Drupal Commerce, and how the order moves through the
 system.
 
 ![Order workflow settings](../images/order-types-workflow.png)
@@ -56,7 +56,7 @@ simplified checkout flow that has one step (i.e.: payment.)
 
 ## Order items
 
-An order item represents a purchasable entity inside of an order. It
+An order item represents a purchasable entity inside an order. It
 contains a reference to the purchasable entity, a quantity, a unit price
 and a total price.
 
@@ -123,11 +123,11 @@ Now, that you've got money for the goods from the customer, let's go ahead and o
 
 ### Completing the Order
 
-Once you are ready to ship the order, you must click the "Validate Order" button and it will put the order in `Fulfillment` state.
+Once you are ready to ship the order, you must click the "Validate Order" button, and it will put the order in `Fulfillment` state.
 
 ![](../images/order_in_fulfillment_state.png)
 
-And finally, once the order has shipped out, you can hit the "Fulfill Order" button and the order enters `Completed` state.
+And finally, once the order has shipped out, you can hit the "Fulfill Order" button, and the order enters `Completed` state.
 
 ![](../images/order_completed.png)
 
@@ -135,11 +135,11 @@ See the [Order workflow documentation](../workflows) for more information about 
 
 ## Order refresh and processing
 
-Order processing is part of the order refresh process. This is run when on draft orders to ensure that it has up to date adjustments and that its order items are up to date.
+Order processing is part of the order refresh process. This is run when on draft orders to ensure that it has up-to-date adjustments and that its order items are up to date.
 
 ### The order refresh lifecycle
 
-The order refresh is vital to ensuring that an order has up to date product pricing, promotional adjustments, taxes, and more. When an order is loaded, the order's storage checks if it requires a refresh. This then invokes the order refresh cycle, controlled by the `commerce_order.order_refresh` process.
+The order refresh is vital to ensuring that an order has up-to-date product pricing, promotional adjustments, taxes, and more. When an order is loaded, the order's storage checks if it requires a refresh. This then invokes the order refresh cycle, controlled by the `commerce_order.order_refresh` process.
 
 !!! warning "The order refresh process only runs on **draft** orders. It will not run on orders which have been placed."
 
@@ -159,13 +159,13 @@ The following is an overview of the process:
 
 Each order type can configure its refresh threshold. For instance, a regular customer order type might be fine at an hourly refresh interval. On the other hand, a wholesaler order type may need a more constant refresh, such as every minute, due to pricing logic.
 
-By default order types refresh every five minutes. This can be modified by editing the order type.
+By default, order types refresh every five minutes. This can be modified by editing the order type.
 
 ![Order refresh settings](../images/order-type-order-refresh.png)
 
 ### Hooking into the process
 
-The order refresh process uses tagged services to identify services which should be ran. Service classes must implement `\Drupal\commerce_order\OrderProcessorInterface`.
+The order refresh process uses tagged services to identify services which should be run. Service classes must implement `\Drupal\commerce_order\OrderProcessorInterface`.
 
 !!! example
 
@@ -227,7 +227,7 @@ The order receipt email, which customers receive, is controlled through the `com
 * Billing information, as `billing_information`
 * Shipping information, as `shipping_information`
 * Payment method information as `payment_method`
-* Order total sumary as `totals`
+* Order total summary as `totals`
 
 The default `commerce-order-receipt.html.twig` can be found in the `commerce_order` module. 
 

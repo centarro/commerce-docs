@@ -149,7 +149,7 @@ A **product attribute value** is a content entity that has a product attribute a
 
 Custom fields can be added to product attribute value entities through the administrative UI.
 
-The following diagram illustrates the relationships amoung product attributes, product attribute values, product variations, and products.
+The following diagram illustrates the relationships among product attributes, product attribute values, product variations, and products.
 
 ![Product Information Structure](../images/attribute_entity_relationships.png)
 

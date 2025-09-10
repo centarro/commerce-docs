@@ -36,7 +36,7 @@ There are many contributed Drupal modules that can help you manage customer acco
 
 In this section we'll look at two different approaches for organizing customers into groups. First, we'll look at how user roles can be used to limit access to discounts or other functionality within Drupal Commerce. Then, we'll look at how taxonomies can be used in situations where the number of different groups makes the user role approach impractical.
 
-If neither user roles nor taxonomies provide enough functionality for your needs, there may be a contribued Drupal module that would work. See the [User management modules](https://www.drupal.org/module-categories/user-management) listing.
+If neither user roles nor taxonomies provide enough functionality for your needs, there may be a contributed Drupal module that would work. See the [User management modules](https://www.drupal.org/module-categories/user-management) listing.
 
 ### Customer group user roles
 You can use *User roles* to organize customers to limit access to payment gateways, promotions, or certain fees/charges based on customer type. Drupal Commerce provides plugin-based *Conditions* functionality and includes a condition for *Customer role*. As an example, let's suppose we have a select group of *wholesale* customers that should receive a 10% discount on all products. Here's how we could set that up:

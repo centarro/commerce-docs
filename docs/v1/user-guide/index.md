@@ -9,7 +9,7 @@ taxonomy:
 
 Building a Drupal Commerce site is easiest when you have at least some familiarity with administering Drupal itself.  With the release of Drupal 7, navigating the backend is easier than ever, but there's still quite a lot to learn.  Familiarizing new users with Drupal is out of scope for this documentation, so we recommend using other freely available resources to get up and running on Drupal 7 before installing and configuring the Commerce modules.
 
-To setup a new Drupal Commerce site, you're going to end up creating a custom content type, using Drupal 7's Fields system, and learning to navigate the complex Views and Rules modules for advanced store customization.  This guide won't teach you everything there is to know about customizing Drupal Commerce, but we hope to provide at least the basics.
+To set up a new Drupal Commerce site, you're going to end up creating a custom content type, using Drupal 7's Fields system, and learning to navigate the complex Views and Rules modules for advanced store customization.  This guide won't teach you everything there is to know about customizing Drupal Commerce, but we hope to provide at least the basics.
 
 This user guide is for Drupal Commerce 1.x and is subject to change. Please feel free to add comments.
 

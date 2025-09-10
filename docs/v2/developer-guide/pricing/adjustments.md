@@ -25,7 +25,7 @@ The Commerce Order module defines *Custom*, *Fee*, *Promotion*, and *Tax* Adjust
 The *Has UI* setting controls the list of *Adjustment type* options that appear on the Order admin form:
 ![Adjustments on order admin form](../images/adjustments-1.png)
 
-Adjustment type definitions are provided by the the *Commerce Order* module in `commerce_order.commerce_adjustment_types.yml` and by the *Commerce Shipping* module in `commerce_shipping.commerce_adjustment_types.yml`. 
+Adjustment type definitions are provided by the *Commerce Order* module in `commerce_order.commerce_adjustment_types.yml` and by the *Commerce Shipping* module in `commerce_shipping.commerce_adjustment_types.yml`. 
 
 ### Customizing Adjustment types
 
@@ -136,7 +136,7 @@ Drupal Commerce provides a service for splitting Price amounts across order item
 
 In addition to the `order` and `amount` arguments, the Splitter service also has an optional `percentage` string argument.  For example, '0.2' for 20%. When missing, it is calculated by comparing the amount to the order subtotal.
 
-The *Splitter* service starts by calculating per-order-item amounts using the percentage. Then if the sum of the individual amounts does not match the full amount, the remainder is distributed among the order items. For example, if an order has 3 items, and we want to split $10.00 among them, $3.33 will be added to each and then the remaining $.01 will be added to the first order item's amount.
+The *Splitter* service starts by calculating per-order-item amounts using the percentage. Then, if the sum of the individual amounts does not match the full amount, the remainder is distributed among the order items. For example, if an order has 3 items, and we want to split $10.00 among them, $3.33 will be added to each and then the remaining $.01 will be added to the first order item's amount.
 
 ### Useful Mathematical Adjustment methods
 
@@ -180,7 +180,7 @@ assert($rounded_down_adjustment->getAmount()->equals(new Price('20.55', 'USD')))
 
 ### Combining adjustments
 
-* Method `combineAdjustments(array $adjustments)` combines an array of Adjustments based on their `type` and `sourceId` values. Adjustments without a source ID value are not combined; they are always shown standalone. When Adjustments are *combined*, their Amounts are added together. If combined Adjustments have different label/percentage/included/locked values, the values for the first Adjustment in the orginal array are used.
+* Method `combineAdjustments(array $adjustments)` combines an array of Adjustments based on their `type` and `sourceId` values. Adjustments without a source ID value are not combined; they are always shown standalone. When Adjustments are *combined*, their Amounts are added together. If combined Adjustments have different label/percentage/included/locked values, the values for the first Adjustment in the original array are used.
 
 ```php
 $adjustment_transformer = \Drupal::service('commerce_order.adjustment_transformer');
@@ -252,7 +252,7 @@ The Commerce Order module provides an Order Total Summary (`commerce_order_total
 
 ![Order summary display](../images/adjustments-3.png)
 
-Note that "included" adjustments are not displayed to the customer. The one exception is taxes, which need to be shown for legal reasons. This field formatter uses the `commerce-order-total-summary.html.twig` template, which can be overridden to customize the display of adjustments. All properties of adjustments are available for display. By default, only the adjustment "label" and "amount" (formatted as a price) are displayed. If you have adjustments with "perentage" values, you can add them to the template like this:
+Note that "included" adjustments are not displayed to the customer. The one exception is taxes, which need to be shown for legal reasons. This field formatter uses the `commerce-order-total-summary.html.twig` template, which can be overridden to customize the display of adjustments. All properties of adjustments are available for display. By default, only the adjustment "label" and "amount" (formatted as a price) are displayed. If you have adjustments with "percentage" values, you can add them to the template like this:
 
 | Twig                                 | Output example (for 9.75% adjustment) |
 |--------------------------------------|---------------------------------------|

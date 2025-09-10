@@ -49,7 +49,7 @@ That brings us to the second method defined in the Promotion Offer Interface:
 public function apply(EntityInterface $entity, PromotionInterface $promotion);
 ```
 
-This is where we’ll implement all the logic that makes the offer plugin work. You can look at the implementation of the `apply()` method in each of the four default offer types plugins (located in the same place as the interface and base class). In each, the amount of the adjustment is determined based on the entity (order or order item) values and the offer type configration values. Then a new "promotion" Adjustment is created and added to the entity.
+This is where we’ll implement all the logic that makes the offer plugin work. You can look at the implementation of the `apply()` method in each of the four default offer types plugins (located in the same place as the interface and base class). In each, the amount of the adjustment is determined based on the entity (order or order item) values and the offer type configuration values. Then a new "promotion" Adjustment is created and added to the entity.
 
 ## Offer type configuration
 

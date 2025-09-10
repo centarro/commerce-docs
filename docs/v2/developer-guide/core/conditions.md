@@ -43,7 +43,7 @@ Both Promotions and Payment Gateways allow multiple Conditions to be combined in
 - All conditions must pass
 - Only one condition must pass
 
-Within Drupal Commerce core, the `ConditionGroup` class provides this functionality. In the `PaymentGateway` entity class, for example, the `applies()` method creates a new `ConditionGroup` object with all of the Payment Gateways's conditions and the Payment Gateways's AND/OR operator. If the *Condition Group* evaluates to `TRUE`, then the Payment Gateway is *applies* and is available. Similarly, a Condition Group is used to determine whether a Promotion *applies* to a specific order/cart.
+Within Drupal Commerce core, the `ConditionGroup` class provides this functionality. In the `PaymentGateway` entity class, for example, the `applies()` method creates a new `ConditionGroup` object with all the Payment Gateways's conditions and the Payment Gateways's AND/OR operator. If the *Condition Group* evaluates to `TRUE`, then the Payment Gateway *applies* and is available. Similarly, a Condition Group is used to determine whether a Promotion *applies* to a specific order/cart.
 
 If neither a single Condition nor a combination of Conditions covers your business logic needs, then you can create a custom Condition plugin. The remainder of this documentation page describes the structure of Drupal Commerce Condition plugins and how to create your own.
 

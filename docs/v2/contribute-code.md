@@ -67,7 +67,7 @@ against the main repository.
 
 ### Running tests
 
-All of the Drupal Commerce tests are based on the PHPUnit framework. In
+All the Drupal Commerce tests are based on the PHPUnit framework. In
 order to run the tests you will need to copy the `phpunit.xml.dist`
 from the core directory and modify it for your environment. An in depth
 article on getting ready to run the tests can be found here:
@@ -118,14 +118,14 @@ They are held every Wednesday at 5PM GMT+1 on the *#commerce* [Drupal Slack chan
 ## Creating a patch
 
 Start by creating a branch for your work.
-The branch name should contain a brief summary of its id and the issue, e.g **2276369-fix-product-form-notice**:
+The branch name should contain a brief summary of its id and the issue, e.g. **2276369-fix-product-form-notice**:
 
 ```bash
 cd web/modules/contrib/commerce
 git checkout -b 2276369-fix-product-form-notice
 ```
 
-Once you’re done with writing your code and you've committed all changes to your branch, use `diff` to create a patch. For example, if the current version of Drupal Commerce is `8.x-2.x`, create a patch like this:
+Once you’re done with writing your code, and you've committed all changes to your branch, use `diff` to create a patch. For example, if the current version of Drupal Commerce is `8.x-2.x`, create a patch like this:
 
 ```bash
 git diff 8.x-2.x > fix-product-form-notice-2276369-13.patch
@@ -277,7 +277,7 @@ composer update drupal/commerce
 Once you've tested a patch, leave a comment on the issue. If the patch worked for you, you can change the issue status to "Reviewed & tested by the community". If the patch didn't work for you, you can change the issue status to "Needs work". Provide as many details as possible to help developers reproduce your results and figure out how to fix the patch.
 
 !!! tip "How to get a Commerce issue committed"
-    * Up to date issue summary
+    * Up-to-date issue summary
     * Complete tests
         * If it is a bug report, tests are more important than the fix, they guarantee both that the bug exists and that the fix actually fixes it.
         * Make sure to have full test coverage, lazy test writing will stall your issue.

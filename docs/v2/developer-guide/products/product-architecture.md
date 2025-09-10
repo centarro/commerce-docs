@@ -9,7 +9,7 @@ Documentation in this section describes various approaches to product architectu
 * [Simple product type](#simple-product-type)
 * [Product type with attributes](#product-type-with-attributes)
 * [Product with categories](#product-categories)
-* [Most common product achitectures](#most-common-product-architectures)
+* [Most common product architectures](#most-common-product-architectures)
 * [Multilingual products](#multilingual-products)
 
 
@@ -438,7 +438,7 @@ You can add translations for the product attribute label and the names for each 
 
 ## Code recipes
 
-If you want to write custom code to programatically create or manage your product architecture, you can use these code recipes as a starting point.
+If you want to write custom code to programmatically create or manage your product architecture, you can use these code recipes as a starting point.
 
 **Create:**
 
@@ -457,7 +457,7 @@ If you want to write custom code to programatically create or manage your produc
  - [PurchasableEntityInterface](#purchasableentityinterface)
 
 !!! example "<a id="create-product-type"></a> Creating a product type"
-    In the [Simple product type](#simple-product-type) documentation, we looked at creating a product type through the administration UI. A *Simple* product variation type was created automatically for us. If you are creating a product type programatically, you will need to create its product variation type *before* you create the product type.
+    In the [Simple product type](#simple-product-type) documentation, we looked at creating a product type through the administration UI. A *Simple* product variation type was created automatically for us. If you are creating a product type programmatically, you will need to create its product variation type *before* you create the product type.
 
     ```php
         /**

@@ -38,17 +38,17 @@ Run the demo on your computer with [Commerce Kickstart](https://www.drupal.org/p
 
 <div class="grid cards icon-grid" markdown>
 
-- [:centarro-store:{ .lg .middle }  __Setup your store__](./v2/user-guide/store-setup/)
+- [:centarro-store:{ .lg .middle }  __Set up your store__](./v2/user-guide/store-setup/)
 
 - [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](./v2/user-guide/products/)
 
 - [:centarro-clipboard-check-fill:{ .lg .middle }  __Manage your orders__](./v2/user-guide/orders/)
 
-- [:centarro-truck-front-fill:{ .lg .middle } __Setup your shipping__](./v2/user-guide/shipping/)
+- [:centarro-truck-front-fill:{ .lg .middle } __Set up your shipping__](./v2/user-guide/shipping/)
 
 - [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payments/)
 
-- [:centarro-bookmark-star-fill:{ .lg .middle } __Setup your promotions__](./v2/user-guide/promotions/)
+- [:centarro-bookmark-star-fill:{ .lg .middle } __Set up your promotions__](./v2/user-guide/promotions/)
 
 </div>
 

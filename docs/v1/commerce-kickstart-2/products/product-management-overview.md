@@ -20,7 +20,7 @@ taxonomy:
 
 **Inline Editing**
 
-<p>The inline editing function called "Quick Edit" is powered by Views Mega Row. When you click "Quick Edit" it brings in all of the product variations right there so you edit and disable variations right there.</p>
+<p>The inline editing function called "Quick Edit" is powered by Views Mega Row. When you click "Quick Edit" it brings in all the product variations right there so you edit and disable variations right there.</p>
 
 ![Operations Button](../../images/CK-Product-Mngmt-03.png)
 

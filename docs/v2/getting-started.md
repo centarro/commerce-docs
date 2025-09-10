@@ -45,7 +45,7 @@ distributable libraries that can be shared and integrated by others. This is
 possible in part by the PHP Framework Interoperability Group (FIG) and [PSR-4]{target=_blank}
 for autoloading of class files.
 
->  Dependency management is not a new concept and not unique to PHP. NPM for NodeJS,
+>  Dependency management is not a new concept and not unique to PHP. NPM for Node.js,
 >  Bower for front end libraries, Bundler/Gems for Ruby, PIP for Python, Maven for
 >  Java and so forth.
 
@@ -128,7 +128,7 @@ dependency version constraints.
 
 [composer install]
 
-The `composer install` command will download and install dependencies. The install command will install off of lock file. However, if no lock file is available it will act as the update command.
+The `composer install` command will download and install dependencies. The "install" command will install off of lock file. However, if no lock file is available it will act as the update command.
 
 The command will regenerate the class autoloader.
 

@@ -298,7 +298,7 @@ gateway is unserialized, so the API key can be re-set here.
 ## On-site payment gateways
 
 On-site payment gateways allow the customer to enter credit card details directly on the site. The details might be
-safely tokenized before they reach the server (Braintree, Stripe, etc) or they might be transmitted directly to the
+safely tokenized before they reach the server (Braintree, Stripe, etc...) or they might be transmitted directly to the
 server (PayPal Payments Pro).
 
 <h4>On-site payment gateway flow:</h4>
@@ -1352,7 +1352,7 @@ If the payment fails for any reason, the method should throw a `PaymentGatewayEx
 
 ![Payment error message](../images/create-payment-gateway-5.png)
 
-Before you even begin processing the request, you should first verify that it is actually a legitmate request *from the
+Before you even begin processing the request, you should first verify that it is actually a legitimate request *from the
 payment provider*. For an overview and examples of how this is handled by several actual payment gateway modules, read
 the [Security considerations](#security-considerations) documentation.
 
@@ -1407,7 +1407,7 @@ hours to clear. Payment entities should be created only if the payment is succes
 Many payment providers use notifications, generally described as "IPNs", "endpoints", or "webhooks", to submit
 information asynchronously to the payment gateways that support them. Payment providers may inform a Drupal Commerce
 site that a new pending/complete payment should be created (if the payment happened off-site), or they may provide
-information about an existing payment (refunds, disputes, etc).
+information about an existing payment (refunds, disputes, etc...).
 
 The Drupal Commerce Payment module handles these notifications by:
 

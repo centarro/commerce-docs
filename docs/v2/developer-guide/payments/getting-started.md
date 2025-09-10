@@ -10,7 +10,7 @@ This page provides an overview of Drupal Commerce payments at a conceptual level
 
 ### Payment providers and payment gateways
 
-First, what are payment gateways? Payment gateways are a pluggable system that allows you to interface with a payment provider to handle the secure payment transactions for whatever you are selling. Amazon Pay, Authorize.net, Paypal, and Stripe are all examples of payment providers. The systems that send information about your orders off to your payment provider and handle responses from the payment provider are called payment gateways. These gateways are all unique because they have very different features and requirements.
+First, what are payment gateways? Payment gateways are a pluggable system that allows you to interface with a payment provider to handle the secure payment transactions for whatever you are selling. Amazon Pay, Authorize.net, PayPal, and Stripe are all examples of payment providers. The systems that send information about your orders off to your payment provider and handle responses from the payment provider are called payment gateways. These gateways are all unique because they have very different features and requirements.
 
 There are two kinds of payment gateways that payment providers use: *On-site* and *Off-site*:
 

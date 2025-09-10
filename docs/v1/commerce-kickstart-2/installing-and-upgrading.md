@@ -35,14 +35,14 @@ taxonomy:
 <h4>Updating your files</h4>
 
 <p>If you are upgrading your site from a previous release of Commerce Kickstart (since 2.x RC1 forward), we support an upgrade path.</p>
-<p><STRONG>IMPORTANT</STRONG> - Drush 8.x-6.x supports an upgrade for Kickstart 2, but it is not the common "drush up" command. Use the following code snippets (and make sure to backup everything):</p>
+<p><STRONG>IMPORTANT</STRONG> - Drush 8.x-6.x supports an upgrade for Kickstart 2, but it is not the common "drush up" command. Use the following code snippets (and make sure to back up everything):</p>
 
 <code>
 $ drush dl commerce_kickstart
 $ drush updatedb -y
 </code>
 
-<p>Or you can follow the step by step instructions below.</p>
+<p>Or you can follow the step-by-step instructions below.</p>
 
 <ol>
 <li>Log in to your site as admin (user 1)</li>
@@ -79,7 +79,7 @@ $ drush updatedb -y
 
 **Download Kickstart**
 
-<p>Make sure you click on “Notes” so you can see all of the various download options. You absolutely want to download the full core version as Kickstart 2 ships with core patches.</p>
+<p>Make sure you click on “Notes” so you can see all the various download options. You absolutely want to download the full core version as Kickstart 2 ships with core patches.</p>
 
 ![Extract the Files](../images/CK-Install-2.png)
 
@@ -133,11 +133,11 @@ $ drush updatedb -y
 
 **Getting Started**
 
-<p>The getting started screen and "help" tab are there to give you guidance for using Drupal Commerce Kickstart 2 and all of it's features.</p>
+<p>The getting started screen and "help" tab are there to give you guidance for using Drupal Commerce Kickstart 2 and all of its features.</p>
 
 ## Troubleshooting the Kickstart 2 Installation
 
-<p>There are a few hiccups people have posted about and we've tried our best to give you next steps. Chances are, you won't have any problem installing Commerce Kickstart 2, but if you do, we have listed the bare minimum requirements and a few odd settings that sometimes cause problems.</p>
+<p>There are a few hiccups people have posted about, and we've tried our best to give you next steps. Chances are, you won't have any problem installing Commerce Kickstart 2, but if you do, we have listed the bare minimum requirements and a few odd settings that sometimes cause problems.</p>
 <p><span style="color: #FFF; background: red;">&nbsp;NOTE&nbsp;</span> &nbsp; A bug in MAMP causes seg faults in the php interpreter.</p>
 <ul>
   <li>Disk Space: 45 MB</li>
@@ -156,7 +156,7 @@ $ drush updatedb -y
 
 <h3>Quick reminder about Memory</h3>
 
-<p>Since the Commerce Kickstart 2 distribution can install an entire setup and configured working demo, the installation process requires a bit more sustained power. In our early beta tests, installations can sometimes silently fail when it uses close to your memory limit. Migrate will stop importing content and you will end up with the settings of a new store and very little content. The solution to fix this situation is to reinstall with a higher memory limit, or to rerun the migrations using the Drush command "drush ms" or by enabling the module "Migrate UI" and going to admin/content/migrate.</p>
+<p>Since the Commerce Kickstart 2 distribution can install an entire setup and configured working demo, the installation process requires a bit more sustained power. In our early beta tests, installations can sometimes silently fail when it uses close to your memory limit. Migrate will stop importing content, and you will end up with the settings of a new store and very little content. The solution to fix this situation is to reinstall with a higher memory limit, or to rerun the migrations using the Drush command "drush ms" or by enabling the module "Migrate UI" and going to admin/content/migrate.</p>
 
 ## Hosting Commerce Kickstart
 

@@ -13,7 +13,7 @@ taxonomy:
    architecture, building payment gateways, code workflow, and utilizing
    core APIs.
 -  [Commerce Kickstart 2] - A guide built for site builders that are
-   demo’ing with Kickstart 2.x
+   demoing with Kickstart 2.x
 -  [Commerce Cookbook] - A cookbook of common site builder tasks that
    covers things like shipping, inventory, reporting, merchandising,
    etc.

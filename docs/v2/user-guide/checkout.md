@@ -16,15 +16,15 @@ Checkout flow page is under Home >> Administration >> Commerce >> Configuration 
 
 ![Checkout flow](./images/checkout-flow.png)
 
-Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process. It supports single and multi-page checkout depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
+Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process. It supports single and multipage checkout depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
 
 ![checkout out drag and drop](./images/checkout-drag-and-drop.png)
 
 Content of panes is split in this 7 parts, but it can be modular, so you can drag and drop them as you wish or even disable them:
 
-* Login - offers option for users to login or continue as guest, enables guest checkout
+* Login - offers option for users to log in or continue as guest, enables guest checkout
 * Order information - the initial form used to collect basic order details
-* Review - a review of all the order details with the pane for submitting paymen
+* Review - a review of all the order details with the pane for submitting payment
 * Payment -  used to select Transaction Mode - Authorize and capture or Authorize only
 * Complete -  the final landing page showing the checkout completion message.
 * Sidebar - order summary and coupon redemptions
@@ -51,10 +51,10 @@ This checkout pane presents all payment methods available to the customer in a r
 
 This checkout pane displays a simple checkout completion message that links to the order details page in the user's account. Even anonymous users will be able to view their completed orders for the duration of their current session. The checkout completion message is configurable via the pane's configuration form for single language sites, but multilingual sites will want to leave it set to the default message and translate the default string to the desired message through the translation interface.
 
-## Controling guest checkout
+## Controlling guest checkout
 
-By default your site will allow guest checkouts.
-You can change this and only allow registered users to checkout and/or allow users to register before they checkout.
+By default, your site will allow guest checkouts.
+You can change this and only allow registered users to check out and/or allow users to register before they check out.
 You can change this setting on a per Checkout Flow basis, so you can allow guest checkouts for some flows and not others as you need.
 
 ### How to enable / disable Guest Checkout
@@ -85,7 +85,7 @@ Your first checkout page will then have the below sections, its exact appearance
 
 ## Allow registration during checkout
 
-You can restrict checkout to just users with accounts. You can then either completely deny checkout access to users without accounts or require them to create an account before they can checkout.
+You can restrict checkout to just users with accounts. You can then either completely deny checkout access to users without accounts or require them to create an account before they can check out.
 
 You can change this setting on a per Checkout Flow basis, so you can deny guest checkouts for some flows and not others as you need.
 
@@ -112,7 +112,7 @@ With a Boostrap theme your page will look something like the below:
 
 ![Allow box checked user view](./images/commerce2-checkout-allow-registration-bootstrap.png)
 
-To **Deny Registraion at Checkout**
+To **Deny Registration at Checkout**
 
 * Click the cog icon in the **Login or continue as guest**
 * Uncheck the **Allow guest checkout** box

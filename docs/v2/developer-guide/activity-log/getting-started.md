@@ -21,7 +21,7 @@ When the Commerce Log module is installed, logs will be automatically generated 
 
 This example order has had 3 logs created. The first (bottom-most) entry was created when the customer added an item to his cart. Logs are also created when items are removed from a cart. 
 
-The next two logs were created when the order was placed. All of the default Order state transition events are logged: *Placed*, *Validated*, *Fulfilled*, and *Canceled*. For more information on state transition events, see the [State machine documentation](../../core/core/#state-machine).
+The next two logs were created when the order was placed. All the default Order state transition events are logged: *Placed*, *Validated*, *Fulfilled*, and *Canceled*. For more information on state transition events, see the [State machine documentation](../../core/core/#state-machine).
 
 The "Order activity" listing is a Views block that can be modified through the Admin UI like any other [View].
 
@@ -40,7 +40,7 @@ If you are looking for information on logging messages in Drupal more generally,
 
 ### Log entities
 
-Logs are content entities that are generated programatically. Each is associated with a specific Commerce entity source. There is no user interface for creating or managing logs. Logs are rendered using simple [Inline templates]. Log entities store references to the templates and parameter values for those templates.
+Logs are content entities that are generated programmatically. Each is associated with a specific Commerce entity source. There is no user interface for creating or managing logs. Logs are rendered using simple [Inline templates]. Log entities store references to the templates and parameter values for those templates.
 
 See `Drupal\commerce_log\Entity\LogInterface` for the getter/setter methods that can be used for each of its base fields:
 
@@ -67,13 +67,13 @@ public function onCartEntityAdd(CartEntityAddEvent $event) {
 }
 ```
 
-The `$source` content entity is the cart, a `commerce_order` entity. The `$template_id` is `cart_entity_added`. And the label for the item being added is passed in to the `generate()` method as an optional extra parameter. `$this->logStorage` is a variable that was set when the event subscriber was constructed. If you are unfamiliar with Drupal Event Subscrbers, Drupal.org provides [Subscribe to and dispatch events] documentation within its [Creating custom modules] guide.
+The `$source` content entity is the cart, a `commerce_order` entity. The `$template_id` is `cart_entity_added`. And the label for the item being added is passed in to the `generate()` method as an optional extra parameter. `$this->logStorage` is a variable that was set when the event subscriber was constructed. If you are unfamiliar with Drupal Event Subscribers, Drupal.org provides [Subscribe to and dispatch events] documentation within its [Creating custom modules] guide.
 
 Let's look at the components of the `generate()` method in more detail.
 
 #### Source entity
 
-We pass the `cart` entity into the generate function, which uses it to set the `source_entity_id` and `source_entity_type` field values for the Log entity. The Source entity Id will be the unique order Id of the cart, and the Source entity type will be set to `commerce_order`. We are able to get the Cart entity from the event, `Drupal\commerce_cart\Event\CartEntityAddEvent` in this case. That event provides the `getCart()` and `getOrderItem()` methods (as well as `getEntity()` and `getQuantity()`).
+We pass the `cart` entity into the generate function, which uses it to set the `source_entity_id` and `source_entity_type` field values for the Log entity. The Source entity ID will be the unique order ID of the cart, and the Source entity type will be set to `commerce_order`. We are able to get the Cart entity from the event, `Drupal\commerce_cart\Event\CartEntityAddEvent` in this case. That event provides the `getCart()` and `getOrderItem()` methods (as well as `getEntity()` and `getQuantity()`).
 
 The Cart module provides a reference for all available Cart events in `Drupal\commerce_cart\Event\CartEvents`. Similar event definitions are also available in the Commerce Order, Payment, Price, Product, Promotion, Store, and Tax modules. Also, the [State machine module](../../core/core/#state-machine) provides workflow transition events.
 
@@ -81,7 +81,7 @@ Logs are internal entities, always managed and viewed in the context of their so
 
 #### Log template
 
-In the example above, `cart_entity_added` is the Id of a template provided by the Commerce Log module in `commerce_log.commerce_log_templates.yml`. Here's the start of that file:
+In the example above, `cart_entity_added` is the ID of a template provided by the Commerce Log module in `commerce_log.commerce_log_templates.yml`. Here's the start of that file:
 
 ```
 cart_entity_added:
