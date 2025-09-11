@@ -17,6 +17,7 @@ nav:
         - Integrations:
           - PayPal: 'v2/user-guide/payment/integrations/paypal/paypal.md'
           - Fastlane by PayPal: 'v2/user-guide/payment/integrations/fastlane-by-paypal/fastlane-by-paypal.md'
+          - Stripe: 'v2/user-guide/payment/integrations/stripe/stripe.md'
         - Payment administration: 'v2/user-guide/payment/payment-administration.md'
       - Promotions: 'v2/user-guide/promotions.md'
       - Taxes: 'v2/user-guide/taxes.md'
