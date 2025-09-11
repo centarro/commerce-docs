@@ -4,7 +4,15 @@ taxonomy:
   category: docs
 ---
 
-# PayPal Configuration
+# Fastlane by PayPal
+
+The [Commerce PayPal](https://www.drupal.org/project/commerce_paypal) module now provides the **_Fastlane by PayPal_**
+Payment Gateway and Checkout Flow, optimized for guest checkout.
+
+This checkout flow is different from the standard Drupal Commerce Checkout flow. It is a single page checkout flow and
+requires several items to be configured.
+
+## Enable Fastlane
 
 You need to enable [Fastlane by PayPal](https://www.paypal.com/us/fastlane) on your PayPal account.
 
@@ -23,15 +31,6 @@ You need to enable [Fastlane by PayPal](https://www.paypal.com/us/fastlane) on y
     US customers outside the US who are already Fastlane members will have the full experience.
 
     US customers outside the US who are _not_ Fastlane members will be provided a standard credit card component.
-
-# Fastlane by PayPal configuration
-
-The [Commerce PayPal](https://www.drupal.org/project/commerce_paypal) module now provides the **_Fastlane by PayPal_**
-Payment Gateway and Checkout Flow, optimized for guest checkout.
-
-This checkout flow is different from the standard Drupal Commerce Checkout flow. It is a single page checkout flow and
-requires several items to be
-configured.
 
 ## Gateway configuration
 
