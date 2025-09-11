@@ -15,7 +15,8 @@ nav:
       - Payment:
         - Payment configuration: 'v2/user-guide/payment/payment-configuration.md'
         - Integrations:
-          - PayPal: 'v2/user-guide/payment/integrations/paypal.md'
+          - PayPal: 'v2/user-guide/payment/integrations/paypal/paypal.md'
+          - Fastlane by PayPal: 'v2/user-guide/payment/integrations/fastlane-by-paypal/fastlane-by-paypal.md'
         - Payment administration: 'v2/user-guide/payment/payment-administration.md'
       - Promotions: 'v2/user-guide/promotions.md'
       - Taxes: 'v2/user-guide/taxes.md'
@@ -184,7 +185,7 @@ plugins:
         'commerce2/developer-guide/customers/addresses/zones-and-territories.md': 'v2/developer-guide/customers/addresses.md#zones-and-territories'
         'commerce2/developer-guide/customers/addresses/address-display.md': 'v2/developer-guide/customers/addresses.md#address-display'
         'commerce2/developer-guide/customers/addresses/address-entry.md': 'v2/developer-guide/customers/addresses.md#address-entry'
-        'commerce2/developer-guide/customers/addresses/countries-and-subdivisions.md': 'v2/developer-guide/customers/addresses.md#contries-and-subdivisons'
+        'commerce2/developer-guide/customers/addresses/countries-and-subdivisions.md': 'v2/developer-guide/customers/addresses.md#countries-and-subdivisions'
         'commerce2/developer-guide/customers/addresses/address-formats.md': 'v2/developer-guide/customers/addresses.md#address-formats'
         'commerce2/developer-guide/customers/overview.md': 'v2/developer-guide/customers/getting-started.md#overview'
         'commerce2/developer-guide/cart/customize-cart-block.md': 'v2/developer-guide/cart/customize-cart.md#customizing-the-shopping-cart'
@@ -253,7 +254,7 @@ plugins:
         'commerce2/developer-guide/contributing.md': 'v2/contribute.md'
         'commerce2.md': 'v2/getting-started.md'
         'commerce2/developer-guide/orders/resolve-order-type.md': 'v2/developer-guide/orders/getting-started.md'
-        'commerce2/developer-guide/orders/misc-data.md': 'v2/developer-guide/orders/code-recipes.md#saving-and-retreiving-misc-data-on-and-order'
+        'commerce2/developer-guide/orders/misc-data.md': 'v2/developer-guide/orders/code-recipes.md#saving-and-retrieving-misc-data-on-and-order'
         'commerce2/developer-guide/checkout.md': 'v2/developer-guide/checkout/checkout.md'
         'commerce2/developer-guide/checkout/resolve-checkout-flow-plugin.md': 'v2/developer-guide/checkout/checkout.md'
         'commerce2/developer-guide/checkout/create-custom-checkout-pane.md': 'v2/developer-guide/checkout/checkout.md#create-custom-checkout-pane'
