@@ -6,6 +6,10 @@ taxonomy:
 
 This documentation lists the events dispatched by various components within Drupal Commerce core. Each event is associated with a specific class and represents a point where custom code can hook into the operation of Drupal Commerce.
 
+You can subscribe to these events the same way you subscribe to other events in Drupal.
+
+See also: [Subscribe to and dispatch events](https://www.drupal.org/docs/develop/creating-modules/subscribe-to-and-dispatch-events)
+
 ## Commerce events
 
 **Event Namespace**: `Drupal\commerce\Event`
