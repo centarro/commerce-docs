@@ -20,7 +20,7 @@ Run the demo on your computer with [Commerce Kickstart](https://www.drupal.org/p
 
 !!! info "Latest version"
 
-    - Read the release notes: [Commerce Core 2.40](https://www.drupal.org/project/commerce/releases/8.x-2.40){target=_blank}, packaged on August 22, 2024
+    - Read the release notes: [Commerce Core 3.2.0](https://www.drupal.org/project/commerce/releases/3.2.0){target=_blank}, packaged on September 10th, 2025
 
 <div class="grid cards" markdown>
 
