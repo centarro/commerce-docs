@@ -107,18 +107,20 @@ a particular order.
 
 The following payment methods are currently supported:
 
-| Payment Method        | Single Use       | Off-Session      | Off-Session      | Supports Manual Capture |
+| Payment Method        | Single Use       | On-Session       | Off-Session      | Supports Manual Capture |
 |-----------------------|------------------|------------------|------------------|-------------------------|
 | Card                  | :material-check: | :material-check: | :material-check: |                         |
 | Apple Pay             | :material-check: | :material-check: | :material-check: |                         |
 | GooglePay             | :material-check: | :material-check: | :material-check: |                         |
-| Affirm                | :material-check: | :material-close: | :material-close: |                         |
-| AliPay                | :material-check: | :material-close: | :material-close: |                         |
+| Affirm                | :material-check: | :material-check: | :material-close: |                         |
+| AliPay                | :material-check: | :material-check: | :material-close: |                         |
 | AmazonPay             | :material-check: | :material-check: | :material-check: |                         |
-| CashApp               | :material-check: | :material-close: | :material-close: |                         |
-| Klarna                | :material-check: | :material-close: | :material-close: |                         |
+| CashApp               | :material-check: | :material-check: | :material-close: |                         |
+| Klarna                | :material-check: | :material-check: | :material-check: |                         |
+| Link                  | :material-check: | :material-check: | :material-close: |                         |
+| PayPal                | :material-check: | :material-check: | :material-close: |                         |
 | US Bank Account (ACH) | :material-check: | :material-check: | :material-check: | :material-close:        |
-| WeChatPay             | :material-check: | :material-close: | :material-close: |                         |
+| WeChatPay             | :material-check: | :material-check: | :material-close: |                         |
 
 !!! Note "Apple Pay and GooglePay are unique Payment Methods."
     While they are listed as separate Payment Methods on Stripe, they are actually under the "Card" Payment Method Type in the Stripe API implementation.
