@@ -506,25 +506,24 @@ This example assumes that we have already created a custom module, named mymodul
 ```php
 namespace Drupal\mymodule\Plugin\Field\FieldFormatter;
 
+use Drupal\Core\Field\Attribute\FieldFormatter;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\address\Plugin\Field\FieldFormatter\AddressDefaultFormatter;
 
 /**
  * Plugin implementation of the 'address_us_default' formatter.
- *
- * @FieldFormatter(
- *   id = "address_us_default",
- *   label = @Translation("Hide US"),
- *   field_types = {
- *     "address",
- *   },
- * )
  */
+#[FieldFormatter(
+  id: "address_us_default",
+  label: new TranslatableMarkup("Hide US"),
+  field_types: ["address"],
+)]
 class AddressHideUSFormatter extends AddressDefaultFormatter {
 
 }
 
 ```
-We give the field formatter plugin a unique id: *address_us_default* and descriptive label in the annotation. If you rebuild caches, you will see this new field formatter as an option for the Display of any address fields:
+We give the field formatter plugin a unique id: *address_us_default* and descriptive label in its `#[FieldFormatter]` attribute. If you rebuild caches, you will see this new field formatter as an option for the Display of any address fields:
 
 ![Hide US custom formatter](../images/address-display-3.png)
 

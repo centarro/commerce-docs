@@ -32,15 +32,14 @@ Let's create a module that will do this.
 
     namespace Drupal\my_checkout_flow\Plugin\Commerce\CheckoutFlow;
 
+    use Drupal\commerce_checkout\Attribute\CommerceCheckoutFlow;
     use Drupal\commerce_checkout\Plugin\Commerce\CheckoutFlow\CheckoutFlowWithPanesBase;
-    use Drupal\Core\Form\FormStateInterface;
+    use Drupal\Core\StringTranslation\TranslatableMarkup;
 
-    /**
-     * @CommerceCheckoutFlow(
-     *  id = "custom_checkout_flow",
-     *  label = @Translation("Custom checkout flow"),
-     * )
-     */
+    #[CommerceCheckoutFlow(
+      id: "custom_checkout_flow",
+      label: new TranslatableMarkup("Custom checkout flow"),
+    )]
     class CustomCheckoutFlow extends CheckoutFlowWithPanesBase {
 
     /**
@@ -120,15 +119,14 @@ Let's create a module that will do this.
 
         namespace Drupal\my_checkout_flow\Plugin\Commerce\CheckoutFlow;
 
+        use Drupal\commerce_checkout\Attribute\CommerceCheckoutFlow;
         use Drupal\commerce_checkout\Plugin\Commerce\CheckoutFlow\CheckoutFlowWithPanesBase;
-        use Drupal\Core\Form\FormStateInterface;
+        use Drupal\Core\StringTranslation\TranslatableMarkup;
 
-        /**
-         * @CommerceCheckoutFlow(
-         *  id = "custom_checkout_flow",
-         *  label = @Translation("Custom checkout flow"),
-         * )
-         */
+        #[CommerceCheckoutFlow(
+          id: "custom_checkout_flow",
+          label: new TranslatableMarkup("Custom checkout flow"),
+        )]
         class CustomCheckoutFlow extends CheckoutFlowWithPanesBase {
 
         /**
@@ -195,7 +193,7 @@ Let's create a module that will do this.
 
     In this example, we create a simple checkout pane plugin that displays a custom message. We'll name our plugin `CustomMessagePane` and implement it in a file named `CustomMessagePane.php`, located in `/modules/custom/my_checkout_pane/src/Plugin/Commerce/CheckoutPane`. 
 
-    Commerce checkout panes are [annotation-based plugins], so we start by placing a `@CommerceCheckoutPane` annotation right before our class definition. Also, the `buildPaneForm()` method is required, so we'll add that in as well.
+    Commerce checkout panes are [attribute-based plugins], so we start by placing a `#[CommerceCheckoutPane]` attribute right before our class definition. Also, the `buildPaneForm()` method is required, so we'll add that in as well.
 
 
     ```php
@@ -203,17 +201,18 @@ Let's create a module that will do this.
 
     namespace Drupal\my_checkout_pane\Plugin\Commerce\CheckoutPane;
 
+    use Drupal\commerce_checkout\Attribute\CommerceCheckoutPane;
     use Drupal\commerce_checkout\Plugin\Commerce\CheckoutPane\CheckoutPaneBase;
     use Drupal\Core\Form\FormStateInterface;
+    use Drupal\Core\StringTranslation\TranslatableMarkup;
 
     /**
      * Provides a custom message pane.
-     *
-     * @CommerceCheckoutPane(
-     *   id = "my_checkout_pane_custom_message",
-     *   label = @Translation("Custom message"),
-     * )
      */
+    #[CommerceCheckoutPane(
+      id: "my_checkout_pane_custom_message",
+      label: new TranslatableMarkup("Custom message"),
+    )]
     class CustomMessagePane extends CheckoutPaneBase {
 
     /**
@@ -245,30 +244,30 @@ Let's create a module that will do this.
 
     ![Custom checkout pane 2](../images/custom_checkout_pane_2.png)
 
-    **Checkout pane annotation**
+    **Checkout pane attribute**
 
-    In addition to `id` and `label`, several other keys are defined for the `CommerceCheckoutPane` annotation.
+    In addition to `id` and `label`, the `CommerceCheckoutPane` attribute accepts several other parameters.
 
     | Key | Definition |
     | ---------------- |
     | display_label | The checkout pane display label, defaults to the main label. |
     | default_step | The ID of the default step. If missing, defaults to disabled. The steps available for the default checkout flow are `login`, `order_information`, `review`, `_sidebar` and `_disabled` |
+    | admin_description | A description of the pane, shown on the checkout flow edit page. |
     | wrapper_element | The wrapper element to use when rendering the pane, defaults to "container". |
 
-    Let's add in these additional elements to our CustomMessagePane annotation, like this:
+    Let's add these parameters to our CustomMessagePane attribute, like this:
 
     ```php
     /**
      * Provides a custom message pane.
-     *
-     * @CommerceCheckoutPane(
-     *   id = "my_checkout_pane_custom_message",
-     *   label = @Translation("Custom message"),
-     *   display_label = @Translation("Another display label"),
-     *   default_step = "_sidebar",
-     *   wrapper_element = "fieldset",
-     * )
      */
+    #[CommerceCheckoutPane(
+      id: "my_checkout_pane_custom_message",
+      label: new TranslatableMarkup("Custom message"),
+      display_label: new TranslatableMarkup("Another display label"),
+      default_step: "_sidebar",
+      wrapper_element: "fieldset",
+    )]
     ```
 
     Now if we rebuild caches and reload the Checkout page, our custom pane is rendered in a fieldset with its display label:
@@ -444,7 +443,7 @@ Let's create a module that will do this.
 
 The drag-and-drop UI for checkout flows makes it seem easy to simply disable existing checkout panes provided by core and replace them with your own custom panes. However, disabling certain checkout panes can cause problems. Specifically, because the "Payment process" pane is dependent on the "Payment information" pane, if you disable the "Payment information" pane, the "Payment process" pane is automatically disabled. Which is probably not what you want. This documentation page describes how you can safely replace the "Payment information" pane (or any other existing pane) with your own.
 
-The process for creating the replacement checkout pane is essentially the same as for any other [custom checkout pane](#create-custom-checkout-pane). The one big exception is that you should ***not*** include a `@CommerceCheckoutPane` annotation for your new plugin. If other Commerce Core code is dependent on the pane you're replacing, it will reference the pane using the `id` set in the annotation. So if you create a new pane with a new id, references to the existing pane will still point to that existing pane.
+The process for creating the replacement checkout pane is essentially the same as for any other [custom checkout pane](#create-custom-checkout-pane). The one big exception is that you should ***not*** add a `#[CommerceCheckoutPane]` attribute to your new plugin. If other Commerce Core code is dependent on the pane you're replacing, it will reference the pane using the `id` set in its attribute. So if you create a new pane with a new id, references to the existing pane will still point to that existing pane.
 
 For example, let's suppose that we want to replace the Commerce Core "Payment information" pane with one of our own. We'll extend the existing pane class to avoid duplicating code unnecessarily, but if your custom pane is significantly different from the pane it's replacing, you could instead extend `Drupal\commerce_checkout\Plugin\Commerce\CheckoutPane\CheckoutPaneBase`. Here's our custom `PaymentInformation` pane:
 
@@ -476,7 +475,7 @@ class PaymentInformation extends BasePaymentInformation {
 }
 ```
 
-Note that this custom checkout pane won't show up on the Checkout Flow admin UI page since it doesn't have an annotation. And at this point, the "Payment information" pane is still generated by the Commerce Core code rather than your custom code.
+Note that this custom checkout pane won't show up on the Checkout Flow admin UI page since it doesn't have a plugin attribute. And at this point, the "Payment information" pane is still generated by the Commerce Core code rather than your custom code.
 
 Standard Payment information pane, in the Order information step:
 
@@ -528,7 +527,7 @@ There is no user interface for changing the view provided. The view is added by 
 To use a completely different view, you will need to use `hook_form_alter` to change the view name, or a provide a custom checkout flow plugin. 
 
 
-[annotation-based plugins]: https://www.drupal.org/docs/drupal-apis/plugin-api/annotations-based-plugins
+[attribute-based plugins]: https://www.drupal.org/docs/drupal-apis/plugin-api/attribute-based-plugins
 [form display mode]: https://www.drupal.org/node/2511722
 [EntityFormDisplay]: https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21Entity%21EntityFormDisplay.php/class/EntityFormDisplay/8.8.x
 [Form and render elements]: https://api.drupal.org/api/drupal/elements/8.8.x
