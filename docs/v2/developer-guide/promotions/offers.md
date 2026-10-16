@@ -19,12 +19,14 @@ $offer->apply($order_item, $this);
   
 ## Default offer types
 
-Commerce core includes 4 default offers types. They are:
+Commerce core includes 6 offer types:
 
 * Fixed amount off each matching product
 * Fixed amount off the order subtotal
 * Percentage off each matching product
 * Percentage off the order subtotal
+* Buy X Get Y
+* Combination offer
 
 You can see the list of all available offer types on the Promotion add/edit form:
 
