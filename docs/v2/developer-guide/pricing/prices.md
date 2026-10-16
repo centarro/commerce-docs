@@ -453,7 +453,7 @@ We've assigned a priority of 200 to our custom price resolver so that it will ex
 
 [Commerce Pricelist]:https://www.drupal.org/project/commerce_pricelist
 [Schema API]:https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Database%21database.api.php/group/schemaapi/8.2.x
-[service file]:https://www.drupal.org/docs/8/api/services-and-dependency-injection/structure-of-a-service-file
+[service file]:https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/structure-of-a-service-file
 [CommerceGuys\Intl\Formatter\CurrencyFormatterInterface]: https://github.com/commerceguys/intl/blob/master/src/Formatter/CurrencyFormatterInterface.php
 [Internationalization Library]: https://github.com/commerceguys/intl
 [commerceguys/intl]: https://github.com/commerceguys/intl

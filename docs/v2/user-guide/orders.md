@@ -1,5 +1,3 @@
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
 ## Create an order
 
 Orders can be created for customers in the administrative areas. This can be done by going to the **Orders** management page from the **Commerce** page from the administrative toolbar. Click on **Create  a new order**.
@@ -25,7 +23,7 @@ Next, order items can be created. The order items are the products the customer 
 Once satisfied, click **Save**
 
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute. Need to add documentation for adjustments and coupons."
+Prices, promotions and taxes are calculated automatically when the order is refreshed. To change what the customer pays, edit the order items, or apply a promotion or coupon to the order.
 
 ## Viewing carts
 Carts are created whenever a customer submits an Add to Cart form or when an admin begins an order via the _Create order_ link on the _Orders_ page and checks the _Cart_ checkbox before saving the order. Carts have an order ID but no order number, as those are not generated until the order is placed. You can view the current carts in your store by navigating to the Commerce > Orders page and clicking the _Carts_ tab. From the _Carts_ tab you can view, edit, reassign, add payment information to, or delete a cart using the dropdown operations menu based on your account's permissions. 
@@ -38,11 +36,13 @@ Periodically purging abandoned carts will minimize junk carts in the database an
 
 You can also manually purge carts en masse via the bulk operation available to you on the Cart page in the admin interface.
 
-## View orders, find specific ones.
+## View orders, find specific ones
+
+All placed orders are listed at *Commerce > Orders* (`/admin/commerce/orders`). Filter the list by **order number**, **type** or **state**. Click an order to view it: the order page shows its items, totals, customer and billing information, payments, and the buttons to move it through its workflow.
+
+Carts (orders that haven't been placed yet) are listed separately, on the *Carts* tab.
 
 ## Manage an order
-
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
 ### Setting the order number pattern
 
@@ -56,25 +56,32 @@ After configuring your number pattern, it’s time to make use of it on one or m
 
 ### Order workflows
 
-High level explanation of "draft" orders, workflows.
+Every order follows a **workflow**: a set of **states** the order can be in, and the **transitions** that move it from one state to another. Orders start in the *Draft* state while they are carts. When the customer completes checkout (or an administrator places the order), the *Place order* transition moves the order out of draft.
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+Commerce provides four workflows:
 
-Explain what a workflow is (states and transitions) at a high level. 
+| Workflow | States after the order is placed | Use it when |
+|---|---|---|
+| **Default** | Completed | There's nothing to do after the order is placed, for example digital products delivered immediately. |
+| **Default, with validation** | Validation → Completed | Someone must check orders before accepting them, for example to review fraud or stock. |
+| **Fulfillment** | Fulfillment → Completed | Orders must be fulfilled, for example shipped, before they are complete. |
+| **Fulfillment, with validation** | Validation → Fulfillment → Completed | Orders must be checked, then fulfilled. |
 
-Detail what ones are provided by Drupal Commerce and when or why you may use one.
+In every workflow, orders that aren't completed can be moved to *Canceled* with the *Cancel order* transition.
 
-How to change an order's workflow.
+The workflow is set per order type. To change it, go to *Commerce > Configuration > Orders > Order types*, edit the order type and choose a **Workflow**. It applies to all orders of that type. Developers can create their own workflows; see [Order workflows](../developer-guide/orders/workflows.md).
 
 ### Processing an order
 
-!!! note We need help filling out this section! Feel free to follow the *edit this page* link and contribute.""
+Orders are processed from the order page: the available transitions are shown as buttons, such as *Validate order*, *Fulfill order* or *Cancel order*.
 
-How someone would process an order in a workflow.
+For example, with the **Fulfillment, with validation** workflow:
 
-Use the example of "with validation" for "in validation, ensure payment is not fraudulent / captured, then mark validated"
+1. The customer completes checkout. The order is placed and moves to *Validation*.
+2. A store manager reviews the order: they check that the payment isn't fraudulent and has been captured (see [Payment administration](payment/payment-administration.md)), and that the products are in stock. They then click *Validate order*, which moves the order to *Fulfillment*.
+3. Once the order is shipped, they click *Fulfill order*, and the order is *Completed*.
 
-Use the example of shipping, validated because it has stock. Completed because shipped.
+If there's a problem, for example the payment is declined or the products are out of stock, they click *Cancel order* instead.
 
 ## Receipt emails
 

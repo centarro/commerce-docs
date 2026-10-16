@@ -4,49 +4,34 @@ taxonomy:
     category: docs
 ---
 
-This section is for helping bridge the 1.x to 2.x gap for developers who have previously used Drupal Commerce.
+This section helps developers who know Commerce 1.x on Drupal 7 bridge the gap to Commerce 2.x and 3.x on modern Drupal.
 
-## Understanding Drupal 8
+## Understanding modern Drupal
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+Drupal 8 and later are built on Symfony components and object-oriented code: services and dependency injection, plugins, event subscribers, and configuration management in YAML. Commerce relies on all of them. Rather than repeating existing documentation, start with:
 
-Link to resources for getting used to D8.
-
-Topics like: dependency injecting, event subscribers. We shouldn't recreate existing efforts here, but link to them.
+- [Services and dependency injection](https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection)
+- [Plugin API](https://www.drupal.org/docs/drupal-apis/plugin-api/plugin-api-overview)
+- [Subscribe to and dispatch events](https://www.drupal.org/docs/develop/creating-modules/subscribe-to-and-dispatch-events)
+- [Configuration management](https://www.drupal.org/docs/administering-a-drupal-site/configuration-management)
 
 ## Product information structure
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+Commerce 1.x stored products as product entities displayed through nodes ("product displays"). There are no more nodes: Commerce now has **products**, which hold the shared information and are displayed directly, and **product variations**, which are the purchasable SKUs. A 1.x product corresponds to a variation, and a 1.x product display node to a product. Variations are edited from their product.
 
-No more nodes.
-
-Products -> Product variations.
-
-1.x Products == 2.x variations. No directly edit for variations anymore.
-
-Attributes are their own entity, not taxonomy terms.
+Product attributes are their own entity type (`commerce_product_attribute_value`), instead of taxonomy terms. See [Product information structure](products/product-information-structure.md).
 
 ## Taxes and VAT
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
-Core tax deprecates all VAT contrib.
+Tax support is in Commerce Core, with built-in tax types for EU, UK, Swiss and Norwegian VAT and Canadian sales tax, and custom tax types. It replaces the various VAT contributed modules of 1.x. See [Taxes](../user-guide/taxes.md).
 
 ## Shipping
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
-Explain
-
-* Shipping has flat rate in it, now.
-* 2.x shipping combines many contrib efforts
-* Packaging logic, boxing, fulfillment.
+[Commerce Shipping](https://www.drupal.org/project/commerce_shipping) brings together what took several contributed modules in 1.x. It includes flat rate shipping methods, and handles shipments, packaging into package types, and fulfillment, while carrier modules provide live rates. See [Shipping](../user-guide/shipping.md).
 
 ## Discounts and coupons
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
-Now in core for discount + coupon as promotions.
+Discounts and coupons are in Commerce Core, as **promotions**: each promotion has an offer, conditions and optional coupons. They replace the Commerce Discount and Commerce Coupon modules of 1.x. See [Promotions](promotions/getting-started.md).
 
 ## Price calculation
 
@@ -97,10 +82,6 @@ as a final class containing constants. For an example of using these, see
 
 [Understanding Resolvers](../core/understanding_resolvers)
 
-@todo: Link to relevant resolver docs, as well.
-
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
-Link to books and tutorials:
+Books and tutorials:
 
 [Drupalize.me](https://drupalize.me/tutorials?taxonomy_versions_tid%5B%5D=1046)

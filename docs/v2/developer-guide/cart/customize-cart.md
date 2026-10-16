@@ -45,7 +45,7 @@ The shopping cart is represented by a Drupal block shown in figure 1 that consis
 ### Overriding the cart stylesheets
 
 Often you might find yourself undoing what the core cart stylesheets have defined. Instead of fighting with styles, you can actually replace or outright remove the stylesheet using your theme's <code>info.yml</code> file. Below we walk you through the process
-The <code>commerce_cart.layout.css</code> and <code>commerce_cart.theme.css</code> files provide the styling which you can override in your own stylesheets using regular <a target="_blank" href="https://www.drupal.org/docs/8/theming-drupal-8/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme#override-extend">Drupal</a> theme procedures. To override the cart stylesheet you can add following to your <code>yourtheme.info.yml</code> file
+The <code>commerce_cart.layout.css</code> and <code>commerce_cart.theme.css</code> files provide the styling which you can override in your own stylesheets using regular <a target="_blank" href="https://www.drupal.org/docs/develop/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml">Drupal</a> theme procedures. To override the cart stylesheet you can add following to your <code>yourtheme.info.yml</code> file
 
 ```yaml
 libraries-override:
@@ -71,7 +71,7 @@ In this case the file has been overridden with <strong>false.</strong>
 
 <i>Fig 3 - illustrates how you can turn Shopping Cart into a fully custom shopping cart </i>
 
-<https://www.drupal.org/docs/8/theming-drupal-8/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-theme#override-extend>
+<https://www.drupal.org/docs/develop/theming-drupal/adding-assets-css-js-to-a-drupal-theme-via-librariesyml>
 
 ### Why we don't merge carts
 
@@ -83,19 +83,13 @@ There are three basic resolutions: combine the shopping carts together so the us
 
 In Drupal Commerce we changed course to retain the old cart but, from the customer's point of view, treat that anonymously created cart as the current cart after login.
 
-There is an appropriate hook (hook_commerce_cart_order_convert()) so developers could alter this behavior on a site-by-site basis as need be.
-Allows modules to perform additional processing to convert an anonymous shopping cart order to an authenticated cart.
+When a customer logs in, the carts in their anonymous session are assigned to their account by the `commerce_order.order_assignment` service, which dispatches the `OrderEvents::ORDER_ASSIGN` event (`commerce_order.order.assign`) for each cart. Subscribe to this event to change the behavior on your site, for example to merge the carts.
 
 
 ## Displaying quantity on add to cart form
 
 
-!!! Note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
-Brief tutorial on showing quantity, full explanation of customizing add to cart next page.
-
-
-Previously we learned how to create a product catalog.
+By default, the *Add to cart* form doesn't let customers choose a quantity.
 
 ![Product catalog page](../images/product_catalog_page.png)
 

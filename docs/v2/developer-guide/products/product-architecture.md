@@ -644,9 +644,8 @@ If you want to write custom code to programmatically create or manage your produ
 [Color module]: https://www.drupal.org/project/color_field
 [Making Your Site Multilingual]: https://www.drupal.org/docs/user_guide/en/multilingual-chapter.html
 [Commerce shipping module]: https://www.drupal.org/project/commerce_shipping
-[Image module]: https://www.drupal.org/docs/8/core/modules/image
-[Working with images]: https://www.drupal.org/docs/8/core/modules/image/working-with-images
-[Image Media Type Manage Fields Tab]: https://webtech.training.oregonstate.edu/osu-drupal-8/technical-manual/working-structure/media-types/image-media-type/image-media-type-manage-fields-tab
+[Image module]: https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module
+[Working with images]: https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module/working-with-images
 [Commerce Shipping module]: https://www.drupal.org/project/commerce_shipping
 [Commerce Stock module]: https://www.drupal.org/project/commerce_stock
 [Commerce File module]: https://www.drupal.org/project/commerce_file

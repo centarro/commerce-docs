@@ -4,8 +4,6 @@ taxonomy:
     category: docs
 ---
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
 Orders contain a list of order items and customer information. Orders
 have states that are controlled through State Machine.
 
@@ -231,7 +229,7 @@ The order receipt email, which customers receive, is controlled through the `com
 
 The default `commerce-order-receipt.html.twig` can be found in the `commerce_order` module. 
 
-The email can be customized by overriding the Twig template in your theme just as you would any other template (see [Drupal's Twig Template docs](https://www.drupal.org/docs/8/theming/twig/working-with-twig-templates)).
+The email can be customized by overriding the Twig template in your theme just as you would any other template (see [Drupal's Twig Template docs](https://www.drupal.org/docs/develop/theming-drupal/twig-in-drupal/working-with-twig-templates)).
  
 Or in your custom module:
 

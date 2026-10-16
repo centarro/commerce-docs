@@ -1,40 +1,68 @@
 
-## Overview before specific topics
+Taxes are provided by the Commerce Tax module (`commerce_tax`), part of Commerce Core. Taxes are calculated for each order item, based on the store, the customer's address and the type of product, and added to the order as tax adjustments.
 
-Apply a VAT rate on a product with Drupal Commerce 2:
+## Before you begin
 
-<https://www.drupal.org/project/commerce_product_tax>
+Each store has its own tax settings, in the *Tax settings* section of the store form (*Commerce > Configuration > Store > Stores*):
 
-If you want to calculate the tax type per variation programmatically:
+- **Prices are entered with taxes included**: check this if your product prices already include tax, which is common for VAT. Commerce then calculates the tax included in the price instead of adding it on top.
+- **Tax registrations**: the countries where your store collects tax. **A tax type only applies to orders from a store registered in one of its countries, including the store's own country.** For example, a French store must list France to charge French VAT, and also needs to list Germany if it's registered to collect German VAT.
 
-<https://www.flocondetoile.fr/blog/apply-vat-rate-product-drupal-commerce-2>
+The kind of product also matters. Each order item type has a **Taxable type** setting (*Commerce > Configuration > Orders > Order item types*): physical goods (the default), digital goods, services, events, or non-taxable. For example, EU VAT treats digital goods differently from physical goods.
 
-It includes an example of determining the VAT rate to apply depending on the type of product.
+## Tax types
 
-There are some additional modules to manage taxes:
+Tax types are managed at *Commerce > Configuration > Store > Tax types* (`/admin/commerce/config/tax-types`). Click *Add tax type*, then choose a plugin. Commerce Core provides:
 
-* [Commerce Product Tax](https://www.drupal.org/project/commerce_product_tax)  
-* [Commerce Product Tax Conditions](https://www.drupal.org/project/commerce_product_tax_exemp)
+| Tax type | Rates |
+|---|---|
+| **European Union VAT** | Rates for every EU member state, plus their special territories. |
+| **United Kingdom VAT** | UK VAT rates. |
+| **Swiss VAT** | Rates for Switzerland and Liechtenstein, plus the Büsingen and Campione enclaves. |
+| **Norwegian VAT** | Norwegian VAT rates. |
+| **Canadian sales tax** | GST, HST and PST, by province. |
+| **Custom** | Your own zones and rates. |
 
-## European VAT 
+The built-in rates are maintained in Commerce Core, so you only need to keep Commerce up to date. Tax types share a few settings:
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+- **Display taxes of this type inclusive in product prices**: show product prices with this tax included.
+- **Display tax rate in the adjustment label**: show the percentage next to the tax name, for example "VAT (20%)".
 
-## Swiss VAT
+### European Union VAT
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+The EU VAT tax type picks the rate based on where the store and customer are, and on the order item's taxable type:
 
-## Canadian GST
+- **Physical goods** are taxed at the rate of the store's country, unless the store is also registered in the customer's country, in which case the customer's country rate is used.
+- **Digital goods** are taxed at the rate of the customer's country.
+- **Business customers (B2B)**: when the customer enters a valid EU VAT number in another EU country, the order uses the intra-community (zero) rate. The VAT number is collected by the *Tax number* field on the customer's billing profile.
+- **Non-taxable** order items are never taxed.
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+A store outside the EU only charges EU VAT on digital goods, and only if it's registered for EU VAT in its tax registrations.
 
-## US Sales tax
+### Swiss and Norwegian VAT
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+Add the tax type, and make sure the store's tax registrations include Switzerland or Norway.
 
-## Custom tax rules
+### Canadian GST
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+The Canadian sales tax type applies to customers with a Canadian address, and adds GST, HST and PST based on their province. The store's tax registrations must include Canada.
+
+### US sales tax
+
+US sales tax rates vary by state, county and city, and change often, so Commerce Core doesn't include them. Use a tax service integration instead, such as [Commerce AvaTax](https://www.drupal.org/project/commerce_avatax) or [Commerce TaxJar](https://www.drupal.org/project/commerce_taxjar). For a few simple rates, you can also use a [custom tax type](#custom-tax-rules).
+
+### Custom tax rules
+
+The **Custom** tax type lets you define your own taxes:
+
+1. Choose a **Display label**, used to identify the tax in order summaries ("Tax", "VAT", "GST" and so on).
+2. Choose whether to **Round tax at the order item level**. VAT-style taxes are rounded per item; sales taxes aren't.
+3. Define the **rates**, each with a name and a percentage.
+4. Define the **territories** the tax applies to: countries, optionally narrowed down to regions or postal codes.
+
+## Per-product tax rates
+
+By default, Commerce applies the standard rate. To pick a reduced or zero rate for some products, use the [Commerce Product Tax](https://www.drupal.org/project/commerce_product_tax) module, described below. If you need to choose the rate in code, see [Understanding resolvers](../developer-guide/core/understanding_resolvers.md).
 
 ## Commerce Product Tax
 

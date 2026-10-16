@@ -13,9 +13,15 @@ Click 'Add payment gateway', choose your provider from the plugin list and compl
 ## Authorization
 ### Create an authorization
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute.""
+Payments can also be added from the back office, for example for an order taken by phone, or to record a payment received offline. Only gateways that support it are offered, typically on-site gateways (with a stored payment method or a new card) and manual gateways. Off-site gateways need the customer to be redirected, so they usually can't be used here.
 
-Some gateways will support backend payment entry. Especially manual payments.
+1. Open the order and click the `Payments` tab.
+2. Click `Add payment`.
+3. Choose a **Payment option**: a stored payment method of the customer, a new payment method, or a manual gateway. Click `Continue`.
+4. Enter the **Amount**. Then:
+    - With an on-site gateway, choose **Authorize only** to create an authorization, which you'll [capture](#capture-an-authorization) later, or **Authorize and capture** to take the money right away.
+    - With a manual gateway, check **The specified amount was already received** if the customer has already paid, for example by bank transfer. Otherwise, the payment stays *Pending*: use its `Receive` operation once the money arrives.
+5. Click `Add payment`.
 
 ### Voiding an authorization
 
@@ -53,7 +59,7 @@ If the capture request was successful, a success message will be displayed on th
 
 ## Manage payments
 
-s a store administrator there are times when you often find yourself having to manage orders and payments on behalf of customers. Some customers might call in to modify their saved credit cards, or you might need to refund or capture payments for orders. With Drupal Commerce, you get a nice interface that lets you manage order payments and authorizations with ease.
+As a store administrator there are times when you often find yourself having to manage orders and payments on behalf of customers. Some customers might call in to modify their saved credit cards, or you might need to refund or capture payments for orders. With Drupal Commerce, you get a nice interface that lets you manage order payments and authorizations with ease.
 
 ### Capturing a payment
 

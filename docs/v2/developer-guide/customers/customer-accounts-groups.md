@@ -30,13 +30,13 @@ For example, an "Account information" profile type has been created with "contac
 ### Managing customer accounts
 The list of all user accounts, including both customers and administrative users is available on the *People* administrative page at `/admin/people`. You can customize this page by configuring its View settings at `/admin/structure/views/view/user_admin_people`.
 
-There are many contributed Drupal modules that can help you manage customer accounts or provide additional functionality. See the [User management modules](https://www.drupal.org/module-categories/user-management) listing. For example, Commerce sites often allow users to log in with their email addresses. By default, Drupal only allows login by username, but you can add this functionality with the simple [Login Email or Username module] or the slightly more complex [Email Registration module].
+There are many contributed Drupal modules that can help you manage customer accounts or provide additional functionality. Browse the [contributed modules](https://www.drupal.org/project/project_module) on drupal.org. For example, Commerce sites often allow users to log in with their email addresses. By default, Drupal only allows login by username, but you can add this functionality with the simple [Login Email or Username module] or the slightly more complex [Email Registration module].
 
 ## Customer groups
 
 In this section we'll look at two different approaches for organizing customers into groups. First, we'll look at how user roles can be used to limit access to discounts or other functionality within Drupal Commerce. Then, we'll look at how taxonomies can be used in situations where the number of different groups makes the user role approach impractical.
 
-If neither user roles nor taxonomies provide enough functionality for your needs, there may be a contributed Drupal module that would work. See the [User management modules](https://www.drupal.org/module-categories/user-management) listing.
+If neither user roles nor taxonomies provide enough functionality for your needs, there may be a contributed Drupal module that would work. Browse the [contributed modules](https://www.drupal.org/project/project_module) on drupal.org.
 
 ### Customer group user roles
 You can use *User roles* to organize customers to limit access to payment gateways, promotions, or certain fees/charges based on customer type. Drupal Commerce provides plugin-based *Conditions* functionality and includes a condition for *Customer role*. As an example, let's suppose we have a select group of *wholesale* customers that should receive a 10% discount on all products. Here's how we could set that up:

@@ -642,18 +642,47 @@ It is possible to override the used language via field settings, in case the lan
 
 ## Zones and territories
 
-!!! note 
-    We need help filling out this section! Feel free to follow the *edit this page* link and contribute.
+A **zone** is a group of **territories**, used to check whether an address is in a given area. Each territory is a country, optionally narrowed down to an administrative area (such as a state or province) and to included or excluded postal codes. For example, a "Continental US" zone could be the United States, excluding the postal codes of Alaska and Hawaii.
+
+Postal codes are given either as a comma-separated list that can include ranges (`98, 100:200, 250`), or as a regular expression (`/^(35|38)[0-9]{3}/`).
+
+Zones come from the Commerce Guys Addressing library (`CommerceGuys\Addressing\Zone\Zone`), and the Address module provides form elements to edit them: `address_zone` for a whole zone, and `address_zone_territory` for a single territory.
+
+Drupal Commerce uses zones in:
+
+- The *Billing address* and *Shipping address* order conditions, which limit promotions and payment gateways to customers in a zone.
+- The *Custom* tax type, to define where each tax applies. See [Taxes](../../user-guide/taxes.md#custom-tax-rules).
+- The *Shipping address* shipment condition provided by Commerce Shipping, which limits shipping methods to a zone.
+
+To check whether an address is in a zone in code:
+
+```php
+use CommerceGuys\Addressing\Zone\Zone;
+
+$zone = new Zone([
+  'id' => 'continental_us',
+  'label' => 'Continental US',
+  'territories' => [
+    // Alaska (995xx-999xx) and Hawaii (967xx-968xx).
+    ['country_code' => 'US', 'excluded_postal_codes' => '/^(99[5-9]|96[78])/'],
+  ],
+]);
+/** @var \Drupal\address\AddressInterface $address */
+$address = $profile->get('address')->first();
+if ($zone->match($address)) {
+  // The address is in the zone.
+}
+```
 
 
 ## Links and resources:
 * For more information on the Commerce Guys Addressing library and its data model, see its [README file](https://github.com/commerceguys/addressing/blob/master/README.md)
 * [Wikipedia page on Administrative division (country subdivision)](https://en.wikipedia.org/wiki/Administrative_division)
-* [Drupal 8 documentation: Create a custom field formatter](https://www.drupal.org/docs/8/creating-custom-modules/create-a-custom-field-formatter)
+* [Drupal documentation: Create a custom field formatter](https://www.drupal.org/docs/creating-custom-modules/creating-custom-field-types-widgets-and-formatters/create-a-custom-field-formatter)
 * Discussion and example of a custom address formatter: [Pretty field formatter](https://www.drupal.org/project/address/issues/2912629)
 
 [Google's Address Data Service]: https://chromium-i18n.appspot.com/ssl-address
 [Address module]: https://www.drupal.org/project/address
 [CLDR "Territory Subdivisions" listing]: https://cldr.unicode.org/index/downloads
-[Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
+[Theming Drupal Guide]: https://www.drupal.org/docs/develop/theming-drupal
 [Geolocation Address Link module]: https://www.drupal.org/project/geolocation_address_link

@@ -276,7 +276,7 @@ plugins:
         'commerce2/developer-guide/shipping.md': 'v2/developer-guide/shipping/getting-started.md'
         'commerce2/developer-guide/shipping/available-shipping-methods.md': 'v2/developer-guide/shipping/getting-started.md#available-shipping-methods'
         'commerce2/developer-guide/shipping/create-a-shipping-method.md': 'v2/developer-guide/shipping/getting-started.md#create-a-shipping-method'
-        'commerce2/developer-guide/adapting-from-1x/understanding-drupal-8.md': 'v2/developer-guide/adapting-from-1x.md#understanding-drupal-8'
+        'commerce2/developer-guide/adapting-from-1x/understanding-drupal-8.md': 'v2/developer-guide/adapting-from-1x.md#understanding-modern-drupal'
         'commerce2/developer-guide/adapting-from-1x/product-information-structure.md': 'v2/developer-guide/adapting-from-1x.md#product-information-structure'
         'commerce2/developer-guide/adapting-from-1x/taxes-and-vat.md': 'v2/developer-guide/adapting-from-1x.md#taxes-and-vat'
         'commerce2/developer-guide/adapting-from-1x/shipping.md': 'v2/developer-guide/adapting-from-1x.md#shipping'

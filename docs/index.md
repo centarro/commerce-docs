@@ -54,7 +54,7 @@ If you want a quick look at the customer experience, the [demo store](https://co
 
 - [:centarro-truck-front-fill:{ .lg .middle } __Set up your shipping__](./v2/user-guide/shipping/)
 
-- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payment/payment-configuration/)
+- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payment/payment-administration/)
 
 - [:centarro-bookmark-star-fill:{ .lg .middle } __Set up your promotions__](./v2/user-guide/promotions/)
 

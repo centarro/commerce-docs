@@ -283,7 +283,7 @@ We're going to build upon the Product search view we created for the [Basic prod
 * Drupal User Guide documentation on [Creating Listings with Views]
 * Drupal User Guide documentation on [Concept: Blocks]
 
-[Search API module documentation]: https://www.drupal.org/docs/8/modules/search-api
+[Search API module documentation]: https://www.drupal.org/docs/contributed-modules/search-api
 [Creating Listings with Views]: https://www.drupal.org/docs/user_guide/en/views-chapter.html
 [Facets module]: https://www.drupal.org/project/facets
 [Concept: Blocks]: https://www.drupal.org/docs/user_guide/en/block-concept.html
@@ -291,5 +291,5 @@ We're going to build upon the Product search view we created for the [Basic prod
 [Views module]: https://www.drupal.org/docs/user_guide/en/views-chapter.html
 [Creating Listings with Views]: https://www.drupal.org/docs/user_guide/en/views-chapter.html
 [Concept: Blocks]: https://www.drupal.org/docs/user_guide/en/block-concept.html
-[Search API module documentation]: https://www.drupal.org/docs/8/modules/search-api
+[Search API module documentation]: https://www.drupal.org/docs/contributed-modules/search-api
 [Processors page]: https://www.drupal.org/docs/8/modules/search-api/getting-started/processors
