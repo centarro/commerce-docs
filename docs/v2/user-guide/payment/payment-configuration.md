@@ -55,7 +55,7 @@ Payment gateways are managed at *Commerce > Configuration > Payment > Payment ga
     - **Mode**: *Test* or *Live*, when the provider has a sandbox. Use *Test* while developing.
     - **Payment method types**: which types this gateway accepts, when it supports more than one.
     - **Collect billing information**: whether checkout asks for a billing address with this gateway. Before disabling it, make sure you are not legally required to collect billing information.
-    - The provider's own settings, such as API keys. Manual gateways have **Payment instructions** instead, shown to the customer after checkout.
+    - The provider's own settings, such as API keys. Manual gateways have **Payment instructions** instead, shown to the customer after checkout. They can include tokens, such as `[commerce_order:order_number]` to use as a bank transfer reference.
     - **Conditions**: limit when the gateway is offered, for example only to some stores, order totals or customer roles. Choose whether *all conditions must pass* or *only one condition must pass*.
     - **Status**: *Enabled* or *Disabled*.
 4. Save the gateway.

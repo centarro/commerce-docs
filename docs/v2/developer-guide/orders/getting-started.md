@@ -4,8 +4,6 @@ taxonomy:
     category: docs
 ---
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
 Orders contain a list of order items and customer information. Orders
 have states that are controlled through State Machine.
 

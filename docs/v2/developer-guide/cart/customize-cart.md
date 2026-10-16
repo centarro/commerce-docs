@@ -83,19 +83,13 @@ There are three basic resolutions: combine the shopping carts together so the us
 
 In Drupal Commerce we changed course to retain the old cart but, from the customer's point of view, treat that anonymously created cart as the current cart after login.
 
-There is an appropriate hook (hook_commerce_cart_order_convert()) so developers could alter this behavior on a site-by-site basis as need be.
-Allows modules to perform additional processing to convert an anonymous shopping cart order to an authenticated cart.
+When a customer logs in, the carts in their anonymous session are assigned to their account by the `commerce_order.order_assignment` service, which dispatches the `OrderEvents::ORDER_ASSIGN` event (`commerce_order.order.assign`) for each cart. Subscribe to this event to change the behavior on your site, for example to merge the carts.
 
 
 ## Displaying quantity on add to cart form
 
 
-!!! Note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
-
-Brief tutorial on showing quantity, full explanation of customizing add to cart next page.
-
-
-Previously we learned how to create a product catalog.
+By default, the *Add to cart* form doesn't let customers choose a quantity.
 
 ![Product catalog page](../images/product_catalog_page.png)
 

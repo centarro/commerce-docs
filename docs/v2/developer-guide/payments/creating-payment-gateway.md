@@ -1756,7 +1756,64 @@ of *Success*, *Aborted*, or *Failure*. Otherwise, the *request* is invalid and s
 
 ## Manual payment gateways
 
-!!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
+Manual payment gateways handle payments that happen outside of the site, such as bank transfers, checks or cash on delivery. No payment provider is involved: the payment is created as *Pending* when the customer completes checkout, and an administrator marks it as received once the money arrives.
+
+Commerce Core provides a configurable `Manual` gateway (`Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\Manual`), with payment instructions that are shown to the customer on the checkout completion page. The instructions support tokens from the order and the payment, such as `[commerce_order:order_number]`. Most sites only need to add one or more payment gateways using it, from the admin UI.
+
+Write your own manual gateway when you need different behavior, for example instructions that tokens can't express, or a different payment workflow. The simplest way is to extend `Manual`:
+
+```php
+<?php
+
+namespace Drupal\my_module\Plugin\Commerce\PaymentGateway;
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\commerce_payment\Attribute\CommercePaymentGateway;
+use Drupal\commerce_payment\Entity\PaymentInterface;
+use Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\Manual;
+use Drupal\commerce_payment\PluginForm\ManualPaymentAddForm;
+use Drupal\commerce_payment\PluginForm\PaymentReceiveForm;
+
+#[CommercePaymentGateway(
+  id: "bank_transfer",
+  label: new TranslatableMarkup("Bank transfer"),
+  display_label: new TranslatableMarkup("Bank transfer"),
+  modes: [
+    "n/a" => new TranslatableMarkup("N/A"),
+  ],
+  forms: [
+    "add-payment" => ManualPaymentAddForm::class,
+    "receive-payment" => PaymentReceiveForm::class,
+  ],
+  payment_type: "payment_manual",
+  requires_billing_information: FALSE,
+)]
+class BankTransfer extends Manual {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function buildPaymentInstructions(PaymentInterface $payment) {
+    $order = $payment->getOrder();
+    return [
+      '#markup' => $this->t('Transfer @amount to IBAN FR76 0000 0000 0000, with reference @number.', [
+        '@amount' => (string) $payment->getAmount(),
+        '@number' => $order->getOrderNumber(),
+      ]),
+    ];
+  }
+
+}
+```
+
+To start from scratch instead, extend `PaymentGatewayBase` and implement `ManualPaymentGatewayInterface`:
+
+- `createPayment(PaymentInterface $payment, $received = FALSE)`: saves the new payment, as *Completed* if `$received` is `TRUE`, as *Pending* otherwise.
+- `receivePayment(PaymentInterface $payment, ?Price $amount = NULL)`: marks a pending payment as *Completed*.
+- `voidPayment()` and `refundPayment()`, from the `SupportsVoidsInterface` and `SupportsRefundsInterface` interfaces it extends.
+- `buildPaymentInstructions(PaymentInterface $payment)`, from `HasPaymentInstructionsInterface`: the render array shown on the checkout completion page.
+
+Use the `payment_manual` payment type, which provides the *Pending → Completed* workflow.
 
 [Request]: https://api.drupal.org/api/drupal/vendor%21symfony%21http-foundation%21Request.php/class/Request/8.7.x
 
