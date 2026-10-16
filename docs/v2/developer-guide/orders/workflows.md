@@ -190,7 +190,7 @@ Once the workflow is registered, we need to associate an order type with it. We 
 
 ![Associating the Order Type with the New Workflow](../images/order_workflow_association.jpg)
 
-On a production site you may want to export the Order Type as configuration and that would contain its workflow association as well - see [Managing your site's configuration](https://www.drupal.org/docs/8/configuration-management/managing-your-sites-configuration).
+On a production site you may want to export the Order Type as configuration and that would contain its workflow association as well - see [Managing your site's configuration](https://www.drupal.org/docs/administering-a-drupal-site/configuration-management/managing-your-sites-configuration).
 
 ### Testing the Result
 

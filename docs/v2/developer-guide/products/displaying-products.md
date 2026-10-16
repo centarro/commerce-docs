@@ -502,9 +502,9 @@ The [Single media](https://www.drupal.org/project/single_media) is very similar 
 
 [Drupal 8: Hooks, Events, and Event Subscribers]: https://www.daggerhartlab.com/drupal-8-hooks-events-event-subscribers/
 [Drupal 8 Event Subscribers - the successor to alter hooks]: https://www.computerminds.co.uk/drupal-code/drupal-8-event-subscribers-successor-alter-hooks
-[Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
+[Theming Drupal Guide]: https://www.drupal.org/docs/develop/theming-drupal
 [Drupal Views module]: https://www.drupal.org/docs/8/core/modules/views
-[Image module]: https://www.drupal.org/docs/8/core/modules/image
+[Image module]: https://www.drupal.org/docs/core-modules-and-themes/core-modules/image-module
 [Image delta formatter module]: https://www.drupal.org/project/image_delta_formatter
 [Concept: Image Styles]: https://www.drupal.org/docs/user_guide/en/structure-image-styles.html
 [Custom field formatter for displaying entity images with thumbnails and 1 large image]: https://drupal.stackexchange.com/questions/192471/display-entity-images-with-thumbnails-and-1-large-image

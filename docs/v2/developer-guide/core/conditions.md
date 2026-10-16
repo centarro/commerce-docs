@@ -241,10 +241,10 @@ As a result, different Conditions are offered as options for Promotions vs. Paym
 
 
 ### Links and Resources
-- [Drupal 8 documentation: Event Systems Overview & How to Subscribe To and Dispatch Events]
-- [Drupal 8 documentation: Plugin API overview]
+- [Drupal documentation: Event Systems Overview & How to Subscribe To and Dispatch Events]
+- [Drupal documentation: Plugin API overview]
 
 [Rules module]: https://www.drupal.org/project/rules
-[Drupal 8 documentation: Event Systems Overview & How to Subscribe To and Dispatch Events]: https://www.drupal.org/docs/8/creating-custom-modules/event-systems-overview-how-to-subscribe-to-and-dispatch-events
-[Drupal 8 documentation: Plugin API overview]: https://www.drupal.org/docs/8/api/plugin-api/plugin-api-overview
+[Drupal documentation: Event Systems Overview & How to Subscribe To and Dispatch Events]: https://www.drupal.org/docs/develop/creating-modules/subscribe-to-and-dispatch-events
+[Drupal documentation: Plugin API overview]: https://www.drupal.org/docs/drupal-apis/plugin-api/plugin-api-overview
 

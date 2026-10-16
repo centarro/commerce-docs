@@ -649,11 +649,11 @@ It is possible to override the used language via field settings, in case the lan
 ## Links and resources:
 * For more information on the Commerce Guys Addressing library and its data model, see its [README file](https://github.com/commerceguys/addressing/blob/master/README.md)
 * [Wikipedia page on Administrative division (country subdivision)](https://en.wikipedia.org/wiki/Administrative_division)
-* [Drupal 8 documentation: Create a custom field formatter](https://www.drupal.org/docs/8/creating-custom-modules/create-a-custom-field-formatter)
+* [Drupal documentation: Create a custom field formatter](https://www.drupal.org/docs/creating-custom-modules/creating-custom-field-types-widgets-and-formatters/create-a-custom-field-formatter)
 * Discussion and example of a custom address formatter: [Pretty field formatter](https://www.drupal.org/project/address/issues/2912629)
 
 [Google's Address Data Service]: https://chromium-i18n.appspot.com/ssl-address
 [Address module]: https://www.drupal.org/project/address
 [CLDR "Territory Subdivisions" listing]: https://cldr.unicode.org/index/downloads
-[Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
+[Theming Drupal Guide]: https://www.drupal.org/docs/develop/theming-drupal
 [Geolocation Address Link module]: https://www.drupal.org/project/geolocation_address_link

@@ -166,7 +166,7 @@ gateway plugin, begin by subclassing one of the payment gateway base classes:
 
 An important aspect of your plugin class is its ***annotation***, identified by ***@CommercePaymentGateway***. The
 annotation contains the information Drupal Commerce needs to *discover* your plugin. To learn more about annotations,
-see the [Drupal documentation on Annotations-base plugins].
+see the [Drupal documentation on annotation-based plugins].
 
 For example, if you enable the Commerce QuickPay module (or rebuild caches if the module is already enabled), you will
 then see *QuickPay (Redirect to quickpay)* as a payment gateway *Plugin* option:
@@ -1095,8 +1095,8 @@ This documentation page will explain how to set up the iFrame portion of an off-
 have not already read the [Off-site payment gateways] documentation, start there for an overview and initial steps.
 Also, for an introduction to the Drupal Javascript API, see:
 
-* [Drupal 8 documentation on JavaScript API overview]
-* [Acquia tutorial topic: Add a custom variable to Drupal.Settings]
+* [Drupal documentation on JavaScript API overview]
+* [Drupal documentation: Adding assets to a module, including drupalSettings]
 
 Off-site payments in iFrames work similarly to off-site payments by redirect. The difference is that in the **Checkout**
 process, the "off-site" portion is handled within an embedded iFrame and does not take the customer to the third party
@@ -1220,8 +1220,8 @@ $form['#attached']['drupalSettings']['my_custom_module'] = $data;
 ```
 
 Your `buildConfigurationForm()` method should also build whatever form you want your customers to see. This may include
-form elements such as a message, submit button, and cancel button. If you are unfamiliar with building forms in Drupal
-8, the [Drupal 8 Form API reference] may be helpful.
+form elements such as a message, submit button, and cancel button. If you are unfamiliar with building forms in Drupal,
+the [Drupal Form API reference] may be helpful.
 
 #### Implementing the iFrame JavaScript
 
@@ -1760,13 +1760,12 @@ of *Success*, *Aborted*, or *Failure*. Otherwise, the *request* is invalid and s
 
 [Request]: https://api.drupal.org/api/drupal/vendor%21symfony%21http-foundation%21Request.php/class/Request/8.7.x
 
-[GetExpressCheckoutDetails]: (https://developer.paypal.com/docs/classic/api/merchant/SetExpressCheckout_API_Operation_NVP/)
 
 [Commerce PayPal module]: https://www.drupal.org/project/commerce_paypal
 
 [Wikipedia description of CSRF]: https://en.wikipedia.org/wiki/Cross-site_request_forgery
 
-[implement a Route Subscriber]: https://www.drupal.org/docs/8/api/routing-system/altering-existing-routes-and-adding-new-routes-based-on-dynamic-ones
+[implement a Route Subscriber]: https://www.drupal.org/docs/drupal-apis/routing-system/altering-existing-routes-and-adding-new-routes-based-on-dynamic-ones
 
 [Symfony Response]: https://api.drupal.org/api/drupal/vendor%21symfony%21http-foundation%21Response.php/class/Response/8.2.x
 
@@ -1782,11 +1781,11 @@ of *Success*, *Aborted*, or *Failure*. Otherwise, the *request* is invalid and s
 
 [How to Log Messages in Drupal 8]: https://drupalize.me/blog/201510/how-log-messages-drupal-8
 
-[Drupal 8 documentation on JavaScript API overview]: https://www.drupal.org/docs/8/api/javascript-api/javascript-api-overview
+[Drupal documentation on JavaScript API overview]: https://www.drupal.org/docs/drupal-apis/javascript-api/javascript-api-overview
 
-[Acquia tutorial topic: Add a custom variable to Drupal.Settings]: https://docs.acquia.com/tutorials/fast-track-drupal-8-coding/add-custom-variable-drupalsettings/
+[Drupal documentation: Adding assets to a module, including drupalSettings]: https://www.drupal.org/docs/develop/creating-modules/adding-assets-css-js-to-a-drupal-module-via-librariesyml
 
-[Drupal 8 Form API reference]: https://api.drupal.org/api/drupal/elements/
+[Drupal Form API reference]: https://api.drupal.org/api/drupal/elements/
 
 [Rave]: https://www.drupal.org/project/commerce_rave
 
@@ -1806,11 +1805,11 @@ of *Success*, *Aborted*, or *Failure*. Otherwise, the *request* is invalid and s
 
 [Drupal documentation on creating custom modules]: https://www.drupal.org/docs/creating-custom-modules
 
-[Drupal documentation on configuration schema/metadata]: https://www.drupal.org/docs/api/configuration-api/configuration-schemametadata
+[Drupal documentation on configuration schema/metadata]: https://www.drupal.org/docs/drupal-apis/configuration-api/configuration-schemametadata
 
 [Drupal Plugin API documentation]: https://www.drupal.org/docs/drupal-apis/plugin-api
 
-[Drupal documentation on Annotations-base plugins]: https://www.drupal.org/docs/api/plugin-api/annotations-based-plugins
+[Drupal documentation on annotation-based plugins]: https://www.drupal.org/docs/drupal-apis/plugin-api/annotations-based-plugins
 
 [Drupal Form API reference]: https://api.drupal.org/api/drupal/elements/
 

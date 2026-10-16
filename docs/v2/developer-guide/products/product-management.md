@@ -446,10 +446,10 @@ After saving all your changes, you should be able to navigate to your new Produc
 [Commerce Migrate module]: https://www.drupal.org/project/commerce_migrate
 [documentation]: https://www.drupal.org/docs/contributed-modules/commerce-migrate
 [Views data export module]: https://www.drupal.org/project/views_data_export
-[Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
+[Theming Drupal Guide]: https://www.drupal.org/docs/develop/theming-drupal
 [Creating Listings with Views]: https://www.drupal.org/docs/user_guide/en/views-chapter.html
 [Action plugins]: https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Action%21ActionInterface.php/interface/ActionInterface/8.5.x
 [hook_entity_operation_alter]: https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21entity.api.php/function/hook_entity_operation_alter/8.5.x
-[Understanding Hooks]: https://www.drupal.org/docs/8/creating-custom-modules/understanding-hooks
+[Understanding Hooks]: https://www.drupal.org/docs/develop/creating-modules/understanding-hooks
 [Users, Roles, and Permissions]: https://www.drupal.org/docs/user_guide/en/user-concept.html
 [Managing user roles & permission in Drupal 8]: https://valuebound.com/resources/blog/managing-user-roles-permission-drupal-8

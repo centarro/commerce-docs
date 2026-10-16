@@ -530,7 +530,7 @@ There is no user interface for changing the view provided. The view is added by 
 To use a completely different view, you will need to use `hook_form_alter` to change the view name, or a provide a custom checkout flow plugin. 
 
 
-[annotation-based plugins]: https://www.drupal.org/docs/8/api/plugin-api/annotations-based-plugins
+[annotation-based plugins]: https://www.drupal.org/docs/drupal-apis/plugin-api/annotations-based-plugins
 [form display mode]: https://www.drupal.org/node/2511722
 [EntityFormDisplay]: https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21Entity%21EntityFormDisplay.php/class/EntityFormDisplay/8.8.x
 [Form and render elements]: https://api.drupal.org/api/drupal/elements/8.8.x

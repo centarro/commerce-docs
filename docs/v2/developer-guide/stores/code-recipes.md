@@ -191,7 +191,7 @@ cookie_store.cookie_store_resolver:
     - { name: commerce_store.store_resolver, priority: 100 }
 ```
 
-For more info about service tags: https://www.drupal.org/docs/8/api/services-and-dependency-injection/service-tags.
+For more info about service tags: https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/service-tags.
 
 ChainStoreResolver is a `service_collector`, and defines the `commerce_store.store_resolver` service tag. DefaultStoreResolver and CookieStoreResolver are services tagged with `commerce_store.store_resolver`. 
 

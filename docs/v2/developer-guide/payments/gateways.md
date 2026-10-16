@@ -130,8 +130,8 @@ If you create your own payment gateway module or find one that's not in this lis
     | **Description** | The CCAvenue Payment Gateway module implements the CCAvenue payment processing service (www.ccavenue.com) in Drupal Commerce. |
     | --- | --- |
     | **Type** | Off site |
-    | **Currencies** | Source: https://www.ccavenue.com/ccavenue_index.jsp#feature-block2 |
-    | **Countries** | Source: https://www.ccavenue.com/ccavenue_index.jsp#feature-block2 |
+    | **Currencies** | Source: https://www.ccavenue.com/ |
+    | **Countries** | Source: https://www.ccavenue.com/ |
 
 ??? simple-card "[CIB Bank]"
 
@@ -401,9 +401,7 @@ If you create your own payment gateway module or find one that's not in this lis
     | **Description** | This module integrates Payeezy with Drupal Commerce to accept credit card payments on-site. Hosted (offsite) and on-site payment is supported. |
     | --- | --- |
     | **Type** | On site / Off site |
-    | **Currencies** | Source: https://support.payeezy.com/hc/en-us/articles/205757587-Dynamic-Currency-Conversion-DCC-and-Dynamic-Pricing-DP-Feature-Guide |
-    | **Countries** | Source: https://support.payeezy.com/hc/en-us/articles/205757587-Dynamic-Currency-Conversion-DCC-and-Dynamic-Pricing-DP-Feature-Guide |
-
+    
 ??? simple-card "[PayFort]"
 
     | **Description** | Integrates PayFort payment gateway into your Drupal Commerce shop. |

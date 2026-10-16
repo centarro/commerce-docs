@@ -58,7 +58,7 @@ So that's the overall concept. You have a question that might require complex bu
 
 #### Service tags
 
-All Resolvers are [services], and Chain resolvers are a special type of service called a service collector. See [Drupal 8 Documentation: Service Tags] for more information. For each type of Resolver, a specific *tag* has been defined. For example, here the `commerce_price.price_resolver` tag has been defined for the *Price* chain resolver:
+All Resolvers are [services], and Chain resolvers are a special type of service called a service collector. See [Drupal documentation: Service Tags] for more information. For each type of Resolver, a specific *tag* has been defined. For example, here the `commerce_price.price_resolver` tag has been defined for the *Price* chain resolver:
 
 ```php
   commerce_price.chain_price_resolver:
@@ -130,8 +130,8 @@ Default Resolvers provide implementations for the `resolve()` method that should
 
 - [Apply a VAT rate on a product with Drupal Commerce 2](https://www.flocondetoile.fr/blog/apply-vat-rate-product-drupal-commerce-2)
 - [Working with the Drupal Commerce 2 checkout flows](https://www.flocondetoile.fr/blog/working-drupal-commerce-2-checkout-flows)
-- [Drupal 8 Documentation: Service Tags]
+- [Drupal documentation: Service Tags]
 - [Implementing a Checkout Flow resolver in Drupal Commerce 2.0](https://glamanate.com/blog/implementing-checkout-flow-resolver-drupal-commerce-20)
 
-[services]: https://www.drupal.org/docs/8/api/services-and-dependency-injection
-[Drupal 8 Documentation: Service Tags]: https://www.drupal.org/docs/8/api/services-and-dependency-injection/service-tags
+[services]: https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection
+[Drupal documentation: Service Tags]: https://www.drupal.org/docs/drupal-apis/services-and-dependency-injection/service-tags

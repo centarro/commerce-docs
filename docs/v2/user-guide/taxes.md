@@ -14,7 +14,7 @@ It includes an example of determining the VAT rate to apply depending on the typ
 There are some additional modules to manage taxes:
 
 * [Commerce Product Tax](https://www.drupal.org/project/commerce_product_tax)  
-* [Commerce Product Tax Conditions](https://www.drupal.org/project/commerce_product_tax_exemp)
+* [Commerce Product Tax Conditions](https://www.drupal.org/project/commerce_product_tax_exempt)
 
 ## European VAT 
 
