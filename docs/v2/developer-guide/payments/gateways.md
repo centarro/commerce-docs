@@ -146,7 +146,7 @@ If you create your own payment gateway module or find one that's not in this lis
     | --- | --- |
     | **Type** | Off site |
     | **Currencies** | Cryptocurrency https://www.coinpayments.net/supported-coins |
-    | **Countries** | [N/A] |
+    | **Countries** | N/A |
 
 ??? simple-card "[Datatrans]"
 
@@ -656,7 +656,6 @@ Once a payment gateway is added it will be made available as a payment method to
 [PayPal]: https://www.drupal.org/project/commerce_paypal
 [Stripe]: https://www.drupal.org/project/commerce_stripe
 [Authorize.Net]: https://www.drupal.org/project/commerce_authnet
-[Vantiv]: https://www.drupal.org/project/commerce_vantiv
 [Square]: https://www.drupal.org/project/commerce_square
 [Ingenico]: https://www.drupal.org/project/commerce_ingenico
 [Instamojo]: https://www.drupal.org/project/commerce_instamojo
@@ -664,7 +663,6 @@ Once a payment gateway is added it will be made available as a payment method to
 [Payplug]: https://www.drupal.org/project/commerce_payplug
 [PayU Money]: https://www.drupal.org/project/commerce_payumoney
 [CC Avenue]: https://www.drupal.org/project/commerce_ccavenue
-[Alipay]: https://www.drupal.org/project/commerce_alipay
 [Worldline]: https://www.drupal.org/project/commerce_worldline
 [Datatrans]: https://www.drupal.org/project/commerce_datatrans
 [EasyPaybg]: https://www.drupal.org/project/commerce_easyPaybg
@@ -683,7 +681,6 @@ Once a payment gateway is added it will be made available as a payment method to
 [PEI]: https://www.drupal.org/project/commerce_pei
 [Omise]: https://www.drupal.org/project/commerce_omise
 [Omnikassa]: https://www.drupal.org/project/commerce_omnikassa
-[Amazon Pay]: https://www.drupal.org/project/commerce_amazon_lpa
 [DPS]: https://www.drupal.org/project/commerce_dps
 [Easy checkout&payment]: https://www.drupal.org/project/commerce_easy
 [Elavon]: https://www.drupal.org/project/commerce_elavon
@@ -696,7 +693,6 @@ Once a payment gateway is added it will be made available as a payment method to
 [USAePay]: https://www.drupal.org/project/commerce_usaepay
 [Cashpresso]: https://www.drupal.org/project/commerce_cashpresso
 [Coinpayments]: https://www.drupal.org/project/commerce_coinpayments
-[DPS PxPay]: https://www.drupal.org/project/commerce_dps_pxpay
 [eProcessing Network (EPN)]: https://www.drupal.org/project/commerce_epn
 [Euplatesc]: https://www.drupal.org/project/commerce_euplatesc
 [Global Payments (Realex)]: https://www.drupal.org/project/commerce_globalpayments
