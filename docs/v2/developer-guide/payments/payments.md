@@ -200,7 +200,7 @@ With the information that we have obtained, it is straightforward to override th
     ];
 ```
 
-Once you've set them, these will be the settings that will be used when a customer chooses to pay using this payment gateway. Note that due to how configuration management works in Drupal 8, the admin pages such as the payment gateway's Edit page or the configuration export page used above will still display the values of the settings defined in the code as exported configuration or in the database.
+Once you've set them, these will be the settings that will be used when a customer chooses to pay using this payment gateway. Note that due to how configuration management works in Drupal, the admin pages such as the payment gateway's Edit page or the configuration export page used above will still display the values of the settings defined in the code as exported configuration or in the database.
 
 NB, if you are checking with `drush cget` be sure to use the `--include-overridden` flag to show variables that are overridden. in the example above this would be 
 ```drush cget --include-overridden commerce_payment.commerce_payment_gateway.paypal_express_checkout``` 

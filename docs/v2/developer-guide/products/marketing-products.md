@@ -23,14 +23,14 @@ taxonomy:
 
 ## Product Search
 
-In this section we'll walk through the process of using the [Search API module] and the Drupal 8 core [Views module] to create a basic product search page like this:
+In this section we'll walk through the process of using the [Search API module] and the Drupal core [Views module] to create a basic product search page like this:
 
-![Product search page](../../images/product-search.jpg)
+![Product search page](../images/product-search.jpg)
 
 ### Configure Search API module for product search
 Search API is a contributed module that provides a framework for creating searches on Drupal entities. The general steps for setting up search functionality for products (or any type of data) with Search API are:
 
-**Step 1:** [Install the *Search API module* and uninstall the *Search* module provided by Drupal 8 Core.](#step-1-install-search-api-modules)
+**Step 1:** [Install the *Search API module* and uninstall the *Search* module provided by Drupal Core.](#step-1-install-search-api-modules)
  - Typically, you will want to uninstall the Core Search module for performance reasons.
 
 **Step 2:** [Add a search server with Drupal's own database as the search backend.](#step-2-add-a-server)
@@ -53,7 +53,7 @@ Search API is a contributed module that provides a framework for creating search
     3. Install the *Database Search* and *Search API* modules.
     4. Also, it is recommended that you *uninstall* the Core *Search* module whenever you are using Search API.
 
-    ![Install search api modules](../../images/product-search-1.jpg)
+    ![Install search api modules](../images/product-search-1.jpg)
 
 ##### Step 2: Add a server
 !!!example
@@ -62,7 +62,7 @@ Search API is a contributed module that provides a framework for creating search
     3. Enter "Database" for the server name.
     4. Click the *Save* button.
 
-    ![Add server](../../images/product-search-2.jpg)
+    ![Add server](../images/product-search-2.jpg)
 
 ##### Step 3: Add an index
 !!! example
@@ -74,19 +74,19 @@ Search API is a contributed module that provides a framework for creating search
     6. Select *Database* (the server we just created) for the *Server*.
     7. Click the *Save and add fields* button.
 
-    ![Add search index](../../images/product-search-3.jpg)
+    ![Add search index](../images/product-search-3.jpg)
 
 ##### Step 4: Select the indexed fields
 !!! example
     1. Navigate to the Search API field management administration page at `/admin/config/search/search-api/index/products/fields`.
     2. Use the *Add fields* button to select all the field properties you want indexed. Search API will store data on the search server for each of these fields. In some cases, you will need to drill down into the options to locate the exact property you want. For example, for the Product Body field, it's the *Processed text* property that we actually want to index and search by:
    
-        ![Add index fields](../../images/product-search-10.jpg)
+        ![Add index fields](../images/product-search-10.jpg)
 
     3. Specify the Type for each of the added fields. We've added Title, Product variation SKU, and Product variation Title fields to this search index. Since we want to be able to find individual words contained in our search fields, not just the whole field value, select *Fulltext* for each of the fields. (You can use non-Fulltext field types when you only want to use a field for filtering or sorting.)
     4. Set the Boost value for each of the added fields. Fields with higher boost scores will be *boosted* towards the top of the search listings. For example, if the Product Title has a boost score of 5, and other fields only have a boost score of 1, then products with the search term in their title will appear higher in the search results than products that only have the term in other fields.
 
-        ![Add index fields](../../images/product-search-4.jpg)
+        ![Add index fields](../images/product-search-4.jpg)
 
 ##### Step 5: Configure processors
 !!! example 
@@ -97,7 +97,7 @@ Search API is a contributed module that provides a framework for creating search
      - For the *HTML filter* processor settings, we only need the processor to be enabled for the product Body field. So deselect the other options. Leave the *Tag boosts* as is.
      - For the *Ignore case* processor settings, just use the default settings.
 
-    ![Configure processors](../../images/product-search-5.jpg)
+    ![Configure processors](../images/product-search-5.jpg)
 
 ### Create a basic product search page
 Next, we'll set up a basic search page for our indexed data using Views and the Drupal core Block layout functionality.
@@ -112,7 +112,7 @@ Next, we'll set up a basic search page for our indexed data using Views and the 
     6. For the *Page display settings*, select *Unformatted list* of *Fields*.
     7. Click the *Save and edit* button.
 
-    ![Create product search view](../../images/product-search-8.jpg)
+    ![Create product search view](../images/product-search-8.jpg)
 
 ##### Step 2: Configure the products search view
 !!! example
@@ -128,7 +128,7 @@ Next, we'll set up a basic search page for our indexed data using Views and the 
      - Enter "Search products" for the *Label*.
      - Select *Contains any of these words* for the *Operator*.
 
-    ![Add fulltext search filter](../../images/product-search-9.jpg)
+    ![Add fulltext search filter](../images/product-search-9.jpg)
 
     5. In the Sort criteria section, add and configure the *Relevance* option.
      - Select *Sort descending* for the *Order*.
@@ -142,7 +142,7 @@ Next, we'll set up a basic search page for our indexed data using Views and the 
     2. Click the *Place block* button for the *Content* region.
     3. Click the *Place block* button for the *Exposed form: product_search-page_1* block.
     4. Set the Visibility settings so that the block only appears on the `/products` page.
-    ![Search form block visibility settings](../../images/product-search-11.jpg)
+    ![Search form block visibility settings](../images/product-search-11.jpg)
     5. Rearrange the *Content* blocks so that the *Exposed form: product_search-page_1* block appears right below the *Page title* block.
     6. Click the *Save blocks* button at the bottom of the page.
     7. Navigate to your Products search page at `\products` to try your new search form.
@@ -153,7 +153,7 @@ Next, we'll set up a basic search page for our indexed data using Views and the 
 
 In this section, we'll transform the [Basic product search](#product-search) page we already created into a Product catalog page with faceted search functionality. We'll use the Brands and Product categories taxonomies we created in the [Product categories documentation](../product-architecture/#product-categories). We'll also incorporate the [Add to cart form](../displaying-products/#add-to-cart-form) into our product catalog listing to encourage browsing users to become buying customers.
 
-![Product catalog page](../../images/product-catalog.jpg)
+![Product catalog page](../images/product-catalog.jpg)
 
 #### Configure Search API
 For the [Basic product search](#product-search), we installed Search API modules, added a server and an index, and selected the fields to be indexed for the search. For a faceted product catalog, we can use the same server and index. We'll just add a few additional fields and configure an additional processor.
@@ -165,7 +165,7 @@ For the [Basic product search](#product-search), we installed Search API modules
     4. For the Add to cart form, add the *Variations* field.
     5. Click the *Done* button to add the fields.
     6. Click the *Save changes* button.
-    ![Add fields to index](../../images/product-catalog-1.jpg)
+    ![Add fields to index](../images/product-catalog-1.jpg)
 
     **Enable the *Index hierarchy* processor**
 
@@ -174,7 +174,7 @@ For the [Basic product search](#product-search), we installed Search API modules
     8. Select *Index hierarchy* as an enabled processor.
     9. In the Processor settings section, select *Categories* as the field to which hierarchical data should be added.
     10. Click the *Save* button.
-    ![Products search index processors](../../images/product-catalog-11.jpg)
+    ![Products search index processors](../images/product-catalog-11.jpg)
 
 #### Configure the product catalog view
 We're going to build upon the Product search view we created for the [Basic product search documentation](#product-search), to save a few steps here. The following steps assume that you have already created a view and will add an additional display. Alternatively, you could create the view and then make changes directly to the original *Page* view for your faceted product catalog page.
@@ -183,13 +183,13 @@ We're going to build upon the Product search view we created for the [Basic prod
     1. Navigate to the administration page for the Product search view at `/admin/structure/views/view/product_search`.
     2. Click the *Add* button under *Displays* to add a new *Page* display.
    
-        ![Add new views page display](../../images/product-catalog-2.jpg)
+        ![Add new views page display](../images/product-catalog-2.jpg)
     3. Click the *Page 2* link next to *Display name* to change the display name to "Product catalog".
     4. In the Page settings section, click the *No path is set* link next to *Path* to set the path to "product-catalog".
     5. In the Pager section, change the Items per page to "12".
     6. In the *Advanced* section, under *Other*, change the *Caching* setting to "Search API (tag-based)". Otherwise, facets break:
    
-        ![Add new views page display](../../images/product-catalog-14.png)
+        ![Add new views page display](../images/product-catalog-14.png)
 
 
         **Customize the product catalog display**
@@ -209,7 +209,7 @@ We're going to build upon the Product search view we created for the [Basic prod
      - Enter an Administrative title to distinguish this variations field from the other.
 
     If you navigate to the product catalog page, at `/product-catalog`, we now have a searchable grid-style product catalog, with add-to-cart buttons. Only the facets are missing.
-    ![Product catalog without facets](../../images/product-catalog-3.jpg)
+    ![Product catalog without facets](../images/product-catalog-3.jpg)
 
 #### Adding facets to the view
 
@@ -220,7 +220,7 @@ We're going to build upon the Product search view we created for the [Basic prod
     1. Add and install the [Facets module]. (*See the [documentation on extending Drupal Commerce](../../installation.md#extending).*)
     2. Navigate to the Facets administration page at `/admin/config/search/facets`, where you will see all existing views of type DB index.
 
-    ![Facets administration page](../../images/product-catalog-4.jpg)
+    ![Facets administration page](../images/product-catalog-4.jpg)
 
     **Add the Brand facet**
 
@@ -230,7 +230,7 @@ We're going to build upon the Product search view we created for the [Basic prod
     4. Enter a name for the facet, like "Brand".
     5. Cick the *Save* button.
 
-    ![Add brand facet](../../images/product-catalog-5.jpg)
+    ![Add brand facet](../images/product-catalog-5.jpg)
 
     **Configure the Brand facet**
 
@@ -238,8 +238,8 @@ We're going to build upon the Product search view we created for the [Basic prod
     2. In the Facet Sorting section, de-select *Sort by active state* and *Sort by count* so that products will appear alphabetically.
     3. Click the *Save* button to apply the changes.
 
-    ![Facet settings](../../images/product-catalog-6.jpg)
-    ![Facet sorting](../../images/product-catalog-7.jpg)
+    ![Facet settings](../images/product-catalog-6.jpg)
+    ![Facet sorting](../images/product-catalog-7.jpg)
 
     **Add the Categories facet**
 
@@ -254,13 +254,13 @@ We're going to build upon the Product search view we created for the [Basic prod
     2. In the Facet Sorting section, select only *Sort by taxonomy term weight* to use the ordering previously set for the Categories taxonomy.
     3. Click the *Save* button to apply the changes.
 
-    ![Facet settings](../../images/product-catalog-6.jpg)
-    ![Categories facet settings](../../images/product-catalog-12.jpg)
-    ![Categories facet sorting](../../images/product-catalog-10.jpg)
+    ![Facet settings](../images/product-catalog-6.jpg)
+    ![Categories facet settings](../images/product-catalog-12.jpg)
+    ![Categories facet sorting](../images/product-catalog-10.jpg)
 
     We have now created two facets, which can be viewed on the Facets administration page and are available as blocks.
 
-    ![Facet adminstration page with facets](../../images/product-catalog-8.jpg)
+    ![Facet adminstration page with facets](../images/product-catalog-8.jpg)
 
     **Place facets block on the product catalog page**
 
@@ -268,20 +268,20 @@ We're going to build upon the Product search view we created for the [Basic prod
     2. Click the *Place block* button for the *Sidebar first* region.
     3. Click the *Place block* button for the Facets *Brand* block.
 
-    ![Place Brand block](../../images/product-catalog-9.jpg)
+    ![Place Brand block](../images/product-catalog-9.jpg)
 
     4. For the *Configure block* settings, the default values are fine. Click *Save block* to add the Brand block.
     5. Repeat steps 2-4 for the Facet *Categories* block.
     6. Rebuild the cache and navigate to the Product catalog page at `/product-catalog` to view the results.
 
     For the screenshot below, I selected the *Urban Living* Category. Then its five sub-categories appeared. Selecting *Toys/Novelties* reduced the number of matching products to just two. Notice that only the single *Pool Toys Inc.* Brand is listed, since that is the brand for both toys.
-    ![Product catalog page in action](../../images/product-catalog-13.jpg)
+    ![Product catalog page in action](../images/product-catalog-13.jpg)
 
 
 ## Links and resources
 * [Search API module documentation]
-* Drupal 8 User Guide documentation on [Creating Listings with Views]
-* Drupal 8 User Guide documentation on [Concept: Blocks]
+* Drupal User Guide documentation on [Creating Listings with Views]
+* Drupal User Guide documentation on [Concept: Blocks]
 
 [Search API module documentation]: https://www.drupal.org/docs/8/modules/search-api
 [Creating Listings with Views]: https://www.drupal.org/docs/user_guide/en/views-chapter.html

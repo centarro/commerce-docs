@@ -112,9 +112,9 @@ On the *Field settings* configuration page:
 6. Change the *Allowed number of values* from *Limited* to *Unlimited*. Product variations of type *Simple* can have 1 or more images.
 7. Click *Save field settings* to continue.
 
->You can use the default values for the rest of the Image field settings. If you are interested in learning more about the Image field settings options, see the Drupal 8 documentation for [Working with images].
+>You can use the default values for the rest of the Image field settings. If you are interested in learning more about the Image field settings options, see the Drupal documentation for [Working with images].
 
-![Image field settings](../../images/simple-product-type-5.jpg)
+![Image field settings](../images/simple-product-type-5.jpg)
 
 On the *Image settings for Simple* configuration page:
 
@@ -245,7 +245,7 @@ Let's start by creating a *Brands* taxonomy to organize products by brand.
 3. Enter "Brands" for the Name.
 4. Click *Save* to create the new vocabulary.
 
-![Create Brands vocabulary](../../images/product-categories-ui-1.jpg)
+![Create Brands vocabulary](../images/product-categories-ui-1.jpg)
 
 Now you can add terms to the vocabulary or look into using the [Feeds module] or [Migrate Tools module] to import your pre-existing data.
 
@@ -253,13 +253,13 @@ Now you can add terms to the vocabulary or look into using the [Feeds module] or
 For our product catalog, we're also going to want to hierarchical categories so that customers can use faceted search to "drill down" to specific categories. For example, on the Commerce Demo site, we have an *Urban Living* product category with sub-categories of *Food & Beverage*, *Home*, *Outdoors*, etc. And within the *Home* category, we further classify products as *Accessories*, *Kitchen*, *Office*, or *Furnishings*.
 
 To create a hierarchical taxonomy in Drupal, we can use the same steps we used to create a basic taxonomy. After creating a *Product categories* taxonomy and adding the terms, we have a listing that looks like this:
-![Product categories taxonomy terms](../../images/product-categories-ui-5.jpg)
+![Product categories taxonomy terms](../images/product-categories-ui-5.jpg)
 
 Notice that the *Accessories* term appears to be duplicated, but that's fine, since one of those terms will be a sub-category of the Urban Living *Home* category, and the other will be a sub-category of the Urban Living *Outdoors* category. They have the same label but are actually two completely separate terms.
 
 To transform this simple listing into a hierarchical taxonomy, you just need to use the drag-and-drop icons in the leftmost column to rearrange the terms. You may also find it helpful to click the *Show row weights* link to set the order of terms within a particular category, especially if there are a great number of items. After moving items around, the Product categories taxonomy now looks like this and all we need to do is click the *Save* button to save the changes:
 
-![Product categories hierarchy](../../images/product-categories-ui-6.jpg)
+![Product categories hierarchy](../images/product-categories-ui-6.jpg)
 
 ### Create a term reference field for your product category
 
@@ -269,25 +269,25 @@ Let's add a field that references our *Brands* taxonomy to the [Simple product t
 2. Select the *Manage fields* operation for the Simple product type.
 3. Click the *Add field* button.
 
-![Create new field](../../images/product-categories-ui-2.jpg)
+![Create new field](../images/product-categories-ui-2.jpg)
 
 4. Select *Taxonomy term* (in the *Reference* section) for the new field type.
 5. Enter *Brand* for the Label.
 6. Click the *Save and continue* button.
 
-![Add taxonomy term field](../../images/product-categories-ui-3.jpg)
+![Add taxonomy term field](../images/product-categories-ui-3.jpg)
 
 7. Click *Save field settings* on the next page to save the default configuration values.
 8. On the *Brand settings for Simple* page, select *Required field* and select *Brands* for the Vocabulary.
 9. Click the *Save settings* button.
 
-![Brand settings](../../images/product-categories-ui-4.jpg)
+![Brand settings](../images/product-categories-ui-4.jpg)
 
 The *Brand* field has now been added to the Simple product type. To add the Brand field to another product type, you can *Re-use an existing field* to select this Brand field on the *Add field* page for the product type.
 
 We can also create a new Taxonomy term reference field for our *Product categories* taxonomy and any other product taxonomies we want to create. Unlike the *Brand* field, which was limited to a single value, we'll specify *Unlimited* for the *Allowed number of values* for product categories:
 
-![Categories field settings](../../images/product-categories-ui-7.jpg)
+![Categories field settings](../images/product-categories-ui-7.jpg)
 
 To learn how to use the Brand and Taxonomy in a faceted product catalog, see the [Product catalog with facets documentation](../marketing-products/#product-catalog-facets).
 
@@ -324,12 +324,12 @@ You will see that two ***traits*** have been added to the configuration form for
 - Has dimensions
 - Shippable
 
-![Shipping traits for physical product variation type](../../images/product-architectures-1.jpg)
+![Shipping traits for physical product variation type](../images/product-architectures-1.jpg)
 
 - If you specify that your product variation type *has dimensions*, then a *Dimensions* field will be added to your product variation type.
 - If you specify that your product variation type is *shippable*, then a *Weight* field will be added to your product variation type.
 
-![Shipping traits for physical product variation type](../../images/product-architectures-2.jpg)
+![Shipping traits for physical product variation type](../images/product-architectures-2.jpg)
 
 Both these fields can be managed just like any other field in terms of displaying them on data entry forms and product displays. For more information on how these fields are used in the context of the Commerce Shipping module, see the [Shipping documentation](../../shipping/getting-started).
 
@@ -339,7 +339,7 @@ An important aspect of product architecture with respect to stock management is 
 
 In contrast, suppose you sell custom t-shirts that can be ordered in *any* customer-specified color and/or design, and you only track inventory based on Size (Small, Medium, Large, etc.) In this case, you would want *Size* as a product attribute, but *Color* would not be a product attribute. Instead, you would want to add a custom *Color* field that customers can use at the time they order an item to specify the t-shirt color.
 
-The Drupal 8 version for the [Commerce Stock module] is currently being ported to Drupal 8. It is not yet ready for use on a live site.
+For stock tracking, see the [Commerce Stock module].
 
 ### Configurable / customizable products
 
@@ -354,7 +354,7 @@ Both single-variation products and products with attributes / variations can be 
 
 ### Downloadable products / files
 
-For downloadable products / files, we recommend the [Commerce File module]. The port to Drupal 8 is currently in progress. See the [Port to Drupal 8] issue for the current status.
+For downloadable products / files, we recommend the [Commerce File module].
 
 ### Subscriptions
 
@@ -362,7 +362,7 @@ For subscription products, we recommend the [Commerce Recurring Framework module
 
 ### Product bundles
 
-For product bundles, we recommend the [Commerce Product Bundle module]. The port to Drupal 8 is currently in progress. See the [Drupal 8 (Commerce 2) Version] issue for additional information:
+The [Commerce Product Bundle module] is unsupported and has no release compatible with Drupal 10 or 11.
 
 ### Purchasable entities
 
@@ -379,7 +379,7 @@ The key to Drupal's product architecture flexibility is the concept of a ***purc
 
  Order line items can be configured to reference *any* ***purchasable entity***. On the Order item type configuration page, you can specify the *Purchasable entity type* for your line items. *Product variation* is just the default option.
 
-![Order item type edit page](../../images/order_item_type_edit.png)
+![Order item type edit page](../images/order_item_type_edit.png)
 
 If you're interested in writing custom code to define your own ***purchasable entities***, you can start by looking at the `PurchasableEntityInterface`, which is included in the [Code recipes](#code-recipes) page of this documentation section.
 
@@ -387,7 +387,7 @@ If you're interested in writing custom code to define your own ***purchasable en
 
 ## Multilingual products
 
-If you want to display the products on your site in multiple languages, you'll need to build a Multilingual Drupal site. Multilingual functionality in Drupal is a larger topic, beyond the scope of this Drupal Commerce documentation guide. For an overview, please see the Drupal 8 User Guide section on [Making Your Site Multilingual]. This page describes basic multilingual setup for products, product variations, and product attribute values.
+If you want to display the products on your site in multiple languages, you'll need to build a Multilingual Drupal site. Multilingual functionality in Drupal is a larger topic, beyond the scope of this Drupal Commerce documentation guide. For an overview, please see the Drupal User Guide section on [Making Your Site Multilingual]. This page describes basic multilingual setup for products, product variations, and product attribute values.
 
 ### Prerequisites
 
@@ -636,7 +636,7 @@ If you want to write custom code to programmatically create or manage your produ
 ## Links and resources
 
 * [Making Your Site Multilingual]
-* Drupal 8 User Guide documentation on [Concept: Taxonomy]
+* Drupal User Guide documentation on [Concept: Taxonomy]
 
 [Concept: Taxonomy]: https://www.drupal.org/docs/user_guide/en/structure-taxonomy.html
 [Feeds module]: https://www.drupal.org/project/feeds
@@ -650,10 +650,8 @@ If you want to write custom code to programmatically create or manage your produ
 [Commerce Shipping module]: https://www.drupal.org/project/commerce_shipping
 [Commerce Stock module]: https://www.drupal.org/project/commerce_stock
 [Commerce File module]: https://www.drupal.org/project/commerce_file
-[Port to Drupal 8]: https://www.drupal.org/project/commerce_file/issues/2875904
 [Commerce Recurring Framework module]: https://www.drupal.org/project/commerce_recurring
 [Commerce Product Bundle module]: https://www.drupal.org/project/commerce_product_bundle
-[Drupal 8 (Commerce 2) Version]: https://www.drupal.org/project/commerce_product_bundle/issues/2799643
 [Making Your Site Multilingual]: https://www.drupal.org/docs/user_guide/en/multilingual-chapter.html
 [Content Translation module]: https://www.drupal.org/docs/8/core/modules/content-translation/overview
 [Configuration Translation module]: https://www.drupal.org/docs/8/core/modules/config-translation

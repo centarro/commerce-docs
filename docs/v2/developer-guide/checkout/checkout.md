@@ -17,31 +17,15 @@ Let's create a custom flow, and we are going to use it for new orders.
 Let's create a module that will do this.
 
 !!! example
-    If you are using [Drupal Console](https://drupalconsole.com/), then you can
-    execute this command from docroot:
+    Generate the module skeleton with [Drush](https://www.drush.org/), from the site root:
 
     ```bash
-    drupal generate:module \
-    --module="My checkout flow" \
-    --machine-name="my_checkout_flow" \
-    --module-path="/modules/custom" \
-    --description="My checkout flow" \
-    --core="8.x" \
-    --package="Custom" \
-    --composer \
-    --dependencies="commerce:commerce_checkout"
+    drush generate module
     ```
 
-    Create the plugin using this command.
+    Use `my_checkout_flow` as the machine name and add `commerce_checkout` as a dependency.
 
-    ```bash
-    drupal generate:plugin:skeleton \
-    --module="my_checkout_flow" \
-    --plugin-id="commerce_checkout_flow" \
-    --class="CustomCheckoutFlow"
-    ```
-
-    A new file ``CustomCheckoutFlow.php`` will be created inside ``src/Plugin/Commerce/CheckoutFlow``.
+    Then create a file named ``CustomCheckoutFlow.php`` inside ``src/Plugin/Commerce/CheckoutFlow``.
 
     Make sure that file looks like this:
 
@@ -97,7 +81,7 @@ Let's create a module that will do this.
     Enable the module ``my_checkout_flow``.
 
     ```bash
-    drupal module:install my_checkout_flow
+    drush en my_checkout_flow
     ```
 
     We are going to create a new checkout flow.
@@ -204,7 +188,7 @@ Let's create a module that will do this.
 
     ```
 
-    3. Don't forget to enable your custom module either through the admin UI, drush, or drupal console:
+    3. Don't forget to enable your custom module either through the admin UI or Drush:
 
     ```bash
     drush en my_checkout_pane

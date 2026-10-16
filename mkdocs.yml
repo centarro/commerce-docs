@@ -142,7 +142,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/centarro/
 copyright:
-  Copyright &copy; 2024 <a href="https://www.centarro.io" target="_blank">Centarro</a>
+  Copyright &copy; 2026 <a href="https://www.centarro.io" target="_blank">Centarro</a>
+hooks:
+  - hooks/latest_release.py
 plugins:
   - search
   - exclude-search:
@@ -162,7 +164,7 @@ plugins:
         'commerce2/developer-guide/orders/order-refresh-and-process.md': 'v2/developer-guide/orders/getting-started.md#order-refresh-and-processing'
         'commerce2/developer-guide/stores/create-store-type.md': 'v2/developer-guide/stores/code-recipes.md#create-a-store-type'
         'commerce2/developer-guide/stores/create-store.md': 'v2/developer-guide/stores/code-recipes.md#create-a-store'
-        'commerce2/developer-guide/stores/create-store-from-console.md': 'v2/developer-guide/stores/code-recipes.md#create-a-store-using-drupal-console'
+        'commerce2/developer-guide/stores/create-store-from-console.md': 'v2/developer-guide/stores/code-recipes.md#create-a-store'
         'commerce2/developer-guide/stores/resolve-current-store.md': 'v2/developer-guide/stores/code-recipes.md#resolve-the-current-store'
         'commerce2/developer-guide/payments/create-payment-gateway/manual-gateways.md': 'v2/developer-guide/payments/creating-payment-gateway.md#manual-payment-gateways'
         'commerce2/developer-guide/payments/create-payment-gateway/off-site-gateways/security-considerations.md': 'v2/developer-guide/payments/creating-payment-gateway.md#security-considerations'
@@ -232,8 +234,8 @@ plugins:
         'commerce2/developer-guide/install-update/updating.md': 'v2/installation.md#updating'
         'commerce2/developer-guide/install-update/installation.md': 'v2/installation.md#installation'
         'commerce2/developer-guide/install-update/requirements.md': 'v2/installation.md#requirements'
-        'commerce2/developer-guide/contributing/get-issue-committed.md': 'v2/contribute.md#reviewing-patches'
-        'commerce2/developer-guide/contributing/setup-local-environment.md': 'v2/contribute.md#preparing-the-local-environment'
+        'commerce2/developer-guide/contributing/get-issue-committed.md': 'v2/contribute-code.md#reviewing-merge-requests'
+        'commerce2/developer-guide/contributing/setup-local-environment.md': 'v2/contribute-code.md#preparing-the-local-environment'
         'commerce2/getting-started/getting-help.md': 'v2/getting-started.md#getting-help'
         'commerce2/getting-started/using-composer.md': 'v2/getting-started.md#using-composer'
         'commerce2/developer-guide/orders.md': 'v2/developer-guide/orders/getting-started.md'
@@ -252,7 +254,7 @@ plugins:
         'commerce2/developer-guide/core/libraries-and-dependencies.md': 'v2/developer-guide/core/core.md'
         'commerce2/developer-guide/core.md': 'v2/developer-guide/core/core.md'
         'commerce2/developer-guide/install-update.md': 'v2/installation.md'
-        'commerce2/developer-guide/contributing.md': 'v2/contribute.md'
+        'commerce2/developer-guide/contributing.md': 'v2/contribute-code.md'
         'commerce2.md': 'v2/getting-started.md'
         'commerce2/developer-guide/orders/resolve-order-type.md': 'v2/developer-guide/orders/getting-started.md'
         'commerce2/developer-guide/orders/misc-data.md': 'v2/developer-guide/orders/code-recipes.md#saving-and-retrieving-misc-data-on-and-order'
@@ -303,11 +305,11 @@ plugins:
         'commerce2/user-guide/orders/manage-an-order/order-workflows.md': 'v2/user-guide/orders.md#order-workflows'
         'commerce2/user-guide/orders/manage-an-order/processing-an-order.md': 'v2/user-guide/orders.md#processing-an-order'
         'commerce2/user-guide/orders/customer-emails.md': 'v2/user-guide/orders.md#receipt-emails.md'
-        'commerce2/user-guide/payments/authorize.md': 'v2/user-guide/payments.md#create-an-authorization'
-        'commerce2/user-guide/payments/void.md': 'v2/user-guide/payments.md#voiding-an-authorization'
-        'commerce2/user-guide/payments/capture.md': 'v2/user-guide/payments.md#capture-an-authorization'
-        'commerce2/user-guide/payments/refund.md': 'v2/user-guide/payments.md#refunding-a-payment'
-        'commerce2/user-guide/payments/managing-order-payments.md': 'v2/user-guide/payments.md#manage-payments'
+        'commerce2/user-guide/payments/authorize.md': 'v2/user-guide/payment/payment-administration.md#create-an-authorization'
+        'commerce2/user-guide/payments/void.md': 'v2/user-guide/payment/payment-administration.md#voiding-an-authorization'
+        'commerce2/user-guide/payments/capture.md': 'v2/user-guide/payment/payment-administration.md#capture-an-authorization'
+        'commerce2/user-guide/payments/refund.md': 'v2/user-guide/payment/payment-administration.md#refunding-a-payment'
+        'commerce2/user-guide/payments/managing-order-payments.md': 'v2/user-guide/payment/payment-administration.md#manage-payments'
         'commerce2/user-guide/promotions/create-promotion.md': 'v2/user-guide/promotions.md#adding-a-new-promotion'
         'commerce2/user-guide/promotions/edit-promotion.md': 'v2/user-guide/promotions.md#edit-a-promotion'
         'commerce2/user-guide/promotions/delete-promotion.md': 'v2/user-guide/promotions.md#delete-a-promotion'

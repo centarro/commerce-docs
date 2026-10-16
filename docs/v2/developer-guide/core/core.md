@@ -48,7 +48,7 @@ The following PHP libraries are used:
 
 The Profile module provides the profile entity type used to collect customer information.
 In Commerce 1.x, we called these entities “Customer Profiles” and for
-Commerce 2.x we have moved to where the community has extended user
+Commerce 2.x and later we have moved to where the community has extended user
 profiles to include fieldable entity bundles.
 
 The fieldable Profile entity allows administrators to define different sets of fields for user profiles,

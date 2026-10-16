@@ -6,7 +6,7 @@ taxonomy:
 
 !!! note "We need help filling out this section! Feel free to follow the *edit this page* link and contribute."
 
-Shipping is enabled in Drupal Commerce 2.x with an external module
+Shipping is enabled in Drupal Commerce with an external module
 [Commerce Shipping](https://drupal.org/project/commerce_shipping). This
 module only provides an API and plugins for flat rate (both per order and per
 item) shipping functionality. As with Drupal Commerce 1.x, you will need a plugin or plugins 
@@ -24,10 +24,10 @@ Commerce Shipping. The recommended way to install Commerce shipping is with Comp
 composer require drupal/commerce_shipping
 ```
 
-Then enable the module, via Drush, Drupal Console or the UI.
+Then enable the module, via Drush or the UI.
 
 ```bash
-drupal module:install commerce_shipping
+drush en commerce_shipping
 ```
 
 However, you will likely also want a specific plugin for calculating shipping rates
@@ -39,7 +39,7 @@ which case, please follow them. For example, to install the FedEx plugin, you wo
 
 ```bash
 composer require drupal/commerce_fedex
-drupal module:install commerce_fedex
+drush en commerce_fedex
 ```
 
 !!! task "Explain core concepts (packaging, boxes, shipments.)"

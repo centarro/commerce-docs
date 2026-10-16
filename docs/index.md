@@ -8,19 +8,27 @@ taxonomy:
 
 Drupal Commerce is an open-source eCommerce platform that lets you sell any type of product to anyone in the world. It powers _billions_ in sales across thousands of online stores.
 
-Building on the platform requires general knowledge about how to install and manage Drupal on a web server. Once you have Drupal installed, adding the [Commerce Core](https://www.drupal.org/project/commerce) project to it gives you a foundation of eCommerce data objects, user interfaces, and subsystems. You’ll add configuration and custom code to meet your requirements, then build and deploy as you go.
+Drupal Commerce 3.x runs on Drupal 10.3 and later, including Drupal 11. Adding the [Commerce Core](https://www.drupal.org/project/commerce) project to a Drupal site gives you a foundation of eCommerce data objects, user interfaces, and subsystems. You’ll add configuration and custom code to meet your requirements, then build and deploy as you go.
 
 Check out the [Drupal Commerce Features Overview](https://www.centarro.io/drupal-commerce/features) to see all the platform can do.
 
+## Start with Commerce Kickstart
+
+[Commerce Kickstart](https://www.drupal.org/project/commerce_kickstart) is the fastest way to start building. It installs Drupal 11, Commerce Core and a curated set of Centarro maintained modules and themes, with an optional full demo store, so you can develop and test in a feature-rich environment:
+
+```bash
+composer create-project centarro/commerce-kickstart-project kickstart
+```
+
+Already have a Drupal site, or prefer starting from scratch? Just add Commerce to it. See the [installation guide](./v2/installation.md#installation).
+
 ## Try it out!
 
-If you want a quick look at the customer experience, the [demo store](https://commerce.demo.centarro.io) provides a great example of the platform's out-of-the-box functionality. It uses Drupal's core Layout Builder for landing pages and product display pages, taxonomy and Search API systems for faceted search, and the default shopping cart and checkout forms (with guest checkout enabled).
-
-Run the demo on your computer with [Commerce Kickstart](https://www.drupal.org/project/commerce_kickstart), the fastest way to start building.
+If you want a quick look at the customer experience, the [demo store](https://commerce.demo.centarro.io) shows the out-of-the-box functionality you get with Commerce Kickstart: Layout Builder landing and product pages, faceted search built with Search API, and the default shopping cart and checkout forms (with guest checkout enabled).
 
 !!! info "Latest version"
 
-    - Read the release notes: [Commerce Core 3.2.0](https://www.drupal.org/project/commerce/releases/3.2.0){target=_blank}, packaged on September 10th, 2025
+    - Read the release notes: {{ commerce_latest_release }}
 
 <div class="grid cards" markdown>
 
@@ -46,7 +54,7 @@ Run the demo on your computer with [Commerce Kickstart](https://www.drupal.org/p
 
 - [:centarro-truck-front-fill:{ .lg .middle } __Set up your shipping__](./v2/user-guide/shipping/)
 
-- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payments/)
+- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payment/payment-configuration/)
 
 - [:centarro-bookmark-star-fill:{ .lg .middle } __Set up your promotions__](./v2/user-guide/promotions/)
 
@@ -93,22 +101,8 @@ Run the demo on your computer with [Commerce Kickstart](https://www.drupal.org/p
 
 <hr>
 
-<!-- Drupal Commerce is the leading flexible eCommerce solution for Drupal,
-powering over 50,000 online stores of all sizes.
-
-If you are new to Drupal, start with [Drupal.org]{target=_blank} documentation on [Understanding Drupal]
-
-[If you develop in Drupal 7, access documentation here for Commerce 1.x](./v1/getting-started.md)
-
-[If you develop in Drupal 8, access documentation here for Commerce 2.x](./v2/getting-started.md)
-
-Documentation is hosted on, and courtesy of [Platform.sh]{target=_blank}. -->
-
 !!! question "Need help customizing your store? Hire Centarro."
 
     Our vision is **merchant success** and we offer a suite of [Drupal Commerce Development services]{target=_blank} to make it happen.
 
-[Platform.sh]: https://platform.sh
-[Drupal.org]: https://www.drupal.org
-[Understanding Drupal]: https://www.drupal.org/docs/8/understanding-drupal-8
 [Drupal Commerce Development services]: https://www.centarro.io
