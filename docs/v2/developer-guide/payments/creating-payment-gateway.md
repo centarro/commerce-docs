@@ -140,40 +140,39 @@ gateway plugin, begin by subclassing one of the payment gateway base classes:
 
     namespace Drupal\commerce_quickpay\Plugin\Commerce\PaymentGateway;
 
+    use Drupal\Core\StringTranslation\TranslatableMarkup;
+    use Drupal\commerce_payment\Attribute\CommercePaymentGateway;
     use Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\OffsitePaymentGatewayBase;
-    use Drupal\Core\Form\FormStateInterface;
+    use Drupal\commerce_quickpay\PluginForm\RedirectCheckoutForm;
 
     /**
      * Provides the QuickPay offsite Checkout payment gateway.
-     *
-     * @CommercePaymentGateway(
-     *   id = "quickpay_redirect_checkout",
-     *   label = @Translation("QuickPay (Redirect to quickpay)"),
-     *   display_label = @Translation("QuickPay"),
-     *    forms = {
-     *     "offsite-payment" = "Drupal\commerce_quickpay\PluginForm\RedirectCheckoutForm",
-     *   },
-     *   payment_method_types = {"credit_card"},
-     *   credit_card_types = {
-     *     "mastercard", "visa",
-     *   },
-     * )
      */
+    #[CommercePaymentGateway(
+      id: "quickpay_redirect_checkout",
+      label: new TranslatableMarkup("QuickPay (Redirect to quickpay)"),
+      display_label: new TranslatableMarkup("QuickPay"),
+      forms: [
+        "offsite-payment" => RedirectCheckoutForm::class,
+      ],
+      payment_method_types: ["credit_card"],
+      credit_card_types: ["mastercard", "visa"],
+    )]
     class RedirectCheckout extends OffsitePaymentGatewayBase {
 
     }
     ```
 
-An important aspect of your plugin class is its ***annotation***, identified by ***@CommercePaymentGateway***. The
-annotation contains the information Drupal Commerce needs to *discover* your plugin. To learn more about annotations,
-see the [Drupal documentation on annotation-based plugins].
+An important aspect of your plugin class is its ***attribute***, `#[CommercePaymentGateway]`. The
+attribute contains the information Drupal Commerce needs to *discover* your plugin. To learn more about attributes,
+see the [Drupal documentation on attribute-based plugins].
 
 For example, if you enable the Commerce QuickPay module (or rebuild caches if the module is already enabled), you will
 then see *QuickPay (Redirect to quickpay)* as a payment gateway *Plugin* option:
 
 ![QuickPay Plugin](../images/create-payment-gateway-2.png)
 
-Here is the full list of properties for Commerce Payment Gateway annotation properties:
+Here is the full list of parameters of the `CommercePaymentGateway` attribute:
 
 | Property                    | Description                                                                                                                                                                                                                                                                                                                                          |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -181,12 +180,14 @@ Here is the full list of properties for Commerce Payment Gateway annotation prop
 | label                       | The payment gateway label, a translatable string.                                                                                                                                                                                                                                                                                                    |
 | display_label               | The display label, a translatable string.                                                                                                                                                                                                                                                                                                            |
 | modes                       | An array of supported modes, keyed by machine name. If no modes are provided, the default modes are *Test* and *Live* are provided. The mode labels are translatable strings.                                                                                                                                                                        |
-| forms                       | An array of form classes, keyed by operation. For example, the *Manual* payment gateway has as its *forms* property:<br /><code>  forms = {<br />&nbsp;&nbsp;"add-payment" = "Drupal\commerce_payment\PluginForm\ManualPaymentAddForm",<br />&nbsp;&nbsp;"receive-payment" = "Drupal\commerce_payment\PluginForm\PaymentReceiveForm",<br />},</code> |
+| forms                       | An array of form classes, keyed by operation. For example, the *Manual* payment gateway has as its *forms* parameter:<br /><code>forms: [<br />&nbsp;&nbsp;"add-payment" => ManualPaymentAddForm::class,<br />&nbsp;&nbsp;"receive-payment" => PaymentReceiveForm::class,<br />],</code> |
 | js_library                  | The JavaScript library ID.                                                                                                                                                                                                                                                                                                                           |
 | payment_type                | The payment type used by the payment gateway, a string. If no payment type is provided, the default value is *payment_default*.                                                                                                                                                                                                                      |
 | payment_method_types        | An array of the payment method types handled by the payment gateway. If no payment method types are provided, a *credit_card* default type is provided. Other types can be things like *paypal*, or *paypal_credit*. (This property is only used for on-site gateways.)                                                                              |
 | default_payment_method_type | The default payment method type, a string. If no default type is provided, the first payment method type is used as the default. (This property is only used for on-site gateways.)                                                                                                                                                                  |
 | credit_card_types           | An array of credit card types handled by the payment gateway. If no credit card types are provided, the default list of credit card types is provided by the `getTypes()` method in the `Drupal\commerce_payment\CreditCard` class: *visa*, *mastercard*, *maestro*, *amex*, *dinersclub*, *discover*, *jcb*, and *unionpay*.                        |
+| requires_billing_information | Whether the payment gateway needs billing information. Defaults to `TRUE`. When `FALSE`, the gateway's *Collect billing information* setting can be turned off. |
+| libraries | An array of library IDs to attach when the gateway is used, for example the provider's JavaScript. |
 
 <h4 id="step-4-implement-the-plugin-configuration-form">Step 4: Implement the plugin configuration form</h4>
 
@@ -502,7 +503,7 @@ details locally.
 When a payment gateway implements the `SupportsStoredPaymentMethodsInterface` interface, the `PaymentMethodAddForm` is
 used for collecting all information required for creating the payment method. You can create your own payment method add
 form by extending `Drupal\commerce_payment\PluginForm\PaymentMethodAddForm` with your own
-`Drupal\my_custom_gateway\PluginForm\PaymentMethodAddForm` class. In your payment gateway plugin annotation, you will
+`Drupal\my_custom_gateway\PluginForm\PaymentMethodAddForm` class. In your payment gateway plugin attribute, you will
 need to include your custom form as the `add-payment-method` form.
 
 !!! example
@@ -512,15 +513,16 @@ need to include your custom form as the `add-payment-method` form.
     ```php
     /**
      * Provides the HostedFields payment gateway.
-     *
-     * @CommercePaymentGateway(
-     *   id = "braintree_hostedfields",
-     *   label = "Braintree (Hosted Fields)",
-     *   display_label = "Braintree",
-     *   forms = {
-     *     "add-payment-method" = "Drupal\commerce_braintree\PluginForm\HostedFields\PaymentMethodAddForm",
-     *   },
-     ...
+     */
+    #[CommercePaymentGateway(
+      id: "braintree_hostedfields",
+      label: new TranslatableMarkup("Braintree (Hosted Fields)"),
+      display_label: new TranslatableMarkup("Braintree"),
+      forms: [
+        "add-payment-method" => PaymentMethodAddForm::class,
+      ],
+      // ...
+    )]
     ```
 
 ##### Validating payment details
@@ -684,7 +686,7 @@ supports updating billing info and the card expiration date.
 When a payment gateway implements the `SupportsUpdatingStoredPaymentMethodsInterface` interface, the
 `PaymentMethodEditForm` is used for collecting all information required for editing the payment method. You can create
 your own payment method add form by extending `Drupal\commerce_payment\PluginForm\PaymentMethodEditForm` with your own
-`Drupal\my_custom_gateway\PluginForm\PaymentMethodEditForm` class. In your payment gateway plugin annotation, you will
+`Drupal\my_custom_gateway\PluginForm\PaymentMethodEditForm` class. In your payment gateway plugin attribute, you will
 need to include your custom form as the `edit-payment-method` form.
 
 !!!example "Example `updatePaymentMethod` implementation"
@@ -770,7 +772,7 @@ specified to capture only a portion of the entire payment amount.
 When a payment gateway implements the `SupportsAuthorizationsInterface` interface, the `PaymentCaptureForm` is used for
 collecting all information required for editing the payment method. You can create your own payment method add form by
 extending `Drupal\commerce_payment\PluginForm\PaymentCaptureForm` with your own
-`Drupal\my_custom_gateway\PluginForm\PaymentCaptureForm` class. In your payment gateway plugin annotation, you will need
+`Drupal\my_custom_gateway\PluginForm\PaymentCaptureForm` class. In your payment gateway plugin attribute, you will need
 to include your custom form as the `capture-payment` form.
 
 !!! example "Example `capturePayment` method implementation"
@@ -812,7 +814,7 @@ can usually only be voided before they are captured/received.)
 When a payment gateway implements the `SupportsVoidsInterface` interface, the `PaymentVoidForm` is used for collecting
 all information required for editing the payment method. You can create your own payment method add form by extending
 `Drupal\commerce_payment\PluginForm\PaymentVoidForm` with your own `Drupal\my_custom_gateway\PluginForm\PaymentVoidForm`
-class. In your payment gateway plugin annotation, you will need to include your custom form as the `void-payment` form.
+class. In your payment gateway plugin attribute, you will need to include your custom form as the `void-payment` form.
 
 !!! example "Example `voidPayment` method implementation"
 
@@ -848,7 +850,7 @@ a portion of the entire payment amount.
 When a payment gateway implements the `SupportsRefundsInterface` interface, the `PaymentRefundForm` is used for
 collecting all information required for editing the payment method. You can create your own payment method add form by
 extending `Drupal\commerce_payment\PluginForm\PaymentRefundForm` with your own
-`Drupal\my_custom_gateway\PluginForm\PaymentRefundForm` class. In your payment gateway plugin annotation, you will need
+`Drupal\my_custom_gateway\PluginForm\PaymentRefundForm` class. In your payment gateway plugin attribute, you will need
 to include your custom form as the `refund-payment` form.
 
 !!! example "Example `refundPayment` method implementation"
@@ -940,7 +942,7 @@ implements the `OffsitePaymentGatewayInterface` interface, this plugin form is e
 checkout pane. To implement this form, you will need to:
 
 1. Extend the base off-site payment form.
-2. Add your payment form to your payment gateway plugin annotation.
+2. Add your payment form to your payment gateway plugin attribute.
 3. Implement the `buildConfigurationForm()` method for your payment form:
 
 * Build the array of data for the request to the payment provider.
@@ -985,14 +987,19 @@ The base form's `buildConfigurationForm()` method checks that the required `$for
 `$form['#cancel_url']` values are present. Also, if `$form['#capture']` has not been set, it will provide *TRUE* as a
 default value, meaning that the payment should be authorized and captured rather than just authorized.
 
-</h4>2. Add your payment form to the gateway plugin annotation</h4>
-In the `@CommercePaymentGateway` ***annotation*** at the start of your off-site payment gateway plugin, you need to
+<h4>2. Add your payment form to the gateway plugin attribute</h4>
+In the `#[CommercePaymentGateway]` ***attribute*** at the start of your off-site payment gateway plugin, you need to
 specify the class for your custom ***offsite-payment*** plugin form:
 
 ```php
- *    forms = {
- *     "offsite-payment" = "Drupal\my_custom_gateway\PluginForm\MyCustomPaymentForm",
- *   },
+use Drupal\my_custom_gateway\PluginForm\MyCustomPaymentForm;
+
+#[CommercePaymentGateway(
+  // ...
+  forms: [
+    "offsite-payment" => MyCustomPaymentForm::class,
+  ],
+)]
 ```
 
 <h4>3. Implement the `buildConfigurationForm()` method</h4>
@@ -1117,7 +1124,7 @@ you will need to create an *Offsite payment* plugin form. When a payment gateway
 implement this form, you will need to:
 
 1. Extend the base off-site payment form.
-2. Add your payment form to your payment gateway plugin annotation.
+2. Add your payment form to your payment gateway plugin attribute.
 3. Implement the `buildConfigurationForm()` method for your payment form.
 
 <h4>1. Extend the base off-site payment form</h4>
@@ -1151,15 +1158,20 @@ class MyCustomPaymentForm extends BasePaymentOffsiteForm {
 The base form's `buildConfigurationForm()` method checks that the required `$form['#return_url']` and
 `$form['#cancel_url']` values are present, which you may need to include in the data passed to your iFrame JavaScript.
 
-<h4>2. Add your payment form to the gateway plugin annotation</h4>
+<h4>2. Add your payment form to the gateway plugin attribute</h4>
 
-In the `@CommercePaymentGateway` ***annotation*** at the start of your off-site payment gateway plugin, you need to
+In the `#[CommercePaymentGateway]` ***attribute*** at the start of your off-site payment gateway plugin, you need to
 specify the class for your custom ***offsite-payment*** plugin form:
 
 ```php
- *    forms = {
- *     "offsite-payment" = "Drupal\my_custom_gateway\PluginForm\MyCustomPaymentForm",
- *   },
+use Drupal\my_custom_gateway\PluginForm\MyCustomPaymentForm;
+
+#[CommercePaymentGateway(
+  // ...
+  forms: [
+    "offsite-payment" => MyCustomPaymentForm::class,
+  ],
+)]
 ```
 
 <h4>3. Implement the `buildConfigurationForm()` method</h4>
@@ -1866,7 +1878,7 @@ Use the `payment_manual` payment type, which provides the *Pending → Completed
 
 [Drupal Plugin API documentation]: https://www.drupal.org/docs/drupal-apis/plugin-api
 
-[Drupal documentation on annotation-based plugins]: https://www.drupal.org/docs/drupal-apis/plugin-api/annotations-based-plugins
+[Drupal documentation on attribute-based plugins]: https://www.drupal.org/docs/drupal-apis/plugin-api/attribute-based-plugins
 
 [Drupal Form API reference]: https://api.drupal.org/api/drupal/elements/
 

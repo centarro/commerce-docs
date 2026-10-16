@@ -49,7 +49,7 @@ If neither a single Condition nor a combination of Conditions covers your busine
 
 ### Structure of a single Condition plugin
 
-A Commerce Condition plugin is defined by the `CommerceCondition` annotation, which has the following properties:
+A Commerce Condition plugin is defined by the `#[CommerceCondition]` attribute (`Drupal\commerce\Attribute\CommerceCondition`), which has the following parameters:
 
 | Property             | Required | Description                                                                                                                                                                                                                                                                                                                            |
 |----------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -58,6 +58,7 @@ A Commerce Condition plugin is defined by the `CommerceCondition` annotation, wh
 | `display_label`      | No       | Translatable label that is displayed in the *Conditions* UI. Defaults to the plugin label.                                                                                                                                                                                                                                             |
 | `category`           | No       | Translatable label for the category. Defaults to *Other*. *Customer*, *Order*, and *Product* are all categories defined for Commerce Conditions.                                                                                                                                                                                       |
 | `entity_type`        | Yes      | The entity type ID of the entity passed to the plugin for evaluation. For example, use `commerce_order` for a Condition that applies to orders.                                                                                                                                                                                        |
+| `parent_entity_type` | No       | The entity type the condition is used on: `commerce_promotion` or `commerce_payment_gateway`. See [ParentEntityAwareInterface and ParentEntityAwareTrait](#parententityawareinterface-and-parententityawaretrait). |
 | `parent_entity_type` | No       | The entity type ID of the parent entity for the Condition. When specified, the condition is only available on that entity type. For example, the *Total discounted product quantity* has `commerce_promotion` for its `parent_entity_type` and is only available for Promotions. It does not appear as an option for Payment gateways. |
 | `weight`             | No       | An integer value used for sorting Conditions within the UI. Defaults to 0. Conditions are sorted by *weight* and then *display label*.                                                                                                                                                                                                 |
 
@@ -78,7 +79,7 @@ And here are the before-and-after screenshots:
 
 ![hook_commerce_condition_info_alter](../images/conditions-3.png)
 
-You can also use `hook_commerce_condition_info_alter()` to swap out an existing plugin implementation with your own custom code, using the `'class'` and `'provider`' keys. Note that your custom plugin code should *not* include an annotation; it uses the same annotation as the original plugin. Here is an example for a custom *Billing address* Condition plugin:
+You can also use `hook_commerce_condition_info_alter()` to swap out an existing plugin implementation with your own custom code, using the `'class'` and `'provider`' keys. Note that your custom plugin code should *not* include a plugin attribute; it uses the same definition as the original plugin. Here is an example for a custom *Billing address* Condition plugin:
 
 ```php
 function mymodule_commerce_condition_info_alter(&$definitions) {
@@ -104,18 +105,19 @@ The `evaluate()` method contains all the logic for the Condition and returns `TR
 
 namespace Drupal\custom_module\Plugin\Commerce\Condition;
 
+use Drupal\commerce\Attribute\CommerceCondition;
 use Drupal\commerce\Plugin\Commerce\Condition\ConditionBase;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 
 /**
  * Provides a basic condition for orders.
- *
- * @CommerceCondition(
- *   id = "custom_module_order_specific_customer",
- *   label = @Translation("Specific customer"),
- *   entity_type = "commerce_order",
- * )
  */
+#[CommerceCondition(
+  id: "custom_module_order_specific_customer",
+  label: new TranslatableMarkup("Specific customer"),
+  entity_type: "commerce_order",
+)]
 class OrderSpecificCustomer extends ConditionBase {
 
   /**
@@ -124,6 +126,7 @@ class OrderSpecificCustomer extends ConditionBase {
   public function evaluate(EntityInterface $entity) {
     $this->assertEntity($entity);
     /** @var \Drupal\commerce_order\Entity\OrderInterface $order */
+    $order = $entity;
     if ($customer_id = $order->getCustomerId()) {
     	// Condition is TRUE only for customer with ID #2.
     	return ($customer_id == 2);
@@ -139,7 +142,7 @@ After clearing caches, the new Condition shows up in the *Conditions* UI, in the
 
 ![Custom plugin displayed](../images/conditions-2.png)
 
-In this sample code, we used the `assertEntity($entity)` method. This is one of two helper method provided by `ConditionBase`. It checks the entity type and throws an *Invalid Argument* if the type of the $entity does not match the type specified in the annotation for `entity_type`.
+In this sample code, we used the `assertEntity($entity)` method. This is one of two helper method provided by `ConditionBase`. It checks the entity type and throws an *Invalid Argument* if the type of the $entity does not match the `entity_type` specified in the plugin attribute.
 
 The second helper method provided by `ConditionBase` is `getComparisonOperators()`. This method returns an array of operator values with labels. This is useful for providing a list of operator options in a configuration form:
 
@@ -167,7 +170,7 @@ Once you've implemented the configuration form for your plugin, you can access c
 `$this->configuration['my_configuration_variable']`
 ```
 
-> Tip: search for `@CommerceCondition` in the Drupal Commerce code base to find examples of Condition plugin configuration forms. For some plugins, you'll find that the configuration forms are provided by included Traits.
+> Tip: search for `#[CommerceCondition(` in the Drupal Commerce code base to find examples of Condition plugin configuration forms. For some plugins, you'll find that the configuration forms are provided by included Traits.
 
 ### ParentEntityAwareInterface and ParentEntityAwareTrait
 
@@ -180,7 +183,7 @@ if ($condition instanceof ParentEntityAwareInterface) {
 }
 ```
 The `setParentEntity()` is defined by the `ParentEntityAwareInterface` interface and implemented by the `ParentEntityAwareTrait` trait. To access parent entity information in a Promotion or Payment gateway Condition, do the following:
-1. Set the `parent_entity_type` property in the Condition's annotation to `commerce_promotion` for a Promotion Condition or `commerce_payment_gateway` for a Payment gateway Condition. (If you want the Condition to apply to multiple parent entity types, you can leave this property unset; however, you will need to be careful in your `evaluate()` method implementation to check the type of the parent entity before accessing any of the parent entity's methods.)
+1. Set the `parent_entity_type` parameter in the Condition's attribute to `commerce_promotion` for a Promotion Condition or `commerce_payment_gateway` for a Payment gateway Condition. (If you want the Condition to apply to multiple parent entity types, you can leave this property unset; however, you will need to be careful in your `evaluate()` method implementation to check the type of the parent entity before accessing any of the parent entity's methods.)
 2. Within your Condition class, include `ParentEntityAwareTrait` with `use ParentEntityAwareTrait;`.
 3. Within your `evaluate()` method (or any plugin methods), access the parent entity with `$this->parentEntity`.
 
