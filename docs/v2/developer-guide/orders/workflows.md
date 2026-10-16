@@ -6,7 +6,7 @@ taxonomy:
 
 The fulfillment process of an order depends on the type of store a site is running and its operational processes. A store that sells digital products might receive an order, capture the payment, and send the products electronically and close the order all automatically in one go. A drop-shipping store may receive an order, forward the order to an external fulfillment service, verify availability, capture payment, and ship the products, all as separate steps of the process, some programmatically performed and some manually.
 
-Commerce 2 allows developers the flexibility to customise the steps that an order goes through, from creation to completion. By default, it makes available four different workflows: Default, Default with validation, Fulfillment, and Fulfillment with validation. Custom workflows can be defined by developers. An order type can be associated with a specific workflow, and that forces the order to follow that workflow's rules.
+Commerce allows developers the flexibility to customise the steps that an order goes through, from creation to completion. By default, it makes available four different workflows: Default, Default with validation, Fulfillment, and Fulfillment with validation. Custom workflows can be defined by developers. An order type can be associated with a specific workflow, and that forces the order to follow that workflow's rules.
 
 This functionality is provided by the [State machine module], a core dependency for Drupal Commerce. See the [State machine documentation](../../core/core/#state-machine) to learn more about this module and its uses beyond Order workflows.
 
@@ -34,11 +34,11 @@ This documentation section covers the following topics:
 
 <h5>Comparison to Commerce 1</h5>
 
-Users of Commerce 1 might be wondering what are the differences in the architecture of Commerce 2. Commerce 1 defined order statuses grouped together in states.
+Users of Commerce 1 might be wondering what are the differences in the architecture of Commerce 2.x and later. Commerce 1 defined order statuses grouped together in states.
 
 For example, an order going through the checkout process would move through the Checkout:Checkout, Checkout:Review, Checkout:Payment, Checkout:Complete statuses, all part of the Checkout state group. That setup was a source of confusion, and it was causing some technical issues as well because it was forcing workflows that were only loosely related (order workflow, checkout workflow, payment workflow, fulfillment workflow) to form one single workflow. That made defining clear paths between states unnecessarily complicated.
 
-Commerce 2 decouples workflows making transitions between states straightforward.
+Commerce 2.x and later decouple workflows making transitions between states straightforward.
 
 ## Choosing a workflow
 
@@ -135,7 +135,7 @@ Workflow Transitions are defined as part of the workflow definition in a YAML co
 
 ## How to Create a Custom Order Workflow
 
-In many cases, the default order workflows may not provide the states and transitions that match a store's operational processes. Commerce 2 allows developers to create custom workflows that fit custom requirements.
+In many cases, the default order workflows may not provide the states and transitions that match a store's operational processes. Commerce allows developers to create custom workflows that fit custom requirements.
 
 In this tutorial we show you how to create a custom workflow, building on top of the Fulfillment workflow provided by the Commerce Order module. Let's suppose that processing and fulfilling an order are two separate steps for our store. This could be because different staff process the order e.g. verify payment and check availability, and different staff packages and ships the products.
 

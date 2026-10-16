@@ -1,6 +1,6 @@
 ## Customer accounts
 
-There are important security considerations involved in user account management. If this is your first Drupal site, see the [Managing User Accounts] documentation, in the Drupal 8 User Guide, for a good introduction. This documentation page will focus only on aspects of user accounts that are specific to Drupal Commerce. Within Drupal Commerce, we refer to *users* and *user accounts* as *customers* and *customer accounts* even though they are actually the same entities. A *customer* is simply a *user* who has placed an order on your site.
+There are important security considerations involved in user account management. If this is your first Drupal site, see the [Managing User Accounts] documentation, in the Drupal User Guide, for a good introduction. This documentation page will focus only on aspects of user accounts that are specific to Drupal Commerce. Within Drupal Commerce, we refer to *users* and *user accounts* as *customers* and *customer accounts* even though they are actually the same entities. A *customer* is simply a *user* who has placed an order on your site.
 
 ### Customizing customer accounts
 The *Registration and Cancellation* settings for your customer accounts are located at `/admin/config/people/accounts`. To reduce cart abandonment, you will typically want to allow *Visitors* to register accounts without administrator approval. Requiring email verification may also be a deterrent to new customers, but you may decide that it's necessary for your particular site.
@@ -96,8 +96,8 @@ If you have a high number of different customer groups, creating a user role for
 
 ## Links and resources
 
-* Drupal 8 User Guide documentation on [Creating a Role]
-* Drupal 8 User Guide documentation on [Concept: Taxonomy]
+* Drupal User Guide documentation on [Creating a Role]
+* Drupal User Guide documentation on [Concept: Taxonomy]
 * [Field permissions] module
 
 [Concept: Taxonomy]: https://www.drupal.org/docs/user_guide/en/structure-taxonomy.html

@@ -67,12 +67,6 @@ taxonomy:
     
     ```
 
-### Create a store using Drupal Console
-
-You can use a Drupal Console command to create a store and import new currencies.
-
-![Workflow](../images/drupal-commerce-create-store.gif)
-
 ### How to load a store
 
 !!! Example "Example: Loading a store"

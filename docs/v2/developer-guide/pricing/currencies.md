@@ -14,7 +14,7 @@ we need to support various currencies, we need to support their regional
 formatting rules, what each currency is called in every other language,
 and many other difficult problems.
 
-Commerce 2’s currency support is built upon the [commerceguys/intl]
+Commerce’s currency support is built upon the [commerceguys/intl]
 library which provides a list of currencies, currency formatting,
 countries, and languages. This list in not something we cooked up on the
 back of a napkin, the intl library uses the internationally-recognized

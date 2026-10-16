@@ -4,7 +4,7 @@ We love contributors! Please help us improve or fix the documentation by
 editing a document and making a pull request in GitHub.
 
 The Drupal Commerce documentation site is built using [MkDocs]. It's built 
-with Phyton and content written in Markdown. If you are familiar with Markdown, then you
+with Python and content written in Markdown. If you are familiar with Markdown, then you
 can easily contribute to the documentation!
 
 The beauty of an open source project is that anyone can contribute. To contribute 
@@ -26,12 +26,9 @@ The documentation site uses GitHub for documentation and for tracking issues. To
 issue,  go through [the open issues], pick one you like and **assign it to you** or if you 
 don't have permission to assign, then simply inform by commenting.
 
-If you need help choosing an issue or working on one, join the Commerce 2.x office hours.
-They are held every wednesday at 5PM GMT+1 on the *#commerce* [Drupal Slack channel].
+If you need help choosing an issue or working on one, ask in the *#commerce* [Drupal Slack channel].
 
-## Formatting help 
-
-# !!!REWRITE
+## Formatting help
 
 
 `*emphasis*` renders as *emphasis*
@@ -74,7 +71,7 @@ Start by creating a branch for your work.
 The branch name should contain a brief summary of its ID and the issue, e.g. **106-create-product-type**:
 
 ```bash
-cd commerce-docs/v2
+cd commerce-docs
 git checkout -b 106-create-product-type
 ```
 
@@ -87,21 +84,11 @@ git push fork 106-create-product-type
 
 You can now go to your fork’s GitHub page and [create a pull request].
 
-Once you create a pull request on GitHub, it runs checks on your pull request. If your changes pass checks then it can be reviewed by repository maintainers. You can get details about checks by clicking on **Show all checks** link as shown in below image.
-
-![Show all checks image](docs/pull-request-1.png)
-
-To get the details about platform-based build for your pull request, click on the **details** link.
-
-![Show platform-based build](docs/pull-request-2.png)
-
-**Note:** Only first 10 open PRs gets the full build.
+Once you create a pull request on GitHub, it runs checks on your pull request. If your changes pass checks then it can be reviewed by repository maintainers.
 
 **Getting feedback**
 
-To get the feedback on your pull request you need to ask somebody to review it, and [Drupal Slack] members are ready to review the pull requests for you. But first you will need an invite. You can get invited by submitting your email id here.
-
-In the above image, a pull request was reviewed by reviewer and some changes are suggested. So we will make the suggested changes and push the changes.
+To get feedback on your pull request, ask for a review in the *#commerce* channel on [Drupal Slack]. If a reviewer suggests changes, make them and push again:
 
 ```bash
 # Change the desired files.
@@ -119,7 +106,7 @@ Your forked repository and the original one (called *origin*) will eventually ge
 ```bash
 # Update your local branch.
 git checkout master
-git pull origin/master
+git pull origin master
 # Push the update to your GitHub fork.
 git push fork master
 ```
@@ -139,7 +126,6 @@ That’s it! Happy contributing!
 [Drupal Slack channel]: https://www.drupal.org/slack
 [create a pull request]: https://help.github.com/articles/using-pull-requests#initiating-the-pull-request
 [Drupal Commerce]: https://drupalcommerce.org
-[slack-invite]: https://drupalslack.herokuapp.com
 [Drupal Slack]: https://drupal.slack.com
 [documentation repository]: https://github.com/centarro/commerce-docs
 [creating an issue]: https://github.com/centarro/commerce-docs/issues/new

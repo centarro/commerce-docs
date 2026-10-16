@@ -48,7 +48,7 @@ The collection of all *Commerce customer* profiles owned by a customer is called
 
 For example, this customer named *Betty Smith* has her home address as her *default* customer profile and a second address that can be optionally selected for her payment/billing/shipping information during checkout. An additional "Account information" profile type has been created which may serve some other purpose.
 
-![Address book](../../images/profile-overview-1.png)
+![Address book](../images/profile-overview-1.png)
 
 ### Profiles in the checkout process
 In Drupal Commerce, each order has a *Billing profile*, which is set during the checkout process. By default, customers are asked for billing information right after they either log in or (optionally) choose to continue as a guest. The *Billing information* checkout pane appears as part of the *Order information* step.
@@ -57,14 +57,14 @@ If the Drupal Commerce *Payment* module is enabled, the *Payment information* ch
 
 Here is an example of the *Order Information* step, in which the default *Customer* profile form is presented to the customer. When more than one customer profile is available, the "Select an address" element is provided. Since the *Payment* module is enabled for this example site, the profile is labeled as *Payment information* rather than *Billing information*.
 
-![Address book](../../images/profile-overview-2.png)
+![Address book](../images/profile-overview-2.png)
 
 #### Shipping profiles
 If the [Commerce Shipping module] is installed, then a *Shipping Information* pane will also be available to collect the *Shipping profile* for the order. Any *customer* profile type can be used for both *billing* and *shipping* profiles. Using a single bundle for both billing and shipping information is generally a best practice for many sites and solutions. This includes Amazon, Shopify, BigCommerce, Spree, etc. 
 
 However, some merchants may require different fields for billing vs. shipping. For those merchants,  shipment types can  be configured to use a different customer profile type. For example, here a "Shipping profile" profile type has been created and assigned to the Default shipment type:
 
-![Address book](../../images/profile-overview-3.png)
+![Address book](../images/profile-overview-3.png)
 
 ## Profile Configuration
 
@@ -72,7 +72,7 @@ This section describes how you can use *Profiles* to capture and store informati
 
 Access the administrative page for the *Customer* profile type and any others you create at `/admin/config/people/profiles`.
 
-![Profile type configuration](../../images/profile-config-1.png)
+![Profile type configuration](../images/profile-config-1.png)
 
 ### Customer profile fields
 By default, profiles do not have any visible/editable fields; however, the Customer profile type includes an [Address](../addresses) field. Each Customer profile has a single address. You can customize the Address field that's used by the Customer profile at `/admin/config/people/profile-types/manage/customer/fields/profile.customer.address`. If the Commerce Tax module is installed, a "Tax number" field will also be added to the Customer profile type.
@@ -88,7 +88,7 @@ You can add custom fields to a profile using its *Manage fields* administrative 
     4. Enter *Contact phone* for the field label.
     5. Click the *Save and continue* button.
 
-    ![Add contact phone field](../../images/profile-config-2.png)
+    ![Add contact phone field](../images/profile-config-2.png)
 
     **Configure the *contact phone* field**
 
@@ -97,11 +97,11 @@ You can add custom fields to a profile using its *Manage fields* administrative 
     8. On the *settings* administrative page for *Contact phone*, select the *This is a private field* setting. Private profile fields are visible only to the owner of the profile and administrative users.
     9. Click the *Save settings* button.
 
-    ![Configure contact phone field](../../images/profile-config-3.png)
+    ![Configure contact phone field](../images/profile-config-3.png)
 
     Next, you can use the *Manage form display* and *Manage display* administration pages for the profile to customize how the new field appears on data entry forms and in a customer's *Address book*. In the "Custom display settings", there are two additional form modes, Billing and Shipping, that can be enabled. If enabled, these form modes will be used whenever profile data entry forms are rendered during checkout and on the order admin edit page.
 
-    ![Profile form modes](../../images/profile-config-6.png)
+    ![Profile form modes](../images/profile-config-6.png)
 
 #### Adding fields to the customer profile vs. creating new profile types
 The *customer* profile should contain all the billing information needed to process an order. If you have physical products and use the *Commerce shipping* module, then *customer* profiles can also be used for the shipping information associated with orders. For simpler commerce sites, especially those that are B2C, the *address* field may be all you need for the *customer* profile. For additional information, you could create a separate profile type to manage information about your customer like name and phone number. With this architecture, your customers would only enter need to enter their contact information once, for that separate profile type. In contrast, if you added the contact name and phone number fields to the *customer* profile, your customers would need to repeatedly enter that information for every billing and shipping address added.
@@ -115,7 +115,7 @@ To create a new profile type:
 3. Enter the name of the profile type for the *Label*. You can use the default settings for all other options, for now.
 4. Click the *Save* button.
 
-![Profile type creation](../../images/profile-config-4.png)
+![Profile type creation](../images/profile-config-4.png)
 
 #### Profile type configuration options
 **Label**
@@ -189,24 +189,24 @@ If you need to limit access to certain *fields* for the *customer* profile or an
 2. Add a *Sales representative* field to your *customer* profile type using the same approach we used above for the [*contact phone* field](#customer-profile-fields).
 3. Select `Reference > User` for the field type. We could create a new [Taxonomy] for our *sales representative* information, but for this example, let's just assume that we'll create a [User account] for each of our sales representatives.
 
-![Sales representative field creation](../../images/profile-management-1.png)
+![Sales representative field creation](../images/profile-management-1.png)
 
 4. On the *Field settings* administrative page, the default settings are fine.
 5. On the *settings* administrative page for the *Sales representative* field, enable *Custom permissions*.
 6. For the *Authenticated user* role, enable only the *View anyone's value for field field_sales_representative* permission.
 
-![Sales representative field creation](../../images/profile-management-2.png)
+![Sales representative field creation](../images/profile-management-2.png)
 
 Now, customers will be able to view their sales representatives but not select their own.
 
 ### Manage profiles on behalf of customers
 When you view the *Profiles* listing page at `/admin/people/profiles`, you'll see operations links that allow you to *Edit* and *Delete* profiles, but there's no way to add new profiles or efficiently search for existing profiles. Using out-of-the-box functionality, the best way to manage customer profiles is to access them via the main *People* listing page at `/admin/people`. Here, you can search by a variety of criteria, including name or email.
 
-![People administrative listing](../../images/profile-management-3.png)
+![People administrative listing](../images/profile-management-3.png)
 
 Once a customer account has been located, you can access his or her profiles from the *Edit* administrative page. You'll see a tab at the top of the page for each of your profile types. Here we see tabs for three profile types: *Contact information*, *Address book* (for *Customer* profiles), and *My custom profile type*. You can manage profiles on behalf of customers via these tabs.
 
-![Manage customer profiles](../../images/profile-overview-1.png)
+![Manage customer profiles](../images/profile-overview-1.png)
 
 #### Customize the labels for customer profile tabs
 The label for the *Customer* profile tab is *Address book*. It has been customized by the Drupal Commerce *Order* module. You can customize labels for any profile type by implementing `hook_local_tasks_alter()` in a custom module, like this:
@@ -221,16 +221,16 @@ function mymodule_order_local_tasks_alter(&$definitions) {
 ```
 
 #### Use Views to customize the *Profiles* listing page
-If your administrative users will frequently manage profiles on behalf of customers, you may want to use Drupal Views to customize the Profiles listing page, located at `/admin/people/profiles`. If you are unfamiliar with using Views in Drupal, you can read about [Creating Listings with Views], in the Drupal 8 User Guide.
+If your administrative users will frequently manage profiles on behalf of customers, you may want to use Drupal Views to customize the Profiles listing page, located at `/admin/people/profiles`. If you are unfamiliar with using Views in Drupal, you can read about [Creating Listings with Views], in the Drupal User Guide.
 
 **Example: View of profiles**
 To start, we'll create a View with a page that has the same title and path as the existing *Profiles* administrative listing page:
 
-![Create profiles view](../../images/profile-management-5.png)
+![Create profiles view](../images/profile-management-5.png)
 
 To configure, we'll add fields and for the *Page Settings*, and we'll set the *Access* to `Permission: Access the profile entities overview page`. Additionally, we'd want to set *Sortable* table fields and add exposed *Filters* to help administrative users search the list more easily.
 
-![Configure profiles view](../../images/profile-management-6.png)
+![Configure profiles view](../images/profile-management-6.png)
 
 **Bulk update options**
 To allow administrative users to perform bulk operations on profiles, add the *Bulk update* field. The *Profile* module provides three bulk update options:
@@ -241,10 +241,10 @@ To allow administrative users to perform bulk operations on profiles, add the *B
 If you are interested in creating additional [Action plugins] with custom code, the [Create an action for custom mass updates with Drupal 8], article is a good introduction to the topic.
 
 ### Importing profiles
-For site builders, the [Commerce Feeds module] is a solution for importing profiles; unfortunately, it has not yet been fully ported into Drupal 8. If you are comfortable writing custom code for importing profiles, the [Commerce Migrate module] is a good place to start. There is a version for Drupal 8, [documentation], and an explanation of the differences between using Feeds vs. using Migrate for importing profiles and other commerce data.
+For site builders, the [Commerce Feeds module] is a solution for importing profiles (alpha releases only so far). If you are comfortable writing custom code for importing profiles, the [Commerce Migrate module] is a good place to start. Its [documentation] includes an explanation of the differences between using Feeds vs. using Migrate for importing profiles and other commerce data.
 
 ### Exporting profiles
-You can use the [Views data export module] to provide product export functionality. If you are unfamiliar with using Views in Drupal, start by reading about [Creating Listings with Views], in the Drupal 8 User Guide. Also, the [Importing and exporting documentation for Products](../../products/product-management/#exporting-products) includes an example of using Views data export for exporting products. The same approach can be used for exporting profiles.
+You can use the [Views data export module] to provide product export functionality. If you are unfamiliar with using Views in Drupal, start by reading about [Creating Listings with Views], in the Drupal User Guide. Also, the [Importing and exporting documentation for Products](../../products/product-management/#exporting-products) includes an example of using Views data export for exporting products. The same approach can be used for exporting profiles.
 
 ## Code recipes
 
@@ -482,7 +482,7 @@ If you want to write custom code to programmatically create or manage profiles, 
 [Create an action for custom mass updates with Drupal 8]: https://www.flocondetoile.fr/blog/create-action-custom-mass-updates-drupal-8
 [Commerce Feeds module]: https://www.drupal.org/project/commerce_feeds
 [Commerce Migrate module]: https://www.drupal.org/project/commerce_migrate
-[documentation]: https://www.drupal.org/docs/8/modules/commerce-migrate
+[documentation]: https://www.drupal.org/docs/contributed-modules/commerce-migrate
 [Views data export module]: https://www.drupal.org/project/views_data_export
 
 

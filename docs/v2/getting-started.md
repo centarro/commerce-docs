@@ -22,12 +22,12 @@ Ready to start developing and working with Drupal Commerce?
 
 * [Using Composer](#using-composer): If you are new to Composer or new to managing Drupal with Composer. Drupal Commerce requires using Composer with Drupal.
 * [Getting Help](#community-support): General guidelines for how and where to get help for Drupal Commerce.
-* [Installation guide](./installation.md#installation): To get Drupal Commerce installed.
+* [Installation guide](./installation.md#installation): To get Drupal Commerce installed. The fastest way to start is [Commerce Kickstart](./installation.md#installation).
 * [Updating guide](./installation.md#updating) guide: For keeping Drupal Commerce up to date.
 
 ## Looking for a demo?
 
-There are several Drupal Commerce 2 demo sites available.
+There are several Drupal Commerce demo sites available.
 
 * [PayPal demo](https://commerce.demo.centarro.io/){target=_blank}, using PayPal Express Checkout for payment.
 * [Braintree demo](https://braintree.demo.centarro.io/){target=_blank}, using Braintree Hosted Fields for payment.
@@ -57,7 +57,7 @@ Composer has the benefit of being able to recursively resolve dependencies
 
 ### Why does Commerce need it?
 
-Modern applications such as Drupal 8 consist of many classes, so it would be
+Modern applications such as Drupal consist of many classes, so it would be
 impractical and costly to manually include each one. Instead, the application
 includes one special class, called the autoloader which then automatically
 includes other classes when they are first needed. When Composer runs, it
@@ -101,7 +101,7 @@ Here is an example from the `commerce_authnet` module.
   "homepage": "https://drupal.org/project/commerce_authnet",
   "license": "GPL-2.0+",
   "require": {
-    "drupal/commerce": "^2",
+    "drupal/commerce": "^3",
     "commerceguys/authnet": "dev-master"
   }
 }
@@ -109,13 +109,13 @@ Here is an example from the `commerce_authnet` module.
 
 This specifies the project as being a Drupal module available at ``drupal/commerce_authnet``
 with information about its license and homepage. It requires `commerce` of any
-satisfiable version 2 release, and the development version of the `commerceguys/authnet` library.
+satisfiable version 3 release, and the development version of the `commerceguys/authnet` library.
 
 >  Composer relies on semantic versioning, using `~` and `^` operators, or direct
 >  release names (`2.0-beta3`.)
 >
 >  Check out the Packagist Semver Checker to explore how version constraints work.
->  This link is for `drupal/core: ^8.3` [https://semver.madewithlove.com/#?package=drupal%2Fdrupal&version=%5E8.3&minimum-stability=dev](https://semver.madewithlove.com/#?package=drupal%2Fdrupal&version=%5E8.3&minimum-stability=dev){target=_blank}
+>  This link is for `drupal/core: ^11` [https://semver.madewithlove.com/?package=drupal%2Fcore&constraint=%5E11](https://semver.madewithlove.com/?package=drupal%2Fcore&constraint=%5E11){target=_blank}
 
 **[composer.lock]{target=_blank}**
 
@@ -153,9 +153,8 @@ If the dependency is required by another package, it will not be removed.
 ### Links and resources
 
 * [Managing Your Drupal Project with Composer](https://glamanate.com/blog/managing-your-drupal-project-composer){target=_blank}, or the [slides version](https://docs.google.com/presentation/d/1PK9q2dBkGHfyEO76bEVpqS61wTgA0LGbru2PECiwUnk/edit?usp=sharing){target=_blank}
-* [Drupal Commerce Composer project template](https://github.com/drupalcommerce/project-base){target=_blank}
-* [Drupal Composer project template](https://github.com/drupal-composer/drupal-project){target=_blank}
-* [Platform.sh Drupal 8 + Composer template example](https://github.com/platformsh/template-drupal8){target=_blank}
+* [Commerce Kickstart project template](https://github.com/centarro/commerce-kickstart-project){target=_blank}
+* [Drupal Composer project templates](https://www.drupal.org/docs/develop/using-composer/starting-a-site-using-drupal-composer-project-templates){target=_blank}
 * [Amazee Labs Composer recipes](https://www.amazeelabs.com/en/journal/drupal-composer-recipes){target=_blank}
 * [Using Drupal + Composer project templates with Pantheon sites](https://pantheon.io/blog/using-composer-relocated-document-root-pantheon){target=_blank}
 * [Using Composer - Drupal.org](https://www.drupal.org/docs/develop/using-composer){target=_blank}
@@ -202,7 +201,6 @@ For more information about Drupal Slack groups, see: [https://www.drupal.org/sla
 
 
 [Slack]: https://slack.com/
-[https://drupalslack.herokuapp.com/]: https://drupalslack.herokuapp.com/
 [https://www.drupal.org/slack]: https://www.drupal.org/slack
 [Drupal issue queues]: https://www.drupal.org/issue-queue
 [Issue Queue]: https://www.drupal.org/project/issues/commerce

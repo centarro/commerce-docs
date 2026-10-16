@@ -53,11 +53,11 @@ The *Address* module provides a custom *address* field that can have the followi
 ### What is an *address format*?
 An address format is the definition of how a country's addresses should be rendered for display and how the form for entering an address for that country should be rendered and validated. Address formats are defined on a per-country basis. They make it possible to dynamically alter the form used to enter addresses based on the selected country. Without address formats, an address form might look something like this:
 
-![Badly implemented address form](../../images/address-format-5.png)
+![Badly implemented address form](../images/address-format-5.png)
 
 With address formats, we can have forms that dynamically change based on the selected country. Here, changing the selected country from *Armenia* to *United States* results in a change to the *Postal code*, *City*, and *Province* fields:
 
-![Country-specific address formatting](../../images/address-format-3.png)
+![Country-specific address formatting](../images/address-format-3.png)
 
 Each country has a different *address format* that tells us:
 
@@ -102,7 +102,7 @@ No, not without great difficulty. But you can *repurpose* an unused property for
 
 For any countries that include *Company* (Organization) in their address format, we want *Building name* to be included on the subsequent line.
 
-![Building name field](../../images/address-format-2.png)
+![Building name field](../images/address-format-2.png)
 
 First, we'll implement an *EventSubscriber* for the `AddressEvents::ADDRESS_FORMAT` event, to customize the address formats for all countries. This example assumes that we have already created a custom module, named *mymodule*. Here is our event subscriber class, in which we insert the *additionalName* field after *organization* in our address format:
 
@@ -151,7 +151,7 @@ services:
 
 After rebuilding caches, the *Middle name* field now appears immediately after the *Company* field on both the address form and the displayed address:
 
-![Repurpose middle name field](../../images/address-format-1.png)
+![Repurpose middle name field](../images/address-format-1.png)
 
 Next, we need to relabel *Middle name* as *Building name* and change its textfield size to match the *Company* textfield. We'll do this by modifying the `additional_name` address element field in an `#after_build` callback function.
 
@@ -212,18 +212,18 @@ Don't forget to include this event subscriber in your custom module's `services.
 #### How do I set the default country for customers?
 *Default country* is a field setting for *Address* fields. To set the default country for customers, you need to configure the *Address* field for the *Customer* profile type. This administration page is located at `/admin/config/people/profile-types/manage/customer/fields/profile.customer.address`. Select the default country from the list of options:
 
-![Admin ui for default country](../../images/address-countries-1.png)
+![Admin ui for default country](../images/address-countries-1.png)
 
 ### Country subdivisions
 A country can have several levels of subdivisions that are used for addressing. In the United States that would be the state. In Brazil, it would be the state and the municipality. In China, it would be the province, the prefecture-level city, and the county. The *Address* module provides user-friendly address forms that provide dropdowns for these subdivisions, thus speeding up the data entry process and reducing mistakes.
 
 Subdivision data is provided by the Commerce Guys addressing library. Subdivisions are hierarchical, with up to 3 levels: Administrative area -> Locality -> Dependent locality. For each level, there is a set list of options that is used to populate form select lists (dropdown menus). For example, both Australia and the United States have a single level of subdivisions, called *States*. If *United States* is selected as the country, then its 50 states and additional territories appear as *State* options. If *Australia* is selected, then its 8 state/territory options are displayed:
 
-![Australian subdivisions](../../images/address-countries-2.png)
+![Australian subdivisions](../images/address-countries-2.png)
 
 South Korea is an example of a country with an additional level of subdivisions. Once an administrative area, labeled *Do si*, is selected, a list of locality (City) options appears:
 
-![South Korean subdivisions](../../images/address-countries-3.png)
+![South Korean subdivisions](../images/address-countries-3.png)
 
 The dataset is stored locally in JSON format. To view the actual data, see `commerceguys/addressing/resources/subdivision`.
 
@@ -236,7 +236,7 @@ You can modify the subdivision data returned for a specific country by subscribi
 
 When *United Kingdom* is selected as the country, a *County* select field appears with the list of options we've defined:
 
-![Custom subdivisions example](../../images/address-countries-4.png)
+![Custom subdivisions example](../images/address-countries-4.png)
 
 To start, we subscribe to the `AddressEvents::SUBDIVISIONS` event and implement its callback method: `onSubdivisions()`. We only include the Welsh countries here, for simplicity; a real subscriber would include the full list, sourced from the [CLDR "Territory Subdivisions" listing].
 
@@ -321,7 +321,7 @@ Don't forget to include the event subscriber in your custom module's `services.y
 #### How can I alter a subdivision list *without* affecting the stored address formats
 In the previous example, we created new address format data. In some cases, you might want to just make a minor modification to existing data. Or perhaps you'd like to have different subdivision lists in different contexts. For example, suppose you'd like to have an address field that only displays a subset of *States* for addresses in the United States. In this example, we'll limit the options for *States* in the United States to just the Mid-Atlantic states:  New York, New Jersey, Pennsylvania, Delaware, Maryland, Washington, D.C., Virginia, and West Virginia.
 
-![Modified state options for US](../../images/address-countries-5.png)
+![Modified state options for US](../images/address-countries-5.png)
 
 The default address widget uses the custom *address* form element. As a result, you cannot use `hook_form_alter()` or `hook_field_widget_form_alter()` directly. Instead, we'll use `hook_form_alter()` in combination with a `#pre_render` callback, in a custom module named *mymodule*.
 
@@ -361,11 +361,11 @@ The options are:
 | Optional | A field property that is normally required will be optional.                                             |
 | Required | The field property will be required. This will only apply if the address format uses the field property. |
 
-![Field overrides for locked fields](../../images/address-entry-3.png)
+![Field overrides for locked fields](../images/address-entry-3.png)
 
 Administrative users can configure field override settings for an address field by navigating to a content entity type's *Manage fields* administrative page and then clicking on the address field's *Edit* operations link. Here, an address field named *Test address field* has been added to the *Basic page* content type. This page is located at `/admin/structure/types/manage/page/fields`:
 
-![Field overrides for locked fields](../../images/address-entry-4.png)
+![Field overrides for locked fields](../images/address-entry-4.png)
 
 #### Field overrides for locked address fields
 If your address field is locked, you won't be able to use the address field's *Manage fields* administrative page to set field overrides. However, you can implement `hook_form_alter()` to programmatically set override values.
@@ -416,7 +416,7 @@ The default address widget uses the custom *address* form element. As a result, 
       }
     ```
 
-![Customized company field](../../images/address-entry-1.png)
+![Customized company field](../images/address-entry-1.png)
 
 !!! example "Customize the *Street address* field property"
     In this example, we'll change the default "Street address" label with separate labels for each of the two street address field properties. We can use the same `mymodule_form_alter()` from the first example with a new `mymodule_customize_address()`:"
@@ -429,7 +429,7 @@ The default address widget uses the custom *address* form element. As a result, 
       $element['address_line2']['#title_display'] = 'before';
     ```
 
-![Customized street address](../../images/address-entry-2.png)
+![Customized street address](../images/address-entry-2.png)
 
 ### Setting initial values for address field properties
 **Note: onInitialValues is deprecated and no longer fires since version 1.5** 
@@ -437,7 +437,7 @@ The default address widget uses the custom *address* form element. As a result, 
 
 The *Address* module provides an event that can be used to set initial values for address field properties. In this example, we'll create an event subscriber to set the default country to *Australia*, the suburb to *New South Wales*, and the city to *Sydney*.
 
-![Australia initial values](../../images/address-entry-5.png)
+![Australia initial values](../images/address-entry-5.png)
 
 Here is our complete event subscriber class (missing documentation):
 
@@ -494,7 +494,7 @@ This documentation page describes how to customize how addresses are displayed. 
 ### The *Default* address formatter
 The Default formatter uses a repository of address format data (provided by the Commerce Guys Addressing Library) to format the display of an address. Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address) is the data source for these address formats. The displayed format will closely match the ordering used on forms for entering the addresses. (*The Country field always appears first on forms, even if it is displayed last in the correctly formatted address.*)
 
-![Default address formatter display](../../images/address-display-1.png)
+![Default address formatter display](../images/address-display-1.png)
 
 If you want to customize how addresses are displayed by the *default* address formatter, you can create a custom event subscriber to alter the address formats provided by the `AddressFormatRepository`. The [Address formats documentation](#address-formats) provides an explanation of address formats and example event subscriber code.
 
@@ -526,7 +526,7 @@ class AddressHideUSFormatter extends AddressDefaultFormatter {
 ```
 We give the field formatter plugin a unique id: *address_us_default* and descriptive label in the annotation. If you rebuild caches, you will see this new field formatter as an option for the Display of any address fields:
 
-![Hide US custom formatter](../../images/address-display-3.png)
+![Hide US custom formatter](../images/address-display-3.png)
 
 At this point, our custom formatter works exactly the same as the *Default* formatter. To customize its behavior, we'll override the `postRender()` method, since that is the method in which the *country* field gets added to the address format string. This is the relevant code:
 
@@ -590,7 +590,7 @@ Now the *Hide US* address formatter will only show countries for non-US addresse
 ### The *Plain* address formatter
 The Plain formatter also relies on the addressing library data but only to get the subdivision code and name values, since the *Plain* formatter doesn't actually format the addresses; instead, the *Plain* formatter uses the `address-plain.html.twig` twig template for the actual address formatting.
 
-![Default address formatter display](../../images/address-display-2.png)
+![Default address formatter display](../images/address-display-2.png)
 
 As you can see, this default twig template does not do a very good job of properly formatting this particular address. The *City* field isn't even displayed! In most cases, you will want to use the *Default*formatter so that you can rely on the data in the Commerce Guys Addressing Library. However, if you want to precisely control the layout of your addresses, you can create your own twig template for the *Plain* address formatter as part of a custom theme. Theming is an advanced topic beyond the scope of this Drupal Commerce documentation guide. For an overview, please see the [Theming Drupal Guide] on Drupal.org.
 
@@ -638,7 +638,7 @@ Some countries use separate address formats for the local language vs. other lan
 
 It is possible to override the used language via field settings, in case the language is always known (e.g. a field storing the "english address" on a chinese article). This option will appear on the *Settings* administrative page for the address field, on multilingual sites. Use this setting to ensure that entered addresses are always formatted in the same language.
 
-![Language override setting](../../images/address-format-4.png)
+![Language override setting](../images/address-format-4.png)
 
 ## Zones and territories
 

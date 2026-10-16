@@ -1041,7 +1041,7 @@ If you create your own payment gateway module or find one that's not in this lis
 
 ## Installing and Configure a Payment Gateway
 
-While configuring your store you would probably want to install and configure a payment gateway provider module so that you can accept online payments. Currently available payment gateways for Commerce 2 are listed [here](../gateways/#available-payment-gateways).
+While configuring your store you would probably want to install and configure a payment gateway provider module so that you can accept online payments. Currently available payment gateways for Commerce are listed [here](../gateways/#available-payment-gateways).
 
 This tutorial will guide you through configuring a payment gateway provider using the Commerce PayPal module as an example.
 

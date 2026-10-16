@@ -231,7 +231,7 @@ taxonomy:
 
 There may be some scenarios that it would be beneficial to store some data on an order. You could make a field on the order, but perhaps that is overkill or not appropriate for your use case. 
 
-Just like in commerce 1.x, in commerce 2.x you can store miscellaneous data as a key/value pair.
+Just like in commerce 1.x, in Commerce 2.x and later you can store miscellaneous data as a key/value pair.
 
 ```php
     $order->setData('unique_key', 'value');

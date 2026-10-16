@@ -2,7 +2,7 @@ Learn techniques for designing and customizing the product management experience
 
 ## Access control
 
-In Drupal Commerce, access control for product management is based on Drupal's permissions system. If you are unfamiliar with the concept of `Permissions` in Drupal, you can read about [Users, Roles, and Permissions] in the Drupal 8 User Guide. [Managing user roles & permission in Drupal 8] is also a good introductory article on the topic.
+In Drupal Commerce, access control for product management is based on Drupal's permissions system. If you are unfamiliar with the concept of `Permissions` in Drupal, you can read about [Users, Roles, and Permissions] in the Drupal User Guide. [Managing user roles & permission in Drupal 8] is also a good introductory article on the topic.
 
 Administrative users with product management responsibilities will need the `Use the commerce administration pages` permission as well as any relevant `Commerce Product` permissions. Here is a list of Commerce Product permissions, as displayed on the User Permissions page (`/admin/people/permissions`).
 
@@ -118,7 +118,7 @@ Also, you may want to look at the custom css library that's used for the default
 
 ## Product overview page
 
-This section describes how you can use Drupal Views to customize the Product overview page, located at `/admin/commerce/products`.  If you are unfamiliar with using `Views` in Drupal, you can read about [Creating Listings with Views], in the Drupal 8 User Guide.
+This section describes how you can use Drupal Views to customize the Product overview page, located at `/admin/commerce/products`.  If you are unfamiliar with using `Views` in Drupal, you can read about [Creating Listings with Views], in the Drupal User Guide.
 
 Without any customizations, administrative users can use the Product overview page to:
 
@@ -162,14 +162,14 @@ Functionality for importing and exporting products is not built into Drupal Comm
 
 
 ### Importing products
-The [Commerce Feeds module] can be used to import data in a variety of formats into Products, using the administrative interface. Unfortunately, it is not yet fully ported into Drupal 8. It is built on top of the [Feeds module], which does have a pre-release version for Drupal 8 as well as [documentation pages]. If you are interested on working to develop the Drupal 8 version of Commerce Feeds, [this issue] has been opened, with a link to the work that has been done so far.
+The [Commerce Feeds module] can be used to import data in a variety of formats into Products, using the administrative interface. It is built on top of the [Feeds module] (see its [documentation pages]). Commerce Feeds only has alpha releases so far, so test it carefully before relying on it.
 
 
-If you are comfortable writing custom code for importing products, then the [Commerce Migrate module] is a good place to start. There is a version for Drupal 8, [documentation], and an explanation of the differences between using Feeds vs. using Migrate for importing products.
+If you are comfortable writing custom code for importing products, then the [Commerce Migrate module] is a good place to start. Its [documentation] includes an explanation of the differences between using Feeds vs. using Migrate for importing products.
 
 
 ### Exporting products
-You can use the [Views data export module] to provide product export functionality. If you are unfamiliar with using `Views` in Drupal, start by reading about [Creating Listings with Views], in the Drupal 8 User Guide.
+You can use the [Views data export module] to provide product export functionality. If you are unfamiliar with using `Views` in Drupal, start by reading about [Creating Listings with Views], in the Drupal User Guide.
 
 Here is an example of using Views data export for exporting products:
 
@@ -437,15 +437,14 @@ After saving all your changes, you should be able to navigate to your new Produc
 
 ## Links and resources
 
-* Drupal 8 User Guide documentation on [Concept: Forms and Widgets](https://www.drupal.org/docs/user_guide/en/structure-widgets.html)
+* Drupal User Guide documentation on [Concept: Forms and Widgets](https://www.drupal.org/docs/user_guide/en/structure-widgets.html)
 
 [Creating Listings with Views]: https://www.drupal.org/docs/user_guide/en/views-chapter.html
 [Commerce Feeds module]: https://www.drupal.org/project/commerce_feeds
 [Feeds module]: https://www.drupal.org/project/feeds
-[documentation pages]: https://www.drupal.org/docs/8/modules/feeds
-[this issue]: https://www.drupal.org/project/commerce_feeds/issues/2931860
+[documentation pages]: https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/feeds
 [Commerce Migrate module]: https://www.drupal.org/project/commerce_migrate
-[documentation]: https://www.drupal.org/docs/8/modules/commerce-migrate
+[documentation]: https://www.drupal.org/docs/contributed-modules/commerce-migrate
 [Views data export module]: https://www.drupal.org/project/views_data_export
 [Theming Drupal Guide]: https://www.drupal.org/docs/8/theming
 [Creating Listings with Views]: https://www.drupal.org/docs/user_guide/en/views-chapter.html
