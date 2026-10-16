@@ -28,7 +28,7 @@ A payment gateway connects your store to a payment provider (such as PayPal, Str
 - **Off-site**: customers are redirected to the provider's site, or shown its payment form in an embedded frame, and then return to your site.
 - **Manual**: no provider is involved. The customer pays outside of the site, for example by bank transfer, cash on delivery or check, and an administrator records the payment.
 
-Commerce Core only provides the *Manual* gateway. Other gateways come from contributed modules; see the [list of available payment gateways](../../../developer-guide/payments/gateways/).
+Commerce Core only provides the *Manual* gateway. Other gateways come from contributed modules; see the [list of available payment gateways](../../developer-guide/payments/gateways.md).
 
 ### Transaction types
 
@@ -40,7 +40,7 @@ Depending on the gateway, a payment can go through these transactions:
 - **Void**: cancels an authorization that hasn't been captured.
 - **Refund**: returns all or part of a captured payment to the customer.
 
-See [Payment administration](../payment-administration/) for how to perform these operations on an order.
+See [Payment administration](payment-administration.md) for how to perform these operations on an order.
 
 ## Payment gateway configuration
 
@@ -62,11 +62,11 @@ Payment gateways are managed at *Commerce > Configuration > Payment > Payment ga
 
 When several gateways are available for an order, the customer chooses between them at checkout, in the order of the gateway list.
 
-Instructions for specific gateways: [PayPal](../integrations/paypal/paypal/), [Fastlane by PayPal](../integrations/fastlane-by-paypal/fastlane-by-paypal/), [Stripe](../integrations/stripe/stripe/).
+Instructions for specific gateways: [PayPal](integrations/paypal/paypal.md), [Fastlane by PayPal](integrations/fastlane-by-paypal/fastlane-by-paypal.md), [Stripe](integrations/stripe/stripe.md).
 
 ## Checkout configuration
 
-Payment is handled by two checkout panes, configured in your checkout flow at *Commerce > Configuration > Orders > Checkout flows* (`/admin/commerce/config/checkout-flows`). See [Checkout](../../checkout/) for how checkout flows work.
+Payment is handled by two checkout panes, configured in your checkout flow at *Commerce > Configuration > Orders > Checkout flows* (`/admin/commerce/config/checkout-flows`). See [Checkout](../checkout.md) for how checkout flows work.
 
 ### Payment information
 

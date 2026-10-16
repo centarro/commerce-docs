@@ -20,7 +20,7 @@ See the [Price resolvers](../../pricing/prices/#price-resolvers) documentation f
 
 #### Store resolvers
 
-In Drupal Commerce, every order belongs to a specific [store](../../stores/getting-started). A simple site may have only a single store, so all orders belong to that store. But if you have multiple stores, then Drupal Commerce needs a way to figure out which store to use for a particular cart or order. By default, it will always choose whichever store you've set as the *Default*. Here, the *Default* store has been set as the default store:
+In Drupal Commerce, every order belongs to a specific [store](../stores/getting-started.md). A simple site may have only a single store, so all orders belong to that store. But if you have multiple stores, then Drupal Commerce needs a way to figure out which store to use for a particular cart or order. By default, it will always choose whichever store you've set as the *Default*. Here, the *Default* store has been set as the default store:
 
 ![Default store selection](../images/resolvers-3.png)
 
