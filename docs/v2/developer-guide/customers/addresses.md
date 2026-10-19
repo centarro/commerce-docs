@@ -439,6 +439,16 @@ To pre-fill an address field, for example with a default country, set the field'
 
 The `AddressEvents::INITIAL_VALUES` event that earlier versions of the Address module used for this was removed in Address 2.x.
 
+## Address display
+
+
+This documentation page describes how to customize how addresses are displayed. The Address module includes two formatters for displaying addresses: *Default* and *Plain*. If you require customizations that are not possible with either of these formatters, you can create your own custom field formatter plugin.
+
+* Use the [*Default* address formatter](#the-default-address-formatter) to display addresses in country-specific formats.
+* Use the [*Plain* address formatter](#the-plain-address-formatter) to provide custom theming for addresses.
+* Use the [Postal Label Formatter Service](#postal-label-formatter-service) to use standards required for automated mail sorting.
+* [Multilingual Considerations](#multilingual-considerations) describes how to override the language used to format addresses.
+
 ### The *Default* address formatter
 The Default formatter uses a repository of address format data (provided by the Commerce Guys Addressing Library) to format the display of an address. Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address) is the data source for these address formats. The displayed format will closely match the ordering used on forms for entering the addresses. (*The Country field always appears first on forms, even if it is displayed last in the correctly formatted address.*)
 
