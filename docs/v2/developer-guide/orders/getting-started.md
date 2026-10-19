@@ -12,7 +12,7 @@ own settings when it comes to cart, checkout, and its processing.
 
 [Order items](#order-items) - Orders contain order items, which represent purchased items.
 
-[Workflows](../workflows) - Each order type can use a different order workflow depending on the type of items sold, whether it's shippable etc.
+[Workflows](workflows.md) - Each order type can use a different order workflow depending on the type of items sold, whether it's shippable etc.
 
 **Advanced topics**
 
@@ -58,7 +58,7 @@ An order item represents a purchasable entity inside an order. It
 contains a reference to the purchasable entity, a quantity, a unit price
 and a total price.
 
-Order items are fieldable and may also store other data relevant to the order, such as product customizations/configurations that are unique to the order. For example, suppose you offer products that are available in a variety of lengths. If there are just a few, limited options, like "10 cm, 20 cm, or 50cm", then the best approach will typically be to create a "length" [product attribute](../../products/product-architecture/#product-type-with-attributes) for your product variation type with these values. On the other hand, if a customer can enter any value from 10 cm up through 100 m, you may not want to create a unique attribute value (and SKU) for every possible value.
+Order items are fieldable and may also store other data relevant to the order, such as product customizations/configurations that are unique to the order. For example, suppose you offer products that are available in a variety of lengths. If there are just a few, limited options, like "10 cm, 20 cm, or 50cm", then the best approach will typically be to create a "length" [product attribute](../products/product-architecture.md#product-type-with-attributes) for your product variation type with these values. On the other hand, if a customer can enter any value from 10 cm up through 100 m, you may not want to create a unique attribute value (and SKU) for every possible value.
 
 Creating an excess of product variations makes management hard. An alternative to using product attributes is to create a "length" field for your order item type, configured so that customers can enter the length value when adding the product to their carts.
 
@@ -91,9 +91,9 @@ Once you've made the appropriate selections, you are taken to the order creation
 
 ![](../images/order_details.png)
 
-As you move further down, you'll see that there is an "Adjustments" section. This where you can add promotions, add a shipping amount, add tax, as well as, any custom amount to the order total. ([See steps on creating a promotion](../../../user-guide/promotions))
+As you move further down, you'll see that there is an "Adjustments" section. This where you can add promotions, add a shipping amount, add tax, as well as, any custom amount to the order total. ([See steps on creating a promotion](../../user-guide/promotions.md))
 
- And finally, you can apply coupons to the order. ([See steps on creating a coupon](../../../user-guide/promotions/#coupons))
+ And finally, you can apply coupons to the order. ([See steps on creating a coupon](../../user-guide/promotions.md#coupons))
 
 ![](../images/applying_coupons_to_order.png)
 
@@ -129,7 +129,7 @@ And finally, once the order has shipped out, you can hit the "Fulfill Order" but
 
 ![](../images/order_completed.png)
 
-See the [Order workflow documentation](../workflows) for more information about Order states and transitions.
+See the [Order workflow documentation](workflows.md) for more information about Order states and transitions.
 
 ## Order refresh and processing
 
@@ -251,6 +251,6 @@ function my_module_theme($existing, $type, $theme, $path) {
 }
 ```
 
-You must also make sure your Drupal site is sending emails in HTML properly. Out of the box, Drupal does not do this. See [Sending HTML emails](../../core/html_emails) on how to ensure emails are being formatted properly, and that your theme's template is being used to render the emails.
+You must also make sure your Drupal site is sending emails in HTML properly. Out of the box, Drupal does not do this. See [Sending HTML emails](../core/html_emails.md) on how to ensure emails are being formatted properly, and that your theme's template is being used to render the emails.
 
 !!! warning "If your Drupal site is not using your theme to render emails, it may not pick up your overridden template."

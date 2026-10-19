@@ -42,11 +42,11 @@ While it is possible to create a custom currency, typically you will want to *im
 
 ![Add currency UI](../images/currencies-1.png)
 
-For instructions on managing currencies, see the [Adding a currency](../../../user-guide/currencies/#adding-a-new-currency) page in the [Drupal Commerce User guide](../../../user-guide).
+For instructions on managing currencies, see the [Adding a currency](../../user-guide/store-setup.md#adding-a-currency) page in the [Drupal Commerce User guide](../../user-guide/index.md).
 
 When the price module is installed, the currency importer service is used to import a default currency based on the site's default country (or US if not set). When new languages are installed, the currency importer service is used to import currency translations.
 
-The `CommerceGuys\Intl\Currency\CurrencyRepository` class provides the data values used to set the Currency code, name, numeric code, symbol and fraction digits properties for the Currency entity that's created. For more information about the Currency Repository, see the [Formatting Prices documentation](../prices/#formatting-prices).
+The `CommerceGuys\Intl\Currency\CurrencyRepository` class provides the data values used to set the Currency code, name, numeric code, symbol and fraction digits properties for the Currency entity that's created. For more information about the Currency Repository, see the [Formatting Prices documentation](prices.md#formatting-prices).
 
 ### Links and resources
 

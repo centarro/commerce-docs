@@ -32,11 +32,11 @@ If you want a quick look at the customer experience, the [demo store](https://co
 
 <div class="grid cards" markdown>
 
--   [:material-flash:{ .lg .middle } __Getting started__](./v2/getting-started)
+-   [:material-flash:{ .lg .middle } __Getting started__](v2/getting-started.md)
 
     ---
 
-    [__Install__](./v2/installation#installation), [__update__](./v2/installation#updating) and [__uninstall__](./v2/installation#uninstalling)
+    [__Install__](v2/installation.md#installation), [__update__](v2/installation.md#updating) and [__uninstall__](v2/installation.md#uninstalling)
 
 </div>
 
@@ -46,17 +46,17 @@ If you want a quick look at the customer experience, the [demo store](https://co
 
 <div class="grid cards icon-grid" markdown>
 
-- [:centarro-store:{ .lg .middle }  __Set up your store__](./v2/user-guide/store-setup/)
+- [:centarro-store:{ .lg .middle }  __Set up your store__](v2/user-guide/store-setup.md)
 
-- [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](./v2/user-guide/products/)
+- [:centarro-box-seam-fill:{ .lg .middle }  __Manage your products__](v2/user-guide/products.md)
 
-- [:centarro-clipboard-check-fill:{ .lg .middle }  __Manage your orders__](./v2/user-guide/orders/)
+- [:centarro-clipboard-check-fill:{ .lg .middle }  __Manage your orders__](v2/user-guide/orders.md)
 
-- [:centarro-truck-front-fill:{ .lg .middle } __Set up your shipping__](./v2/user-guide/shipping/)
+- [:centarro-truck-front-fill:{ .lg .middle } __Set up your shipping__](v2/user-guide/shipping.md)
 
-- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](./v2/user-guide/payment/payment-administration/)
+- [:fontawesome-solid-credit-card:{ .lg .middle }  __Manage your payment gateways__](v2/user-guide/payment/payment-administration.md)
 
-- [:centarro-bookmark-star-fill:{ .lg .middle } __Set up your promotions__](./v2/user-guide/promotions/)
+- [:centarro-bookmark-star-fill:{ .lg .middle } __Set up your promotions__](v2/user-guide/promotions.md)
 
 </div>
 
@@ -71,9 +71,9 @@ If you want a quick look at the customer experience, the [demo store](https://co
 
   - [__Events__](./v2/developer-guide/events.md)
 
-  - [__Core__](./v2/developer-guide/core/core)
+  - [__Core__](v2/developer-guide/core/core.md)
 
-  - [__Products__](./v2/developer-guide/products/getting-started)
+  - [__Products__](v2/developer-guide/products/getting-started.md)
 
   - [__Cart__](./v2/developer-guide/cart/cart-events.md)
 

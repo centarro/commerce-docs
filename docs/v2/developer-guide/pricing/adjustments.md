@@ -4,7 +4,7 @@ taxonomy:
     category: docs
 ---
 
-Drupal Commerce provides a framework for complex pricing logic through its system of [Price resolvers](../prices/#price-resolvers) and ***Adjustments***. Price resolvers are services that affect prices dynamically, based on Store and Customer data. Adjustments store promotions, taxes, fees, and shipping costs and can rely on Order data (including store and customer data) when calculating the price. Adjustments are *applied* to Price fields by [Order processors](../../orders/getting-started/#order-refresh-and-processing). They can be applied and calculated on the order level (based on the order subtotal), or on the order item level (based on the order item total).
+Drupal Commerce provides a framework for complex pricing logic through its system of [Price resolvers](prices.md#price-resolvers) and ***Adjustments***. Price resolvers are services that affect prices dynamically, based on Store and Customer data. Adjustments store promotions, taxes, fees, and shipping costs and can rely on Order data (including store and customer data) when calculating the price. Adjustments are *applied* to Price fields by [Order processors](../orders/getting-started.md#order-refresh-and-processing). They can be applied and calculated on the order level (based on the order subtotal), or on the order item level (based on the order item total).
 
 Within the Drupal Commerce module, only Order and Order item entities use Adjustments for their Price fields, but other entities can implement the `EntityAdjustableInterface` to leverage the methods and services available for Adjustments. The [Commerce Invoice] and [Commerce Shipping] contributed modules both have entities that use Adjustments.
  
@@ -76,7 +76,7 @@ function my_custom_module_commerce_adjustment_type_info_alter(array &$info) {
 
 ## Adjustments
 
-Like [Prices](../prices), Adjustments are not standalone entities; rather, they are value objects that can be stored to fields on an entity. The `Adjustment` class and the `AdjustmentItem` field type are provided by the Commerce Order module.
+Like [Prices](prices.md), Adjustments are not standalone entities; rather, they are value objects that can be stored to fields on an entity. The `Adjustment` class and the `AdjustmentItem` field type are provided by the Commerce Order module.
 
 ### Adjustment properties
 
@@ -88,7 +88,7 @@ Like [Prices](../prices), Adjustments are not standalone entities; rather, they 
 | percentage  | If the adjustment was calculated from a percentage, it is the percentage as a decimal, stored as a string. Otherwise, it is null. Note that the percentage value is purely informational. It has no effect on any pricing calculations. See [Displaying adjustments](#displaying-adjustments) for a usage example.                                                                  | `'0.2'`                      |
 | sourceId    | A string ID value that references the source object, if known. For example, the ID of a promotion entity is set for a discount adjustment. See [Combining adjustments](#combining-adjustments) for additional information on how Adjustments are combined based on source ID value. When Adjustments are added through the admin UI, the default value for sourceId is `'custom'`.  | `'23'`                       |
 | included    | Whether the adjustment is included in the base price. The default value is FALSE.                                                                                                                                                                                                                                                                                                   | `TRUE`                       |
-| locked      | Whether the adjustment is locked. The default value is FALSE. Locked adjustments are not automatically removed during the [Order refresh process](../../orders/getting-started/#order-refresh-and-processing). Unlocked adjustments are removed so that they can be recalculated by order processors. When an Adjustment is added through the admin UI, it is automatically locked. | `FALSE`                      |
+| locked      | Whether the adjustment is locked. The default value is FALSE. Locked adjustments are not automatically removed during the [Order refresh process](../orders/getting-started.md#order-refresh-and-processing). Unlocked adjustments are removed so that they can be recalculated by order processors. When an Adjustment is added through the admin UI, it is automatically locked. | `FALSE`                      |
 
 !!! example "Example: adding a new *Adjustment* to an Order item"
 
@@ -242,7 +242,7 @@ The Commerce Order module provides a `commerce_adjustment` field type to store A
 * The `getAdjustments()` method gets the Adjustment value objects from the field list.
 * The `removeAdjustment(Adjustment $adjustment)` method removes the matching Adjustment value.
 
-Adjustments are usually added to entities by [Order processors](../../orders/getting-started/#order-refresh-and-processing) or other custom code. Additionally, a default *Adjustment field widget* is available for manual entry of adjustments through the admin UI. Administrative users can specify the Adjustment type, Label, Amount, and whether the adjustment should be included in the base price. The `sourceId` for the manually added Adjustment is automatically set to `custom`, and the Adjustment is `locked` so that it does not get removed during the Order refresh process.
+Adjustments are usually added to entities by [Order processors](../orders/getting-started.md#order-refresh-and-processing) or other custom code. Additionally, a default *Adjustment field widget* is available for manual entry of adjustments through the admin UI. Administrative users can specify the Adjustment type, Label, Amount, and whether the adjustment should be included in the base price. The `sourceId` for the manually added Adjustment is automatically set to `custom`, and the Adjustment is `locked` so that it does not get removed during the Order refresh process.
 
 ![Adjustments admin UI](../images/adjustments-2.png)
 

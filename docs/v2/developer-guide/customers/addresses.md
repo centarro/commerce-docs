@@ -11,7 +11,7 @@ The [Address module] provides functionality for storing, validating, and display
 - Learn about the structure of addresses and address formats.
 - Create a custom address field by repurposing an unused one.
 
-**[Countries and subdivisions](#contries-and-subdivisons)**
+**[Countries and subdivisions](#countries-and-subdivisions)**
 
 - Modify the list of available countries and set the default country for customers.
 - Add or modify subdivisions for a country.

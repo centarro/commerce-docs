@@ -46,7 +46,7 @@ multivalue price field.
 
 Price resolvers do not know about the order the product has been added to. Enter order processors.
 
-[Order refresh](../orders/getting-started/#order-refresh-and-processing) runs order processors to (among others) add
+[Order refresh](orders/getting-started.md#order-refresh-and-processing) runs order processors to (among others) add
 adjustments (e.g. promotions, taxes) to the order. An adjustment can rely on order data when changing the price.
 
 The `commerce_order.price_calculator` service can be used to find out the variation price including adjustments. It is
@@ -80,7 +80,7 @@ as a final class containing constants. For an example of using these, see
 
 <h3>More on resolvers</h3>
 
-[Understanding Resolvers](../core/understanding_resolvers)
+[Understanding Resolvers](core/understanding_resolvers.md)
 
 Books and tutorials:
 

@@ -1,6 +1,6 @@
 ### Product Information Structure
 
-This section provides specific, technical explanations of the product-related data structures and relationships in Drupal Commerce. Familiarity with Drupal concepts including configuration entities, content entities, bundles, base fields, and plugins is assumed. For a more general introduction to Drupal Commerce products,  see the [Concepts documentation page](../getting-started/#concepts). For step-by-step instructions for setting up products for your site, see the [Product Architecture documentation](../product-architecture).
+This section provides specific, technical explanations of the product-related data structures and relationships in Drupal Commerce. Familiarity with Drupal concepts including configuration entities, content entities, bundles, base fields, and plugins is assumed. For a more general introduction to Drupal Commerce products,  see the [Concepts documentation page](getting-started.md#concepts). For step-by-step instructions for setting up products for your site, see the [Product Architecture documentation](product-architecture.md).
 
 #### Products
 
@@ -26,7 +26,7 @@ Additionally, product entities have two required, unlimited cardinality entity r
 - Deleting a product deletes its variations.
 
 #### Product variations
-A **product variation** is a content entity that has a product variation type as its bundle entity type. Product variations are translatable. Each product variation has a parent [product entity](#products), sku, title, price, and status (active/inactive). The sku must be unique across all product variation types. See the [Product Concepts documentation](../getting-started#concepts) for more information on product skus. The author of the variation as well as its created and changed timestamps are also stored.
+A **product variation** is a content entity that has a product variation type as its bundle entity type. Product variations are translatable. Each product variation has a parent [product entity](#products), sku, title, price, and status (active/inactive). The sku must be unique across all product variation types. See the [Product Concepts documentation](getting-started.md#concepts) for more information on product skus. The author of the variation as well as its created and changed timestamps are also stored.
 
 | Base field   | Description                                     |
 |--------------|-------------------------------------------------|
@@ -76,9 +76,9 @@ A **product type** is a configuration bundle entity that extends `CommerceBundle
 
 Why does a product type need a set variation type? The variation type ID field value is set when a new product type is created. It is used to set the target bundle for the product *variations* field so that whenever a variation is added to a product, the correct type of variation is added. The variation type ID field is also used for the *Product attributes overview* formatter, a formatter that displays a product's variations as rendered attribute entities.
 
-The *inject variation fields* setting affects how products are displayed. You can learn more about [product variation field injection](../displaying-products/#product-display-pages) in the [Displaying products documentation](../displaying-products).
+The *inject variation fields* setting affects how products are displayed. You can learn more about [product variation field injection](displaying-products.md#product-display-pages) in the [Displaying products documentation](displaying-products.md).
 
-The *allow multiple variations* affects how products are edited. You can learn more about this setting in the [Editing products documentation](../product-management/#product-data-entry)
+The *allow multiple variations* affects how products are edited. You can learn more about this setting in the [Editing products documentation](product-management.md#editing-products)
 
 The product type administrative page also includes an option to *Publish new products of this type by default*. This option value is not stored with the product type configuration data; instead, it is used to set the default value for the product entity's *status* base field, for the product type.
 
@@ -126,7 +126,7 @@ A **product attribute** is a configuration entity that has the following propert
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | id          | Unique string id.                                                                                                                                                                                                                                                                                                                                                                |
 | label       | Label to be used for the attribute and typically displayed to customer. For example: *Color* or *Size*.                                                                                                                                                                                                                                                                          |
-| elementType | Element to be used for displaying the attribute value options to the customer. One of: <ul><li>**radios**: radio buttons</li><li>**select**: select list</li><li>**commerce_product_rendered_attribute**: Rendered attribute.<br />See [Product attributes](../displaying-products/#product-attributes) in the Displaying products documentation for more information.</li></ul> |
+| elementType | Element to be used for displaying the attribute value options to the customer. One of: <ul><li>**radios**: radio buttons</li><li>**select**: select list</li><li>**commerce_product_rendered_attribute**: Rendered attribute.<br />See [Product attributes](displaying-products.md#product-attributes) in the Displaying products documentation for more information.</li></ul> |
 
 The product attribute entity also has two useful *getter* methods:
 

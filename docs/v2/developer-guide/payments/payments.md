@@ -4,11 +4,11 @@ taxonomy:
     category: docs
 ---
 
-This page provides specific, technical explanations of the payment-related data structures and relationships in Drupal Commerce. Familiarity with Drupal concepts including configuration entities, content entities, fields, and plugins is assumed. For a more general introduction to Drupal Commerce payments,  see the [Payments documentation page](../getting-started). For step-by-step instructions for setting up payments for your site, see the [Getting started documentation](../../../getting-started).
+This page provides specific, technical explanations of the payment-related data structures and relationships in Drupal Commerce. Familiarity with Drupal concepts including configuration entities, content entities, fields, and plugins is assumed. For a more general introduction to Drupal Commerce payments,  see the [Payments documentation page](getting-started.md). For step-by-step instructions for setting up payments for your site, see the [Getting started documentation](../../getting-started.md).
 
 ## Payment gateways
 
-A **payment gateway** is a configuration entity that manages a single instance of a payment gateway plugin. Payment gateways are created and managed through the administrative UI (or programmatically). Customers interact with payment gateways only indirectly, when they select a payment option during checkout. See the [Payment options builder section](#payment-options-builder) for additional information. Payment gateway plugins provide the functionality that allows customers to enter their payment information, interact with the payment providers that capture the actual payments, and update order information locally to correctly track whether orders have been paid. See the [Creating payment gateways documentation](../creating-payment-gateway) for information about payment gateway plugins.
+A **payment gateway** is a configuration entity that manages a single instance of a payment gateway plugin. Payment gateways are created and managed through the administrative UI (or programmatically). Customers interact with payment gateways only indirectly, when they select a payment option during checkout. See the [Payment options builder section](#payment-options-builder) for additional information. Payment gateway plugins provide the functionality that allows customers to enter their payment information, interact with the payment providers that capture the actual payments, and update order information locally to correctly track whether orders have been paid. See the [Creating payment gateways documentation](creating-payment-gateway.md) for information about payment gateway plugins.
 
 Payment, payment method, and order entities all have a payment gateway entity reference field.
 
@@ -19,10 +19,10 @@ Payment, payment method, and order entities all have a payment gateway entity re
 | id                 | Unique string id for the gateway                                                                                                                          |
 | label              | Name of the gateway, for administrative use only                                                                                                          |
 | weight             | Used for ordering payment gateways                                                                                                                        |
-| conditions         | An array of `\Drupal\commerce\Plugin\Commerce\Condition\ConditionInterface` condition plugins, see [Core Conditions documentation](../../core/conditions) |
+| conditions         | An array of `\Drupal\commerce\Plugin\Commerce\Condition\ConditionInterface` condition plugins, see [Core Conditions documentation](../core/conditions.md) |
 | condition_operator | The condition operator: `AND` or `OR`, a string                                                                                                           |
 | plugin             | The payment gateway plugin                                                                                                                                |
-| configuration      | An array of plugin configuration, see [Payment gateways: Getting started documentation](../creating-payment-gateway/#getting-started)                     |
+| configuration      | An array of plugin configuration, see [Payment gateways: Getting started documentation](creating-payment-gateway.md#getting-started)                     |
 | status             | Whether the plugin gateway is enabled or disabled                                                                                                         |
 
 ![Payment gateway configuration](../images/information-structure-1.png)
@@ -87,7 +87,7 @@ Out of the box, the Commerce Payment module provides two **payment types**: `pay
 
 #### Creating payments
 
-Payments are created during checkout when a customer confirms his order and can be created manually through the administrative UI. See the [Code recipes documentation](../code-recipes) for an example of creating a payment programmatically. For *Manual* and *On-site* payment gateway plugins, payments are created by the `createPayment()` method. For *Off-site* payment gateway plugins, payments are typically created in the `onReturn()` method or in the `onNotify()` method, if the gateway supports asynchronous notifications (IPNs).
+Payments are created during checkout when a customer confirms his order and can be created manually through the administrative UI. See the [Code recipes documentation](code-recipes.md) for an example of creating a payment programmatically. For *Manual* and *On-site* payment gateway plugins, payments are created by the `createPayment()` method. For *Off-site* payment gateway plugins, payments are typically created in the `onReturn()` method or in the `onNotify()` method, if the gateway supports asynchronous notifications (IPNs).
 
 #### Saving payments
 
@@ -136,7 +136,7 @@ One standard field that's not listed as a payment method field is, "label". That
 
 #### Creating payment methods
 
-*Payment methods* are created by *payment gateway plugins* that implement `SupportsStoredPaymentMethodsInterface`. During checkout, when a customer selects a payment option provided by an *On site* gateway, he is prompted to enter payment details which are transmitted to the payment provider. If the request is successful, a *payment method* entity is created locally by the payment gateway's `createPaymentMethod()` method, and that *payment method* is attached to the customer and the order. See also the [Code recipes documentation](../code-recipes) for an example of creating a payment method programmatically.
+*Payment methods* are created by *payment gateway plugins* that implement `SupportsStoredPaymentMethodsInterface`. During checkout, when a customer selects a payment option provided by an *On site* gateway, he is prompted to enter payment details which are transmitted to the payment provider. If the request is successful, a *payment method* entity is created locally by the payment gateway's `createPaymentMethod()` method, and that *payment method* is attached to the customer and the order. See also the [Code recipes documentation](code-recipes.md) for an example of creating a payment method programmatically.
 
 #### Saving payment methods
 
@@ -174,7 +174,7 @@ To manage all this information, `PaymentOption` objects are used, with the follo
 
 There are cases where a developer or site admin would want to define certain configuration related to a payment gateway in the site's settings.php file, instead of storing them in the database or define them in the code as exported configuration. Not exposing API credentials for security reasons would be such a case. In such cases, we would want to define the payment gateway using test credentials, and then override them in our settings.php file.
 
-This tutorial will guide you through overriding a payment gateway's configuration using the Commerce PayPal module as an example. It is assumed that this or another payment gateway provider module is installed and a payment gateway has been created in the store - see [Installing and Configuring a Payment Gateway](../gateways/#installing-and-configure-a-payment-gateway). Building on that example, we will override the API credentials configuration for the PayPal Express Checkout payment gateway. In a production site, the payment gateway may have been exported in the code as configuration - see [Managing your site's configuration](https://www.drupal.org/docs/administering-a-drupal-site/configuration-management/managing-your-sites-configuration).
+This tutorial will guide you through overriding a payment gateway's configuration using the Commerce PayPal module as an example. It is assumed that this or another payment gateway provider module is installed and a payment gateway has been created in the store - see [Installing and Configuring a Payment Gateway](gateways.md#installing-and-configure-a-payment-gateway). Building on that example, we will override the API credentials configuration for the PayPal Express Checkout payment gateway. In a production site, the payment gateway may have been exported in the code as configuration - see [Managing your site's configuration](https://www.drupal.org/docs/administering-a-drupal-site/configuration-management/managing-your-sites-configuration).
 
 ### Finding the Configuration Settings Names
 

@@ -45,7 +45,7 @@ This section describes how to customize the product pages that are displayed on 
 
 ![Product manage display ui](../images/product-display-ui-1.jpg)
 
-!!! note "Prerequisite is creating the [Simple product type](../product-architecture/#simple-product-type)"
+!!! note "Prerequisite is creating the [Simple product type](product-architecture.md#simple-product-type)"
 
 ### Product variation field injection
 
@@ -136,13 +136,13 @@ There are two widget options for the Purchased entity field:
 - Product variation attributes
 - Product variation title
 
-**Product variation attributes** is the default widget, and it's the one that's been used for all the example images on this page. It renders the Add to cart form with an element for each attribute individually. (For example, Color and Size.) The details of how this works and configuration options will be covered in [the next section](../displaying-products/#product-attributes).
+**Product variation attributes** is the default widget, and it's the one that's been used for all the example images on this page. It renders the Add to cart form with an element for each attribute individually. (For example, Color and Size.) The details of how this works and configuration options will be covered in [the next section](#product-attributes).
 
 **Product variation title** is a simpler widget option. It displays all available product variation options in a select element. The only configuration option is the label for the select element. The default label is *Please select* and can be hidden. Here is how the same Add to cart form pictured above looks when the widget is changed to Product variation title. (The *Add to cart* button is beneath the select element.)
 
 ![Add to cart form mode](../images/add-to-cart-ui-5.jpg)
 
-Both widgets allow custom modules to apply their own filtering to the list of available product variations by subscribing to the `ProductEvents::FILTER_VARIATIONS` event. For more information on writing event subscribers in Drupal, [Drupal 8 Event Subscribers - the successor to alter hooks] and [Drupal 8: Hooks, Events, and Event Subscribers] are good introductory articles. The [Code Recipes](../displaying-products/#code-recipes) section of the Products documentation also contains an example.
+Both widgets allow custom modules to apply their own filtering to the list of available product variations by subscribing to the `ProductEvents::FILTER_VARIATIONS` event. For more information on writing event subscribers in Drupal, [Drupal 8 Event Subscribers - the successor to alter hooks] and [Drupal 8: Hooks, Events, and Event Subscribers] are good introductory articles. The [Code Recipes](#code-recipes) section of the Products documentation also contains an example.
 
 ### Add the Add to cart form to a custom content type page
 
@@ -301,7 +301,7 @@ Also, there is a custom css library for rendered product attributes, located wit
 
 ## Multiple products
 
-This section describes how you can create a page that displays multiple products, with [Add to cart forms](#add-to-cart-form), using the [Drupal Views module]. In the [Product categories documentation](../product-architecture/#product-categories), we added a *Brand* field to our product types. In this example, we'll create a page that displays all products for a user-specified brand.
+This section describes how you can create a page that displays multiple products, with [Add to cart forms](#add-to-cart-form), using the [Drupal Views module]. In the [Product categories documentation](product-architecture.md#product-categories), we added a *Brand* field to our product types. In this example, we'll create a page that displays all products for a user-specified brand.
 
 ![Brand view page](../images/multi-product-display.jpg)
 
@@ -318,7 +318,7 @@ This section describes how you can create a page that displays multiple products
 
     ![Create Unsplash view](../images/multi-product-display-1.jpg)
 
-    <h5>Configure the Product Brand View fields</h5>
+    <h5 id="configure-the-product-brand-view-fields">Configure the Product Brand View fields</h5>
 
     **Product title field**
 
@@ -427,7 +427,7 @@ The [Image delta formatter module] provides a custom formatter for image fields 
     3. Scroll down to the *Product variation* entity type and click the *Add new Product variation view mode* link.
     4. Enter "Single image" for the Name and click the *Save* button.
     ![Create Image view mode](../images/display-product-images-1.jpg)
-    5. Navigate to the Manage display administration page for your product variation type at `/admin/commerce/config/product-variation-types/simple/edit/display` (for the [*Simple* product variation type](../product-architecture/#simple-product-type)).
+    5. Navigate to the Manage display administration page for your product variation type at `/admin/commerce/config/product-variation-types/simple/edit/display` (for the [*Simple* product variation type](product-architecture.md#simple-product-type)).
     6. Click on *Custom Display Settings* to enable the *Single image* view mode.
 
         ![Enable Single image view mode](../images/display-product-images-4.jpg)
@@ -495,7 +495,7 @@ The [Single media](https://www.drupal.org/project/single_media) is very similar 
 
 * [Changing Content Display (Drupal user guide)](https://www.drupal.org/docs/user_guide/en/structure-content-display.html)
 * [Add to cart form documentation](#add-to-cart-form)
-* [Product attributes](../product-information-structure/#attributes-and-attribute-values)
+* [Product attributes](product-information-structure.md#attributes-and-attribute-values)
 * Drupal User Guide documentation on [Concept: Image Styles]
 * [Custom field formatter for displaying entity images with thumbnails and 1 large image], posted by Ivan Jaros in [Drupal Answers] on StackExchange.
 

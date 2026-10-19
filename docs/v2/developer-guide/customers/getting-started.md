@@ -18,17 +18,17 @@ This documentation section describes how you can organize customer-related infor
 - Learn about address formats, countries, and subdivisions.
 - Customize address forms and displays.
 
-**[Profiles](../profiles)**
+**[Profiles](profiles.md)**
 
 - Customize profiles for capturing customer information.
 - Control access to profiles and manage profiles administratively.
 - 
-**[Customer Accounts](../customer-accounts-groups)**
+**[Customer Accounts](customer-accounts-groups.md)**
 
 - Customize user accounts for use by customers.
 - Learn about options for managing customer accounts.
 
-**[Customer Groups](../customer-accounts-groups/#customer-groups)**
+**[Customer Groups](customer-accounts-groups.md#customer-groups)**
 
 - Create a discount based on customer groups, using Drupal user roles.
 - Create a customer group taxonomy to organize customer accounts.
@@ -55,7 +55,7 @@ This "Create a new order" form is available only for administrative users with a
 ![Create order admin page](../images/overview-3.png)
 
 
-For additional information about how to customize and manage *customer accounts* in Drupal Commerce, see the [Customer accounts documentation page](../customer-accounts-groups/#customer-accounts).
+For additional information about how to customize and manage *customer accounts* in Drupal Commerce, see the [Customer accounts documentation page](customer-accounts-groups.md#customer-accounts).
 
 ### Profile module
 
@@ -67,12 +67,12 @@ The [Profile module] is a popular, well-maintained Drupal contributed module tha
 
 Customers can have multiple billing and shipping profiles. Each *customer profile* has a single *address* field, which is provided by the *Address* module. The collection of all profiles belonging to a customer account is called the customer's *address book*. When an order is placed, *copies* of customer profiles are saved to the order so that the integrity of the data at the time of the order is maintained even if the customer's profile data is subsequently updated.
 
-For additional information about how to customize and manage *customer profiles* in Drupal Commerce, see the [Profiles documentation section](../profiles).
+For additional information about how to customize and manage *customer profiles* in Drupal Commerce, see the [Profiles documentation section](profiles.md).
 
 ### Address module
 The [Address module] is another popular, well-maintained Drupal contributed module that is required by Drupal Commerce. It provides functionality for storing, validating, and displaying international postal addresses. Within Drupal Commerce, customer addresses are all encapsulated into *customer profiles*. They do not exist independently, and every customer profile should have exactly one address.
 
-For additional information about how to customize address data entry forms and the display of addresses in Drupal Commerce, see the [Addresses documentation section](../addresses).
+For additional information about how to customize address data entry forms and the display of addresses in Drupal Commerce, see the [Addresses documentation section](addresses.md).
 
 [User module]: https://www.drupal.org/docs/8/core/modules/user
 [Profile module]: https://www.drupal.org/project/profile

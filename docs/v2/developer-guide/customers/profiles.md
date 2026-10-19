@@ -34,7 +34,7 @@ This section provides an overview of the [Profile module] and describes how prof
 
 ## Overview
 
-The [Profile module] is a contributed Drupal module that is required by Drupal Commerce yet maintained separately from the core Drupal Commerce module. When you manage your Drupal Commerce site using [Composer](../../../getting-started/#using-composer), the *Profile* module will be automatically added to your project.
+The [Profile module] is a contributed Drupal module that is required by Drupal Commerce yet maintained separately from the core Drupal Commerce module. When you manage your Drupal Commerce site using [Composer](../../getting-started.md#using-composer), the *Profile* module will be automatically added to your project.
 
 *Profiles* are fieldable entities that represent a set of user information. The Drupal Commerce *Order* module provides one specific profile type, called the *Customer* profile. *Customer* profiles are used to collect customer information necessary for billing, payment, and shipping.
 
@@ -75,7 +75,7 @@ Access the administrative page for the *Customer* profile type and any others yo
 ![Profile type configuration](../images/profile-config-1.png)
 
 ### Customer profile fields
-By default, profiles do not have any visible/editable fields; however, the Customer profile type includes an [Address](../addresses) field. Each Customer profile has a single address. You can customize the Address field that's used by the Customer profile at `/admin/config/people/profile-types/manage/customer/fields/profile.customer.address`. If the Commerce Tax module is installed, a "Tax number" field will also be added to the Customer profile type.
+By default, profiles do not have any visible/editable fields; however, the Customer profile type includes an [Address](addresses.md) field. Each Customer profile has a single address. You can customize the Address field that's used by the Customer profile at `/admin/config/people/profile-types/manage/customer/fields/profile.customer.address`. If the Commerce Tax module is installed, a "Tax number" field will also be added to the Customer profile type.
 
 You can add custom fields to a profile using its *Manage fields* administrative page.  As an example, let's add a *Contact phone* field to our *Customer* profile type.
 
@@ -148,7 +148,7 @@ In this section, we'll look at profile management topics, including permissions 
 ### Profile access and permissions
 **The *private field* setting**
 
-In the [Contact phone example in the Profile configuration documentation](../profiles/#customer-profile-fields), we specified that our custom *contact phone* field should be a *private field*. If a profile field is set as private, then only the owner of the profile and administrative users with the *Administer profile entities* (`administer profile`) permission will be able to access the field.
+In the [Contact phone example in the Profile configuration documentation](#customer-profile-fields), we specified that our custom *contact phone* field should be a *private field*. If a profile field is set as private, then only the owner of the profile and administrative users with the *Administer profile entities* (`administer profile`) permission will be able to access the field.
 
 #### Profile permissions
 The profile module provides some general administrative permissions as well as a set of permissions specific to each profile type. On the *Permissions* administrative page, at `/admin/people/permissions`, you'll find profile-related permissions in the *Field UI* and *Profile* sections.
@@ -185,7 +185,7 @@ These permissions should only be granted to users with administrative access to 
 If you need to limit access to certain *fields* for the *customer* profile or any other type of profile, you may be able to utilize display and form view modes to display/hide specific profile fields. If you need more sophisticated access control, the [Field permissions] contrib module can provide that functionality. For example, suppose each of your customers is assigned to a specific regional sales representative. You would like customers to be able to *view* their sales representatives, but only administrative users should be allowed to make sales representative assignments. Also, you want to include the *sales representative* field with your order data so that it can be tracked in sales reports. So, we want this field to be part of the *Customer* profile.
 
 #### Customization example: *sales representative* field
-1. Add and install the *Field permissions* module. (See the [Extending documentation](../../../installation/#extending) for instructions.)
+1. Add and install the *Field permissions* module. (See the [Extending documentation](../../installation.md#extending) for instructions.)
 2. Add a *Sales representative* field to your *customer* profile type using the same approach we used above for the [*contact phone* field](#customer-profile-fields).
 3. Select `Reference > User` for the field type. We could create a new [Taxonomy] for our *sales representative* information, but for this example, let's just assume that we'll create a [User account] for each of our sales representatives.
 
@@ -244,7 +244,7 @@ If you are interested in creating additional [Action plugins] with custom code, 
 For site builders, the [Commerce Feeds module] is a solution for importing profiles (alpha releases only so far). If you are comfortable writing custom code for importing profiles, the [Commerce Migrate module] is a good place to start. Its [documentation] includes an explanation of the differences between using Feeds vs. using Migrate for importing profiles and other commerce data.
 
 ### Exporting profiles
-You can use the [Views data export module] to provide product export functionality. If you are unfamiliar with using Views in Drupal, start by reading about [Creating Listings with Views], in the Drupal User Guide. Also, the [Importing and exporting documentation for Products](../../products/product-management/#exporting-products) includes an example of using Views data export for exporting products. The same approach can be used for exporting profiles.
+You can use the [Views data export module] to provide product export functionality. If you are unfamiliar with using Views in Drupal, start by reading about [Creating Listings with Views], in the Drupal User Guide. Also, the [Importing and exporting documentation for Products](../products/product-management.md#exporting-products) includes an example of using Views data export for exporting products. The same approach can be used for exporting profiles.
 
 ## Code recipes
 

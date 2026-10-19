@@ -137,7 +137,7 @@ taxonomy:
 
 * [Commerce Multicurrency](https://drupal.org/project/commerce_multicurrency)
 * [Multicurrency](https://commerceguys.com/blog/commerce-module-tuesday-commerce-multicurrency)
-* [Currency Info Hooks](../../developer-guide/core-architecture/#info-hooks)
+* [Currency Info Hooks](../developer-guide/core-architecture.md#info-hooks)
 
 <h3>Enable Multiple Currencies</h3>
 
@@ -772,8 +772,8 @@ When you are setting the actual math part of the discount, we chose to simply mu
 
 <p>There are a number of topics we handle in the Drupal Commerce documentation that include some or all of the Rule interface to show off a certain aspect. Below we've listed a small accounting of the articles that are written to take advantage and teach you more about the Rules interface.</p>
 
-* [Administrator's Special (50% Discount)](../shopping-cart)
-* [Flat Rate Currency Conversion](../shopping-cart/#shopping-cart-and-multi-currency)
+* [Administrator's Special (50% Discount)](shopping-cart.md)
+* [Flat Rate Currency Conversion](shopping-cart.md#shopping-cart-and-multi-currency)
 
 <p>There are also a lot of videos regarding Rules and Drupal Commerce that the Commerce Guys have put out there.</p>
 

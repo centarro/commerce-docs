@@ -6,7 +6,7 @@ taxonomy:
 
 ## Overview
 
-This page provides an overview of Drupal Commerce payments at a conceptual level. For step-by-step instructions for setting up payments for your site, see the [Getting Started documentation](#payments). For more specific, technical explanations of the payments-related data structures and relationships, see [Payments information structure documentation](../payments).
+This page provides an overview of Drupal Commerce payments at a conceptual level. For step-by-step instructions for setting up payments for your site, see the [Getting Started documentation](#payments). For more specific, technical explanations of the payments-related data structures and relationships, see [Payments information structure documentation](payments.md).
 
 ### Payment providers and payment gateways
 
@@ -17,7 +17,7 @@ There are two kinds of payment gateways that payment providers use: *On-site* an
 * **On-site:** You can think of on-site payment as having the credit card field on your website. The software is specifically designed to not let you store that information, only to send it to a payment provider. The customer never leaves your site during the payment processing.
 * **Off-site:** In this form of payment, you send your customers, with order details, off to another site that will process the transactions and then send them back (hopefully) to your site to complete the checkout process. You provide the payment provider the url for the return page on your site.
 
-For a list of payment gateways currently supported by Drupal Commerce, see the [Available payment gateways documentation](../gateways).
+For a list of payment gateways currently supported by Drupal Commerce, see the [Available payment gateways documentation](gateways.md).
 
 The Drupal Commerce payment module also supports a third type of payment gateway: **Manual**. A *manual* payment gateway is one which does *not* interface with a payment provider. Instead, they can be used to allow payments made "in the real world". For example, a *manual* payment gateway could be created to provide a "Bill Me" option for pre-authorized customers. Those customers could complete their orders without paying and then pay by cash, check, bank transfer, etc. after receiving an invoice for the order.
 
@@ -88,7 +88,7 @@ Click the *Add payment gateway* button to create a payment gateway. By default, 
 
 ![Payment gateway configuration](../images/getting-started-02.png)
 
-If you would like to configure your site to use an actual gateway for a real Payment Provider, see the [Installing and Configure a Payment Gateway](../gateways/#installing-and-configure-a-payment-gateway) documentation.
+If you would like to configure your site to use an actual gateway for a real Payment Provider, see the [Installing and Configure a Payment Gateway](gateways.md#installing-and-configure-a-payment-gateway) documentation.
 
 ### Configuring your payment gateway
 
@@ -100,7 +100,7 @@ The *Display name* will be displayed to customers on the *Payment information* c
 
 #### Conditions
 
-The Conditions section of the configuration page allows you to specify the rules used to determine whether the payment gateway should be an available option for the customer. For more information about conditions, including documentation on how to customize existing conditions or create new ones, see the [Conditions](../../core/conditions) documentation.
+The Conditions section of the configuration page allows you to specify the rules used to determine whether the payment gateway should be an available option for the customer. For more information about conditions, including documentation on how to customize existing conditions or create new ones, see the [Conditions](../core/conditions.md) documentation.
 
 Finally, you can also specify whether a payment gateway is enabled. Disabled payment gateways are not available to any customers, regardless of conditions, during checkout. Here is a full example of configuration for a *Manual* payment gateway:
 

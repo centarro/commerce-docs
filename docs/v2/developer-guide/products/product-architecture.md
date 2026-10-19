@@ -46,15 +46,15 @@ However, it is possible for a single product variation type to be used by multip
 
 ##### Allow each product to have multiple variations
 
-This setting affects how product variation data is entered by administrative users. If enabled, product variations are edited in a form separate from the main product edit form. If a product has only one variation, it can be edited directly on the product data entry form. See the [Editing products documentation](../product-management/#editing-products) for more information on product forms.
+This setting affects how product variation data is entered by administrative users. If enabled, product variations are edited in a form separate from the main product edit form. If a product has only one variation, it can be edited directly on the product data entry form. See the [Editing products documentation](product-management.md#editing-products) for more information on product forms.
 
 ##### Inject product variation fields into the rendered product
 
-This setting affects how products are displayed for end users. You can learn more about [product variation field injection](../displaying-products/#product-display-pages) in the [Displaying products](../displaying-products) section of the documentation.
+This setting affects how products are displayed for end users. You can learn more about [product variation field injection](displaying-products.md#product-display-pages) in the [Displaying products](displaying-products.md) section of the documentation.
 
 ##### Publish new products of this type by default
 
-*Published* is an option on the data entry form for products and can be checked (published) or unchecked (not published), by default. Also, it is possible to remove the *published* setting from the product form completely (for all or just a subset of administrative users). You can learn more about the [product data entry form](../product-management/#product-data-entry) configuration options in the [Product management](../product-management) section of the documentation.
+*Published* is an option on the data entry form for products and can be checked (published) or unchecked (not published), by default. Also, it is possible to remove the *published* setting from the product form completely (for all or just a subset of administrative users). You can learn more about the [product data entry form](product-management.md#editing-products) configuration options in the [Product management](product-management.md) section of the documentation.
 
 ### Configure a product variation type
 
@@ -89,7 +89,7 @@ If you have commerce-related contributed modules installed, you may see addition
 
 ##### Order item type
 
-When a product variation is added to the cart, it is added as a new line item. The order item type defines the structure of this line item. (See the [order items documentation](../../orders/getting-started/#order-items).)
+When a product variation is added to the cart, it is added as a new line item. The order item type defines the structure of this line item. (See the [order items documentation](../orders/getting-started.md#order-items).)
 
 ##### Attributes
 
@@ -125,7 +125,7 @@ On the *Image settings for Simple* configuration page:
 
 ![Image settings for Simple](../images/simple-product-type-6.jpg)
 
-Images can now be uploaded for Simple product variations and displayed on product pages. See [Product display pages](../displaying-products/#product-display-pages) for documentation on customizing product displays.
+Images can now be uploaded for Simple product variations and displayed on product pages. See [Product display pages](displaying-products.md#product-display-pages) for documentation on customizing product displays.
 
 You can use this same general approach to add other fields to both product and product variation types.
 
@@ -147,7 +147,7 @@ Let's start by creating a *Size* attribute with values Small, Medium, and Large.
 
 1. Navigate to the *Product attributes* page by using the menu item under the main *Commerce* menu or `/admin/commerce/product-attributes`.
 2. Enter "Size" for the Name.
-3. Select *Select list* for the Element type. See [Product attributes](../displaying-products/#product-attributes) in the [Displaying products documentation](../displaying-products) for a description of how these options affect product displays.
+3. Select *Select list* for the Element type. See [Product attributes](displaying-products.md#product-attributes) in the [Displaying products documentation](displaying-products.md) for a description of how these options affect product displays.
 4. Do not select any Product variation types. This Size attribute will not be used for the Default or Simple product types. When we create a new *Clothing* product type (below), we can come back to update the configuration.
 5. Click the *Save* button to create the new product attribute.
 
@@ -189,12 +189,12 @@ On the *Size settings for Clothing* page, de-select the *Required field* checkbo
 
 ### Add a field to a product attribute
 
-For the Color attribute, we want to present the options as color swatches instead of just the color names. Most of the documentation for this functionality will be covered in the [Add to cart form](../displaying-products/#add-to-cart-form) page of the Displaying products section. Here we'll just set up the Color product attribute.
+For the Color attribute, we want to present the options as color swatches instead of just the color names. Most of the documentation for this functionality will be covered in the [Add to cart form](displaying-products.md#add-to-cart-form) page of the Displaying products section. Here we'll just set up the Color product attribute.
 
 ![Color attribute display](../images/add-to-cart-ui.jpg)
 
 !!! note
-    To set up the Color product attribute like this, you will need to install the [Color module]. See the documentation on [Extending Drupal Commerce](../../../installation/#extending) for an overview of installing contributed Drupal modules.
+    To set up the Color product attribute like this, you will need to install the [Color module]. See the documentation on [Extending Drupal Commerce](../../installation.md#extending) for an overview of installing contributed Drupal modules.
 
 The initial steps for creating the Color attribute are the same as the steps described above, for creating the Size attribute. Briefly, you need to:
 
@@ -289,7 +289,7 @@ We can also create a new Taxonomy term reference field for our *Product categori
 
 ![Categories field settings](../images/product-categories-ui-7.jpg)
 
-To learn how to use the Brand and Taxonomy in a faceted product catalog, see the [Product catalog with facets documentation](../marketing-products/#product-catalog-facets).
+To learn how to use the Brand and Taxonomy in a faceted product catalog, see the [Product catalog with facets documentation](marketing-products.md#product-catalog-facets).
 
 
 !!! info In the next section, we'll look at options for product architectures in Drupal Commerce.
@@ -301,8 +301,8 @@ This section provides a general overview of some of the most commonly used types
 
 - [Virtual products](#virtual-vs-physical-products)
 - [Physical products](#physical-product-configuration)
-- [Configurable / customizable products](#configurable--customizable-products)
-- [Downloadable products / files](#downloadable-products--files)
+- [Configurable / customizable products](#configurable-customizable-products)
+- [Downloadable products / files](#downloadable-products-files)
 - [Subscriptions](#subscriptions)
 - [Product bundles](#product-bundles)
 - [Unique / none-of-the-above architectures](#purchasable-entities)
@@ -313,7 +313,7 @@ In Drupal Commerce, products can be either virtual or physical. A physical produ
 
 If you have virtual products, no special configuration is necessary. Drupal Commerce will work for virtual products as is.
 
-If you have physical products, then you will need to extend Drupal Commerce with the [Commerce Shipping module]. (See the [Extending Drupal Commerce](../../../installation/#extending) documentation to add Commerce shipping to your project.)
+If you have physical products, then you will need to extend Drupal Commerce with the [Commerce Shipping module]. (See the [Extending Drupal Commerce](../../installation.md#extending) documentation to add Commerce shipping to your project.)
 
 #### Physical product configuration
 
@@ -331,7 +331,7 @@ You will see that two ***traits*** have been added to the configuration form for
 
 ![Shipping traits for physical product variation type](../images/product-architectures-2.jpg)
 
-Both these fields can be managed just like any other field in terms of displaying them on data entry forms and product displays. For more information on how these fields are used in the context of the Commerce Shipping module, see the [Shipping documentation](../../shipping/getting-started).
+Both these fields can be managed just like any other field in terms of displaying them on data entry forms and product displays. For more information on how these fields are used in the context of the Commerce Shipping module, see the [Shipping documentation](../shipping/getting-started.md).
 
 #### Stock management for physical products
 
@@ -345,12 +345,12 @@ For stock tracking, see the [Commerce Stock module].
 
 A configurable product is one for which a customer can specify unique information for a product. For example, a product that can be monogrammed with a name or initials is a configurable product. Product attributes, like *color* or *size* can only be used when the list of all possible values is known and set in advance. For example, the values for *size* for an item of clothing might be "S", "M", "L", and "XL".
 
-To implement a configurable product in the context of Drupal Commerce product architecture, the key is to add a custom field to the [Add to cart form](../displaying-products/#add-to-cart-form).
+To implement a configurable product in the context of Drupal Commerce product architecture, the key is to add a custom field to the [Add to cart form](displaying-products.md#add-to-cart-form).
 
 - Customers use the field to enter their unique product configuration.
 - Merchants receive the information as part of the order's line item data.
 
-Both single-variation products and products with attributes / variations can be customized as a configurable product. Also, multiple custom fields could be added for a configurable product. For step-by-step instructions, see [Add fields for customizable products](../displaying-products/#add-to-cart-form) in the *Configuring the Add to cart form fields* section of the documentation on the ***Add to cart form***.
+Both single-variation products and products with attributes / variations can be customized as a configurable product. Also, multiple custom fields could be added for a configurable product. For step-by-step instructions, see [Add fields for customizable products](displaying-products.md#add-to-cart-form) in the *Configuring the Add to cart form fields* section of the documentation on the ***Add to cart form***.
 
 ### Downloadable products / files
 
@@ -358,7 +358,7 @@ For downloadable products / files, we recommend the [Commerce File module].
 
 ### Subscriptions
 
-For subscription products, we recommend the [Commerce Recurring Framework module], which provides recurring billing for Drupal Commerce. See the [Subscriptions documentation](../../recurring/getting-started) for additional information.
+For subscription products, we recommend the [Commerce Recurring Framework module], which provides recurring billing for Drupal Commerce. See the [Subscriptions documentation](../recurring/getting-started.md) for additional information.
 
 ### Product bundles
 

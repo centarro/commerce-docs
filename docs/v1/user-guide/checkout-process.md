@@ -24,7 +24,7 @@ Here's the real definition of Checkout from Ryan Szrama:
 
 What does that mean to you? It means checkout and the form builder are just a large edit form for orders that create things like customer profiles and use things like payment gateways to move the order status around.
 
-Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process. It supports [single and multipage checkout](#Checkout-Single-vs-Multiple-Page) depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
+Drupal Commerce comes with a drag-and-drop checkout form builder that lets you decide what information you need to collect from or display to customers during the checkout process. It supports [single and multipage checkout](#checkout-single-vs-multiple-page) depending on your requirements and can be easily extended with new components through the use of contributed or custom modules.
 
 In the checkout system, a checkout page is a distinct step in the checkout process that contains one or more checkout panes that are represented as fieldsets or divs as part of the form representing the checkout page they're on. You do not have to use every checkout pane defined on your site, and some contributed modules will define new ones that you can use if needed.
 
