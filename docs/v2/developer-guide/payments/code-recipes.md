@@ -25,7 +25,7 @@ If you want to write custom code to programmatically manage payments, you can us
 - [**Manage credit cards**](#manage-credit-cards)
 
 ### Creating a payment gateway
-Payment gateways are configuration entities that store the configuration for payment gateway plugins. The configuration keys will vary based on the payment gateway definition. The `Drupal\commerce_payment\Plugin\Commerce\PaymentGatewayBase` class defines `display_label`, `mode`, and `payment_method_types`. In this example, we've also added an `api_key` key.
+Payment gateways are configuration entities that store the configuration for payment gateway plugins. The configuration keys will vary based on the payment gateway definition. The `Drupal\commerce_payment\Plugin\Commerce\PaymentGateway\PaymentGatewayBase` class defines `display_label`, `mode`, and `payment_method_types`. In this example, we've also added an `api_key` key.
 ```php
 /**
  * id [String]

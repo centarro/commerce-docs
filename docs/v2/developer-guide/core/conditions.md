@@ -158,7 +158,7 @@ return [
 
 ### Providing Configuration options for a Condition plugin
 
-`ConditionInterface` extends two standard Drupal plugin interfaces: `ConfigurablePluginInterface` and `PluginFormInterface`. These interfaces define the methods you can use to provide configuration options for your custom Condition plugin:
+`ConditionInterface` extends standard Drupal plugin interfaces, including `ConfigurableInterface` and `PluginFormInterface`. These interfaces define the methods you can use to provide configuration options for your custom Condition plugin:
 * `public function defaultConfiguration();`
 * `public function buildConfigurationForm(array $form, FormStateInterface $form_state);`
 * `public function validateConfigurationForm(array &$form, FormStateInterface $form_state);`

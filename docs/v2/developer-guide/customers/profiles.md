@@ -358,9 +358,6 @@ If you want to write custom code to programmatically create or manage profiles, 
     // Get profile storage to use ProfileStorage methods.
     $profile_storage = \Drupal::entityTypeManager()->getStorage('profile');
 
-    // Load an inactive customer profile for a user.
-    $customer_profile = $profile_storage->loadByUser($user, 'customer', FALSE);
-
     // Load an active customer profile for a user.
     $customer_profile = $profile_storage->loadByUser($user, 'customer');
 

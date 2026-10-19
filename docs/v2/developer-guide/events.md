@@ -41,7 +41,7 @@ See also: [Subscribe to and dispatch events](https://www.drupal.org/docs/develop
 |---------------------------------------|-----------------------------------------|-----------------------------------------------------------|-------------------------------------------------------------------|
 | `CheckoutEvents::COMPLETION`          | `commerce_checkout.completion`          | Fired when the customer completes checkout.               | `\Drupal\commerce_order\Event\OrderEvent`                         |
 | `CheckoutEvents::COMPLETION_REGISTER` | `commerce_checkout.completion_register` | Fired when the customer registers at the end of checkout. | `\Drupal\commerce_checkout\Event\CheckoutCompletionRegisterEvent` |
-| `CheckoutEvents::CHECKOUT_REGISTER`   | `commerce_checkout.checkout_register`   | Fired when the customer registers during checkout.        | `\Drupal\commerce_checkout\Event\RegisterDuringCheckoutEvent`     |
+| `CheckoutEvents::CHECKOUT_REGISTER`   | `commerce_checkout.checkout_register`   | Fired when the customer registers during checkout.        | `\Drupal\commerce_checkout\Event\CheckoutRegisterEvent`           |
 
 ## Order events
 
@@ -207,7 +207,6 @@ Here’s the documentation for the states and transitions in table format:
 
 | Event Constant                    | Event Name                          | Description                                      | Event Class                                                |
 |-----------------------------------|-------------------------------------|--------------------------------------------------|------------------------------------------------------------|
-| `PriceEvents::NUMBER_FORMAT_LOAD` | `commerce_price.number_format.load` | Fired when loading a number format. (Deprecated) | `\Drupal\commerce_price\Event\NumberFormatEvent`           |
 | `PriceEvents::NUMBER_FORMAT`      | `commerce_price.number_format`      | Fired when altering a number format.             | `\Drupal\commerce_price\Event\NumberFormatDefinitionEvent` |
 
 ## Product events
