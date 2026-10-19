@@ -6,7 +6,7 @@ taxonomy:
 
 ## Overview
 
-Drupal Commerce allows administrative users to control the availability of [Promotions](../../promotions/offers) and [Payment gateways](../../payments/gateways) using *Conditions*. In Commerce 1.x, you would have used the [Rules module] for this functionality. Since Commerce 2.x, the Core Conditions component allows us to create configuration entities with conditions.  
+Drupal Commerce allows administrative users to control the availability of [Promotions](../promotions/offers.md) and [Payment gateways](../payments/gateways.md) using *Conditions*. In Commerce 1.x, you would have used the [Rules module] for this functionality. Since Commerce 2.x, the Core Conditions component allows us to create configuration entities with conditions.  
 
 For example, you can use the *Billing address* Condition to specify that a certain payment gateway can only be used in a specific country (or countries). Here is a screenshot of a *Payment gateway* administrative page configured to only allow Serbian customers to use the gateway:
 

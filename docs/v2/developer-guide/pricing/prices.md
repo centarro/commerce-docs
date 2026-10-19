@@ -75,7 +75,7 @@ The Commerce Price module defines a *Price* field type which is used within Drup
 
 #### Product prices
 
-Product prices are associated with individual product variations, not with the parent product entities. See [Product information structure](../../products/product-information-structure) for an explanation of the differences between products and product variations. Product variations have two price fields:
+Product prices are associated with individual product variations, not with the parent product entities. See [Product information structure](../products/product-information-structure.md) for an explanation of the differences between products and product variations. Product variations have two price fields:
 
 * `Price` is a required field; it is the default price value that is transferred to the order when the product variation is added to the cart.
 * `List price` is an optional field that is hidden by default. It is meant for display only and is usually crossed out in some way.
@@ -88,7 +88,7 @@ Additionally, the [Commerce Pricelist module] supports creating price lists for 
 
 An **Order** has two Price fields: `Total price` and `Total paid`.
 
-The total price for an order gets updated automatically whenever order items or [Adjustments](../adjustments) are updated for the order. The total price takes into account both the prices of the order items and all adjustments that are included in the price. The `getTotalPrice()` method returns this value. If you are looking for just the sum of order item prices without adjustments, you can use the `getSubtotalPrice()` method to calculate that total.
+The total price for an order gets updated automatically whenever order items or [Adjustments](adjustments.md) are updated for the order. The total price takes into account both the prices of the order items and all adjustments that are included in the price. The `getTotalPrice()` method returns this value. If you are looking for just the sum of order item prices without adjustments, you can use the `getSubtotalPrice()` method to calculate that total.
 
 The total paid value, `getTotalPaid()`, is the sum of all payments made on the order. You can use the `getBalance()` method to get the difference between the total price and the total paid for the order. The `isPaid()` method will return `TRUE` if the order balance is less than or equal to zero.
 
@@ -105,16 +105,16 @@ The value for the Unit price, `getUnitPrice()`, for an order item can be set in 
     $order_item->setUnitPrice(new Price('10.99', 'USD'), TRUE);
     ```
 
-Initially, the Unit price is set using the resolved price for the purchased entity (product variation). A resolved price is based on a dynamic calculation that takes into account the quantity, customer, store, and time of the request. See [Price resolvers](#price-resolvers) for a detailed explanation. For existing order items, Unit prices get updated during the [Order refresh process](../../orders/getting-started/#order-refresh-and-processing). First, the resolved price is recalculated. Then, order processors can also affect the value of the price. For example, if there are any display inclusive promotions that apply to the order item, they will update the value of the Unit price. You can use the `getAdjustedUnitPrice()` method to get the adjusted order item unit price. This method can be useful for refunds and other purposes where there's a need to know how much a single unit contributed to the order total.
+Initially, the Unit price is set using the resolved price for the purchased entity (product variation). A resolved price is based on a dynamic calculation that takes into account the quantity, customer, store, and time of the request. See [Price resolvers](#price-resolvers) for a detailed explanation. For existing order items, Unit prices get updated during the [Order refresh process](../orders/getting-started.md#order-refresh-and-processing). First, the resolved price is recalculated. Then, order processors can also affect the value of the price. For example, if there are any display inclusive promotions that apply to the order item, they will update the value of the Unit price. You can use the `getAdjustedUnitPrice()` method to get the adjusted order item unit price. This method can be useful for refunds and other purposes where there's a need to know how much a single unit contributed to the order total.
 
 #### Payment prices
 
-Payments have two Price fields: `Amount` and `Refunded amount`. The `getBalance()` method calculates the difference between the Amount and the Refunded amount. These values are managed by payment gateway methods. For an overview, see the [Payments](../../payments/getting-started) documentation.
+Payments have two Price fields: `Amount` and `Refunded amount`. The `getBalance()` method calculates the difference between the Amount and the Refunded amount. These values are managed by payment gateway methods. For an overview, see the [Payments](../payments/getting-started.md) documentation.
 
 
 ## Formatting prices
 
-The documentation page on [Prices](../prices) describes how a Price consists of a number and a currency code, both stored as strings. So, for example, suppose the total price for an order is "$464,230.13". That value would be stored in the database as "464230.130000" for the total price number and "USD" for the total price currency.
+The documentation page on [Prices](prices.md) describes how a Price consists of a number and a currency code, both stored as strings. So, for example, suppose the total price for an order is "$464,230.13". That value would be stored in the database as "464230.130000" for the total price number and "USD" for the total price currency.
 
 How exactly do we get from "464230.130000" and "USD" to the "$464,230.13" we see displayed in the order summary? 
 
@@ -130,7 +130,7 @@ The Commerce Price module's `CurrencyRepository` and `NumberFormatRepository` se
 
 #### Currency repository
 
-The currency repository provides formats in the form of `CommerceGuys\Intl\Currency\Currency` value objects, loaded from the Currency entities that have been created for the site. See the [Currencies documentation](../currencies) for a list of the Currency configuration entity properties that are loaded into the value objects. In addition, the `locale` property is set based on the language of the Currency entity. The repository doesn't support loading currencies in a non-default locale, since it would be imprecise to map `$locale` to Drupal's languages.
+The currency repository provides formats in the form of `CommerceGuys\Intl\Currency\Currency` value objects, loaded from the Currency entities that have been created for the site. See the [Currencies documentation](currencies.md) for a list of the Currency configuration entity properties that are loaded into the value objects. In addition, the `locale` property is set based on the language of the Currency entity. The repository doesn't support loading currencies in a non-default locale, since it would be imprecise to map `$locale` to Drupal's languages.
 
 #### Number format repository
 
@@ -260,7 +260,7 @@ The *Default* price formatter uses the [Currency formatter service](#formatting-
 
 #### The *Calculated* price formatter
 
-Like the *Default* price formatter, the *Calculated* price formatter also displays a Price formatted for its currency and offers the same *Strip trailing zeroes* and *Currency display* configuration options. Additionally, it uses [Price resolving](#price-resolvers) and can optionally apply other [Adjustments](../adjustments) (like promotions or taxes) to the resolved price. The *Calculated* price formatter can only be used for Price fields on entities that implement the [`PurchasableEntityInterface`](../../products/product-architecture/#code-recipes), such as Product variations.
+Like the *Default* price formatter, the *Calculated* price formatter also displays a Price formatted for its currency and offers the same *Strip trailing zeroes* and *Currency display* configuration options. Additionally, it uses [Price resolving](#price-resolvers) and can optionally apply other [Adjustments](adjustments.md) (like promotions or taxes) to the resolved price. The *Calculated* price formatter can only be used for Price fields on entities that implement the [`PurchasableEntityInterface`](../products/product-architecture.md#code-recipes), such as Product variations.
 
 Drupal Commerce actually provides two different implementations for this Price field formatter. A basic implementation is provided by the Commerce Price module. If the Commerce Order module is installed, then that basic implementation is replaced by one provided by Order module that uses the *Price Calculator* service to calculate the price a purchasable entity would have if it was in an order.
 
@@ -274,7 +274,7 @@ The Order module version Price formatter provides all the functionality of the P
 
 ![Calculated price formatter configuration](../images/displaying-prices-2.png)
 
-The Calculated price formatter uses the `PriceCalculator` service provided by the Order module to calculate the value of the Price that's displayed. If any adjustment types are selected, an Order will be created (but not saved) that has a single Order item. The Order item has a quantity of 1 and the resolved price for its Unit price. Then all Order processors for the selected adjustment types *process* the Order, adding [Adjustments](../adjustments) when applicable. The final *adjusted total price* for the Order item is returned to the Calculated price formatter, where it is rendered based on its currency definition.
+The Calculated price formatter uses the `PriceCalculator` service provided by the Order module to calculate the value of the Price that's displayed. If any adjustment types are selected, an Order will be created (but not saved) that has a single Order item. The Order item has a quantity of 1 and the resolved price for its Unit price. Then all Order processors for the selected adjustment types *process* the Order, adding [Adjustments](adjustments.md) when applicable. The final *adjusted total price* for the Order item is returned to the Calculated price formatter, where it is rendered based on its currency definition.
 
 ### Rendering prices in Twig
 
@@ -297,11 +297,11 @@ The Commerce Price module also provides the `commerce_price_format` Twig filter 
 
     This would render as $10.25.
 
-This Twig filter can be used on both [Price value objects](../prices) and arrays with `number` and `currency_code` keys. It uses the [Currency formatter service](#formatting-prices) to render the Price based on its currency definition.
+This Twig filter can be used on both [Price value objects](prices.md) and arrays with `number` and `currency_code` keys. It uses the [Currency formatter service](#formatting-prices) to render the Price based on its currency definition.
 
 ### Rendering prices without Twig
 
-The [Currency formatter service](#formatting-prices) can also be used independently to get a localized formatted price string for any [Price object](../prices). 
+The [Currency formatter service](#formatting-prices) can also be used independently to get a localized formatted price string for any [Price object](prices.md). 
 
 !!!example "Here is an example for displaying, "The price is $5.95""
 
@@ -446,7 +446,7 @@ We've assigned a priority of 200 to our custom price resolver so that it will ex
 
 ### Links and resources
 
-* [Understanding resolvers documentation](../../core/understanding_resolvers) describes several types of resolvers used within Drupal Commerce and provides an overview of how their code is structured.
+* [Understanding resolvers documentation](../core/understanding_resolvers.md) describes several types of resolvers used within Drupal Commerce and provides an overview of how their code is structured.
 * [Commerce Pricelist] is a contributed module that supports creating price lists for different dates, stores, individual roles or users.
 * [Modifying product prices in Drupal Commerce 2 for Drupal 8](https://www.rapiddg.com/blog/modifying-product-prices-drupal-commerce-2-drupal-8) has several examples of custom price resolvers.
 * [Drupal Commerce 2.x and sale price](https://dev.studiopresent.com/blog/back-end/drupal-commerce-2-and-sale-price) provides example code for creating a "sale price" price resolver.

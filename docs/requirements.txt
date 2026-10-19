@@ -1,10 +1,8 @@
-# Defining the exact version will make sure things don't break
-jinja2<=3.1.2
-mkdocs-material<=9.5.3
-mkdocs-material-extensions<=1.3.1
-mkdocs<=1.5.3
-mkdocs-include-dir-to-nav<=1.2.0
-mkdocs-open-in-new-tab<=1.0.3
-mkdocs-exclude-search<=0.6.6
-mkdocs-redirects<=1.2.1
-mkdocs-glightbox<=0.4.0
+# Pin exact versions so builds don't break when a package releases.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-redirects==1.2.3
+mkdocs-exclude-search==0.6.7
+mkdocs-glightbox==0.5.2
+mkdocs-open-in-new-tab==1.0.8
+mkdocs-include-dir-to-nav==1.2.0

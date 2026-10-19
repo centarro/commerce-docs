@@ -1,0 +1,21 @@
+# Rebuilds the docs daily, so the "latest version" banner picks up new
+# Commerce releases (see hooks/latest_release.py).
+#
+# Needs two repository secrets, from the Read the Docs project's
+# Admin > Integrations > "Generic API incoming webhook":
+# RTD_WEBHOOK_URL and RTD_WEBHOOK_TOKEN.
+name: Rebuild docs
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl --fail --silent --show-error -X POST -d "branches=master" -d "token=$RTD_WEBHOOK_TOKEN" "$RTD_WEBHOOK_URL"
+        env:
+          RTD_WEBHOOK_URL: ${{ secrets.RTD_WEBHOOK_URL }}
+          RTD_WEBHOOK_TOKEN: ${{ secrets.RTD_WEBHOOK_TOKEN }}

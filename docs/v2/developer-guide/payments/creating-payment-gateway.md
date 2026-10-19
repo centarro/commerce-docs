@@ -320,18 +320,18 @@ server (PayPal Payments Pro).
 
 To create an On-site payment gateway, you'll want to start by creating a custom module, configuration schema, payment
 plugin, and configuration form methods, as described in
-the [Getting started documentation](../creating-payment-gateway/#getting-started) for creating payment gateways.
+the [Getting started documentation](#getting-started) for creating payment gateways.
 
 Next, implement your gateway's `createPayment()` method, as described in
-the [Creating payments](../creating-payment-gateway/#creating-payments) documentation.
+the [Creating payments](#creating-payments) documentation.
 
-Then continue with the [Stored payment methods](../creating-payment-gateway/#stored-payment-methods) documentation to
+Then continue with the [Stored payment methods](#stored-payment-methods) documentation to
 implement the required `createPaymentMethod` and `deletePaymentMethod` methods. If your payment gateway supports
 updating payment methods, you will also want to implement the `SupportsUpdatingStoredPaymentMethodsInterface` interface
 and its `updatePaymentMethod`.
 
 If your payment gateway supports authorizations, voids, or refunds, read
-the [Authorizations, voids, and refunds](../creating-payment-gateway/#authorizations-voids-refunds) documentation for an
+the [Authorizations, voids, and refunds](#authorizations-voids-and-refunds) documentation for an
 overview and example code.
 
 Finally, if your payment gateway supports IPNs, read the [Handling an IPN] documentation for an overview and examples of
@@ -1118,7 +1118,7 @@ your payment provider's API specifications.
 
 #### Creating an *Offsite payment* plugin form
 
-Just as in an [Off-site *redirect* payment gateway](../creating-payment-gateway/#off-site-redirect-payment-gateways),
+Just as in an [Off-site *redirect* payment gateway](#off-site-redirect-payment-gateways),
 you will need to create an *Offsite payment* plugin form. When a payment gateway implements the
 `OffsitePaymentGatewayInterface` interface, this plugin form is embedded into the *Payment process* checkout pane. To
 implement this form, you will need to:
@@ -1886,22 +1886,21 @@ Use the `payment_manual` payment type, which provides the *Pending → Completed
 
 [Stripe]: https://www.drupal.org/project/commerce_stripe
 
-[Getting started]: ../creating-payment-gateway/#getting-started
+[Getting started]: #getting-started
 
-[On-site payment gateways]:../creating-payment-gateway/#on-site-payment-gateways
+[On-site payment gateways]:#on-site-payment-gateways
 
-[Off-site payment gateways]: ../creating-payment-gateway/#off-site-payment-gateways
+[Off-site payment gateways]: #off-site-payment-gateways
 
-[Manual payment gateways]: ../creating-payment-gateway/#manual-gateways
 
-[Redirect]: ../creating-payment-gateway/#off-site-redirect-payment-gateways
+[Redirect]: #off-site-redirect-payment-gateways
 
-[iFrame]: ../creating-payment-gateway/#off-site-iframe-payment-gateways
+[iFrame]: #off-site-iframe-payment-gateways
 
-[Return from payment provider]: ../creating-payment-gateway/#return-from-payment-provider
+[Return from payment provider]: #return-from-payment-provider
 
-[Handling an IPN]: ../creating-payment-gateway/#handling-an-ipn
+[Handling an IPN]: #handling-an-ipn
 
-[Security considerations]: ../creating-payment-gateway/#security-considerations
+[Security considerations]: #security-considerations
 
-[Manual payment gateways]: ../creating-payment-gateway/#manual-payment-gateways
+[Manual payment gateways]: #manual-payment-gateways

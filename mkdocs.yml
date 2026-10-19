@@ -113,6 +113,10 @@ nav:
         - Taxes overview: v1/commerce-kickstart-2/taxes-overview.md
         - Shipping: v1/commerce-kickstart-2/shipping.md
         - Translating a Commerce Store: v1/commerce-kickstart-2/translating-store.md
+# Fail the build on broken links and anchors.
+strict: true
+validation:
+  anchors: warn
 theme:
   name: material
   features:
@@ -224,6 +228,7 @@ plugins:
         'commerce2/developer-guide/core/libraries-and-dependencies/state-machine/state-fields.md': 'v2/developer-guide/core/core.md#working-with-state-fields'
         'commerce2/developer-guide/core/libraries-and-dependencies/state-machine/architecture.md': 'v2/developer-guide/core/core.md#architecture'
         'commerce2/developer-guide/core/libraries-and-dependencies/state-machine.md': 'v2/developer-guide/core/core.md#state-machine'
+        'v2/developer-guide/state-machine.md': 'v2/developer-guide/core/core.md#state-machine'
         'commerce2/developer-guide/core/libraries-and-dependencies/profile.md': 'v2/developer-guide/core/core.md#profile'
         'commerce2/developer-guide/core/libraries-and-dependencies/libraries.md': 'v2/developer-guide/core/core.md#php-libraries'
         'commerce2/developer-guide/install-update/maintaining.md': 'v2/installation.md#updating'
@@ -324,7 +329,7 @@ plugins:
         'commerce2/user-guide/checkout/control-guest-checkout.md': 'v2/user-guide/checkout.md#controling-guest-checkout'
         'commerce2/user-guide/checkout/allow-register-at-checkout.md': 'v2/user-guide/checkout.md#allow-registration-during-checkout'
         'commerce2/user-guide/shipping/introduction.md': 'v2/user-guide/shipping.md#before-you-begin'
-        'commerce2/user-guide/shipping/enable-shipping-products': 'v2/user-guide/shipping.md#enable-shipping-for-products'
+        'commerce2/user-guide/shipping/enable-shipping-products.md': 'v2/user-guide/shipping.md#enable-shipping-for-products'
         'commerce2/user-guide/shipping/install-configure.md': 'v2/user-guide/shipping.md#configure-shipping-methods'
         'commerce2/user-guide/shipping/managing-shipments.md': 'v2/user-guide/shipping.md#managing-shipments'
         'commerce1.md': 'v1/getting-started.md'

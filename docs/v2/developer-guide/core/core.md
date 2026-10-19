@@ -11,24 +11,24 @@ your Drupal Commerce store.
 **[Libraries and dependencies](#php-libraries)**
 
 
-**[Conditions](../conditions)**
+**[Conditions](conditions.md)**
 
 - Learn how the Core Conditions component allows us to create configuration entities with conditions.
 - Learn how to build your own Condition plugin or alter an existing one.
 - Learn how to filter the list of Conditions provided for specific configuration entities.
 
-**[Sending HTML emails](../html_emails)**
+**[Sending HTML emails](html_emails.md)**
 
 - Learn how to use the Swift Mailer module to send HTML emails.
 - More TBD
 
-**[Understanding resolvers](../understanding_resolvers)**
+**[Understanding resolvers](understanding_resolvers.md)**
 
 - Learn about the concept of Resolvers.
 - Learn about types of Resolvers and how they're used in Drupal Commerce.
 - Learn about the structure of Resolvers and Chain resolvers.
 
-**[Relationship diagrams](../relationships)**
+**[Relationship diagrams](relationships.md)**
 
 - Learn about the major Drupal Commerce entities and their relationships.
 
@@ -58,7 +58,7 @@ community-based sites organize users around specific information.
 
 See Also: [Profile module on Drupal.org]
 
-Additional documentation on [Profiles](../../customers/profiles) and how they are used within Drupal Commerce is provided within the [Customers](../../customers/getting-started) section of this guide.
+Additional documentation on [Profiles](../customers/profiles.md) and how they are used within Drupal Commerce is provided within the [Customers](../customers/getting-started.md) section of this guide.
 
 ### Inline Entity Form
 
@@ -177,7 +177,7 @@ the post_transition events are dispatched after the save.
 
 #### Working with state fields
 
-Drupal Commerce uses State fields for two of its entities: Orders and Payments. You can learn more about [Order workflows](../../orders/workflows) in the Orders documentation section. The [Payments information structure](../../payments/payments) documentation describes the states of *Default* and *Manual* Payment workflows. There are also examples of altering Payment workflows in the [Payments code recipes](../../payments/code-recipes) and the [State machine code recipes](#code-recipes).
+Drupal Commerce uses State fields for two of its entities: Orders and Payments. You can learn more about [Order workflows](../orders/workflows.md) in the Orders documentation section. The [Payments information structure](../payments/payments.md) documentation describes the states of *Default* and *Manual* Payment workflows. There are also examples of altering Payment workflows in the [Payments code recipes](../payments/code-recipes.md) and the [State machine code recipes](#code-recipes).
 
 In this documentation section, we will go through an example of creating a custom State field, workflow, and workflow group and continue to build out the example in the next two sections on Guards and Transition event subscribers.
 
@@ -417,7 +417,7 @@ $to_state_id = $to_state->getId();
     }
     ```
 
-Example code for logging an order item transition can be found in the [Code recipes](../../activity-log/code-recipes) section of the [Activity logs documentation](../../activity-log/getting-started).
+Example code for logging an order item transition can be found in the [Code recipes](../activity-log/code-recipes.md) section of the [Activity logs documentation](../activity-log/getting-started.md).
 
 ##### Transition-specific state transition events
 The pattern for workflow group-specific events is "{$workflow_group_id}.{$transition_id}.{$phase}". These transition-specific state transition events can be extremely useful for powering business logic in Drupal Commerce applications. 

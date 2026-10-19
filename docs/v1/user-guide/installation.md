@@ -10,9 +10,9 @@ An easier way to install Drupal Commerce would be to use an installation profile
 
 Refer to the section below for your preferred method of installation.
 
-* [Installing from scratch](../installation/#installing-from-scratch)
-* [Installing with Commerce Kickstart 1.x](../installation/#installing-with-commerce-kickstart-1x)
-* [Migrating from Ubercart Stores](../installation/#migrating-ubercart-stores)
+* [Installing from scratch](#installing-from-scratch)
+* [Installing with Commerce Kickstart 1.x](#installing-with-commerce-kickstart-1x)
+* [Migrating from Ubercart Stores](#migrating-from-ubercart-stores)
 
 ## Installing from scratch
 

@@ -6,9 +6,9 @@ category: docs
 
 ## Available payment gateways
 
-Drupal Commerce can be integrated with payment providers from all over the world. This page lists the contributed payment gateway modules that have a release compatible with Drupal 10 or 11. See the documentation on [Extending Drupal Commerce](../../../installation/#extending) for information on adding one or more of these modules to your Drupal Commerce project and the [Install and Configure a Payment Gateway](#installing-and-configure-a-payment-gateway) documentation for information on configuration.
+Drupal Commerce can be integrated with payment providers from all over the world. This page lists the contributed payment gateway modules that have a release compatible with Drupal 10 or 11. See the documentation on [Extending Drupal Commerce](../../installation.md#extending) for information on adding one or more of these modules to your Drupal Commerce project and the [Install and Configure a Payment Gateway](#installing-and-configure-a-payment-gateway) documentation for information on configuration.
 
-If you don't see a payment provider you want for your project, Drupal Commerce provides a framework for implementing your own online payment gateways. See the [Creating payment gateways](../creating-payment-gateway) documentation for more information. 
+If you don't see a payment provider you want for your project, Drupal Commerce provides a framework for implementing your own online payment gateways. See the [Creating payment gateways](creating-payment-gateway.md) documentation for more information. 
 
 If you create your own payment gateway module or find one that's not in this list yet, please [let us know about it] so that we can add it.
 
@@ -609,13 +609,13 @@ If you create your own payment gateway module or find one that's not in this lis
 
 ## Installing and Configure a Payment Gateway
 
-While configuring your store you would probably want to install and configure a payment gateway provider module so that you can accept online payments. Currently available payment gateways for Commerce are listed [here](../gateways/#available-payment-gateways).
+While configuring your store you would probably want to install and configure a payment gateway provider module so that you can accept online payments. Currently available payment gateways for Commerce are listed [here](#available-payment-gateways).
 
 This tutorial will guide you through configuring a payment gateway provider using the Commerce PayPal module as an example.
 
 ### Install the Module
 
-The first step is to install the module that provides integration with the desired payment gateway. In this case, Commerce PayPal. Drupal Commerce requires Composer and most related modules would have the same requirement - see [Using Composer](../../../getting-started/#using-composer). For specific installation instructions check the module's documentation.
+The first step is to install the module that provides integration with the desired payment gateway. In this case, Commerce PayPal. Drupal Commerce requires Composer and most related modules would have the same requirement - see [Using Composer](../../getting-started.md#using-composer). For specific installation instructions check the module's documentation.
 
 ### Add a Payment Gateway
 

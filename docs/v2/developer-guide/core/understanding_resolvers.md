@@ -10,13 +10,13 @@ In Drupal Commerce, a *Resolver* is a service that provides an "answer" to a pot
 
 #### Price resolvers
 
-If you've set up [products](../../products/getting-started) for your Drupal Commerce site, then you know that every product variation has exactly one price and that you can set that price through the administrative UI:
+If you've set up [products](../products/getting-started.md) for your Drupal Commerce site, then you know that every product variation has exactly one price and that you can set that price through the administrative UI:
 
 ![Edit product variation price](../images/resolvers-1.png)
 
 But what if your products need to have different prices in different situations? Perhaps you have one set of prices for wholesale customers, another for regular customers, and yet another for some sort of "preferred" customers. Or maybe you have multiple stores, each with their own set of prices. If you have complex pricing needs like these, then you will need to create a custom *Price resolver*.
 
-See the [Price resolvers](../../pricing/prices/#price-resolvers) documentation for additional information and example code.
+See the [Price resolvers](../pricing/prices.md#price-resolvers) documentation for additional information and example code.
 
 #### Store resolvers
 
@@ -24,7 +24,7 @@ In Drupal Commerce, every order belongs to a specific [store](../stores/getting-
 
 ![Default store selection](../images/resolvers-3.png)
 
-If you want to build a site with multiple stores, then you will need to create a custom *StoreResolver*. Your Store resolver will contain the logic that provides the answer to the question, "which store should I use?" For an example and more information, see the [Resolve the current store](../../stores/code-recipes/#resolve-the-current-store) documentation page.
+If you want to build a site with multiple stores, then you will need to create a custom *StoreResolver*. Your Store resolver will contain the logic that provides the answer to the question, "which store should I use?" For an example and more information, see the [Resolve the current store](../stores/code-recipes.md#resolve-the-current-store) documentation page.
 
 #### CheckoutFlow resolvers
 
