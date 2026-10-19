@@ -161,7 +161,7 @@ The Adjustment transformer service (`commerce_order.adjustment_transformer`) pro
 ```php
 $adjustment_transformer = \Drupal::service('commerce_order.adjustment_transformer');
 
-/** @var \Drupal\commerce_order\AdjustmentInterface $adjustment */
+/** @var \Drupal\commerce_order\Adjustment $adjustment */
 $adjustment = new Adjustment([
   'type' => 'promotion',
   'label' => '20% off',
@@ -185,7 +185,7 @@ assert($rounded_down_adjustment->getAmount()->equals(new Price('20.55', 'USD')))
 ```php
 $adjustment_transformer = \Drupal::service('commerce_order.adjustment_transformer');
 
-/** @var \Drupal\commerce_order\AdjustmentInterface[] $adjustments */
+/** @var \Drupal\commerce_order\Adjustment[] $adjustments */
 $adjustments = [];
 // Adjustments 0 and 2 will be combined.
 $adjustments[0] = new Adjustment([

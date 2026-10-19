@@ -432,64 +432,12 @@ The default address widget uses the custom *address* form element. As a result, 
 ![Customized street address](../images/address-entry-2.png)
 
 ### Setting initial values for address field properties
-**Note: onInitialValues is deprecated and no longer fires since version 1.5** 
-@see the [AddressEvents](https://git.drupalcode.org/project/address/blob/8.x-1.x/src/Event/AddressEvents.php) documentation. 
 
-The *Address* module provides an event that can be used to set initial values for address field properties. In this example, we'll create an event subscriber to set the default country to *Australia*, the suburb to *New South Wales*, and the city to *Sydney*.
+To pre-fill an address field, for example with a default country, set the field's **Default value**: edit the address field from the *Manage fields* page of its entity type, and fill in the *Default value* section.
 
 ![Australia initial values](../images/address-entry-5.png)
 
-Here is our complete event subscriber class (missing documentation):
-
-```php
-<?php
-
-namespace Drupal\mymodule\EventSubscriber;
-
-use Drupal\address\Event\AddressEvents;
-use Drupal\address\Event\InitialValuesEvent;
-use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-
-class AustraliaDefaultEventSubscriber implements EventSubscriberInterface {
-
-  public static function getSubscribedEvents() {
-    $events[AddressEvents::INITIAL_VALUES][] = ['onInitialValues'];
-    return $events;
-  }
-
-  public function onInitialValues(InitialValuesEvent $event) {
-    $initial_values = [
-      'country_code' => 'AU',
-      'administrative_area' => 'NSW',
-      'locality' => 'Sydney',
-    ];
-    $event->setInitialValues($initial_values);
-  }
-
-}
-```
-
-Don't forget to add the event subscriber to your custom module's `services.yml` file and rebuild caches:
-
-```php
-services:
-  mymodule.australia_subscriber:
-    class: Drupal\mymodule\EventSubscriber\AustraliaDefaultEventSubscriber
-    tags:
-      - {name: event_subscriber}
-```
-
-
-
-## Address display
-
-
-This documentation page describes how to customize how addresses are displayed. The Address module includes two formatters for displaying addresses: *Default* and *Plain*. If you require customizations that are not possible with either of these formatters, you can create your own custom field formatter plugin.
-
-* Use the [*Default* address formatter](#the-default-address-formatter) to display addresses in country-specific formats.
-* Use the [*Plain* address formatter](#the-plain-address-formatter) to provide custom theming for addresses.
-* Use the [Postal Label Formatter Service](#postal-label-formatter-service) to use standards required for automated mail sorting.
-* [Multilingual Considerations](#multilingual-considerations) describes how to override the language used to format addresses.
+The `AddressEvents::INITIAL_VALUES` event that earlier versions of the Address module used for this was removed in Address 2.x.
 
 ### The *Default* address formatter
 The Default formatter uses a repository of address format data (provided by the Commerce Guys Addressing Library) to format the display of an address. Google's [Address Data Service](https://chromium-i18n.appspot.com/ssl-address) is the data source for these address formats. The displayed format will closely match the ordering used on forms for entering the addresses. (*The Country field always appears first on forms, even if it is displayed last in the correctly formatted address.*)
