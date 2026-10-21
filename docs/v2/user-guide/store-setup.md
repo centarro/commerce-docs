@@ -48,7 +48,7 @@ To change the default store, from the *Stores* list click the *Edit* operation b
 
 ![Edit store](./images/stores-edit-a-store.png)
 
-At the bottom of the form, check the box labeled *Make this the default store.* Submit the form, and the default store will be updated:
+In the sidebar, turn on *Make this the default store.* and save the form. The default store will be updated:
 
 ![Make default](./images/edit-store-check-default.png)
 
