@@ -6,7 +6,7 @@ taxonomy:
 
 Drupal Commerce's store dashboard was [added in the 2.37 release](https://www.centarro.io/blog/commerce-core-237-release-adds-new-store-dashboard) and can be accessed through the *Administration > Commerce* menu item. It is designed to give merchants insight into the store's performance and direction for getting more out of Drupal Commerce. It offers fast access to management interfaces (i.e., the main subsections of the Commerce menu), embeds sales metrics and summary reports, and displays a feed of project updates through a "Commerce inbox" modeled on the Announcements module in Drupal core.
 
-![Drupal Commerce dashboard](https://www.centarro.io/sites/default/files/2024-01/drupal-commerce-dashboard-new.png)
+![Drupal Commerce dashboard](./images/dashboard.png)
 
 ## Sales metrics and reports
 
@@ -31,9 +31,9 @@ $settings['commerce_dashboard_show_promotion_report'] = FALSE;
 
 ## Commerce inbox messaging
 
-Inspired by Drupal core's Announcements module, the dashboard features a basic inbox to deliver timely messages to store managers. Messages can be created during module installation, module updates, or via a cron job fetching updates from the project feed. The screenshot above shows the messages that will be presented to every new user, while the screenshot below shows the message created by a Commerce Core 2.37 update hook:
+Inspired by Drupal core's Announcements module, the dashboard features a basic inbox to deliver timely messages to store managers. Messages can be created during module installation, module updates, or via a cron job fetching updates from the project feed. The screenshot above shows the messages that will be presented to every new user. Click a message to read it in full, follow its call to action, or dismiss it:
 
-![Drupal Commerce inbox update message](https://www.centarro.io/sites/default/files/2024-01/drupal-commerce-dashboard-update_0.png)
+![Drupal Commerce inbox message](./images/inbox-message.png)
 
 Any module maintainer can create messages to highlight new features or other points of note when a module is installed or updated. Inspired by the Webform module, messages can also open video tutorials in a modal dialog or link to specific site interfaces or external resources (properly indicated).
 
