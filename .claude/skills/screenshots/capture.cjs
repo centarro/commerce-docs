@@ -9,7 +9,7 @@
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
 //                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
-//                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }] }
+//                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }, { "goto": "/cart" }] }
 //   Autocomplete: fill, wait, then press ArrowDown and Enter to pick the first suggestion.
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -39,6 +39,7 @@ const path = require('path');
       if (a.hover) await page.hover(a.hover);
       if (a.press) await page.keyboard.press(a.press);
       if (a.wait) await page.waitForTimeout(a.wait);
+      if (a.goto) await page.goto(base + a.goto, { waitUntil: 'networkidle' });
     }
     // Hide Drupal status messages (e.g. "Saved" from a previous shot).
     await page.addStyleTag({ content: '[data-drupal-messages] { display: none !important; }' });

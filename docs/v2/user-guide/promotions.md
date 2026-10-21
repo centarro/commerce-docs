@@ -42,7 +42,7 @@ Imagine that your store is planning to run a special New Year campaign where you
 
 ### Adding Conditions
 
-The conditions section allows you to further manage the promotions so that you can tell the system to apply the promotion only if the order meets certain criteria. There are three categories of Conditions: Customer, Order, and Products. Click on each to see condition options in that category. You can specify multiple conditions. For this example, we want to add a condition so that our promotion will only apply to orders worth $50 or more. This is the "Current order total" condition, an "Order" condition. Similar to the "Offer type" options, whenever we select a Condition type, a new form will appear under that condition. We'll select the "Greater than or equal to" Operator and enter "50" as the Amount:
+The conditions section allows you to further manage the promotions so that you can tell the system to apply the promotion only if the order meets certain criteria. Conditions are grouped into categories: Current request, Customer, Order, and Products, plus Shipment when Commerce Shipping is installed. Click on each to see condition options in that category. You can specify multiple conditions. For this example, we want to add a condition so that our promotion will only apply to orders worth $50 or more. This is the "Current order total" condition, an "Order" condition. Similar to the "Offer type" options, whenever we turn on a condition, a new form will appear under it. We'll select the "Greater than or equal to" Operator and enter "50" as the Amount:
 
 ![Admin UI for setting promotion conditions](../user-guide/images/promotion_conditions.png)
 
@@ -55,7 +55,7 @@ At the end of the Conditions section of the page, you can specify whether "all c
 
 ### Additional Configuration
 
-On the right-hand side of the page, you'll see options for setting additional limitations on the promotion. For this example, we stated that we wanted to limit our promotion to a specific date range. So we'll enter a Start date of "12/31/2021" at "10:00 PM" and an End date of "1/7/2020" at "11:59 PM", right before midnight. To do so, we need to enable the "Provide an end date" option by clicking the checkbox.
+On the right-hand side of the page, you'll see options for setting additional limitations on the promotion. For this example, we stated that we wanted to limit our promotion to a specific date range. So in the **Dates** section we'll enter a Start date of December 31, 2026 at 10:00 PM and an End date of January 7, 2027 at 11:59:59 PM, right before midnight. To do so, we need to turn on the "Provide an end date" toggle.
 
 ![Admin UI for setting promotion conditions](../user-guide/images/promotion_start_end_date.png)
 
@@ -83,7 +83,7 @@ The "Name", "Display name", and "Description" fields can be updated after a prom
 
 ### Offer types
 
-Commerce Core includes five different offer types. The Commerce Shipping module, if installed, provides two additional offer types. When the Offer type is changed, the "Offer" form below the list of options will be updated with configuration options specific to the offer type.
+Commerce Core includes six different offer types. The Commerce Shipping module, if installed, provides two additional offer types. When the Offer type is changed, the "Offer" form below the list of options will be updated with configuration options specific to the offer type.
 
 #### Fixed amount or Percentage off the order subtotal
 
@@ -151,15 +151,21 @@ Finally, the third section of the form, labeled, "At a discounted value", specif
 
 The Commerce Shipping module, if installed, provides these two offer types which work just like the [Fixed amount or Percentage off the order subtotal](#fixed-amount-or-percentage-off-the-order-subtotal) offer types. However, instead of applying the discount to the subtotal, the discount is applied to the Shipping amount. By entering "100" as the percentage amount, a "Free shipping" discount can be created.
 
+#### Combination offer
+
+The "Combination offer" offer type combines several of the offers above into a single promotion, for example a percentage off the order subtotal and free shipping.
+
 Other custom or contributed modules can also define additional offer types or selection criteria.
 
 ### Conditions
 
-Add conditions to a promotion to create limitations for its discount offer. Conditions are grouped into three categories: Customer, Order and Products. Like Offer Types, selecting a Condition triggers the display of a configuration form specific to that condition. Promotions can have any number of conditions. 
+Add conditions to a promotion to create limitations for its discount offer. Conditions are grouped into categories: Current request, Customer, Order and Products, plus Shipment when Commerce Shipping is installed. Like Offer Types, turning on a condition triggers the display of a configuration form specific to that condition. Promotions can have any number of conditions. 
 
-For example, here we've selected two Customer conditions. The Customer role has been set to "Authenticated user", so the customer must be logged in for the discount to apply. And the Billing address has been limited to the country of Sweden, so the discount will only apply to orders with Swedish billing addresses. "Customer email" is another Customer condition, but it has not been enabled for this example promotion.
+For example, here we've selected two Customer conditions. The Customer role has been set to "Authenticated user", so the customer must be logged in for the discount to apply. And the Billing address has been limited to the country of Sweden, so the discount will only apply to orders with Swedish billing addresses. "Customer ID", "Customer email" and "Shipping address" are other Customer conditions, but they have not been enabled for this example promotion.
 
 ![Example customer conditions](../user-guide/images/editing_promotion_customer_conditions.png)
+
+Current request conditions allow you to limit the promotion by the current currency or the role of the current user.
 
 Order conditions allow you to limit the promotion by the total price of the order, currency, or selected payment gateway.
 
@@ -183,7 +189,7 @@ Date and time constraints are applied based on the timezone of the Store, not th
 
 ### Usage limitations
 
-A promotion can also be limited based on total usage or on a per-user basis. For example, here we've limited a promotion so that it's available to only the "first 1000 customers", and each customer can only use the discount once. 
+A promotion can also be limited based on total usage or on a per-user basis, in the **Usage limits** section on the right-hand side of the page. For example, here we've limited a promotion so that it's available to only the "first 1000 customers", and each customer can only use the discount once. 
 
 ![Example customer conditions](../user-guide/images/editing_promotion_usage_limits.png)
 
@@ -203,7 +209,7 @@ See the [Promotions table](#ordering-promotions) documentation for information o
 
 ### Coupons
 
-If your promotion requires coupons, you can create and manage its coupons by clicking the "Coupons" link at the top of the promotion's Edit page:
+If your promotion requires coupons, you can create and manage its coupons by clicking the "Coupons" tab at the top of the promotion's Edit page:
 
 ![Navigate to promotion's coupons page](../user-guide/images/editing_promotion_coupons.png)
 
@@ -211,12 +217,12 @@ See [Using coupons](#using-coupons) for coupon-specific documentation.
 
 ## Delete a promotion
 
-Promotions can be deleted from the [Promotions table](#managing-promotions) or using the Promotion edit form.
+Promotions can be deleted from the operations menu of the [Promotions table](#managing-promotions) or using the Promotion edit form.
 
 ![Deleting a promotion](../user-guide/images/deleting_a_promotion.png)
 
 
-Whenever you elect to delete a promotion through the administrative UI, you will need to confirm the deletion. Deleting a promotion is an irreversible operation.
+Whenever you elect to delete a promotion through the administrative UI, a dialog asks you to confirm the deletion. Deleting a promotion is an irreversible operation.
 
 ![Deleting a promotion](../user-guide/images/deleting_a_promotion_confirmation.png)
 
@@ -228,10 +234,11 @@ Let's now imagine that you're running a new email campaign that sends customers 
 
 Setting up a coupon-based promotion is the same as creating a new promotion but with an extra step. You set up the promotion the [same way as before](#adding-a-new-promotion), but this time let's add a Coupon to the promotion.
 
-Click on the Coupon tab at the top of the page. Click on "Add Coupon", and add the following:
+Click on the Coupons tab at the top of the page. Click on "Add coupon", and add the following:
 
 * Enter a specific coupon code.
 * Mark it as enabled (active).
+* Optionally, set a start and end date for the coupon itself.
 * Set the number of times this coupon can be used as the "Total available" amount.
 * To limit the number of times this coupon can be used by a single customer, set the "Total per customer" amount.
   
@@ -239,11 +246,14 @@ Click on the Coupon tab at the top of the page. Click on "Add Coupon", and add t
 
 Finally, "Save" the coupon.
 
-Let's test this out by adding a products to a cart so that the order totals over $50. Notice that the discount is not automatically applied. It will only be applied if the coupon code is entered. During Checkout, you can see a "Coupon code" textfield in the "Order summary". Enter the coupon code for the promotion, and click the "Apply coupon" button.
+Let's test this out by adding products to a cart so that the order totals over $50. Notice that the discount is not automatically applied. It will only be applied if the coupon code is entered. During Checkout, you can see a "Coupon code" textfield below the order summary. Enter the coupon code for the promotion, and click the button next to it to apply the coupon.
+
+!!! note
+    The "Coupon code" field is the *Coupon redemption* checkout pane. If your checkout doesn't show it, edit your checkout flow at *Commerce > Configuration > Orders > Checkout flows* and move the Coupon redemption pane to the Sidebar region.
 
 ![Coupon application UI](../user-guide/images/applying_a_coupon.png)
 
-You can now see that the 10% discount has been applied to the entire order.
+You can now see that the 10% discount has been applied to the entire order. The coupon is listed under "Applied coupons", where the customer can also remove it.
 
 ![Applied coupon](../user-guide/images/applied_coupon.png)
 
@@ -292,9 +302,9 @@ We now have 100 unique coupons for our promotion:
 
 To manage promotions, select "Promotions" from the "Commerce" administrative menu.
 
-The Promotions table lists all promotions, including both enabled and disabled promotions. In the first column, the name of the promotion is displayed along with a "Disabled" label for any disabled promotions. The "Usage" column displays both the current total usage and the usage limit (or "Unlimited" when there is no usage limit). The "Per-customer limit" displays the per-customer usage limit or "Unlimited". All promotions have a start date and time that is displayed in the "Start date" column. If a promotion has an end date and time, that value is displayed in the "End date" column. 
+The Promotions table lists all promotions, including both enabled and disabled promotions. Use the filters above the table to find promotions by name, offer type, coupon code or status. The "Offer type" column displays the type of discount each promotion offers. The "Usage" column displays both the current total usage and the usage limit (or "Unlimited" when there is no usage limit). The "Per customer limit" displays the per-customer usage limit or "Unlimited". All promotions have a start date and time that is displayed in the "Start date" column. If a promotion has an end date and time, that value is displayed in the "End date" column. 
 
-Standard operations links for editing/deleting/etc. promotions are provided in the last column, labeled, "Operations".
+Standard operations links for editing/deleting/etc. promotions are provided in the last column, labeled, "Operations". For a disabled promotion, the first operation is "Enable".
 
 If your site has more than 50 promotions, they will be grouped into pages with up to 50 promotions per page.
 
@@ -302,22 +312,22 @@ If your site has more than 50 promotions, they will be grouped into pages with u
 
 ### Ordering promotions
 
-If any of your promotions have limited compatibility, then the order in which promotions are listed in the Promotions table can affect whether any particular promotion is applied to an order. [Compatibility options](#compatibility-options) can be set when editing a promotion:
+If any of your promotions have limited compatibility, then the order of the promotions can affect whether any particular promotion is applied to an order. [Compatibility options](#compatibility-options) can be set when editing a promotion:
 
 ![Promotions compatibility options](../user-guide/images/managing_promotions_compatibility.png)
 
 Whenever a cart or draft order is updated, all "available" promotions are checked, in order, for applicability to the order. A promotion is considered **available** if all the following are true:
 
 * The promotion is enabled.
-* The promotion does not have coupons. (Coupons are handled separately.)
+* The promotion does not require a coupon. (Promotions whose coupon the customer entered are added to the list.)
 * The promotion applies to the order's *type*.
 * The promotion applies to the order's *store*.
 * The current date/time is between the order's start and end dates.
 * If the promotion has any general or customer-specific usage limits, they have not yet been met.
 
-The available promotions are sorted first by *weight*, from lowest to highest, and then by name, in the case of equally weighted promotions.
+The available promotions are sorted first by *weight*, from lowest to highest, and then by name, in the case of equally weighted promotions. Promotions applied through coupons are sorted the same way, unless you turn off "Apply all promotions by sort order to enforce compatibility, including those with coupons" at *Commerce > Configuration > Orders > Promotion settings*: coupon promotions are then applied first.
 
-To view the **weight** of promotions, click the "Show row weights" link at the top of the Promotions table, on the right:
+To change the order, click the "Reorder" tab of the Promotions page. It lists the enabled promotions in their current order. To view the **weight** of promotions, click the "Show row weights" link at the top of the table, on the right:
 
 ![Show promotion weights](../user-guide/images/managing_promotions_show_weights.png)
 
