@@ -20,7 +20,7 @@ Clone the latest release tag into a temp directory (`SCRATCH=$(mktemp -d)`, or t
 ```bash
 project=commerce   # or commerce_shipping, commerce_stripe, ... for contrib pages
 tag=$(curl -s "https://updates.drupal.org/release-history/$project/current" \
-  | python3 -c "import re,sys,xml.etree.ElementTree as ET; print(next(r.findtext('version') for r in ET.parse(sys.stdin).iter('release') if r.findtext('status')=='published' and re.fullmatch(r'(\d+\.x-)?\d+\.\d+(\.\d+)?', r.findtext('version'))))")
+  | python3 -c "import re,sys,xml.etree.ElementTree as ET; v=[r.findtext('version') for r in ET.parse(sys.stdin).iter('release') if r.findtext('status')=='published']; print(next((x for x in v if re.fullmatch(r'(\d+\.x-)?\d+\.\d+(\.\d+)?', x)), v[0]))")
 git clone -q --depth 1 --branch "$tag" "https://git.drupalcode.org/project/$project.git" "$SCRATCH/$project-$tag"
 ```
 
