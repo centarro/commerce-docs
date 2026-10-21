@@ -55,8 +55,6 @@ Finally, you can create products! [Follow the directions in this section on the 
 
 ## Configure product attributes
 
-! We need updated screenshots. Feel free to follow the *edit this page* link and contribute.
-
 ![Product Attribute Entity Relationships](./images/tshirt_drupalcon.png)
 
 Imagine you need to sell a DrupalCon t-shirt. This t-shirt comes in
@@ -70,11 +68,11 @@ attribute values, belonging to the mentioned attributes. The combination of attr
 
 
 For our t-shirt we need two attributes: color and size. Let's start by
-creating the color attribute. Go to the Drupal Commerce administration page and visit the **Product Attributes** link.
+creating the color attribute. Go to *Commerce > Configuration > Products > Product attributes* (`/admin/commerce/product-attributes`).
 
 ![Product attributes from administration page](./images/commerce-configuration-attributes.png)
 
-Click on the **Add product attribute** link to create an attribute.
+Click **Add product attribute** to create an attribute. Choose how it is displayed on the add to cart form, and check the product variation types that use it.
 
 ![Product Attribute Creation](./images/attribute_create_02.png)
 
@@ -110,8 +108,8 @@ Product attributes are so much more than a word. Often times they
 represent a differentiation between products that is useful to call out
 visually for customers. The fieldable attribute value lets the
 information architect decide what best describes this attribute. Like
-any other fieldable entity, you can locate the list of attribute bundles
-and click edit fields:
+any other fieldable entity, you can locate the list of attribute bundles,
+open the operations menu of the attribute and click **Manage fields**:
 
 ``/admin/commerce/product-attributes``
 
@@ -149,64 +147,21 @@ variation type and make the ``color`` attribute optional by following
 these steps:
 
 1. Go to ``/admin/commerce/config/product-variation-types``
-2. Click the drop-down next to the variation type you want and click
-   "manage fields" 
-   
-   ![](./images/product_variation_manage_fields.gif)
-3. Un-select the "required" checkbox to make the attribute optional.
+2. Open the operations menu of the variation type you want and click
+   **Manage fields**.
 
-![Un-select the required checkbox](./images/attribute_optional.png)
+   ![](./images/product_variation_manage_fields.png)
+3. Edit the attribute field and turn off **Required field** to make the attribute optional.
+
+![Turn off Required field](./images/attribute_optional.png)
 
 ## Manage product structure
 
 This guide assumes you have created your product attributes, or understand how they are used after reading how to [configure product attributes](#configure-product-attributes)
 
-### Create a product variation type
+### Create a product
 
-Following the example of having a t-shirt, the first step is to create a new product variation type for our t-shirt. Go to ``admin/commerce/config/product-variation-types``
-
-![Configuration form](./images/commerce-configuration-variation-types.png)
-
-Click **Add product variation type**
-
-![Click on Add product variation type](./images/product-variation-1.png)
-
-This will open a form.
-
-![Fill product variation form](./images/product-variation-2.png)
-
-Now we will add image field to our product variation.
-
-Click on **Manage fields** and then click on **Add field**
-
-![Click Add field under Manage fields tab](./images/product-variation-3.png)
-
-Now select field type Image under *Reference*.
-
-![Create an image field](./images/product-variation-4.png)
-
-Then click on **Save and continue**. Then save the settings for image field.
-
-In these steps we added an image field to the variation. This allows us to upload a picture of the t-shirt based on its color. As the customer chooses a color to purchase, it will show that image.
-
-### Create a product type
-
-Next, we need to create our product type for our t-shirts. Go to `admin/commerce/config/product-types`.
-
-![Click on Product types](./images/commerce-configuration-product-types.png)
-
-Click on **Add product type**
-
-![Click on Add product type](./images/product-type-1.png)
-
-This will open a form.
-
-![Fill product type form](./images/product-type-2.png)
-
-Save settings and this will create our T-shirt product type.
-## Create a product
-
-To create a product go to the **Products** management page from the **Commerce** item in the administrative menu. Click on "Add Product." If you have multiple product types, you will need to select the type of product that you are creating.
+To create a product go to the **Products** management page from the **Commerce** item in the administrative menu. Click on **Add product**. If you have multiple product types, you will need to select the type of product that you are creating.
 
 ![Product select](./images/products-landing.png)
 
@@ -223,21 +178,21 @@ On the right side of the form we can control additional information about the pr
 
 By setting the URL alias to `/supreme-graphic-t` the product can be visited at `www.example.com/supreme-graphic-t` rather than `www.example.com/product/1234`
 
-Next we create our variations for the product. The variations are the options available for purchase. Provide a **SKU**, **Price**, and other required fields. When done, click on **Create variation**
-
-![Variation](./images/add-product-variation.png)
-
-Click **Add new variation** to add a new variation. Follow the previous process and repeat until satisfied that all purchasable options are displayed.
-
-![Variation edit](./images/add-product-new-variaition.png)
-
-Finally, click **Save** to create the product.
+The variations of a product are managed on its **Variations** tab. To go there right after creating the product, open the menu next to **Save** and click **Save and add variations**.
 
 ![Save](./images/add-product-save.png)
 
+The variations are the options available for purchase. On the **Variations** tab, click **Add variation**. Provide a **SKU**, **Price**, the attribute values and other required fields, then click **Save**.
+
+![Variation](./images/add-product-variation.png)
+
+Repeat until all purchasable options are listed on the **Variations** tab. Drag them to change the order they are listed in, and click **Save** to keep it.
+
+![Variation edit](./images/add-product-new-variaition.png)
+
 ## Edit a product 
 
-Products can be edited by going to the products overview page and selecting to edit an existing product. When the products are in the table there will be operation links which allow you to edit the product.
+Products can be edited by going to the products overview page and clicking the **Edit** button of an existing product.
 
 ![Edit](./images/edit-product.png)
 
@@ -245,23 +200,22 @@ The form will allow you to modify the existing information for the product.
 
 ![Edit](./images/edit-product-top.png)
 
-To manage variations, you just need to click **Edit** for its entry.
+To manage variations, open the product's **Variations** tab and click **Edit** for the variation.
 
 ![Edit](./images/edit-product-variations.png)
 
 ## Delete a product
 
 Sometimes you may wish to delete a product or one of its variations. Before deleting a product or 
-variation, consider unpublishing the product or disabling the variation.
+variation, consider unpublishing the product or the variation.
 
-### Disabling a product variation
+### Unpublishing a product variation
 
 This will prevent the product variation from being displayed or purchased, but will leave it in the system 
-should you want to re-enable it at a later point.
+should you want to publish it again at a later point.
  
-A product's variation is disabled while editing the product. Click on the variation's **Edit** button. 
-Locate the **Active** checkbox on the Variation form and uncheck it. Click **Update Variation** to 
-complete the process. The product variation will no longer be available to purchase on your site.
+On the product's **Variations** tab, click the variation's **Edit** button. Turn off **Published** at the
+top of the form and click **Save**. The product variation will no longer be available to purchase on your site.
 
 ![Disable](./images/disable-variation.png)
 
@@ -276,7 +230,7 @@ For example, observe the differences between these two URLs in the Drupal Commer
 Standard Product Page: https://commerce.demo.centarro.io/products/tale-two-cities-charles-dickens
 Deep Linked Variation: https://commerce.demo.centarro.io/products/tale-two-cities-charles-dickens?v=35
 
-You can either extract the variation ID from its edit form URL or select a desired variation on the front end.
+You can either copy the link with the icon next to the variation on the product's **Variations** tab, or select a desired variation on the front end.
 The query parameter will automatically be appended to the URL as you select values on the Add to Cart form.
 
 By deep linking to specific product variations, you can satisfy the requirements for submitting products to
@@ -285,15 +239,15 @@ or on their own websites.
 
 ### Deleting a product variation
 
-A product's variation is deleted while editing the product. Click on the variation's **Remove** button. 
-A confirmation form will display. Click **Remove** once more to confirm.
+On the product's **Variations** tab, open the operations menu of the variation and click **Delete**.
+A confirmation page will display. Click **Delete** once more to confirm.
 
 ![Remove](./images/delete-variation.png)
 
 ### Deleting entire product
 
-A product can be deleted by editing it. At the bottom of the form there is a **Delete** link, which 
-will display a confirmation form. Click **Delete** once more to confirm deletion. All variations will 
+A product can be deleted by editing it. Open the menu next to **Save** and click **Delete**, which 
+will display a confirmation page. Click **Delete** once more to confirm deletion. All variations will 
 also be deleted.
 
 ![Delete](./images/delete-product-product.png)

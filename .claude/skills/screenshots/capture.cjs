@@ -8,6 +8,7 @@
 //     "fullPage": true,                           // optional, without selector
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
+//                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
 //                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }] }
 //   Autocomplete: fill, wait, then press ArrowDown and Enter to pick the first suggestion.
 const { chromium } = require('playwright');
@@ -33,6 +34,8 @@ const path = require('path');
     for (const a of shot.actions || []) {
       if (a.click) await page.click(a.click);
       if (a.fill) await page.fill(a.fill, a.value);
+      if (a.select) await page.selectOption(a.select, a.label ? { label: a.label } : a.value);
+      if (a.type) await page.keyboard.type(a.type);
       if (a.hover) await page.hover(a.hover);
       if (a.press) await page.keyboard.press(a.press);
       if (a.wait) await page.waitForTimeout(a.wait);

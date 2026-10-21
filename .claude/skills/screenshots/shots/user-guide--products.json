@@ -1,0 +1,621 @@
+[
+ {
+  "file": "commerce-configuration-attributes.png",
+  "url": "/admin/commerce/config",
+  "selector": "div.panel:has-text('Manage your product attributes')",
+  "padding": 8,
+  "actions": [
+   {
+    "hover": "a:has-text('Product attributes') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "attribute_create_02.png",
+  "url": "/admin/commerce/product-attributes/add",
+  "selector": "form.commerce-product-attribute-form",
+  "viewport": {
+   "width": 900
+  },
+  "actions": [
+   {
+    "fill": "#edit-label",
+    "value": "Color"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "attribute_create_03.png",
+  "url": "/admin/commerce/product-attributes/manage/color",
+  "selector": "form.commerce-product-attribute-form",
+  "viewport": {
+   "width": 900,
+   "height": 1500
+  }
+ },
+ {
+  "file": "attribute_create_04.png",
+  "url": "/admin/commerce/config/product-variation-types/t_shirt/edit",
+  "selector": "form.commerce-product-variation-type-form",
+  "viewport": {
+   "width": 900
+  }
+ },
+ {
+  "file": "attribute_create_05.png",
+  "url": "/admin/commerce/products",
+  "selector": "form.commerce-product-variation-form",
+  "viewport": {
+   "height": 1300
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:text-is('Variations')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:has-text('Add variation') >> visible=true"
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "fill": "#edit-sku-0-value",
+    "value": "SUPREME-GRAPHIC-WHITE-LARGE"
+   },
+   {
+    "fill": "#edit-price-0-number",
+    "value": "10.00"
+   },
+   {
+    "fill": "#edit-weight-0-number",
+    "value": "0.4"
+   },
+   {
+    "select": "#edit-price-0-currency-code",
+    "value": "USD"
+   },
+   {
+    "select": "#edit-attribute-color",
+    "label": "White"
+   },
+   {
+    "select": "#edit-attribute-size",
+    "label": "Large"
+   },
+   {
+    "select": "#edit-weight-0-unit",
+    "value": "lb"
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "attribute_create_01.png",
+  "url": "/admin/commerce/product-attributes",
+  "viewport": {
+   "height": 500
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Color') .dropbutton__toggle"
+   },
+   {
+    "wait": 300
+   }
+  ]
+ },
+ {
+  "file": "attribute_edit_01.png",
+  "url": "/supreme-graphic-t",
+  "selector": "form[class*='add-to-cart']",
+  "padding": 24,
+  "maxHeight": 165
+ },
+ {
+  "file": "attribute_optional.png",
+  "url": "/admin/commerce/config/product-variation-types/t_shirt/edit/fields/commerce_product_variation.t_shirt.attribute_color",
+  "selector": ".js-form-item-required",
+  "padding": 24,
+  "viewport": {
+   "width": 560
+  }
+ },
+ {
+  "file": "product_variation_manage_fields.png",
+  "url": "/admin/commerce/config/product-variation-types",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('T-shirt') .dropbutton__toggle"
+   },
+   {
+    "wait": 300
+   },
+   {
+    "hover": "tr:has-text('T-shirt') a:text-is('Manage fields') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "commerce-configuration-variation-types.png",
+  "url": "/admin/commerce/config",
+  "selector": "div.panel:has-text('Manage your product attributes')",
+  "padding": 8,
+  "actions": [
+   {
+    "hover": "a:has-text('Product variation types') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "product-variation-1.png",
+  "url": "/admin/commerce/config/product-variation-types",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "hover": "a:has-text('Add product variation type') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "product-variation-2.png",
+  "url": "/admin/commerce/config/product-variation-types/add",
+  "selector": "form.commerce-product-variation-type-form",
+  "viewport": {
+   "width": 900
+  },
+  "actions": [
+   {
+    "fill": "#edit-label",
+    "value": "T-shirt"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "#edit-traits-purchasable-entity-shippable"
+   },
+   {
+    "select": "#edit-orderitemtype",
+    "label": "Default"
+   },
+   {
+    "click": "#edit-attributes-color"
+   },
+   {
+    "click": "#edit-attributes-size"
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "product-variation-3.png",
+  "url": "/admin/commerce/config/product-variation-types/t_shirt/edit/fields",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "hover": "a:has-text('Create a new field') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "product-variation-4.png",
+  "url": "/admin/commerce/config/product-variation-types/t_shirt/edit/fields/add-field",
+  "selector": ".ui-dialog:visible",
+  "viewport": {
+   "height": 1000
+  },
+  "actions": [
+   {
+    "click": "text=Upload any type of files"
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "fill": ".ui-dialog input[name='label']",
+    "value": "Image"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": ".ui-dialog input[type=radio][value=image]"
+   },
+   {
+    "wait": 300
+   },
+   {
+    "click": ".ui-dialog-title"
+   }
+  ]
+ },
+ {
+  "file": "commerce-configuration-product-types.png",
+  "url": "/admin/commerce/config",
+  "selector": "div.panel:has-text('Manage your product attributes')",
+  "padding": 8,
+  "actions": [
+   {
+    "hover": "a:has-text('Product types') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "product-type-1.png",
+  "url": "/admin/commerce/config/product-types",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "hover": "a:has-text('Add product type') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "product-type-2.png",
+  "url": "/admin/commerce/config/product-types/add",
+  "selector": "form.commerce-product-type-form",
+  "viewport": {
+   "width": 900,
+   "height": 1200
+  },
+  "actions": [
+   {
+    "fill": "#edit-label",
+    "value": "T-shirt"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "fill": "#edit-description",
+    "value": "A graphic t-shirt, in several colors and sizes."
+   },
+   {
+    "select": "#edit-variation-type-action",
+    "value": "use_existing"
+   },
+   {
+    "click": "#edit-variationtypes-t-shirt"
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "products-landing.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 700
+  },
+  "actions": [
+   {
+    "hover": "a:has-text('Add product') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "add-product-first.png",
+  "url": "/product/add/t_shirt",
+  "selector": "div.layout-region-node-main",
+  "padding": 16,
+  "actions": [
+   {
+    "fill": "#edit-title-0-value",
+    "value": "Supreme Graphics Shirt"
+   },
+   {
+    "click": ".ck-editor__editable"
+   },
+   {
+    "type": "A shirt of supreme quality and a supreme graphic in multiple sizes and colors."
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "add-product-second.png",
+  "url": "/product/add/t_shirt",
+  "selector": "#gin_sidebar",
+  "maxHeight": 800,
+  "actions": [
+   {
+    "click": "label:has-text('The Centorium New York')"
+   },
+   {
+    "click": "#edit-path-settings summary"
+   },
+   {
+    "wait": 300
+   },
+   {
+    "fill": "#edit-path-0-alias",
+    "value": "/supreme-graphic-t"
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "add-product-save.png",
+  "url": "/product/add/t_shirt",
+  "viewport": {
+   "height": 400
+  },
+  "actions": [
+   {
+    "fill": "#edit-title-0-value",
+    "value": "Supreme Graphics Shirt"
+   },
+   {
+    "click": ".gin-more-actions__trigger"
+   },
+   {
+    "wait": 500
+   },
+   {
+    "hover": "input[value='Save and add variations'] >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "add-product-variation.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 700
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:text-is('Variations')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:has-text('Add variation') >> visible=true"
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "fill": "#edit-sku-0-value",
+    "value": "SUPREME-GRAPHIC-WHITE-LARGE"
+   },
+   {
+    "fill": "#edit-price-0-number",
+    "value": "10.00"
+   },
+   {
+    "fill": "#edit-weight-0-number",
+    "value": "0.4"
+   },
+   {
+    "select": "#edit-price-0-currency-code",
+    "value": "USD"
+   },
+   {
+    "select": "#edit-attribute-color",
+    "label": "White"
+   },
+   {
+    "select": "#edit-attribute-size",
+    "label": "Large"
+   },
+   {
+    "select": "#edit-weight-0-unit",
+    "value": "lb"
+   },
+   {
+    "click": ".meta-sidebar__trigger"
+   },
+   {
+    "wait": 500
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "add-product-new-variaition.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:text-is('Variations')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "hover": "a:has-text('Add variation') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "edit-product.png",
+  "url": "/admin/commerce/products?title=Supreme",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "hover": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "edit-product-top.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 900
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "file": "edit-product-variations.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:text-is('Variations')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "hover": "tr:has-text('GREY-SMALL') a:text-is('Edit') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "disable-variation.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 500
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:text-is('Variations')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "tr:has-text('GREY-SMALL') a:text-is('Edit')"
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "click": ".meta-sidebar__trigger"
+   },
+   {
+    "wait": 500
+   },
+   {
+    "click": "label:has-text('Published')"
+   },
+   {
+    "click": "h1"
+   }
+  ]
+ },
+ {
+  "file": "delete-variation.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 600
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "a:text-is('Variations')"
+   },
+   {
+    "wait": 1000
+   },
+   {
+    "click": "tr:has-text('GREY-SMALL') .dropbutton__toggle"
+   },
+   {
+    "wait": 300
+   },
+   {
+    "hover": "tr:has-text('GREY-SMALL') a:text-is('Delete') >> visible=true"
+   }
+  ]
+ },
+ {
+  "file": "delete-product-product.png",
+  "url": "/admin/commerce/products",
+  "viewport": {
+   "height": 500
+  },
+  "actions": [
+   {
+    "click": "tr:has-text('Supreme Graphics Shirt') a:text-is('Edit')"
+   },
+   {
+    "wait": 1500
+   },
+   {
+    "click": ".gin-more-actions__trigger"
+   },
+   {
+    "wait": 500
+   }
+  ]
+ }
+]

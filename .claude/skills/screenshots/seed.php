@@ -101,3 +101,92 @@ foreach ($orders as [$name, $full_name, $placed, $skus, $address]) {
 
 // The dashboard shots expand an inbox message, which marks it as read.
 \Drupal::database()->update('commerce_inbox_message')->fields(['state' => 'unread'])->execute();
+
+// The products page walks through a T-shirt with Color and Size attributes,
+// set up as the attribute, variation type and product type forms would.
+$entity_type_manager = \Drupal::entityTypeManager();
+$attribute_storage = $entity_type_manager->getStorage('commerce_product_attribute');
+$attributes = [
+  'color' => ['Color', 'select', ['Grey', 'White', 'Black']],
+  'size' => ['Size', 'select', ['Small', 'Medium', 'Large', 'Extra Large']],
+];
+foreach ($attributes as $id => [$label, $element_type, $values]) {
+  if ($attribute_storage->load($id)) {
+    continue;
+  }
+  $attribute_storage->create(['id' => $id, 'label' => $label, 'elementType' => $element_type])->save();
+  foreach ($values as $weight => $name) {
+    $entity_type_manager->getStorage('commerce_product_attribute_value')->create(['attribute' => $id, 'name' => $name, 'weight' => $weight])->save();
+  }
+}
+// The "Adding fields to attributes" section: a Hex value field on colors.
+if (!\Drupal\field\Entity\FieldStorageConfig::loadByName('commerce_product_attribute_value', 'field_hex_value')) {
+  \Drupal\field\Entity\FieldStorageConfig::create(['field_name' => 'field_hex_value', 'entity_type' => 'commerce_product_attribute_value', 'type' => 'string'])->save();
+  \Drupal\field\Entity\FieldConfig::create(['field_name' => 'field_hex_value', 'entity_type' => 'commerce_product_attribute_value', 'bundle' => 'color', 'label' => 'Hex value'])->save();
+  commerce_get_entity_display('commerce_product_attribute_value', 'color', 'form')->setComponent('field_hex_value', ['type' => 'string_textfield'])->save();
+  $hex = ['Grey' => '#808080', 'White' => '#ffffff', 'Black' => '#000000'];
+  foreach ($entity_type_manager->getStorage('commerce_product_attribute_value')->loadByProperties(['attribute' => 'color']) as $value) {
+    $value->set('field_hex_value', $hex[$value->getName()])->save();
+  }
+}
+$variation_type_storage = $entity_type_manager->getStorage('commerce_product_variation_type');
+if (!$variation_type_storage->load('t_shirt')) {
+  $order_item_types = $entity_type_manager->getStorage('commerce_order_item_type')->loadMultiple();
+  $variation_type = $variation_type_storage->create([
+    'id' => 't_shirt',
+    'label' => 'T-shirt',
+    'orderItemType' => isset($order_item_types['default']) ? 'default' : array_key_first($order_item_types),
+    'generateTitle' => TRUE,
+  ]);
+  $variation_type->save();
+  $trait_manager = \Drupal::service('plugin.manager.commerce_entity_trait');
+  $trait_manager->installTrait($trait_manager->createInstance('purchasable_entity_shippable'), 'commerce_product_variation', 't_shirt');
+  $variation_type->setTraits(['purchasable_entity_shippable'])->save();
+  foreach ($attribute_storage->loadMultiple(['color', 'size']) as $attribute) {
+    \Drupal::service('commerce_product.attribute_field_manager')->createField($attribute, 't_shirt');
+  }
+}
+$product_type_storage = $entity_type_manager->getStorage('commerce_product_type');
+if (!$product_type_storage->load('t_shirt')) {
+  $product_type = $product_type_storage->create([
+    'id' => 't_shirt',
+    'label' => 'T-shirt',
+    'variationTypes' => ['t_shirt'],
+    'multipleVariations' => TRUE,
+    'injectVariationFields' => TRUE,
+  ]);
+  $product_type->save();
+  commerce_product_add_body_field($product_type);
+  // Multiple variations are managed on the Variations tab, not in the form.
+  commerce_get_entity_display('commerce_product', 't_shirt', 'form')->removeComponent('variations')->save();
+}
+// The product the "Edit a product" and "Delete a product" sections show.
+$product_storage = $entity_type_manager->getStorage('commerce_product');
+if (!$product_storage->loadByProperties(['title' => 'Supreme Graphics Shirt'])) {
+  $value_ids = [];
+  foreach ($entity_type_manager->getStorage('commerce_product_attribute_value')->loadMultiple() as $value) {
+    $value_ids[$value->getAttributeId()][$value->getName()] = $value->id();
+  }
+  $variations = [];
+  foreach ([['Grey', 'Small'], ['Black', 'Medium']] as [$color, $size]) {
+    $variation = $entity_type_manager->getStorage('commerce_product_variation')->create([
+      'type' => 't_shirt',
+      'sku' => strtoupper("SUPREME-GRAPHIC-$color-$size"),
+      'price' => new \Drupal\commerce_price\Price('10.00', 'USD'),
+      'attribute_color' => $value_ids['color'][$color],
+      'attribute_size' => $value_ids['size'][$size],
+      'weight' => ['number' => '0.4', 'unit' => 'lb'],
+    ]);
+    $variation->save();
+    $variations[] = $variation;
+  }
+  $product_storage->create([
+    'type' => 't_shirt',
+    'title' => 'Supreme Graphics Shirt',
+    'uid' => 1,
+    'body' => ['value' => '<p>A shirt of supreme quality and a supreme graphic in multiple sizes and colors.</p>', 'format' => 'basic_html'],
+    'stores' => [1],
+    'variations' => $variations,
+    'path' => ['alias' => '/supreme-graphic-t'],
+  ])->save();
+}
