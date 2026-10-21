@@ -190,3 +190,76 @@ if (!$product_storage->loadByProperties(['title' => 'Supreme Graphics Shirt'])) 
     'path' => ['alias' => '/supreme-graphic-t'],
   ])->save();
 }
+
+// The promotions page: a few promotions for the table, and a coupon promotion
+// for the checkout shots. Kickstart doesn't enable coupon redemption at checkout.
+$flow = $entity_type_manager->getStorage('commerce_checkout_flow')->load('shipping');
+$flow_configuration = $flow->get('configuration');
+$flow_configuration['panes']['coupon_redemption'] = ['step' => '_sidebar', 'weight' => 10, 'allow_multiple' => FALSE];
+$flow->set('configuration', $flow_configuration)->save();
+$promotion_storage = $entity_type_manager->getStorage('commerce_promotion');
+$order_total = fn ($amount) => ['target_plugin_id' => 'order_total_price', 'target_plugin_configuration' => ['operator' => '>=', 'amount' => ['number' => $amount, 'currency_code' => 'USD']]];
+$promotions = [
+  '10% off on $50 or more orders' => [
+    'display_name' => '10% Off Storewide Sale',
+    'offer' => ['target_plugin_id' => 'order_percentage_off', 'target_plugin_configuration' => ['percentage' => '0.10']],
+    'conditions' => [$order_total('50')],
+    'start_date' => '2026-10-01T00:00:00',
+    'end_date' => '2027-01-07T23:59:59',
+  ],
+  'Free shipping over $100' => [
+    'display_name' => 'Free shipping',
+    'offer' => ['target_plugin_id' => 'shipment_percentage_off', 'target_plugin_configuration' => ['percentage' => '1']],
+    'conditions' => [$order_total('100')],
+    'start_date' => '2026-09-01T00:00:00',
+  ],
+  'Two per customer' => [
+    'offer' => ['target_plugin_id' => 'order_fixed_amount_off', 'target_plugin_configuration' => ['amount' => ['number' => '5', 'currency_code' => 'USD']]],
+    'usage_limit' => 1000,
+    'usage_limit_customer' => 2,
+    'start_date' => '2026-06-02T00:00:00',
+    'status' => FALSE,
+  ],
+  'Newsletter 10% off' => [
+    'display_name' => 'Newsletter discount',
+    'offer' => ['target_plugin_id' => 'order_percentage_off', 'target_plugin_configuration' => ['percentage' => '0.10']],
+    'conditions' => [$order_total('50')],
+    'compatibility' => 'none',
+    'start_date' => '2026-10-01T00:00:00',
+  ],
+];
+foreach ($promotions as $name => $values) {
+  if ($existing = $promotion_storage->loadByProperties(['name' => $name])) {
+    // The coupon shots disable the storewide promotion: turn it back on.
+    reset($existing)->setEnabled($values['status'] ?? TRUE)->save();
+    continue;
+  }
+  $promotion_storage->create($values + [
+    'name' => $name,
+    'order_types' => ['default'],
+    'stores' => [1],
+    'status' => TRUE,
+  ])->save();
+}
+$coupon_storage = $entity_type_manager->getStorage('commerce_promotion_coupon');
+[$newsletter] = array_values($promotion_storage->loadByProperties(['name' => 'Newsletter 10% off']));
+if (!$coupon_storage->loadEnabledByCode('SAVE-10')) {
+  $coupon = $coupon_storage->create(['code' => 'SAVE-10', 'promotion_id' => $newsletter->id(), 'usage_limit_customer' => 1, 'status' => TRUE]);
+  $coupon->save();
+  $newsletter->addCoupon($coupon)->save();
+}
+// The bulk generation shot creates coupons: delete the previous run's.
+$generated = $coupon_storage->getQuery()->accessCheck(FALSE)->condition('code', 'SAVE-10-%', 'LIKE')->execute();
+$coupon_storage->delete($coupon_storage->loadMultiple($generated));
+// The admin's cart, over $50 and without coupons.
+$cart_provider = \Drupal::service('commerce_cart.cart_provider');
+$admin = \Drupal\user\Entity\User::load(1);
+$store = Store::load(1);
+if ($cart = $cart_provider->getCart('default', $store, $admin)) {
+  $cart->delete();
+  $cart_provider->clearCaches();
+}
+$cart = $cart_provider->createCart('default', $store, $admin);
+foreach (['level-headphones', 'UT-KnitHat-Green'] as $sku) {
+  \Drupal::service('commerce_cart.cart_manager')->addEntity($cart, $variation_storage->loadBySku($sku));
+}
