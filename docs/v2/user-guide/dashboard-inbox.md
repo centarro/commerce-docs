@@ -12,7 +12,7 @@ Drupal Commerce's store dashboard was [added in the 2.37 release](https://www.ce
 
 Out of the box, the dashboard highlights a basic set of sales metrics. These include new carts, placed orders, gross sales, and average order value within a given timeframe. You can toggle the period or compare to the prior period, and sites that are multi-store will have the ability to filter everything by store. (Multi-currency sites will see gross sales and average order value in each supported currency.)
 
-Some key metrics tracking store performance will require an external web analytics integration. (For example, you can't calculate a conversion rate without knowing how many visitors you had.) The summary reports highlight the most popular products and promotions driving sales in the store. While the feature set may expand over time, it started with these meaningful metrics that can be derived solely from order details in the site's database.
+Some key metrics tracking store performance will require an external web analytics integration. (For example, you can't calculate a conversion rate without knowing how many visitors you had.) The [Google Tag](../developer-guide/contrib/google-tag.md) module sends product views, cart changes, checkouts and purchases to Google Analytics 4 or Google Tag Manager. The summary reports highlight the most popular products and promotions driving sales in the store. While the feature set may expand over time, it started with these meaningful metrics that can be derived solely from order details in the site's database.
 
 ### Configuring sales dashboard elements
 
