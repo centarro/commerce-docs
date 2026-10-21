@@ -8,6 +8,9 @@ The [Google Tag] module (2.x) adds the Google tag (`gtag.js`) and Google Tag Man
 
 This page covers google_tag 2.0.9.
 
+!!! note "Contributed module"
+    Google Tag isn't maintained by the Drupal Commerce maintainers. Report bugs and feature requests in its [issue queue](https://www.drupal.org/project/issues/google_tag).
+
 ## Installation and configuration
 
 ```bash
