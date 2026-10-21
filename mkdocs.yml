@@ -73,7 +73,7 @@ nav:
         - Getting started: 'v2/developer-guide/activity-log/getting-started.md'
         - Code Recipes: 'v2/developer-guide/activity-log/code-recipes.md'
       - Shipping: 'v2/developer-guide/shipping/getting-started.md'
-      - Contributed modules:
+      - Community modules:
         - Google Tag: 'v2/developer-guide/contrib/google-tag.md'
       - Recurring:
         - Getting started: 'v2/developer-guide/recurring/getting-started.md'
