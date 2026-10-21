@@ -1,0 +1,4 @@
+[
+ {"file": "dashboard.png", "url": "/admin/commerce", "viewport": {"height": 1060}, "actions": [{"click": "text=This month"}, {"wait": 1500}]},
+ {"file": "inbox-message.png", "url": "/admin/commerce", "selector": ".inbox-message--wrapper:has-text('Drupal Answers')", "viewport": {"width": 1200}, "actions": [{"click": "text=Bookmark the Drupal Answers"}, {"wait": 800}]}
+]

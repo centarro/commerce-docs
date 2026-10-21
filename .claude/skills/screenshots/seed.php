@@ -98,3 +98,6 @@ foreach ($orders as [$name, $full_name, $placed, $skus, $address]) {
     $order->save();
   }
 }
+
+// The dashboard shots expand an inbox message, which marks it as read.
+\Drupal::database()->update('commerce_inbox_message')->fields(['state' => 'unread'])->execute();
