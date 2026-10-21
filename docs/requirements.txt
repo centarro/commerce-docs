@@ -3,6 +3,7 @@ mkdocs==1.6.1
 mkdocs-material==9.7.7
 mkdocs-redirects==1.2.3
 mkdocs-exclude-search==0.6.7
-mkdocs-glightbox==0.5.2
+# 0.5.2 drops every image from the pages: keep 0.5.1 until a fixed release.
+mkdocs-glightbox==0.5.1
 mkdocs-open-in-new-tab==1.0.8
 mkdocs-include-dir-to-nav==1.2.0
