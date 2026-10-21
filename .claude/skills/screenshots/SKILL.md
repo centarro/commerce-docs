@@ -67,6 +67,14 @@ Lessons from the pages already done:
 - Gin turns boolean checkboxes into toggles, and moves some fields to the sidebar
   (e.g. "Make this the default store."). Fix the text when it says "check the box" or
   "at the bottom of the form".
+- Many order screens open in a dialog: click the button on the page, then capture
+  `.ui-dialog:visible`.
+- Autocompletes: `fill`, `wait`, then `press` ArrowDown and Enter (clicking a suggestion
+  doesn't select it).
+- Don't hardcode entity IDs in URLs: they differ per site. Start from a listing and click
+  through (e.g. `tr:has-text('jane.doe') a:text-is('View')`).
+- Status messages are hidden in captures, so a failed submit looks like a normal form.
+  If a shot creates something (an order, a customer), make `seed.php` delete it first.
 
 ## 4. Capture and review
 

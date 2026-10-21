@@ -1,32 +1,44 @@
 ## Create an order
 
-Orders can be created for customers in the administrative areas. This can be done by going to the **Orders** management page from the **Commerce** page from the administrative toolbar. Click on **Create  a new order**.
+Orders can be created for customers in the administrative areas. This can be done by going to the **Orders** management page from the **Commerce** page from the administrative toolbar. Click on **Create a new order**.
 
 ![Orders](images/order-overview.png)
 
-When creating an order you select the store it is for and specify a customer.
+When creating an order you select the store it is for and specify a customer. To record an order that was placed earlier, for example over the phone, turn on **Place the order on a different date** and pick the date.
 
-![initial](images/create-order.png)
+![Create a new order](images/create-order.png)
 
-Instead of re-using a customer, a new one can be created.
+Instead of re-using a customer, a new one can be created from an email address. A password is generated, unless you turn off **Generate password**, and the customer can be notified of their new account.
 
-![create](images/create-order-new-customer.png)
+![New customer](images/create-order-new-customer.png)
 
-Click **Create**. You will then be able to provide information about the order. The first items will allow you to provide billing information for the order. You can also specify if the order is a cart or not. By marking the order as a cart, the customer will be able to review the cart and go through the checkout with it.
+Click **Create**. The order is created as a draft, and you are taken to its page, where it can be completed one section at a time:
 
-![top](images/order-create-top.png)
+- **Billing information**: add the customer's billing address. Once it is set, the **Add payment** link takes you to the order's **Payments** tab, to record a payment.
+- **Shipping information** (with Commerce Shipping): add the shipping address and choose a shipping method.
+- **Add order items**: add the products the customer is purchasing.
+- **Order details**: change the contact email, or mark the order as a cart. By marking the order as a cart, the customer will be able to review the cart and go through the checkout with it.
 
-Next, order items can be created. The order items are the products the customer is purchasing.
+The **Reassign order** and **Manage coupons** buttons let you change the order's customer, and apply coupons.
 
-![order-items](images/create-order-order-items.png)
+![Draft order](images/order-draft.png)
 
-Once satisfied, click **Save**
+Click **Add order items** to open the order items dialog. Search for a product variation by title or SKU, and click **Next**. Set the quantity, and optionally turn on **Override the unit price** to set a custom price, then click **Add**. Repeat for each product, then click **Save**.
 
+![Add order items](images/create-order-order-items.png)
+
+The order details are edited in a dialog as well, from the **Edit** link of the **Order details** sidebar section:
+
+![Order details](images/order-details.png)
+
+Once added, each order item can be edited, deleted or duplicated from the order items list. When the order is complete, click **Place order**.
+
+![Order with items](images/order-view.png)
 
 Prices, promotions and taxes are calculated automatically when the order is refreshed. To change what the customer pays, edit the order items, or apply a promotion or coupon to the order.
 
 ## Viewing carts
-Carts are created whenever a customer submits an Add to Cart form or when an admin begins an order via the _Create order_ link on the _Orders_ page and checks the _Cart_ checkbox before saving the order. Carts have an order ID but no order number, as those are not generated until the order is placed. You can view the current carts in your store by navigating to the Commerce > Orders page and clicking the _Carts_ tab. From the _Carts_ tab you can view, edit, reassign, add payment information to, or delete a cart using the dropdown operations menu based on your account's permissions. 
+Carts are created whenever a customer submits an Add to Cart form or when an admin creates an order via the _Create a new order_ button on the _Orders_ page and turns on _Cart_ in its _Order details_. Carts have an order ID but no order number, as those are not generated until the order is placed. You can view the current carts in your store by navigating to the Commerce > Orders page and clicking the _Carts_ tab. From the _Carts_ tab you can view, edit, reassign, add payment information to, or delete a cart using the dropdown operations menu based on your account's permissions. 
 
 When a customer completes checkout or an admin places the order, the cart option is toggled off and the order ID remains the same but an order number is generated that follows the number pattern setup for the order type. Until checkout completion or order placement, carts are in a unique order status called _Draft_ that allows the order items to be periodically refreshed, updating the pricing and availability of the products in the cart. Once a cart is placed and moves out of the draft status, the order will no longer be periodically refreshed. 
 
