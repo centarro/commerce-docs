@@ -11,8 +11,8 @@ taxonomy:
     ```php
 
         /**
-         * type [String] - [DEFAULT = 'online']
-         *   Foreign key for the store type to yse.
+         * type [String]
+         *   The ID of the store type to use, e.g. 'online'.
          *
          * uid [Integer]
          *   The user id that created the store.
@@ -117,7 +117,7 @@ taxonomy:
 
 ## Resolve the current store
 
-The first store created in Commerce is saved as the default store in `commerce_store.settings.yml`. This is used in `\Drupal\commerce_store\Resolver\DefaultStoreResolver` to load the site's default store.
+The default store is the store with its `is_default` field set. Only one store can be the default: setting it on a store removes it from the others. The first store created through the store form is always made the default. `StoreStorage::loadDefault()` returns the default store (or the most recently created store, if none is flagged), and `\Drupal\commerce_store\Resolver\DefaultStoreResolver` uses it to load the site's default store.
 
 In order to load a different store we must create a new StoreResolver. In this example, use a store ID set in a cookie to load the relevant store.
 
