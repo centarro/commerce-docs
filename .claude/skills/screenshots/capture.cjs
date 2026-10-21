@@ -8,7 +8,8 @@
 //     "fullPage": true,                           // optional, without selector
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
-//                 { "hover": "..." }, { "wait": 500 }] }
+//                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }] }
+//   Autocomplete: fill, wait, then press ArrowDown and Enter to pick the first suggestion.
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
@@ -33,6 +34,7 @@ const path = require('path');
       if (a.click) await page.click(a.click);
       if (a.fill) await page.fill(a.fill, a.value);
       if (a.hover) await page.hover(a.hover);
+      if (a.press) await page.keyboard.press(a.press);
       if (a.wait) await page.waitForTimeout(a.wait);
     }
     // Hide Drupal status messages (e.g. "Saved" from a previous shot).
@@ -41,9 +43,15 @@ const path = require('path');
     const opts = { path: file, animations: 'disabled', type: file.endsWith('.jpg') ? 'jpeg' : 'png' };
     if (shot.selector) {
       const p = shot.padding || 0;
-      const box = await page.locator(shot.selector).first().boundingBox();
+      const el = page.locator(shot.selector).first();
+      await el.scrollIntoViewIfNeeded();
+      // boundingBox() is relative to the viewport: clip in the viewport when the
+      // element fits (dialogs are position: fixed), else on the full page.
+      const box = await el.boundingBox();
       const height = Math.min(box.height + 2 * p, shot.maxHeight || Infinity);
-      await page.screenshot({ ...opts, fullPage: true, clip: { x: Math.max(box.x - p, 0), y: Math.max(box.y - p, 0), width: box.width + 2 * p, height } });
+      const fits = box.y - p >= 0 && box.y + height <= page.viewportSize().height;
+      const y = fits ? box.y - p : box.y - p + await page.evaluate(() => window.scrollY);
+      await page.screenshot({ ...opts, fullPage: !fits, clip: { x: Math.max(box.x - p, 0), y: Math.max(y, 0), width: box.width + 2 * p, height } });
     }
     else await page.screenshot({ ...opts, fullPage: !!shot.fullPage });
     console.log('saved', file);
