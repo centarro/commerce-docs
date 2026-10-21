@@ -1,0 +1,9 @@
+[
+ {"file": "commerce-configuration.png", "url": "/admin/commerce/config", "selector": "div.panel:has-text('Manage your currencies')"},
+ {"file": "add-currency.png", "url": "/admin/commerce/config/currencies/add", "selector": "form#commerce-price-currency-import", "padding": 24, "viewport": {"width": 900}},
+ {"file": "currency-edit.png", "url": "/admin/commerce/config/currencies/USD", "selector": "form#commerce-currency-edit-form", "padding": 24, "viewport": {"width": 900}},
+ {"file": "store-landing-page2.png", "url": "/admin/commerce/config/stores", "viewport": {"height": 600}},
+ {"file": "store-add.png", "url": "/store/add/online", "viewport": {"height": 1220}},
+ {"file": "stores-edit-a-store.png", "url": "/admin/commerce/config/stores", "viewport": {"height": 600}, "actions": [{"hover": "tr:has-text('Paris') a:text-is('Edit')"}, {"wait": 300}]},
+ {"file": "edit-store-check-default.png", "url": "/store/2/edit", "selector": "#gin_sidebar", "viewport": {"height": 620}, "actions": [{"click": "#edit-is-default-value"}], "maxHeight": 300}
+]
