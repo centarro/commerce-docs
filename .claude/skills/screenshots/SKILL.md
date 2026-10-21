@@ -82,6 +82,14 @@ Lessons from the pages already done:
 node .claude/skills/screenshots/capture.cjs "$LOGIN" .claude/skills/screenshots/shots/<file>.json "$SCRATCH/out"
 ```
 
+Cover every image on the page, not only the section being rewritten. Before the PR, list
+the page's images and check that none was left behind:
+
+```bash
+grep -oE '[^/( "]+\.(png|jpe?g|gif)' <page> | sort -u | while read f; do
+  echo "$(git log -1 --format=%ad --date=short -- "$(dirname <page>)/images/$f") $f"; done
+```
+
 Read every new image and compare it with the old one before using it. Fix the shot list
 and recapture until each one shows what the text describes. Then copy them over the old
 files in the page's `images/` directory (same names, so the page needs no edit).

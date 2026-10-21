@@ -5,5 +5,8 @@
  {"file": "order-draft.png", "url": "/admin/commerce/orders/add", "viewport": {"height": 1000}, "actions": [{"click": "label:has-text('The Centorium New York')"}, {"click": "label:has-text('New customer')"}, {"wait": 1500}, {"fill": "input[type=email]", "value": "alex.martin@example.com"}, {"click": "input[value=Create]"}, {"wait": 3000}]},
  {"file": "create-order-order-items.png", "url": "/admin/commerce/orders", "selector": ".ui-dialog:visible", "padding": 0, "actions": [{"click": "tr:has-text('jane.doe') a:text-is('View')"}, {"wait": 1500}, {"click": "a:text-is('Add order items')"}, {"wait": 3000}, {"fill": "input[placeholder*='variation']", "value": "Frankenstein"}, {"wait": 2000}]},
  {"file": "order-details.png", "url": "/admin/commerce/orders", "selector": ".ui-dialog:visible", "padding": 0, "actions": [{"click": "tr:has-text('jane.doe') a:text-is('View')"}, {"wait": 1500}, {"click": ".order-details a:has-text('Edit'), a[href$='/form/order_details']"}, {"wait": 1500}]},
- {"file": "order-view.png", "url": "/admin/commerce/orders", "viewport": {"height": 1330}, "actions": [{"click": "tr:has-text('jane.doe') a:text-is('View')"}, {"wait": 1500}]}
+ {"file": "order-view.png", "url": "/admin/commerce/orders", "viewport": {"height": 1330}, "actions": [{"click": "tr:has-text('jane.doe') a:text-is('View')"}, {"wait": 1500}]},
+ {"file": "commerce2-order-configuration.png", "url": "/admin/commerce/config", "selector": "div.panel:has-text('Manage fields, form and display settings for your orders')"},
+ {"file": "commerce2-order-type-selection.png", "url": "/admin/commerce/config/order-types", "viewport": {"height": 520}, "actions": [{"hover": "tr:has-text('Default') a:text-is('Edit')"}, {"wait": 300}]},
+ {"file": "commerce2-email-section.png", "url": "/admin/commerce/config/order-types/default/edit", "selector": "details#edit-emails", "padding": 16, "viewport": {"width": 1100}}
 ]

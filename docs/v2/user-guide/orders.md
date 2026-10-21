@@ -114,8 +114,9 @@ Locate the **Emails** section
 
 ![Check / uncheck notification](./images/commerce2-email-section.png)
 
- - Check / uncheck the **Email the customer a receipt when an order is placed** box.
+ - Turn **Email the customer a receipt when an order is placed** on or off.
  - Enter the store notification email address into the **Send a copy of the receipt to this email:** field. You can enter multiple comma separated addresses into this field eg "one@example.com, two@example.com, three@example.com"
+ - Optionally, change the **Subject for the order receipt email:**. Tokens can be used; when left blank, the subject is "Order #[commerce_order:order_number] confirmed".
 
 ### Editing / Translating the Email Text
 
