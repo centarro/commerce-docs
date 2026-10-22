@@ -196,6 +196,8 @@ if (!$product_storage->loadByProperties(['title' => 'Supreme Graphics Shirt'])) 
 $flow = $entity_type_manager->getStorage('commerce_checkout_flow')->load('shipping');
 $flow_configuration = $flow->get('configuration');
 $flow_configuration['panes']['coupon_redemption'] = ['step' => '_sidebar', 'weight' => 10, 'allow_multiple' => FALSE];
+// The checkout page: its shots change the login pane, restore the defaults.
+$flow_configuration['panes']['login'] = ['allow_guest_checkout' => TRUE, 'allow_registration' => FALSE] + $flow_configuration['panes']['login'];
 $flow->set('configuration', $flow_configuration)->save();
 $promotion_storage = $entity_type_manager->getStorage('commerce_promotion');
 $order_total = fn ($amount) => ['target_plugin_id' => 'order_total_price', 'target_plugin_configuration' => ['operator' => '>=', 'amount' => ['number' => $amount, 'currency_code' => 'USD']]];
