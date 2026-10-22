@@ -28,11 +28,11 @@ Commerce core includes 6 offer types:
 * Buy X Get Y
 * Combination offer
 
-You can see the list of all available offer types on the Promotion add/edit form:
+You can see the list of all available offer types in the *Offer type* list of the Promotion add/edit form:
 
 ![Promotion edit form offers fixed](../images/Promotion_offers_fixed.png)
 
-For both the “Fixed amount off” options, an “Amount” data entry field will appear. If you switch the offer type to either of the “Percentage off” options, you will see the “Amount” data entry field change to a “Percentage” data entry field.
+For both the “Fixed amount off” options, an “Amount off” data entry field will appear. If you switch the offer type to either of the “Percentage off” options, you will see the “Amount off” data entry field change to a “Percentage off” data entry field.
 
 ![Promotion edit form offers percentage](../images/Promotion_offers_percentage.png)
 

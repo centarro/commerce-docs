@@ -11,7 +11,8 @@
 //     "anonymous": true,                          // optional: browse as an anonymous customer (own session, kept between shots)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
 //                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
-//                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }, { "goto": "/cart" }] }
+//                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }, { "goto": "/cart" },
+//                 { "eval": "location.href += '/edit'" }] }  // run JS in the page (e.g. to open a native select: set its size)
 //   Autocomplete: fill, wait, then press ArrowDown and Enter to pick the first suggestion.
 const { chromium } = require('playwright');
 const fs = require('fs');
@@ -41,6 +42,7 @@ const path = require('path');
       if (a.press) await page.keyboard.press(a.press);
       if (a.wait) await page.waitForTimeout(a.wait);
       if (a.goto) await page.goto(base + a.goto, { waitUntil: 'networkidle' });
+      if (a.eval) await page.evaluate(a.eval);
     }
     // Hide Drupal status messages (e.g. "Saved" from a previous shot).
     await page.addStyleTag({ content: '[data-drupal-messages] { display: none !important; }' });
