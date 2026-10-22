@@ -5,8 +5,10 @@
 //     "selector": "#edit-address-wrapper",        // optional: capture one element, else the viewport
 //     "padding": 24,                              // optional, with selector: include surrounding px
 //     "maxHeight": 300,                           // optional, with selector: cut the capture at this height
+//     "from": "tr.first",                         // optional, with selector: start the capture at this element instead
 //     "fullPage": true,                           // optional, without selector
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
+//     "anonymous": true,                          // optional: browse as an anonymous customer (own session, kept between shots)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
 //                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
 //                 { "hover": "..." }, { "press": "ArrowDown" }, { "wait": 500 }, { "goto": "/cart" }] }
@@ -20,15 +22,14 @@ const path = require('path');
   const shots = JSON.parse(fs.readFileSync(shotsFile, 'utf8'));
   const base = new URL(loginUrl).origin;
   const browser = await chromium.launch();
-  const page = await browser.newPage({
-    viewport: { width: 1440, height: 900 },
-    deviceScaleFactor: 2,
-    ignoreHTTPSErrors: true,
-  });
-  await page.goto(loginUrl);
+  const pageOptions = { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 2, ignoreHTTPSErrors: true };
+  const admin = await browser.newPage(pageOptions);
+  await admin.goto(loginUrl);
+  let anonymous;
   fs.mkdirSync(outDir, { recursive: true });
 
   for (const shot of shots) {
+    const page = shot.anonymous ? (anonymous ||= await browser.newPage(pageOptions)) : admin;
     await page.setViewportSize({ width: 1440, height: 900, ...shot.viewport });
     await page.goto(base + shot.url, { waitUntil: 'networkidle' });
     for (const a of shot.actions || []) {
@@ -52,6 +53,11 @@ const path = require('path');
       // boundingBox() is relative to the viewport: clip in the viewport when the
       // element fits (dialogs are position: fixed), else on the full page.
       const box = await el.boundingBox();
+      if (shot.from) {
+        const top = (await page.locator(shot.from).first().boundingBox()).y;
+        box.height += box.y - top;
+        box.y = top;
+      }
       const height = Math.min(box.height + 2 * p, shot.maxHeight || Infinity);
       const fits = box.y - p >= 0 && box.y + height <= page.viewportSize().height;
       const y = fits ? box.y - p : box.y - p + await page.evaluate(() => window.scrollY);

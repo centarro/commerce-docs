@@ -10,7 +10,7 @@ This guide is designed to help you configure and customize the checkout process 
 
 ### Checkout Flows
 
-Checkout flow page is under Home >> Administration >> Commerce >> Configuration >> Orders >> Checkout flows
+Checkout flows are managed at *Commerce > Configuration > Orders > Checkout flows* (`/admin/commerce/config/checkout-flows`). Each order type uses one checkout flow; Commerce Kickstart uses the **Shipping** flow.
 
 ![Checkout flow](./images/checkout-flow.png)
 
@@ -18,24 +18,26 @@ Drupal Commerce comes with a drag-and-drop checkout form builder that lets you d
 
 ![checkout out drag and drop](./images/checkout-drag-and-drop.png)
 
-Content of panes is split in this 7 parts, but it can be modular, so you can drag and drop them as you wish or even disable them:
+Above the panes, toggles control whether the checkout progress is displayed (and whether its steps are links), whether the sidebar is displayed on the completion page, and what happens to anonymous orders: assign them to an existing account with the same email address, or create a new account on checkout completion.
 
-* Login - offers option for users to log in or continue as guest, enables guest checkout
-* Order information - the initial form used to collect basic order details
-* Review - a review of all the order details with the pane for submitting payment
-* Payment -  used to select Transaction Mode - Authorize and capture or Authorize only
-* Complete -  the final landing page showing the checkout completion message.
-* Sidebar - order summary and coupon redemptions
-* Disabled - Panes that you want to disable
+Panes are grouped by step. Drag a pane to another step, or to **Disabled** to remove it, and click the cog icon to configure it:
+
+* Log in - offers customers the choice to log in, continue as a guest or register.
+* Order information - the initial form used to collect order details: contact, shipping and payment information.
+* Review - a review of all the order details before payment.
+* Payment - submits the payment to the payment gateway. Its **Transaction mode** is either *Authorize and capture* or *Authorize only*.
+* Complete - the final page, showing the checkout completion message and, for guests, the registration form.
+* Sidebar - shown next to every step: the order summary and the coupon redemption form.
+* Disabled - panes that are not used, such as **Comments**.
 
 ### Order information
 
-Contains from **Contact information** and **Payment information**.
+Contains **Contact information**, **Shipping information** (with Commerce Shipping) and **Payment information**.
 
 **Contact information** is only visible for anonymous users, allowing them to specify an e-mail address to use for their order. 
-For authenticated users, the pane is not shown, because Drupal Commerce initializes the order e-mail address field to the same e-mail address on file in their user account.
+For authenticated users, the pane is not shown, because Drupal Commerce initializes the order e-mail address field to the same e-mail address on file in their user account. Turn on **Always display email fields** in the pane settings to show it to everyone.
 
-**Payment information** checkout pane functions as an add / edit form for the billing customer profile to be associated with the order. By default, this pane will always result in the creation of a new billing customer profile, with addressbook functionality like reusing previous addresses being supplied by a contributed module.
+**Payment information** checkout pane lets the customer select a payment method and enter the billing address. Authenticated customers can reuse the addresses saved in their address book.
 
 ### Review
 
@@ -43,7 +45,7 @@ This checkout pane displays a full summary of the order details, including data 
 
 ### Payment
 
-This checkout pane presents all payment methods available to the customer in a radio select list.
+The **Payment process** pane submits the payment to the payment gateway selected in the **Payment information** pane. Off-site gateways redirect the customer to the gateway from this step.
 
 ### Completion message
 
@@ -67,17 +69,17 @@ Click **Edit** on the Checkout Flow you want to configure.
 
 To **Enable** Guest Registration
 
-* Click the cog icon in the **Login or continue as guest**
-* Check the **Allow guest checkout** box, click **update** and then **Save** at the bottom of the page.
+* Click the cog icon of the **Log in or continue as guest** pane.
+* Turn on **Allow guest checkout**, click **Update** and then **Save** at the bottom of the page.
 
 To **Disable** Guest Registration
 
-* Click the cog icon in the **Login or continue as guest**
-* Uncheck the **Allow guest checkout** box, click **update** and then **Save** at the bottom of the page.
+* Click the cog icon of the **Log in or continue as guest** pane.
+* Turn off **Allow guest checkout**, click **Update** and then **Save** at the bottom of the page.
 
 ![Select Checkout Flow](./images/commerce2-guest-checkout-allowed-admin.png)
 
-Your first checkout page will then have the below sections, its exact appearance will vary as the below image uses the Bootstrap theme.
+Your first checkout page will then have the below sections. Its exact appearance depends on your theme; the screenshots on this page use Belgrade, the Commerce Kickstart storefront theme.
 
 ![Select Checkout Flow](./images/commerce2-guest-checkout-allowed-bootstrap.png)
 
@@ -99,35 +101,35 @@ Click **Edit** on the Checkout Flow you want to configure.
 
 To **Allow Registration at Checkout**
 
-* Click the cog icon in the **Login or continue as guest**
-* Uncheck the **Allow guest checkout** box
-* Check the **Allow registration** box
+* Click the cog icon of the **Log in or continue as guest** pane.
+* Turn off **Allow guest checkout**.
+* Turn on **Allow registration**. Optionally, pick the user **Registration Form Mode** used for the registration form.
 * Click **Update** and then **Save** at the bottom of the page.
 
 ![Check the Allow box](./images/commerce2-checkout-allow-registration-admin.png)
 
-With a Boostrap theme your page will look something like the below:
+Your page will look something like the below:
 
 ![Allow box checked user view](./images/commerce2-checkout-allow-registration-bootstrap.png)
 
 To **Deny Registration at Checkout**
 
-* Click the cog icon in the **Login or continue as guest**
-* Uncheck the **Allow guest checkout** box
-* Uncheck the **Allow registration** box
+* Click the cog icon of the **Log in or continue as guest** pane.
+* Turn off **Allow guest checkout**.
+* Turn off **Allow registration**.
 * Click **Update** and then **Save** at the bottom of the page.
 
 ![Uncheck the Allow box](./images/commerce2-checkout-no-guest-no-registration-admin.png)
 
-With a Boostrap theme your page will look something like the below.
+Your page will look something like the below.
 
 ![Allow box unchecked user view](./images/commerce2-checkout-no-guest-no-registration-bootstrap.png)
 
 ### Allow guests to create an account during the checkout process
 
-To give your customers the ease of creating an account at the end of their checkout you need to enable the "Guest Registration after checkout" pane in your checkout flow.
+To give your customers the ease of creating an account at the end of their checkout, the **Guest registration after checkout** pane must be in the "Complete" step of your checkout flow. It is there by default.
 
-! At the time of writing your site will not have this feature by default. You need to apply the latest good [patch from this issue]. The below instructions will then apply to your site.
+To create the account automatically instead, without asking the customer, turn on **Create a new account for an anonymous order** at the top of the checkout flow form.
 
 #### Enable / Disable Account Registration at Checkout
 You need to enable / disable registration for each Checkout Flow you are using.
@@ -142,12 +144,10 @@ Click **Edit** on the Checkout Flow you want to configure.
 
 To **Enable** Guest Registration
 
-* Locate the "Disabled" section and drag the **Guest registration after checkout** into the "Complete" section and click **Save**.
+* Locate the "Disabled" section, drag the **Guest registration after checkout** pane into the "Complete" section and click **Save**.
 
 To **Disable** Guest Registration
 
-* Locate the "Complete" section and drag the **Guest registration after checkout** into the "Disabled" section and click **Save**.
+* Locate the "Complete" section, drag the **Guest registration after checkout** pane into the "Disabled" section and click **Save**.
 
 ![Drag and Drop Guest Registration](./images/commerce2-checkout-flow-complete.png)
-
-[patch from this issue]: https://www.drupal.org/node/2857157
