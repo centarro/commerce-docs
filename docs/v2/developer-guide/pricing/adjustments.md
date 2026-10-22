@@ -22,7 +22,7 @@ The Commerce Order module defines *Custom*, *Fee*, *Promotion*, and *Tax* Adjust
 | Weight         | weight         | Used to sort adjustments, grouped by type, from lowest to height weight when displayed (e.g., in the Order Summary display) | `-20`              |
 | Has UI         | has_ui         | Whether adjustments of this type can be created through the admin UI                                                        | `true`             |
 
-The *Has UI* setting controls the list of *Adjustment type* options that appear on the Order admin form:
+The *Has UI* setting controls the list of *Adjustment type* options that appear on the order edit form (`/admin/commerce/orders/ORDER_ID/edit`; the order view page does not link to it):
 ![Adjustments on order admin form](../images/adjustments-1.png)
 
 Adjustment type definitions are provided by the *Commerce Order* module in `commerce_order.commerce_adjustment_types.yml` and by the *Commerce Shipping* module in `commerce_shipping.commerce_adjustment_types.yml`. 
