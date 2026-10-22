@@ -437,3 +437,21 @@ foreach ([['amex', '3961'], ['mastercard', '0056'], ['visa', '0085'], ['visa', '
 if ($gateway = $entity_type_manager->getStorage('commerce_payment_gateway')->load('pay_by_purchase_order')) {
   $gateway->delete();
 }
+
+// The payment gateway page: a payment to refund on Emma's order, and no QuickPay
+// gateway left over from the shots that add one.
+$payment_storage = $entity_type_manager->getStorage('commerce_payment');
+$emma_orders = $order_storage->loadByProperties(['mail' => 'emma.johnson@example.com']);
+$emma_order = reset($emma_orders);
+if (!$payment_storage->loadByProperties(['order_id' => $emma_order->id()])) {
+  $payment_storage->create([
+    'payment_gateway' => 'example_credit_card',
+    'order_id' => $emma_order->id(),
+    'amount' => $emma_order->getTotalPrice(),
+    'state' => 'completed',
+    'remote_id' => '123456',
+  ])->save();
+}
+if ($gateway = $entity_type_manager->getStorage('commerce_payment_gateway')->load('quickpay')) {
+  $gateway->delete();
+}
