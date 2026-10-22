@@ -172,15 +172,27 @@ foreach ($attributes as $id => [$label, $element_type, $values]) {
     $entity_type_manager->getStorage('commerce_product_attribute_value')->create(['attribute' => $id, 'name' => $name, 'weight' => $weight])->save();
   }
 }
-// The "Adding fields to attributes" section: a Hex value field on colors.
-if (!\Drupal\field\Entity\FieldStorageConfig::loadByName('commerce_product_attribute_value', 'field_hex_value')) {
-  \Drupal\field\Entity\FieldStorageConfig::create(['field_name' => 'field_hex_value', 'entity_type' => 'commerce_product_attribute_value', 'type' => 'string'])->save();
-  \Drupal\field\Entity\FieldConfig::create(['field_name' => 'field_hex_value', 'entity_type' => 'commerce_product_attribute_value', 'bundle' => 'color', 'label' => 'Hex value'])->save();
-  commerce_get_entity_display('commerce_product_attribute_value', 'color', 'form')->setComponent('field_hex_value', ['type' => 'string_textfield'])->save();
-  $hex = ['Grey' => '#808080', 'White' => '#ffffff', 'Black' => '#000000'];
-  foreach ($entity_type_manager->getStorage('commerce_product_attribute_value')->loadByProperties(['attribute' => 'color']) as $value) {
-    $value->set('field_hex_value', $hex[$value->getName()])->save();
-  }
+// The "Adding fields to attributes" section and the product architecture page:
+// a Color field (Color Field module) on colors, with the architecture page's colors.
+\Drupal::service('module_installer')->install(['color_field']);
+if ($hex_field = \Drupal\field\Entity\FieldStorageConfig::loadByName('commerce_product_attribute_value', 'field_hex_value')) {
+  $hex_field->delete();
+}
+if (!\Drupal\field\Entity\FieldStorageConfig::loadByName('commerce_product_attribute_value', 'field_color')) {
+  \Drupal\field\Entity\FieldStorageConfig::create(['field_name' => 'field_color', 'entity_type' => 'commerce_product_attribute_value', 'type' => 'color_field_type'])->save();
+  \Drupal\field\Entity\FieldConfig::create(['field_name' => 'field_color', 'entity_type' => 'commerce_product_attribute_value', 'bundle' => 'color', 'label' => 'Color', 'required' => TRUE, 'settings' => ['opacity' => FALSE]])->save();
+  commerce_get_entity_display('commerce_product_attribute_value', 'color', 'form')->setComponent('field_color', ['type' => 'color_field_widget_default'])->save();
+}
+$hex = ['Grey' => '#808080', 'White' => '#FFFFFF', 'Black' => '#000000', 'Blue' => '#9CC8D5', 'Green' => '#9ACA96', 'Pink' => '#E1A7CE'];
+$value_storage = $entity_type_manager->getStorage('commerce_product_attribute_value');
+$color_values = [];
+foreach ($value_storage->loadByProperties(['attribute' => 'color']) as $value) {
+  $color_values[$value->getName()] = $value;
+}
+foreach ($hex as $name => $color) {
+  $value = $color_values[$name] ?? $value_storage->create(['attribute' => 'color', 'name' => $name, 'weight' => count($color_values)]);
+  $value->set('field_color', ['color' => $color])->save();
+  $color_values[$name] = $value;
 }
 $variation_type_storage = $entity_type_manager->getStorage('commerce_product_variation_type');
 if (!$variation_type_storage->load('t_shirt')) {
@@ -317,4 +329,88 @@ if ($cart = $cart_provider->getCart('default', $store, $admin)) {
 $cart = $cart_provider->createCart('default', $store, $admin);
 foreach (['level-headphones', 'UT-KnitHat-Green'] as $sku) {
   \Drupal::service('commerce_cart.cart_manager')->addEntity($cart, $variation_storage->loadBySku($sku));
+}
+
+// The product architecture page: Simple and Clothing product types, product
+// categories, and translations.
+\Drupal::service('module_installer')->install(['language', 'content_translation', 'config_translation']);
+foreach (['fr', 'de'] as $langcode) {
+  if (!\Drupal\language\Entity\ConfigurableLanguage::load($langcode)) {
+    \Drupal\language\Entity\ConfigurableLanguage::createFromLangcode($langcode)->save();
+  }
+}
+$field = function ($entity_type, $bundle, $name, $type, $label, array $storage = [], array $field = [], $widget = NULL) {
+  if (!\Drupal\field\Entity\FieldStorageConfig::loadByName($entity_type, $name)) {
+    \Drupal\field\Entity\FieldStorageConfig::create(['field_name' => $name, 'entity_type' => $entity_type, 'type' => $type] + $storage)->save();
+  }
+  if (!\Drupal\field\Entity\FieldConfig::loadByName($entity_type, $bundle, $name)) {
+    \Drupal\field\Entity\FieldConfig::create(['field_name' => $name, 'entity_type' => $entity_type, 'bundle' => $bundle, 'label' => $label] + $field)->save();
+    commerce_get_entity_display($entity_type, $bundle, 'form')->setComponent($name, $widget ? ['type' => $widget] : [])->save();
+  }
+};
+$order_item_type = isset($order_item_types['default']) ? 'default' : array_key_first($entity_type_manager->getStorage('commerce_order_item_type')->loadMultiple());
+$trait_manager = \Drupal::service('plugin.manager.commerce_entity_trait');
+$types = [
+  'simple' => ['Simple', FALSE, 'Use the simple product type for products with only a single variation.', [], []],
+  'clothing' => ['Clothing', TRUE, '', ['size', 'color'], ['purchasable_entity_dimensions', 'purchasable_entity_shippable']],
+];
+foreach ($types as $id => [$label, $multiple, $description, $attribute_ids, $traits]) {
+  if (!$variation_type_storage->load($id)) {
+    $variation_type = $variation_type_storage->create(['id' => $id, 'label' => $label, 'orderItemType' => $order_item_type, 'generateTitle' => TRUE]);
+    $variation_type->save();
+    foreach ($traits as $trait) {
+      $trait_manager->installTrait($trait_manager->createInstance($trait), 'commerce_product_variation', $id);
+    }
+    $variation_type->setTraits($traits)->save();
+    foreach ($attribute_storage->loadMultiple($attribute_ids) as $attribute) {
+      \Drupal::service('commerce_product.attribute_field_manager')->createField($attribute, $id);
+    }
+  }
+  $field('commerce_product_variation', $id, 'field_images', 'image', 'Images', ['cardinality' => -1], ['required' => TRUE, 'settings' => ['file_directory' => 'product-images', 'alt_field_required' => FALSE]], 'image_image');
+  if (!$product_type_storage->load($id)) {
+    $product_type = $product_type_storage->create(['id' => $id, 'label' => $label, 'description' => $description, 'variationTypes' => [$id], 'multipleVariations' => $multiple, 'injectVariationFields' => TRUE]);
+    $product_type->save();
+    commerce_product_add_body_field($product_type);
+    if ($multiple) {
+      commerce_get_entity_display('commerce_product', $id, 'form')->removeComponent('variations')->save();
+    }
+  }
+}
+if (!$entity_type_manager->getStorage('taxonomy_vocabulary')->load('brands')) {
+  $entity_type_manager->getStorage('taxonomy_vocabulary')->create(['vid' => 'brands', 'name' => 'Brands'])->save();
+}
+$field('commerce_product', 'simple', 'field_brand', 'entity_reference', 'Brand', ['settings' => ['target_type' => 'taxonomy_term']], ['required' => TRUE, 'settings' => ['handler' => 'default:taxonomy_term', 'handler_settings' => ['target_bundles' => ['brands' => 'brands']]]], 'entity_reference_autocomplete');
+$field('commerce_product', 'clothing', 'field_categories', 'entity_reference', 'Categories', ['settings' => ['target_type' => 'taxonomy_term'], 'cardinality' => -1], ['settings' => ['handler' => 'default:taxonomy_term', 'handler_settings' => ['target_bundles' => ['product_categories' => 'product_categories']]]], 'entity_reference_autocomplete');
+// Earlier runs pointed the Brand field at Kickstart's Product Brands.
+$brand_field = \Drupal\field\Entity\FieldConfig::loadByName('commerce_product', 'simple', 'field_brand');
+$brand_field->setSetting('handler_settings', ['target_bundles' => ['brands' => 'brands']])->save();
+// The categories, flat: the hierarchy shot nests them.
+$vocabulary_storage = $entity_type_manager->getStorage('taxonomy_vocabulary');
+if (!$vocabulary_storage->load('product_categories')) {
+  $vocabulary_storage->create(['vid' => 'product_categories', 'name' => 'Product categories'])->save();
+}
+$term_storage = $entity_type_manager->getStorage('taxonomy_term');
+$terms = $term_storage->loadByProperties(['vid' => 'product_categories']);
+if (!$terms) {
+  foreach (['Women', 'Men', 'Apothecary', 'Urban Living', 'Food & Beverage', 'Home', 'Accessories', 'Kitchen', 'Office', 'Furnishings', 'Outdoors', 'Accessories', 'Toys/Novelties', 'Pool Toys', 'Beach', 'Inflatables', 'Audio & Film', 'Audio', 'Film', 'Print Shop', 'Electronics'] as $name) {
+    $terms[] = $term_storage->create(['vid' => 'product_categories', 'name' => $name]);
+  }
+}
+foreach ($terms as $term) {
+  $term->set('parent', 0)->set('weight', 0)->save();
+}
+// A Simple product to translate, and a Clothing product for the variation form.
+\Drupal::service('content_translation.manager')->setEnabled('commerce_product', 'simple', TRUE);
+\Drupal::service('content_translation.manager')->setEnabled('commerce_product_variation', 'simple', TRUE);
+\Drupal::service('content_translation.manager')->setEnabled('commerce_product_attribute_value', 'color', TRUE);
+foreach (['Classic Beach Ball' => 'simple', 'Drupal Commerce Hoodie' => 'clothing'] as $title => $type) {
+  if (!$product_storage->loadByProperties(['title' => $title])) {
+    $variations = [];
+    if ($type === 'simple') {
+      $variation = $entity_type_manager->getStorage('commerce_product_variation')->create(['type' => 'simple', 'sku' => 'CLASSIC-BEACH-BALL', 'price' => new \Drupal\commerce_price\Price('12.00', 'USD')]);
+      $variation->save();
+      $variations[] = $variation;
+    }
+    $product_storage->create(['type' => $type, 'title' => $title, 'uid' => 1, 'stores' => [1], 'variations' => $variations, 'body' => ['value' => "<p>The $title.</p>", 'format' => 'basic_html']])->save();
+  }
 }
