@@ -348,7 +348,7 @@ If you want to write custom code to programmatically create or manage profiles, 
 !!! example "Loading profile types"
     ```php
     // Loading is based off of the primary identifier [String] that was defined when creating it.
-    $profile_type = \Drupal\profile\Entity\ProfileType::load('my_custom_profile_type');
+    $profile_type = \Drupal::entityTypeManager()->getStorage('profile_type')->load('my_custom_profile_type');
     ```
 
 !!! example  "Loading profiles"

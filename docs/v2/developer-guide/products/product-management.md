@@ -357,7 +357,7 @@ After saving all your changes, you should be able to navigate to your new Produc
 
             // Loading is based off of the primary key [Integer]
             //   1 would be the first one saved, 2 the next, etc.
-            $product = \Drupal\commerce_product\Entity\Product::load(1);
+            $product = \Drupal::entityTypeManager()->getStorage('commerce_product')->load(1);
         ```
 
 !!! example "<a id="loading-a-variation"></a>Loading a variation"
@@ -365,7 +365,7 @@ After saving all your changes, you should be able to navigate to your new Produc
 
             // Loading is based off of the primary key [Integer]
             //   1 would be the first one saved, 2 the next, etc.
-            $variation = \Drupal\commerce_product\Entity\ProductVariation::load(1);
+            $variation = \Drupal::entityTypeManager()->getStorage('commerce_product_variation')->load(1);
         ```
 
 !!! example "<a id="loading-an-attribute-value"></a> nameLoading an attribute value"
@@ -373,7 +373,7 @@ After saving all your changes, you should be able to navigate to your new Produc
 
             // Loading is based off of the primary key [Integer]
             //   1 would be the first one saved, 2 the next, etc.
-            $red = \Drupal\commerce_product\Entity\ProductAttributeValue::load(1);
+            $red = \Drupal::entityTypeManager()->getStorage('commerce_product_attribute_value')->load(1);
         ```
 
 !!! example "<a id="checking-if-an-attribute-value-exists-within-a-particular-attribute-type"></a>Checking if an attribute value exists within a particular attribute type"

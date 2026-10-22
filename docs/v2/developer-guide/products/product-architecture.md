@@ -557,20 +557,20 @@ If you want to write custom code to programmatically create or manage your produ
 !!! example "<a id="loading-a-product-type"></a>Loading a product type"
     ```php
         // Loading is based off of the primary key [String] that was defined when creating it.
-        $product_type = \Drupal\commerce_product\Entity\ProductType::load('my_custom_product_type');
+        $product_type = \Drupal::entityTypeManager()->getStorage('commerce_product_type')->load('my_custom_product_type');
     ```
 
 !!! example "<a id="loading-a-variation-type"></a>Loading a variation type"
     ```php
 
         // Loading is based off of the primary key [String] that was defined when creating it.
-        $variation_type = \Drupal\commerce_product\Entity\ProductVariationType::load('my_custom_variation_type');
+        $variation_type = \Drupal::entityTypeManager()->getStorage('commerce_product_variation_type')->load('my_custom_variation_type');
     ```
 
 !!! example "<a id="loading-a-product-attribute"><a>Loading a product attribute"
     ```php
         // Loading is based off of the primary key [String] that was defined when creating it.
-        $size_attribute = \Drupal\commerce_product\Entity\ProductAttribute::load('size');
+        $size_attribute = \Drupal::entityTypeManager()->getStorage('commerce_product_attribute')->load('size');
     ```
 
 !!! example "<a id="purchasableentityinterface"></a>PurchasableEntityInterface"
