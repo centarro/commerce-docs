@@ -98,6 +98,21 @@ foreach ($orders as [$name, $full_name, $placed, $skus, $address]) {
     $order->save();
   }
 }
+// The activity log page: placed orders show the customer adding the items to
+// the cart and placing the order, rather than drush (anonymous) placing them.
+$log_storage = \Drupal::entityTypeManager()->getStorage('commerce_log');
+foreach ($order_storage->loadByProperties(['state' => 'completed']) as $order) {
+  $logs = $log_storage->loadMultipleByEntity($order);
+  if (!array_filter($logs, fn ($log) => $log->getTemplateId() === 'cart_entity_added')) {
+    foreach ($order->getItems() as $item) {
+      $logs[] = $log_storage->generate($order, 'cart_entity_added', ['purchased_entity_label' => $item->label()]);
+    }
+  }
+  foreach ($logs as $log) {
+    $minutes = $log->getTemplateId() === 'cart_entity_added' ? 5 : 0;
+    $log->set('uid', $order->getCustomerId())->set('created', $order->getPlacedTime() - 60 * $minutes)->save();
+  }
+}
 
 // The dashboard shots expand an inbox message, which marks it as read.
 \Drupal::database()->update('commerce_inbox_message')->fields(['state' => 'unread'])->execute();

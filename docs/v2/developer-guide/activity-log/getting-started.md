@@ -19,9 +19,11 @@ When the Commerce Log module is installed, logs will be automatically generated 
 
 ![Order activity view](../images/order-activity-1.png)
 
-This example order has had 3 logs created. The first (bottom-most) entry was created when the customer added an item to his cart. Logs are also created when items are removed from a cart. 
+This example order has had 4 logs created. The first two (bottom-most) entries were created when the customer added items to their cart. Logs are also created when items are removed from a cart.
 
-The next two logs were created when the order was placed. All the default Order state transition events are logged: *Placed*, *Validated*, *Fulfilled*, and *Canceled*. For more information on state transition events, see the [State machine documentation](../core/core.md#state-machine).
+The next two logs were created when the order was placed: one for the state transition, and one for the order receipt email. Every order state transition is logged with its label and the states it moved the order from and to. For more information on state transition events, see the [State machine documentation](../core/core.md#state-machine).
+
+Administrators can also add comments to the order activity, with the **Comment on this order** form above the logs.
 
 The "Order activity" listing is a Views block that can be modified through the Admin UI like any other [View].
 
