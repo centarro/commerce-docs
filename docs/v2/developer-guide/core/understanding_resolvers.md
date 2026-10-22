@@ -20,7 +20,7 @@ See the [Price resolvers](../pricing/prices.md#price-resolvers) documentation fo
 
 #### Store resolvers
 
-In Drupal Commerce, every order belongs to a specific [store](../stores/getting-started.md). A simple site may have only a single store, so all orders belong to that store. But if you have multiple stores, then Drupal Commerce needs a way to figure out which store to use for a particular cart or order. By default, it will always choose whichever store you've set as the *Default*. Here, the *Default* store has been set as the default store:
+In Drupal Commerce, every order belongs to a specific [store](../stores/getting-started.md). A simple site may have only a single store, so all orders belong to that store. But if you have multiple stores, then Drupal Commerce needs a way to figure out which store to use for a particular cart or order. By default, it will always choose the default store. Here, *The Centorium New York* is the default store:
 
 ![Default store selection](../images/resolvers-3.png)
 
@@ -28,9 +28,9 @@ If you want to build a site with multiple stores, then you will need to create a
 
 #### CheckoutFlow resolvers
 
-Drupal Commerce allows you to support multiple checkout forms so that you can have different checkout experiences for your customers based on what they are purchasing. The default Drupal Commerce installation includes a single *Default* checkout flow.
+Drupal Commerce allows you to support multiple checkout forms so that you can have different checkout experiences for your customers based on what they are purchasing. The default Drupal Commerce installation includes a single *Default* checkout flow, and Commerce Shipping adds a *Shipping* one.
 
-Now, if you create multiple checkout flows, how does Drupal know which one to use when a customer goes to checkout? When a customer's cart is first created, it is assigned a specific *order type*. By default, the Checkout flow set for the order type will be used. Here, the *Default* order type has been configured to use the *Default* Checkout flow:
+Now, if you create multiple checkout flows, how does Drupal know which one to use when a customer goes to checkout? When a customer's cart is first created, it is assigned a specific *order type*. By default, the Checkout flow set for the order type will be used. Here, the *Default* order type has been configured to use the *Shipping* checkout flow, as in Commerce Kickstart:
 
 ![Order type checkout flow configuration](../images/resolvers-4.png)
 

@@ -1,0 +1,4 @@
+[
+ {"file": "resolvers-3.png", "url": "/admin/commerce/config/stores", "selector": "#edit-is-default--wrapper, .form-item-is-default-value, [data-drupal-selector='edit-is-default-wrapper']", "padding": 12, "actions": [{"click": "tr:has-text('New York') a:text-is('Edit')"}, {"wait": 1000}]},
+ {"file": "resolvers-4.png", "url": "/admin/commerce/config/order-types/default/edit", "selector": "details:has-text('Checkout settings')", "padding": 16, "viewport": {"width": 1100}}
+]
