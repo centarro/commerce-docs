@@ -1,0 +1,4 @@
+[
+ {"file": "currency-landingpage.png", "url": "/admin/commerce/config/currencies", "viewport": {"height": 540}},
+ {"file": "currencies-1.png", "url": "/admin/commerce/config/currencies/add", "selector": "form", "padding": 16, "viewport": {"width": 900}, "actions": [{"select": "select", "label": "Canadian Dollar"}]}
+]
