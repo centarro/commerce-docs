@@ -10,6 +10,7 @@
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
 //     "highlight": [".form-item-x",                 // optional: outline these elements, like the old pink boxes,
 //                   { "selector": "#edit-y", "color": "#16a34a", "label": "Credit card form" }],  // or with a color and a label
+//     "messages": true,                           // optional: keep the Drupal status messages, hidden by default
 //     "anonymous": true,                          // optional: browse as an anonymous customer (own session, kept between shots)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
 //                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
@@ -46,8 +47,8 @@ const path = require('path');
       if (a.goto) await page.goto(base + a.goto, { waitUntil: 'networkidle' });
       if (a.eval) await page.evaluate(a.eval);
     }
-    // Hide Drupal status messages (e.g. "Saved" from a previous shot).
-    await page.addStyleTag({ content: '[data-drupal-messages] { display: none !important; }' });
+    // Hide Drupal status messages (e.g. "Saved" from a previous shot), unless the shot is about one.
+    if (!shot.messages) await page.addStyleTag({ content: '[data-drupal-messages] { display: none !important; }' });
     if (shot.highlight) await page.evaluate((highlights) => {
       for (const h of highlights) {
         const { selector, color = '#e6176e', label } = typeof h === 'string' ? { selector: h } : h;

@@ -6,3 +6,4 @@ package: Commerce (docs)
 dependencies:
   - commerce:commerce_order
   - commerce:commerce_promotion
+  - commerce:commerce_payment_example
