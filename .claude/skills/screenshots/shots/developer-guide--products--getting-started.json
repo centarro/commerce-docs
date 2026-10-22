@@ -1,0 +1,3 @@
+[
+ {"file": "overview-concept-1.png", "url": "/product/add/default", "viewport": {"height": 820}, "actions": [{"fill": "#edit-title-0-value", "value": "My simple product"}, {"click": ".ck-editor__editable"}, {"type": "Here is the text describing my simple product. It's a really wonderful product, and you will definitely want to buy it."}, {"click": "label:has-text('The Centorium New York')"}]}
+]
