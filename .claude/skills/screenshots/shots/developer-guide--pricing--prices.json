@@ -1,0 +1,5 @@
+[
+ {"file": "displaying-prices-1.png", "url": "/admin/commerce/config/product-variation-types/default/edit/display/default", "selector": "#field-display-overview", "maxHeight": 300, "padding": 8},
+ {"file": "displaying-prices-2.png", "url": "/admin/commerce/config/product-variation-types/default/edit/display/default", "selector": "#field-display-overview tr.field-plugin-settings-editing", "viewport": {"width": 1200}, "actions": [{"select": "select[name='fields[price][type]']", "value": "commerce_price_calculated"}, {"wait": 2000}, {"click": "input[name='price_settings_edit']"}, {"wait": 2000}]},
+ {"file": "resolvers-1.png", "url": "/admin/commerce/products", "selector": "fieldset:has-text('Inventory')", "padding": 16, "viewport": {"width": 1100}, "actions": [{"fill": "input[name=title]", "value": "Bar Stool"}, {"press": "Enter"}, {"wait": 1500}, {"click": "tr:has-text('Basic Bar Stool') a:text-is('Edit')"}, {"wait": 1500}, {"click": "a:text-is('Variations')"}, {"wait": 1500}, {"click": "td a:text-is('Edit')"}, {"wait": 1500}]}
+]
