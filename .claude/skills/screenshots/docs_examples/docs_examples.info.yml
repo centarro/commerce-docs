@@ -5,3 +5,4 @@ core_version_requirement: ^10 || ^11
 package: Commerce (docs)
 dependencies:
   - commerce:commerce_order
+  - commerce:commerce_promotion
