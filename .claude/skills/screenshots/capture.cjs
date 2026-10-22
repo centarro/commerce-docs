@@ -8,7 +8,8 @@
 //     "from": "tr.first",                         // optional, with selector: start the capture at this element instead
 //     "fullPage": true,                           // optional, without selector
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
-//     "highlight": [".form-item-x", "#edit-y"],    // optional: outline these elements, like the old pink boxes
+//     "highlight": [".form-item-x",                 // optional: outline these elements, like the old pink boxes,
+//                   { "selector": "#edit-y", "color": "#16a34a", "label": "Credit card form" }],  // or with a color and a label
 //     "anonymous": true,                          // optional: browse as an anonymous customer (own session, kept between shots)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
 //                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
@@ -47,7 +48,22 @@ const path = require('path');
     }
     // Hide Drupal status messages (e.g. "Saved" from a previous shot).
     await page.addStyleTag({ content: '[data-drupal-messages] { display: none !important; }' });
-    if (shot.highlight) await page.addStyleTag({ content: `${shot.highlight.join(', ')} { outline: 3px solid #e6176e !important; outline-offset: 4px; border-radius: 4px; }` });
+    if (shot.highlight) await page.evaluate((highlights) => {
+      for (const h of highlights) {
+        const { selector, color = '#e6176e', label } = typeof h === 'string' ? { selector: h } : h;
+        for (const el of document.querySelectorAll(selector)) {
+          el.style.setProperty('outline', `3px solid ${color}`, 'important');
+          el.style.setProperty('outline-offset', '4px');
+          el.style.setProperty('border-radius', '4px');
+          if (!label) continue;
+          // The label sits on the top edge of the box, at its right.
+          const r = el.getBoundingClientRect();
+          const tag = document.body.appendChild(document.createElement('div'));
+          tag.textContent = label;
+          Object.assign(tag.style, { position: 'absolute', zIndex: 10000, top: `${r.top + scrollY - 4}px`, left: `${r.right + scrollX - 12}px`, transform: 'translate(-100%, -50%)', padding: '4px 10px', borderRadius: '4px', background: color, color: '#fff', font: '600 18px/1.2 system-ui, sans-serif' });
+        }
+      }
+    }, shot.highlight);
     const file = path.join(outDir, shot.file);
     const opts = { path: file, animations: 'disabled', type: file.endsWith('.jpg') ? 'jpeg' : 'png' };
     if (shot.selector) {

@@ -27,7 +27,7 @@ The Drupal Commerce payment module also supports a third type of payment gateway
 
 If a payment gateway supports *Stored payment methods*, then your customers will be able to re-use their payment methods on future orders. Currently, stored payment methods are only supported within Drupal Commerce for *On-site* payment gateway types. However, work is currently underway to also allow *Off-site* payment gateways to use stored payment methods. See [Issue #2838380: Allow offsite payment gateways to create and use payment methods].
 
-Stored payment methods are displayed to customers as options during checkout. (See the *Payments in the checkout process*.) Customers can manage their stored payment methods through their User Account interface, located on your site at `/user`. By default, stored payment methods can be added or deleted. Some payment gateways may also allow stored payment methods to be updated.
+Stored payment methods are displayed to customers as options during checkout. (See the *Payments in the checkout process*.) Customers can manage their stored payment methods on the *Payment methods* tab of their account, linked from *My account* (`/user`). By default, stored payment methods can be added or deleted. Some payment gateways may also allow stored payment methods to be updated.
 
 ![Managing stored payment methods](../images/concepts-1.png)
 
@@ -84,7 +84,7 @@ You should see *Payment* as an option under the Commerce *Configuration* menu. U
 
 ![Admin UI for adding payment gateway](../images/getting-started-01.png)
 
-Click the *Add payment gateway* button to create a payment gateway. By default, only one *Plugin* option will be available: *Manual*. If you want to experiment with other payment gateway options, you can enable the *Commerce Payment Example* module (which is also included with Drupal Commerce module). Doing so will give you two additional *Plugin* options. Changing the selected option will affect the configuration options available. For example, for the *Example (On-site)* plugin, the configuration options are *Mode* and (API key).
+Click the *Add payment gateway* button to create a payment gateway. By default, only one *Plugin* option will be available: *Manual*. If you want to experiment with other payment gateway options, you can enable the *Commerce Payment Example* module (which is also included with Drupal Commerce module). Doing so will give you three additional *Plugin* options. Changing the selected option will affect the configuration options available. For example, for the *Example (On-site)* plugin, the configuration options are *Mode*, *Collect billing information* and *API key*.
 
 ![Payment gateway configuration](../images/getting-started-02.png)
 

@@ -417,3 +417,23 @@ foreach (['Classic Beach Ball' => 'simple', 'Drupal Commerce Hoodie' => 'clothin
     $product_storage->create(['type' => $type, 'title' => $title, 'uid' => 1, 'stores' => [1], 'variations' => $variations, 'body' => ['value' => "<p>The $title.</p>", 'format' => 'basic_html']])->save();
   }
 }
+
+// The payments getting started page: the admin's stored cards, and no gateway
+// left over from the shot that adds one.
+$payment_method_storage = $entity_type_manager->getStorage('commerce_payment_method');
+$payment_method_storage->delete($payment_method_storage->loadByProperties(['uid' => 1]));
+foreach ([['amex', '3961'], ['mastercard', '0056'], ['visa', '0085'], ['visa', '1111']] as [$card_type, $card_number]) {
+  $payment_method_storage->create([
+    'type' => 'credit_card',
+    'payment_gateway' => 'example_credit_card',
+    'uid' => 1,
+    'card_type' => $card_type,
+    'card_number' => $card_number,
+    'card_exp_month' => 12,
+    'card_exp_year' => date('Y') + 3,
+    'reusable' => TRUE,
+  ])->save();
+}
+if ($gateway = $entity_type_manager->getStorage('commerce_payment_gateway')->load('pay_by_purchase_order')) {
+  $gateway->delete();
+}

@@ -81,6 +81,10 @@ Lessons from the pages already done:
 - Pink boxes and arrows in old images: use `highlight` (CSS selectors to outline) instead of
   drawing on the image. Point it at the wrapper of the element (a `:has()` selector), not at a
   fieldset that also contains other fields.
+  Colored boxes with a text label ("Credit card form") are `{ "selector", "color", "label" }`
+  entries. To box several siblings as one, wrap them first with an `eval`.
+- Storefront pages show the admin toolbar (the capture logs in as admin): remove it with an
+  `eval` (see `developer-guide--payments--getting-started.json`).
 - Gin's page title is sticky: if it covers the capture, give the shot a taller `viewport`.
 - Focus rings (after `fill` or `click`) show in captures: end with `{ "eval": "document.activeElement.blur()" }`.
 - Status messages are hidden in captures, so a failed submit looks like a normal form.
