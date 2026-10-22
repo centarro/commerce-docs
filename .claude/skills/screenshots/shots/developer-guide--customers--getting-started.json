@@ -1,0 +1,4 @@
+[
+ {"file": "overview-1.png", "url": "/admin/commerce", "viewport": {"width": 1000, "height": 470}, "actions": [{"hover": ".toolbar-menu-administration a[href$='/admin/commerce']"}, {"wait": 800}]},
+ {"file": "overview-3.png", "url": "/admin/commerce/orders/add", "selector": "form.commerce-order-add-form", "padding": 24, "viewport": {"width": 1100}, "actions": [{"click": "label:has-text('The Centorium New York')"}]}
+]

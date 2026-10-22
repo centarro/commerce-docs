@@ -50,7 +50,7 @@ The [User module] is provided by Drupal Core and is required for all Drupal site
 
 In Drupal Commerce, a *customer* is any *user* who places an order. Thus, the *user accounts* that belong to registered customers serve as *customer accounts* within Drupal Commerce. Whenever an order is created, the current user is assigned to that order. If the current user is not logged in, and if your checkout is configured to allow *Guest checkout*, then the *Anonymous user* is assigned to the order. Administrative users can also create orders on behalf of customers by explicitly assigning them to orders.
 
-This "Create a new order" form is available only for administrative users with appropriate permissions. To create a new order, click the, "Create a new order" button on the Orders administrative page. The Customer owner of the order is a required field.
+This "Create a new order" form is available only for administrative users with appropriate permissions. To create a new order, click the **Create a new order** button on the Orders administrative page. The store and the customer of the order are required.
 
 ![Create order admin page](../images/overview-3.png)
 
