@@ -51,7 +51,7 @@ taxonomy:
 ```php
 
     // Loading is based off of the primary key [String] that was defined when creating it.
-    $order_type = \Drupal\commerce_order\Entity\OrderType::load('custom_order_type');
+    $order_type = \Drupal::entityTypeManager()->getStorage('commerce_order_type')->load('custom_order_type');
 
 ```
 
@@ -93,7 +93,7 @@ taxonomy:
 ```php
 
     // Loading is based off of the primary key [String] that was defined when creating it.
-    $order_item_type = \Drupal\commerce_order\Entity\OrderItemType::load('custom_order_item_type');
+    $order_item_type = \Drupal::entityTypeManager()->getStorage('commerce_order_item_type')->load('custom_order_item_type');
 
 ```
 
@@ -144,7 +144,7 @@ taxonomy:
 
     // Loading is based off of the primary key [Integer]
     //   1 would be the first one saved, 2 the next, etc.
-    $order_item = \Drupal\commerce_order\Entity\OrderItem::load(1);
+    $order_item = \Drupal::entityTypeManager()->getStorage('commerce_order_item')->load(1);
 
 ```
 
@@ -223,7 +223,7 @@ taxonomy:
 
     // Loading is based off of the primary key [Integer]
     //   1 would be the first one saved, 2 the next, etc.
-    $order = \Drupal\commerce_order\Entity\Order::load(1);
+    $order = \Drupal::entityTypeManager()->getStorage('commerce_order')->load(1);
 
 ```
 

@@ -76,7 +76,7 @@ taxonomy:
 
         // Loading is based off of the primary key [Integer]
         //   1 would be the first one saved, 2 the next, etc.
-        $store = \Drupal\commerce_store\Entity\Store::load(1);
+        $store = \Drupal::entityTypeManager()->getStorage('commerce_store')->load(1);
 
     ```
 
@@ -113,7 +113,7 @@ taxonomy:
 
     ```php
     // Loading is based off of the primary key [String] that was defined when creating it.
-    $store_type = \Drupal\commerce_store\Entity\StoreType::load('custom_store_type');
+    $store_type = \Drupal::entityTypeManager()->getStorage('commerce_store_type')->load('custom_store_type');
     ```
 
 ## Resolve the current store

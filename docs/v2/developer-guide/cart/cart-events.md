@@ -24,7 +24,7 @@ This adds a related product when a specified product is added. For the purpose o
 services:
   modulename.event_subscriber:
     class: Drupal\modulename\EventSubscriber\CartEventSubscriber
-    arguments: ['@messenger', '@commerce_cart.cart_manager']
+    arguments: ['@messenger', '@commerce_cart.cart_manager', '@entity_type.manager']
     tags:
       - { name: event_subscriber }
 ```
@@ -38,7 +38,7 @@ namespace Drupal\modulename\EventSubscriber;
 use Drupal\commerce_cart\CartManagerInterface;
 use Drupal\commerce_cart\Event\CartEntityAddEvent;
 use Drupal\commerce_cart\Event\CartEvents;
-use Drupal\commerce_product\Entity\ProductVariation;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -63,14 +63,26 @@ class CartEventSubscriber implements EventSubscriberInterface {
   protected $cartManager;
 
   /**
+   * The entity type manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
    * Constructs event subscriber.
    *
    * @param \Drupal\Core\Messenger\MessengerInterface $messenger
    *   The messenger.
+   * @param \Drupal\commerce_cart\CartManagerInterface $cart_manager
+   *   The cart manager.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The entity type manager.
    */
-  public function __construct(MessengerInterface $messenger, CartManagerInterface $cart_manager) {
+  public function __construct(MessengerInterface $messenger, CartManagerInterface $cart_manager, EntityTypeManagerInterface $entity_type_manager) {
     $this->messenger = $messenger;
     $this->cartManager = $cart_manager;
+    $this->entityTypeManager = $entity_type_manager;
   }
 
   /**
@@ -97,7 +109,7 @@ class CartEventSubscriber implements EventSubscriberInterface {
       $cart = $event->getCart();
       
       // Load a known other product variation.
-      $variation = ProductVariation::load(5);
+      $variation = $this->entityTypeManager->getStorage('commerce_product_variation')->load(5);
       
       // Create a new order item based on the loaded variation.
       $new_order_item = $this->cartManager->createOrderItem($variation);

@@ -134,7 +134,7 @@ $payment->save();
 
 ```php
 // Loading is based off of the primary key [String] that was defined when creating it.
-$payment_gateway = \Drupal\commerce_payment\Entity\PaymentGateway::load('manual');
+$payment_gateway = \Drupal::entityTypeManager()->getStorage('commerce_payment_gateway')->load('manual');
 ```
 
 #### Load the default payment gateway for a user
@@ -167,7 +167,7 @@ $payment_gateways = \Drupal::entityTypeManager()
 ```php
 // Loading is based off of the primary key [Integer]
 //   1 would be the first one saved, 2 the next, etc.
-$payment_method = \Drupal\commerce_payment\Entity\PaymentMethod::load(1);
+$payment_method = \Drupal::entityTypeManager()->getStorage('commerce_payment_method')->load(1);
 ```
 
 #### Load a user's reusable payment methods for the given payment gateway
@@ -186,7 +186,7 @@ $payment_methods = \Drupal::entityTypeManager()
 ```php
 // Loading is based off of the primary key [Integer]
 //   1 would be the first one saved, 2 the next, etc.
-$payment = \Drupal\commerce_payment\Entity\Payment::load(1);
+$payment = \Drupal::entityTypeManager()->getStorage('commerce_payment')->load(1);
 
 ```
 
