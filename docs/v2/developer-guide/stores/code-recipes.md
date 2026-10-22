@@ -11,8 +11,8 @@ taxonomy:
     ```php
 
         /**
-         * type [String] - [DEFAULT = 'online']
-         *   Foreign key for the store type to yse.
+         * type [String]
+         *   The ID of the store type to use, e.g. 'online' (provided by Commerce).
          *
          * uid [Integer]
          *   The user id that created the store.
@@ -60,7 +60,8 @@ taxonomy:
         ]);
         $store->save();
 
-        // If needed, this sets the store as the default store.
+        // If needed, this sets the store as the default store. The previous
+        // default store is no longer the default.
         $store->setDefault(TRUE);
         $store->save();
 
@@ -117,7 +118,7 @@ taxonomy:
 
 ## Resolve the current store
 
-The first store created in Commerce is saved as the default store in `commerce_store.settings.yml`. This is used in `\Drupal\commerce_store\Resolver\DefaultStoreResolver` to load the site's default store.
+The default store is the store whose **Default** (`is_default`) field is set, with `$store->setDefault(TRUE)` or the "Make this the default store" setting on the store form. Only one store can be the default: setting it on a store removes it from the others. `\Drupal\commerce_store\Resolver\DefaultStoreResolver` loads it with `StoreStorage::loadDefault()`, which falls back to the most recently created store when no store is marked as the default.
 
 In order to load a different store we must create a new StoreResolver. In this example, use a store ID set in a cookie to load the relevant store.
 
@@ -131,7 +132,6 @@ namespace Drupal\cookie_store\Resolver;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\commerce_store\Resolver\StoreResolverInterface;
-use Drupal\commerce_store\Entity\Store;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
