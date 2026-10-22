@@ -12,6 +12,8 @@ Files next to this skill:
 - `capture.cjs`: logs in and captures a list of shots (format at the top of the file).
 - `selectors.cjs`: lists the forms, fieldsets, panels and field wrappers of admin pages.
 - `seed.php`: extra demo data the docs rely on (four "Centorium" stores, US/New York defaults).
+- `docs_examples/`: a module with the developer guide's example code (e.g. a custom workflow),
+  for the screenshots that show it.
 - `shots/<section>--<page>.json`: the shot list of each page already done. If the target has
   one, start from it: rerunning it is usually all a refresh needs.
 
@@ -33,8 +35,9 @@ ddev drush si ../recipes/commerce_kickstart_demo -y --account-name=admin --accou
 ddev composer require -n drupal/color_field
 ```
 
-Then, every time (it's safe to rerun), copy `seed.php` into `$SITE` (the container can't
-see this repo) and run `ddev drush php:script seed.php`. If the page needs more data
+Then, every time (it's safe to rerun), copy `seed.php` into `$SITE` and `docs_examples/` into
+`$SITE/web/modules/custom/` (the container can't see this repo), and run
+`ddev drush php:script seed.php`: it enables `docs_examples`. If the page needs more data
 (orders, promotions, ...), add it to `seed.php` rather than clicking it together.
 
 Check `ddev drush cget system.theme admin` says `gin`, and note the Commerce version
