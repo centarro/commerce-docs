@@ -98,6 +98,44 @@ foreach ($orders as [$name, $full_name, $placed, $skus, $address]) {
     $order->save();
   }
 }
+// The developer guide's orders page walks a draft order through the
+// "Fulfillment, with validation" workflow: recreate it as a draft, and put the
+// order type back on its default workflow.
+$order_type = \Drupal::entityTypeManager()->getStorage('commerce_order_type')->load('default');
+if ($order_type->getWorkflowId() !== 'order_default') {
+  $order_type->setWorkflowId('order_default')->save();
+}
+foreach ($order_storage->loadByProperties(['mail' => 'sam.lee@example.com']) as $order) {
+  $order->delete();
+}
+$users = \Drupal::entityTypeManager()->getStorage('user')->loadByProperties(['mail' => 'sam.lee@example.com']);
+$user = $users ? reset($users) : \Drupal\user\Entity\User::create(['name' => 'sam.lee', 'mail' => 'sam.lee@example.com', 'status' => 1]);
+$user->save();
+// The payment shot enters a new card: forget the ones saved by previous runs.
+foreach (\Drupal::entityTypeManager()->getStorage('commerce_payment_method')->loadByProperties(['uid' => $user->id()]) as $payment_method) {
+  $payment_method->delete();
+}
+$profile = \Drupal\profile\Entity\Profile::create([
+  'type' => 'customer',
+  'uid' => 0,
+  'address' => ['country_code' => 'US', 'given_name' => 'Sam', 'family_name' => 'Lee', 'address_line1' => '233 S Wacker Dr', 'locality' => 'Chicago', 'administrative_area' => 'IL', 'postal_code' => '60606'],
+]);
+$profile->save();
+$item = $order_item_storage->createFromPurchasableEntity($variation_storage->loadBySku('WoodCo-BBS-001'), ['quantity' => 2]);
+$item->save();
+$order = $order_storage->create([
+  'type' => 'default',
+  'store_id' => 1,
+  'uid' => $user->id(),
+  'mail' => 'sam.lee@example.com',
+  'billing_profile' => $profile,
+  'order_items' => [$item],
+  'state' => 'draft',
+]);
+// Refresh on save, so the storewide promotion is applied.
+$order->setRefreshState(\Drupal\commerce_order\Entity\OrderInterface::REFRESH_ON_SAVE);
+$order->save();
+
 // The activity log page: placed orders show the customer adding the items to
 // the cart and placing the order, rather than drush (anonymous) placing them.
 $log_storage = \Drupal::entityTypeManager()->getStorage('commerce_log');
