@@ -186,7 +186,7 @@ The group key in the definition should always have "commerce_order" as its value
 
 ### Associating the Order Type with the Workflow
 
-Once the workflow is registered, we need to associate an order type with it. We will assume that we use the default order type for this example. Visit ``/admin/commerce/config/order-types`` and select to Edit the default workflow. Use the workflow dropdown to choose the "Fulfill, with processing" option.
+Once the workflow is registered, we need to associate an order type with it. We will assume that we use the default order type for this example. Visit ``/admin/commerce/config/order-types`` and select to Edit the default workflow. Use the Workflow dropdown to choose the "Fulfillment, with processing" option, and save the form.
 
 ![Associating the Order Type with the New Workflow](../images/order_workflow_association.jpg)
 
@@ -194,7 +194,7 @@ On a production site you may want to export the Order Type as configuration and 
 
 ### Testing the Result
 
-Once the workflow is registered, and it is associated with an order type, store managers should be able to move the order through the define states via the defined transitions. Place a test order and go to its View admin page. The order should be automatically put in the Processing state, and you should be able to move it to the Fulfillment state by clicking the "Process order" button (indicating that the order has been processed), and then to the Completed state by clicking the "Fulfill order" button.
+Once the workflow is registered, and it is associated with an order type, store managers should be able to move the order through the define states via the defined transitions. Place a test order and go to its View admin page. The order should be automatically put in the Processing state, and you should be able to move it to the Fulfillment state by clicking the "Process order" button (indicating that the order has been processed), and then to the Completed state by clicking the "Fulfill order" button. Each button asks you to confirm the transition.
 
 You can also cancel the order at any step, as defined in the workflow's transitions.
 

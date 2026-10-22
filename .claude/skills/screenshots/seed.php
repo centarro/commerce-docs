@@ -9,6 +9,9 @@
 
 use Drupal\commerce_store\Entity\Store;
 
+// The developer guide's example code (copied to web/modules/custom/docs_examples).
+\Drupal::service('module_installer')->install(['docs_examples']);
+
 // Neutral defaults instead of the machine's timezone and no default country.
 \Drupal::configFactory()->getEditable('system.date')
   ->set('timezone.default', 'America/New_York')

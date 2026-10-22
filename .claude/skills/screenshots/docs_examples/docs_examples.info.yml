@@ -1,0 +1,7 @@
+name: Docs examples
+type: module
+description: 'The example code of the developer guide, for its screenshots.'
+core_version_requirement: ^10 || ^11
+package: Commerce (docs)
+dependencies:
+  - commerce:commerce_order
