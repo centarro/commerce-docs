@@ -1,0 +1,5 @@
+[
+ {"file": "adjustments-1.png", "url": "/admin/commerce/orders", "selector": "#edit-adjustments-wrapper", "padding": 8, "viewport": {"width": 1100}, "actions": [{"click": "tr:has-text('sam.lee') a:text-is('View')"}, {"wait": 1500}, {"eval": "location.href += '/edit'"}, {"wait": 2500}, {"eval": "const s = document.querySelector('#edit-adjustments-wrapper select'); s.size = s.options.length"}]},
+ {"file": "adjustments-2.png", "url": "/admin/commerce/orders", "selector": "#edit-adjustments-wrapper", "padding": 8, "viewport": {"width": 1100}, "actions": [{"click": "tr:has-text('sam.lee') a:text-is('View')"}, {"wait": 1500}, {"eval": "location.href += '/edit'"}, {"wait": 2500}, {"select": "#edit-adjustments-wrapper select", "label": "Fee"}, {"wait": 1000}]},
+ {"file": "adjustments-3.png", "url": "/admin/commerce/orders", "selector": ".order-admin__order-items", "padding": 8, "maxHeight": 318, "viewport": {"width": 1100}, "actions": [{"click": "tr:has-text('sam.lee') a:text-is('View')"}, {"wait": 1500}]}
+]
