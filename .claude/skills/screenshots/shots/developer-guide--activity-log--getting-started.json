@@ -1,0 +1,4 @@
+[
+ {"file": "order-activity-1.png", "url": "/admin/commerce/orders", "selector": ".order-admin__activity", "padding": 16, "actions": [{"click": "tr:has-text('emma.johnson') a:text-is('View')"}, {"wait": 1500}]},
+ {"file": "order-activity-2.png", "url": "/admin/structure/views/view/commerce_activity", "viewport": {"height": 1180}}
+]
