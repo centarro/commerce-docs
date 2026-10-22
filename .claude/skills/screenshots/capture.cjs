@@ -8,6 +8,7 @@
 //     "from": "tr.first",                         // optional, with selector: start the capture at this element instead
 //     "fullPage": true,                           // optional, without selector
 //     "viewport": { "width": 900, "height": 600 },   // optional: viewport for this shot (default 1440x900)
+//     "highlight": [".form-item-x", "#edit-y"],    // optional: outline these elements, like the old pink boxes
 //     "anonymous": true,                          // optional: browse as an anonymous customer (own session, kept between shots)
 //     "actions": [{ "click": "#edit-customer-type-new" }, { "fill": "#edit-mail", "value": "x@y.z" },
 //                 { "select": "#edit-size", "label": "Large" }, { "type": "text" },  // select by value or label; type into the focused element
@@ -46,6 +47,7 @@ const path = require('path');
     }
     // Hide Drupal status messages (e.g. "Saved" from a previous shot).
     await page.addStyleTag({ content: '[data-drupal-messages] { display: none !important; }' });
+    if (shot.highlight) await page.addStyleTag({ content: `${shot.highlight.join(', ')} { outline: 3px solid #e6176e !important; outline-offset: 4px; border-radius: 4px; }` });
     const file = path.join(outDir, shot.file);
     const opts = { path: file, animations: 'disabled', type: file.endsWith('.jpg') ? 'jpeg' : 'png' };
     if (shot.selector) {

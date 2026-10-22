@@ -64,11 +64,11 @@ On the *Product types* listing page, click the link for the *Simple* product var
 
 ![Product types listing](../images/simple-product-type-2.jpg)
 
-If you have not created any ***Product attributes***, you should see a configuration form that looks like this:
+The configuration form looks like this (the *Traits* and *Attributes* options depend on the modules and product attributes of your site):
 
 ![Configure product variation type](../images/simple-product-type-3.jpg)
 
-Select the *Generate variation titles based on attribute values* setting to keep the data entry for our *Simple* product type as simple as possible. Click the *Save* button to save the updated product variation type configuration.
+Enable the *Generate variation titles based on attribute values* setting to keep the data entry for our *Simple* product type as simple as possible. Click the *Save* button to save the updated product variation type configuration.
 
 #### Product variation type configuration options
 
@@ -100,28 +100,27 @@ If you have defined product attributes, they will be listed here. Select any att
 Custom fields of a variety of types can be added to your product variations. To add a field for one or more images to your Simple product variation type:
 
 1. Navigate to the *Manage fields* page for the Simple product variation type: `/admin/commerce/config/product-variation-types/simple/edit/fields`
-2. Click the *Add field* button.
-3. Select field type *Image* (under Reference). (If you do not see *Image* as an option, make sure that the Drupal core [Image module] is enabled.)
+2. Click the *Create a new field* button.
+3. Select *File upload*, then choose *Image* in the dialog. (If you do not see *Image* as an option, make sure that the Drupal core [Image module] is enabled.)
 4. Enter "Images" for the Label.
-5. Click the *Save and continue* button.
+5. Click the *Continue* button.
 
 ![Add Image field](../images/simple-product-type-4.jpg)
 
-On the *Field settings* configuration page:
+On the field settings page, under *Field Storage*:
 
 6. Change the *Allowed number of values* from *Limited* to *Unlimited*. Product variations of type *Simple* can have 1 or more images.
-7. Click *Save field settings* to continue.
 
 >You can use the default values for the rest of the Image field settings. If you are interested in learning more about the Image field settings options, see the Drupal documentation for [Working with images].
 
 ![Image field settings](../images/simple-product-type-5.jpg)
 
-On the *Image settings for Simple* configuration page:
+Further down the same page:
 
-8. Select the *Required field* option to make images required for product variations of type *Simple*.
-9. Change the *File directory* to "product-images".
-10. Deselect the *Alt field required* setting (to simplify data entry for this demonstration setup).
-11. Click the *Save settings* button to finish configuring the new *Images* field.
+7. Enable the *Required field* option to make images required for product variations of type *Simple*.
+8. Change the *File directory* to "product-images".
+9. Disable the *Alt field required* setting (to simplify data entry for this demonstration setup).
+10. Click the *Save settings* button to finish configuring the new *Images* field.
 
 ![Image settings for Simple](../images/simple-product-type-6.jpg)
 
@@ -169,7 +168,7 @@ You can use the drag-and-drop handle in the leftmost column, the *Reset to alpha
 
 ### Add a product attribute to a product variation type
 
-In the [Simple product type](#simple-product-type) documentation, we created a product type named, *Simple*. Use the same procedure to create a new product type named, *Clothing*, with a corresponding *Clothing* product variation type. Be sure to enable the *Allow each product to have multiple variations* setting, since this product type will have multiple variations. When you add the *Images* field to the product variation type, you can re-use the existing Image field instead of creating a new one:
+In the [Simple product type](#simple-product-type) documentation, we created a product type named, *Simple*. Use the same procedure to create a new product type named, *Clothing*, with a corresponding *Clothing* product variation type. Be sure to enable the *Allow each product to have multiple variations* setting, since this product type will have multiple variations. When you add the *Images* field to the product variation type, you can re-use the existing Image field instead of creating a new one: on the *Manage fields* page, click *Re-use an existing field*, then click *Re-use* next to the field:
 
 ![Re-use existing Images field](../images/clothing-product-type-3.jpg)
 
@@ -183,7 +182,7 @@ By default, all product attributes are required. However, after adding a product
 
 ![Edit size attribute field](../images/clothing-product-type-8.jpg)
 
-On the *Size settings for Clothing* page, de-select the *Required field* checkbox and click the *Save settings* button to make the Size attribute optional for the Clothing product type.
+On the *Size settings for Clothing* page, turn off the *Required field* option and click the *Save settings* button to make the Size attribute optional for the Clothing product type.
 
 ![Make size attribute field optional](../images/clothing-product-type-9.jpg)
 
@@ -208,14 +207,14 @@ The initial steps for creating the Color attribute are the same as the steps des
 
 Now that we've created the *Color* attribute, we can add an additional field by navigating to the *Manage fields* configuration page for the Color attribute: `/admin/commerce/product-attributes/manage/color/fields`.
 
-1. Click the *Add field* button.
+1. Click the *Create a new field* button.
 2. Select *Color* from the list of field types.
 3. Enter "Color" for the Label.
-4. Click the *Save and continue* button.
+4. Click the *Continue* button.
 
 ![Add color field](../images/clothing-product-type-5.jpg)
 
-On the *Field settings* configuration page, leave the default values are fine. On the *Color settings for Color* page, enable the *Required field* option and disable the *Record opacity* option. After saving the changes, you can return to Edit the page again, to set the default value for the color to "#000000".
+On the field settings page, enable the *Required field* option and disable the *Record opacity* option. To give the color a default value, such as "#000000", enable *Set default value*.
 
 ![Color field configuration](../images/clothing-product-type-6.jpg)
 
@@ -267,23 +266,22 @@ Let's add a field that references our *Brands* taxonomy to the [Simple product t
 
 1. Navigate to the *Product types* page at `/admin/commerce/config/product-types`.
 2. Select the *Manage fields* operation for the Simple product type.
-3. Click the *Add field* button.
+3. Click the *Create a new field* button.
 
 ![Create new field](../images/product-categories-ui-2.jpg)
 
-4. Select *Taxonomy term* (in the *Reference* section) for the new field type.
+4. Select *Reference*, then choose *Taxonomy term* in the dialog.
 5. Enter *Brand* for the Label.
-6. Click the *Save and continue* button.
+6. Click the *Continue* button.
 
 ![Add taxonomy term field](../images/product-categories-ui-3.jpg)
 
-7. Click *Save field settings* on the next page to save the default configuration values.
-8. On the *Brand settings for Simple* page, select *Required field* and select *Brands* for the Vocabulary.
-9. Click the *Save settings* button.
+7. On the field settings page, enable *Required field* and select *Brands* for the Vocabulary.
+8. Click the *Save settings* button.
 
 ![Brand settings](../images/product-categories-ui-4.jpg)
 
-The *Brand* field has now been added to the Simple product type. To add the Brand field to another product type, you can *Re-use an existing field* to select this Brand field on the *Add field* page for the product type.
+The *Brand* field has now been added to the Simple product type. To add the Brand field to another product type, click *Re-use an existing field* on the *Manage fields* page of that product type and re-use this Brand field.
 
 We can also create a new Taxonomy term reference field for our *Product categories* taxonomy and any other product taxonomies we want to create. Unlike the *Brand* field, which was limited to a single value, we'll specify *Unlimited* for the *Allowed number of values* for product categories:
 
@@ -397,7 +395,7 @@ If you want to display the products on your site in multiple languages, you'll n
 
 ### Enable translations for Products and variations
 
-Once the Content Translation module has been installed, you will see a new *Language settings* section on the configuration forms for all Product types and Product variation types. Click the triangle to the left of the *Language settings* label to expand the form options.
+Once the Content Translation module has been installed, you will see a new *Language settings* section on the configuration forms for all Product types and Product variation types. Click *Language settings* to expand the form options.
 
 Alternatively, you can also use the main *Content language* configuration page to set the language settings for all types of Products and Product variations in the same place. Navigate to `/admin/config/regional/content-language` to make your selections. When you select the checkboxes next to any content type, a corresponding set of configuration options will appear on the form.
 
@@ -423,7 +421,7 @@ For multilingual product attribute values, you need to enable attribute value tr
 
 1. Go to the *Product attributes* page by selecting the menu item from the main *Commerce* menu or navigating to `/admin/commerce/product-attributes`
 2. Click the *Edit* button for each product attribute.
-3. Click the checkbox for *Enable attribute value translation*.
+3. Turn on *Enable attribute value translation*.
 4. Click the *Save* button (below the list of attribute values).
 
 ![Enable product attribute translation](../images/multilingual-products-5.jpg)

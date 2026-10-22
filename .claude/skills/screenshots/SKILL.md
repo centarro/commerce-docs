@@ -29,6 +29,8 @@ ddev composer create-project -n centarro/commerce-kickstart-project
 # Install from the demo recipe directly. The installer applies only this recipe when
 # "demo" is chosen; applying it on top of an existing install fails on config conflicts.
 ddev drush si ../recipes/commerce_kickstart_demo -y --account-name=admin --account-pass=admin --site-name="Commerce Kickstart"
+# The product docs use the Color Field module (seed.php enables it).
+ddev composer require -n drupal/color_field
 ```
 
 Then, every time (it's safe to rerun), copy `seed.php` into `$SITE` (the container can't
@@ -73,6 +75,11 @@ Lessons from the pages already done:
   doesn't select it).
 - Don't hardcode entity IDs in URLs: they differ per site. Start from a listing and click
   through (e.g. `tr:has-text('jane.doe') a:text-is('View')`).
+- Pink boxes and arrows in old images: use `highlight` (CSS selectors to outline) instead of
+  drawing on the image. Point it at the wrapper of the element (a `:has()` selector), not at a
+  fieldset that also contains other fields.
+- Gin's page title is sticky: if it covers the capture, give the shot a taller `viewport`.
+- Focus rings (after `fill` or `click`) show in captures: end with `{ "eval": "document.activeElement.blur()" }`.
 - Status messages are hidden in captures, so a failed submit looks like a normal form.
   If a shot creates something (an order, a customer), make `seed.php` delete it first.
 
